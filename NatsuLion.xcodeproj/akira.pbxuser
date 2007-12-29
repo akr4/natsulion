@@ -392,6 +392,16 @@
 			E96801D20D270AA00048A163 /* PBXTextBookmark */ = E96801D20D270AA00048A163 /* PBXTextBookmark */;
 			E96801D50D270ACE0048A163 /* PBXTextBookmark */ = E96801D50D270ACE0048A163 /* PBXTextBookmark */;
 			E96801D60D270AF80048A163 /* PBXTextBookmark */ = E96801D60D270AF80048A163 /* PBXTextBookmark */;
+			E96801DA0D270D3D0048A163 /* PBXTextBookmark */ = E96801DA0D270D3D0048A163 /* PBXTextBookmark */;
+			E96801DB0D270D3D0048A163 /* PBXTextBookmark */ = E96801DB0D270D3D0048A163 /* PBXTextBookmark */;
+			E96801DC0D270D400048A163 /* PBXTextBookmark */ = E96801DC0D270D400048A163 /* PBXTextBookmark */;
+			E96801E00D270DFC0048A163 /* PBXTextBookmark */ = E96801E00D270DFC0048A163 /* PBXTextBookmark */;
+			E96801E10D270DFC0048A163 /* PBXTextBookmark */ = E96801E10D270DFC0048A163 /* PBXTextBookmark */;
+			E96801E20D270DFC0048A163 /* PBXTextBookmark */ = E96801E20D270DFC0048A163 /* PBXTextBookmark */;
+			E96801E30D270DFC0048A163 /* PBXTextBookmark */ = E96801E30D270DFC0048A163 /* PBXTextBookmark */;
+			E96801E40D270DFC0048A163 /* PBXTextBookmark */ = E96801E40D270DFC0048A163 /* PBXTextBookmark */;
+			E96801E50D270DFC0048A163 /* PBXTextBookmark */ = E96801E50D270DFC0048A163 /* PBXTextBookmark */;
+			E96801E60D270DFC0048A163 /* PBXTextBookmark */ = E96801E60D270DFC0048A163 /* PBXTextBookmark */;
 			E970DE640D1F7FF300F30B4C = E970DE640D1F7FF300F30B4C /* PBXTextBookmark */;
 			E98B096D0D218A3C0002A75E = E98B096D0D218A3C0002A75E /* PBXTextBookmark */;
 			E98B09740D218A3C0002A75E = E98B09740D218A3C0002A75E /* PBXTextBookmark */;
@@ -1263,7 +1273,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 40";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 925;
@@ -1293,7 +1303,7 @@
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 12";
 		rLen = 0;
-		rLoc = 595;
+		rLoc = 548;
 		rType = 0;
 		vrLen = 308;
 		vrLoc = 0;
@@ -1509,7 +1519,7 @@
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 10";
 		rLen = 0;
-		rLoc = 619;
+		rLoc = 572;
 		rType = 0;
 		vrLen = 219;
 		vrLoc = 0;
@@ -1528,8 +1538,8 @@
 		isa = PBXTextBookmark;
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 11";
-		rLen = 44;
-		rLoc = 531;
+		rLen = 0;
+		rLoc = 529;
 		rType = 0;
 		vrLen = 264;
 		vrLoc = 0;
@@ -1549,7 +1559,7 @@
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 13";
 		rLen = 0;
-		rLoc = 625;
+		rLoc = 578;
 		rType = 0;
 		vrLen = 264;
 		vrLoc = 0;
@@ -1569,7 +1579,7 @@
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 13";
 		rLen = 0;
-		rLoc = 625;
+		rLoc = 578;
 		rType = 0;
 		vrLen = 264;
 		vrLoc = 0;
@@ -1689,7 +1699,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 60";
 		rLen = 0;
-		rLoc = 2217;
+		rLoc = 1681;
 		rType = 0;
 		vrLen = 1135;
 		vrLoc = 0;
@@ -1759,7 +1769,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 28";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 0;
@@ -1789,7 +1799,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 31";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 888;
 		vrLoc = 925;
@@ -1809,7 +1819,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 36";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 811;
 		vrLoc = 925;
@@ -1949,7 +1959,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 40";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 891;
 		vrLoc = 925;
@@ -2019,7 +2029,7 @@
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 12";
 		rLen = 0;
-		rLoc = 595;
+		rLoc = 548;
 		rType = 0;
 		vrLen = 308;
 		vrLoc = 0;
@@ -2039,7 +2049,7 @@
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 12";
 		rLen = 0;
-		rLoc = 595;
+		rLoc = 548;
 		rType = 0;
 		vrLen = 308;
 		vrLoc = 0;
@@ -2079,7 +2089,7 @@
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 12";
 		rLen = 0;
-		rLoc = 595;
+		rLoc = 548;
 		rType = 0;
 		vrLen = 308;
 		vrLoc = 0;
@@ -2099,7 +2109,7 @@
 		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
 		name = "TwitterStatusView.h: 12";
 		rLen = 0;
-		rLoc = 595;
+		rLoc = 548;
 		rType = 0;
 		vrLen = 308;
 		vrLoc = 0;
@@ -2139,7 +2149,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 39";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 1408;
 		vrLoc = 0;
@@ -2159,7 +2169,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 39";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 811;
 		vrLoc = 925;
@@ -2179,7 +2189,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 39";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 811;
 		vrLoc = 925;
@@ -2199,7 +2209,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 39";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 1408;
 		vrLoc = 0;
@@ -2219,7 +2229,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 39";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 1408;
 		vrLoc = 0;
@@ -2239,7 +2249,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 39";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 1408;
 		vrLoc = 0;
@@ -2259,7 +2269,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 40";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 698;
@@ -2299,7 +2309,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 40";
 		rLen = 0;
-		rLoc = 1520;
+		rLoc = 984;
 		rType = 0;
 		vrLen = 1336;
 		vrLoc = 204;
@@ -2379,7 +2389,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 80";
 		rLen = 0;
-		rLoc = 2329;
+		rLoc = 1793;
 		rType = 0;
 		vrLen = 878;
 		vrLoc = 1356;
@@ -2417,7 +2427,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 80";
 		rLen = 0;
-		rLoc = 2329;
+		rLoc = 1793;
 		rType = 0;
 		vrLen = 878;
 		vrLoc = 1356;
@@ -3206,7 +3216,7 @@
 		isa = PBXTextBookmark;
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 24";
-		rLen = 531;
+		rLen = 0;
 		rLoc = 963;
 		rType = 0;
 		vrLen = 1447;
@@ -3431,7 +3441,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 76";
 		rLen = 0;
-		rLoc = 2217;
+		rLoc = 1681;
 		rType = 0;
 		vrLen = 761;
 		vrLoc = 1568;
@@ -3441,7 +3451,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 76";
 		rLen = 0;
-		rLoc = 2217;
+		rLoc = 1681;
 		rType = 0;
 		vrLen = 761;
 		vrLoc = 1568;
@@ -3471,7 +3481,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 76";
 		rLen = 0;
-		rLoc = 2217;
+		rLoc = 1681;
 		rType = 0;
 		vrLen = 761;
 		vrLoc = 1568;
@@ -3554,6 +3564,104 @@
 		rLoc = 670;
 		rType = 0;
 		vrLen = 1275;
+		vrLoc = 0;
+	};
+	E96801DA0D270D3D0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: initializer element is not constant";
+		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
+		rLen = 1;
+		rLoc = 4;
+		rType = 1;
+	};
+	E96801DB0D270D3D0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
+		name = "TwitterStatusView.h: 16";
+		rLen = 0;
+		rLoc = 476;
+		rType = 0;
+		vrLen = 625;
+		vrLoc = 0;
+	};
+	E96801DC0D270D400048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */;
+		name = "TwitterStatusView.m: 15";
+		rLen = 0;
+		rLoc = 668;
+		rType = 0;
+		vrLen = 1334;
+		vrLoc = 0;
+	};
+	E96801E00D270DFC0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */;
+		name = "TwitterStatusView.m: 15";
+		rLen = 0;
+		rLoc = 668;
+		rType = 0;
+		vrLen = 1334;
+		vrLoc = 0;
+	};
+	E96801E10D270DFC0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
+		name = "TwitterStatusView.h: 16";
+		rLen = 0;
+		rLoc = 476;
+		rType = 0;
+		vrLen = 578;
+		vrLoc = 0;
+	};
+	E96801E20D270DFC0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */;
+		name = "TwitterStatusViewController.h: 14";
+		rLen = 0;
+		rLoc = 489;
+		rType = 0;
+		vrLen = 667;
+		vrLoc = 0;
+	};
+	E96801E30D270DFC0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */;
+		name = "TwitterStatusView.m: 15";
+		rLen = 0;
+		rLoc = 668;
+		rType = 0;
+		vrLen = 1334;
+		vrLoc = 0;
+	};
+	E96801E40D270DFC0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */;
+		name = "TwitterStatusView.h: 16";
+		rLen = 0;
+		rLoc = 476;
+		rType = 0;
+		vrLen = 578;
+		vrLoc = 0;
+	};
+	E96801E50D270DFC0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */;
+		name = "TwitterStatusViewController.h: 14";
+		rLen = 0;
+		rLoc = 489;
+		rType = 0;
+		vrLen = 667;
+		vrLoc = 0;
+	};
+	E96801E60D270DFC0048A163 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
+		name = "TwitterStatusViewController.m: 26";
+		rLen = 0;
+		rLoc = 968;
+		rType = 0;
+		vrLen = 1169;
 		vrLoc = 0;
 	};
 	E970DE640D1F7FF300F30B4C /* PBXTextBookmark */ = {
@@ -3682,16 +3790,16 @@
 	};
 	E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {869, 558}}";
+			sepNavIntBoundsRect = "{{0, 0}, {869, 581}}";
 			sepNavSelRange = "{489, 0}";
 			sepNavVisRange = "{0, 667}";
 		};
 	};
 	E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {869, 1176}}";
-			sepNavSelRange = "{2217, 0}";
-			sepNavVisRange = "{1568, 761}";
+			sepNavIntBoundsRect = "{{0, 0}, {869, 1008}}";
+			sepNavSelRange = "{968, 0}";
+			sepNavVisRange = "{0, 1169}";
 		};
 	};
 	E9BFD6070D18539D0024C8B4 /* PBXTextBookmark */ = {
@@ -3709,7 +3817,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusView.m: 18";
 		rLen = 0;
-		rLoc = 2013;
+		rLoc = 1477;
 		rType = 0;
 		vrLen = 492;
 		vrLoc = 0;
@@ -3922,17 +4030,17 @@
 	};
 	E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {974, 619}}";
-			sepNavSelRange = "{624, 0}";
-			sepNavVisRange = "{0, 909}";
+			sepNavIntBoundsRect = "{{0, 0}, {869, 581}}";
+			sepNavSelRange = "{476, 0}";
+			sepNavVisRange = "{0, 578}";
 			sepNavWindowFrame = "{{874, 69}, {1033, 770}}";
 		};
 	};
 	E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {869, 1008}}";
-			sepNavSelRange = "{670, 0}";
-			sepNavVisRange = "{0, 1275}";
+			sepNavSelRange = "{668, 0}";
+			sepNavVisRange = "{0, 1334}";
 		};
 	};
 	E9E2ACF50D22EBBD008561C2 /* PBXTextBookmark */ = {
@@ -4088,7 +4196,7 @@
 		fRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */;
 		name = "TwitterStatusViewController.m: 62";
 		rLen = 0;
-		rLoc = 2218;
+		rLoc = 1682;
 		rType = 0;
 		vrLen = 1470;
 		vrLoc = 0;

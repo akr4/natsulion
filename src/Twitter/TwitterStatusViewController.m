@@ -22,19 +22,7 @@
                                             dictionaryRepresentation]]];
 
     [view setTwitterStatus:_status];
-//    switch ([_status replyType]) {
-//        case MESSAGE_REPLY_TYPE_DIRECT:
-//        case MESSAGE_REPLY_TYPE_REPLY:
-//            [view setBackgroundColor:[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:1 alpha:1]];
-//            break;
-//        case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
-//            [view setBackgroundColor:[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:1 alpha:1]];            
-//            break;
-//        case MESSAGE_REPLY_TYPE_NORMAL:
-//        default:
-//            break;
-//    }
-    
+
     return self;
 }
 

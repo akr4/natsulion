@@ -20,5 +20,27 @@
         length="662762"
         type="application/octet-stream"/>
     </item>
+    <item>
+      <title>NatsuLion Version 0.2</title>
+      <description>
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-23'&gt;NTLN-23&lt;/a&gt;] -         not appropriate row is highlighted when a selected row moves
+&lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-28'&gt;NTLN-28&lt;/a&gt;] -         color reply message
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Sat, 30 Dec 2008 08:18:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.2.zip"
+        length="662762"
+        type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>

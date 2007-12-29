@@ -16,7 +16,6 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
 }
 
 - (void) setTwitterStatus:(TwitterStatus*)status;
-//- (void) setBackgroundColor:(NSColor*)color;
 - (void) highlight;
 - (void) lowlight;
     
