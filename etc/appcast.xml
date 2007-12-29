@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>NatsuLion Appcast</title>
+    <link>http://www.physalis.net/NatsuLion/appcast.xml</link>
+    <description>NatsuLion Releases</description>
+    <language>en</language>
+    <item>
+      <title>NatsuLion Version 0.1</title>
+      <description>
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-4'&gt;NTLN-4&lt;/a&gt;] - auto resizing textfield for message input
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-6'&gt;NTLN-6&lt;/a&gt;] - improve the way of selecting a message
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-24'&gt;NTLN-24&lt;/a&gt;] - auto-update feature
+&lt;/ul&gt;
+</description>
+      <pubDate>Sat, 29 Dec 2008 16:09:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.1.zip"
+        length="662762"
+        type="application/octet-stream"/>
+    </item>
+  </channel>
+</rss>
