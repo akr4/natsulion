@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 44;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E915200F0D16D3B7008D6992 /* PreferencesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E915200E0D16D3B7008D6992 /* PreferencesWindow.m */; };
+		E9160B770D11B1B700C9EEFF /* AsyncUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */; };
+		E9160B8E0D11C0C400C9EEFF /* TwitterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B8D0D11C0C400C9EEFF /* TwitterStatus.m */; };
+		E9160BBE0D11D2EB00C9EEFF /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160BBD0D11D2EB00C9EEFF /* Twitter.m */; };
+		E9160BC80D11F4F500C9EEFF /* IconRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160BC70D11F4F500C9EEFF /* IconRepository.m */; };
+		E91B3DAD0D13F3B5007C9762 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */; };
+		E91B3DB60D13F593007C9762 /* CustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DB50D13F593007C9762 /* CustomViewCell.m */; };
+		E922CD380D21588700F3D411 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922CD370D21588700F3D411 /* Growl.framework */; };
+		E922CD4D0D21591F00F3D411 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E922CD370D21588700F3D411 /* Growl.framework */; };
+		E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* GrowlNotifier.m */; };
+		E996326B0D1E5D2400860515 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E996326A0D1E5D2400860515 /* Message.m */; };
+		E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFD5950D183E630024C8B4 /* MainMenu.nib */; };
+		E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */; };
+		E9BFD6130D1854270024C8B4 /* TwitterStatusViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */; };
+		E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */; };
+		E9CE391F0D145DB700D14D9F /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */; };
+		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
+		E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */; };
+		E9F960930D25D03A007829C4 /* AutoResizingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* AutoResizingTextField.m */; };
+		E9F961550D2622B5007829C4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F961540D2622B5007829C4 /* Sparkle.framework */; };
+		E9F961740D262336007829C4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9F961540D2622B5007829C4 /* Sparkle.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E922CD480D2158D800F3D411 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E922CD4D0D21591F00F3D411 /* Growl.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9F961720D262301007829C4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9F961740D262336007829C4 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* NatsuLion_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatsuLion_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* NatsuLion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatsuLion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E915200D0D16D3B7008D6992 /* PreferencesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindow.h; sourceTree = "<group>"; };
+		E915200E0D16D3B7008D6992 /* PreferencesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindow.m; sourceTree = "<group>"; };
+		E9160B750D11B1B700C9EEFF /* AsyncUrlConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUrlConnection.h; sourceTree = "<group>"; };
+		E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUrlConnection.m; sourceTree = "<group>"; };
+		E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatus.h; sourceTree = "<group>"; };
+		E9160B8D0D11C0C400C9EEFF /* TwitterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatus.m; sourceTree = "<group>"; };
+		E9160BBC0D11D2EB00C9EEFF /* Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
+		E9160BBD0D11D2EB00C9EEFF /* Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
+		E9160BC60D11F4F500C9EEFF /* IconRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconRepository.h; sourceTree = "<group>"; };
+		E9160BC70D11F4F500C9EEFF /* IconRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconRepository.m; sourceTree = "<group>"; };
+		E91B3DAB0D13F3B5007C9762 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
+		E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
+		E91B3DB40D13F593007C9762 /* CustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewCell.h; sourceTree = "<group>"; };
+		E91B3DB50D13F593007C9762 /* CustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewCell.m; sourceTree = "<group>"; };
+		E922CD370D21588700F3D411 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		E98B093A0D2172B90002A75E /* GrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifier.h; sourceTree = "<group>"; };
+		E98B093B0D2172B90002A75E /* GrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlNotifier.m; sourceTree = "<group>"; };
+		E99632690D1E5D2400860515 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		E996326A0D1E5D2400860515 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewController.h; sourceTree = "<group>"; };
+		E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewController.m; sourceTree = "<group>"; };
+		E9BFD6110D1854270024C8B4 /* TwitterStatusViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewTextField.h; sourceTree = "<group>"; };
+		E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewTextField.m; sourceTree = "<group>"; };
+		E9BFD61C0D1857320024C8B4 /* TwitterStatusViewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewImageView.h; sourceTree = "<group>"; };
+		E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewImageView.m; sourceTree = "<group>"; };
+		E9CE391D0D145DB700D14D9F /* MessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewController.h; sourceTree = "<group>"; };
+		E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
+		E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusView.h; sourceTree = "<group>"; };
+		E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusView.m; sourceTree = "<group>"; };
+		E9F1DB3C0D13CF000072CE81 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterStatusView.nib; sourceTree = "<group>"; };
+		E9F960910D25D03A007829C4 /* AutoResizingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoResizingTextField.h; sourceTree = "<group>"; };
+		E9F960920D25D03A007829C4 /* AutoResizingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoResizingTextField.m; sourceTree = "<group>"; };
+		E9F961540D2622B5007829C4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				E922CD380D21588700F3D411 /* Growl.framework in Frameworks */,
+				E9F961550D2622B5007829C4 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E91B3DBA0D13F893007C9762 /* Twitter */,
+				E9160B750D11B1B700C9EEFF /* AsyncUrlConnection.h */,
+				E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */,
+				E98B093A0D2172B90002A75E /* GrowlNotifier.h */,
+				E98B093B0D2172B90002A75E /* GrowlNotifier.m */,
+				E91B3DAB0D13F3B5007C9762 /* MainWindowController.h */,
+				E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */,
+				E91B3DB40D13F593007C9762 /* CustomViewCell.h */,
+				E91B3DB50D13F593007C9762 /* CustomViewCell.m */,
+				E9CE391D0D145DB700D14D9F /* MessageTableViewController.h */,
+				E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */,
+				E915200D0D16D3B7008D6992 /* PreferencesWindow.h */,
+				E915200E0D16D3B7008D6992 /* PreferencesWindow.m */,
+				E99632690D1E5D2400860515 /* Message.h */,
+				E996326A0D1E5D2400860515 /* Message.m */,
+				E9F960910D25D03A007829C4 /* AutoResizingTextField.h */,
+				E9F960920D25D03A007829C4 /* AutoResizingTextField.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E922CD370D21588700F3D411 /* Growl.framework */,
+				E9F961540D2622B5007829C4 /* Sparkle.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* NatsuLion.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* NatsuLion */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = NatsuLion;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* NatsuLion_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				E9BFD5950D183E630024C8B4 /* MainMenu.nib */,
+				E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E91B3DBA0D13F893007C9762 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				E9160BBC0D11D2EB00C9EEFF /* Twitter.h */,
+				E9160BBD0D11D2EB00C9EEFF /* Twitter.m */,
+				E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */,
+				E9160B8D0D11C0C400C9EEFF /* TwitterStatus.m */,
+				E9160BC60D11F4F500C9EEFF /* IconRepository.h */,
+				E9160BC70D11F4F500C9EEFF /* IconRepository.m */,
+				E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */,
+				E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */,
+				E9BFD6110D1854270024C8B4 /* TwitterStatusViewTextField.h */,
+				E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */,
+				E9BFD61C0D1857320024C8B4 /* TwitterStatusViewImageView.h */,
+				E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */,
+				E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */,
+				E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* NatsuLion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NatsuLion" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				E922CD480D2158D800F3D411 /* CopyFiles */,
+				E9F961720D262301007829C4 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NatsuLion;
+			productInstallPath = "$(HOME)/Applications";
+			productName = NatsuLion;
+			productReference = 8D1107320486CEB800E47090 /* NatsuLion.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NatsuLion" */;
+			compatibilityVersion = "Xcode 3.0";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* NatsuLion */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* NatsuLion */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */,
+				E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				E9160B770D11B1B700C9EEFF /* AsyncUrlConnection.m in Sources */,
+				E9160B8E0D11C0C400C9EEFF /* TwitterStatus.m in Sources */,
+				E9160BBE0D11D2EB00C9EEFF /* Twitter.m in Sources */,
+				E9160BC80D11F4F500C9EEFF /* IconRepository.m in Sources */,
+				E91B3DAD0D13F3B5007C9762 /* MainWindowController.m in Sources */,
+				E91B3DB60D13F593007C9762 /* CustomViewCell.m in Sources */,
+				E9CE391F0D145DB700D14D9F /* MessageTableViewController.m in Sources */,
+				E915200F0D16D3B7008D6992 /* PreferencesWindow.m in Sources */,
+				E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */,
+				E9BFD6130D1854270024C8B4 /* TwitterStatusViewTextField.m in Sources */,
+				E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */,
+				E996326B0D1E5D2400860515 /* Message.m in Sources */,
+				E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */,
+				E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */,
+				E9F960930D25D03A007829C4 /* AutoResizingTextField.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E9BFD5950D183E630024C8B4 /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9F1DB3C0D13CF000072CE81 /* English */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = NatsuLion_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = NatsuLion;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = NatsuLion_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = NatsuLion;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NatsuLion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NatsuLion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
