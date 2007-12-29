@@ -104,28 +104,6 @@
     [_twitter sendMessage:[messageTextField stringValue] withCallback:self];
 }
 
-- (BOOL) isReplyToMe:(TwitterStatus*)status {
-    NSString *text = [status text];
-    if ([text hasPrefix:[@"@" stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:PREFERENCE_USERID]]]) {
-        NSLog(@"reply");
-        return TRUE;
-    }
-//    NSLog(@"not reply");
-    return FALSE;
-}
-
-- (BOOL) isProbablyReplyToMe:(TwitterStatus*)status {
-    NSString *text = [status text];
-    NSRange range = [text rangeOfString:[@"@" stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:PREFERENCE_USERID]]];
-    
-    if (range.location != NSNotFound) {
-        NSLog(@"probable reply");
-        return TRUE;
-    }
-    //    NSLog(@"not reply");
-    return FALSE;
-}
-
 //- (float) heightForString:(NSString*)myString andFont:(NSFont*)myFont andWidth:(float)myWidth {
 //    NSTextStorage *textStorage = [[[NSTextStorage alloc]
 //                                   initWithString:myString] autorelease];
@@ -161,12 +139,17 @@
             [self addIfNewMessage:s];
             int priority = 0;
             BOOL sticky = FALSE;
-            if ([self isReplyToMe:s]) {
-                priority = 2;
-                sticky = TRUE;
-            } else if ([self isProbablyReplyToMe:s]) {
-                priority = 1;
-                sticky = TRUE;
+            switch ([s replyType]) {
+                case MESSAGE_REPLY_TYPE_REPLY:
+                    priority = 2;
+                    sticky = TRUE;
+                    break;
+                case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
+                    priority = 1;
+                    sticky = TRUE;
+                    break;
+                default:
+                    break;
             }
             
             if ([[NSUserDefaults standardUserDefaults] boolForKey:PREFERENCE_USE_GROWL]) {

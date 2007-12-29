@@ -1,10 +1,10 @@
 #import <Cocoa/Cocoa.h>
 
 typedef enum replyType_enum {
-    NORMAL,
-    DIRECT,
-    REPLY,
-    REPLY_PROBABLE,
+    MESSAGE_REPLY_TYPE_NORMAL,
+    MESSAGE_REPLY_TYPE_DIRECT,
+    MESSAGE_REPLY_TYPE_REPLY,
+    MESSAGE_REPLY_TYPE_REPLY_PROBABLE,
 } replyType_t;
 
 
@@ -25,5 +25,6 @@ typedef enum replyType_enum {
 @property(readwrite) replyType_t replyType;
 
 - (BOOL) isEqual:(id)anObject;
+- (void) finishedToSetProperties;
 
 @end

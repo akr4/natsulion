@@ -22,8 +22,8 @@
     return FALSE;
 }
 
-- (replyType_t) replyType {
-    return NORMAL;
+- (void) finishedToSetProperties {
+    NSLog(@"%s: warning: this method should be overridden by subclasses.", __PRETTY_FUNCTION__);
 }
 
 @end

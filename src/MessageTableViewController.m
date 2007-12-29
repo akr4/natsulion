@@ -66,25 +66,8 @@
 }
 
 - (void) tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(int)row {
-//    NSLog(@"MessageTableViewController#willDisplayCell:forTableColumn:row[%d]", row);
     TwitterStatusViewController *controller = [[mainWindowController messageViewControllerArray] objectAtIndex:row];
-//    NSLog(@"view = %@", [view description]);
     [(CustomViewCell*)cell addView:[controller view]];
-//    [cell setBezeled:TRUE];
-//    switch ([[view status] replyType]) {
-//        case DIRECT:
-//        case REPLY:
-//            [cell setDrawsBackground:TRUE];
-//            [cell setBackgroundColor:[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:1 alpha:1]];
-//            break;
-//        case REPLY_PROBABLE:
-//            [cell setDrawsBackground:TRUE];
-//            [cell setBackgroundColor:[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:1 alpha:1]];            
-//            break;
-//        case NORMAL:
-//        default:
-//            break;
-//    }
 }
 
 // for display custom view /////////////////////////////////////////////////////

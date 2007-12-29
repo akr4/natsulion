@@ -176,6 +176,9 @@
             set = [[[NSMutableSet alloc] initWithCapacity:3] autorelease];
             [_waitingIconTwitterStatuses setObject:set forKey:iconUrl];
         }
+        
+        [backStatus finishedToSetProperties];
+        
         [set addObject:backStatus];
         [_iconRepository registerUrl:iconUrl];
         
