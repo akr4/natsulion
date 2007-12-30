@@ -1,9 +1,9 @@
 #import <Cocoa/Cocoa.h>
 #import "TwitterStatus.h"
-#import "TwitterStatusViewTextField.h"
+#import "TwitterStatusViewMessageField.h"
 
 @interface TwitterStatusView : NSView {
-    IBOutlet TwitterStatusViewTextField *textField;
+    IBOutlet TwitterStatusViewMessageField *textField;
 
     BOOL _highlighted;
     NSColor *_backgroundColor;

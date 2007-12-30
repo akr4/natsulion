@@ -12,7 +12,6 @@
 }
 
 - (void) highlight {
-//    [self setTextColor:[NSColor selectedControlColor]];
     [self setTextColor:[NSColor whiteColor]];
 }
 

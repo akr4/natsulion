@@ -47,6 +47,7 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
         default:
             break;
     }
+    
 }
 
 - (void) lowlight {
@@ -66,11 +67,6 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
     }
 }
 
-//- (void) setBackgroundColor:(NSColor*)color {
-//    _backgroundColor = color;
-//    [_backgroundColor retain];
-//}
-//
 - (void)drawRect:(NSRect)aRect {
     if (!_backgroundColor) {
         return;

@@ -65,7 +65,7 @@
 			<key>OUTLETS</key>
 			<dict>
 				<key>textField</key>
-				<string>TwitterStatusViewTextField</string>
+				<string>TwitterStatusViewMessageField</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSView</string>
