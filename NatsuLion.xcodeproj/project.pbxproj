@@ -81,6 +81,7 @@
 		E91B3DB40D13F593007C9762 /* CustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewCell.h; sourceTree = "<group>"; };
 		E91B3DB50D13F593007C9762 /* CustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewCell.m; sourceTree = "<group>"; };
 		E922CD370D21588700F3D411 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
+		E96801F30D2748DB0048A163 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E98B093A0D2172B90002A75E /* GrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifier.h; sourceTree = "<group>"; };
 		E98B093B0D2172B90002A75E /* GrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlNotifier.m; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
@@ -314,6 +315,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				089C165DFE840E0CC02AAC07 /* English */,
+				E96801F30D2748DB0048A163 /* Japanese */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
