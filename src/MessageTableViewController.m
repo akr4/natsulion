@@ -15,7 +15,6 @@
 
 - (void) selectedRowIndexes:(NSIndexSet*)indexSet {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);    
-//    NSLog(@"indexSet: ", [indexSet description]);
     int i;
     for (i = 0; i < [[mainWindowController messageViewControllerArray] count]; i++) {
         if ([indexSet containsIndex:i]) {
@@ -33,7 +32,6 @@
 
 - (void) resize:(float)deltaHeight {
     NSView *scrollView = [[[viewColumn tableView] superview] superview];
-    NSLog(@"scrollView = %@", [scrollView description]);
     NSRect frame = [scrollView frame];
     frame.size.height += deltaHeight;
     frame.origin.y -= deltaHeight;

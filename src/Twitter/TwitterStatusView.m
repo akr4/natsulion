@@ -1,5 +1,9 @@
 #import "TwitterStatusView.h"
 
+static NSColor *_viewBackgroundColorReply;
+static NSColor *_viewHighlightedBackgroundColorReply;
+static NSColor *_viewBackgroundColorReplyProbable;
+static NSColor *_viewHighlightedBackgroundColorReplyProbable;
 
 @implementation TwitterStatusView
 

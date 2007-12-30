@@ -12,7 +12,7 @@
     if (![NSBundle loadNibNamed: @"TwitterStatusView" owner: self]) {
         NSLog(@"unable to load Nib TwitterStatusView.nib");
     }
-    [textField setStringValue:[status text]];
+    [textField setMessage:[status text]];
     [nameField setStringValue:[[[status name] stringByAppendingString:@"/"] stringByAppendingString:[status screenName]]];
     [iconView setImage:[status icon]];
     [timestampField setStringValue:[[status timestamp]      

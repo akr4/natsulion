@@ -44,7 +44,7 @@
     if (height < _defaultHeight) {
         height = _defaultHeight;
     }
-    NSLog(@"height: %f", height);
+//    NSLog(@"height: %f", height);
     
     float heightDelta = currentRect.size.height - height;
     NSSize newSize;
@@ -63,7 +63,7 @@
 }
 
 - (void)setFrameSize:(NSSize)newSize {
-    NSLog(@"%s", __PRETTY_FUNCTION__);    
+//    NSLog(@"%s", __PRETTY_FUNCTION__);    
     [super setFrameSize:newSize];
     if (!_frameSizeInternalChanging) {
         [self changeHeight];

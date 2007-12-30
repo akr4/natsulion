@@ -2,11 +2,6 @@
 #import "TwitterStatus.h"
 #import "TwitterStatusViewTextField.h"
 
-static NSColor *_viewBackgroundColorReply;
-static NSColor *_viewHighlightedBackgroundColorReply;
-static NSColor *_viewBackgroundColorReplyProbable;
-static NSColor *_viewHighlightedBackgroundColorReplyProbable;
-
 @interface TwitterStatusView : NSView {
     IBOutlet TwitterStatusViewTextField *textField;
 

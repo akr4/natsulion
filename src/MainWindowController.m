@@ -27,7 +27,6 @@
 }
 
 - (void) awakeFromNib {
-    NSLog(@"MainWindowController#awakeFromNib");
     [mainWindow setReleasedWhenClosed:FALSE];
     
     [messageTextField setCallback:self];
@@ -38,7 +37,6 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
-    NSLog(@"applicationDidFinishLaunching");
     [mainWindow setFrameAutosaveName:@"MainWindow"];
 }
 
@@ -69,7 +67,7 @@
 }
 
 - (void) addIfNewMessage:(Message*)message {
-    NSLog(@"%s", __PRETTY_FUNCTION__);    
+//    NSLog(@"%s", __PRETTY_FUNCTION__);    
     TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc] initWithTwitterStatus:(TwitterStatus*)message] autorelease];
     
     if ([_messageViewControllerArray containsObject:newController]) {
@@ -95,7 +93,6 @@
 }
 
 - (void) updateStatus {
-    NSLog(@"MainWindowController#updateStatus");
     [_twitter friendTimelineWithCallback:self];
 }
 
@@ -182,7 +179,7 @@
 // TODO: this class should not be a delegate of NSApplication
 
 - (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
-    NSLog(@"%s", __PRETTY_FUNCTION__);    
+//    NSLog(@"%s", __PRETTY_FUNCTION__);    
     [mainWindow makeKeyAndOrderFront:nil];
     return TRUE;
 }
