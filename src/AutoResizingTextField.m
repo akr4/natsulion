@@ -30,7 +30,7 @@
             usedRectForTextContainer:textContainer].size.height;
 }
 
-- (void) changeHeight {
+- (void) updateHeight {
     float height;
     NSRect currentRect = [self frame];
     
@@ -59,14 +59,14 @@
 }
 
 - (void)controlTextDidChange:(NSNotification *)aNotification {
-    [self changeHeight];
+    [self updateHeight];
 }
 
 - (void)setFrameSize:(NSSize)newSize {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);    
     [super setFrameSize:newSize];
     if (!_frameSizeInternalChanging) {
-        [self changeHeight];
+        [self updateHeight];
     }
 }
 

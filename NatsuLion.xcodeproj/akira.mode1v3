@@ -284,8 +284,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>20</integer>
-									<integer>8</integer>
+									<integer>40</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
@@ -328,7 +327,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TwitterStatusViewImageView.m</string>
+								<string>AutoResizingTextField.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,11 +335,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TwitterStatusViewImageView.m</string>
+										<string>AutoResizingTextField.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9E5BF230D2871D400F34B9B</string>
+										<string>E9E5BF370D28739900F34B9B</string>
 										<key>history</key>
 										<array>
 											<string>E9F1D9580D133F4F0072CE81</string>
@@ -362,14 +361,10 @@
 											<string>E90C123F0D279FCC003BDD69</string>
 											<string>E9614CEE0D27BCD9009743CE</string>
 											<string>E9614D200D27BF6C009743CE</string>
-											<string>E9614D210D27BF6C009743CE</string>
 											<string>E93F7AF60D27C8AF00366600</string>
 											<string>E93F7B800D27D63600366600</string>
 											<string>E93F7BB20D27D77D00366600</string>
-											<string>E93F7BC20D27DA9F00366600</string>
 											<string>E93F7BC30D27DA9F00366600</string>
-											<string>E93F7C700D27ED5800366600</string>
-											<string>E93F7C710D27ED5800366600</string>
 											<string>E93F7C860D27EF8300366600</string>
 											<string>E93F7CA00D27F3DF00366600</string>
 											<string>E93F7CA70D27F75F00366600</string>
@@ -387,8 +382,12 @@
 											<string>E9C50FD90D28699C002D5409</string>
 											<string>E9C50FDA0D28699C002D5409</string>
 											<string>E9E5BEE90D286CC300F34B9B</string>
-											<string>E9E5BEEA0D286CC300F34B9B</string>
-											<string>E9E5BEEB0D286CC300F34B9B</string>
+											<string>E9E5BF250D28737200F34B9B</string>
+											<string>E9E5BF270D28737200F34B9B</string>
+											<string>E9E5BF280D28737200F34B9B</string>
+											<string>E9E5BF290D28737200F34B9B</string>
+											<string>E9E5BF340D28739900F34B9B</string>
+											<string>E9E5BF350D28739900F34B9B</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -442,6 +441,14 @@
 											<string>E9E5BEED0D286CC300F34B9B</string>
 											<string>E9E5BEEE0D286CC300F34B9B</string>
 											<string>E9E5BEEF0D286CC300F34B9B</string>
+											<string>E9E5BF2A0D28737200F34B9B</string>
+											<string>E9E5BF2B0D28737200F34B9B</string>
+											<string>E9E5BF2C0D28737200F34B9B</string>
+											<string>E9E5BF2D0D28737200F34B9B</string>
+											<string>E9E5BF2E0D28737200F34B9B</string>
+											<string>E9E5BF2F0D28737200F34B9B</string>
+											<string>E9E5BF300D28737200F34B9B</string>
+											<string>E9E5BF360D28739900F34B9B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

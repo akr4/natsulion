@@ -11,5 +11,6 @@
 }
 
 - (void) setCallback:(NSObject<AutoResizingTextFieldCallback>*)callback;
+- (void) updateHeight;
 
 @end

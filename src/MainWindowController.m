@@ -124,6 +124,7 @@
     [messageTextField setStringValue:@""];
     [messageTextField setEditable:TRUE];
     [messageTextField setEnabled:TRUE];
+    [messageTextField updateHeight];
 }
 
 
