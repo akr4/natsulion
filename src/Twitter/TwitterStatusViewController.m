@@ -13,7 +13,7 @@
         NSLog(@"unable to load Nib TwitterStatusView.nib");
     }
     [textField setMessage:[status text]];
-    [nameField setStringValue:[[[status name] stringByAppendingString:@"/"] stringByAppendingString:[status screenName]]];
+    [nameField setStatus:_status];
     [iconView setStatus:_status];
     [timestampField setStringValue:[[status timestamp]      
                                     descriptionWithCalendarFormat:@"%02H:%02M:%02S"

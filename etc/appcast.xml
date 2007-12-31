@@ -42,5 +42,42 @@
         length="665220"
         type="application/octet-stream"/>
     </item>
+    <item>
+      <title>NatsuLion Version 0.3</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.3
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-30'&gt;NTLN-30&lt;/a&gt;] -         message input field remains expanded after sending a message
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-29'&gt;NTLN-29&lt;/a&gt;] -         better mouse cursor style when hovering over unhighlighted messages
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-2'&gt;NTLN-2&lt;/a&gt;] -         need clickable URL feature
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-26'&gt;NTLN-26&lt;/a&gt;] -         need a feature to warn a message input length is over 140 and 160
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-33'&gt;NTLN-33&lt;/a&gt;] -         Japanese localized application name
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-36'&gt;NTLN-36&lt;/a&gt;] -         clickable link to a user's timeline page (http://twitter.com/&lt;user&gt;)
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Sat, 31 Dec 2008 10:48:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.3.zip"
+        length="670606"
+        type="application/octet-stream"/>
+    </item>
   </channel>
 </rss>

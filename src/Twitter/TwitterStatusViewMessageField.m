@@ -52,8 +52,8 @@
     NSMutableAttributedString* string = [[[NSMutableAttributedString alloc] init] autorelease];
     int i;
     for (i = 0; i < [tokens count]; i++) {
-        NSString *token = [tokens objectAtIndex:i];
-//        NSLog(@"token: %@", token);
+        NSString *token = [self decodeEntityReferences:[tokens objectAtIndex:i]];
+        NSLog(@"token: %@", token);
         if ([token rangeOfString:URLEXTRACTOR_PROTOCOL_HEAD_HTTP].location == 0) {
 //            NSLog(@"URL found  -------------------------");
             [string appendAttributedString:[NSAttributedString hyperlinkFromString:token withURL:[NSURL URLWithString:token]]];
