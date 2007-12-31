@@ -1,5 +1,5 @@
 #import "TwitterStatusViewImageView.h"
-
+#import "TwitterUtils.h"
 
 @implementation TwitterStatusViewImageView
 
@@ -13,10 +13,7 @@
 }
 
 - (void) mouseDown:(NSEvent *)theEvent {
-    NSMutableString *urlStr = [NSMutableString stringWithCapacity:20];
-    [urlStr appendString:@"http://twitter.com/"];
-    [urlStr appendString:[_status screenName]];
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:urlStr]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[[TwitterUtils utils] userPageURLString:[_status screenName]]]];
     [[self superview] mouseDown:theEvent];
 }
 
