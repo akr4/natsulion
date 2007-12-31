@@ -30,6 +30,7 @@
     [mainWindow setReleasedWhenClosed:FALSE];
     
     [messageTextField setCallback:self];
+    [messageTextField setLengthForWarning:140 max:160];
     
 //    [messageViewArrayController setSortDescriptors:
 //        [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"status.timestamp" ascending:TRUE] autorelease]]];
@@ -100,24 +101,6 @@
     [messageTextField setEnabled:FALSE];
     [_twitter sendMessage:[messageTextField stringValue] withCallback:self];
 }
-
-//- (float) heightForString:(NSString*)myString andFont:(NSFont*)myFont andWidth:(float)myWidth {
-//    NSTextStorage *textStorage = [[[NSTextStorage alloc]
-//                                   initWithString:myString] autorelease];
-//    NSTextContainer *textContainer = [[[NSTextContainer alloc]
-//                                       initWithContainerSize: NSMakeSize(myWidth, FLT_MAX)] autorelease];
-//    NSLayoutManager *layoutManager = [[[NSLayoutManager alloc] init]
-//                                      autorelease];
-//    [layoutManager addTextContainer:textContainer];
-//    [textStorage addLayoutManager:layoutManager];
-//    [textStorage addAttribute:NSFontAttributeName value:myFont
-//                        range:NSMakeRange(0, [textStorage length])];
-//    [textContainer setLineFragmentPadding:0.0];
-//    (void) [layoutManager glyphRangeForTextContainer:textContainer];
-//    return [layoutManager
-//            usedRectForTextContainer:textContainer].size.height;
-//}
-
 
 // TwitterPostCallback methods ///////////////////////////////////////////////////
 - (void) finishedToPost {

@@ -7,6 +7,17 @@
 - (void) awakeFromNib {
     [self setDelegate:self];
     _defaultHeight = [self frame].size.height;
+    _defaultBackgroundColor = [[self backgroundColor] retain];
+}
+
+- (void) dealloc  {
+    [_defaultBackgroundColor release];
+    [super dealloc];
+}
+
+- (void) setLengthForWarning:(int)warning max:(int)max {
+    _warningLength = warning;
+    _maxLength = max;
 }
 
 - (void) setCallback:(NSObject<AutoResizingTextFieldCallback>*)callback {
@@ -58,7 +69,53 @@
     [_callback autoResizingTextFieldResized:heightDelta];
 }
 
+- (void) checkAndUpdateMaxLength {
+    if (_maxLength <= [[self stringValue] length]) {
+        _lengthState = NTLN_LENGTH_STATE_MAXIMUM;
+        //                [self setEnabled:FALSE];
+        [self setBackgroundColor:[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:1 alpha:1]];
+    }
+}
+
+- (void) checkAndUpdateWarningLength {
+    if (_warningLength <= [[self stringValue] length] && [[self stringValue] length] < _maxLength) {
+        _lengthState = NTLN_LENGTH_STATE_WARNING;
+        [self setBackgroundColor:[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:1 alpha:1]];
+    }
+}
+
+- (void) checkAndUpdateNormalLength {
+    if ([[self stringValue] length] < _warningLength) {
+        _lengthState = NTLN_LENGTH_STATE_NORMAL;
+        [self setBackgroundColor:_defaultBackgroundColor];
+    }
+}
+
+- (void) updateTextState {
+        
+    switch (_lengthState) {
+        case NTLN_LENGTH_STATE_NORMAL:
+            [self checkAndUpdateMaxLength];
+            [self checkAndUpdateWarningLength];
+            break;
+            
+        case NTLN_LENGTH_STATE_WARNING:
+            [self checkAndUpdateMaxLength];
+            [self checkAndUpdateNormalLength];
+            break;
+        
+        case NTLN_LENGTH_STATE_MAXIMUM:
+            [self checkAndUpdateWarningLength];
+            [self checkAndUpdateNormalLength];
+            break;
+            
+        default:
+            break;
+    }
+}
+
 - (void)controlTextDidChange:(NSNotification *)aNotification {
+    [self updateTextState];
     [self updateHeight];
 }
 
