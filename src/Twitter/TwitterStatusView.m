@@ -14,6 +14,15 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
     _viewHighlightedBackgroundColorReplyProbable = [[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:0.7 alpha:1] retain];
 }
 
+- (void) awakeFromNib {
+    _defaultHeight = [self frame].size.height;
+    _requiredHeight = _defaultHeight;
+}
+
+- (float) requiredHeight {
+    return _requiredHeight;
+}
+
 - (void) setTwitterStatus:(TwitterStatus*)status {
     _status = status;
     [_status retain];
@@ -47,7 +56,12 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
         default:
             break;
     }
-    
+ 
+    float delta = [textField expandIfNeeded];
+    if (delta > 0) {
+//        NSLog(@"delta %f ------------------", delta);
+        _requiredHeight = _defaultHeight + delta;
+    }
 }
 
 - (void) lowlight {
@@ -65,6 +79,8 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
         default:
             break;
     }
+
+    _requiredHeight = _defaultHeight;
 }
 
 - (void)drawRect:(NSRect)aRect {

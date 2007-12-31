@@ -29,7 +29,7 @@
     
     NSRange targetRange = NSMakeRange(startRange.location, searchRange.location - startRange.location);
     NSString *extracted = [aString substringWithRange:targetRange];
-    NSLog(@"extracted: %@", [aString substringWithRange:targetRange]);
+//    NSLog(@"extracted: %@", [aString substringWithRange:targetRange]);
     [back addObject:extracted];
     
     NSArray *subBack = [self tokenize:[aString substringWithRange:

@@ -55,7 +55,7 @@
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
-			<string>NSTextField</string>
+			<string>TwitterStatusViewTextField</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

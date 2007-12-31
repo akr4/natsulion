@@ -68,4 +68,8 @@
     [iconView lowlight];
 }
 
+- (float) requiredHeight {
+    return [view requiredHeight];
+}
+
 @end

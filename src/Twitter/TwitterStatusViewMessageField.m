@@ -31,9 +31,46 @@
 
 - (void) awakeFromNib {
     [super awakeFromNib];
+    
+    _defaultHeight = [self frame].size.height;
     [self setAllowsEditingTextAttributes:TRUE];
 }
 
+
+// internal methods /////////////////////////////////////////////////////////////////////////////////////
+
+- (float) heightForString:(NSAttributedString*)myString andWidth:(float)myWidth {
+    NSTextStorage *textStorage = [[[NSTextStorage alloc]
+                                   initWithAttributedString:myString] autorelease];
+    NSTextContainer *textContainer = [[[NSTextContainer alloc]
+                                       initWithContainerSize: NSMakeSize(myWidth, FLT_MAX)] autorelease];
+    NSLayoutManager *layoutManager = [[[NSLayoutManager alloc] init]
+                                      autorelease];
+    [layoutManager addTextContainer:textContainer];
+    [textStorage addLayoutManager:layoutManager];
+    [textContainer setLineFragmentPadding:0.0];
+    (void) [layoutManager glyphRangeForTextContainer:textContainer];
+    return [layoutManager
+            usedRectForTextContainer:textContainer].size.height;
+}
+
+// returns delta of expaned height
+- (float) expandIfNeeded {
+    float height = [self heightForString:[self attributedStringValue] andWidth:([self frame].size.width - 4)] + 2;
+    if (height > _defaultHeight) {
+//        NSRect rect = [self frame];
+//        rect.size.height = height;
+//        rect.origin.y = 63;
+        
+        
+//        [self setFrame:rect];
+        [self setFrameSize:NSMakeSize([self frame].size.width, height)];
+    }
+    
+    return height - _defaultHeight;
+}
+         
+// public methods //////////////////////////////////////////////////////////////////////
 - (void) highlight {
     [super highlight];
     [self setSelectable:TRUE];
@@ -42,6 +79,7 @@
 - (void) lowlight {
     [super lowlight];
     [self setSelectable:FALSE];
+    [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
 }
 
 - (void) setValueAndFormat:(NSString*)aString {
@@ -72,5 +110,7 @@
 - (void) setMessage:(NSString*)message {
     [self setValueAndFormat:message];
 }
+
+
 
 @end

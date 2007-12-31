@@ -20,6 +20,7 @@
 - (void) highlight;
 - (void) lowlight;
 - (NSView*) view;
+- (float) requiredHeight;
 
 @end
 

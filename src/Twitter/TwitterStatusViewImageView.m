@@ -20,8 +20,7 @@
     [[self superview] mouseDown:theEvent];
 }
 
--(void)cursorUpdate:(NSEvent *)theEvent
-{
+-(void)cursorUpdate:(NSEvent *)theEvent {
     [[NSCursor pointingHandCursor] set];
 }
 

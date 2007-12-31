@@ -27,6 +27,7 @@
 
 - (void) updateSelection {
     [self selectedRowIndexes:[[viewColumn tableView] selectedRowIndexes]];
+    [[viewColumn tableView] noteHeightOfRowsWithIndexesChanged:[[viewColumn tableView] selectedRowIndexes]];
 }
 
 
@@ -66,6 +67,12 @@
 - (void) tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(int)row {
     TwitterStatusViewController *controller = [[mainWindowController messageViewControllerArray] objectAtIndex:row];
     [(CustomViewCell*)cell addView:[controller view]];
+}
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
+    TwitterStatusViewController *controller = [[mainWindowController messageViewControllerArray] objectAtIndex:row];
+//    NSLog(@"%s:%d - %f", __PRETTY_FUNCTION__, row, [controller requiredHeight]);
+    return [controller requiredHeight];
 }
 
 // for display custom view /////////////////////////////////////////////////////
