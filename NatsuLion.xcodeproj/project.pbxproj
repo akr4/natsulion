@@ -34,6 +34,7 @@
 		E9E5BF9F0D28988800F34B9B /* EntityReferenceConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* EntityReferenceConverter.m */; };
 		E9E5BFA20D2898D200F34B9B /* EntityReferenceConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BFA10D2898D200F34B9B /* EntityReferenceConverterTest.m */; };
 		E9E5BFA30D2898F300F34B9B /* EntityReferenceConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* EntityReferenceConverter.m */; };
+		E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */; };
 		E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */; };
 		E9F960930D25D03A007829C4 /* AutoResizingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* AutoResizingTextField.m */; };
 		E9F961550D2622B5007829C4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F961540D2622B5007829C4 /* Sparkle.framework */; };
@@ -124,6 +125,8 @@
 		E9E5BF9E0D28988800F34B9B /* EntityReferenceConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityReferenceConverter.m; sourceTree = "<group>"; };
 		E9E5BFA00D2898D200F34B9B /* EntityReferenceConverterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityReferenceConverterTest.h; sourceTree = "<group>"; };
 		E9E5BFA10D2898D200F34B9B /* EntityReferenceConverterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityReferenceConverterTest.m; sourceTree = "<group>"; };
+		E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUtils.h; sourceTree = "<group>"; };
+		E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUtils.m; sourceTree = "<group>"; };
 		E9F1DB3C0D13CF000072CE81 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterStatusView.nib; sourceTree = "<group>"; };
 		E9F960910D25D03A007829C4 /* AutoResizingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoResizingTextField.h; sourceTree = "<group>"; };
@@ -268,6 +271,8 @@
 				E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */,
 				E93F7BE60D27DC6B00366600 /* TwitterStatusViewMessageField.h */,
 				E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */,
+				E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */,
+				E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				E9614CE10D27BC75009743CE /* URLExtractor.m in Sources */,
 				E93F7BE80D27DC6B00366600 /* TwitterStatusViewMessageField.m in Sources */,
 				E9E5BF9F0D28988800F34B9B /* EntityReferenceConverter.m in Sources */,
+				E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

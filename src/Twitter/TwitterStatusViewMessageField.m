@@ -1,5 +1,6 @@
 #import "TwitterStatusViewMessageField.h"
 #import "URLExtractor.h"
+#import "TwitterUtils.h"
 
 @interface NSAttributedString (Hyperlink)
 +(id)hyperlinkFromString:(NSString*)inString withURL:(NSURL*)aURL;
@@ -47,16 +48,20 @@
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
     
     URLExtractor *extractor = [[[URLExtractor alloc] init] autorelease];
-    NSArray *tokens = [extractor tokenize:aString];
+    NSArray *tokens = [extractor tokenizeByAll:aString];
     
     NSMutableAttributedString* string = [[[NSMutableAttributedString alloc] init] autorelease];
     int i;
     for (i = 0; i < [tokens count]; i++) {
         NSString *token = [self decodeEntityReferences:[tokens objectAtIndex:i]];
-        NSLog(@"token: %@", token);
-        if ([token rangeOfString:URLEXTRACTOR_PROTOCOL_HEAD_HTTP].location == 0) {
-//            NSLog(@"URL found  -------------------------");
+//        NSLog(@"token: %@", token);
+        if ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 && [token length] > [NTLN_URLEXTRACTOR_PREFIX_HTTP length]) {
             [string appendAttributedString:[NSAttributedString hyperlinkFromString:token withURL:[NSURL URLWithString:token]]];
+        } else if ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_ID].location == 0  && [token length] > [NTLN_URLEXTRACTOR_PREFIX_ID length]) {
+            [string appendAttributedString:
+             [NSAttributedString hyperlinkFromString:token
+                                             withURL:[NSURL URLWithString:[[[[TwitterUtils alloc] init] autorelease] 
+                                                                           userPageURLString:[token substringFromIndex:1]]]]];
         } else {
             [string appendAttributedString:[[[NSAttributedString alloc] initWithString:token] autorelease]];
         }
