@@ -45,19 +45,16 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>scrollLineDown</key>
-				<string>id</string>
-			</dict>
 			<key>CLASS</key>
 			<string>MessageTableViewController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
-				<key>mainWindowController</key>
-				<string>MainWindowController</string>
+				<key>messageViewControllerArrayController</key>
+				<string>NSArrayController</string>
+				<key>scrollView</key>
+				<string>NSScrollView</string>
 				<key>viewColumn</key>
 				<string>NSTableColumn</string>
 			</dict>
@@ -84,6 +81,8 @@
 				<string>MessageTableViewController</string>
 				<key>messageTextField</key>
 				<string>AutoResizingTextField</string>
+				<key>messageViewControllerArrayController</key>
+				<string>NSArrayController</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>

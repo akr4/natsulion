@@ -5,7 +5,7 @@
 
 - (id)initWithUrl:(NSString*)url andCallback:(NSObject<AsyncUrlConnectionCallback>*)callback {
     NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
-    NSLog(@"sending request to %@", encodedUrl);
+//    NSLog(@"sending request to %@", encodedUrl);
     
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
@@ -28,7 +28,7 @@
 
 - (id) initPostConnectionWithUrl:(NSString*)url andBodyString:(NSString*)bodyString andCallback:(NSObject<AsyncUrlConnectionCallback>*)callback {
     NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
-    NSLog(@"sending (encoded) request to %@", encodedUrl);
+//    NSLog(@"sending (encoded) request to %@", encodedUrl);
 
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
@@ -60,16 +60,14 @@
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
     int statusCode = [httpResponse statusCode];
-    NSLog(@"receiving response... status code = %d", statusCode);
+//    NSLog(@"receiving response... status code = %d", statusCode);
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    NSLog(@"connectionDidReceiveData");
     [_recievedData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSLog(@"connectionDidFinishLoading");
     [_callback responseArrived:_recievedData];
 }
 
@@ -80,7 +78,6 @@
 
 -(void)connection:(NSURLConnection*)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge { 
     if ([challenge previousFailureCount] == 0) { 
-        NSLog(@"challenging authentication");
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         // TODO: this class should not know user defaults key
         NSURLCredential *newCredential = [NSURLCredential credentialWithUser:[defaults objectForKey:PREFERENCE_USERID] password:[defaults objectForKey:PREFERENCE_PASSWORD] persistence:NSURLCredentialPersistenceNone]; 

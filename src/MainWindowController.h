@@ -10,14 +10,13 @@
     IBOutlet NSProgressIndicator *downloadProgress;
     IBOutlet AutoResizingTextField *messageTextField;
     
-    // TODO: consider having another array for messages.
-    NSMutableArray *_messageViewControllerArray;
+    IBOutlet NSArrayController *messageViewControllerArrayController;
+    
     Twitter *_twitter;
     GrowlNotifier *_growl;
     int _messageTextFieldRow;
 }
 
 - (IBAction) sendMessage:(id) sender;
-- (NSArray*) messageViewControllerArray;
 
 @end

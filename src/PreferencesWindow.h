@@ -1,11 +1,3 @@
-//
-//  PreferencesWindow.h
-//  NatsuLion
-//
-//  Created by 上田 明良 on 07/12/18.
-//  Copyright 2007 __MyCompanyName__. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
 
 #define PREFERENCE_USERID @"userId"

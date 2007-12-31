@@ -7,10 +7,8 @@
 @implementation MainWindowController
 
 - (id) init {
-    NSLog(@"MainWindowController#init");
     [mainWindow setFrameAutosaveName:@"MainWindow"];
     
-    _messageViewControllerArray = [[NSMutableArray alloc] initWithCapacity:100];
     _twitter = [[Twitter alloc] init];
     _messageTextFieldRow = 1;    
     
@@ -20,7 +18,6 @@
 }
 
 - (void) dealloc {
-    [_messageViewControllerArray release];
     [_twitter release];
     [_growl release];
     [super dealloc];
@@ -32,9 +29,9 @@
     [messageTextField setCallback:self];
     [messageTextField setLengthForWarning:140 max:160];
     
-//    [messageViewArrayController setSortDescriptors:
-//        [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"status.timestamp" ascending:TRUE] autorelease]]];
-//    [messageViewArrayController setAutomaticallyRearrangesObjects:TRUE];    
+    [messageViewControllerArrayController setSortDescriptors:
+        [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"status.timestamp" ascending:TRUE] autorelease]]];
+    [messageViewControllerArrayController setAutomaticallyRearrangesObjects:TRUE];    
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
@@ -59,38 +56,18 @@
 
 - (BOOL) isNewMessage:(Message*)message {
     TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc] initWithTwitterStatus:(TwitterStatus*)message] autorelease];
-    
-    if ([_messageViewControllerArray containsObject:newController]) {
-        return FALSE;
-    } else {
-        return TRUE;
-    }
+    return ![[messageViewControllerArrayController arrangedObjects] containsObject:newController];
 }
 
 - (void) addIfNewMessage:(Message*)message {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);    
     TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc] initWithTwitterStatus:(TwitterStatus*)message] autorelease];
     
-    if ([_messageViewControllerArray containsObject:newController]) {
+    if ([[messageViewControllerArrayController arrangedObjects] containsObject:newController]) {
         return;
     }
     
-    int i;
-    for (i = 0; i < [_messageViewControllerArray count]; i++) {
-        Message *messageInArray = [(TwitterStatusViewController*)[_messageViewControllerArray objectAtIndex:i] status];
-        
-        if ([(NSDate*)[messageInArray timestamp] compare:[message timestamp]] == NSOrderedAscending) {
-            [_messageViewControllerArray insertObject:newController atIndex:i];
-            return;
-        }
-    }
-    [_messageViewControllerArray addObject:newController];
-    
-    [messageTableViewController updateSelection];
-}
-
-- (NSArray*) messageViewControllerArray {
-    return _messageViewControllerArray;
+    [messageViewControllerArrayController addObject:newController];
+    [messageTableViewController newMessageArrived];
 }
 
 - (void) updateStatus {
@@ -146,8 +123,6 @@
             }
         }
     }
- 
-    [messageTableViewController reloadTableView];
 }
 
 - (void) started {

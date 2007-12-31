@@ -20,16 +20,15 @@
 }
 
 - (void) processNextUrl {
-    NSLog(@"processNextUrl");
     if (_connection != nil) {
-        NSLog(@"the connection is used for: %@", _connection);
+//        NSLog(@"the connection is used for: %@", _connection);
         return;
     }
     
-    NSLog(@"processNextUrl starting new connection");
+//    NSLog(@"processNextUrl starting new connection");
     _currentUrl = [[_waitings anyObject] retain];
     if (!_currentUrl) {
-        NSLog(@"no url waiting.");
+//        NSLog(@"no url waiting.");
         return;
     }
     
