@@ -14,7 +14,7 @@
     }
     [textField setMessage:[status text]];
     [nameField setStringValue:[[[status name] stringByAppendingString:@"/"] stringByAppendingString:[status screenName]]];
-    [iconView setImage:[status icon]];
+    [iconView setStatus:_status];
     [timestampField setStringValue:[[status timestamp]      
                                     descriptionWithCalendarFormat:@"%02H:%02M:%02S"
                                     timeZone:[NSTimeZone localTimeZone]
