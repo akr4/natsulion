@@ -555,6 +555,17 @@
 			E9E6B39E0D29FB9700F96410 /* PBXTextBookmark */ = E9E6B39E0D29FB9700F96410 /* PBXTextBookmark */;
 			E9E6B39F0D29FBAB00F96410 /* PBXTextBookmark */ = E9E6B39F0D29FBAB00F96410 /* PBXTextBookmark */;
 			E9E6B3A00D29FBB300F96410 /* PBXTextBookmark */ = E9E6B3A00D29FBB300F96410 /* PBXTextBookmark */;
+			E9E6B3A10D29FCE900F96410 /* PBXTextBookmark */ = E9E6B3A10D29FCE900F96410 /* PBXTextBookmark */;
+			E9E6B3A30D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3A30D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3A40D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3A40D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3A50D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3A50D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3A60D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3A60D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3A70D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3A70D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3A80D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3A80D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3A90D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3A90D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3AA0D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3AA0D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3AB0D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3AB0D29FDDB00F96410 /* PBXTextBookmark */;
+			E9E6B3AC0D29FDDB00F96410 /* PBXTextBookmark */ = E9E6B3AC0D29FDDB00F96410 /* PBXTextBookmark */;
 			E9F1D9580D133F4F0072CE81 = E9F1D9580D133F4F0072CE81 /* PBXTextBookmark */;
 			E9F1D95C0D133F4F0072CE81 = E9F1D95C0D133F4F0072CE81 /* PBXTextBookmark */;
 			E9F960970D25D2AC007829C4 = E9F960970D25D2AC007829C4 /* PBXTextBookmark */;
@@ -599,7 +610,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 41";
 		rLen = 0;
-		rLoc = 2397;
+		rLoc = 2403;
 		rType = 0;
 		vrLen = 1523;
 		vrLoc = 598;
@@ -694,7 +705,7 @@
 	};
 	E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {868, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1021, 573}}";
 			sepNavSelRange = "{84, 0}";
 			sepNavVisRange = "{0, 89}";
 		};
@@ -731,7 +742,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1021, 1050}}";
 			sepNavSelRange = "{1192, 0}";
-			sepNavVisRange = "{790, 1040}";
+			sepNavVisRange = "{790, 1035}";
 		};
 	};
 	E9160C550D120D8800C9EEFF /* PBXTextBookmark */ = {
@@ -874,9 +885,9 @@
 	};
 	E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {868, 1694}}";
-			sepNavSelRange = "{2496, 0}";
-			sepNavVisRange = "{1226, 1600}";
+			sepNavIntBoundsRect = "{{0, 0}, {1021, 1694}}";
+			sepNavSelRange = "{2527, 0}";
+			sepNavVisRange = "{1176, 1650}";
 		};
 	};
 	E93F7C040D27E13100366600 /* PBXTextBookmark */ = {
@@ -1491,7 +1502,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 53";
 		rLen = 0;
-		rLoc = 2314;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1714;
 		vrLoc = 1255;
@@ -1511,7 +1522,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 53";
 		rLen = 0;
-		rLoc = 2314;
+		rLoc = 2320;
 		rType = 0;
 		vrLen = 1714;
 		vrLoc = 1255;
@@ -1721,7 +1732,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 89";
 		rLen = 5;
-		rLoc = 3148;
+		rLoc = 3154;
 		rType = 0;
 		vrLen = 1749;
 		vrLoc = 1404;
@@ -1739,7 +1750,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 89";
 		rLen = 5;
-		rLoc = 3148;
+		rLoc = 3154;
 		rType = 0;
 		vrLen = 1749;
 		vrLoc = 1404;
@@ -1969,7 +1980,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 79";
 		rLen = 0;
-		rLoc = 3147;
+		rLoc = 3153;
 		rType = 0;
 		vrLen = 1477;
 		vrLoc = 1676;
@@ -2149,7 +2160,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 45";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1344;
 		vrLoc = 667;
@@ -2159,7 +2170,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 45";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1356;
 		vrLoc = 667;
@@ -2169,7 +2180,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 45";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 667;
@@ -2179,7 +2190,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 667;
@@ -2199,7 +2210,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 667;
@@ -2249,7 +2260,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 667;
@@ -2279,7 +2290,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1397;
 		vrLoc = 667;
@@ -2319,7 +2330,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 47";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1395;
 		vrLoc = 667;
@@ -2349,7 +2360,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 47";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1395;
 		vrLoc = 667;
@@ -2499,7 +2510,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 46";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1424;
 		vrLoc = 447;
@@ -2509,7 +2520,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 46";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1425;
 		vrLoc = 447;
@@ -2519,7 +2530,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 44";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1366;
 		vrLoc = 447;
@@ -2529,7 +2540,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 44";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1323;
 		vrLoc = 708;
@@ -2539,7 +2550,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 51";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1324;
 		vrLoc = 708;
@@ -2549,7 +2560,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 51";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1440;
 		vrLoc = 708;
@@ -2559,7 +2570,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 51";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1440;
 		vrLoc = 708;
@@ -2569,7 +2580,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 51";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1440;
 		vrLoc = 708;
@@ -2579,7 +2590,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 51";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1440;
 		vrLoc = 708;
@@ -2627,7 +2638,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 45";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1744;
 		vrLoc = 551;
@@ -2687,7 +2698,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 55";
 		rLen = 0;
-		rLoc = 1863;
+		rLoc = 1869;
 		rType = 0;
 		vrLen = 1378;
 		vrLoc = 776;
@@ -2727,7 +2738,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 55";
 		rLen = 0;
-		rLoc = 1863;
+		rLoc = 1869;
 		rType = 0;
 		vrLen = 1476;
 		vrLoc = 678;
@@ -2747,7 +2758,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 50";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1331;
 		vrLoc = 776;
@@ -2757,7 +2768,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 43";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1327;
 		vrLoc = 776;
@@ -2787,7 +2798,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 43";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 431;
@@ -2797,7 +2808,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 43";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 431;
@@ -2817,7 +2828,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 45";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1496;
 		vrLoc = 483;
@@ -2827,7 +2838,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 45";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1496;
 		vrLoc = 483;
@@ -2837,7 +2848,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 43";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 483;
@@ -2847,7 +2858,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 44";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1517;
 		vrLoc = 483;
@@ -2857,7 +2868,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 44";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1542;
 		vrLoc = 483;
@@ -2877,7 +2888,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 46";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1394;
 		vrLoc = 898;
@@ -2887,7 +2898,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 46";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1524;
 		vrLoc = 898;
@@ -2907,7 +2918,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 52";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1390;
 		vrLoc = 898;
@@ -2917,7 +2928,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 52";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1390;
 		vrLoc = 898;
@@ -2937,7 +2948,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 49";
 		rLen = 0;
-		rLoc = 1695;
+		rLoc = 1701;
 		rType = 0;
 		vrLen = 1389;
 		vrLoc = 898;
@@ -2947,7 +2958,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 47";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1268;
 		vrLoc = 1160;
@@ -2957,7 +2968,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 52";
 		rLen = 0;
-		rLoc = 1700;
+		rLoc = 1706;
 		rType = 0;
 		vrLen = 1268;
 		vrLoc = 1160;
@@ -2967,7 +2978,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 52";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1268;
 		vrLoc = 1160;
@@ -2987,7 +2998,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 64";
 		rLen = 0;
-		rLoc = 2003;
+		rLoc = 2009;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 1190;
@@ -2997,7 +3008,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 64";
 		rLen = 0;
-		rLoc = 2003;
+		rLoc = 2009;
 		rType = 0;
 		vrLen = 1419;
 		vrLoc = 1190;
@@ -3017,7 +3028,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 64";
 		rLen = 0;
-		rLoc = 2003;
+		rLoc = 2009;
 		rType = 0;
 		vrLen = 1291;
 		vrLoc = 1862;
@@ -3027,7 +3038,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 91";
 		rLen = 0;
-		rLoc = 3105;
+		rLoc = 3111;
 		rType = 0;
 		vrLen = 1291;
 		vrLoc = 1862;
@@ -3037,7 +3048,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 57";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 930;
@@ -3047,7 +3058,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 52";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1313;
 		vrLoc = 930;
@@ -3057,7 +3068,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 53";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1639;
 		vrLoc = 391;
@@ -3067,7 +3078,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 53";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1502;
 		vrLoc = 676;
@@ -3077,7 +3088,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 54";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1578;
 		vrLoc = 676;
@@ -3087,7 +3098,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 53";
 		rLen = 0;
-		rLoc = 1747;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 1580;
 		vrLoc = 676;
@@ -3097,7 +3108,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 46";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1513;
 		vrLoc = 676;
@@ -3107,7 +3118,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 48";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1749;
 		vrLoc = 525;
@@ -3117,7 +3128,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 86";
 		rLen = 0;
-		rLoc = 2468;
+		rLoc = 2474;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 2302;
@@ -3127,7 +3138,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 62";
 		rLen = 0;
-		rLoc = 1724;
+		rLoc = 1730;
 		rType = 0;
 		vrLen = 1546;
 		vrLoc = 1051;
@@ -3137,7 +3148,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 86";
 		rLen = 0;
-		rLoc = 2468;
+		rLoc = 2474;
 		rType = 0;
 		vrLen = 826;
 		vrLoc = 2327;
@@ -3147,7 +3158,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 86";
 		rLen = 0;
-		rLoc = 2468;
+		rLoc = 2474;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 2302;
@@ -3157,7 +3168,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 86";
 		rLen = 0;
-		rLoc = 2468;
+		rLoc = 2474;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 2302;
@@ -3167,7 +3178,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 86";
 		rLen = 0;
-		rLoc = 2468;
+		rLoc = 2474;
 		rType = 0;
 		vrLen = 851;
 		vrLoc = 2302;
@@ -3187,7 +3198,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 63";
 		rLen = 0;
-		rLoc = 1724;
+		rLoc = 1730;
 		rType = 0;
 		vrLen = 1550;
 		vrLoc = 1190;
@@ -3207,7 +3218,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 63";
 		rLen = 0;
-		rLoc = 1724;
+		rLoc = 1730;
 		rType = 0;
 		vrLen = 1550;
 		vrLoc = 1190;
@@ -3267,7 +3278,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 63";
 		rLen = 0;
-		rLoc = 1724;
+		rLoc = 1730;
 		rType = 0;
 		vrLen = 1391;
 		vrLoc = 1349;
@@ -3317,7 +3328,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 50";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 1349;
@@ -3337,7 +3348,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 47";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 1349;
@@ -3347,7 +3358,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 47";
 		rLen = 0;
-		rLoc = 1664;
+		rLoc = 1670;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 1349;
@@ -3357,7 +3368,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 1349;
@@ -3377,7 +3388,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1349;
 		vrLoc = 1250;
@@ -3387,7 +3398,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1349;
 		vrLoc = 1250;
@@ -3407,7 +3418,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1347;
 		vrLoc = 1250;
@@ -3435,7 +3446,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 1250;
@@ -3445,7 +3456,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1319;
 		vrLoc = 1250;
@@ -3491,7 +3502,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1021, 826}}";
 			sepNavSelRange = "{1211, 0}";
-			sepNavVisRange = "{325, 1326}";
+			sepNavVisRange = "{0, 1211}";
 		};
 	};
 	E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {
@@ -3595,8 +3606,8 @@
 	E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1021, 1344}}";
-			sepNavSelRange = "{1931, 0}";
-			sepNavVisRange = "{0, 1449}";
+			sepNavSelRange = "{1613, 0}";
+			sepNavVisRange = "{676, 1406}";
 			sepNavWindowFrame = "{{38, 152}, {799, 626}}";
 		};
 	};
@@ -4094,7 +4105,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1407;
 		vrLoc = 1190;
@@ -4254,7 +4265,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1407;
 		vrLoc = 1190;
@@ -5172,7 +5183,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 0;
@@ -5262,7 +5273,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
 		name = "MessageTableViewController.m: 58";
 		rLen = 0;
-		rLoc = 1931;
+		rLoc = 1937;
 		rType = 0;
 		vrLen = 1449;
 		vrLoc = 0;
@@ -5326,6 +5337,116 @@
 		rType = 0;
 		vrLen = 1326;
 		vrLoc = 325;
+	};
+	E9E6B3A10D29FCE900F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9A411280D29904F003BFA9F /* AppController.m */;
+		name = "AppController.m: 42";
+		rLen = 0;
+		rLoc = 1211;
+		rType = 0;
+		vrLen = 1326;
+		vrLoc = 325;
+	};
+	E9E6B3A30D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9A411280D29904F003BFA9F /* AppController.m */;
+		name = "AppController.m: 42";
+		rLen = 0;
+		rLoc = 1211;
+		rType = 0;
+		vrLen = 1211;
+		vrLoc = 0;
+	};
+	E9E6B3A40D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9160BC70D11F4F500C9EEFF /* IconRepository.m */;
+		name = "IconRepository.m: 46";
+		rLen = 0;
+		rLoc = 1192;
+		rType = 0;
+		vrLen = 1035;
+		vrLoc = 790;
+	};
+	E9E6B3A50D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */;
+		name = "TwitterStatus.h: 6";
+		rLen = 0;
+		rLoc = 84;
+		rType = 0;
+		vrLen = 89;
+		vrLoc = 0;
+	};
+	E9E6B3A60D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */;
+		name = "TwitterStatusViewMessageField.m: 66";
+		rLen = 0;
+		rLoc = 2527;
+		rType = 0;
+		vrLen = 1650;
+		vrLoc = 1176;
+	};
+	E9E6B3A70D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
+		name = "MessageTableViewController.m: 58";
+		rLen = 0;
+		rLoc = 1937;
+		rType = 0;
+		vrLen = 1383;
+		vrLoc = 66;
+	};
+	E9E6B3A80D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9A411280D29904F003BFA9F /* AppController.m */;
+		name = "AppController.m: 42";
+		rLen = 0;
+		rLoc = 1211;
+		rType = 0;
+		vrLen = 1211;
+		vrLoc = 0;
+	};
+	E9E6B3A90D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9160BC70D11F4F500C9EEFF /* IconRepository.m */;
+		name = "IconRepository.m: 46";
+		rLen = 0;
+		rLoc = 1192;
+		rType = 0;
+		vrLen = 1035;
+		vrLoc = 790;
+	};
+	E9E6B3AA0D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */;
+		name = "TwitterStatus.h: 6";
+		rLen = 0;
+		rLoc = 84;
+		rType = 0;
+		vrLen = 89;
+		vrLoc = 0;
+	};
+	E9E6B3AB0D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */;
+		name = "TwitterStatusViewMessageField.m: 66";
+		rLen = 0;
+		rLoc = 2527;
+		rType = 0;
+		vrLen = 1650;
+		vrLoc = 1176;
+	};
+	E9E6B3AC0D29FDDB00F96410 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */;
+		name = "MessageTableViewController.m: 45";
+		rLen = 0;
+		rLoc = 1613;
+		rType = 0;
+		vrLen = 1406;
+		vrLoc = 676;
 	};
 	E9F1D9580D133F4F0072CE81 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

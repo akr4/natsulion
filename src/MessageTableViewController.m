@@ -42,7 +42,7 @@
 
 - (void) scrollDown {
     NSRect bounds = [[[viewColumn tableView] superview] bounds];
-    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y + [[viewColumn tableView] rowHeight]);
+    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y + [[viewColumn tableView] rowHeight] + 2.0);
     [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
