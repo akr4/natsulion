@@ -211,6 +211,9 @@
                                                                                    username:username
                                                                                    password:password
                                                                                    callback:handler] autorelease];
+    
+    NSLog(@"sent data [%@]", requestStr);
+    
     if (!connection) {
         NSLog(@"failed to get connection.");
         return;

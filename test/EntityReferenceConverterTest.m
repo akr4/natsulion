@@ -21,4 +21,10 @@
     STAssertEqualObjects([converter dereference:INPUT], @"hello,<world>", nil);
 }
 
+- (void) testAmpReverse {
+    NSString *INPUT = @"hello,&world";
+    EntityReferenceConverter *converter = [[EntityReferenceConverter alloc] init];
+    STAssertEqualObjects([converter reference:INPUT], @"hello,&amp;world", nil);
+}
+
 @end

@@ -7,39 +7,48 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
-      <title>NatsuLion Version 0.1</title>
+      <title>NatsuLion Version 0.4</title>
       <description>
-&lt;ul&gt;
-&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-4'&gt;NTLN-4&lt;/a&gt;] - auto resizing textfield for message input
-&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-6'&gt;NTLN-6&lt;/a&gt;] - improve the way of selecting a message
-&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-24'&gt;NTLN-24&lt;/a&gt;] - auto-update feature
-&lt;/ul&gt;
-</description>
-      <pubDate>Sat, 29 Dec 2008 16:09:00 +9000</pubDate>
-      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.1.zip"
-        length="662762"
-        type="application/octet-stream"/>
-    </item>
-    <item>
-      <title>NatsuLion Version 0.2</title>
-      <description>
+        Release Notes - NatsuLion - Version 0.4
+    
+&lt;h2&gt;        Notice
+&lt;/h2&gt;
+
+From this version, NatsuLion uses keychain to store user's password (NTLN-12). Then the password stored in your plist is no longer needed. So, please remove plist file sitting at $HOME/Library/Preferences/net.physalis.NatsuLion.plist and then launch NatsuLion.
+
+
+
 &lt;h2&gt;        Bug
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-23'&gt;NTLN-23&lt;/a&gt;] -         not appropriate row is highlighted when a selected row moves
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-32'&gt;NTLN-32&lt;/a&gt;] -         convert entity reference to a normal character in the message view
 &lt;/li&gt;
 &lt;/ul&gt;
-        
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-7'&gt;NTLN-7&lt;/a&gt;] -         expand a message row to show its whole message text if truncated
+&lt;/li&gt;
+&lt;/ul&gt;
+    
 &lt;h2&gt;        New Feature
 &lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-28'&gt;NTLN-28&lt;/a&gt;] -         color reply message
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-3'&gt;NTLN-3&lt;/a&gt;] -         make @&lt;id&gt; a link to the page of &lt;id&gt; user
 &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-      <pubDate>Sat, 30 Dec 2008 08:18:00 +9000</pubDate>
-      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.2.zip"
-        length="665220"
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-12'&gt;NTLN-12&lt;/a&gt;] -         store user passwords in his  keychain
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-20'&gt;NTLN-20&lt;/a&gt;] -         make refresh interval configurable
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-37'&gt;NTLN-37&lt;/a&gt;] -         configuration wizard like feature for the first time launched
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-38'&gt;NTLN-38&lt;/a&gt;] -         change sort order to ascending
+&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <pubDate>Wed, 02 Jan 2008 02:54:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.4.zip"
+        length="698758"
         type="application/octet-stream"/>
     </item>
     <item>
@@ -74,9 +83,45 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-      <pubDate>Sat, 31 Dec 2008 10:48:00 +9000</pubDate>
+      <pubDate>Sat, 31 Dec 2007 10:48:00 +9000</pubDate>
       <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.3.zip"
         length="670606"
+        type="application/octet-stream"/>
+    </item>
+    <item>
+      <title>NatsuLion Version 0.2</title>
+      <description>
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-23'&gt;NTLN-23&lt;/a&gt;] -         not appropriate row is highlighted when a selected row moves
+&lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-28'&gt;NTLN-28&lt;/a&gt;] -         color reply message
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Sat, 30 Dec 2007 08:18:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.2.zip"
+        length="665220"
+        type="application/octet-stream"/>
+    </item>
+    <item>
+      <title>NatsuLion Version 0.1</title>
+      <description>
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-4'&gt;NTLN-4&lt;/a&gt;] - auto resizing textfield for message input
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-6'&gt;NTLN-6&lt;/a&gt;] - improve the way of selecting a message
+&lt;li&gt;[&lt;a href='http://www.physalis.net/jira//browse/NTLN-24'&gt;NTLN-24&lt;/a&gt;] - auto-update feature
+&lt;/ul&gt;
+</description>
+      <pubDate>Sat, 29 Dec 2007 16:09:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.1.zip"
+        length="662762"
         type="application/octet-stream"/>
     </item>
   </channel>
