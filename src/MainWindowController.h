@@ -4,7 +4,7 @@
 #import "GrowlNotifier.h"
 #import "AutoResizingTextField.h"
 
-@interface MainWindowController : NSObject <TimelineCallback, TwitterPostCallback, AutoResizingTextFieldCallback> {
+@interface MainWindowController : NSWindowController <TimelineCallback, TwitterPostCallback, AutoResizingTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
     IBOutlet MessageTableViewController *messageTableViewController;
     IBOutlet NSProgressIndicator *downloadProgress;
@@ -18,5 +18,8 @@
 }
 
 - (IBAction) sendMessage:(id) sender;
+
+- (void) showWindowToFront;
+- (void) setFrameAutosaveName:(NSString*)name;
 
 @end

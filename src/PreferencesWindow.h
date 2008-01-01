@@ -4,15 +4,13 @@
 #define PREFERENCE_PASSWORD @"password"
 #define PREFERENCE_USE_GROWL @"useGrowl"
 #define PREFERENCE_SHOW_WINDOW_WHEN_NEW_MESSAGE @"showWindowWhenNewMessage"
+#define PREFERENCE_REFRESH_INTERVAL @"refreshInterval"
 
 @interface PreferencesWindow : NSWindowController {
-    
-    // Account Informations
-    IBOutlet NSTextField *userIdTextField;
-    IBOutlet NSTextField *passwordTextField;
-    
-    IBOutlet NSButton *useGrowlButton;
-    IBOutlet NSButton *showWindowWhenNewMessageButton;
+ 
+    IBOutlet NSTextField *refreshIntervalTextField;
+    IBOutlet NSStepper *refreshIntervalStepper;
+
 }
-- (IBAction) changeButtonState:(id)sender;
+
 @end

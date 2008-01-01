@@ -7,12 +7,8 @@
 @implementation MainWindowController
 
 - (id) init {
-    [mainWindow setFrameAutosaveName:@"MainWindow"];
-    
     _twitter = [[Twitter alloc] init];
     _messageTextFieldRow = 1;    
-    
-    [[NSTimer scheduledTimerWithTimeInterval:60 target:self selector:@selector(updateStatus) userInfo:nil repeats:YES] fire];
 
     return self;
 }
@@ -34,8 +30,12 @@
     [messageViewControllerArrayController setAutomaticallyRearrangesObjects:TRUE];    
 }
 
-- (void)applicationDidFinishLaunching:(NSNotification *)notification {
-    [mainWindow setFrameAutosaveName:@"MainWindow"];
+- (void) showWindowToFront {
+    [[self window] makeKeyAndOrderFront:nil];
+}
+
+- (void) setFrameAutosaveName:(NSString*)name {
+    [mainWindow setFrameAutosaveName:name];
 }
 
 - (void) sendToGrowlTitle:(NSString*)title
@@ -78,6 +78,7 @@
     [messageTextField setEnabled:FALSE];
     [_twitter sendMessage:[messageTextField stringValue] withCallback:self];
 }
+
 
 // TwitterPostCallback methods ///////////////////////////////////////////////////
 - (void) finishedToPost {
@@ -131,16 +132,6 @@
 
 - (void) stopped {
     [downloadProgress stopAnimation:self];
-}
-
-
-// NSApplicatoin delegate /////////////////////////////////////////////////////////////////
-// TODO: this class should not be a delegate of NSApplication
-
-- (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);    
-    [mainWindow makeKeyAndOrderFront:nil];
-    return TRUE;
 }
 
 // AutoResizingTextField callback ///////////////////////////////////////////////////////

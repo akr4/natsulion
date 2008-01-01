@@ -58,8 +58,8 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-    int statusCode = [httpResponse statusCode];
+//    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+//    int statusCode = [httpResponse statusCode];
 //    NSLog(@"receiving response... status code = %d", statusCode);
 }
 

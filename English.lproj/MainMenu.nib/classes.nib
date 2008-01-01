@@ -85,13 +85,11 @@
 				<string>NSArrayController</string>
 			</dict>
 			<key>SUPERCLASS</key>
-			<string>NSObject</string>
+			<string>NSWindowController</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
-				<key>changeButtonState</key>
-				<string>id</string>
 				<key>updatePreferences</key>
 				<string>id</string>
 			</dict>
@@ -101,17 +99,26 @@
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
-				<key>passwordTextField</key>
-				<string>NSTextField</string>
-				<key>showWindowWhenNewMessageButton</key>
-				<string>NSButton</string>
-				<key>useGrowlButton</key>
-				<string>NSButton</string>
-				<key>userIdTextField</key>
+				<key>refreshIntervalStepper</key>
+				<string>NSStepper</string>
+				<key>refreshIntervalTextField</key>
 				<string>NSTextField</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSWindowController</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>AppController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>mainWindowController</key>
+				<string>MainWindowController</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
 		</dict>
 	</array>
 	<key>IBVersion</key>
