@@ -23,7 +23,29 @@ static Account *_instance;
     return _instance;
 }
 
++ (id) newInstanceWithUsername:(NSString*)username {
+    if (_instance) {
+        [_instance release];
+        _instance = nil;
+    }
+    
+    _instance = [[Account alloc] initWithUsername:username];
+
+    return _instance;
+}
+
+- (id) initWithUsername:(NSString*)username {
+    _username = username;
+    [_username retain];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:_username forKey:PREFERENCE_USERID];
+    
+    return self;
+}
+
 - (void) dealloc {
+    [_username release];
     [_password release];
     [super dealloc];
 }

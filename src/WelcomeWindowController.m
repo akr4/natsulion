@@ -1,14 +1,17 @@
-#import "PreferencesWindow.h"
+#import "WelcomeWindowController.h"
 #import "Account.h"
 
-#define NTLN_PREFRENCESWINDOW_SHEET_OK 0
-#define NTLN_PREFRENCESWINDOW_SHEET_NG 1
+@implementation WelcomeWindowController
 
-@implementation PreferencesWindow
-
-- (void) awakeFromNib {
+- (void) setWelcomeWindowControllerCallback:(NSObject<WelcomeWindowCallback>*)callback {
+    _callback = callback;
+    [_callback retain];
 }
 
+- (void) dealloc {
+    [_callback release];
+    [super dealloc];
+}
 
 - (void) resetTwitterCheck {
     if (_twitterCheck) {
@@ -17,23 +20,11 @@
     }
 }
 
-- (IBAction)showSheet:(id)sender {
-    [[NSApplication sharedApplication] beginSheet:accountInfoSheet
-                                   modalForWindow:[self window]
-                                    modalDelegate:self
-                                   didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
-                                      contextInfo:nil];
-}
-
-- (void)sheetDidEnd:(NSWindow*)sheet returnCode:(int)returnCode contextInfo:(void*)contextInfo {
-    [accountInfoSheet orderOut:self];
-}
-
-- (IBAction)sheetOk:(id)sender {
+- (IBAction) checkAuth:(id)sender {
     [messageArea setStringValue:@""];
     [nextButton setEnabled:FALSE];
     [checkAuthProgressIndicator startAnimation:self];
-                
+    
     [self resetTwitterCheck];
     _twitterCheck = [[TwitterCheck alloc] init];
     [_twitterCheck checkAuthentication:[userIdField stringValue]
@@ -41,37 +32,32 @@
                               callback:self];
 }
 
-- (IBAction) sheetCancel:(id)sender {
-    [self resetTwitterCheck];
-    [checkAuthProgressIndicator stopAnimation:self];
-    [[NSApplication sharedApplication] endSheet:accountInfoSheet returnCode:NTLN_PREFRENCESWINDOW_SHEET_NG];
+- (IBAction) exitApplication:(id)sender {
+    [[NSApplication sharedApplication] terminate:self];
 }
 
 - (void) finishedToCheck:(int)result {
-
+    
     [self resetTwitterCheck];
     [checkAuthProgressIndicator stopAnimation:self];
     [nextButton setEnabled:TRUE];
-
+    
     switch (result) {
         case NTLN_TWITTERCHECK_SUCESS:
             if ([[Account newInstanceWithUsername:[userIdField stringValue]] addOrUpdateKeyChainWithPassword:[passwordField stringValue]]) {
-                [[NSApplication sharedApplication] endSheet:accountInfoSheet returnCode:NTLN_PREFRENCESWINDOW_SHEET_OK];
-                [appController startTimer];
+                [_callback finishedToSetup];
             } else {
                 [messageArea setStringValue:@"Error occurred. Unable to store your password to your keychain."];
             }
             break;
-        case NTLN_TWITTERCHECK_AUTH_FAILURE:
-        case NTLN_TWITTERCHECK_FAILURE:
+            case NTLN_TWITTERCHECK_AUTH_FAILURE:
+            case NTLN_TWITTERCHECK_FAILURE:
             // TODO internationalization
             [messageArea setStringValue:@"Error occurred. Please check your username and password or try later."];
             break;
-        default:
+            default:
             break;
     }
-    
-    
 }
 
 @end

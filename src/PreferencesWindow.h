@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import "AppController.h"
 #import "Twitter.h"
 
 #define PREFERENCE_USERID @"userId"
@@ -13,6 +14,7 @@
     IBOutlet NSTextField *userIdField;
     IBOutlet NSTextField *passwordField;
     IBOutlet NSButton *nextButton;
+    IBOutlet AppController *appController;
     
     TwitterCheck *_twitterCheck;
 }

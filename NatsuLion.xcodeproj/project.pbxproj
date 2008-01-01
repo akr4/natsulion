@@ -26,7 +26,10 @@
 		E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96C36200D2A6EA300CED33F /* Security.framework */; };
 		E96C362C0D2A71BA00CED33F /* KeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C362B0D2A71BA00CED33F /* KeyChain.m */; };
 		E96C36930D2A83E300CED33F /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36920D2A83E300CED33F /* Account.m */; };
+		E96C36A90D2A897800CED33F /* Welcome.nib in Resources */ = {isa = PBXBuildFile; fileRef = E96C36A80D2A897800CED33F /* Welcome.nib */; };
+		E96C36AD0D2A8C3700CED33F /* WelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36AC0D2A8C3700CED33F /* WelcomeWindowController.m */; };
 		E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* GrowlNotifier.m */; };
+		E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */; };
 		E996326B0D1E5D2400860515 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E996326A0D1E5D2400860515 /* Message.m */; };
 		E9A411290D29904F003BFA9F /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* AppController.m */; };
 		E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFD5950D183E630024C8B4 /* MainMenu.nib */; };
@@ -116,8 +119,12 @@
 		E96C362B0D2A71BA00CED33F /* KeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChain.m; sourceTree = "<group>"; };
 		E96C36910D2A83E300CED33F /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		E96C36920D2A83E300CED33F /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		E96C36A80D2A897800CED33F /* Welcome.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Welcome.nib; sourceTree = "<group>"; };
+		E96C36AB0D2A8C3700CED33F /* WelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeWindowController.h; sourceTree = "<group>"; };
+		E96C36AC0D2A8C3700CED33F /* WelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeWindowController.m; sourceTree = "<group>"; };
 		E98B093A0D2172B90002A75E /* GrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifier.h; sourceTree = "<group>"; };
 		E98B093B0D2172B90002A75E /* GrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlNotifier.m; sourceTree = "<group>"; };
+		E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		E996326A0D1E5D2400860515 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		E9A411270D29904F003BFA9F /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
@@ -184,6 +191,8 @@
 				E91B3DB50D13F593007C9762 /* CustomViewCell.m */,
 				E9CE391D0D145DB700D14D9F /* MessageTableViewController.h */,
 				E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */,
+				E96C36AB0D2A8C3700CED33F /* WelcomeWindowController.h */,
+				E96C36AC0D2A8C3700CED33F /* WelcomeWindowController.m */,
 				E915200D0D16D3B7008D6992 /* PreferencesWindow.h */,
 				E915200E0D16D3B7008D6992 /* PreferencesWindow.m */,
 				E99632690D1E5D2400860515 /* Message.h */,
@@ -254,10 +263,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				E9BFD5950D183E630024C8B4 /* MainMenu.nib */,
 				E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */,
+				E96C36A80D2A897800CED33F /* Welcome.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -386,6 +397,8 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */,
 				E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */,
+				E96C36A90D2A897800CED33F /* Welcome.nib in Resources */,
+				E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +455,7 @@
 				E9A411290D29904F003BFA9F /* AppController.m in Sources */,
 				E96C362C0D2A71BA00CED33F /* KeyChain.m in Sources */,
 				E96C36930D2A83E300CED33F /* Account.m in Sources */,
+				E96C36AD0D2A8C3700CED33F /* WelcomeWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

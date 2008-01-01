@@ -9,7 +9,6 @@
 
 - (id) init {
     _twitter = [[Twitter alloc] init];
-    _messageTextFieldRow = 1;    
 
     return self;
 }
@@ -72,16 +71,28 @@
 }
 
 - (void) updateStatus {
+    NSString *password = [[Account instance] password];
+    if (!password) {
+        // TODO inform error to user
+        NSLog(@"password not set. skip updateStatus");
+        return;
+    }
     [_twitter friendTimelineWithUsername:[[Account instance] username]
-                                password:[[Account instance] password] 
+                                password:password
                                 callback:self];
 }
 
 - (IBAction) sendMessage:(id) sender {    
+    NSString *password = [[Account instance] password];
+    if (!password) {
+        // TODO inform error to user
+        NSLog(@"password not set. skip updateStatus");
+        return;
+    }
     [messageTextField setEnabled:FALSE];
     [_twitter sendMessage:[messageTextField stringValue] 
                  username:[[Account instance] username]
-                 password:[[Account instance] password]
+                 password:password
                  callback:self];
 }
 

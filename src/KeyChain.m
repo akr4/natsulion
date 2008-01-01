@@ -13,6 +13,11 @@
 // return nil if error
 - (NSString*) getPasswordForUsername:(NSString*)username {
     
+    if (username == nil || [username length] == 0) {
+        NSLog(@"no username specified.");
+        return nil;
+    }
+    
     UInt32 len;
     char *password;
     

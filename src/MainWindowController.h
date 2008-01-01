@@ -14,7 +14,6 @@
     
     Twitter *_twitter;
     GrowlNotifier *_growl;
-    int _messageTextFieldRow;
 }
 
 - (IBAction) sendMessage:(id) sender;
