@@ -23,6 +23,9 @@
 		E9614CE10D27BC75009743CE /* URLExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* URLExtractor.m */; };
 		E9614D130D27BEA4009743CE /* URLExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* URLExtractor.m */; };
 		E9614D140D27BEBA009743CE /* URLExtractorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CDC0D27BADC009743CE /* URLExtractorTest.m */; };
+		E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96C36200D2A6EA300CED33F /* Security.framework */; };
+		E96C362C0D2A71BA00CED33F /* KeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C362B0D2A71BA00CED33F /* KeyChain.m */; };
+		E96C36930D2A83E300CED33F /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36920D2A83E300CED33F /* Account.m */; };
 		E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* GrowlNotifier.m */; };
 		E996326B0D1E5D2400860515 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E996326A0D1E5D2400860515 /* Message.m */; };
 		E9A411290D29904F003BFA9F /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* AppController.m */; };
@@ -108,6 +111,11 @@
 		E9614CE70D27BCBB009743CE /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9614CE80D27BCBB009743CE /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		E96801F30D2748DB0048A163 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E96C36200D2A6EA300CED33F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		E96C362A0D2A71BA00CED33F /* KeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChain.h; sourceTree = "<group>"; };
+		E96C362B0D2A71BA00CED33F /* KeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChain.m; sourceTree = "<group>"; };
+		E96C36910D2A83E300CED33F /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
+		E96C36920D2A83E300CED33F /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		E98B093A0D2172B90002A75E /* GrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifier.h; sourceTree = "<group>"; };
 		E98B093B0D2172B90002A75E /* GrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlNotifier.m; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				E922CD380D21588700F3D411 /* Growl.framework in Frameworks */,
 				E9F961550D2622B5007829C4 /* Sparkle.framework in Frameworks */,
+				E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +190,10 @@
 				E996326A0D1E5D2400860515 /* Message.m */,
 				E9F960910D25D03A007829C4 /* AutoResizingTextField.h */,
 				E9F960920D25D03A007829C4 /* AutoResizingTextField.m */,
+				E96C362A0D2A71BA00CED33F /* KeyChain.h */,
+				E96C362B0D2A71BA00CED33F /* KeyChain.m */,
+				E96C36910D2A83E300CED33F /* Account.h */,
+				E96C36920D2A83E300CED33F /* Account.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E96C36200D2A6EA300CED33F /* Security.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -426,6 +440,8 @@
 				E9E5BF9F0D28988800F34B9B /* EntityReferenceConverter.m in Sources */,
 				E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */,
 				E9A411290D29904F003BFA9F /* AppController.m in Sources */,
+				E96C362C0D2A71BA00CED33F /* KeyChain.m in Sources */,
+				E96C36930D2A83E300CED33F /* Account.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +540,9 @@
 				);
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
 				PREBINDING = NO;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
 			};
 			name = Release;

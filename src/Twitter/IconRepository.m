@@ -33,7 +33,7 @@
     }
     
     [_waitings removeObject:_currentUrl];
-    _connection = [[AsyncUrlConnection alloc] initWithUrl:_currentUrl andCallback:self];
+    _connection = [[AsyncUrlConnection alloc] initWithUrl:_currentUrl callback:self];
 }
 
 - (void) registerUrl:(NSString*)url {
@@ -55,7 +55,7 @@
     _connection = nil;
 }
 
-- (void) responseArrived:(NSData*)response {
+- (void) responseArrived:(NSData*)response statusCode:(int)code {
     NSImage *image = [[[NSImage alloc] initWithData:response] autorelease];
     [_cache setObject:image forKey:_currentUrl];
     [_callback finishedToGetIcon:image forKey:_currentUrl];

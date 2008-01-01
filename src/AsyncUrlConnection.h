@@ -1,14 +1,18 @@
 #import <Cocoa/Cocoa.h>
 
 @protocol AsyncUrlConnectionCallback 
-- (void) responseArrived:(NSData*)response;
+- (void) responseArrived:(NSData*)response statusCode:(int)code;
 - (void) connectionFailed;
 @end
 
 @interface AsyncUrlConnection : NSObject {
     NSObject<AsyncUrlConnectionCallback> *_callback;
     NSMutableData *_recievedData;
+    int _statusCode;
+    NSString *_username;
+    NSString *_password;
 }
-- (id) initWithUrl:(NSString*)url andCallback:(NSObject<AsyncUrlConnectionCallback>*)callback;
-- (id) initPostConnectionWithUrl:(NSString*)url andBodyString:(NSString*)bodyString andCallback:(NSObject<AsyncUrlConnectionCallback>*)callback;
+- (id) initWithUrl:(NSString*)url callback:(NSObject<AsyncUrlConnectionCallback>*)callback;
+- (id) initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password callback:(NSObject<AsyncUrlConnectionCallback>*)callback;
+- (id) initPostConnectionWithUrl:(NSString*)url bodyString:(NSString*)bodyString username:(NSString*)username password:(NSString*)password callback:(NSObject<AsyncUrlConnectionCallback>*)callback;
 @end

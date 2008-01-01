@@ -1,19 +1,28 @@
 #import "AsyncUrlConnection.h"
-#import "PreferencesWindow.h"
 
 @implementation AsyncUrlConnection
 
-- (id)initWithUrl:(NSString*)url andCallback:(NSObject<AsyncUrlConnectionCallback>*)callback {
+- (id) initWithUrl:(NSString*)url callback:(NSObject<AsyncUrlConnectionCallback>*)callback {
+    return [self initWithUrl:url username:nil password:nil callback:callback];
+}
+
+- (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password callback:(NSObject<AsyncUrlConnectionCallback>*)callback {
+    
+    _username = username;
+    [_username retain];
+    _password = password;
+    [_password retain];
+    
     NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
 //    NSLog(@"sending request to %@", encodedUrl);
     
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
-    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+//    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     [request setTimeoutInterval:10.0];
     [request setHTTPShouldHandleCookies:FALSE];
 
-//    NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:encodedUrl] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:10.0];
     NSURLConnection *connection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!connection) {
         NSLog(@"failed to get connection.");
@@ -26,7 +35,13 @@
     return self;
 }
 
-- (id) initPostConnectionWithUrl:(NSString*)url andBodyString:(NSString*)bodyString andCallback:(NSObject<AsyncUrlConnectionCallback>*)callback {
+- (id) initPostConnectionWithUrl:(NSString*)url bodyString:(NSString*)bodyString username:(NSString*)username password:(NSString*)password callback:(NSObject<AsyncUrlConnectionCallback>*)callback {
+    
+    _username = username;
+    [_username retain];
+    _password = password;
+    [_password retain];
+
     NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
 //    NSLog(@"sending (encoded) request to %@", encodedUrl);
 
@@ -53,13 +68,15 @@
 - (void)delalloc {
     [_callback release];
     [_recievedData release];
+    [_username release];
+    [_password release];
     [self release];
     [super dealloc];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-//    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-//    int statusCode = [httpResponse statusCode];
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+    _statusCode = [httpResponse statusCode];
 //    NSLog(@"receiving response... status code = %d", statusCode);
 }
 
@@ -68,29 +85,24 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-    [_callback responseArrived:_recievedData];
+    [_callback responseArrived:_recievedData statusCode:_statusCode];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError*) error {
-    NSLog(@"connection:didFailWithError - %@", [error localizedFailureReason]);
+    NSLog(@"connection:didFailWithError - %@ - %d - %@", [error localizedFailureReason], [error code], [error description]);
     [_callback connectionFailed];
 }
 
 -(void)connection:(NSURLConnection*)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge { 
     if ([challenge previousFailureCount] == 0) { 
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        // TODO: this class should not know user defaults key
-        NSURLCredential *newCredential = [NSURLCredential credentialWithUser:[defaults objectForKey:PREFERENCE_USERID] password:[defaults objectForKey:PREFERENCE_PASSWORD] persistence:NSURLCredentialPersistenceNone]; 
-        
-//        NSURLCredential *newCredential = [NSURLCredential credentialWithUser:@"xi42" password:@"FNe3T5i49nOPxkfU" persistence:NSURLCredentialPersistenceNone]; 
+        NSURLCredential *newCredential = [NSURLCredential credentialWithUser:_username password:_password persistence:NSURLCredentialPersistenceNone]; 
         NSLog([newCredential description]);
         [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge]; 
     } else { 
         NSLog(@"authentication failure");
+        // TODO: should be "real" code
+//        _statusCode = 401;
         [[challenge sender] cancelAuthenticationChallenge:challenge]; 
-        // inform the user that the user name and password 
-        // in the preferences are incorrect 
-        //        [self showPreferencesCredentialsAreIncorrectPanel:self]; 
     } 
 }    
 @end

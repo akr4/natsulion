@@ -1,5 +1,6 @@
 #import "MainWindowController.h"
 #import "PreferencesWindow.h"
+#import "Account.h"
 
 #import "TwitterStatusViewController.h"
 #import "TwitterStatus.h"
@@ -71,12 +72,17 @@
 }
 
 - (void) updateStatus {
-    [_twitter friendTimelineWithCallback:self];
+    [_twitter friendTimelineWithUsername:[[Account instance] username]
+                                password:[[Account instance] password] 
+                                callback:self];
 }
 
 - (IBAction) sendMessage:(id) sender {    
     [messageTextField setEnabled:FALSE];
-    [_twitter sendMessage:[messageTextField stringValue] withCallback:self];
+    [_twitter sendMessage:[messageTextField stringValue] 
+                 username:[[Account instance] username]
+                 password:[[Account instance] password]
+                 callback:self];
 }
 
 

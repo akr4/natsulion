@@ -33,6 +33,22 @@
 - (void) awakeFromNib {
 }
 
+- (IBAction) showPreferencesSheet:(id)sender {
+    [[NSApplication sharedApplication] beginSheet:[preferencesWindowController window]
+                                   modalForWindow:[mainWindowController window]
+                                    modalDelegate:self
+                                   didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) 
+                                      contextInfo:nil];
+}
+
+- (IBAction) closePreferencesSheet:(id)sender {
+    [[NSApplication sharedApplication] endSheet:[preferencesWindowController window] returnCode:0];
+}
+
+- (void)sheetDidEnd:(NSWindow*)sheet returnCode:(int)returnCode contextInfo:(void*)contextInfo {
+    [[preferencesWindowController window] orderOut:self];
+}
+
 // NSApplicatoin delegate /////////////////////////////////////////////////////////////////
 - (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
     //    NSLog(@"%s", __PRETTY_FUNCTION__);    

@@ -8,7 +8,7 @@
     return self;
 }
 
-- (void) responseArrived:(NSData*)response {
+- (void) responseArrived:(NSData*)response statusCode:(int)code {
     [(Twitter*)_parent finishedToSendMessage];
     NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
     NSLog(@"post responseArrived:%@", responseStr);
@@ -122,7 +122,7 @@
 }
 
 ////////////////////////////////////////////////////////////////////
-- (void) friendTimelineWithCallback:(NSObject<TimelineCallback>*)callback {
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback {
     
     if (_friendTimelineCallback) {
         NSLog(@"friendTimelineWithCallback: called while running");
@@ -131,7 +131,10 @@
     _friendTimelineCallback = callback;
     [_friendTimelineCallback retain];
     
-    AsyncUrlConnection *connection = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" andCallback:self];
+    AsyncUrlConnection *connection = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" 
+                                                                    username:username
+                                                                    password:password
+                                                                    callback:self];
     if (!connection) {
         NSLog(@"failed to get connection.");
         return;
@@ -143,7 +146,7 @@
     
 }
 
-- (void) responseArrived:(NSData*)response {
+- (void) responseArrived:(NSData*)response statusCode:(int)code {
 
     [self stopDownloading];
 
@@ -191,7 +194,7 @@
     
 }
 
-- (void) sendMessage:(NSString*)message withCallback:(NSObject<TwitterPostCallback>*)callback {
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {
     
     if (_twitterPostCallback) {
         NSLog(@"sendMessageWithCallback: called while running");
@@ -203,9 +206,11 @@
     TwitterPostCallbackHandler *handler = [[[TwitterPostCallbackHandler alloc] initWithParentId:self] autorelease];
     NSString *requestStr =  [@"status=" stringByAppendingString:message];
     requestStr = [requestStr stringByAppendingString:@"&source=NatsuLion"];
-    AsyncUrlConnection *connection = [[[AsyncUrlConnection alloc]
-                                       initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
-                                       andBodyString:requestStr andCallback:handler] autorelease];
+    AsyncUrlConnection *connection = [[[AsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
+                                                                                 bodyString:requestStr 
+                                                                                   username:username
+                                                                                   password:password
+                                                                                   callback:handler] autorelease];
     if (!connection) {
         NSLog(@"failed to get connection.");
         return;
@@ -248,5 +253,54 @@
     [_friendTimelineCallback finishedToGetTimeline:back];
 }
 
+
+@end
+
+///////////////////////////////////////////
+
+
+@implementation TwitterCheck
+
+- (void) checkAuthentication:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterCheckCallback>*)callback {
+
+    _callback = callback;
+    [_callback retain];
+    
+    _connection = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/account/verify_credentials.xml" 
+                                                username:username
+                                                password:password
+                                                callback:self];
+    if (!_connection) {
+        NSLog(@"failed to get connection.");
+        [_callback finishedToCheck:NTLN_TWITTERCHECK_FAILURE];
+    }
+}
+
+- (void) dealloc {
+    [_callback release];
+    [_connection release];
+    [super dealloc];
+}
+
+- (void) responseArrived:(NSData*)response statusCode:(int)code {
+    switch (code) {
+        case 200:
+            [_callback finishedToCheck:NTLN_TWITTERCHECK_SUCESS];
+            break;
+            
+        case 401:
+            [_callback finishedToCheck:NTLN_TWITTERCHECK_AUTH_FAILURE];
+            break;
+            
+        default:
+            [_callback finishedToCheck:NTLN_TWITTERCHECK_FAILURE];
+            NSLog(@"%s: code=%d", __PRETTY_FUNCTION__, code);
+            break;
+    }
+}
+
+- (void) connectionFailed {
+    [_callback finishedToCheck:NTLN_TWITTERCHECK_FAILURE];
+}
 
 @end

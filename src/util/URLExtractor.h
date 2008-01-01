@@ -3,6 +3,7 @@
 #define NTLN_URLEXTRACTOR_PREFIX_HTTP @"http://"
 #define NTLN_URLEXTRACTOR_PREFIX_ID @"@"
 
+// TODO: this class should be renamed to reflect its work.
 @interface URLExtractor : NSObject {
 
 }

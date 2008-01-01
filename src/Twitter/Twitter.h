@@ -30,9 +30,25 @@
     BOOL _postingMessage;
 }
 - (id) init;
-- (void) friendTimelineWithCallback:(NSObject<TimelineCallback>*)callback;
-- (void) sendMessage:(NSString*)message withCallback:(NSObject<TwitterPostCallback>*)callback;
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback;
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback;
 
 // only for private class
 - (void) finishedToSendMessage;
+@end
+
+
+#define NTLN_TWITTERCHECK_SUCESS 0
+#define NTLN_TWITTERCHECK_AUTH_FAILURE 1
+#define NTLN_TWITTERCHECK_FAILURE 2
+
+@protocol TwitterCheckCallback
+- (void) finishedToCheck:(int)result;
+@end
+
+@interface TwitterCheck : NSObject<AsyncUrlConnectionCallback> {
+    NSObject<TwitterCheckCallback> *_callback;
+    AsyncUrlConnection *_connection;
+}    
+- (void) checkAuthentication:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterCheckCallback>*)callback;
 @end
