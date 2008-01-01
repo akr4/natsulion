@@ -15,12 +15,7 @@
     [textField setMessage:[status text]];
     [nameField setStatus:_status];
     [iconView setStatus:_status];
-    [timestampField setStringValue:[[status timestamp]      
-                                    descriptionWithCalendarFormat:@"%02H:%02M:%02S"
-                                    timeZone:[NSTimeZone localTimeZone]
-                                    locale:[[NSUserDefaults standardUserDefaults]
-                                            dictionaryRepresentation]]];
-
+    [timestampField setTimestamp:[status timestamp]];
     [view setTwitterStatus:_status];
 
     return self;
@@ -60,16 +55,20 @@
     [iconView highlight];
 }
 
-- (void) lowlight {
-    [view lowlight];
-    [textField lowlight];
-    [nameField lowlight];
-    [timestampField lowlight];
-    [iconView lowlight];
+- (void) unhighlight {
+    [view unhighlight];
+    [textField unhighlight];
+    [nameField unhighlight];
+    [timestampField unhighlight];
+    [iconView unhighlight];
 }
 
 - (float) requiredHeight {
     return [view requiredHeight];
+}
+
+- (NSDate*) timestamp {
+    return [_status timestamp];
 }
 
 @end

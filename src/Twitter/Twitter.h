@@ -4,22 +4,29 @@
 
 @protocol TimelineCallback
 - (void) finishedToGetTimeline:(NSArray *)statuses;
+- (void) failedToGetTimeline:(NSString*)message;
 - (void) started;
 - (void) stopped;
 @end
 
 @protocol TwitterPostCallback
 - (void) finishedToPost;
+- (void) failedToPost:(NSString*)message;
+@end
+
+@protocol TwitterPostInternalCallback
+- (void) finishedToPost;
+- (void) failedToPost:(NSString*)message;
 @end
 
 // callback for post
 @interface TwitterPostCallbackHandler : NSObject<AsyncUrlConnectionCallback> {
-    id _parent;
+    id<TwitterPostInternalCallback> _callback;
 }
-- (id) initWithParentId:(id)parent;
+- (id) initWithCallback:(id<TwitterPostInternalCallback>)callback;
 @end
 
-@interface Twitter : NSObject <AsyncUrlConnectionCallback, IconCallback> {
+@interface Twitter : NSObject <AsyncUrlConnectionCallback, IconCallback, TwitterPostInternalCallback> {
     NSObject<TimelineCallback> *_friendTimelineCallback;
     NSObject<TwitterPostCallback> *_twitterPostCallback;
     
@@ -32,9 +39,6 @@
 - (id) init;
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback;
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback;
-
-// only for private class
-- (void) finishedToSendMessage;
 @end
 
 

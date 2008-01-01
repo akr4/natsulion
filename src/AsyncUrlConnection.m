@@ -90,7 +90,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError*) error {
     NSLog(@"connection:didFailWithError - %@ - %d - %@", [error localizedFailureReason], [error code], [error description]);
-    [_callback connectionFailed];
+    [_callback connectionFailed:error];
 }
 
 -(void)connection:(NSURLConnection*)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge { 

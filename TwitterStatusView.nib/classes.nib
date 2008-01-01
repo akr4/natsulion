@@ -18,12 +18,12 @@
 				<key>textField</key>
 				<string>TwitterStatusViewMessageField</string>
 				<key>timestampField</key>
-				<string>TwitterStatusViewTextField</string>
+				<string>MessageViewTimestampField</string>
 				<key>view</key>
 				<string>TwitterStatusView</string>
 			</dict>
 			<key>SUPERCLASS</key>
-			<string>NSObject</string>
+			<string>MessageViewController</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>
@@ -43,11 +43,35 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
+			<string>MessageViewController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>FirstResponder</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>MessageViewTimestampField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>MessageViewTextField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>MessageViewTextField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSTextField</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

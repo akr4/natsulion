@@ -2,7 +2,7 @@
 
 @protocol AsyncUrlConnectionCallback 
 - (void) responseArrived:(NSData*)response statusCode:(int)code;
-- (void) connectionFailed;
+- (void) connectionFailed:(NSError*)error;
 @end
 
 @interface AsyncUrlConnection : NSObject {

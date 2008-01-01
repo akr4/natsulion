@@ -76,8 +76,8 @@
     [self setSelectable:TRUE];
 }
 
-- (void) lowlight {
-    [super lowlight];
+- (void) unhighlight {
+    [super unhighlight];
     [self setSelectable:FALSE];
     [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
 }

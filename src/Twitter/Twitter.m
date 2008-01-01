@@ -3,19 +3,19 @@
 
 @implementation TwitterPostCallbackHandler
 
-- (id) initWithParentId:(id)parent {
-    _parent = parent;
+- (id) initWithCallback:(id<TwitterPostInternalCallback>)callback {
+    _callback = callback;
     return self;
 }
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
-    [(Twitter*)_parent finishedToSendMessage];
-    NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
-    NSLog(@"post responseArrived:%@", responseStr);
+    [_callback finishedToPost];
+//    NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
+//    NSLog(@"post responseArrived:%@", responseStr);
 }
 
-- (void) connectionFailed {
-    NSLog(@"post failed");
+- (void) connectionFailed:(NSError*)error {
+    [_callback failedToPost:[error localizedDescription]];
 }
 
 @end
@@ -160,6 +160,9 @@
     if (!document) {
         NSLog(@"parse error");
         NSLog(@"responseArrived:%@", responseStr);
+        
+        [_friendTimelineCallback failedToGetTimeline:@"This error might be caused by API limitation."];
+        return;
     }
     
     NSArray *statuses = [document nodesForXPath:@"/statuses/status" error:NULL];
@@ -190,8 +193,8 @@
 
 }
 
-- (void) connectionFailed {
-    
+- (void) connectionFailed:(NSError*)error {
+    [_friendTimelineCallback failedToGetTimeline:[error localizedDescription]];
 }
 
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {
@@ -203,7 +206,7 @@
     _twitterPostCallback = callback;
     [_twitterPostCallback retain];
     
-    TwitterPostCallbackHandler *handler = [[[TwitterPostCallbackHandler alloc] initWithParentId:self] autorelease];
+    TwitterPostCallbackHandler *handler = [[[TwitterPostCallbackHandler alloc] initWithCallback:self] autorelease];
     NSString *requestStr =  [@"status=" stringByAppendingString:message];
     requestStr = [requestStr stringByAppendingString:@"&source=NatsuLion"];
     AsyncUrlConnection *connection = [[[AsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
@@ -215,19 +218,33 @@
     NSLog(@"sent data [%@]", requestStr);
     
     if (!connection) {
-        NSLog(@"failed to get connection.");
+        [_twitterPostCallback failedToPost:@"Posting a message failure. unable to get connection."];
+        [_twitterPostCallback release];
+        _twitterPostCallback = nil;
         return;
     }
 
     [self startPosting];
-    NSLog(@"sending post status request.");
+//    NSLog(@"sending post status request.");
 }
 
-- (void) finishedToSendMessage {
+
+// TwitterPostInternalCallback method /////////////////////////////////////////////////
+- (void) finishedToPost {
     [self stopPosting];
     [_twitterPostCallback finishedToPost];
+    [_twitterPostCallback release];
+    _twitterPostCallback = nil;
 }
 
+- (void) failedToPost:(NSString*)message {
+    [self stopPosting];
+    [_twitterPostCallback failedToPost:message];
+    [_twitterPostCallback release];
+    _twitterPostCallback = nil;
+}
+
+// /////////////////////////////////////////////////////////////////////////////
 - (void) finishedToGetIcon:(NSImage*)icon forKey:(NSString*)key {
     NSMutableArray *back = [[[NSMutableArray alloc] initWithCapacity:20] autorelease];
 
@@ -302,7 +319,7 @@
     }
 }
 
-- (void) connectionFailed {
+- (void) connectionFailed: (NSError*)error {
     [_callback finishedToCheck:NTLN_TWITTERCHECK_FAILURE];
 }
 

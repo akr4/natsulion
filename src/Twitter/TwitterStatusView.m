@@ -64,7 +64,7 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
     }
 }
 
-- (void) lowlight {
+- (void) unhighlight {
     _highlighted = FALSE;
 
     switch ([_status replyType]) {

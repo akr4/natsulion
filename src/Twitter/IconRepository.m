@@ -64,7 +64,7 @@
     [self processNextUrl];
 }
 
-- (void) connectionFailed {
+- (void) connectionFailed:(NSError*)error  {
     NSLog(@"connectionFailed");
     [_callback failedToGetIconForKey:_currentUrl];
     [self resetConnection];

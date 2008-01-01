@@ -3,30 +3,25 @@
 
 @implementation MessageViewController
 
-- (void) dealloc {
-    [_message release];
-    [super dealloc];
-}
 
 - (void) highlight {
     
 }
 
-- (void) lowlight {
+- (void) unhighlight {
     
 }
 
-- (Message*) message {
-    return _message;
-}
-
-- (void) setMessage:(Message*)message {
-    _message = message;
-    [_message retain];
-}
-
 - (NSView*) view {
-    return view;
+    return nil;
+}
+
+- (float) requiredHeight {
+    return 0.0;
+}
+
+- (NSDate*) timestamp {
+    return nil;
 }
 
 @end

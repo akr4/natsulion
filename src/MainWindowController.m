@@ -4,6 +4,7 @@
 #import "EntityReferenceConverter.h"
 #import "TwitterStatusViewController.h"
 #import "TwitterStatus.h"
+#import "ErrorMessageViewController.h"
 
 @implementation MainWindowController
 
@@ -26,7 +27,7 @@
     [messageTextField setLengthForWarning:140 max:160];
     
     [messageViewControllerArrayController setSortDescriptors:
-        [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"status.timestamp" ascending:TRUE] autorelease]]];
+        [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:TRUE] autorelease]]];
     [messageViewControllerArrayController setAutomaticallyRearrangesObjects:TRUE];    
 }
 
@@ -59,6 +60,11 @@
     return ![[messageViewControllerArrayController arrangedObjects] containsObject:newController];
 }
 
+- (void) addMessageViewController:(MessageViewController*)controller {
+    [messageViewControllerArrayController addObject:controller];
+    [messageTableViewController newMessageArrived];
+}
+
 - (void) addIfNewMessage:(Message*)message {
     TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc] initWithTwitterStatus:(TwitterStatus*)message] autorelease];
     
@@ -66,8 +72,7 @@
         return;
     }
     
-    [messageViewControllerArrayController addObject:newController];
-    [messageTableViewController newMessageArrived];
+    [self addMessageViewController:newController];
 }
 
 - (void) updateStatus {
@@ -96,15 +101,25 @@
                  callback:self];
 }
 
-
-// TwitterPostCallback methods ///////////////////////////////////////////////////
-- (void) finishedToPost {
+- (void) enableMessageTextField {
     [messageTextField setStringValue:@""];
     [messageTextField setEditable:TRUE];
     [messageTextField setEnabled:TRUE];
     [messageTextField updateHeight];
 }
 
+
+// TwitterPostCallback methods ///////////////////////////////////////////////////
+- (void) finishedToPost {
+    [self enableMessageTextField];
+}
+
+- (void) failedToPost:(NSString*)message {
+    [self addMessageViewController:[ErrorMessageViewController controllerWithTitle:@"Sending a message failed"
+                                                                           message:message
+                                                                         timestamp:[NSDate date]]];    
+    [self enableMessageTextField];
+}
 
 // TimelineCallback methods ///////////////////////////////////////////////////////
 - (void) finishedToGetTimeline:(NSArray*)statuses {
@@ -141,6 +156,12 @@
             }
         }
     }
+}
+
+- (void) failedToGetTimeline:(NSString*)message {
+    [self addMessageViewController:[ErrorMessageViewController controllerWithTitle:@"Retrieving timeline failed"
+                                                                           message:message
+                                                                         timestamp:[NSDate date]]];
 }
 
 - (void) started {

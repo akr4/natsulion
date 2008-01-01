@@ -22,7 +22,7 @@
         if ([indexSet containsIndex:i]) {
             [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:i] highlight];
         } else {
-            [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:i] lowlight];
+            [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:i] unhighlight];
         }
     }
 }

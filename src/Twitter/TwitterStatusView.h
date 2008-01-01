@@ -15,7 +15,7 @@
 
 - (void) setTwitterStatus:(TwitterStatus*)status;
 - (void) highlight;
-- (void) lowlight;
+- (void) unhighlight;
 - (float) requiredHeight;
 
 @end

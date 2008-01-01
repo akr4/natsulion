@@ -24,7 +24,7 @@
 - (void) highlight {
 }
 
-- (void) lowlight {
+- (void) unhighlight {
 }
 
 - (void) setStatus:(TwitterStatus*)status {

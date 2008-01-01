@@ -30,6 +30,11 @@
 		E96C36AD0D2A8C3700CED33F /* WelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36AC0D2A8C3700CED33F /* WelcomeWindowController.m */; };
 		E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* GrowlNotifier.m */; };
 		E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */; };
+		E991C6650D2AC7FC00F410B6 /* ErrorMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6640D2AC7FC00F410B6 /* ErrorMessageViewController.m */; };
+		E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */; };
+		E991C66C0D2AE41200F410B6 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C66B0D2AE41200F410B6 /* MessageViewController.m */; };
+		E991C6BA0D2AE7AE00F410B6 /* MessageViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6B90D2AE7AE00F410B6 /* MessageViewTextField.m */; };
+		E991C6BD0D2AE9A300F410B6 /* MessageViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6BC0D2AE9A300F410B6 /* MessageViewTimestampField.m */; };
 		E996326B0D1E5D2400860515 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E996326A0D1E5D2400860515 /* Message.m */; };
 		E9A411290D29904F003BFA9F /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* AppController.m */; };
 		E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFD5950D183E630024C8B4 /* MainMenu.nib */; };
@@ -125,13 +130,22 @@
 		E98B093A0D2172B90002A75E /* GrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifier.h; sourceTree = "<group>"; };
 		E98B093B0D2172B90002A75E /* GrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlNotifier.m; sourceTree = "<group>"; };
 		E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
+		E991C6630D2AC7FC00F410B6 /* ErrorMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessageViewController.h; sourceTree = "<group>"; };
+		E991C6640D2AC7FC00F410B6 /* ErrorMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorMessageViewController.m; sourceTree = "<group>"; };
+		E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ErrorMessageView.nib; sourceTree = "<group>"; };
+		E991C66A0D2AE41100F410B6 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = ../MessageViewController.h; sourceTree = "<group>"; };
+		E991C66B0D2AE41200F410B6 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = ../MessageViewController.m; sourceTree = "<group>"; };
+		E991C6B70D2AE79D00F410B6 /* TwitterStatusViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewTextField.h; sourceTree = "<group>"; };
+		E991C6B80D2AE7AE00F410B6 /* MessageViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewTextField.h; sourceTree = "<group>"; };
+		E991C6B90D2AE7AE00F410B6 /* MessageViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewTextField.m; sourceTree = "<group>"; };
+		E991C6BB0D2AE9A300F410B6 /* MessageViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewTimestampField.h; sourceTree = "<group>"; };
+		E991C6BC0D2AE9A300F410B6 /* MessageViewTimestampField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewTimestampField.m; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		E996326A0D1E5D2400860515 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		E9A411270D29904F003BFA9F /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		E9A411280D29904F003BFA9F /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewController.h; sourceTree = "<group>"; };
 		E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewController.m; sourceTree = "<group>"; };
-		E9BFD6110D1854270024C8B4 /* TwitterStatusViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewTextField.h; sourceTree = "<group>"; };
 		E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewTextField.m; sourceTree = "<group>"; };
 		E9BFD61C0D1857320024C8B4 /* TwitterStatusViewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewImageView.h; sourceTree = "<group>"; };
 		E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewImageView.m; sourceTree = "<group>"; };
@@ -203,6 +217,7 @@
 				E96C362B0D2A71BA00CED33F /* KeyChain.m */,
 				E96C36910D2A83E300CED33F /* Account.h */,
 				E96C36920D2A83E300CED33F /* Account.m */,
+				E991C66D0D2AE62300F410B6 /* view */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -269,6 +284,7 @@
 				E9BFD5950D183E630024C8B4 /* MainMenu.nib */,
 				E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */,
 				E96C36A80D2A897800CED33F /* Welcome.nib */,
+				E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -293,14 +309,14 @@
 				E9160BC70D11F4F500C9EEFF /* IconRepository.m */,
 				E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */,
 				E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */,
-				E9BFD6110D1854270024C8B4 /* TwitterStatusViewTextField.h */,
-				E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */,
 				E9BFD61C0D1857320024C8B4 /* TwitterStatusViewImageView.h */,
 				E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */,
 				E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */,
 				E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */,
 				E93F7BE60D27DC6B00366600 /* TwitterStatusViewMessageField.h */,
 				E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */,
+				E991C6B70D2AE79D00F410B6 /* TwitterStatusViewTextField.h */,
+				E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */,
 				E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */,
 				E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */,
 			);
@@ -327,6 +343,21 @@
 				E9E5BF9E0D28988800F34B9B /* EntityReferenceConverter.m */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		E991C66D0D2AE62300F410B6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E991C66A0D2AE41100F410B6 /* MessageViewController.h */,
+				E991C66B0D2AE41200F410B6 /* MessageViewController.m */,
+				E991C6630D2AC7FC00F410B6 /* ErrorMessageViewController.h */,
+				E991C6640D2AC7FC00F410B6 /* ErrorMessageViewController.m */,
+				E991C6B80D2AE7AE00F410B6 /* MessageViewTextField.h */,
+				E991C6B90D2AE7AE00F410B6 /* MessageViewTextField.m */,
+				E991C6BB0D2AE9A300F410B6 /* MessageViewTimestampField.h */,
+				E991C6BC0D2AE9A300F410B6 /* MessageViewTimestampField.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +430,7 @@
 				E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */,
 				E96C36A90D2A897800CED33F /* Welcome.nib in Resources */,
 				E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */,
+				E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +488,10 @@
 				E96C362C0D2A71BA00CED33F /* KeyChain.m in Sources */,
 				E96C36930D2A83E300CED33F /* Account.m in Sources */,
 				E96C36AD0D2A8C3700CED33F /* WelcomeWindowController.m in Sources */,
+				E991C6650D2AC7FC00F410B6 /* ErrorMessageViewController.m in Sources */,
+				E991C66C0D2AE41200F410B6 /* MessageViewController.m in Sources */,
+				E991C6BA0D2AE7AE00F410B6 /* MessageViewTextField.m in Sources */,
+				E991C6BD0D2AE9A300F410B6 /* MessageViewTimestampField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
