@@ -9,9 +9,9 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
 
 + (void) initialize {
     _viewBackgroundColorReply = [[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:1 alpha:1] retain];
-    _viewHighlightedBackgroundColorReply = [[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:0.7 alpha:1] retain];
-    _viewBackgroundColorReplyProbable = [[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:1 alpha:1] retain];
-    _viewHighlightedBackgroundColorReplyProbable = [[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:0.7 alpha:1] retain];
+    _viewHighlightedBackgroundColorReply = [[NSColor colorWithDeviceHue:0 saturation:0.55 brightness:1.0 alpha:1] retain];
+    _viewBackgroundColorReplyProbable = [[NSColor colorWithDeviceHue:0.0611 saturation:0.22 brightness:1.0 alpha:1] retain];
+    _viewHighlightedBackgroundColorReplyProbable = [[NSColor colorWithDeviceHue:0.0611 saturation:0.55 brightness:1.0 alpha:1] retain];
 }
 
 - (void) awakeFromNib {

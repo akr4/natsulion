@@ -18,8 +18,8 @@
     
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
-//    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
-    [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+//    [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     [request setTimeoutInterval:10.0];
     [request setHTTPShouldHandleCookies:FALSE];
 

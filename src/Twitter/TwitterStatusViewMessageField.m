@@ -15,11 +15,11 @@
     [attrString addAttribute:NSLinkAttributeName value:[aURL absoluteString] range:range];
     
     // make the text appear in blue
-    [attrString addAttribute:NSForegroundColorAttributeName value:[NSColor blueColor] range:range];
+    [attrString addAttribute:NSForegroundColorAttributeName value:[NSColor colorWithDeviceRed:0.333 green:0.616 blue:0.902 alpha:1.0] range:range];
     
     // next make the text appear with an underline
-    [attrString addAttribute:
-     NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSSingleUnderlineStyle] range:range];
+//    [attrString addAttribute:
+//     NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSSingleUnderlineStyle] range:range];
     
     [attrString endEditing];
     
@@ -48,7 +48,7 @@
                                       autorelease];
     [layoutManager addTextContainer:textContainer];
     [textStorage addLayoutManager:layoutManager];
-    [textContainer setLineFragmentPadding:0.0];
+    [textContainer setLineFragmentPadding:4];
     (void) [layoutManager glyphRangeForTextContainer:textContainer];
     return [layoutManager
             usedRectForTextContainer:textContainer].size.height;
@@ -56,7 +56,7 @@
 
 // returns delta of expaned height
 - (float) expandIfNeeded {
-    float height = [self heightForString:[self attributedStringValue] andWidth:([self frame].size.width - 4)] + 2;
+    float height = [self heightForString:[self attributedStringValue] andWidth:([self frame].size.width - 16)] + 2;
     if (height > _defaultHeight) {
 //        NSRect rect = [self frame];
 //        rect.size.height = height;
