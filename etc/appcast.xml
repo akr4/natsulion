@@ -7,6 +7,55 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.6</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.6
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-45'&gt;NTLN-45&lt;/a&gt;] -         automatic update fails because Sparkle does not handle localized application name well
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      <pubDate>Wed, 02 Jan 2008 10:47:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.6.zip"
+        length="706053"
+        type="application/octet-stream"/>
+    </item>
+    <item>
+      <title>NatsuLion Version 0.5</title>
+      <description>
+
+        Release Notes - NatsuLion - Version Alpha (0.5)
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-42'&gt;NTLN-42&lt;/a&gt;] -         cannot send message text after &amp; charcter
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-44'&gt;NTLN-44&lt;/a&gt;] -         better colors and links
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-25'&gt;NTLN-25&lt;/a&gt;] -         display errors
+&lt;/li&gt;
+&lt;
+</description>
+      <pubDate>Wed, 02 Jan 2008 10:16:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.5.zip"
+        length="706048"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.4</title>
       <description>
         Release Notes - NatsuLion - Version 0.4

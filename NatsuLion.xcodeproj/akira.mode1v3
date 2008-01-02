@@ -269,7 +269,6 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>E9614CDA0D27BAAD009743CE</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>E91B3DBA0D13F893007C9762</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>089C165CFE840E0CC02AAC07</string>
@@ -282,11 +281,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>39</integer>
+									<integer>37</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {243, 615}}</string>
+							<string>{{0, 425}, {243, 615}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -323,7 +324,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TwitterStatusViewMessageField.m</string>
+								<string>Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +332,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TwitterStatusViewMessageField.m</string>
+										<string>Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9A78FA70D2B1347008BC3CF</string>
+										<string>E9A78FE30D2B2571008BC3CF</string>
 										<key>history</key>
 										<array>
 											<string>E9F1D9580D133F4F0072CE81</string>
@@ -358,22 +359,16 @@
 											<string>E9E6B3550D29F68100F96410</string>
 											<string>E96C36B50D2A93EF00CED33F</string>
 											<string>E96C36B60D2A93EF00CED33F</string>
-											<string>E991C5920D2AA16800F410B6</string>
-											<string>E991C5A00D2AA36A00F410B6</string>
 											<string>E991C5CC0D2AA9EF00F410B6</string>
 											<string>E991C5E80D2AACB900F410B6</string>
-											<string>E991C5F50D2AAE8400F410B6</string>
 											<string>E991C6060D2AAEEE00F410B6</string>
-											<string>E991C6150D2AB0EF00F410B6</string>
 											<string>E991C6160D2AB0EF00F410B6</string>
 											<string>E991C62C0D2AB4A600F410B6</string>
 											<string>E991C6360D2ABE5700F410B6</string>
-											<string>E991C63C0D2AC22E00F410B6</string>
 											<string>E991C64D0D2AC53A00F410B6</string>
 											<string>E991C66E0D2AE64D00F410B6</string>
 											<string>E991C6710D2AE64D00F410B6</string>
 											<string>E991C67D0D2AE64D00F410B6</string>
-											<string>E991C7500D2AFACD00F410B6</string>
 											<string>E991C7520D2AFACD00F410B6</string>
 											<string>E991C7530D2AFACD00F410B6</string>
 											<string>E991C7570D2AFACD00F410B6</string>
@@ -396,7 +391,6 @@
 											<string>E9A78F4F0D2B1347008BC3CF</string>
 											<string>E9A78F500D2B1347008BC3CF</string>
 											<string>E9A78F510D2B1347008BC3CF</string>
-											<string>E9A78F520D2B1347008BC3CF</string>
 											<string>E9A78F530D2B1347008BC3CF</string>
 											<string>E9A78F540D2B1347008BC3CF</string>
 											<string>E9A78F550D2B1347008BC3CF</string>
@@ -407,7 +401,14 @@
 											<string>E9A78F5A0D2B1347008BC3CF</string>
 											<string>E9A78F5B0D2B1347008BC3CF</string>
 											<string>E9A78F5C0D2B1347008BC3CF</string>
-											<string>E9A78F5D0D2B1347008BC3CF</string>
+											<string>E9A78FC40D2B1B08008BC3CF</string>
+											<string>E9A78FD00D2B2485008BC3CF</string>
+											<string>E9A78FD10D2B2485008BC3CF</string>
+											<string>E9A78FD20D2B2485008BC3CF</string>
+											<string>E9A78FD30D2B2485008BC3CF</string>
+											<string>E9A78FD40D2B2485008BC3CF</string>
+											<string>E9A78FD50D2B2485008BC3CF</string>
+											<string>E9A78FD60D2B2485008BC3CF</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -554,6 +555,14 @@
 											<string>E9A78FA40D2B1347008BC3CF</string>
 											<string>E9A78FA50D2B1347008BC3CF</string>
 											<string>E9A78FA60D2B1347008BC3CF</string>
+											<string>E9A78FC60D2B1B08008BC3CF</string>
+											<string>E9A78FD70D2B2485008BC3CF</string>
+											<string>E9A78FD80D2B2485008BC3CF</string>
+											<string>E9A78FD90D2B2485008BC3CF</string>
+											<string>E9A78FDA0D2B2485008BC3CF</string>
+											<string>E9A78FDB0D2B2485008BC3CF</string>
+											<string>E9A78FDC0D2B2485008BC3CF</string>
+											<string>E9A78FDD0D2B2485008BC3CF</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -846,7 +855,7 @@
 			<key>WindowToolGUID</key>
 			<string>E9160C000D11F6C700C9EEFF</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
