@@ -509,6 +509,10 @@
 			E9E5DE730D2D2F4400A201F3 /* PBXTextBookmark */ = E9E5DE730D2D2F4400A201F3 /* PBXTextBookmark */;
 			E9E5DE750D2D306100A201F3 /* PBXTextBookmark */ = E9E5DE750D2D306100A201F3 /* PBXTextBookmark */;
 			E9E5DE770D2D318700A201F3 /* PBXTextBookmark */ = E9E5DE770D2D318700A201F3 /* PBXTextBookmark */;
+			E9E5DE790D2D325A00A201F3 /* PBXTextBookmark */ = E9E5DE790D2D325A00A201F3 /* PBXTextBookmark */;
+			E9E5DE7A0D2D325A00A201F3 /* PBXTextBookmark */ = E9E5DE7A0D2D325A00A201F3 /* PBXTextBookmark */;
+			E9E5DE7B0D2D325A00A201F3 /* PBXTextBookmark */ = E9E5DE7B0D2D325A00A201F3 /* PBXTextBookmark */;
+			E9E5DE7F0D2D338A00A201F3 /* PBXTextBookmark */ = E9E5DE7F0D2D338A00A201F3 /* PBXTextBookmark */;
 			E9E6B2F60D29EFD100F96410 = E9E6B2F60D29EFD100F96410 /* PBXTextBookmark */;
 			E9E6B2F70D29EFD100F96410 = E9E6B2F70D29EFD100F96410 /* PBXTextBookmark */;
 			E9E6B3550D29F68100F96410 = E9E6B3550D29F68100F96410 /* PBXTextBookmark */;
@@ -549,7 +553,7 @@
 	8D1107310486CEB800E47090 /* Info.plist */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1021, 582}}";
-			sepNavSelRange = "{756, 0}";
+			sepNavSelRange = "{963, 0}";
 			sepNavVisRange = "{0, 981}";
 			sepNavWindowFrame = "{{15, 547}, {799, 626}}";
 		};
@@ -1372,6 +1376,13 @@
 		name = NSTextField.h;
 		path = /Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSTextField.h;
 		sourceTree = "<absolute>";
+	};
+	E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1021, 582}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 310}";
+		};
 	};
 	E991C5CC0D2AA9EF00F410B6 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2267,7 +2278,7 @@
 		fRef = E96801F30D2748DB0048A163 /* Japanese */;
 		name = "InfoPlist.strings: 4";
 		rLen = 0;
-		rLoc = 117;
+		rLoc = 119;
 		rType = 0;
 		vrLen = 117;
 		vrLoc = 0;
@@ -4931,6 +4942,46 @@
 		rType = 0;
 		vrLen = 1272;
 		vrLoc = 868;
+	};
+	E9E5DE790D2D325A00A201F3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */;
+		name = "MainWindowController.m: 50";
+		rLen = 0;
+		rLoc = 1602;
+		rType = 0;
+		vrLen = 1272;
+		vrLoc = 868;
+	};
+	E9E5DE7A0D2D325A00A201F3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */;
+		name = "MainWindowController.m: 50";
+		rLen = 0;
+		rLoc = 1602;
+		rType = 0;
+		vrLen = 1272;
+		vrLoc = 868;
+	};
+	E9E5DE7B0D2D325A00A201F3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 22";
+		rLen = 0;
+		rLoc = 694;
+		rType = 0;
+		vrLen = 981;
+		vrLoc = 0;
+	};
+	E9E5DE7F0D2D338A00A201F3 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 22";
+		rLen = 0;
+		rLoc = 694;
+		rType = 0;
+		vrLen = 981;
+		vrLoc = 0;
 	};
 	E9E6B2F60D29EFD100F96410 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;

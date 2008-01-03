@@ -7,6 +7,34 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.7</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.7
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-48'&gt;NTLN-48&lt;/a&gt;] -         some code improvements told on Twitter
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-50'&gt;NTLN-50&lt;/a&gt;] -         &lt; and &gt; are shown as &amp;lt; and &amp;gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-16'&gt;NTLN-16&lt;/a&gt;] -         skip a Growl notification just after launched
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-39'&gt;NTLN-39&lt;/a&gt;] -         inform entered text length in a status bar
+&lt;/li&gt;
+&lt;/ul&gt;
+    </description>
+      <pubDate>Fri, 04 Jan 2008 00:09:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.7.zip"
+        length="707130"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.6</title>
       <description>
         Release Notes - NatsuLion - Version 0.6

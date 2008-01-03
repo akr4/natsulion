@@ -1,4 +1,4 @@
 ﻿/* Localized versions of Info.plist keys */
 
 NSHumanReadableCopyright = "© Akira Ueda, 2007";
-CFBundleName = "夏ライオン";
+//CFBundleName = "夏ライオン";
