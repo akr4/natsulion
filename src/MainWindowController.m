@@ -9,13 +9,19 @@
 
 - (id) init {
     _twitter = [[Twitter alloc] init];
-
+    _growlEnabled = FALSE;
+    _afterLaunchedTimer = [[NSTimer scheduledTimerWithTimeInterval:60 // TODO: consider refreshInterval
+                                                            target:self
+                                                          selector:@selector(enableGrowl)
+                                                          userInfo:nil
+                                                           repeats:FALSE] retain];
     return self;
 }
 
 - (void) dealloc {
     [_twitter release];
     [_growl release];
+    [_afterLaunchedTimer release];
     [super dealloc];
 }
 
@@ -28,6 +34,12 @@
     [messageViewControllerArrayController setSortDescriptors:
         [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:TRUE] autorelease]]];
     [messageViewControllerArrayController setAutomaticallyRearrangesObjects:TRUE];    
+}
+
+- (void) enableGrowl {
+    _growlEnabled = TRUE;
+    [_afterLaunchedTimer release];
+    NSLog(@"growl enabled");
 }
 
 - (void) showWindowToFront {
@@ -43,10 +55,14 @@
                   andIcon:(NSData*)iconData 
               andPriority:(int)priority
                 andSticky:(BOOL)sticky {
+    if (!_growlEnabled || ![[NSUserDefaults standardUserDefaults] boolForKey:PREFERENCE_USE_GROWL]) {
+        return;
+    }
+    
     if (!_growl) {
         _growl = [[GrowlNotifier alloc] init];
     }
-    
+
     [_growl sendToGrowlTitle:title
               andDescription:description
                      andIcon:iconData
@@ -143,13 +159,11 @@
                     break;
             }
             
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:PREFERENCE_USE_GROWL]) {
-                [self sendToGrowlTitle:[s name]
-                        andDescription:[s text]
-                               andIcon:[[s icon] TIFFRepresentation]
-                           andPriority:priority
-                             andSticky:sticky];
-            }
+            [self sendToGrowlTitle:[s name]
+                    andDescription:[s text]
+                           andIcon:[[s icon] TIFFRepresentation]
+                       andPriority:priority
+                         andSticky:sticky];
             
             if ([[NSUserDefaults standardUserDefaults] boolForKey:PREFERENCE_SHOW_WINDOW_WHEN_NEW_MESSAGE]) {
                 [mainWindow makeKeyAndOrderFront:nil];

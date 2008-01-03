@@ -290,7 +290,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 496}, {243, 601}}</string>
+							<string>{{0, 239}, {243, 601}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -339,14 +339,13 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9E5DE510D2D2BE800A201F3</string>
+										<string>E9E5DE770D2D318700A201F3</string>
 										<key>history</key>
 										<array>
 											<string>E9F1D9580D133F4F0072CE81</string>
 											<string>E939DB880D202EF700A1A85C</string>
 											<string>E98B09C30D21D7160002A75E</string>
 											<string>E9E2AC7D0D22D20A008561C2</string>
-											<string>E9F960970D25D2AC007829C4</string>
 											<string>E968007D0D26EA100048A163</string>
 											<string>E96800C10D26FE470048A163</string>
 											<string>E93F7CA00D27F3DF00366600</string>
@@ -357,7 +356,6 @@
 											<string>E9E5C0530D28BA1B00F34B9B</string>
 											<string>E9E5C0940D28BE1200F34B9B</string>
 											<string>E9E5C1D60D28D70F00F34B9B</string>
-											<string>E9E6B3550D29F68100F96410</string>
 											<string>E96C36B50D2A93EF00CED33F</string>
 											<string>E96C36B60D2A93EF00CED33F</string>
 											<string>E991C5CC0D2AA9EF00F410B6</string>
@@ -382,8 +380,6 @@
 											<string>E9A78F5C0D2B1347008BC3CF</string>
 											<string>E9A78FD10D2B2485008BC3CF</string>
 											<string>E9A78FD20D2B2485008BC3CF</string>
-											<string>E9A78FD40D2B2485008BC3CF</string>
-											<string>E9A78FD50D2B2485008BC3CF</string>
 											<string>E9E5DD240D2D0B1700A201F3</string>
 											<string>E9E5DD250D2D0B1700A201F3</string>
 											<string>E9E5DD260D2D0B1700A201F3</string>
@@ -392,7 +388,6 @@
 											<string>E9E5DD8D0D2D18AA00A201F3</string>
 											<string>E9E5DDBE0D2D200500A201F3</string>
 											<string>E9E5DDBF0D2D200500A201F3</string>
-											<string>E9E5DDC00D2D200500A201F3</string>
 											<string>E9E5DDC10D2D200500A201F3</string>
 											<string>E9E5DDC30D2D200500A201F3</string>
 											<string>E9E5DDC40D2D200500A201F3</string>
@@ -410,8 +405,13 @@
 											<string>E9E5DE3B0D2D29A700A201F3</string>
 											<string>E9E5DE3C0D2D29A700A201F3</string>
 											<string>E9E5DE3D0D2D29A700A201F3</string>
-											<string>E9E5DE3E0D2D29A700A201F3</string>
-											<string>E9E5DE3F0D2D29A700A201F3</string>
+											<string>E9E5DE550D2D2F4400A201F3</string>
+											<string>E9E5DE560D2D2F4400A201F3</string>
+											<string>E9E5DE570D2D2F4400A201F3</string>
+											<string>E9E5DE580D2D2F4400A201F3</string>
+											<string>E9E5DE590D2D2F4400A201F3</string>
+											<string>E9E5DE5A0D2D2F4400A201F3</string>
+											<string>E9E5DE5B0D2D2F4400A201F3</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -615,6 +615,29 @@
 											<string>E9E5DE420D2D29A700A201F3</string>
 											<string>E9E5DE430D2D29A700A201F3</string>
 											<string>E9E5DE440D2D29A700A201F3</string>
+											<string>E9E5DE5C0D2D2F4400A201F3</string>
+											<string>E9E5DE5D0D2D2F4400A201F3</string>
+											<string>E9E5DE5E0D2D2F4400A201F3</string>
+											<string>E9E5DE5F0D2D2F4400A201F3</string>
+											<string>E9E5DE600D2D2F4400A201F3</string>
+											<string>E9E5DE610D2D2F4400A201F3</string>
+											<string>E9E5DE620D2D2F4400A201F3</string>
+											<string>E9E5DE630D2D2F4400A201F3</string>
+											<string>E9E5DE640D2D2F4400A201F3</string>
+											<string>E9E5DE650D2D2F4400A201F3</string>
+											<string>E9E5DE660D2D2F4400A201F3</string>
+											<string>E9E5DE670D2D2F4400A201F3</string>
+											<string>E9E5DE680D2D2F4400A201F3</string>
+											<string>E9E5DE690D2D2F4400A201F3</string>
+											<string>E9E5DE6A0D2D2F4400A201F3</string>
+											<string>E9E5DE6B0D2D2F4400A201F3</string>
+											<string>E9E5DE6C0D2D2F4400A201F3</string>
+											<string>E9E5DE6D0D2D2F4400A201F3</string>
+											<string>E9E5DE6E0D2D2F4400A201F3</string>
+											<string>E9E5DE6F0D2D2F4400A201F3</string>
+											<string>E9E5DE700D2D2F4400A201F3</string>
+											<string>E9E5DE710D2D2F4400A201F3</string>
+											<string>E9E5DE720D2D2F4400A201F3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -812,8 +835,8 @@
 		<string>E9E5DE480D2D29A700A201F3</string>
 		<string>E9E5DE490D2D29A700A201F3</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
