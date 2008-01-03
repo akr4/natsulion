@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
-#import "TwitterStatusViewTextField.h"
+#import "MessageViewTextField.h"
 
-@interface TwitterStatusViewMessageField : TwitterStatusViewTextField {
+@interface TwitterStatusViewMessageField :  MessageViewTextField {
     float _defaultHeight;
 }
 

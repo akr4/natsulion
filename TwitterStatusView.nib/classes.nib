@@ -14,7 +14,7 @@
 				<key>iconView</key>
 				<string>TwitterStatusViewImageView</string>
 				<key>nameField</key>
-				<string>TwitterStatusViewTextField</string>
+				<string>TwitterStatusViewNameField</string>
 				<key>textField</key>
 				<string>TwitterStatusViewMessageField</string>
 				<key>timestampField</key>
@@ -32,6 +32,14 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSTextField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>TwitterStatusViewNameField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>MessageViewTextField</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

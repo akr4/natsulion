@@ -1,5 +1,6 @@
 #import "Twitter.h"
 #import "TwitterStatus.h"
+#import "XMLHTTPEncoder.h"
 
 @implementation TwitterPostCallbackHandler
 
@@ -172,10 +173,12 @@
         TwitterStatus *backStatus = [[[TwitterStatus alloc] init] autorelease];
         
         [backStatus setStatusId:[self stringValueFromNSXMLNode:status byXPath:@"id/text()"]];
-        [backStatus setName:[self stringValueFromNSXMLNode:status byXPath:@"user/name/text()"]];
-        [backStatus setScreenName:[self stringValueFromNSXMLNode:status byXPath:@"user/screen_name/text()"]];
-        [backStatus setText:[self stringValueFromNSXMLNode:status byXPath:@"text/text()"]];
-        [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:[self stringValueFromNSXMLNode:status byXPath:@"created_at/text()"]]];
+        [backStatus setName:[[XMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/name/text()"]]];
+        [backStatus setScreenName:[[XMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/screen_name/text()"]]];
+        [backStatus setText:[[XMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"text/text()"]]];
+        
+        NSString *timestampStr = [[XMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"created_at/text()"]];
+        [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];
 
         NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"user/profile_image_url/text()"]];
         
@@ -209,7 +212,7 @@
     [_twitterPostCallback retain];
     
     TwitterPostCallbackHandler *handler = [[[TwitterPostCallbackHandler alloc] initWithCallback:self] autorelease];
-    NSString *requestStr =  [@"status=" stringByAppendingString:message];
+    NSString *requestStr =  [@"status=" stringByAppendingString:[[XMLHTTPEncoder encoder] encodeHTTP:message]];
     requestStr = [requestStr stringByAppendingString:@"&source=natsulion"];
 
     [_connectionForPost release];

@@ -91,7 +91,7 @@
     NSMutableAttributedString* string = [[[NSMutableAttributedString alloc] init] autorelease];
     int i;
     for (i = 0; i < [tokens count]; i++) {
-        NSString *token = [self decodeEntityReferences:[tokens objectAtIndex:i]];
+        NSString *token = [tokens objectAtIndex:i];
 //        NSLog(@"token: %@", token);
         if ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 && [token length] > [NTLN_URLEXTRACTOR_PREFIX_HTTP length]) {
             [string appendAttributedString:[NSAttributedString hyperlinkFromString:token withURL:[NSURL URLWithString:token]]];

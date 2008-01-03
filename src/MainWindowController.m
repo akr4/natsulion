@@ -1,7 +1,6 @@
 #import "MainWindowController.h"
 #import "PreferencesWindow.h"
 #import "Account.h"
-#import "EntityReferenceConverter.h"
 #import "TwitterStatusViewController.h"
 #import "TwitterStatus.h"
 #import "ErrorMessageViewController.h"
@@ -95,7 +94,7 @@
         return;
     }
     [messageTextField setEnabled:FALSE];
-    [_twitter sendMessage:[[EntityReferenceConverter converter] reference:[messageTextField stringValue]]
+    [_twitter sendMessage:[messageTextField stringValue]
                  username:[[Account instance] username]
                  password:password
                  callback:self];

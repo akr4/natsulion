@@ -39,13 +39,13 @@
 		E9A411290D29904F003BFA9F /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* AppController.m */; };
 		E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFD5950D183E630024C8B4 /* MainMenu.nib */; };
 		E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */; };
-		E9BFD6130D1854270024C8B4 /* TwitterStatusViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */; };
+		E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */; };
 		E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */; };
 		E9CE391F0D145DB700D14D9F /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
-		E9E5BF9F0D28988800F34B9B /* EntityReferenceConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* EntityReferenceConverter.m */; };
-		E9E5BFA20D2898D200F34B9B /* EntityReferenceConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BFA10D2898D200F34B9B /* EntityReferenceConverterTest.m */; };
-		E9E5BFA30D2898F300F34B9B /* EntityReferenceConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* EntityReferenceConverter.m */; };
+		E9E5BF9F0D28988800F34B9B /* XMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */; };
+		E9E5BFA20D2898D200F34B9B /* XMLHTTPEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */; };
+		E9E5BFA30D2898F300F34B9B /* XMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */; };
 		E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */; };
 		E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */; };
 		E9F960930D25D03A007829C4 /* AutoResizingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* AutoResizingTextField.m */; };
@@ -135,7 +135,7 @@
 		E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ErrorMessageView.nib; sourceTree = "<group>"; };
 		E991C66A0D2AE41100F410B6 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = ../MessageViewController.h; sourceTree = "<group>"; };
 		E991C66B0D2AE41200F410B6 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = ../MessageViewController.m; sourceTree = "<group>"; };
-		E991C6B70D2AE79D00F410B6 /* TwitterStatusViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewTextField.h; sourceTree = "<group>"; };
+		E991C6B70D2AE79D00F410B6 /* TwitterStatusViewNameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewNameField.h; sourceTree = "<group>"; };
 		E991C6B80D2AE7AE00F410B6 /* MessageViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewTextField.h; sourceTree = "<group>"; };
 		E991C6B90D2AE7AE00F410B6 /* MessageViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewTextField.m; sourceTree = "<group>"; };
 		E991C6BB0D2AE9A300F410B6 /* MessageViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewTimestampField.h; sourceTree = "<group>"; };
@@ -146,17 +146,17 @@
 		E9A411280D29904F003BFA9F /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewController.h; sourceTree = "<group>"; };
 		E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewController.m; sourceTree = "<group>"; };
-		E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewTextField.m; sourceTree = "<group>"; };
+		E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewNameField.m; sourceTree = "<group>"; };
 		E9BFD61C0D1857320024C8B4 /* TwitterStatusViewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewImageView.h; sourceTree = "<group>"; };
 		E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewImageView.m; sourceTree = "<group>"; };
 		E9CE391D0D145DB700D14D9F /* MessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewController.h; sourceTree = "<group>"; };
 		E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
 		E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusView.h; sourceTree = "<group>"; };
 		E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusView.m; sourceTree = "<group>"; };
-		E9E5BF9D0D28988800F34B9B /* EntityReferenceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityReferenceConverter.h; sourceTree = "<group>"; };
-		E9E5BF9E0D28988800F34B9B /* EntityReferenceConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityReferenceConverter.m; sourceTree = "<group>"; };
-		E9E5BFA00D2898D200F34B9B /* EntityReferenceConverterTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityReferenceConverterTest.h; sourceTree = "<group>"; };
-		E9E5BFA10D2898D200F34B9B /* EntityReferenceConverterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntityReferenceConverterTest.m; sourceTree = "<group>"; };
+		E9E5BF9D0D28988800F34B9B /* XMLHTTPEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLHTTPEncoder.h; sourceTree = "<group>"; };
+		E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLHTTPEncoder.m; sourceTree = "<group>"; };
+		E9E5BFA00D2898D200F34B9B /* XMLHTTPEncoderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLHTTPEncoderTest.h; sourceTree = "<group>"; };
+		E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLHTTPEncoderTest.m; sourceTree = "<group>"; };
 		E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUtils.h; sourceTree = "<group>"; };
 		E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUtils.m; sourceTree = "<group>"; };
 		E9F1DB3C0D13CF000072CE81 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
@@ -315,8 +315,8 @@
 				E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */,
 				E93F7BE60D27DC6B00366600 /* TwitterStatusViewMessageField.h */,
 				E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */,
-				E991C6B70D2AE79D00F410B6 /* TwitterStatusViewTextField.h */,
-				E9BFD6120D1854270024C8B4 /* TwitterStatusViewTextField.m */,
+				E991C6B70D2AE79D00F410B6 /* TwitterStatusViewNameField.h */,
+				E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */,
 				E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */,
 				E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */,
 			);
@@ -328,8 +328,8 @@
 			children = (
 				E9614CDC0D27BADC009743CE /* URLExtractorTest.m */,
 				E9614CDB0D27BADC009743CE /* URLExtractorTest.h */,
-				E9E5BFA00D2898D200F34B9B /* EntityReferenceConverterTest.h */,
-				E9E5BFA10D2898D200F34B9B /* EntityReferenceConverterTest.m */,
+				E9E5BFA00D2898D200F34B9B /* XMLHTTPEncoderTest.h */,
+				E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -339,8 +339,8 @@
 			children = (
 				E9614CDF0D27BC75009743CE /* URLExtractor.h */,
 				E9614CE00D27BC75009743CE /* URLExtractor.m */,
-				E9E5BF9D0D28988800F34B9B /* EntityReferenceConverter.h */,
-				E9E5BF9E0D28988800F34B9B /* EntityReferenceConverter.m */,
+				E9E5BF9D0D28988800F34B9B /* XMLHTTPEncoder.h */,
+				E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -474,7 +474,7 @@
 				E9CE391F0D145DB700D14D9F /* MessageTableViewController.m in Sources */,
 				E915200F0D16D3B7008D6992 /* PreferencesWindow.m in Sources */,
 				E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */,
-				E9BFD6130D1854270024C8B4 /* TwitterStatusViewTextField.m in Sources */,
+				E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */,
 				E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */,
 				E996326B0D1E5D2400860515 /* Message.m in Sources */,
 				E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */,
@@ -482,7 +482,7 @@
 				E9F960930D25D03A007829C4 /* AutoResizingTextField.m in Sources */,
 				E9614CE10D27BC75009743CE /* URLExtractor.m in Sources */,
 				E93F7BE80D27DC6B00366600 /* TwitterStatusViewMessageField.m in Sources */,
-				E9E5BF9F0D28988800F34B9B /* EntityReferenceConverter.m in Sources */,
+				E9E5BF9F0D28988800F34B9B /* XMLHTTPEncoder.m in Sources */,
 				E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */,
 				E9A411290D29904F003BFA9F /* AppController.m in Sources */,
 				E96C362C0D2A71BA00CED33F /* KeyChain.m in Sources */,
@@ -501,8 +501,8 @@
 			files = (
 				E9614D130D27BEA4009743CE /* URLExtractor.m in Sources */,
 				E9614D140D27BEBA009743CE /* URLExtractorTest.m in Sources */,
-				E9E5BFA20D2898D200F34B9B /* EntityReferenceConverterTest.m in Sources */,
-				E9E5BFA30D2898F300F34B9B /* EntityReferenceConverter.m in Sources */,
+				E9E5BFA20D2898D200F34B9B /* XMLHTTPEncoderTest.m in Sources */,
+				E9E5BFA30D2898F300F34B9B /* XMLHTTPEncoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

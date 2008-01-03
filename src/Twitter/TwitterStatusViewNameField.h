@@ -2,11 +2,10 @@
 #import "MessageViewTextField.h"
 #import "TwitterStatus.h"
 
-@interface TwitterStatusViewTextField : MessageViewTextField {
+@interface TwitterStatusViewNameField : MessageViewTextField {
     TwitterStatus *_status;
 }
 
 - (void) setStatus:(TwitterStatus*)status;
 
-- (NSString*) decodeEntityReferences:(NSString*)aString;
 @end
