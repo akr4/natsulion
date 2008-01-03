@@ -48,7 +48,7 @@
 		E9E5BFA30D2898F300F34B9B /* XMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */; };
 		E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */; };
 		E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */; };
-		E9F960930D25D03A007829C4 /* AutoResizingTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* AutoResizingTextField.m */; };
+		E9F960930D25D03A007829C4 /* MessageInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* MessageInputTextField.m */; };
 		E9F961550D2622B5007829C4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F961540D2622B5007829C4 /* Sparkle.framework */; };
 		E9F961740D262336007829C4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9F961540D2622B5007829C4 /* Sparkle.framework */; };
 /* End PBXBuildFile section */
@@ -161,8 +161,8 @@
 		E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUtils.m; sourceTree = "<group>"; };
 		E9F1DB3C0D13CF000072CE81 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterStatusView.nib; sourceTree = "<group>"; };
-		E9F960910D25D03A007829C4 /* AutoResizingTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoResizingTextField.h; sourceTree = "<group>"; };
-		E9F960920D25D03A007829C4 /* AutoResizingTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoResizingTextField.m; sourceTree = "<group>"; };
+		E9F960910D25D03A007829C4 /* MessageInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageInputTextField.h; sourceTree = "<group>"; };
+		E9F960920D25D03A007829C4 /* MessageInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageInputTextField.m; sourceTree = "<group>"; };
 		E9F961540D2622B5007829C4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -211,8 +211,8 @@
 				E915200E0D16D3B7008D6992 /* PreferencesWindow.m */,
 				E99632690D1E5D2400860515 /* Message.h */,
 				E996326A0D1E5D2400860515 /* Message.m */,
-				E9F960910D25D03A007829C4 /* AutoResizingTextField.h */,
-				E9F960920D25D03A007829C4 /* AutoResizingTextField.m */,
+				E9F960910D25D03A007829C4 /* MessageInputTextField.h */,
+				E9F960920D25D03A007829C4 /* MessageInputTextField.m */,
 				E96C362A0D2A71BA00CED33F /* KeyChain.h */,
 				E96C362B0D2A71BA00CED33F /* KeyChain.m */,
 				E96C36910D2A83E300CED33F /* Account.h */,
@@ -479,7 +479,7 @@
 				E996326B0D1E5D2400860515 /* Message.m in Sources */,
 				E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */,
 				E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */,
-				E9F960930D25D03A007829C4 /* AutoResizingTextField.m in Sources */,
+				E9F960930D25D03A007829C4 /* MessageInputTextField.m in Sources */,
 				E9614CE10D27BC75009743CE /* URLExtractor.m in Sources */,
 				E93F7BE80D27DC6B00366600 /* TwitterStatusViewMessageField.m in Sources */,
 				E9E5BF9F0D28988800F34B9B /* XMLHTTPEncoder.m in Sources */,

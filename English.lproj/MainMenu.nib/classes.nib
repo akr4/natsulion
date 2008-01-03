@@ -33,14 +33,6 @@
 			<string>NSWindowController</string>
 		</dict>
 		<dict>
-			<key>CLASS</key>
-			<string>AutoResizingTextField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSTextField</string>
-		</dict>
-		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>toggleAutomaticLinkDetection</key>
@@ -90,6 +82,14 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
+			<key>CLASS</key>
+			<string>MessageInputTextField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSTextField</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>sendMessage</key>
@@ -108,9 +108,11 @@
 				<key>messageTableViewController</key>
 				<string>MessageTableViewController</string>
 				<key>messageTextField</key>
-				<string>AutoResizingTextField</string>
+				<string>MessageInputTextField</string>
 				<key>messageViewControllerArrayController</key>
 				<string>NSArrayController</string>
+				<key>statusTextField</key>
+				<string>NSTextField</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSWindowController</string>

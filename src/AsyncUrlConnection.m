@@ -53,7 +53,7 @@
     [request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:FALSE];
  
-    NSURLConnection *_connection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    _connection= [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
         NSLog(@"failed to get connection.");
         return nil;

@@ -2,13 +2,14 @@
 #import "MessageTableViewController.h"
 #import "Twitter.h"
 #import "GrowlNotifier.h"
-#import "AutoResizingTextField.h"
+#import "MessageInputTextField.h"
 
-@interface MainWindowController : NSWindowController <TimelineCallback, TwitterPostCallback, AutoResizingTextFieldCallback> {
+@interface MainWindowController : NSWindowController <TimelineCallback, TwitterPostCallback, MessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
     IBOutlet MessageTableViewController *messageTableViewController;
     IBOutlet NSProgressIndicator *downloadProgress;
-    IBOutlet AutoResizingTextField *messageTextField;
+    IBOutlet MessageInputTextField *messageTextField;
+    IBOutlet NSTextField *statusTextField;
     
     IBOutlet NSArrayController *messageViewControllerArrayController;
     

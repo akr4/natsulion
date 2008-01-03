@@ -105,6 +105,7 @@
     [messageTextField setEditable:TRUE];
     [messageTextField setEnabled:TRUE];
     [messageTextField updateHeight];
+    [statusTextField setStringValue:@""];
 }
 
 
@@ -171,9 +172,19 @@
     [downloadProgress stopAnimation:self];
 }
 
-// AutoResizingTextField callback ///////////////////////////////////////////////////////
-- (void) autoResizingTextFieldResized:(float)heightDelta {
+// MessageInputTextField callback ///////////////////////////////////////////////////////
+- (void) messageInputTextFieldResized:(float)heightDelta {
     [messageTableViewController resize:heightDelta];
+}
+
+- (void) messageInputTextFieldChanged:(int)length state:(enum NTLNMessageInputTextFieldLengthState)state {
+    // TODO: statusTextField should do itself (need subclassing)
+    if (length > 0) {
+        NSString *statusText = [NSString stringWithFormat:@"%d", length];
+        [statusTextField setStringValue:statusText];
+    } else {
+        [statusTextField setStringValue:@""];
+    }
 }
 
 @end

@@ -1,8 +1,8 @@
-#import "AutoResizingTextField.h"
+#import "MessageInputTextField.h"
 
 #define MARGIN 4.0f
 
-@implementation AutoResizingTextField
+@implementation MessageInputTextField
 
 - (void) awakeFromNib {
     [self setDelegate:self];
@@ -20,7 +20,7 @@
     _maxLength = max;
 }
 
-- (void) setCallback:(NSObject<AutoResizingTextFieldCallback>*)callback {
+- (void) setCallback:(NSObject<MessageInputTextFieldCallback>*)callback {
     _callback = callback;
 }
 
@@ -66,7 +66,7 @@
     [super setFrameSize:newSize];
     _frameSizeInternalChanging = FALSE;
     
-    [_callback autoResizingTextFieldResized:heightDelta];
+    [_callback messageInputTextFieldResized:heightDelta];
 }
 
 - (void) checkAndUpdateMaxLength {
@@ -117,6 +117,7 @@
 - (void)controlTextDidChange:(NSNotification *)aNotification {
     [self updateTextState];
     [self updateHeight];
+    [_callback messageInputTextFieldChanged:[[self stringValue] length] state:_lengthState];
 }
 
 - (void)setFrameSize:(NSSize)newSize {
