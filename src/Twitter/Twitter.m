@@ -113,9 +113,10 @@
 }
 
 - (void) dealloc {
-    if (_friendTimelineCallback) {
-        [_friendTimelineCallback release];
-    }
+    [_friendTimelineCallback release];
+    [_twitterPostCallback release];
+    [_connectionForFriendTimeline release];
+    [_connectionForPost release];
     [_waitingIconTwitterStatuses release];
     [_iconRepository release];
     [super dealloc];
@@ -131,11 +132,12 @@
     _friendTimelineCallback = callback;
     [_friendTimelineCallback retain];
     
-    AsyncUrlConnection *connection = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" 
-                                                                    username:username
-                                                                    password:password
-                                                                    callback:self];
-    if (!connection) {
+    [_connectionForFriendTimeline release];
+    _connectionForFriendTimeline = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" 
+                                                                  username:username
+                                                                  password:password
+                                                                  callback:self];
+    if (!_connectionForFriendTimeline) {
         NSLog(@"failed to get connection.");
         return;
     }
@@ -208,16 +210,18 @@
     
     TwitterPostCallbackHandler *handler = [[[TwitterPostCallbackHandler alloc] initWithCallback:self] autorelease];
     NSString *requestStr =  [@"status=" stringByAppendingString:message];
-    requestStr = [requestStr stringByAppendingString:@"&source=NatsuLion"];
-    AsyncUrlConnection *connection = [[[AsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
-                                                                                 bodyString:requestStr 
-                                                                                   username:username
-                                                                                   password:password
-                                                                                   callback:handler] autorelease];
+    requestStr = [requestStr stringByAppendingString:@"&source=natsulion"];
+
+    [_connectionForPost release];
+    _connectionForPost = [[AsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
+                                                                    bodyString:requestStr 
+                                                                      username:username
+                                                                      password:password
+                                                                      callback:handler];
     
-    NSLog(@"sent data [%@]", requestStr);
+//    NSLog(@"sent data [%@]", requestStr);
     
-    if (!connection) {
+    if (!_connectionForPost) {
         [_twitterPostCallback failedToPost:@"Posting a message failure. unable to get connection."];
         [_twitterPostCallback release];
         _twitterPostCallback = nil;

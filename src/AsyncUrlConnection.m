@@ -23,8 +23,8 @@
     [request setTimeoutInterval:10.0];
     [request setHTTPShouldHandleCookies:FALSE];
 
-    NSURLConnection *connection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (!connection) {
+    _connection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (!_connection) {
         NSLog(@"failed to get connection.");
         return nil;
     }
@@ -53,8 +53,8 @@
     [request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:FALSE];
  
-    NSURLConnection *connection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
-    if (!connection) {
+    NSURLConnection *_connection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    if (!_connection) {
         NSLog(@"failed to get connection.");
         return nil;
     }
@@ -68,9 +68,9 @@
 - (void)delalloc {
     [_callback release];
     [_recievedData release];
+    [_connection release];
     [_username release];
     [_password release];
-    [self release];
     [super dealloc];
 }
 

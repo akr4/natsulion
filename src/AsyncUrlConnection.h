@@ -7,6 +7,7 @@
 
 @interface AsyncUrlConnection : NSObject {
     NSObject<AsyncUrlConnectionCallback> *_callback;
+    NSURLConnection *_connection;
     NSMutableData *_recievedData;
     int _statusCode;
     NSString *_username;

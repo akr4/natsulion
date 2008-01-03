@@ -119,8 +119,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 221012297;
-			PBXWorkspaceStateSaveDate = 221012297;
+			PBXPerProjectTemplateStateSaveDate = 221037592;
+			PBXWorkspaceStateSaveDate = 221037592;
 		};
 		perUserProjectItems = {
 			E914A3340D1C2B7600C8172C = E914A3340D1C2B7600C8172C /* PBXTextBookmark */;
@@ -242,6 +242,7 @@
 			E9E2AC7D0D22D20A008561C2 = E9E2AC7D0D22D20A008561C2 /* PBXTextBookmark */;
 			E9E2AC8D0D22D20A008561C2 = E9E2AC8D0D22D20A008561C2 /* PBXTextBookmark */;
 			E9E2AD070D22EE48008561C2 = E9E2AD070D22EE48008561C2 /* PBXTextBookmark */;
+			E9E4091F0D2C9FA400A52770 = E9E4091F0D2C9FA400A52770 /* PBXTextBookmark */;
 			E9E5BFB80D289C5E00F34B9B = E9E5BFB80D289C5E00F34B9B /* PBXTextBookmark */;
 			E9E5BFB90D289C5E00F34B9B = E9E5BFB90D289C5E00F34B9B /* PBXTextBookmark */;
 			E9E5BFD50D289C5E00F34B9B = E9E5BFD50D289C5E00F34B9B /* PBXTextBookmark */;
@@ -261,10 +262,11 @@
 			E9E6B4160D2A401300F96410 = E9E6B4160D2A401300F96410 /* PBXTextBookmark */;
 			E9F1D9580D133F4F0072CE81 = E9F1D9580D133F4F0072CE81 /* PBXTextBookmark */;
 			E9F1D95C0D133F4F0072CE81 = E9F1D95C0D133F4F0072CE81 /* PBXTextBookmark */;
+			E9F5D8900D2C97DA00067027 = E9F5D8900D2C97DA00067027 /* PBXTextBookmark */;
 			E9F960970D25D2AC007829C4 = E9F960970D25D2AC007829C4 /* PBXTextBookmark */;
 			E9F960A10D25D2AC007829C4 = E9F960A10D25D2AC007829C4 /* PBXTextBookmark */;
 			E9F960A30D25D2AC007829C4 = E9F960A30D25D2AC007829C4 /* PBXTextBookmark */;
-			E9FCB3A50D2C614F006ABB5B /* PBXTextBookmark */ = E9FCB3A50D2C614F006ABB5B /* PBXTextBookmark */;
+			E9FCB3A50D2C614F006ABB5B = E9FCB3A50D2C614F006ABB5B /* PBXTextBookmark */;
 		};
 		sourceControlManager = E9160B730D11B19B00C9EEFF /* Source Control */;
 		userBuildSettings = {
@@ -385,16 +387,16 @@
 	};
 	E9160B750D11B1B700C9EEFF /* AsyncUrlConnection.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1184, 596}}";
-			sepNavSelRange = "{170, 0}";
-			sepNavVisRange = "{0, 824}";
+			sepNavIntBoundsRect = "{{0, 0}, {1184, 582}}";
+			sepNavSelRange = "{306, 0}";
+			sepNavVisRange = "{0, 858}";
 		};
 	};
 	E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1190, 1512}}";
-			sepNavSelRange = "{837, 0}";
-			sepNavVisRange = "{68, 1523}";
+			sepNavIntBoundsRect = "{{0, 0}, {1190, 1540}}";
+			sepNavSelRange = "{1302, 0}";
+			sepNavVisRange = "{0, 1652}";
 		};
 	};
 	E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */ = {
@@ -413,30 +415,30 @@
 	};
 	E9160BBC0D11D2EB00C9EEFF /* Twitter.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1021, 854}}";
-			sepNavSelRange = "{109, 0}";
-			sepNavVisRange = "{0, 1362}";
+			sepNavIntBoundsRect = "{{0, 0}, {1021, 896}}";
+			sepNavSelRange = "{925, 0}";
+			sepNavVisRange = "{229, 1391}";
 		};
 	};
 	E9160BBD0D11D2EB00C9EEFF /* Twitter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {902, 4354}}";
-			sepNavSelRange = "{6354, 0}";
-			sepNavVisRange = "{4733, 1652}";
+			sepNavIntBoundsRect = "{{0, 0}, {1021, 4634}}";
+			sepNavSelRange = "{3121, 0}";
+			sepNavVisRange = "{2184, 1510}";
 		};
 	};
 	E9160BC60D11F4F500C9EEFF /* IconRepository.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1021, 573}}";
-			sepNavSelRange = "{549, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1021, 582}}";
+			sepNavSelRange = "{440, 0}";
 			sepNavVisRange = "{0, 570}";
 		};
 	};
 	E9160BC70D11F4F500C9EEFF /* IconRepository.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1021, 1050}}";
-			sepNavSelRange = "{1719, 0}";
-			sepNavVisRange = "{796, 1069}";
+			sepNavIntBoundsRect = "{{0, 0}, {1021, 1064}}";
+			sepNavSelRange = "{800, 0}";
+			sepNavVisRange = "{0, 1074}";
 		};
 	};
 	E9160C550D120D8800C9EEFF /* PBXTextBookmark */ = {
@@ -875,7 +877,7 @@
 		fRef = E9160BBD0D11D2EB00C9EEFF /* Twitter.m */;
 		name = "Twitter.m: 164";
 		rLen = 0;
-		rLoc = 5029;
+		rLoc = 5156;
 		rType = 0;
 		vrLen = 1777;
 		vrLoc = 3916;
@@ -1288,7 +1290,7 @@
 	};
 	E991C6B70D2AE79D00F410B6 /* TwitterStatusViewTextField.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1021, 573}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1021, 582}}";
 			sepNavSelRange = "{112, 0}";
 			sepNavVisRange = "{0, 284}";
 		};
@@ -1376,7 +1378,7 @@
 		fRef = E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */;
 		name = "AsyncUrlConnection.m: 93";
 		rLen = 0;
-		rLoc = 3573;
+		rLoc = 3567;
 		rType = 0;
 		vrLen = 1640;
 		vrLoc = 2618;
@@ -1406,7 +1408,7 @@
 		fRef = E9160BC70D11F4F500C9EEFF /* IconRepository.m */;
 		name = "IconRepository.m: 68";
 		rLen = 0;
-		rLoc = 1719;
+		rLoc = 1746;
 		rType = 0;
 		vrLen = 1069;
 		vrLoc = 796;
@@ -1675,7 +1677,7 @@
 		fRef = E9160BBD0D11D2EB00C9EEFF /* Twitter.m */;
 		name = "Twitter.m: 253";
 		rLen = 0;
-		rLoc = 8753;
+		rLoc = 8845;
 		rType = 0;
 		vrLen = 1249;
 		vrLoc = 8147;
@@ -1852,7 +1854,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1021, 616}}";
 			sepNavSelRange = "{945, 0}";
-			sepNavVisRange = "{64, 1087}";
+			sepNavVisRange = "{39, 1112}";
 		};
 	};
 	E9BFD64B0D1891F00024C8B4 /* MessageViewController.h */ = {
@@ -1966,6 +1968,16 @@
 		rLoc = 72;
 		rType = 0;
 		vrLen = 122;
+		vrLoc = 0;
+	};
+	E9E4091F0D2C9FA400A52770 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 24";
+		rLen = 0;
+		rLoc = 756;
+		rType = 0;
+		vrLen = 981;
 		vrLoc = 0;
 	};
 	E9E5BF9D0D28988800F34B9B /* EntityReferenceConverter.h */ = {
@@ -2175,7 +2187,7 @@
 		fRef = E9160BBC0D11D2EB00C9EEFF /* Twitter.h */;
 		name = "Twitter.h: 33";
 		rLen = 0;
-		rLoc = 1212;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1100;
 		vrLoc = 0;
@@ -2213,6 +2225,16 @@
 		name = NSSortDescriptor.h;
 		path = /Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/Foundation.framework/Versions/C/Headers/NSSortDescriptor.h;
 		sourceTree = "<absolute>";
+	};
+	E9F5D8900D2C97DA00067027 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 24";
+		rLen = 0;
+		rLoc = 756;
+		rType = 0;
+		vrLen = 981;
+		vrLoc = 0;
 	};
 	E9F960910D25D03A007829C4 /* AutoResizingTextField.h */ = {
 		uiCtxt = {

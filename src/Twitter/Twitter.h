@@ -30,6 +30,9 @@
     NSObject<TimelineCallback> *_friendTimelineCallback;
     NSObject<TwitterPostCallback> *_twitterPostCallback;
     
+    AsyncUrlConnection *_connectionForFriendTimeline;
+    AsyncUrlConnection *_connectionForPost;
+    
     NSMutableDictionary *_waitingIconTwitterStatuses;
     IconRepository *_iconRepository;
     

@@ -16,6 +16,7 @@
     [_cache release];
     [_waitings release];
     [_currentUrl release];
+    [_connection release];
     [super dealloc];
 }
 
