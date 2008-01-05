@@ -36,8 +36,19 @@
     while ([[[viewColumn tableView] subviews] count] > 0) {
         [[[[viewColumn tableView] subviews] lastObject] removeFromSuperviewWithoutNeedingDisplay];
     }
-    [self updateSelection];
     [[viewColumn tableView] reloadData];
+    [self updateSelection];
+}
+
+- (void) selectionDown {
+    NSIndexSet *target = [NSIndexSet indexSetWithIndex:[[[viewColumn tableView] selectedRowIndexes] firstIndex] + 1];
+    [[viewColumn tableView] selectRowIndexes:target byExtendingSelection:FALSE];
+}
+
+- (void) scrollUp {
+    NSRect bounds = [[[viewColumn tableView] superview] bounds];
+    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y - ([[viewColumn tableView] rowHeight] + 2.0));
+    [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
 - (void) scrollDown {
@@ -47,8 +58,15 @@
 }
 
 - (void) newMessageArrived {
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     [self reloadTableView];
-    [self scrollDown];
+    
+    if ([configuration timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
+        [self selectionDown];
+        [self scrollUp];
+    } else {
+        [self scrollDown];
+    }
 }
 
 - (void) resize:(float)deltaHeight {

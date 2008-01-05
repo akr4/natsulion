@@ -10,6 +10,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E90F0B400D2E8E190067A9CA /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = E90F0B3F0D2E8E190067A9CA /* Configuration.m */; };
 		E915200F0D16D3B7008D6992 /* PreferencesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E915200E0D16D3B7008D6992 /* PreferencesWindow.m */; };
 		E9160B770D11B1B700C9EEFF /* AsyncUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */; };
 		E9160B8E0D11C0C400C9EEFF /* TwitterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B8D0D11C0C400C9EEFF /* TwitterStatus.m */; };
@@ -95,6 +96,8 @@
 		32CA4F630368D1EE00C91783 /* NatsuLion_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatsuLion_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* NatsuLion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatsuLion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E90F0B3E0D2E8E190067A9CA /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
+		E90F0B3F0D2E8E190067A9CA /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
 		E915200D0D16D3B7008D6992 /* PreferencesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindow.h; sourceTree = "<group>"; };
 		E915200E0D16D3B7008D6992 /* PreferencesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindow.m; sourceTree = "<group>"; };
 		E9160B750D11B1B700C9EEFF /* AsyncUrlConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUrlConnection.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				E96C362B0D2A71BA00CED33F /* KeyChain.m */,
 				E96C36910D2A83E300CED33F /* Account.h */,
 				E96C36920D2A83E300CED33F /* Account.m */,
+				E90F0B3E0D2E8E190067A9CA /* Configuration.h */,
+				E90F0B3F0D2E8E190067A9CA /* Configuration.m */,
 				E991C66D0D2AE62300F410B6 /* view */,
 			);
 			path = src;
@@ -492,6 +497,7 @@
 				E991C66C0D2AE41200F410B6 /* MessageViewController.m in Sources */,
 				E991C6BA0D2AE7AE00F410B6 /* MessageViewTextField.m in Sources */,
 				E991C6BD0D2AE9A300F410B6 /* MessageViewTimestampField.m in Sources */,
+				E90F0B400D2E8E190067A9CA /* Configuration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

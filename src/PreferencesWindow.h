@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import "AppController.h"
+#import "MainWindowController.h"
 #import "Twitter.h"
 
 #define PREFERENCE_USERID @"userId"

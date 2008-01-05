@@ -3,14 +3,19 @@
 #import "Twitter.h"
 #import "GrowlNotifier.h"
 #import "MessageInputTextField.h"
+#import "Configuration.h"
 
-@interface MainWindowController : NSWindowController <TimelineCallback, TwitterPostCallback, MessageInputTextFieldCallback> {
+@protocol TimelineSortOrderChangeObserver
+- (void) timelineSortOrderChangeObserverSortOrderChanged;
+@end
+
+@interface MainWindowController : NSWindowController <TimelineSortOrderChangeObserver, TimelineCallback, TwitterPostCallback, MessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
     IBOutlet MessageTableViewController *messageTableViewController;
     IBOutlet NSProgressIndicator *downloadProgress;
     IBOutlet MessageInputTextField *messageTextField;
     IBOutlet NSTextField *statusTextField;
-    
+    IBOutlet Configuration *configuration;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     
     Twitter *_twitter;
@@ -26,5 +31,6 @@
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;
+- (NSArray*) timelineSortDescriptors;
 
 @end

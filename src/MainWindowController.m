@@ -30,16 +30,23 @@
     
     [messageTextField setCallback:self];
     [messageTextField setLengthForWarning:140 max:160];
-    
-    [messageViewControllerArrayController setSortDescriptors:
-        [NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"timestamp" ascending:TRUE] autorelease]]];
-    [messageViewControllerArrayController setAutomaticallyRearrangesObjects:TRUE];    
+}
+
+- (NSArray*) timelineSortDescriptors {
+    //    NSString *sortOrder = [[NSUserDefaults standardUserDefaults] stringForKey:@"timelineSortOrder"];
+    return [NSArray arrayWithObject:[[[NSSortDescriptor alloc] 
+                                      initWithKey:@"timestamp" 
+                                      ascending:([configuration timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING)] autorelease]];
+}
+
+// this method is not needed actually but called by array controller's binding
+- (void) setTimelineSortDescriptors:(NSArray*)descriptors {
 }
 
 - (void) enableGrowl {
     _growlEnabled = TRUE;
     [_afterLaunchedTimer release];
-    NSLog(@"growl enabled");
+//    NSLog(@"growl enabled");
 }
 
 - (void) showWindowToFront {
@@ -199,6 +206,13 @@
     } else {
         [statusTextField setStringValue:@""];
     }
+}
+
+// TimelineSortOrderChangeObserver //////////////////////////////////////////////////
+- (void) timelineSortOrderChangeObserverSortOrderChanged {
+    [messageViewControllerArrayController setSortDescriptors:[self timelineSortDescriptors]];
+    [messageViewControllerArrayController rearrangeObjects];
+    [messageTableViewController reloadTableView];
 }
 
 @end
