@@ -8,5 +8,7 @@
 	<false/>
 	<key>useGrowl</key>
 	<false/>
+    <key>timelineSortOrder</key>
+	<real>0</real>
 </dict>
 </plist>

@@ -7,6 +7,32 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.8</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.8
+        
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-53'&gt;NTLN-53&lt;/a&gt;] -         2nd try - reconsider colors
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-51'&gt;NTLN-51&lt;/a&gt;] -         ability to configure the sort order of the messages
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-58'&gt;NTLN-58&lt;/a&gt;] -         link for reply
+&lt;/li&gt;
+&lt;/ul&gt;
+    </description>
+      <pubDate>Wed, 05 Jan 2008 21:02:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.8.zip"
+        length="711913"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.7</title>
       <description>
         Release Notes - NatsuLion - Version 0.7

@@ -224,9 +224,9 @@
 				E96C36910D2A83E300CED33F /* Account.h */,
 				E96C36920D2A83E300CED33F /* Account.m */,
 				E90F0B3E0D2E8E190067A9CA /* Configuration.h */,
+				E90F0B3F0D2E8E190067A9CA /* Configuration.m */,
 				E95D34F90D2F3F6700EA6958 /* NTLNColors.h */,
 				E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */,
-				E90F0B3F0D2E8E190067A9CA /* Configuration.m */,
 				E991C66D0D2AE62300F410B6 /* view */,
 			);
 			path = src;
