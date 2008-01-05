@@ -17,11 +17,11 @@
     [_status retain];
 }
 
-- (NSView *)hitTest:(NSPoint)aPoint {
-    if (_highlighted) {
+- (NSView *) hitTest:(NSPoint)aPoint {
+//    if (_highlighted) {
         return [super hitTest:aPoint];
-    }
-    return self;
+//    }
+//    return self;
 }
 
 - (void) dealloc {

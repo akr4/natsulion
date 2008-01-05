@@ -25,4 +25,7 @@ enum NTLNMessageInputTextFieldLengthState {
 - (void) setCallback:(NSObject< MessageInputTextFieldCallback>*)callback;
 - (void) updateHeight;
 
+// TODO: this assumes that reply is specified in a message like Twitter.
+- (void) addReplyTo:(NSString*)username;
+
 @end

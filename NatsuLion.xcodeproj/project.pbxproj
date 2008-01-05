@@ -336,8 +336,8 @@
 		E9614CDA0D27BAAD009743CE /* test */ = {
 			isa = PBXGroup;
 			children = (
-				E9614CDC0D27BADC009743CE /* URLExtractorTest.m */,
 				E9614CDB0D27BADC009743CE /* URLExtractorTest.h */,
+				E9614CDC0D27BADC009743CE /* URLExtractorTest.m */,
 				E9E5BFA00D2898D200F34B9B /* XMLHTTPEncoderTest.h */,
 				E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */,
 			);

@@ -4,24 +4,17 @@
 #import "NTLNColors.h"
 
 @interface NSAttributedString (Hyperlink)
-+(id)hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL colorForLink:(NSColor*)color;
++(id) hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL colorForLink:(NSColor*)color;
 @end
 
 @implementation NSAttributedString (Hyperlink)
-+(id)hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL colorForLink:(NSColor*)color {
-    NSMutableAttributedString* attrString = [[[NSMutableAttributedString alloc] initWithString: inString] autorelease];
++(id) hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL colorForLink:(NSColor*)colorForLink {
+    NSMutableAttributedString* attrString = [[[NSMutableAttributedString alloc] initWithString:inString] autorelease];
     NSRange range = NSMakeRange(0, [attrString length]);
     
     [attrString beginEditing];
     [attrString addAttribute:NSLinkAttributeName value:[aURL absoluteString] range:range];
-    
-    // make the text appear in blue
-    [attrString addAttribute:NSForegroundColorAttributeName value:color range:range];
-    
-    // next make the text appear with an underline
-//    [attrString addAttribute:
-//     NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSSingleUnderlineStyle] range:range];
-    
+    [attrString addAttribute:NSForegroundColorAttributeName value:colorForLink range:range];
     [attrString endEditing];
     
     return attrString;
@@ -46,9 +39,8 @@
     [layoutManager addTextContainer:textContainer];
     [textStorage addLayoutManager:layoutManager];
     [textContainer setLineFragmentPadding:4];
-    (void) [layoutManager glyphRangeForTextContainer:textContainer];
-    return [layoutManager
-            usedRectForTextContainer:textContainer].size.height;
+    [layoutManager glyphRangeForTextContainer:textContainer];
+    return [layoutManager usedRectForTextContainer:textContainer].size.height;
 }
 
 - (void) setValueAndFormat:(NSString*)aString colorForLink:(NSColor*)colorForLink {
@@ -62,13 +54,13 @@
     for (i = 0; i < [tokens count]; i++) {
         NSString *token = [tokens objectAtIndex:i];
         //        NSLog(@"token: %@", token);
-        if ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 && [token length] > [NTLN_URLEXTRACTOR_PREFIX_HTTP length]) {
+        if ([extractor isURLToken:token]) {
             [string appendAttributedString:[NSAttributedString hyperlinkFromString:token URL:[NSURL URLWithString:token] colorForLink:colorForLink]];
-        } else if ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_ID].location == 0  && [token length] > [NTLN_URLEXTRACTOR_PREFIX_ID length]) {
+        } else if ([extractor isIDToken:token]) {
             [string appendAttributedString:
-             [NSAttributedString hyperlinkFromString:token
-                                                 URL:[NSURL URLWithString:[[[[TwitterUtils alloc] init] autorelease] userPageURLString:[token substringFromIndex:1]]]
-                                        colorForLink:colorForLink]];
+            [NSAttributedString hyperlinkFromString:token
+                                                URL:[NSURL URLWithString:[[[[TwitterUtils alloc] init] autorelease] userPageURLString:[token substringFromIndex:1]]]
+                                       colorForLink:colorForLink]];
         } else {
             [string appendAttributedString:[[[NSAttributedString alloc] initWithString:token] autorelease]];
         }
@@ -81,12 +73,6 @@
 - (float) expandIfNeeded {
     float height = [self heightForString:[self attributedStringValue] andWidth:([self frame].size.width - 16)] + 2;
     if (height > _defaultHeight) {
-//        NSRect rect = [self frame];
-//        rect.size.height = height;
-//        rect.origin.y = 63;
-        
-        
-//        [self setFrame:rect];
         [self setFrameSize:NSMakeSize([self frame].size.width, height)];
     }
     
@@ -99,7 +85,7 @@
 
 - (void) highlight {
     [super highlight];
-    [self setValueAndFormat:[self stringValue] colorForLink:[NTLNColors colorForHighlightedText]];
+    [self setValueAndFormat:[self stringValue] colorForLink:[NTLNColors colorForHighlightedLink]];
     [self setSelectable:TRUE];
 }
 

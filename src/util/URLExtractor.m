@@ -2,6 +2,10 @@
 
 @implementation URLExtractor
 
++ (id) extractor {
+    return [[[URLExtractor alloc] init] autorelease];
+}
+
 - (NSArray*) tokenize:(NSString*)aString acceptedChars:(NSCharacterSet*)acceptedChars prefix:(NSString*)prefix {
     
     NSMutableArray *back = [NSMutableArray arrayWithCapacity:10];
@@ -73,6 +77,36 @@
     }
     
     return back;
+}
+
+- (BOOL) isURLToken:(NSString*)token {
+    if ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 && [token length] > [NTLN_URLEXTRACTOR_PREFIX_HTTP length]) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+- (BOOL) isIDToken:(NSString*)token {
+    if ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_ID].location == 0  && [token length] > [NTLN_URLEXTRACTOR_PREFIX_ID length]) {
+        return TRUE;
+    }
+    return FALSE;
+}
+
+- (BOOL) isWhiteSpace:(NSString*)aString {
+    unichar space = [@" " characterAtIndex:0];
+    int i;
+    for (i = 0; i < [aString length]; i++) {
+        unichar c = [aString characterAtIndex:i];
+        if (c != space) {
+            break;
+        }
+    }
+    
+    if (i == [aString length]) {
+        return TRUE;
+    }
+    return FALSE;
 }
 
 @end

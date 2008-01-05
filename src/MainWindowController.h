@@ -9,7 +9,11 @@
 - (void) timelineSortOrderChangeObserverSortOrderChanged;
 @end
 
-@interface MainWindowController : NSWindowController <TimelineSortOrderChangeObserver, TimelineCallback, TwitterPostCallback, MessageInputTextFieldCallback> {
+@protocol MessageViewListener
+- (void) replyDesiredFor:(NSString*)username;
+@end
+
+@interface MainWindowController : NSWindowController <MessageViewListener, TimelineSortOrderChangeObserver, TimelineCallback, TwitterPostCallback, MessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
     IBOutlet MessageTableViewController *messageTableViewController;
     IBOutlet NSProgressIndicator *downloadProgress;

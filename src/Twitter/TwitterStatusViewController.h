@@ -7,6 +7,8 @@
 #import "TwitterStatusViewImageView.h"
 #import "TwitterStatusView.h"
 
+@protocol MessageViewListener;
+
 @interface TwitterStatusViewController : MessageViewController {
     IBOutlet TwitterStatusView *view;
     IBOutlet TwitterStatusViewImageView *iconView;
@@ -14,15 +16,20 @@
     IBOutlet TwitterStatusViewNameField *nameField;
     IBOutlet MessageViewTimestampField *timestampField;
     TwitterStatus *_status;
+    
+    NSObject<MessageViewListener> *_listener;
 }
 
-- (id) initWithTwitterStatus:(TwitterStatus*)status;
+- (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<MessageViewListener>*)listener;
 - (TwitterStatus*) status;
 - (BOOL) isEqual:(id)anObject;
 - (void) highlight;
 - (void) unhighlight;
 - (NSView*) view;
 - (float) requiredHeight;
+
+// methods for subviews
+- (void) iconViewClicked;
 
 @end
 

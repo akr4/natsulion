@@ -7,7 +7,11 @@
 @interface URLExtractor : NSObject {
 
 }
++ (id) extractor;
 - (NSArray*) tokenizeByAll:(NSString*)aString;
 - (NSArray*) tokenizeByURL:(NSString*)aString;
 - (NSArray*) tokenizeByID:(NSString*)aString;
+- (BOOL) isURLToken:(NSString*)token;
+- (BOOL) isIDToken:(NSString*)token;
+- (BOOL) isWhiteSpace:(NSString*)aString;
 @end

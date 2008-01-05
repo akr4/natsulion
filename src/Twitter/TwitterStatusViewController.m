@@ -1,13 +1,16 @@
 #import "TwitterStatusViewController.h"
-
+#import "MainWindowController.h"
 
 @implementation TwitterStatusViewController
 
-- (id) initWithTwitterStatus:(TwitterStatus*)status {
+- (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<MessageViewListener>*)listener {
     [super init];
 
     _status = status;
     [_status retain];
+    
+    _listener = listener;
+    [_listener retain];
     
     if (![NSBundle loadNibNamed: @"TwitterStatusView" owner: self]) {
         NSLog(@"unable to load Nib TwitterStatusView.nib");
@@ -15,6 +18,7 @@
     [textField setMessage:[status text]];
     [nameField setStatus:_status];
     [iconView setStatus:_status];
+    [iconView setViewController:self];
     [timestampField setTimestamp:[status timestamp]];
     [view setTwitterStatus:_status];
 
@@ -31,6 +35,7 @@
 
 - (void) dealloc {
     [_status release];
+    [_listener release];
     [super dealloc];
 }
 
@@ -69,6 +74,10 @@
 
 - (NSDate*) timestamp {
     return [_status timestamp];
+}
+
+- (void) iconViewClicked {
+    [_listener replyDesiredFor:[_status screenName]];
 }
 
 @end

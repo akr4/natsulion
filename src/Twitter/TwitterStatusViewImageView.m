@@ -1,5 +1,5 @@
 #import "TwitterStatusViewImageView.h"
-#import "TwitterUtils.h"
+#import "TwitterStatusViewController.h"
 
 @implementation TwitterStatusViewImageView
 
@@ -13,7 +13,7 @@
 }
 
 - (void) mouseDown:(NSEvent *)theEvent {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[[TwitterUtils utils] userPageURLString:[_status screenName]]]];
+    [_controller iconViewClicked];
     [[self superview] mouseDown:theEvent];
 }
 
@@ -33,11 +33,15 @@
     [self setImage:[_status icon]];
 }
 
-- (void) dealloc {
-    [_status release];
-    [super dealloc];
+- (void) setViewController:(TwitterStatusViewController*)controller {
+    _controller = controller;
+    [_controller retain];
 }
 
-
+- (void) dealloc {
+    [_status release];
+    [_controller release];
+    [super dealloc];
+}
 
 @end

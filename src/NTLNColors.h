@@ -9,5 +9,6 @@
 + (NSColor*) colorForProbableReply;
 + (NSColor*) colorForHighlightedProbableReply;
 + (NSColor*) colorForLink;
++ (NSColor*) colorForHighlightedLink;
 + (NSColor*) colorForHighlightedText;
 @end

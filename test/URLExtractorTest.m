@@ -94,5 +94,14 @@
     STAssertEqualObjects([results objectAtIndex:3], @" world", @"[%@]", nil);
 }
 
-
+- (void) testIsWhiteSpace1 {
+    STAssertTrue([[URLExtractor extractor] isWhiteSpace:@" "], nil);
+    STAssertTrue([[URLExtractor extractor] isWhiteSpace:@"  "], nil);
+    STAssertTrue([[URLExtractor extractor] isWhiteSpace:@""], nil);
+    STAssertTrue([[URLExtractor extractor] isWhiteSpace:nil], nil);
+    STAssertFalse([[URLExtractor extractor] isWhiteSpace:@"a"], nil);
+    STAssertFalse([[URLExtractor extractor] isWhiteSpace:@"a "], nil);
+    STAssertFalse([[URLExtractor extractor] isWhiteSpace:@" a"], nil);
+    STAssertFalse([[URLExtractor extractor] isWhiteSpace:@" a "], nil);
+}
 @end

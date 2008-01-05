@@ -78,7 +78,9 @@
 }
 
 - (BOOL) isNewMessage:(Message*)message {
-    TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc] initWithTwitterStatus:(TwitterStatus*)message] autorelease];
+    TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc] 
+                                                   initWithTwitterStatus:(TwitterStatus*)message
+                                                   messageViewListener:self] autorelease];
     return ![[messageViewControllerArrayController arrangedObjects] containsObject:newController];
 }
 
@@ -88,7 +90,9 @@
 }
 
 - (void) addIfNewMessage:(Message*)message {
-    TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc] initWithTwitterStatus:(TwitterStatus*)message] autorelease];
+    TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc]
+                                                   initWithTwitterStatus:(TwitterStatus*)message
+                                                   messageViewListener:self] autorelease];
     
     if ([[messageViewControllerArrayController arrangedObjects] containsObject:newController]) {
         return;
@@ -213,6 +217,11 @@
     [messageViewControllerArrayController setSortDescriptors:[self timelineSortDescriptors]];
     [messageViewControllerArrayController rearrangeObjects];
     [messageTableViewController reloadTableView];
+}
+
+// MainWindowOperator ////////////////////////////////////////////////////////////////
+- (void) replyDesiredFor:(NSString*)username {
+    [messageTextField addReplyTo:username];
 }
 
 @end
