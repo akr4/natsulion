@@ -21,6 +21,7 @@
 		E922CD380D21588700F3D411 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922CD370D21588700F3D411 /* Growl.framework */; };
 		E922CD4D0D21591F00F3D411 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E922CD370D21588700F3D411 /* Growl.framework */; };
 		E93F7BE80D27DC6B00366600 /* TwitterStatusViewMessageField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */; };
+		E95D34FB0D2F3F6700EA6958 /* NTLNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */; };
 		E9614CE10D27BC75009743CE /* URLExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* URLExtractor.m */; };
 		E9614D130D27BEA4009743CE /* URLExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* URLExtractor.m */; };
 		E9614D140D27BEBA009743CE /* URLExtractorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CDC0D27BADC009743CE /* URLExtractorTest.m */; };
@@ -115,6 +116,8 @@
 		E922CD370D21588700F3D411 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		E93F7BE60D27DC6B00366600 /* TwitterStatusViewMessageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewMessageField.h; sourceTree = "<group>"; };
 		E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewMessageField.m; sourceTree = "<group>"; };
+		E95D34F90D2F3F6700EA6958 /* NTLNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNColors.h; sourceTree = "<group>"; };
+		E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNColors.m; sourceTree = "<group>"; };
 		E9614CDB0D27BADC009743CE /* URLExtractorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLExtractorTest.h; sourceTree = "<group>"; };
 		E9614CDC0D27BADC009743CE /* URLExtractorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLExtractorTest.m; sourceTree = "<group>"; };
 		E9614CDF0D27BC75009743CE /* URLExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLExtractor.h; sourceTree = "<group>"; };
@@ -221,6 +224,8 @@
 				E96C36910D2A83E300CED33F /* Account.h */,
 				E96C36920D2A83E300CED33F /* Account.m */,
 				E90F0B3E0D2E8E190067A9CA /* Configuration.h */,
+				E95D34F90D2F3F6700EA6958 /* NTLNColors.h */,
+				E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */,
 				E90F0B3F0D2E8E190067A9CA /* Configuration.m */,
 				E991C66D0D2AE62300F410B6 /* view */,
 			);
@@ -498,6 +503,7 @@
 				E991C6BA0D2AE7AE00F410B6 /* MessageViewTextField.m in Sources */,
 				E991C6BD0D2AE9A300F410B6 /* MessageViewTimestampField.m in Sources */,
 				E90F0B400D2E8E190067A9CA /* Configuration.m in Sources */,
+				E95D34FB0D2F3F6700EA6958 /* NTLNColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,18 +1,7 @@
 #import "TwitterStatusView.h"
-
-static NSColor *_viewBackgroundColorReply;
-static NSColor *_viewHighlightedBackgroundColorReply;
-static NSColor *_viewBackgroundColorReplyProbable;
-static NSColor *_viewHighlightedBackgroundColorReplyProbable;
+#import "NTLNColors.h"
 
 @implementation TwitterStatusView
-
-+ (void) initialize {
-    _viewBackgroundColorReply = [[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:1 alpha:1] retain];
-    _viewHighlightedBackgroundColorReply = [[NSColor colorWithDeviceHue:0 saturation:0.55 brightness:1.0 alpha:1] retain];
-    _viewBackgroundColorReplyProbable = [[NSColor colorWithDeviceHue:0.0611 saturation:0.22 brightness:1.0 alpha:1] retain];
-    _viewHighlightedBackgroundColorReplyProbable = [[NSColor colorWithDeviceHue:0.0611 saturation:0.55 brightness:1.0 alpha:1] retain];
-}
 
 - (void) awakeFromNib {
     _defaultHeight = [self frame].size.height;
@@ -47,10 +36,10 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
     switch ([_status replyType]) {
         case MESSAGE_REPLY_TYPE_DIRECT:
         case MESSAGE_REPLY_TYPE_REPLY:
-            _backgroundColor = _viewHighlightedBackgroundColorReply;
+            _backgroundColor = [NTLNColors colorForHighlightedReply];
             break;
         case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
-            _backgroundColor = _viewHighlightedBackgroundColorReplyProbable;
+            _backgroundColor = [NTLNColors colorForHighlightedProbableReply];
             break;
         case MESSAGE_REPLY_TYPE_NORMAL:
         default:
@@ -70,10 +59,10 @@ static NSColor *_viewHighlightedBackgroundColorReplyProbable;
     switch ([_status replyType]) {
         case MESSAGE_REPLY_TYPE_DIRECT:
         case MESSAGE_REPLY_TYPE_REPLY:
-            _backgroundColor = _viewBackgroundColorReply;
+            _backgroundColor = [NTLNColors colorForReply];
             break;
         case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
-            _backgroundColor = _viewBackgroundColorReplyProbable;
+            _backgroundColor = [NTLNColors colorForProbableReply];
             break;
         case MESSAGE_REPLY_TYPE_NORMAL:
         default:

@@ -1,5 +1,5 @@
 #import "MessageViewTextField.h"
-
+#import "NTLNColors.h"
 
 @implementation MessageViewTextField
 
@@ -13,7 +13,7 @@
 }
 
 - (void) highlight {
-    [self setTextColor:[NSColor whiteColor]];
+    [self setTextColor:[NTLNColors colorForHighlightedText]];
 }
 
 - (void) unhighlight {
