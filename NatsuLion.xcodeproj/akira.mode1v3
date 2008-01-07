@@ -284,13 +284,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>79</integer>
-									<integer>77</integer>
+									<integer>43</integer>
+									<integer>25</integer>
+									<integer>6</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 942}, {243, 600}}</string>
+							<string>{{0, 619}, {243, 600}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -327,7 +328,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Info.plist</string>
+								<string>TwitterStatusViewTimestampField.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -335,11 +336,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>E95D35960D2F753A00EA6958</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Info.plist</string>
+										<string>TwitterStatusViewTimestampField.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E93467A10D32F2C200F779CB</string>
+										<string>E93467B00D32F3A100F779CB</string>
 										<key>history</key>
 										<array>
 											<string>E945D9CA0D2F9ABE001C39B1</string>
@@ -405,10 +406,10 @@
 											<string>E934673D0D32F2C200F779CB</string>
 											<string>E934673E0D32F2C200F779CB</string>
 											<string>E934673F0D32F2C200F779CB</string>
-											<string>E93467400D32F2C200F779CB</string>
 											<string>E93467410D32F2C200F779CB</string>
 											<string>E93467420D32F2C200F779CB</string>
-											<string>E945DA5B0D2FA90D001C39B1</string>
+											<string>E93467AD0D32F3A100F779CB</string>
+											<string>E93467AE0D32F3A100F779CB</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -567,6 +568,7 @@
 											<string>E934679E0D32F2C200F779CB</string>
 											<string>E934679F0D32F2C200F779CB</string>
 											<string>E93467A00D32F2C200F779CB</string>
+											<string>E93467AF0D32F3A100F779CB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
