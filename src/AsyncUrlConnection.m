@@ -64,7 +64,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"%s - %d", __PRETTY_FUNCTION__, [_connection retainCount]);
+//    NSLog(@"%s - %d", __PRETTY_FUNCTION__, [_connection retainCount]);
     [_recievedData release];
     [_connection release];
     [_username release];

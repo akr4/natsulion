@@ -80,7 +80,7 @@
 - (void) addMessageViewController:(MessageViewController*)controller {
     [messageViewControllerArrayController addObject:controller];
     [messageTableViewController newMessageArrived];
-    NSLog(@"count: %d", [[messageViewControllerArrayController arrangedObjects] count]);
+//    NSLog(@"count: %d", [[messageViewControllerArrayController arrangedObjects] count]);
 }
 
 - (BOOL) addIfNewMessage:(Message*)message {

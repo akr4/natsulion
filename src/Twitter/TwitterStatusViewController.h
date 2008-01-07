@@ -1,9 +1,9 @@
 #import <Cocoa/Cocoa.h>
 #import "MessageViewController.h"
-#import "MessageViewTimestampField.h"
 #import "TwitterStatus.h"
 #import "TwitterStatusViewNameField.h"
 #import "TwitterStatusViewMessageField.h"
+#import "TwitterStatusViewTimestampField.h"
 #import "TwitterStatusViewImageView.h"
 #import "TwitterStatusView.h"
 
@@ -14,7 +14,7 @@
     IBOutlet TwitterStatusViewImageView *iconView;
     IBOutlet TwitterStatusViewMessageField *textField;
     IBOutlet TwitterStatusViewNameField *nameField;
-    IBOutlet MessageViewTimestampField *timestampField;
+    IBOutlet TwitterStatusViewTimestampField *timestampField;
     TwitterStatus *_status;
     
     NSObject<MessageViewListener> *_listener;

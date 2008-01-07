@@ -1,25 +1,19 @@
 #import "TwitterStatusViewNameField.h"
 #import "NTLNColors.h"
 #import "TwitterUtils.h"
+#import "UIUtils.h"
 
 @implementation TwitterStatusViewNameField
 
 - (void) awakeFromNib {
     [super awakeFromNib];
-    
-    NSTrackingArea *trackingArea = [[[NSTrackingArea alloc] initWithRect:[self bounds]
-                                                                 options: (NSTrackingMouseEnteredAndExited | NSTrackingActiveInKeyWindow)
-                                                                   owner:self
-                                                                userInfo:nil]
-                                    autorelease];
-    [self addTrackingArea:trackingArea];
 }
 
 - (void) setStatus:(TwitterStatus*)status {
     _status = status;
     [status retain];
     
-    [self setStringValue:[[[status name] stringByAppendingString:@"/"] stringByAppendingString:[status screenName]]];
+    [self setStringValue:[[[status screenName] stringByAppendingString:@"/"] stringByAppendingString:[status name]]];
 }
 
 - (void) dealloc {
@@ -27,25 +21,10 @@
     [super dealloc];
 }
 
-- (void)mouseEntered:(NSEvent *)theEvent {
-    if ([self highlighted]) {
-        [self setTextColor:[NTLNColors colorForHighlightedLink]];
-    } else {
-        [self setTextColor:[NTLNColors colorForLink]];
-    }
-    [[NSCursor pointingHandCursor] push];
-}
-
-- (void)mouseExited:(NSEvent *)theEvent {
-    if ([self highlighted]) {
-        [self setTextColor:[NTLNColors colorForHighlightedText]];
-    } else {
-        [self setTextColor:[self defaultColor]];
-    }
-    [NSCursor pop];
-}
-
 - (void) mouseDown:(NSEvent *)theEvent {
+//    if (![self mouse:[self convertPoint:[theEvent locationInWindow] fromView:[self superview]] inRect:[self rectForText]]) {
+//        return;
+//    }
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[[TwitterUtils utils] userPageURLString:[_status screenName]]]];
     [[self superview] mouseDown:theEvent];
 }

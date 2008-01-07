@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
-#import "MessageViewTextField.h"
+#import "MessageViewClickableTextField.h"
 
-@interface MessageViewTimestampField : MessageViewTextField {
+@interface MessageViewTimestampField : MessageViewClickableTextField {
     NSDate *_timestamp;
 }
 - (void) setTimestamp:(NSDate*)timestamp;

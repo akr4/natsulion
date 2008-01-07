@@ -6,4 +6,5 @@
 }
 + (id) utils;
 - (NSString*) userPageURLString:(NSString*)screenName;
+- (NSString*) statusPageURLString:(NSString*)screenName statusId:(NSString*)statusId;
 @end

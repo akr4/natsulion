@@ -17,9 +17,9 @@
     }
     [textField setMessage:[status text]];
     [nameField setStatus:_status];
+    [timestampField setStatus:_status];
     [iconView setStatus:_status];
     [iconView setViewController:self];
-    [timestampField setTimestamp:[status timestamp]];
     [view setTwitterStatus:_status];
 
     return self;
