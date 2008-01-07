@@ -34,13 +34,11 @@
 }
 
 - (void) setViewController:(TwitterStatusViewController*)controller {
-    _controller = controller;
-    [_controller retain];
+    _controller = controller; // weak reference
 }
 
 - (void) dealloc {
     [_status release];
-    [_controller release];
     [super dealloc];
 }
 

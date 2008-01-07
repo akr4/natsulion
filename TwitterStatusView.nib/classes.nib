@@ -27,14 +27,6 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
-			<string>TwitterStatusViewTextField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSTextField</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
 			<string>TwitterStatusViewNameField</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
@@ -87,7 +79,7 @@
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
-			<string>TwitterStatusViewTextField</string>
+			<string>MessageViewTextField</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

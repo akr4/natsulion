@@ -3,6 +3,9 @@
 
 @implementation MessageViewController
 
+- (id) init {
+    return self;
+}
 
 - (void) highlight {
     

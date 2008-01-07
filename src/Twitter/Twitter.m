@@ -114,8 +114,6 @@
 }
 
 - (void) dealloc {
-    [_friendTimelineCallback release];
-    [_twitterPostCallback release];
     [_connectionForFriendTimeline release];
     [_connectionForPost release];
     [_waitingIconTwitterStatuses release];
@@ -129,9 +127,7 @@
     if (_friendTimelineCallback) {
         NSLog(@"friendTimelineWithCallback: called while running");
     }
-    [_friendTimelineCallback release];
     _friendTimelineCallback = callback;
-    [_friendTimelineCallback retain];
     
     [_connectionForFriendTimeline release];
     _connectionForFriendTimeline = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" 
@@ -205,13 +201,16 @@
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {
     
     if (_twitterPostCallback) {
-        NSLog(@"sendMessageWithCallback: called while running");
+        NSLog(@"%s: Warning: called while running (_twitterPostCallback)", __PRETTY_FUNCTION__);
     }
-    [_twitterPostCallback release];
     _twitterPostCallback = callback;
-    [_twitterPostCallback retain];
     
-    TwitterPostCallbackHandler *handler = [[[TwitterPostCallbackHandler alloc] initWithCallback:self] autorelease];
+    if (_postCallbackHandler) {
+        NSLog(@"%s: Warning: called while running (_postCallbackHandler)", __PRETTY_FUNCTION__);
+    }
+    [_postCallbackHandler release];
+    _postCallbackHandler = [[TwitterPostCallbackHandler alloc] initWithCallback:self];
+
     NSString *requestStr =  [@"status=" stringByAppendingString:[[XMLHTTPEncoder encoder] encodeHTTP:message]];
     requestStr = [requestStr stringByAppendingString:@"&source=natsulion"];
 
@@ -220,13 +219,12 @@
                                                                     bodyString:requestStr 
                                                                       username:username
                                                                       password:password
-                                                                      callback:handler];
+                                                                      callback:_postCallbackHandler];
     
 //    NSLog(@"sent data [%@]", requestStr);
     
     if (!_connectionForPost) {
         [_twitterPostCallback failedToPost:@"Posting a message failure. unable to get connection."];
-        [_twitterPostCallback release];
         _twitterPostCallback = nil;
         return;
     }
@@ -240,15 +238,17 @@
 - (void) finishedToPost {
     [self stopPosting];
     [_twitterPostCallback finishedToPost];
-    [_twitterPostCallback release];
     _twitterPostCallback = nil;
+    [_postCallbackHandler release];
+    _postCallbackHandler = nil;
 }
 
 - (void) failedToPost:(NSString*)message {
     [self stopPosting];
     [_twitterPostCallback failedToPost:message];
-    [_twitterPostCallback release];
     _twitterPostCallback = nil;
+    [_postCallbackHandler release];
+    _postCallbackHandler = nil;
 }
 
 // /////////////////////////////////////////////////////////////////////////////

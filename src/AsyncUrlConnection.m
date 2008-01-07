@@ -23,14 +23,13 @@
     [request setTimeoutInterval:10.0];
     [request setHTTPShouldHandleCookies:FALSE];
 
-    _connection=[[NSURLConnection alloc] initWithRequest:request delegate:self];
+    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
         NSLog(@"failed to get connection.");
         return nil;
     }
     
     _callback = callback;
-    [_callback retain];
     _recievedData = [[NSMutableData alloc] init];
     return self;
 }
@@ -53,20 +52,19 @@
     [request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:FALSE];
  
-    _connection= [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
         NSLog(@"failed to get connection.");
         return nil;
     }
     
     _callback = callback;
-    [_callback retain];
     _recievedData = [[NSMutableData alloc] init];
     return self;
 }
 
-- (void)delalloc {
-    [_callback release];
+- (void)dealloc {
+    NSLog(@"%s - %d", __PRETTY_FUNCTION__, [_connection retainCount]);
     [_recievedData release];
     [_connection release];
     [_username release];

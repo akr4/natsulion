@@ -36,6 +36,12 @@
 - (void) dealloc {
     [_status release];
     [_listener release];
+    [textField removeFromSuperview];
+    [nameField removeFromSuperview];
+    [iconView removeFromSuperview];
+    [timestampField removeFromSuperview];
+    [view removeFromSuperview];
+    [view release];
     [super dealloc];
 }
 

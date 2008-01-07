@@ -198,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				E9614CDE0D27BC65009743CE /* util */,
+				E991C66D0D2AE62300F410B6 /* view */,
 				E91B3DBA0D13F893007C9762 /* Twitter */,
 				E9A411270D29904F003BFA9F /* AppController.h */,
 				E9A411280D29904F003BFA9F /* AppController.m */,
@@ -227,7 +228,6 @@
 				E90F0B3F0D2E8E190067A9CA /* Configuration.m */,
 				E95D34F90D2F3F6700EA6958 /* NTLNColors.h */,
 				E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */,
-				E991C66D0D2AE62300F410B6 /* view */,
 			);
 			path = src;
 			sourceTree = "<group>";

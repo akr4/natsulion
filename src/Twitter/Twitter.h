@@ -35,6 +35,7 @@
     
     NSMutableDictionary *_waitingIconTwitterStatuses;
     IconRepository *_iconRepository;
+    TwitterPostCallbackHandler *_postCallbackHandler;
     
     BOOL _downloadingTimeline;
     BOOL _postingMessage;

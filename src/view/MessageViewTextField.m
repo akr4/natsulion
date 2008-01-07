@@ -3,6 +3,10 @@
 
 @implementation MessageViewTextField
 
+- (id) init {
+    return self;
+}
+
 - (void) dealloc {
     [_defaultColor release];
     [super dealloc];

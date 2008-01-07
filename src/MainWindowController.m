@@ -77,28 +77,23 @@
                    andSticky:sticky];
 }
 
-- (BOOL) isNewMessage:(Message*)message {
-    TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc] 
-                                                   initWithTwitterStatus:(TwitterStatus*)message
-                                                   messageViewListener:self] autorelease];
-    return ![[messageViewControllerArrayController arrangedObjects] containsObject:newController];
-}
-
 - (void) addMessageViewController:(MessageViewController*)controller {
     [messageViewControllerArrayController addObject:controller];
     [messageTableViewController newMessageArrived];
+    NSLog(@"count: %d", [[messageViewControllerArrayController arrangedObjects] count]);
 }
 
-- (void) addIfNewMessage:(Message*)message {
+- (BOOL) addIfNewMessage:(Message*)message {
     TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc]
                                                    initWithTwitterStatus:(TwitterStatus*)message
                                                    messageViewListener:self] autorelease];
     
     if ([[messageViewControllerArrayController arrangedObjects] containsObject:newController]) {
-        return;
+        return FALSE;
     }
     
     [self addMessageViewController:newController];
+    return TRUE;
 }
 
 - (void) updateStatus {
@@ -153,8 +148,7 @@
     int i;
     for (i = 0; i < [statuses count]; i++) {
         TwitterStatus *s = [statuses objectAtIndex:i];
-        if ([self isNewMessage:s]) {
-            [self addIfNewMessage:s];
+        if ([self addIfNewMessage:s]) {
             int priority = 0;
             BOOL sticky = FALSE;
             switch ([s replyType]) {

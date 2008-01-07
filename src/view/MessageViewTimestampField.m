@@ -3,11 +3,14 @@
 
 @implementation MessageViewTimestampField
 
+- (id) init {
+    return self;
+}
+
 - (void) dealloc {
     [_timestamp release];
     [super dealloc];
 }
-
 
 - (NSDate*) timestamp {
     return _timestamp;
