@@ -7,7 +7,6 @@
 }
 
 - (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password callback:(NSObject<AsyncUrlConnectionCallback>*)callback {
-    
     _username = username;
     [_username retain];
     _password = password;
@@ -35,7 +34,6 @@
 }
 
 - (id) initPostConnectionWithUrl:(NSString*)url bodyString:(NSString*)bodyString username:(NSString*)username password:(NSString*)password callback:(NSObject<AsyncUrlConnectionCallback>*)callback {
-    
     _username = username;
     [_username retain];
     _password = password;
@@ -63,8 +61,7 @@
     return self;
 }
 
-- (void)dealloc {
-//    NSLog(@"%s - %d", __PRETTY_FUNCTION__, [_connection retainCount]);
+- (void) dealloc {
     [_recievedData release];
     [_connection release];
     [_username release];

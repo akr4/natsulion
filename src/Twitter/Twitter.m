@@ -124,9 +124,6 @@
 ////////////////////////////////////////////////////////////////////
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback {
     
-    if (_friendTimelineCallback) {
-        NSLog(@"friendTimelineWithCallback: called while running");
-    }
     _friendTimelineCallback = callback;
     
     [_connectionForFriendTimeline release];
@@ -140,9 +137,6 @@
     }
 
     [self startDownloading];
-
-    NSLog(@"sending friend timeline request.");
-    
 }
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {

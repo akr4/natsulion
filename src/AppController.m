@@ -53,7 +53,6 @@
                                                     selector:@selector(updateStatus)
                                                     userInfo:nil 
                                                      repeats:YES] retain];
-    [_refreshTimer fire];
 }
 
 - (void) setRefreshInterval:(int)interval {
@@ -105,16 +104,14 @@
     
     NSString *username = [[Account instance] username];
     if (!username) {
-        NSLog(@"if");
         // first time
         [mainWindowController close];
       	[NSBundle loadNibNamed:@"Welcome" owner:welcomeWindowController];
         [welcomeWindowController showWindow:nil];
     } else {
-        NSLog(@"else");
         [mainWindowController showWindow:nil];
         if ([[Account instance] password]) {
-            [self startTimer];
+            [_refreshTimer fire];
         }
     }
 }
