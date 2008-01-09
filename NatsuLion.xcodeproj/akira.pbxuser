@@ -932,8 +932,8 @@
 	E9160BBD0D11D2EB00C9EEFF /* Twitter.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {954, 4704}}";
-			sepNavSelRange = "{3925, 0}";
-			sepNavVisRange = "{3052, 1465}";
+			sepNavSelRange = "{3965, 0}";
+			sepNavVisRange = "{3052, 1516}";
 		};
 	};
 	E9160BC60D11F4F500C9EEFF /* IconRepository.h */ = {
@@ -1004,23 +1004,23 @@
 	};
 	E93467120D32EDB800F779CB /* TwitterStatusViewTimestampField.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {956, 581}}";
-			sepNavSelRange = "{575, 0}";
-			sepNavVisRange = "{0, 741}";
+			sepNavIntBoundsRect = "{{0, 0}, {956, 558}}";
+			sepNavSelRange = "{366, 55}";
+			sepNavVisRange = "{0, 631}";
 		};
 	};
 	E93467140D32EE7D00F779CB /* MessageViewClickableTextField.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 581}}";
-			sepNavSelRange = "{69, 29}";
-			sepNavVisRange = "{0, 133}";
+			sepNavIntBoundsRect = "{{0, 0}, {954, 558}}";
+			sepNavSelRange = "{152, 0}";
+			sepNavVisRange = "{0, 181}";
 		};
 	};
 	E93467150D32EE7D00F779CB /* MessageViewClickableTextField.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {830, 728}}";
-			sepNavSelRange = "{84, 0}";
-			sepNavVisRange = "{132, 1037}";
+			sepNavIntBoundsRect = "{{0, 0}, {954, 854}}";
+			sepNavSelRange = "{1310, 24}";
+			sepNavVisRange = "{733, 1179}";
 		};
 	};
 	E934672D0D32F2C200F779CB /* PBXTextBookmark */ = {
@@ -1137,7 +1137,7 @@
 		isa = PBXTextBookmark;
 		fRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */;
 		name = "TwitterStatusViewNameField.m: 12";
-		rLen = 279;
+		rLen = 416;
 		rLoc = 205;
 		rType = 0;
 		vrLen = 858;
@@ -1258,7 +1258,7 @@
 		fRef = E93467120D32EDB800F779CB /* TwitterStatusViewTimestampField.m */;
 		name = "TwitterStatusViewTimestampField.m: 5";
 		rLen = 0;
-		rLoc = 735;
+		rLoc = 625;
 		rType = 0;
 		vrLen = 100;
 		vrLoc = 0;
@@ -2111,9 +2111,9 @@
 	};
 	E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {788, 462}}";
-			sepNavSelRange = "{176, 26}";
-			sepNavVisRange = "{0, 670}";
+			sepNavIntBoundsRect = "{{0, 0}, {954, 558}}";
+			sepNavSelRange = "{806, 0}";
+			sepNavVisRange = "{0, 995}";
 			sepNavWindowFrame = "{{157, 206}, {1033, 770}}";
 		};
 	};
@@ -2249,7 +2249,7 @@
 		fRef = E93467120D32EDB800F779CB /* TwitterStatusViewTimestampField.m */;
 		name = "TwitterStatusViewTimestampField.m: 22";
 		rLen = 0;
-		rLoc = 575;
+		rLoc = 465;
 		rType = 0;
 		vrLen = 741;
 		vrLoc = 0;
@@ -2279,7 +2279,7 @@
 		fRef = E93467120D32EDB800F779CB /* TwitterStatusViewTimestampField.m */;
 		name = "TwitterStatusViewTimestampField.m: 22";
 		rLen = 0;
-		rLoc = 575;
+		rLoc = 465;
 		rType = 0;
 		vrLen = 741;
 		vrLoc = 0;

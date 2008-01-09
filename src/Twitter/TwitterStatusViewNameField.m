@@ -26,9 +26,9 @@
 }
 
 - (void) mouseDown:(NSEvent *)theEvent {
-//    if (![self mouse:[self convertPoint:[theEvent locationInWindow] fromView:[self superview]] inRect:[self rectForText]]) {
-//        return;
-//    }
+    if (![self mouseIsOnText]) {
+        return;
+    }    
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[[TwitterUtils utils] userPageURLString:[_status screenName]]]];
     [[self superview] mouseDown:theEvent];
 }

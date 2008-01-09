@@ -26,7 +26,7 @@
 				<key>textField</key>
 				<string>TwitterStatusViewMessageField</string>
 				<key>timestampField</key>
-				<string>MessageViewTimestampField</string>
+				<string>TwitterStatusViewTimestampField</string>
 				<key>view</key>
 				<string>TwitterStatusView</string>
 			</dict>

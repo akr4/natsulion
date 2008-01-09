@@ -11,6 +11,12 @@
     //    NSLog(@"width = %f", width);
     NSRect rect = [self bounds];
     rect.size.width = width;
+
+    // check only right or others (=regarded as left)
+    if ([self alignment] == NSRightTextAlignment) {
+        rect.origin.x = [self bounds].size.width - width;
+    }
+    
     return rect;
 }
 
@@ -27,13 +33,8 @@
     
 }
 
-- (BOOL) isOnText:(NSPoint)point {
-    id o = [self hitTest:[self convertPointToBase:point]];
-    //    NSLog(@"<%@>", o);
-    if (o == self) {
-        return TRUE;
-    }
-    return FALSE;
+- (BOOL) mouseIsOnText {
+    return _mouseIsOnText;
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
@@ -42,6 +43,7 @@
     } else {
         [self setTextColor:[NTLNColors colorForLink]];
     }
+    _mouseIsOnText = TRUE;
     [[NSCursor pointingHandCursor] push];
 }
 
@@ -51,6 +53,7 @@
     } else {
         [self setTextColor:[self defaultColor]];
     }
+    _mouseIsOnText = FALSE;
     [NSCursor pop];
 }
 
