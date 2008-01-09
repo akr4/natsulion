@@ -13,7 +13,11 @@
     _status = status;
     [status retain];
     
-    [self setStringValue:[[[status screenName] stringByAppendingString:@"/"] stringByAppendingString:[status name]]];
+    if ([[status screenName] isEqualToString:[status name]]) {
+        [self setStringValue:[status screenName]];
+    } else {
+        [self setStringValue:[[[status screenName] stringByAppendingString:@"/"] stringByAppendingString:[status name]]];
+    }
 }
 
 - (void) dealloc {
