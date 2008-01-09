@@ -27,10 +27,11 @@
 
 - (void) mouseDown:(NSEvent *)theEvent {
     if (![self mouseIsOnText]) {
+        [super mouseDown:theEvent];
         return;
     }    
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[[TwitterUtils utils] userPageURLString:[_status screenName]]]];
-    [[self superview] mouseDown:theEvent];
+    [super mouseDown:theEvent];
 }
 
 @end

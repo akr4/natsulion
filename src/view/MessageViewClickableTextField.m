@@ -25,7 +25,7 @@
     
     
     NSTrackingArea *trackingArea = [[[NSTrackingArea alloc] initWithRect:[self rectForText]
-                                                                 options: (NSTrackingMouseEnteredAndExited | NSTrackingActiveInKeyWindow)
+                                                                 options: (NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate | NSTrackingActiveInKeyWindow)
                                                                    owner:self
                                                                 userInfo:nil]
                                     autorelease];
@@ -37,6 +37,14 @@
     return _mouseIsOnText;
 }
 
+-(void)cursorUpdate:(NSEvent *)theEvent {
+    if (_mouseIsOnText) {
+        [[NSCursor pointingHandCursor] set];
+    } else {
+        [[NSCursor arrowCursor] set]; // is it possible to use previous cursor instead of concreat arrowCursor?
+    }
+}
+
 - (void)mouseEntered:(NSEvent *)theEvent {
     if ([self highlighted]) {
         [self setTextColor:[NTLNColors colorForHighlightedLink]];
@@ -44,7 +52,6 @@
         [self setTextColor:[NTLNColors colorForLink]];
     }
     _mouseIsOnText = TRUE;
-    [[NSCursor pointingHandCursor] push];
 }
 
 - (void)mouseExited:(NSEvent *)theEvent {
@@ -54,7 +61,6 @@
         [self setTextColor:[self defaultColor]];
     }
     _mouseIsOnText = FALSE;
-    [NSCursor pop];
 }
 
 @end
