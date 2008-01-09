@@ -62,11 +62,12 @@
 }
 
 - (void) dealloc {
+//    NSLog(@"AsyncUrlConnection#dealloc: %@ (%x)", self, self);
     [_recievedData release];
     [_connection release];
     [_username release];
     [_password release];
-    [super dealloc];
+//    [super dealloc]; // should be called but someone has experienced a crash with this line.
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {

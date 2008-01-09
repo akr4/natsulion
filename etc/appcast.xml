@@ -7,14 +7,18 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
-      <title>NatsuLion Version 0.9</title>
+      <title>NatsuLion Version 0.10</title>
       <description>
-        Release Notes - NatsuLion - Version 0.9
+        Release Notes - NatsuLion - Version 0.10
     
 &lt;h2&gt;        Bug
 &lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-60'&gt;NTLN-60&lt;/a&gt;] -         0.8 is too slow and its memory footprint is too large 
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-67'&gt;NTLN-67&lt;/a&gt;] -         timeline request is issued every time refresh interval spinner is clicked
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-69'&gt;NTLN-69&lt;/a&gt;] -         mouse cursor remains as the pointing type even after leaving name or timestamp field
 &lt;/li&gt;
 &lt;/ul&gt;
     
@@ -23,18 +27,22 @@
 &lt;ul&gt;
 &lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-63'&gt;NTLN-63&lt;/a&gt;] -         swap screenname and username's location
 &lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-68'&gt;NTLN-68&lt;/a&gt;] -         display once if name and screenname is the same
+&lt;/li&gt;
 &lt;/ul&gt;
     
 &lt;h2&gt;        New Feature
 &lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-62'&gt;NTLN-62&lt;/a&gt;] -         clickable area is too large [clickable link to a user's timeline page (http://twitter.com/&lt;user&gt;)]
+&lt;/li&gt;
 &lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-64'&gt;NTLN-64&lt;/a&gt;] -         link to status page
 &lt;/li&gt;
 &lt;/ul&gt;
     </description>
-      <pubDate>Tue, 08 Jan 2008 09:18:00 +9000</pubDate>
-      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.9.zip"
-        length="714294"
+      <pubDate>Wed, 09 Jan 2008 12:23:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.10.zip"
+        length="714270"
         type="application/octet-stream"/>
     </item>
     <item>
