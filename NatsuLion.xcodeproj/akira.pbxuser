@@ -445,6 +445,7 @@
 			E970ED330D3A041400CFBE69 /* PBXTextBookmark */ = E970ED330D3A041400CFBE69 /* PBXTextBookmark */;
 			E970ED340D3A041400CFBE69 /* PBXTextBookmark */ = E970ED340D3A041400CFBE69 /* PBXTextBookmark */;
 			E970ED350D3A060700CFBE69 /* PBXTextBookmark */ = E970ED350D3A060700CFBE69 /* PBXTextBookmark */;
+			E970ED370D3A07A000CFBE69 /* PBXTextBookmark */ = E970ED370D3A07A000CFBE69 /* PBXTextBookmark */;
 			E9F0F65A0D33F3DC00FB0F39 = E9F0F65A0D33F3DC00FB0F39 /* PBXTextBookmark */;
 			E9F0F6CC0D3408CD00FB0F39 = E9F0F6CC0D3408CD00FB0F39 /* PBXTextBookmark */;
 			E9F0F72C0D3458E500FB0F39 = E9F0F72C0D3458E500FB0F39 /* PBXTextBookmark */;
@@ -1163,7 +1164,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {954, 3192}}";
 			sepNavSelRange = "{7544, 0}";
-			sepNavVisRange = "{6585, 1436}";
+			sepNavVisRange = "{6539, 1482}";
 			sepNavWindowFrame = "{{868, 287}, {799, 626}}";
 		};
 	};
@@ -4013,6 +4014,16 @@
 		rType = 0;
 		vrLen = 1436;
 		vrLoc = 6585;
+	};
+	E970ED370D3A07A000CFBE69 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */;
+		name = "MainWindowController.m: 212";
+		rLen = 0;
+		rLoc = 7544;
+		rType = 0;
+		vrLen = 1482;
+		vrLoc = 6539;
 	};
 	E98B093A0D2172B90002A75E /* GrowlNotifier.h */ = {
 		uiCtxt = {
