@@ -8,13 +8,30 @@
     _requiredHeight = _defaultHeight;
 }
 
-- (float) requiredHeight {
+- (float) expandTextField {
+    float delta = [textField expandIfNeeded];
+    if (delta > 0) {
+        _requiredHeight = _defaultHeight + delta;
+    } else {
+        _requiredHeight = _defaultHeight;
+    }
     return _requiredHeight;
+}
+
+- (float) requiredHeight {
+    if ([configuration alwaysExpandMessage]) {
+        return [self expandTextField];
+    } else {
+        return _requiredHeight;
+    }
 }
 
 - (void) setTwitterStatus:(TwitterStatus*)status {
     _status = status;
     [_status retain];
+    if ([configuration alwaysExpandMessage]) {
+        [self expandTextField];
+    }
 }
 
 - (NSView *) hitTest:(NSPoint)aPoint {
@@ -45,11 +62,9 @@
         default:
             break;
     }
- 
-    float delta = [textField expandIfNeeded];
-    if (delta > 0) {
-//        NSLog(@"delta %f ------------------", delta);
-        _requiredHeight = _defaultHeight + delta;
+    
+    if (![configuration alwaysExpandMessage]) {
+        [self expandTextField];
     }
 }
 
@@ -69,7 +84,9 @@
             break;
     }
 
-    _requiredHeight = _defaultHeight;
+    if (![configuration alwaysExpandMessage]) {
+        _requiredHeight = _defaultHeight;
+    }
 }
 
 - (void)drawRect:(NSRect)aRect {

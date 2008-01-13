@@ -171,7 +171,6 @@
         [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];
 
         NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"user/profile_image_url/text()"]];
-        
         NSMutableSet *set = [_waitingIconTwitterStatuses objectForKey:iconUrl];
         if (!set) {
             set = [[[NSMutableSet alloc] initWithCapacity:3] autorelease];

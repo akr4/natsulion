@@ -3,7 +3,7 @@
 
 @implementation Configuration
 
-@synthesize useGrowl, showWindowWhenNewMessage, refreshInterval;
+@synthesize useGrowl, showWindowWhenNewMessage, alwaysExpandMessage, refreshInterval;
 
 - (void) bindToProperty:(NSString*)propertyName {
     [self bind:propertyName
@@ -15,6 +15,7 @@
 - (id) init {
     [self bindToProperty:@"useGrowl"];
     [self bindToProperty:@"showWindowWhenNewMessage"];
+    [self bindToProperty:@"alwaysExpandMessage"];
     [self bindToProperty:@"refreshInterval"];
     return self;
 }

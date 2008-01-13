@@ -39,15 +39,7 @@
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
-			<string>MessageViewTextField</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>TwitterStatusViewTimestampField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>MessageViewTimestampField</string>
+			<string>MessageViewClickableTextField</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>
@@ -59,9 +51,30 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
+			<string>TwitterStatusViewTimestampField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>MessageViewTimestampField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>MessageViewController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>Configuration</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>timelineSortOrderChangeObserver</key>
+				<string>NSObject</string>
+			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
 		</dict>
@@ -104,6 +117,8 @@
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
+				<key>configuration</key>
+				<string>Configuration</string>
 				<key>textField</key>
 				<string>TwitterStatusViewMessageField</string>
 			</dict>

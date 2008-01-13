@@ -10,11 +10,12 @@
     
     BOOL useGrowl;
     BOOL showWindowWhenNewMessage;
+    BOOL alwaysExpandMessage;
     int refreshInterval;
     int timelineSortOrder;
 }
 
-@property BOOL useGrowl, showWindowWhenNewMessage;
+@property BOOL useGrowl, showWindowWhenNewMessage, alwaysExpandMessage;
 @property int refreshInterval;
 
 - (int) timelineSortOrder;

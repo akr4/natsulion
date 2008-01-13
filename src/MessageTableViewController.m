@@ -7,6 +7,11 @@
 - (void) awakeFromNib {
     [viewColumn setDataCell:[[[CustomViewCell alloc] init] autorelease]];
     _verticalScroller = [[scrollView verticalScroller] retain];
+
+    [self bind:@"changeExpandMode"
+      toObject:[NSUserDefaultsController sharedUserDefaultsController] 
+   withKeyPath:@"values.alwaysExpandMessage"
+       options:nil];
 }
 
 - (void) dealloc {
@@ -16,7 +21,6 @@
 
 // for display custom view /////////////////////////////////////////////////////
 - (void) selectedRowIndexes:(NSIndexSet*)indexSet {
-    //    NSLog(@"%s", __PRETTY_FUNCTION__);    
     int i;
     for (i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
         if ([indexSet containsIndex:i]) {
@@ -45,15 +49,20 @@
     [[viewColumn tableView] selectRowIndexes:target byExtendingSelection:FALSE];
 }
 
-- (void) scrollUp {
+- (void) scrollUpInDescendingOrder {
     NSRect bounds = [[[viewColumn tableView] superview] bounds];
-    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y - ([[viewColumn tableView] rowHeight] + 2.0));
+    float newestMessageHeight = [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:0] requiredHeight];
+    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[[[messageViewControllerArrayController arrangedObjects] objectAtIndex:0] status] text]);
+    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y - (newestMessageHeight + 2.0));
     [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
-- (void) scrollDown {
+- (void) scrollDownInAscendingOrder {
     NSRect bounds = [[[viewColumn tableView] superview] bounds];
-    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y + [[viewColumn tableView] rowHeight] + 2.0);
+    float newestMessageHeight = [[[messageViewControllerArrayController arrangedObjects] lastObject] requiredHeight];
+
+    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[[[messageViewControllerArrayController arrangedObjects] lastObject] status] text]);
+    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y + newestMessageHeight + 2.0);
     [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
@@ -63,9 +72,9 @@
     
     if ([configuration timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
         [self selectionDown];
-        [self scrollUp];
+        [self scrollUpInDescendingOrder];
     } else {
-        [self scrollDown];
+        [self scrollDownInAscendingOrder];
     }
 }
 
@@ -104,7 +113,19 @@
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
     TwitterStatusViewController *controller = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:row];
+//    NSLog(@"%s: %d - %f", __PRETTY_FUNCTION__, row, [controller requiredHeight]);
     return [controller requiredHeight];
 }
+
+// //////////////////////////////////////////////////////////////////////////////
+- (void) setChangeExpandMode:(BOOL)mode {
+    [self reloadTableView];
+}
+
+- (BOOL) changeExpandMode {
+    return TRUE;
+}
+
+
 
 @end

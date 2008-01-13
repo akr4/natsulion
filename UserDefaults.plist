@@ -10,5 +10,7 @@
 	<false/>
     <key>timelineSortOrder</key>
 	<real>0</real>
+    <key>alwaysExpandMessage</key>
+    <true/>
 </dict>
 </plist>

@@ -74,14 +74,14 @@
     float height = [self heightForString:[self attributedStringValue] andWidth:([self frame].size.width - 16)] + 2;
     if (height > _defaultHeight) {
         [self setFrameSize:NSMakeSize([self frame].size.width, height)];
-    }
-    
+    }    
     return height - _defaultHeight;
 }
 
 - (void) setMessage:(NSString*)message {
     [self setValueAndFormat:message colorForLink:[NTLNColors colorForLink]];
 }
+
 
 - (void) highlight {
     [super highlight];
