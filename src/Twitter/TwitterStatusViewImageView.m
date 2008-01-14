@@ -5,7 +5,7 @@
 
 - (void) awakeFromNib {
     NSTrackingArea *trackingArea = [[[NSTrackingArea alloc] initWithRect:[self bounds]
-                                                                 options: (NSTrackingCursorUpdate | NSTrackingActiveInKeyWindow)
+                                                                 options: (NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate | NSTrackingActiveInKeyWindow)
                                                                    owner:self
                                                                 userInfo:nil]
                                     autorelease];
@@ -18,7 +18,15 @@
 }
 
 -(void)cursorUpdate:(NSEvent *)theEvent {
-    [[NSCursor pointingHandCursor] set];
+    [[NSCursor pointingHandCursor] set];    
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    [self setImageFrameStyle:NSImageFrameButton];
+}
+
+- (void)mouseExited:(NSEvent *)theEvent {
+    [self setImageFrameStyle:NSImageFrameNone];
 }
 
 - (void) highlight {
