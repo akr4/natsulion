@@ -92,7 +92,7 @@
 -(void)connection:(NSURLConnection*)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge { 
     if ([challenge previousFailureCount] == 0) { 
         NSURLCredential *newCredential = [NSURLCredential credentialWithUser:_username password:_password persistence:NSURLCredentialPersistenceNone]; 
-        NSLog([newCredential description]);
+//        NSLog([newCredential description]);
         [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge]; 
     } else { 
         NSLog(@"authentication failure");

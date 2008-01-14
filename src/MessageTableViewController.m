@@ -71,8 +71,8 @@
 
 - (void) newMessageArrived:(MessageViewController*)controller {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
-    float newestMessageHeight = [controller requiredHeight];
-    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[controller message] text]);
+//    float newestMessageHeight = [controller requiredHeight];
+//    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[controller message] text]);
 
     [self reloadTableView];
     
