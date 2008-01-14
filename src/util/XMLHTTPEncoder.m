@@ -11,6 +11,7 @@
     NSString *escaped = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)aString, NULL, NULL, kCFStringEncodingUTF8);
     NSMutableString *s = [[escaped mutableCopy] autorelease];
     [s replaceOccurrencesOfString:@"&" withString:@"%26" options:0 range:NSMakeRange(0, [s length])];
+    [s replaceOccurrencesOfString:@"+" withString:@"%2B" options:0 range:NSMakeRange(0, [s length])];
     [s replaceOccurrencesOfString:@"?" withString:@"%3F" options:0 range:NSMakeRange(0, [s length])];
     return s;
 }

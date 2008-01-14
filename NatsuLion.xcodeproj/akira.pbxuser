@@ -252,6 +252,19 @@
 			E91C98E90D3C2640006F9058 /* PBXTextBookmark */ = E91C98E90D3C2640006F9058 /* PBXTextBookmark */;
 			E91C98EA0D3C2640006F9058 /* PBXTextBookmark */ = E91C98EA0D3C2640006F9058 /* PBXTextBookmark */;
 			E91C98EB0D3C2640006F9058 /* PBXTextBookmark */ = E91C98EB0D3C2640006F9058 /* PBXTextBookmark */;
+			E91C98F00D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F00D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F10D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F10D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F20D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F20D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F30D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F30D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F40D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F40D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F50D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F50D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F60D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F60D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F70D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F70D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F80D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F80D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98F90D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98F90D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98FA0D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98FA0D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98FB0D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98FB0D3C2EEA006F9058 /* PBXTextBookmark */;
+			E91C98FC0D3C2EEA006F9058 /* PBXTextBookmark */ = E91C98FC0D3C2EEA006F9058 /* PBXTextBookmark */;
 			E934672E0D32F2C200F779CB = E934672E0D32F2C200F779CB /* PBXTextBookmark */;
 			E93467300D32F2C200F779CB = E93467300D32F2C200F779CB /* PBXTextBookmark */;
 			E93467310D32F2C200F779CB = E93467310D32F2C200F779CB /* PBXTextBookmark */;
@@ -720,8 +733,8 @@
 	};
 	8D1107310486CEB800E47090 /* Info.plist */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1076, 577}}";
-			sepNavSelRange = "{695, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 600}}";
+			sepNavSelRange = "{786, 0}";
 			sepNavVisRange = "{0, 982}";
 			sepNavWindowFrame = "{{15, 547}, {799, 626}}";
 		};
@@ -1031,7 +1044,7 @@
 		fRef = E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */;
 		name = "XMLHTTPEncoderTest.m: 26";
 		rLen = 0;
-		rLoc = 805;
+		rLoc = 806;
 		rType = 0;
 		vrLen = 905;
 		vrLoc = 0;
@@ -1241,7 +1254,7 @@
 		fRef = E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */;
 		name = "XMLHTTPEncoderTest.m: 26";
 		rLen = 0;
-		rLoc = 805;
+		rLoc = 806;
 		rType = 0;
 		vrLen = 905;
 		vrLoc = 0;
@@ -1336,7 +1349,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1190, 1496}}";
 			sepNavSelRange = "{4084, 0}";
-			sepNavVisRange = "{2464, 1677}";
+			sepNavVisRange = "{2464, 1816}";
 		};
 	};
 	E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */ = {
@@ -2170,6 +2183,136 @@
 		rType = 0;
 		vrLen = 1677;
 		vrLoc = 2464;
+	};
+	E91C98F00D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */;
+		name = "AsyncUrlConnection.m: 96";
+		rLen = 0;
+		rLoc = 4084;
+		rType = 0;
+		vrLen = 1677;
+		vrLoc = 2464;
+	};
+	E91C98F10D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9614CDB0D27BADC009743CE /* URLExtractorTest.h */;
+		name = "URLExtractorTest.h: 9";
+		rLen = 0;
+		rLoc = 95;
+		rType = 0;
+		vrLen = 95;
+		vrLoc = 0;
+	};
+	E91C98F20D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9614CDC0D27BADC009743CE /* URLExtractorTest.m */;
+		name = "URLExtractorTest.m: 88";
+		rLen = 0;
+		rLoc = 4346;
+		rType = 0;
+		vrLen = 2077;
+		vrLoc = 3289;
+	};
+	E91C98F30D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */;
+		name = "XMLHTTPEncoder.m: 14";
+		rLen = 0;
+		rLoc = 522;
+		rType = 0;
+		vrLen = 1510;
+		vrLoc = 0;
+	};
+	E91C98F40D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */;
+		name = "XMLHTTPEncoderTest.m: 26";
+		rLen = 0;
+		rLoc = 791;
+		rType = 0;
+		vrLen = 906;
+		vrLoc = 0;
+	};
+	E91C98F50D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 22";
+		rLen = 0;
+		rLoc = 695;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 0;
+	};
+	E91C98F60D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */;
+		name = "AsyncUrlConnection.m: 96";
+		rLen = 0;
+		rLoc = 4084;
+		rType = 0;
+		vrLen = 1677;
+		vrLoc = 2464;
+	};
+	E91C98F70D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9614CDB0D27BADC009743CE /* URLExtractorTest.h */;
+		name = "URLExtractorTest.h: 9";
+		rLen = 0;
+		rLoc = 95;
+		rType = 0;
+		vrLen = 95;
+		vrLoc = 0;
+	};
+	E91C98F80D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9614CDC0D27BADC009743CE /* URLExtractorTest.m */;
+		name = "URLExtractorTest.m: 88";
+		rLen = 0;
+		rLoc = 4346;
+		rType = 0;
+		vrLen = 2077;
+		vrLoc = 3289;
+	};
+	E91C98F90D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */;
+		name = "XMLHTTPEncoderTest.m: 26";
+		rLen = 0;
+		rLoc = 785;
+		rType = 0;
+		vrLen = 906;
+		vrLoc = 0;
+	};
+	E91C98FA0D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */;
+		name = "XMLHTTPEncoder.m: 14";
+		rLen = 0;
+		rLoc = 522;
+		rType = 0;
+		vrLen = 1510;
+		vrLoc = 0;
+	};
+	E91C98FB0D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */;
+		name = "XMLHTTPEncoderTest.m: 26";
+		rLen = 0;
+		rLoc = 791;
+		rType = 0;
+		vrLen = 906;
+		vrLoc = 0;
+	};
+	E91C98FC0D3C2EEA006F9058 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 25";
+		rLen = 0;
+		rLoc = 786;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 0;
 	};
 	E93467010D32DF6400F779CB /* UIUtils.h */ = {
 		uiCtxt = {
@@ -3781,15 +3924,15 @@
 	};
 	E9614CDB0D27BADC009743CE /* URLExtractorTest.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 577}}";
 			sepNavSelRange = "{95, 0}";
 			sepNavVisRange = "{0, 95}";
 		};
 	};
 	E9614CDC0D27BADC009743CE /* URLExtractorTest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {962, 1516}}";
-			sepNavSelRange = "{5304, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 1516}}";
+			sepNavSelRange = "{4346, 0}";
 			sepNavVisRange = "{3289, 2077}";
 		};
 	};
@@ -6741,9 +6884,9 @@
 	};
 	E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {836, 546}}";
-			sepNavSelRange = "{1398, 0}";
-			sepNavVisRange = "{28, 1375}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 577}}";
+			sepNavSelRange = "{522, 0}";
+			sepNavVisRange = "{0, 1510}";
 		};
 	};
 	E9E5BFA00D2898D200F34B9B /* XMLHTTPEncoderTest.h */ = {
@@ -6755,9 +6898,9 @@
 	};
 	E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 581}}";
-			sepNavSelRange = "{805, 0}";
-			sepNavVisRange = "{0, 905}";
+			sepNavIntBoundsRect = "{{0, 0}, {1076, 600}}";
+			sepNavSelRange = "{791, 0}";
+			sepNavVisRange = "{0, 906}";
 		};
 	};
 	E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */ = {

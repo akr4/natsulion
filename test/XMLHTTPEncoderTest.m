@@ -21,9 +21,9 @@
     STAssertEqualObjects([[XMLHTTPEncoder encoder] decodeXML:INPUT], OUTPUT, nil);
 }
 
-- (void) testAmpEncode {
-    NSString *INPUT = @"hello,<&?\" >world";
-    NSString *OUTPUT = @"hello,%3C%26%3F%22%20%3Eworld";
+- (void) testEncode {
+    NSString *INPUT = @"hello,<+&?\" >world";
+    NSString *OUTPUT = @"hello,%3C%2B%26%3F%22%20%3Eworld";
     STAssertEqualObjects([[XMLHTTPEncoder encoder] encodeHTTP:INPUT], OUTPUT, nil);
 }
 
