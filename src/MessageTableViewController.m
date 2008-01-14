@@ -49,32 +49,38 @@
     [[viewColumn tableView] selectRowIndexes:target byExtendingSelection:FALSE];
 }
 
-- (void) scrollUpInDescendingOrder {
+- (void) scrollUpInDescendingOrder:(MessageViewController*)controller {
     NSRect bounds = [[[viewColumn tableView] superview] bounds];
-    float newestMessageHeight = [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:0] requiredHeight];
-    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[[[messageViewControllerArrayController arrangedObjects] objectAtIndex:0] status] text]);
+    float newestMessageHeight = [controller requiredHeight];
+//    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[[[messageViewControllerArrayController arrangedObjects] objectAtIndex:0] status] text]);
     NSPoint targetPoint = NSMakePoint(0, bounds.origin.y - (newestMessageHeight + 2.0));
     [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
-- (void) scrollDownInAscendingOrder {
+- (void) scrollDownInAscendingOrder:(MessageViewController*)controller {
+//    if ([[scrollView verticalScroller] floatValue] < 1.0) {
+//        NSLog(@"*** no scroll down needed: %f", [[scrollView verticalScroller] floatValue] );
+//        return;
+//    }
+    
     NSRect bounds = [[[viewColumn tableView] superview] bounds];
-    float newestMessageHeight = [[[messageViewControllerArrayController arrangedObjects] lastObject] requiredHeight];
-
-    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[[[messageViewControllerArrayController arrangedObjects] lastObject] status] text]);
+    float newestMessageHeight = [controller requiredHeight];
     NSPoint targetPoint = NSMakePoint(0, bounds.origin.y + newestMessageHeight + 2.0);
     [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
-- (void) newMessageArrived {
+- (void) newMessageArrived:(MessageViewController*)controller {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
+    float newestMessageHeight = [controller requiredHeight];
+    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[controller message] text]);
+
     [self reloadTableView];
     
     if ([configuration timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
         [self selectionDown];
-        [self scrollUpInDescendingOrder];
+        [self scrollUpInDescendingOrder:controller];
     } else {
-        [self scrollDownInAscendingOrder];
+        [self scrollDownInAscendingOrder:controller];
     }
 }
 

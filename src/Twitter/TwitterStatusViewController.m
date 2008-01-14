@@ -25,7 +25,7 @@
     return self;
 }
 
-- (TwitterStatus*) status {
+- (Message*) message {
     return _status;
 }
 
@@ -55,7 +55,7 @@
         return TRUE;
 	if (!anObject || ![anObject isKindOfClass:[self class]])
         return FALSE;
-    return [[self status] isEqual:[(TwitterStatusViewController*)anObject status]];
+    return [[self message] isEqual:[(TwitterStatusViewController*)anObject message]];
 }
      
 - (void) highlight {

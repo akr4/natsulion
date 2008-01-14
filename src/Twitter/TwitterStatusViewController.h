@@ -21,7 +21,6 @@
 }
 
 - (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<MessageViewListener>*)listener;
-- (TwitterStatus*) status;
 - (BOOL) isEqual:(id)anObject;
 - (void) highlight;
 - (void) unhighlight;

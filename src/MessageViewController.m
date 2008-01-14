@@ -19,6 +19,10 @@
     return nil;
 }
 
+- (Message*) message {
+    return nil;
+}
+
 - (float) requiredHeight {
     return 0.0;
 }

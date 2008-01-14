@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "Message.h"
+#import "MessageViewController.h"
 #import "Configuration.h"
 
 @interface MessageTableViewController : NSObject {
@@ -11,7 +11,7 @@
     NSScroller *_verticalScroller;
 }
 
-- (void) newMessageArrived;
+- (void) newMessageArrived:(MessageViewController*)controller;
 - (void) resize:(float)deltaHeight;
 - (void) reloadTableView;
 

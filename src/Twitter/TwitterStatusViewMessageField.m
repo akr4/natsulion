@@ -1,5 +1,6 @@
 #import "TwitterStatusViewMessageField.h"
 #import "URLExtractor.h"
+#import "UIUtils.h"
 #import "TwitterUtils.h"
 #import "NTLNColors.h"
 
@@ -28,7 +29,6 @@
     _defaultHeight = [self frame].size.height;
     [self setAllowsEditingTextAttributes:TRUE];
 }
-
 
 // internal methods /////////////////////////////////////////////////////////////////////////////////////
 
@@ -75,13 +75,13 @@
     if (height > _defaultHeight) {
         [self setFrameSize:NSMakeSize([self frame].size.width, height)];
     }    
+//    NSLog(@"**** %@ - %f", [self attributedStringValue], height);
     return height - _defaultHeight;
 }
 
 - (void) setMessage:(NSString*)message {
     [self setValueAndFormat:message colorForLink:[NTLNColors colorForLink]];
 }
-
 
 - (void) highlight {
     [super highlight];

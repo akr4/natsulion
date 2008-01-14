@@ -79,7 +79,7 @@
 
 - (void) addMessageViewController:(MessageViewController*)controller {
     [messageViewControllerArrayController addObject:controller];
-    [messageTableViewController newMessageArrived];
+    [messageTableViewController newMessageArrived:controller];
 //    NSLog(@"count: %d", [[messageViewControllerArrayController arrangedObjects] count]);
 }
 
