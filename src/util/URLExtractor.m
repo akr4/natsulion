@@ -49,7 +49,7 @@
 - (NSArray*) tokenizeByURL:(NSString*)aString {
     
     NSCharacterSet *acceptedCharacterSet = [NSCharacterSet characterSetWithCharactersInString:
-                                            @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789;/?:@&=+$,-_.!~*'()%"];
+                                            @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789;/?:@&=+$,-_.!~*'%"];
     return [self tokenize:aString 
             acceptedChars:acceptedCharacterSet
                    prefix:NTLN_URLEXTRACTOR_PREFIX_HTTP];
