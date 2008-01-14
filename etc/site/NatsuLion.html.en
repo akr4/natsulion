@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-style-type" content="text/css">
+<title>SecretStaircase - NatsuLion</title>
+<link rel="stylesheet" type="text/css" href="csstemplate/style.css">
+</head>
+<body id="INDEX">
+<div id="PAGETOP">
+
+
+<!--================-->
+<!--　　ヘッダー　　-->
+<!--================-->
+<div id="HEADER">
+<h1>SecretStaircase - NatsuLion</h1>
+<ul id="PAN">
+  <li><a href="/ss">Site Top</a></li>
+  <li>NatsuLion</li>
+</ul>
+</div>
+<hr>
+
+
+<!--================-->
+<!--　　メニュー　　-->
+<!--================-->
+<div id="MENU">
+<h2>menu</h2>
+ <ul>
+   <li id="MENU01" class="menu-on"><a href="index.html">index</a></li>
+   <li id="MENU02"><a href="/ss/space/start">Blog</a></li>
+   <li id="MENU03"><a href="/ss/space/Wicket">Wicket</a></li>
+   <li id="MENU04"><a href="/ss/space/SnipSnap">SnipSnap</a></li>
+  </ul>
+</div>
+<hr>
+
+
+<!--================-->
+<!--　　記事部分　　-->
+<!--================-->
+<div id="KIZI">
+
+<h2>NatsuLion</h2>
+<div class="text">
+<h3>About NatsuLion</h3>
+<p>
+NatsuLion is a Twitter client for Mac OSX. Currently in its beta state.<br/>
+
+Note: Leopard (10.5) is required.
+</p>
+
+Its goals are the follows:
+<ul>
+  <li>Be simple</li>
+  <li>Feature icons</li>
+  <li>Easy to use for Twitter light users</li>
+</ul>
+You can download the latest version from <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip">here</a>.
+
+</p>
+<p>
+<img src="images/ss1.png" alt="screen shot 1">
+</p>
+
+<h3>Main Functions</h3>
+<p>
+<ul>
+  <li>Display your friend timeline</li>
+  <li>Post a message</li>
+  <li>Replies including messages contain @<my ID> are emphasized</li>
+  <li>Input support for "@&lt;ID&gt;". By clicking icon, @&lt;ID&gt; apears in the message input field</li>
+  <li>Growl Notifications (replies are notified with a higher priority and stickied)</li>
+</ul>  
+</p>
+
+<h3>Known Problems</h3>
+<p>
+<ul>
+  <li>the background color of the message area changes to "not-focused-on-window" color when select some text in it <a href="http://jira.physalis.net/browse/NTLN-35">[NTLN-35]</a></li>
+  <li>whole text does not appears even when message field is expanded <a href="http://jira.physalis.net/browse/NTLN-43">[NTLN-43]</a></li>
+  <li>need to improve auto resizing textfield for message input <a href="http://jira.physalis.net/browse/NTLN-27">[NTLN-27]</a></li>
+</ul>
+Please refer <a href="http://jira.physalis.net/browse/NTLN">http://jira.physalis.net/browse/NTLN</a> for details.
+</p>
+
+<h3>License</h3>
+<p>
+NatsuLion is published under the <a href="http://www.physalis.net/repos/natsulion/trunk/LICENSE">Modified BSD</a> license and shipped with <a href="http://sparkle.andymatuschak.org/">Sparkle</a> and <a href="http://growl.info/">Growl</a> . Please find these licenses <a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">here</a>.
+</p>
+
+<h3>Source Code</h3>
+<p>
+<a href="http://www.physalis.net/repos/natsulion/trunk/">http://www.physalis.net/repos/natsulion/trunk/</a>
+</p>
+
+<h3>Bug Tracking System</h3>
+<p>
+If you find a bug or have new feature ideas, please file issues to <a href="http://jira.physalis.net/browse/NTLN">JIRA</a>. Or tell me on Twitter.(<a href="http://twitter.com/akr">@akr</a>)
+</p>
+
+<h3>Special Thanks</h3>
+<p>
+@yusukey has been partifipating from early development phase, filed a lot of bugs and brought nice ideas (e.g. To use Sparkle is his idea.). Thank you very much!
+</p>
+
+<h2>Release Notes</h2>
+<h3>Version 0.11</h3>
+<p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-72'>NTLN-72</a>] -         look and feel improvement: make status bar thin
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-76'>NTLN-76</a>] -         permit narrower width
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-78'>NTLN-78</a>] -         emphasize image while mouse is on
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-79'>NTLN-79</a>] -         ) should not be regarded as a part of URL
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-55'>NTLN-55</a>] -         &quot;message always expanded&quot; feature
+</li>
+</ul>
+</p>    
+
+<h3>Version 0.10</h3>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-60'>NTLN-60</a>] -         0.8 is too slow and its memory footprint is too large 
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-67'>NTLN-67</a>] -         timeline request is issued every time refresh interval spinner is clicked
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-69'>NTLN-69</a>] -         mouse cursor remains as the pointing type even after leaving name or timestamp field
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-63'>NTLN-63</a>] -         swap screenname and username's location
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-68'>NTLN-68</a>] -         display once if name and screenname is the same
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-62'>NTLN-62</a>] -         clickable area is too large [clickable link to a user's timeline page (http://twitter.com/&lt;user&gt;)]
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-64'>NTLN-64</a>] -         link to status page
+</li>
+</ul>
+</p>
+
+<h3>Version 0.8</h3>
+<p>
+<p>
+A critical memory leak bug was fixed in version 0.7 and auto update function should work in this version. I'm proud to annouce to release this version as a beta version (prior versions were alpha). Thanks.
+</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-53'>NTLN-53</a>] -         2nd try - reconsider colors
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-51'>NTLN-51</a>] -         ability to configure the sort order of the messages
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-58'>NTLN-58</a>] -         link for reply
+</li>
+</ul>
+</p>
+
+<h3>Version 0.7</h3>
+<p>
+<p>
+Auto update might crash duaring its work. Please download manually from this page. Thanks.<br/>
+</p>
+
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-48'>NTLN-48</a>] -         some code improvements told on Twitter
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-50'>NTLN-50</a>] -         &lt; and &gt; are shown as &amp;lt; and &amp;gt;
+</li>
+</ul>
+        
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-16'>NTLN-16</a>] -         skip a Growl notification just after launched
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-39'>NTLN-39</a>] -         inform entered text length in a status bar
+</li>
+</ul>
+</p>
+
+
+<ul class="modori">
+  <li><a href="#PAGETOP">Page Top</a></li>
+</ul>
+</div>
+<hr>
+
+</div>
+
+
+<!--================-->
+<!--　　フッター　　-->
+<!--================-->
+<div id="FOOTER">
+<h2>Addresses</h2>
+<ul>
+ <li id="FOOTER01"><a href="#PAGETOP">Page Top</a></li>
+ <li id="FOOTER02"><address><a href="mailto:ue@gol.com">ue@gol.com</a></address></li>
+</ul>
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-345529-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

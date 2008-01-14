@@ -7,6 +7,36 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.11</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.11
+        
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-72'&gt;NTLN-72&lt;/a&gt;] -         look and feel improvement: make status bar thin
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-76'&gt;NTLN-76&lt;/a&gt;] -         permit narrower width
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-78'&gt;NTLN-78&lt;/a&gt;] -         emphasize image while mouse is on
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-79'&gt;NTLN-79&lt;/a&gt;] -         ) should not be regarded as a part of URL
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-55'&gt;NTLN-55&lt;/a&gt;] -         &quot;message always expanded&quot; feature
+&lt;/li&gt;
+&lt;/ul&gt;
+         </description>
+      <pubDate>Wed, 15 Jan 2008 02:55:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.11.zip"
+        length="716194"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.10</title>
       <description>
         Release Notes - NatsuLion - Version 0.10
