@@ -108,6 +108,17 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.12</h3>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-81'>NTLN-81</a>] -         hang with &quot;attempt to insert nil value&quot;
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-82'>NTLN-82</a>] -         cannot post + (plus)
+</li>
+</ul>
+</p>
+
 <h3>Version 0.11</h3>
 <p>
 Improvement

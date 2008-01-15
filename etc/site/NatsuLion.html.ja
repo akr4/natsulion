@@ -110,6 +110,17 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.12</h3>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-81'>NTLN-81</a>] -         hang with &quot;attempt to insert nil value&quot;
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-82'>NTLN-82</a>] -         cannot post + (plus)
+</li>
+</ul>
+</p>
+
 <h3>Version 0.11</h3>
 <p>
 <p>

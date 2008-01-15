@@ -7,6 +7,25 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.12</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.12
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-81'&gt;NTLN-81&lt;/a&gt;] -         hang with &quot;attempt to insert nil value&quot;
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-82'&gt;NTLN-82&lt;/a&gt;] -         cannot post + (plus)
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Wed, 15 Jan 2008 09:02:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.12.zip"
+        length="716110"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.11</title>
       <description>
         Release Notes - NatsuLion - Version 0.11
