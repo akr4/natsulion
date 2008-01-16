@@ -8,6 +8,8 @@
     [viewColumn setDataCell:[[[CustomViewCell alloc] init] autorelease]];
     _verticalScroller = [[scrollView verticalScroller] retain];
 
+    [[viewColumn tableView] setIntercellSpacing:NSMakeSize(3.0, 0)];
+    
     [self bind:@"changeExpandMode"
       toObject:[NSUserDefaultsController sharedUserDefaultsController] 
    withKeyPath:@"values.alwaysExpandMessage"
@@ -33,7 +35,9 @@
 
 - (void) updateSelection {
     [self selectedRowIndexes:[[viewColumn tableView] selectedRowIndexes]];
-    [[viewColumn tableView] noteHeightOfRowsWithIndexesChanged:[[viewColumn tableView] selectedRowIndexes]];
+    if (![configuration alwaysExpandMessage]) {
+        [[viewColumn tableView] noteHeightOfRowsWithIndexesChanged:[[viewColumn tableView] selectedRowIndexes]];
+    }
 }
 
 - (void) reloadTableView {
@@ -91,6 +95,9 @@
     [scrollView setFrame:frame];
 }
 
+- (float) columnWidth {
+    return [viewColumn width];
+}
 
 // NSTableView datasource method ///////////////////////////////////////////////
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView {
@@ -123,7 +130,7 @@
     return [controller requiredHeight];
 }
 
-// //////////////////////////////////////////////////////////////////////////////
+// Configuration change makes below method call //////////////////////////////////////////////////////////////////////////////
 - (void) setChangeExpandMode:(BOOL)mode {
     [self reloadTableView];
 }
@@ -131,7 +138,5 @@
 - (BOOL) changeExpandMode {
     return TRUE;
 }
-
-
 
 @end

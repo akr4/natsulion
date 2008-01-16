@@ -2,6 +2,37 @@
 #import "TwitterStatus.h"
 #import "XMLHTTPEncoder.h"
 
+@implementation NTLNErrorInfo
++ (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message {
+    NTLNErrorInfo *info = [[[NTLNErrorInfo alloc] init] autorelease];
+    [info setType:type];
+    [info setOriginalMessage:message];
+    return info;
+}
+
+- (enum NTLNErrorType)type {
+    return _type;
+}
+
+- (void) setType:(enum NTLNErrorType)type {
+    _type = type;
+}
+
+- (NSString*)originalMessage {
+    return _originalMessage;
+}
+
+- (void) setOriginalMessage:(NSString*)message {
+    _originalMessage = message;
+    [_originalMessage retain];
+}
+
+- (void) dealloc {
+    [_originalMessage release];
+    [super dealloc];
+}
+@end
+
 @implementation TwitterPostCallbackHandler
 
 - (id) initWithCallback:(id<TwitterPostInternalCallback>)callback {
@@ -21,8 +52,17 @@
 
 @end
 
-
 @implementation Twitter
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback {
+
+}
+
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {
+    
+}
+@end
+
+@implementation TwitterImpl
 
 // internal 
 - (NSArray*) arrayWithSet:(NSSet*)set {
@@ -147,18 +187,39 @@
     
 //    NSLog(@"responseArrived:%@", responseStr);
     
-    NSXMLDocument *document;
+    NSXMLDocument *document = nil;
     
-    document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
-    if (!document) {
-        NSLog(@"parse error");
-        NSLog(@"responseArrived:%@", responseStr);
-        
-        [_friendTimelineCallback failedToGetTimeline:@"This error might be caused by API limitation."];
+    if (responseStr) {
+        document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
+    }
+    
+    if (!document || code >= 400) {
+        NSLog(@"status code: %d - response:%@", code, responseStr);        
+        switch (code) {
+            case 400:
+                [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_HIT_API_LIMIT originalMessage:nil]];
+                break;
+            case 401:
+                [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_NOT_AUTHORIZED originalMessage:nil]];
+                break;
+            case 500:
+            case 502:
+            case 503:
+                [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_SERVER_ERROR originalMessage:nil]];
+                break;
+            default:
+                [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:nil]];
+                break;
+        }
         return;
     }
     
     NSArray *statuses = [document nodesForXPath:@"/statuses/status" error:NULL];
+    if ([statuses count] == 0) {
+        NSLog(@"status code: %d - response:%@", code, responseStr);
+        [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:@"no message received"]];
+    }
+    
     for (NSXMLNode *status in statuses) {
         TwitterStatus *backStatus = [[[TwitterStatus alloc] init] autorelease];
         
@@ -188,7 +249,7 @@
 }
 
 - (void) connectionFailed:(NSError*)error {
-    [_friendTimelineCallback failedToGetTimeline:[error localizedDescription]];
+    [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
 }
 
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {

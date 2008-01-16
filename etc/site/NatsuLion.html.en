@@ -108,6 +108,27 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.13</h3>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-80'>NTLN-80</a>] -         window width calculation is wrong
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-85'>NTLN-85</a>] -         better error handling using http status code
+</li>
+</ul>
+        
+Task
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-84'>NTLN-84</a>] -         code improvement: make a stub of Twitter to make tests easier
+</li>
+</ul>
+</p>
+
 <h3>Version 0.12</h3>
 <p>
 Bug
@@ -152,7 +173,7 @@ Bug
 </li>
 </ul>
     
-Improvement
+pImprovement
 <ul>
 <li>[<a href='http://jira.physalis.net/browse/NTLN-63'>NTLN-63</a>] -         swap screenname and username's location
 </li>

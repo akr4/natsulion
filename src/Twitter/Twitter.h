@@ -2,9 +2,28 @@
 #import "AsyncUrlConnection.h"
 #import "IconRepository.h"
 
+enum NTLNErrorType {
+    NTLN_ERROR_TYPE_HIT_API_LIMIT,
+    NTLN_ERROR_TYPE_NOT_AUTHORIZED,
+    NTLN_ERROR_TYPE_SERVER_ERROR,
+    NTLN_ERROR_TYPE_CONNECTION,
+    NTLN_ERROR_TYPE_OTHER
+};
+
+@interface NTLNErrorInfo : NSObject {
+    enum NTLNErrorType _type;
+    NSString *_originalMessage;
+}
++ (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message;
+- (enum NTLNErrorType)type;
+- (void) setType:(enum NTLNErrorType)type;
+- (NSString*)originalMessage;
+- (void) setOriginalMessage:(NSString*)message;
+@end
+
 @protocol TimelineCallback
 - (void) finishedToGetTimeline:(NSArray *)statuses;
-- (void) failedToGetTimeline:(NSString*)message;
+- (void) failedToGetTimeline:(NTLNErrorInfo*)info;
 - (void) started;
 - (void) stopped;
 @end
@@ -26,7 +45,14 @@
 - (id) initWithCallback:(id<TwitterPostInternalCallback>)callback;
 @end
 
-@interface Twitter : NSObject <AsyncUrlConnectionCallback, IconCallback, TwitterPostInternalCallback> {
+@interface Twitter : NSObject {
+    
+}
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback;
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback;
+@end
+
+@interface TwitterImpl : Twitter <AsyncUrlConnectionCallback, IconCallback, TwitterPostInternalCallback> {
     NSObject<TimelineCallback> *_friendTimelineCallback;
     NSObject<TwitterPostCallback> *_twitterPostCallback;
     
@@ -41,10 +67,7 @@
     BOOL _postingMessage;
 }
 - (id) init;
-- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback;
-- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback;
 @end
-
 
 #define NTLN_TWITTERCHECK_SUCESS 0
 #define NTLN_TWITTERCHECK_AUTH_FAILURE 1

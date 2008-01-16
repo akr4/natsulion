@@ -7,6 +7,37 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.13</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.13
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-80'&gt;NTLN-80&lt;/a&gt;] -         window width calculation is wrong
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-85'&gt;NTLN-85&lt;/a&gt;] -         better error handling using http status code
+&lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;h2&gt;        Task
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-84'&gt;NTLN-84&lt;/a&gt;] -         code improvement: make a stub of Twitter to make tests easier
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Wed, 16 Jan 2008 10:00:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.13.zip"
+        length="719175"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.12</title>
       <description>
         Release Notes - NatsuLion - Version 0.12

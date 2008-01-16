@@ -3,13 +3,17 @@
 
 @implementation TwitterStatusViewImageView
 
-- (void) awakeFromNib {
+- (void) addImageTrackingArea {
     NSTrackingArea *trackingArea = [[[NSTrackingArea alloc] initWithRect:[self bounds]
                                                                  options: (NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate | NSTrackingActiveInKeyWindow)
                                                                    owner:self
                                                                 userInfo:nil]
                                     autorelease];
     [self addTrackingArea:trackingArea];
+}
+
+- (void) awakeFromNib {
+    [self addImageTrackingArea];
 }
 
 - (void) mouseDown:(NSEvent *)theEvent {
@@ -48,6 +52,16 @@
 - (void) dealloc {
     [_status release];
     [super dealloc];
+}
+
+- (void)updateTrackingAreas {
+    NSArray *trackingAreas = [self trackingAreas];
+    int i;
+    for (i = 0; i < [trackingAreas count]; i++) {
+        [self removeTrackingArea:[trackingAreas objectAtIndex:i]];
+    }
+    
+    [self addImageTrackingArea];
 }
 
 @end

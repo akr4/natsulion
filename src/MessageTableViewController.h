@@ -14,5 +14,6 @@
 - (void) newMessageArrived:(MessageViewController*)controller;
 - (void) resize:(float)deltaHeight;
 - (void) reloadTableView;
+- (float) columnWidth;
 
 @end

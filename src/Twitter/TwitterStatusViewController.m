@@ -3,6 +3,12 @@
 
 @implementation TwitterStatusViewController
 
+- (void) fitToSuperviewWidth {
+    NSRect frame = [view frame];
+    frame.size.width = [_listener viewWidth];
+    [view setFrame:frame];
+}
+
 - (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<MessageViewListener>*)listener {
     [super init];
 
@@ -20,6 +26,8 @@
     [timestampField setStatus:_status];
     [iconView setStatus:_status];
     [iconView setViewController:self];
+    
+    [self fitToSuperviewWidth];
     [view setTwitterStatus:_status];
 
     return self;
@@ -75,6 +83,7 @@
 }
 
 - (float) requiredHeight {
+    [self fitToSuperviewWidth];
     return [view requiredHeight];
 }
 

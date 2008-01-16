@@ -71,6 +71,7 @@
 // public methods //////////////////////////////////////////////////////////////////////
 // returns delta of expaned height
 - (float) expandIfNeeded {
+//    NSLog(@"-*- width: %f", [self frame].size.width);
     float height = [self heightForString:[self attributedStringValue] andWidth:([self frame].size.width - 16)] + 2;
     if (height > _defaultHeight) {
         [self setFrameSize:NSMakeSize([self frame].size.width, height)];

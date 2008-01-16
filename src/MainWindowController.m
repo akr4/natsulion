@@ -4,11 +4,13 @@
 #import "TwitterStatusViewController.h"
 #import "TwitterStatus.h"
 #import "ErrorMessageViewController.h"
+#import "TwitterTestStub.h"
 
 @implementation MainWindowController
 
 - (id) init {
-    _twitter = [[Twitter alloc] init];
+    _twitter = [[TwitterImpl alloc] init];
+//    _twitter = [[TwitterTestStub alloc] init];
     _growlEnabled = FALSE;
     _afterLaunchedTimer = [[NSTimer scheduledTimerWithTimeInterval:60 // TODO: consider refreshInterval
                                                             target:self
@@ -177,7 +179,32 @@
     }
 }
 
-- (void) failedToGetTimeline:(NSString*)message {
+- (void) failedToGetTimeline:(NTLNErrorInfo*)info {
+    
+    NSString *message;
+    
+    switch ([info type]) {
+        case NTLN_ERROR_TYPE_HIT_API_LIMIT:
+            message = @"Reached API Limitation";
+            break;
+        case NTLN_ERROR_TYPE_NOT_AUTHORIZED:
+            message = @"Not Authorized";
+            break;
+        case NTLN_ERROR_TYPE_SERVER_ERROR:
+            message = @"Twitter Server Error";
+            break;
+        case NTLN_ERROR_TYPE_CONNECTION:
+            if ([info originalMessage]) {
+                message = [info originalMessage];
+            } else {
+                message = @"Connection Error";
+            }
+            break;
+        case NTLN_ERROR_TYPE_OTHER:
+        default:
+            message = @"Unknown Error (might be a server error)";
+            break;
+    }
     [self addMessageViewController:[ErrorMessageViewController controllerWithTitle:@"Retrieving timeline failed"
                                                                            message:message
                                                                          timestamp:[NSDate date]]];
@@ -213,9 +240,13 @@
     [messageTableViewController reloadTableView];
 }
 
-// MainWindowOperator ////////////////////////////////////////////////////////////////
+// MessageViewListener ////////////////////////////////////////////////////////////////
 - (void) replyDesiredFor:(NSString*)username {
     [messageTextField addReplyTo:username];
+}
+
+- (float) viewWidth {
+    return [messageTableViewController columnWidth];
 }
 
 // NSWindow delegate methods ////////////////////////////////////////////////////////

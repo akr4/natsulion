@@ -30,7 +30,7 @@
     _status = status;
     [_status retain];
     if ([configuration alwaysExpandMessage]) {
-        [self expandTextField];
+        [self requiredHeight];
     }
 }
 

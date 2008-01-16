@@ -11,6 +11,7 @@
 
 @protocol MessageViewListener
 - (void) replyDesiredFor:(NSString*)username;
+- (float) viewWidth;
 @end
 
 @interface MainWindowController : NSWindowController <MessageViewListener, TimelineSortOrderChangeObserver, TimelineCallback, TwitterPostCallback, MessageInputTextFieldCallback> {

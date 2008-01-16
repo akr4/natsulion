@@ -20,17 +20,18 @@
     return rect;
 }
 
-- (void) setStringValue:(NSString*)aString {
-    [super setStringValue:aString];
-    
-    
+- (void) addTextTrackingArea {
     NSTrackingArea *trackingArea = [[[NSTrackingArea alloc] initWithRect:[self rectForText]
                                                                  options: (NSTrackingMouseEnteredAndExited | NSTrackingCursorUpdate | NSTrackingActiveInKeyWindow)
                                                                    owner:self
                                                                 userInfo:nil]
                                     autorelease];
     [self addTrackingArea:trackingArea];
-    
+}
+
+- (void) setStringValue:(NSString*)aString {
+    [super setStringValue:aString];
+    [self addTextTrackingArea];
 }
 
 - (BOOL) mouseIsOnText {
@@ -61,6 +62,16 @@
         [self setTextColor:[self defaultColor]];
     }
     _mouseIsOnText = FALSE;
+}
+
+- (void)updateTrackingAreas {
+    NSArray *trackingAreas = [self trackingAreas];
+    int i;
+    for (i = 0; i < [trackingAreas count]; i++) {
+        [self removeTrackingArea:[trackingAreas objectAtIndex:i]];
+    }
+    
+    [self addTextTrackingArea];
 }
 
 @end
