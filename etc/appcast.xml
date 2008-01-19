@@ -7,6 +7,23 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.14</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.14
+        
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-88'&gt;NTLN-88&lt;/a&gt;] -         slow at new message arrival
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Sat, 19 Jan 2008 17:58:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.14.zip"
+        length="720424"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.13</title>
       <description>
         Release Notes - NatsuLion - Version 0.13

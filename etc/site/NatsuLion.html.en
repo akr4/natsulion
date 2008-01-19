@@ -108,6 +108,15 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.14</h3>
+<p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-88'>NTLN-88</a>] -         slow at new message arrival
+</li>
+</ul>
+</p>
+
 <h3>Version 0.13</h3>
 <p>
 Bug

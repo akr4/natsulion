@@ -110,6 +110,15 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.14</h3>
+<p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-88'>NTLN-88</a>] -         slow at new message arrival
+</li>
+</ul>
+</p>
+
 <h3>Version 0.13</h3>
 <p>
 Bug
