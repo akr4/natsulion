@@ -3,7 +3,6 @@
 #import "Twitter.h"
 #import "GrowlNotifier.h"
 #import "MessageInputTextField.h"
-#import "Configuration.h"
 
 @protocol TimelineSortOrderChangeObserver
 - (void) timelineSortOrderChangeObserverSortOrderChanged;
@@ -20,7 +19,6 @@
     IBOutlet NSProgressIndicator *downloadProgress;
     IBOutlet MessageInputTextField *messageTextField;
     IBOutlet NSTextField *statusTextField;
-    IBOutlet Configuration *configuration;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     
     Twitter *_twitter;

@@ -1,6 +1,7 @@
 #import "MessageTableViewController.h"
 #import "CustomViewCell.h"
 #import "TwitterStatusViewController.h"
+#import "Configuration.h"
 
 @implementation MessageTableViewController
 
@@ -34,7 +35,7 @@
 
 - (void) updateSelection {
     [self selectedRowIndexes:[[viewColumn tableView] selectedRowIndexes]];
-    if (![configuration alwaysExpandMessage]) {
+    if (![[Configuration instance] alwaysExpandMessage]) {
         [[viewColumn tableView] noteHeightOfRowsWithIndexesChanged:[[viewColumn tableView] selectedRowIndexes]];
     }
 }
@@ -85,7 +86,7 @@
 
     [self reloadTableView];
     
-    if ([configuration timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
+    if ([[Configuration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
         [self selectionDown];
         [self scrollUpInDescendingOrder:controller];
     } else {

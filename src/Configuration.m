@@ -5,6 +5,16 @@
 
 @synthesize useGrowl, showWindowWhenNewMessage, alwaysExpandMessage, refreshInterval;
 
++ (id) instance {
+    static id _instance = nil;
+    @synchronized (self) {
+        if (!_instance) {
+            _instance = [[self alloc] init];
+        }
+    }
+    return _instance;
+}
+
 - (void) bindToProperty:(NSString*)propertyName {
     [self bind:propertyName
       toObject:[NSUserDefaultsController sharedUserDefaultsController] 
@@ -21,14 +31,16 @@
 }
 
 - (int) timelineSortOrder {
-//    NSLog(@"timelineSortOrder:%d", [[NSUserDefaults standardUserDefaults] integerForKey:@"timelineSortOrder"]);
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"timelineSortOrder"];
 }
 
 - (void) setTimelineSortOrder:(int)sortOrder {
     [[NSUserDefaults standardUserDefaults] setInteger:sortOrder forKey:@"timelineSortOrder"];
-    [timelineSortOrderChangeObserver timelineSortOrderChangeObserverSortOrderChanged];
+    [_timelineSortOrderChangeObserver timelineSortOrderChangeObserverSortOrderChanged];
 }
 
+- (void) setTimelineSortOrderChangeObserver:(id<TimelineSortOrderChangeObserver>)observer {
+    _timelineSortOrderChangeObserver = observer;
+}
 
 @end

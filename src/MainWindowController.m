@@ -5,6 +5,7 @@
 #import "TwitterStatus.h"
 #import "ErrorMessageViewController.h"
 #import "TwitterTestStub.h"
+#import "Configuration.h"
 
 @implementation MainWindowController
 
@@ -17,6 +18,8 @@
                                                           selector:@selector(enableGrowl)
                                                           userInfo:nil
                                                            repeats:FALSE] retain];
+    [[Configuration instance] setTimelineSortOrderChangeObserver:self];
+    
     return self;
 }
 
@@ -38,7 +41,7 @@
     //    NSString *sortOrder = [[NSUserDefaults standardUserDefaults] stringForKey:@"timelineSortOrder"];
     return [NSArray arrayWithObject:[[[NSSortDescriptor alloc] 
                                       initWithKey:@"timestamp" 
-                                      ascending:([configuration timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING)] autorelease]];
+                                      ascending:([[Configuration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING)] autorelease]];
 }
 
 // this method is not needed actually but called by array controller's binding

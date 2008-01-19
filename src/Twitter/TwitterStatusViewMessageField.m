@@ -3,6 +3,7 @@
 #import "UIUtils.h"
 #import "TwitterUtils.h"
 #import "NTLNColors.h"
+#import "Configuration.h"
 
 @interface NSAttributedString (Hyperlink)
 +(id) hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL colorForLink:(NSColor*)color;
@@ -97,7 +98,7 @@
     [super unhighlight];
     [self setValueAndFormat:[self stringValue] colorForLink:[NTLNColors colorForLink]];
     [self setSelectable:FALSE];
-    if (![configuration alwaysExpandMessage]) {
+    if (![[Configuration instance] alwaysExpandMessage]) {
         [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
     }
 }

@@ -37,11 +37,6 @@
 			<string>Configuration</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>timelineSortOrderChangeObserver</key>
-				<string>NSObject</string>
-			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
 		</dict>

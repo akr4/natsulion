@@ -6,19 +6,21 @@
 @protocol TimelineSortOrderChangeObserver;
 
 @interface Configuration : NSObject {
-    IBOutlet NSObject<TimelineSortOrderChangeObserver> *timelineSortOrderChangeObserver;
-    
     BOOL useGrowl;
     BOOL showWindowWhenNewMessage;
     BOOL alwaysExpandMessage;
     int refreshInterval;
     int timelineSortOrder;
+
+    id<TimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 }
 
 @property BOOL useGrowl, showWindowWhenNewMessage, alwaysExpandMessage;
 @property int refreshInterval;
 
++ (id) instance;
 - (int) timelineSortOrder;
 - (void) setTimelineSortOrder:(int)sortOrder;
+- (void) setTimelineSortOrderChangeObserver:(id<TimelineSortOrderChangeObserver>)observer;
 
 @end
