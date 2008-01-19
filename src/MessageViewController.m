@@ -27,8 +27,15 @@
     return 0.0;
 }
 
+- (void) markNeedCalculateHeight {
+}
+
 - (NSDate*) timestamp {
     return nil;
+}
+
+- (void) iconViewClicked {
+    
 }
 
 @end

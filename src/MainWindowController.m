@@ -252,6 +252,7 @@
 // NSWindow delegate methods ////////////////////////////////////////////////////////
 - (void)windowDidResize:(NSNotification *)notification {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [messageTableViewController recluculateViewSizes];
     [messageTableViewController reloadTableView];
 }
 

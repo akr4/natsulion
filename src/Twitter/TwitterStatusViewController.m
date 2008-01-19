@@ -28,6 +28,7 @@
     [iconView setViewController:self];
     
     [self fitToSuperviewWidth];
+    [view setViewController:self];
     [view setTwitterStatus:_status];
 
     return self;
@@ -93,6 +94,10 @@
 
 - (void) iconViewClicked {
     [_listener replyDesiredFor:[_status screenName]];
+}
+
+- (void) markNeedCalculateHeight {
+    [view markNeedCalculateHeight];
 }
 
 @end

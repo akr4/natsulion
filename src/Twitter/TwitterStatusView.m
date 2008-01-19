@@ -1,11 +1,13 @@
 #import "TwitterStatusView.h"
 #import "NTLNColors.h"
+#import "TwitterStatusViewController.h"
 
 @implementation TwitterStatusView
 
 - (void) awakeFromNib {
     _defaultHeight = [self frame].size.height;
     _requiredHeight = _defaultHeight;
+    _sizeShouldBeCalculated = TRUE;
 }
 
 - (float) expandTextField {
@@ -18,7 +20,16 @@
     return _requiredHeight;
 }
 
+- (void) markNeedCalculateHeight {
+    _sizeShouldBeCalculated = TRUE;
+}
+
 - (float) requiredHeight {
+    if (!_sizeShouldBeCalculated) {
+        return _requiredHeight;
+    }
+
+    _sizeShouldBeCalculated = FALSE;
     if ([configuration alwaysExpandMessage]) {
         return [self expandTextField];
     } else {
@@ -95,6 +106,10 @@
     }
     [_backgroundColor set];
     NSRectFill(aRect);
+}
+
+- (void) setViewController:(TwitterStatusViewController*)controller {
+    _controller = controller; // weak reference
 }
 
 @end

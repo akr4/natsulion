@@ -15,5 +15,6 @@
 - (void) resize:(float)deltaHeight;
 - (void) reloadTableView;
 - (float) columnWidth;
+- (void) recluculateViewSizes;
 
 @end

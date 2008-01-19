@@ -27,6 +27,7 @@
 - (void) awakeFromNib {
     [super awakeFromNib];
     _defaultHeight = [self frame].size.height;
+    _defaultY = [self frame].origin.y;
     [self setAllowsEditingTextAttributes:TRUE];
 }
 
@@ -75,6 +76,8 @@
     float height = [self heightForString:[self attributedStringValue] andWidth:([self frame].size.width - 16)] + 2;
     if (height > _defaultHeight) {
         [self setFrameSize:NSMakeSize([self frame].size.width, height)];
+    } else {
+        [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
     }    
 //    NSLog(@"**** %@ - %f", [self attributedStringValue], height);
     return height - _defaultHeight;
@@ -94,7 +97,9 @@
     [super unhighlight];
     [self setValueAndFormat:[self stringValue] colorForLink:[NTLNColors colorForLink]];
     [self setSelectable:FALSE];
-    [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
+    if (![configuration alwaysExpandMessage]) {
+        [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
+    }
 }
 
 @end

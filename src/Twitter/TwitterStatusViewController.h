@@ -27,8 +27,5 @@
 - (NSView*) view;
 - (float) requiredHeight;
 
-// methods for subviews
-- (void) iconViewClicked;
-
 @end
 

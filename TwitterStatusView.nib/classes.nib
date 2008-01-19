@@ -104,14 +104,6 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
-			<string>MessageViewTextField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSTextField</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
 			<string>Message</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
@@ -120,9 +112,22 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
+			<string>MessageViewTextField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSTextField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>TwitterStatusViewMessageField</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>configuration</key>
+				<string>Configuration</string>
+			</dict>
 			<key>SUPERCLASS</key>
 			<string>MessageViewTextField</string>
 		</dict>

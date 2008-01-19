@@ -8,7 +8,7 @@
     [viewColumn setDataCell:[[[CustomViewCell alloc] init] autorelease]];
     _verticalScroller = [[scrollView verticalScroller] retain];
 
-    [[viewColumn tableView] setIntercellSpacing:NSMakeSize(3.0, 0)];
+    [[viewColumn tableView] setIntercellSpacing:NSMakeSize(0, 0)];
     
     [self bind:@"changeExpandMode"
       toObject:[NSUserDefaultsController sharedUserDefaultsController] 
@@ -23,8 +23,7 @@
 
 // for display custom view /////////////////////////////////////////////////////
 - (void) selectedRowIndexes:(NSIndexSet*)indexSet {
-    int i;
-    for (i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
+    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
         if ([indexSet containsIndex:i]) {
             [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:i] highlight];
         } else {
@@ -37,6 +36,12 @@
     [self selectedRowIndexes:[[viewColumn tableView] selectedRowIndexes]];
     if (![configuration alwaysExpandMessage]) {
         [[viewColumn tableView] noteHeightOfRowsWithIndexesChanged:[[viewColumn tableView] selectedRowIndexes]];
+    }
+}
+
+- (void) recluculateViewSizes {
+    for (MessageViewController *c in [messageViewControllerArrayController arrangedObjects]) {
+        [c markNeedCalculateHeight];
     }
 }
 
@@ -132,6 +137,7 @@
 
 // Configuration change makes below method call //////////////////////////////////////////////////////////////////////////////
 - (void) setChangeExpandMode:(BOOL)mode {
+    [self recluculateViewSizes];
     [self reloadTableView];
 }
 
