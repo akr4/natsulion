@@ -131,9 +131,7 @@ static NSImage *highlightedFavoliteIcon;
 }
 
 - (void) showStar:(BOOL)show {
-        NSLog(@"showStar"); 
     if (!_starHighlighted && !_favoriteIsCreating && ![_listener isCreatingFavoriteWorking]) {
-        NSLog(@"showStar2");
         [favoliteButton setHidden:!show];
     }
 }

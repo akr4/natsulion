@@ -146,7 +146,6 @@
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
-    NSLog(@"enter");
     _starTimer = [[NSTimer scheduledTimerWithTimeInterval:1
                                                    target:self
                                                 selector:@selector(showStar:)
