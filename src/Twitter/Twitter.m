@@ -52,6 +52,34 @@
 
 @end
 
+@implementation TwitterFavoriteCallbackHandler
+
+- (id) initWithStatusId:(NSString*)statusId callback:(id<TwitterFavoriteCallback>)callback {
+    _callback = callback; // weak reference
+    _statusId = statusId;
+    [_statusId retain];
+    return self;
+}
+
+- (void) dealloc {
+    [_statusId release];
+    [super dealloc];
+}
+
+- (void) responseArrived:(NSData*)response statusCode:(int)code {
+    [_callback finishedToChangeFavorite:_statusId];
+    NSLog(@"favorite responseArrived:%@", [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding]);
+    [self autorelease];
+}
+
+- (void) connectionFailed:(NSError*)error {
+    [_callback failedToChangeFavorite:_statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
+    [self autorelease];
+}
+
+@end
+
+
 @implementation Twitter
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback {
 
@@ -60,6 +88,11 @@
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {
     
 }
+
+- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterFavoriteCallback>*)callback {
+    
+}
+
 @end
 
 @implementation TwitterImpl
@@ -252,6 +285,8 @@
     [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
 }
 
+// sendMessage //////////////////////////////////////////////////////////////////////////////////
+
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {
     
     if (_twitterPostCallback) {
@@ -287,8 +322,6 @@
 //    NSLog(@"sending post status request.");
 }
 
-
-// TwitterPostInternalCallback method /////////////////////////////////////////////////
 - (void) finishedToPost {
     [self stopPosting];
     [_twitterPostCallback finishedToPost];
@@ -303,6 +336,31 @@
     _twitterPostCallback = nil;
     [_postCallbackHandler release];
     _postCallbackHandler = nil;
+}
+
+// createFavorite /////////////////////////////////////////////////////////////////////////////////////////
+
+- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterFavoriteCallback>*)callback {
+    _favoriteCallbackHandler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:callback];
+    
+    NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
+    [urlStr appendString:@"http://twitter.com/favourings/create/"];
+    [urlStr appendString:statusId];
+    [urlStr appendString:@".xml"];
+    
+    [_connectionForFavorite release];
+    _connectionForFavorite = [[AsyncUrlConnection alloc] initWithUrl:urlStr
+                                                            username:username
+                                                            password:password
+                                                            callback:_favoriteCallbackHandler];
+    
+    NSLog(@"sent data [%@]", urlStr);
+    
+    if (!_connectionForFavorite) {
+        [callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
+                                                                        originalMessage:@"Sending a message failure. unable to get connection."]];
+        return;
+    }
 }
 
 // /////////////////////////////////////////////////////////////////////////////

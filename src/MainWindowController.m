@@ -252,11 +252,51 @@
     return [messageTableViewController columnWidth];
 }
 
+- (void) createFavoriteDesiredFor:(NSString*)statusId {
+    NSString *password = [[Account instance] password];
+    if (!password) {
+        // TODO inform error to user
+        NSLog(@"password not set. skip create favorite");
+        return;
+    }
+    _createFavoriteIsWorking = TRUE;
+    [_twitter createFavorite:statusId
+                    username:[[Account instance] username]
+                    password:password
+                    callback:self];
+}
+
 // NSWindow delegate methods ////////////////////////////////////////////////////////
 - (void)windowDidResize:(NSNotification *)notification {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
     [messageTableViewController recluculateViewSizes];
     [messageTableViewController reloadTableView];
+}
+
+// TwitterFavoriteCallback /////////////////////////////////////////////////////////////
+
+- (void) finishedToChangeFavorite:(NSString*)statusId {
+    for (MessageViewController *c in [messageViewControllerArrayController arrangedObjects]) {
+        if ([statusId isEqualToString:[[c message] statusId]]) {
+            [c favoriteCreated];
+            break;
+        }
+    }
+    _createFavoriteIsWorking = FALSE;
+}
+
+- (void) failedToChangeFavorite:(NSString*)statusId errorInfo:(NTLNErrorInfo*)info {
+    for (MessageViewController *c in [messageViewControllerArrayController arrangedObjects]) {
+        if ([statusId isEqualToString:[[c message] statusId]]) {
+            [c favoriteCreationFailed];
+            break;
+        }
+    }
+    _createFavoriteIsWorking = FALSE;
+}
+
+- (BOOL) isCreatingFavoriteWorking {
+    return _createFavoriteIsWorking;
 }
 
 @end

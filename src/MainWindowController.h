@@ -11,9 +11,11 @@
 @protocol MessageViewListener
 - (void) replyDesiredFor:(NSString*)username;
 - (float) viewWidth;
+- (void) createFavoriteDesiredFor:(NSString*)statusId;
+- (BOOL) isCreatingFavoriteWorking;
 @end
 
-@interface MainWindowController : NSWindowController <MessageViewListener, TimelineSortOrderChangeObserver, TimelineCallback, TwitterPostCallback, MessageInputTextFieldCallback> {
+@interface MainWindowController : NSWindowController <MessageViewListener, TimelineSortOrderChangeObserver, TimelineCallback, TwitterPostCallback, TwitterFavoriteCallback, MessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
     IBOutlet MessageTableViewController *messageTableViewController;
     IBOutlet NSProgressIndicator *downloadProgress;
@@ -28,6 +30,7 @@
     // timing after launched
     NSTimer *_afterLaunchedTimer;
     BOOL _growlEnabled;
+    BOOL _createFavoriteIsWorking;
 }
 
 - (IBAction) sendMessage:(id) sender;

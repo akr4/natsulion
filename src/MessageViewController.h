@@ -15,5 +15,7 @@
 
 // methods for subviews
 - (void) iconViewClicked;
+- (void) favoriteCreated;
+- (void) favoriteCreationFailed;
 
 @end

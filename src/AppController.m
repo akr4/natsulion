@@ -7,7 +7,7 @@
 + (void) setupDefaults {
     NSString *userDefaultsValuesPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" 
                                                                        ofType:@"plist"]; 
-    NSLog(@"UserDefaults path: %@", userDefaultsValuesPath);
+//    NSLog(@"UserDefaults path: %@", userDefaultsValuesPath);
 
     NSDictionary *userDefaultsValuesDict = [NSDictionary dictionaryWithContentsOfFile:userDefaultsValuesPath]; 
     [[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsValuesDict]; 

@@ -38,4 +38,12 @@
     
 }
 
+- (void) favoriteCreated {
+    
+}
+
+- (void) favoriteCreationFailed {
+    
+}
+
 @end

@@ -1,7 +1,17 @@
 #import "TwitterStatusViewController.h"
 #import "MainWindowController.h"
 
+static NSImage *favoliteIcon;
+static NSImage *highlightedFavoliteIcon;
+
 @implementation TwitterStatusViewController
+
++ (void) initialize {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"star-normal" ofType:@"png"];
+    favoliteIcon = [[NSImage alloc] initByReferencingFile:path];
+    path = [[NSBundle mainBundle] pathForResource:@"star-highlighted" ofType:@"png"];
+    highlightedFavoliteIcon = [[NSImage alloc] initByReferencingFile:path];
+}
 
 - (void) fitToSuperviewWidth {
     NSRect frame = [view frame];
@@ -26,6 +36,9 @@
     [timestampField setStatus:_status];
     [iconView setStatus:_status];
     [iconView setViewController:self];
+    
+    [favoliteButton setImage:favoliteIcon];
+    [favoliteButton setHidden:TRUE];
     
     [self fitToSuperviewWidth];
     [view setViewController:self];
@@ -98,6 +111,31 @@
 
 - (void) markNeedCalculateHeight {
     [view markNeedCalculateHeight];
+}
+
+- (IBAction) toggleFavorite:(id)sender {
+    [favoliteButton setEnabled:FALSE];
+    _favoriteIsCreating = TRUE;
+    [_listener createFavoriteDesiredFor:[_status statusId]];
+}
+
+- (void) favoriteCreated {
+    [favoliteButton setImage:highlightedFavoliteIcon];
+    _starHighlighted = TRUE;
+    _favoriteIsCreating = FALSE;
+}
+
+- (void) favoriteCreationFailed {
+    [favoliteButton setEnabled:TRUE];
+    _favoriteIsCreating = FALSE;
+}
+
+- (void) showStar:(BOOL)show {
+        NSLog(@"showStar"); 
+    if (!_starHighlighted && !_favoriteIsCreating && ![_listener isCreatingFavoriteWorking]) {
+        NSLog(@"showStar2");
+        [favoliteButton setHidden:!show];
+    }
 }
 
 @end

@@ -11,6 +11,27 @@
     _sizeShouldBeCalculated = TRUE;
 }
 
+- (void) removeTrackingAreas {
+    NSArray *trackingAreas = [self trackingAreas];
+    for (NSTrackingArea *area in trackingAreas) {
+        [self removeTrackingArea:area];
+    }
+}
+
+- (void) addTrackingArea {
+    NSTrackingArea *trackingArea = [[[NSTrackingArea alloc] initWithRect:[self bounds]
+                                                                 options: (NSTrackingMouseEnteredAndExited | NSTrackingActiveInKeyWindow)
+                                                                   owner:self
+                                                                userInfo:nil]
+                                    autorelease];
+    [self addTrackingArea:trackingArea];
+}
+
+- (void) updateTrackingArea {
+    [self removeTrackingAreas];
+    [self addTrackingArea];
+}
+
 - (float) expandTextField {
     float delta = [textField expandIfNeeded];
     if (delta > 0) {
@@ -30,12 +51,18 @@
         return _requiredHeight;
     }
 
+    float back;
     _sizeShouldBeCalculated = FALSE;
     if ([[Configuration instance] alwaysExpandMessage]) {
-        return [self expandTextField];
+        back = [self expandTextField];
     } else {
-        return _requiredHeight;
+        back = _requiredHeight;
     }
+    NSSize size = [self frame].size;
+    size.height = back;
+    [self setFrameSize:size];
+    [self updateTrackingArea]; 
+    return back;
 }
 
 - (void) setTwitterStatus:(TwitterStatus*)status {
@@ -56,6 +83,7 @@
 - (void) dealloc {
     [_backgroundColor release];
     [_status release];
+    [self removeTrackingAreas];
     [super dealloc];
 }
 
@@ -111,6 +139,28 @@
 
 - (void) setViewController:(TwitterStatusViewController*)controller {
     _controller = controller; // weak reference
+}
+
+- (void) showStar:(NSTimer*)timer {
+    [_controller showStar:TRUE];
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    NSLog(@"enter");
+    _starTimer = [[NSTimer scheduledTimerWithTimeInterval:1
+                                                   target:self
+                                                selector:@selector(showStar:)
+                                                 userInfo:nil 
+                                                  repeats:FALSE] retain];
+}
+
+- (void)mouseExited:(NSEvent *)theEvent {
+    if ([_starTimer isValid]) {
+        [_starTimer invalidate];
+    }
+    [_starTimer release];
+    _starTimer = nil;
+    [_controller showStar:FALSE];
 }
 
 @end

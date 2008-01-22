@@ -15,6 +15,7 @@
     float _defaultHeight;
     float _requiredHeight;
     BOOL _sizeShouldBeCalculated;
+    NSTimer *_starTimer;
 }
 
 - (void) setTwitterStatus:(TwitterStatus*)status;

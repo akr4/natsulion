@@ -38,6 +38,11 @@ enum NTLNErrorType {
 - (void) failedToPost:(NSString*)message;
 @end
 
+@protocol TwitterFavoriteCallback
+- (void) finishedToChangeFavorite:(NSString*)statusId;
+- (void) failedToChangeFavorite:(NSString*)statusId errorInfo:(NTLNErrorInfo*)info;
+@end
+
 // callback for post
 @interface TwitterPostCallbackHandler : NSObject<AsyncUrlConnectionCallback> {
     id<TwitterPostInternalCallback> _callback;
@@ -45,23 +50,34 @@ enum NTLNErrorType {
 - (id) initWithCallback:(id<TwitterPostInternalCallback>)callback;
 @end
 
+@interface TwitterFavoriteCallbackHandler : NSObject<AsyncUrlConnectionCallback> {
+    id<TwitterFavoriteCallback> _callback;
+    NSString *_statusId;
+}
+- (id) initWithStatusId:(NSString*)statusId callback:(id<TwitterFavoriteCallback>)callback;
+@end
+
 @interface Twitter : NSObject {
     
 }
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback;
+- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterFavoriteCallback>*)callback;
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback;
 @end
 
 @interface TwitterImpl : Twitter <AsyncUrlConnectionCallback, IconCallback, TwitterPostInternalCallback> {
     NSObject<TimelineCallback> *_friendTimelineCallback;
     NSObject<TwitterPostCallback> *_twitterPostCallback;
+    NSObject<TwitterFavoriteCallback> *_twitterFavoriteCallback;
     
     AsyncUrlConnection *_connectionForFriendTimeline;
     AsyncUrlConnection *_connectionForPost;
+    AsyncUrlConnection *_connectionForFavorite;
     
     NSMutableDictionary *_waitingIconTwitterStatuses;
     IconRepository *_iconRepository;
     TwitterPostCallbackHandler *_postCallbackHandler;
+    TwitterFavoriteCallbackHandler *_favoriteCallbackHandler;
     
     BOOL _downloadingTimeline;
     BOOL _postingMessage;

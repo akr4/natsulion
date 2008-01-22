@@ -13,12 +13,19 @@
 			<string>MessageViewTextField</string>
 		</dict>
 		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>toggleFavorite</key>
+				<string>id</string>
+			</dict>
 			<key>CLASS</key>
 			<string>TwitterStatusViewController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
+				<key>favoliteButton</key>
+				<string>NSButton</string>
 				<key>iconView</key>
 				<string>TwitterStatusViewImageView</string>
 				<key>nameField</key>
@@ -43,19 +50,19 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
-			<string>TwitterStatusViewImageView</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSImageView</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
 			<string>TwitterStatusViewTimestampField</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>MessageViewTimestampField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>TwitterStatusViewImageView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSImageView</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>
