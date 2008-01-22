@@ -1,5 +1,6 @@
 #import "PreferencesWindow.h"
 #import "Account.h"
+#import "Configuration.h"
 
 #define NTLN_PREFRENCESWINDOW_SHEET_OK 0
 #define NTLN_PREFRENCESWINDOW_SHEET_NG 1
@@ -7,6 +8,7 @@
 @implementation PreferencesWindow
 
 - (void) awakeFromNib {
+    
 }
 
 
