@@ -11,8 +11,6 @@
     BOOL alwaysExpandMessage;
     int refreshInterval;
     int timelineSortOrder;
-
-    id<TimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 }
 
 @property BOOL useGrowl, showWindowWhenNewMessage, alwaysExpandMessage;
@@ -21,6 +19,6 @@
 + (id) instance;
 - (int) timelineSortOrder;
 - (void) setTimelineSortOrder:(int)sortOrder;
-- (void) setTimelineSortOrderChangeObserver:(id<TimelineSortOrderChangeObserver>)observer;
++ (void) setTimelineSortOrderChangeObserver:(id<TimelineSortOrderChangeObserver>)observer;
 
 @end

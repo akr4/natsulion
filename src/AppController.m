@@ -14,7 +14,7 @@
 }
 
 + (void) initialize {
-    NSLog(@"%s", __PRETTY_FUNCTION__); 
+//    NSLog(@"%s", __PRETTY_FUNCTION__); 
     [AppController setupDefaults];
 }
 
@@ -35,13 +35,10 @@
 }
 
 - (void) stopTimer {
-    NSLog(@"%s", __PRETTY_FUNCTION__); 
     [self resetTimer];
 }
 
 - (void) startTimer {
-    NSLog(@"%s", __PRETTY_FUNCTION__); 
-
     [self resetTimer];
     
     if (_refreshInterval < 1) {
@@ -51,7 +48,7 @@
     _refreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval * 60
                                                       target:mainWindowController
                                                     selector:@selector(updateStatus)
-                                                    userInfo:nil 
+                                                    userInfo:nil
                                                      repeats:YES] retain];
 }
 
@@ -90,7 +87,7 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    NSLog(@"%s", __PRETTY_FUNCTION__);    
+//    NSLog(@"%s", __PRETTY_FUNCTION__);    
     
     [mainWindowController setFrameAutosaveName:@"MainWindow"];
     
@@ -122,6 +119,7 @@
     [welcomeWindowController close];
     [mainWindowController showWindow:nil];
     [self startTimer];
+    [_refreshTimer fire];
 }
 
 @end

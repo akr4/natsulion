@@ -7,6 +7,15 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.15</title>
+      <description>
+      </description>
+      <pubDate>Wed, 23 Jan 2008 03:35:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.15.zip"
+        length="728689"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.14</title>
       <description>
         Release Notes - NatsuLion - Version 0.14

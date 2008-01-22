@@ -18,7 +18,7 @@
                                                           selector:@selector(enableGrowl)
                                                           userInfo:nil
                                                            repeats:FALSE] retain];
-    [[Configuration instance] setTimelineSortOrderChangeObserver:self];
+    [Configuration setTimelineSortOrderChangeObserver:self];
     
     return self;
 }

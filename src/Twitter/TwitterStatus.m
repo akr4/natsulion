@@ -6,7 +6,7 @@
 
 - (BOOL) isReplyToMe {
     if ([text hasPrefix:[@"@" stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:PREFERENCE_USERID]]]) {
-        NSLog(@"reply");
+//        NSLog(@"reply");
         return TRUE;
     }
     //    NSLog(@"not reply");
@@ -18,7 +18,7 @@
     NSRange range = [text rangeOfString:query];
     
     if (range.location != NSNotFound) {
-        NSLog(@"probable reply");
+//        NSLog(@"probable reply");
         return TRUE;
     }
     //    NSLog(@"not reply");

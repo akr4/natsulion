@@ -7,6 +7,10 @@
 
 static id _instance = nil;
 
+// this should be an instance variable but I couldn't make this class a perfect singleton (override allocWithZone, copyWithZone, retain, retainCount, release, autorelease)
+// due to "Controller cannot be nil" error at a boot time. Then I allow multiple instance (allow IB to instantiate this class), and make this a class variable to be shared by all instances.
+static id<TimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
+
 + (id) instance {
     @synchronized (self) {
         if (!_instance) {
@@ -16,34 +20,34 @@ static id _instance = nil;
     return _instance;
 }
 
-+ (id)allocWithZone:(NSZone*)zone {
-    @synchronized(self) {
-        if (!_instance) {
-            _instance = [super allocWithZone:zone];
-            return _instance;
-        }
-    }
-    return nil;
-}
-
-- (id)copyWithZone:(NSZone*)zone {
-    return self;
-}
-
-- (id)retain {
-    return self;
-}
-
-- (unsigned)retainCount {
-    return UINT_MAX;
-}
-
-- (void)release {
-}
-
-- (id)autorelease {
-    return self;
-}
+//+ (id)allocWithZone:(NSZone*)zone {
+//    @synchronized(self) {
+//        if (!_instance) {
+//            _instance = [super allocWithZone:zone];
+//            return _instance;
+//        }
+//    }
+//    return nil;
+//}
+//
+//- (id)copyWithZone:(NSZone*)zone {
+//    return self;
+//}
+//
+//- (id)retain {
+//    return self;
+//}
+//
+//- (unsigned)retainCount {
+//    return UINT_MAX;
+//}
+//
+//- (void)release {
+//}
+//
+//- (id)autorelease {
+//    return self;
+//}
 
 - (void) bindToProperty:(NSString*)propertyName {
     [self bind:propertyName
@@ -69,7 +73,7 @@ static id _instance = nil;
     [_timelineSortOrderChangeObserver timelineSortOrderChangeObserverSortOrderChanged];
 }
 
-- (void) setTimelineSortOrderChangeObserver:(id<TimelineSortOrderChangeObserver>)observer {
++ (void) setTimelineSortOrderChangeObserver:(id<TimelineSortOrderChangeObserver>)observer {
     _timelineSortOrderChangeObserver = observer;
 }
 
