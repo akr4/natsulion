@@ -55,7 +55,9 @@
   <li>アイコンを大きく表示!</li>
   <li>Twitter ライトユーザにも使いやすく</li>
 </ul>
-を目指しています。最新版は<a href="http://www.physalis.net/NatsuLion/NatsuLion.zip">こちら</a>からダウンロードできます。
+を目指しています。
+
+最新版を<a href="http://www.physalis.net/NatsuLion/NatsuLion.zip">ダウンロード</a>!
 
 </p>
 <p>
@@ -67,6 +69,7 @@
 <ul>
   <li>フレンドタイムライン表示</li>
   <li>メッセージのポスト</li>
+  <li>Favorite の作成</li>
   <li>リプライの強調表示。先頭以外に @<自分の ID> が含まれるものも強調します。</li>
   <li>リプライの宛先入力支援。アイコンをクリックすると @&lt;ID&gt; が入力されます。</li>
   <li>Growl 通知 (リプライのプライオリティを高く Sticky 設定にしていますので見逃しを防止できます。)</li>
@@ -110,6 +113,26 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.15</h3>
+<p>
+<p>
+Favorite 機能がつきました。使い方はあえて書きませんが、わかりにくいようでしたらコメントいただけたらうれしいです。改善したいと思います。
+</p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-92'>NTLN-92</a>] -         NatsuLion does not retrieve just after input username/password at the first startup
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-95'>NTLN-95</a>] -         descending sort order is not working
+</li>
+</ul>
+        
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-91'>NTLN-91</a>] -         add/remove to favorite feature
+</li>
+</ul>
+</p>
+
 <h3>Version 0.14</h3>
 <p>
 Improvement

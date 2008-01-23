@@ -9,6 +9,23 @@
     <item>
       <title>NatsuLion Version 0.15</title>
       <description>
+        Release Notes - NatsuLion - Version 0.15
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-92'&gt;NTLN-92&lt;/a&gt;] -         NatsuLion does not retrieve just after input username/password at the first startup
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-95'&gt;NTLN-95&lt;/a&gt;] -         descending sort order is not working
+&lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-91'&gt;NTLN-91&lt;/a&gt;] -         add/remove to favorite feature
+&lt;/li&gt;
+&lt;/ul&gt;
       </description>
       <pubDate>Wed, 23 Jan 2008 03:35:00 +9000</pubDate>
       <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.15.zip"

@@ -59,7 +59,7 @@ Its goals are the follows:
   <li>Feature icons</li>
   <li>Easy to use for Twitter light users</li>
 </ul>
-You can download the latest version from <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip">here</a>.
+You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip">download</a> the latest version from.
 
 </p>
 <p>
@@ -71,6 +71,7 @@ You can download the latest version from <a href="http://www.physalis.net/NatsuL
 <ul>
   <li>Display your friend timeline</li>
   <li>Post a message</li>
+  <li>Create a favorite</li>
   <li>Replies including messages contain @<my ID> are emphasized</li>
   <li>Input support for "@&lt;ID&gt;". By clicking icon, @&lt;ID&gt; apears in the message input field</li>
   <li>Growl Notifications (replies are notified with a higher priority and stickied)</li>
@@ -108,6 +109,23 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.15</h3>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-92'>NTLN-92</a>] -         NatsuLion does not retrieve just after input username/password at the first startup
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-95'>NTLN-95</a>] -         descending sort order is not working
+</li>
+</ul>
+        
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-91'>NTLN-91</a>] -         add/remove to favorite feature
+</li>
+</ul>
+</p>
+    
 <h3>Version 0.14</h3>
 <p>
 Improvement
