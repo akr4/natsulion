@@ -3,6 +3,7 @@
 
 static NSImage *favoliteIcon;
 static NSImage *highlightedFavoliteIcon;
+static TwitterStatusViewController *starred = nil;
 
 @implementation TwitterStatusViewController
 
@@ -132,6 +133,10 @@ static NSImage *highlightedFavoliteIcon;
 
 - (void) showStar:(BOOL)show {
     if (!_starHighlighted && !_favoriteIsCreating && ![_listener isCreatingFavoriteWorking]) {
+        if (show) {
+            [starred showStar:FALSE];
+            starred = self;
+        }
         [favoliteButton setHidden:!show];
     }
 }
