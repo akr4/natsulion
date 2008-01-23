@@ -7,6 +7,23 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.16</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.16
+        
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-97'&gt;NTLN-97&lt;/a&gt;] -         star mark behavior improvement
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Thu, 24 Jan 2008 05:00:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.16.zip"
+        length="728753"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.15</title>
       <description>
         Release Notes - NatsuLion - Version 0.15

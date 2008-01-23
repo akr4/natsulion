@@ -109,6 +109,15 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.16</h3>
+<p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-97'>NTLN-97</a>] -         star mark behavior improvement
+</li>
+</ul>
+</p>
+
 <h3>Version 0.15</h3>
 <p>
 Bug
