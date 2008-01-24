@@ -113,6 +113,18 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.18</h3>
+<p>
+<p>
+タイムラインを POST で取得できるようになりました。有効にするには Preferences の "Use POST method to get timeline" にチェックを入れてください。
+</p>
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-99'>NTLN-99</a>] -         allow POST for timeline
+</li>
+</ul>
+</p>
+
 <h3>Version 0.16</h3>
 <p>
 Improvement

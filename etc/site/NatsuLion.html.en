@@ -109,6 +109,15 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.18</h3>
+<p>
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-99'>NTLN-99</a>] -         allow POST for timeline
+</li>
+</ul>
+</p>
+    
 <h3>Version 0.16</h3>
 <p>
 Improvement

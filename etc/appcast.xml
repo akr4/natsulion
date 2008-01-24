@@ -9,6 +9,14 @@
     <item>
       <title>NatsuLion Version 0.18</title>
       <description>
+        Release Notes - NatsuLion - Version 0.18
+            
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-99'&gt;NTLN-99&lt;/a&gt;] -         allow POST for timeline
+&lt;/li&gt;
+&lt;/ul&gt;
       </description>
       <pubDate>Thu, 24 Jan 2008 21:07:00 +9000</pubDate>
       <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.18.zip"
