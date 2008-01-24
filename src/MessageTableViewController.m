@@ -60,22 +60,20 @@
 }
 
 - (void) scrollUpInDescendingOrder:(MessageViewController*)controller {
-    NSRect bounds = [[[viewColumn tableView] superview] bounds];
-    float newestMessageHeight = [controller requiredHeight];
-//    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[[[messageViewControllerArrayController arrangedObjects] objectAtIndex:0] status] text]);
-    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y - (newestMessageHeight + 2.0));
+    if ([[scrollView verticalScroller] floatValue] == 0.0) {
+        return;
+    }
+
+    NSPoint targetPoint = NSMakePoint(0, [[[viewColumn tableView] superview] bounds].origin.y + [[controller view] bounds].size.height);
     [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
 - (void) scrollDownInAscendingOrder:(MessageViewController*)controller {
-//    if ([[scrollView verticalScroller] floatValue] < 1.0) {
-//        NSLog(@"*** no scroll down needed: %f", [[scrollView verticalScroller] floatValue] );
-//        return;
-//    }
+    if ([[scrollView verticalScroller] floatValue] < 1.0) {
+        return;
+    }
     
-    NSRect bounds = [[[viewColumn tableView] superview] bounds];
-    float newestMessageHeight = [controller requiredHeight];
-    NSPoint targetPoint = NSMakePoint(0, bounds.origin.y + newestMessageHeight + 2.0);
+    NSPoint targetPoint = NSMakePoint(0, [[[viewColumn tableView] superview] bounds].origin.y + [[controller view] bounds].size.height);
     [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
