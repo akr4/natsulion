@@ -3,25 +3,27 @@
 @implementation AsyncUrlConnection
 
 - (id) initWithUrl:(NSString*)url callback:(NSObject<AsyncUrlConnectionCallback>*)callback {
-    return [self initWithUrl:url username:nil password:nil callback:callback];
+    return [self initWithUrl:url username:nil password:nil usePost:FALSE callback:callback];
 }
 
-- (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password callback:(NSObject<AsyncUrlConnectionCallback>*)callback {
+- (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<AsyncUrlConnectionCallback>*)callback {
     _username = username;
     [_username retain];
     _password = password;
     [_password retain];
-    
+
     NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
 //    NSLog(@"sending request to %@", encodedUrl);
-    
+
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
-    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
-//    [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     [request setTimeoutInterval:10.0];
     [request setHTTPShouldHandleCookies:FALSE];
-
+    if (post) {
+        [request setHTTPMethod:@"POST"];
+    }
+    
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
         NSLog(@"failed to get connection.");

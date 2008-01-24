@@ -3,7 +3,7 @@
 
 @implementation Configuration
 
-@synthesize useGrowl, showWindowWhenNewMessage, alwaysExpandMessage, refreshInterval;
+@synthesize useGrowl, showWindowWhenNewMessage, alwaysExpandMessage, refreshInterval, usePost;
 
 static id _instance = nil;
 
@@ -60,6 +60,7 @@ static id<TimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self bindToProperty:@"useGrowl"];
     [self bindToProperty:@"showWindowWhenNewMessage"];
     [self bindToProperty:@"alwaysExpandMessage"];
+    [self bindToProperty:@"usePost"];
     [self bindToProperty:@"refreshInterval"];
     return self;
 }

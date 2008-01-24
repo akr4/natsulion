@@ -110,6 +110,7 @@
     }
     [_twitter friendTimelineWithUsername:[[Account instance] username]
                                 password:password
+                                 usePost:[[Configuration instance] usePost]
                                 callback:self];
 }
 

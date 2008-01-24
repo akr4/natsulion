@@ -81,7 +81,7 @@
 
 
 @implementation Twitter
-- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback {
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<TimelineCallback>*)callback {
 
 }
 
@@ -195,7 +195,7 @@
 }
 
 ////////////////////////////////////////////////////////////////////
-- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback {
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<TimelineCallback>*)callback {
     
     _friendTimelineCallback = callback;
     
@@ -203,6 +203,7 @@
     _connectionForFriendTimeline = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" 
                                                                   username:username
                                                                   password:password
+                                                                   usePost:post
                                                                   callback:self];
     if (!_connectionForFriendTimeline) {
         NSLog(@"failed to get connection.");
@@ -352,6 +353,7 @@
     _connectionForFavorite = [[AsyncUrlConnection alloc] initWithUrl:urlStr
                                                             username:username
                                                             password:password
+                                                             usePost:FALSE
                                                             callback:_favoriteCallbackHandler];
     
     NSLog(@"sent data [%@]", urlStr);
@@ -406,9 +408,10 @@
     [_callback retain];
     
     _connection = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/account/verify_credentials.xml" 
-                                                username:username
-                                                password:password
-                                                callback:self];
+                                                 username:username
+                                                 password:password
+                                                  usePost:FALSE
+                                                 callback:self];
     if (!_connection) {
         NSLog(@"failed to get connection.");
         [_callback finishedToCheck:NTLN_TWITTERCHECK_FAILURE];

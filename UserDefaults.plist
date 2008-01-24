@@ -12,5 +12,7 @@
 	<real>0</real>
     <key>alwaysExpandMessage</key>
     <true/>
+    <key>usePost</key>
+    <false/>
 </dict>
 </plist>

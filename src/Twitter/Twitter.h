@@ -60,7 +60,7 @@ enum NTLNErrorType {
 @interface Twitter : NSObject {
     
 }
-- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback;
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<TimelineCallback>*)callback;
 - (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterFavoriteCallback>*)callback;
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback;
 @end
@@ -78,7 +78,7 @@ enum NTLNErrorType {
     IconRepository *_iconRepository;
     TwitterPostCallbackHandler *_postCallbackHandler;
     TwitterFavoriteCallbackHandler *_favoriteCallbackHandler;
-    
+
     BOOL _downloadingTimeline;
     BOOL _postingMessage;
 }
