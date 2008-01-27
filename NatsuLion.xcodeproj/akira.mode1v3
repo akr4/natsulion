@@ -340,7 +340,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9E50B560D4D0F3C007EFDEA</string>
+										<string>E9E50B590D4D10B7007EFDEA</string>
 										<key>history</key>
 										<array>
 											<string>E945DA250D2FA42D001C39B1</string>
@@ -717,8 +717,8 @@
 		<string>E9E50B200D4D0122007EFDEA</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
+		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>86 187 1280 659 0 0 1920 1178 </string>

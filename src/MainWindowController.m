@@ -136,10 +136,15 @@
     [statusTextField setStringValue:@""];
 }
 
+- (void) focusMessageTextFieldAndLocateCursorEnd {
+    [[self window] makeFirstResponder:messageTextField];
+    [(NSText *)[[messageTextField window] firstResponder] setSelectedRange:NSMakeRange([[messageTextField stringValue] length], 0)];
+}
 
 // TwitterPostCallback methods ///////////////////////////////////////////////////
 - (void) finishedToPost {
     [self enableMessageTextField];
+    [self focusMessageTextFieldAndLocateCursorEnd];
 }
 
 - (void) failedToPost:(NSString*)message {
@@ -247,8 +252,7 @@
 // MessageViewListener ////////////////////////////////////////////////////////////////
 - (void) replyDesiredFor:(NSString*)username {
     [messageTextField addReplyTo:username];
-    [[self window] makeFirstResponder:messageTextField];
-    [(NSText *)[[messageTextField window] firstResponder] setSelectedRange:NSMakeRange([[messageTextField stringValue] length], 0)];
+    [self focusMessageTextFieldAndLocateCursorEnd];
 }
 
 - (float) viewWidth {
