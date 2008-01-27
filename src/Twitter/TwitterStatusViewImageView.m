@@ -17,8 +17,8 @@
 }
 
 - (void) mouseDown:(NSEvent *)theEvent {
-    [_controller iconViewClicked];
     [[self superview] mouseDown:theEvent];
+    [_controller iconViewClicked];
 }
 
 -(void)cursorUpdate:(NSEvent *)theEvent {

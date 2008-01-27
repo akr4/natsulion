@@ -247,6 +247,8 @@
 // MessageViewListener ////////////////////////////////////////////////////////////////
 - (void) replyDesiredFor:(NSString*)username {
     [messageTextField addReplyTo:username];
+    [[self window] makeFirstResponder:messageTextField];
+    [(NSText *)[[messageTextField window] firstResponder] setSelectedRange:NSMakeRange([[messageTextField stringValue] length], 0)];
 }
 
 - (float) viewWidth {
