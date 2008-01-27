@@ -10,10 +10,13 @@
     _verticalScroller = [[scrollView verticalScroller] retain];
 
     [[viewColumn tableView] setIntercellSpacing:NSMakeSize(0, 0)];
+
+    _autoscrollMinLimit = 1.0;
+    _cumulativeDeltaHeight = 0.0;
     
     [self bind:@"changeExpandMode"
       toObject:[NSUserDefaultsController sharedUserDefaultsController] 
-   withKeyPath:@"values.alwaysExpandMessage"
+   withKeyPath:@"values.alwaysExpandMessarage"
        options:nil];
 }
 
@@ -59,8 +62,8 @@
     [[viewColumn tableView] selectRowIndexes:target byExtendingSelection:FALSE];
 }
 
-- (void) scrollUpInDescendingOrder:(MessageViewController*)controller {
-    if ([[scrollView verticalScroller] floatValue] == 0.0) {
+- (void) scrollDownInDescendingOrder:(MessageViewController*)controller {
+    if ([_verticalScroller floatValue] == 0.0) {
         return;
     }
 
@@ -69,7 +72,7 @@
 }
 
 - (void) scrollDownInAscendingOrder:(MessageViewController*)controller {
-    if ([[scrollView verticalScroller] floatValue] < 1.0) {
+    if ([_verticalScroller floatValue] < _autoscrollMinLimit) {
         return;
     }
     
@@ -86,17 +89,24 @@
     
     if ([[Configuration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
         [self selectionDown];
-        [self scrollUpInDescendingOrder:controller];
+        [self scrollDownInDescendingOrder:controller];
     } else {
         [self scrollDownInAscendingOrder:controller];
     }
 }
 
 - (void) resize:(float)deltaHeight {
+    float originalKnobPosition = [_verticalScroller floatValue];
+    
     NSRect frame = [scrollView frame];
     frame.size.height += deltaHeight;
     frame.origin.y -= deltaHeight;
     [scrollView setFrame:frame];
+
+    if ([[Configuration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING
+        && originalKnobPosition >= _autoscrollMinLimit) {
+        _autoscrollMinLimit = [_verticalScroller floatValue];
+    }
 }
 
 - (float) columnWidth {

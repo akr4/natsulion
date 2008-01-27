@@ -41,9 +41,8 @@
 }
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
+//    NSLog(@"post responseArrived:%@", [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding]);
     [_callback finishedToPost];
-//    NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
-//    NSLog(@"post responseArrived:%@", responseStr);
 }
 
 - (void) connectionFailed:(NSError*)error {
