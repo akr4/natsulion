@@ -113,6 +113,19 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.19</h3>
+<p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-18'>NTLN-18</a>] -         keep focus on the message input field
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-74'>NTLN-74</a>] -         enable auto scroll only if the newest message is shown
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-83'>NTLN-83</a>] -         better focus management after clicking icon
+</li>
+</ul>
+</p>        
+
 <h3>Version 0.18</h3>
 <p>
 <p>

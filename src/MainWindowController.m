@@ -114,7 +114,11 @@
                                 callback:self];
 }
 
-- (IBAction) sendMessage:(id) sender {    
+- (IBAction) sendMessage:(id) sender {
+    if ([[messageTextField stringValue] length] == 0) {
+        return;
+    }
+    
     NSString *password = [[Account instance] password];
     if (!password) {
         // TODO inform error to user
