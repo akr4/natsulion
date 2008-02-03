@@ -1,6 +1,10 @@
 #import <Cocoa/Cocoa.h>
 #import "MessageViewController.h"
 
+@interface MessageTableView : NSTableView {
+}
+@end
+
 @interface MessageTableViewController : NSObject {
     IBOutlet NSTableColumn *viewColumn;
     IBOutlet NSScrollView *scrollView;

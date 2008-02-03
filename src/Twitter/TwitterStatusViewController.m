@@ -32,9 +32,13 @@ static TwitterStatusViewController *starred = nil;
     if (![NSBundle loadNibNamed: @"TwitterStatusView" owner: self]) {
         NSLog(@"unable to load Nib TwitterStatusView.nib");
     }
+
+    [textField setViewController:self];
     [textField setMessage:[status text]];
+    
     [nameField setStatus:_status];
     [timestampField setStatus:_status];
+    
     [iconView setStatus:_status];
     [iconView setViewController:self];
     

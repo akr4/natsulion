@@ -3,6 +3,15 @@
 #import "TwitterStatusViewController.h"
 #import "Configuration.h"
 
+@implementation MessageTableView
+
+- (void) _highlightRow:(int) row clipRect:(NSRect) clip {
+    [[NSColor alternateSelectedControlColor] set];
+    NSRectFill([self rectOfRow:row]);
+}
+
+@end
+
 @implementation MessageTableViewController
 
 - (void) awakeFromNib {

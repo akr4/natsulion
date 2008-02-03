@@ -60,6 +60,14 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
+			<key>CLASS</key>
+			<string>MessageTableView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSTableView</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>checkForUpdates</key>

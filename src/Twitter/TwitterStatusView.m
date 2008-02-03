@@ -73,13 +73,6 @@
     }
 }
 
-- (NSView *) hitTest:(NSPoint)aPoint {
-//    if (_highlighted) {
-        return [super hitTest:aPoint];
-//    }
-//    return self;
-}
-
 - (void) dealloc {
     [_backgroundColor release];
     [_status release];

@@ -4,48 +4,80 @@
 #import "TwitterUtils.h"
 #import "NTLNColors.h"
 #import "Configuration.h"
+#import "TwitterStatusViewController.h"
 
 @interface NSAttributedString (Hyperlink)
-+(id) hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL colorForLink:(NSColor*)color;
++(id) hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL attributes:(NSDictionary*)attributes;
 @end
 
 @implementation NSAttributedString (Hyperlink)
-+(id) hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL colorForLink:(NSColor*)colorForLink {
++(id) hyperlinkFromString:(NSString*)inString URL:(NSURL*)aURL attributes:(NSDictionary*)attributes {
     NSMutableAttributedString* attrString = [[[NSMutableAttributedString alloc] initWithString:inString] autorelease];
     NSRange range = NSMakeRange(0, [attrString length]);
-    
-    [attrString beginEditing];
+    [attrString addAttributes:attributes range:range];
     [attrString addAttribute:NSLinkAttributeName value:[aURL absoluteString] range:range];
-    [attrString addAttribute:NSForegroundColorAttributeName value:colorForLink range:range];
-    [attrString endEditing];
-    
     return attrString;
 }
+@end
+
+@implementation TwitterStatusViewMessageTextView
+
+- (void) setParentView:(TwitterStatusViewMessageField*)parent {
+    _parent = parent;
+}
+
+- (void) mouseDown:(NSEvent *)theEvent {
+    [super mouseDown:theEvent];
+    if (![_parent highlighted]) {
+        [[[_parent controller] view] mouseDown:theEvent];
+    }
+}
+
 @end
 
 @implementation TwitterStatusViewMessageField
 
 - (void) awakeFromNib {
-    [super awakeFromNib];
     _defaultHeight = [self frame].size.height;
     _defaultY = [self frame].origin.y;
-    [self setAllowsEditingTextAttributes:TRUE];
+    [textView setParentView:self];
+    [textView setAutomaticLinkDetectionEnabled:TRUE];
+//    [self setAllowsEditingTextAttributes:TRUE];
 }
 
 // internal methods /////////////////////////////////////////////////////////////////////////////////////
 
-- (float) heightForString:(NSAttributedString*)myString andWidth:(float)myWidth {
-    NSTextStorage *textStorage = [[[NSTextStorage alloc] initWithAttributedString:myString] autorelease];
-    NSTextContainer *textContainer = [[[NSTextContainer alloc] initWithContainerSize: NSMakeSize(myWidth, FLT_MAX)] autorelease];
-    NSLayoutManager *layoutManager = [[[NSLayoutManager alloc] init] autorelease];
-    [layoutManager addTextContainer:textContainer];
-    [textStorage addLayoutManager:layoutManager];
-    [textContainer setLineFragmentPadding:4];
-    [layoutManager glyphRangeForTextContainer:textContainer];
-    return [layoutManager usedRectForTextContainer:textContainer].size.height;
+- (TwitterStatusViewController*)controller {
+    return _controller;
 }
 
-- (void) setValueAndFormat:(NSString*)aString colorForLink:(NSColor*)colorForLink {
+- (void) setViewController:(TwitterStatusViewController*)controller {
+    _controller = controller; // weak reference
+}
+
+- (NSDictionary*) defaultFontAttributes {
+    NSMutableParagraphStyle *style = [[[NSParagraphStyle defaultParagraphStyle] mutableCopy] autorelease];
+//    [style setLineSpacing:0.0];
+//    [style setMinimumLineHeight:4];
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            [NSFont userFontOfSize:[NSFont systemFontSize]], NSFontAttributeName,
+            style, NSParagraphStyleAttributeName,
+            nil];
+
+}
+
+- (float) heightForString {
+    [[textView layoutManager] glyphRangeForTextContainer:[textView textContainer]];
+    float height = [[textView layoutManager] usedRectForTextContainer:[textView textContainer]].size.height;
+//    NSLog(@"--- %f, %f, %f, %@",
+//          height, 
+//          [[self layoutManager] usedRectForTextContainer:[self textContainer]].size.width, 
+//          [[self textContainer] containerSize].width,
+//          [self textStorage]);
+    return height;
+}
+
+- (void) setValueAndFormat:(NSString*)aString colorForText:(NSColor*)colorForText {
     //    NSLog(@"%s", __PRETTY_FUNCTION__);
     
     URLExtractor *extractor = [[[URLExtractor alloc] init] autorelease];
@@ -57,50 +89,75 @@
         NSString *token = [tokens objectAtIndex:i];
         //        NSLog(@"token: %@", token);
         if ([extractor isURLToken:token]) {
-            [string appendAttributedString:[NSAttributedString hyperlinkFromString:token URL:[NSURL URLWithString:token] colorForLink:colorForLink]];
+            [string appendAttributedString:[NSAttributedString hyperlinkFromString:token 
+                                                                               URL:[NSURL URLWithString:token] 
+                                                                        attributes:[self defaultFontAttributes]]];
         } else if ([extractor isIDToken:token]) {
             [string appendAttributedString:
             [NSAttributedString hyperlinkFromString:token
-                                                URL:[NSURL URLWithString:[[[[TwitterUtils alloc] init] autorelease] userPageURLString:[token substringFromIndex:1]]]
-                                       colorForLink:colorForLink]];
+                                                URL:[NSURL URLWithString:
+                                                     [[TwitterUtils utils] userPageURLString:[token substringFromIndex:1]]]
+                                         attributes:[self defaultFontAttributes]]];
         } else {
-            [string appendAttributedString:[[[NSAttributedString alloc] initWithString:token] autorelease]];
+            NSMutableAttributedString *s = [[[NSMutableAttributedString alloc] initWithString:token] autorelease];
+            NSMutableDictionary *attrs = [NSMutableDictionary dictionaryWithDictionary:[self defaultFontAttributes]];
+            [attrs setObject:colorForText forKey:NSForegroundColorAttributeName];
+            [s setAttributes:attrs range:NSMakeRange(0, [s length])];
+            [string appendAttributedString:s];
         }
     }
-    [self setAttributedStringValue:string];
+    [[textView textStorage] setAttributedString:string];
 }
 
 // public methods //////////////////////////////////////////////////////////////////////
 // returns delta of expaned height
 - (float) expandIfNeeded {
 //    NSLog(@"-*- width: %f", [self frame].size.width);
-    float height = [self heightForString:[self attributedStringValue] andWidth:([self frame].size.width - 16)] + 2;
+    float height = [self heightForString];
     if (height > _defaultHeight) {
-        [self setFrameSize:NSMakeSize([self frame].size.width, height)];
+        [textView setFrameSize:NSMakeSize([self frame].size.width, height)];
     } else {
-        [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
+        [textView setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
     }    
 //    NSLog(@"**** %@ - %f", [self attributedStringValue], height);
     return height - _defaultHeight;
 }
 
 - (void) setMessage:(NSString*)message {
-    [self setValueAndFormat:message colorForLink:[NTLNColors colorForLink]];
+    [self setValueAndFormat:message colorForText:[NTLNColors colorForText]];
 }
 
 - (void) highlight {
-    [super highlight];
-    [self setValueAndFormat:[self stringValue] colorForLink:[NTLNColors colorForHighlightedLink]];
-    [self setSelectable:TRUE];
+    _highlighted = TRUE;
+    [self setValueAndFormat:[[textView textStorage] string] colorForText:[NTLNColors colorForHighlightedText]];
+    [textView setSelectable:TRUE];
+    [textView setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                    [NSNumber numberWithInt:NSUnderlineStyleNone], NSUnderlineStyleAttributeName,
+                                    [NTLNColors colorForHighlightedLink], NSForegroundColorAttributeName,
+                                    [NSCursor pointingHandCursor], NSCursorAttributeName,
+                                    nil]];
 }
 
 - (void) unhighlight {
-    [super unhighlight];
-    [self setValueAndFormat:[self stringValue] colorForLink:[NTLNColors colorForLink]];
-    [self setSelectable:FALSE];
+    _highlighted = FALSE;
+    [self setValueAndFormat:[[textView textStorage] string] colorForText:[NTLNColors colorForText]];
+    [textView setSelectable:FALSE];
     if (![[Configuration instance] alwaysExpandMessage]) {
         [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
     }
+    [textView setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSNumber numberWithInt:NSUnderlineStyleNone], NSUnderlineStyleAttributeName,
+                                 [NTLNColors colorForLink], NSForegroundColorAttributeName,
+                                 [NSCursor pointingHandCursor], NSCursorAttributeName,
+                                 nil]];
+}
+
+- (BOOL) highlighted {
+    return _highlighted;
+}
+
+- (void)scrollWheel:(NSEvent *)theEvent {
+    [[self superview] scrollWheel:theEvent];
 }
 
 @end

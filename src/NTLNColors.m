@@ -6,6 +6,7 @@ static NSColor *_colorForProbableReply;
 static NSColor *_colorForHighlightedProbableReply;
 static NSColor *_colorForLink;
 static NSColor *_colorForHighlightedLink;
+static NSColor *_colorForText;
 static NSColor *_colorForHighlightedText;
 
 @implementation NTLNColors
@@ -17,6 +18,7 @@ static NSColor *_colorForHighlightedText;
     _colorForHighlightedProbableReply = [[NSColor colorWithDeviceHue:0.0611 saturation:0.55 brightness:1.0 alpha:1] retain];
     _colorForLink = [[NSColor colorWithDeviceRed:0.333 green:0.616 blue:0.902 alpha:1.0] retain];
     _colorForHighlightedLink = [[NSColor colorWithDeviceRed:0.749 green:0.949 blue:1 alpha:1.0] retain];
+    _colorForText = [[NSColor blackColor] retain];
     _colorForHighlightedText = [[NSColor whiteColor] retain];
 }
 
@@ -42,6 +44,10 @@ static NSColor *_colorForHighlightedText;
 
 + (NSColor*) colorForHighlightedLink {
     return _colorForHighlightedLink;
+}
+
++ (NSColor*) colorForText {
+    return _colorForText;
 }
 
 + (NSColor*) colorForHighlightedText {
