@@ -12,10 +12,12 @@
     BOOL usePost;
     int refreshInterval;
     int timelineSortOrder;
+    float windowTransparency;
 }
 
 @property BOOL useGrowl, showWindowWhenNewMessage, alwaysExpandMessage, usePost;
 @property int refreshInterval;
+@property float windowTransparency;
 
 + (id) instance;
 - (int) timelineSortOrder;

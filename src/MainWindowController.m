@@ -35,6 +35,11 @@
     
     [messageTextField setCallback:self];
     [messageTextField setLengthForWarning:140 max:160];
+    
+    [self bind:@"windowTransparency"
+      toObject:[NSUserDefaultsController sharedUserDefaultsController] 
+   withKeyPath:@"values.windowTransparency"
+       options:nil];
 }
 
 - (NSArray*) timelineSortDescriptors {
@@ -52,6 +57,14 @@
     _growlEnabled = TRUE;
     [_afterLaunchedTimer release];
 //    NSLog(@"growl enabled");
+}
+
+- (void) setWindowTransparency:(float)alpha {
+    [mainWindow setAlphaValue:alpha];
+}
+
+- (float) windowTransparency {
+    return [mainWindow alphaValue];
 }
 
 - (void) showWindowToFront {
@@ -233,6 +246,8 @@
 
 // MessageInputTextField callback ///////////////////////////////////////////////////////
 - (void) messageInputTextFieldResized:(float)heightDelta {
+    [self windowTransparency];
+
     [messageTableViewController resize:heightDelta];
 }
 

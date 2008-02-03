@@ -291,7 +291,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 528}, {243, 600}}</string>
+							<string>{{0, 707}, {243, 600}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -340,7 +340,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9AC84A80D55F7E900CA4B6D</string>
+										<string>E9AC84F20D56038100CA4B6D</string>
 										<key>history</key>
 										<array>
 											<string>E906628B0D31B39500329057</string>
@@ -373,14 +373,11 @@
 											<string>E9A578E90D456C4900C12AD8</string>
 											<string>E9F90BDF0D4658ED005CBBD1</string>
 											<string>E99954A80D47D34000CDD5DA</string>
-											<string>E92D21DF0D48A9AA002E8DC9</string>
 											<string>E92D21F00D48ACF2002E8DC9</string>
 											<string>E92D21F10D48ACF2002E8DC9</string>
 											<string>E91080D20D48B476005B600F</string>
 											<string>E91080D60D48B476005B600F</string>
 											<string>E91080EB0D48B4BC005B600F</string>
-											<string>E91080F40D48B4EA005B600F</string>
-											<string>E91080FA0D48B599005B600F</string>
 											<string>E91081200D497D34005B600F</string>
 											<string>E91081210D497D34005B600F</string>
 											<string>E91081220D497D34005B600F</string>
@@ -393,7 +390,6 @@
 											<string>E9E50B090D4D0122007EFDEA</string>
 											<string>E9E50B2C0D4D0429007EFDEA</string>
 											<string>E9E50B2D0D4D0429007EFDEA</string>
-											<string>E9E50B3B0D4D0B84007EFDEA</string>
 											<string>E9C775770D5100F300481689</string>
 											<string>E9C775780D5100F300481689</string>
 											<string>E9C775790D5100F300481689</string>
@@ -414,9 +410,14 @@
 											<string>E95E0E450D55C3D200221C11</string>
 											<string>E95E0E580D55CD1300221C11</string>
 											<string>E95E0E740D55D3B800221C11</string>
-											<string>E9AC84A30D55F7E900CA4B6D</string>
 											<string>E9AC84A40D55F7E900CA4B6D</string>
-											<string>E9AC84A50D55F7E900CA4B6D</string>
+											<string>E9AC84B50D55FD5200CA4B6D</string>
+											<string>E9AC84B60D55FD5200CA4B6D</string>
+											<string>E9AC84E70D56038100CA4B6D</string>
+											<string>E9AC84E80D56038100CA4B6D</string>
+											<string>E9AC84E90D56038100CA4B6D</string>
+											<string>E9AC84EA0D56038100CA4B6D</string>
+											<string>E9AC84EB0D56038100CA4B6D</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -497,6 +498,26 @@
 											<string>E961620C0D4C835B00260ED1</string>
 											<string>E9AC84A60D55F7E900CA4B6D</string>
 											<string>E9AC84A70D55F7E900CA4B6D</string>
+											<string>E9AC84BA0D55FD5200CA4B6D</string>
+											<string>E9AC84BB0D55FD5200CA4B6D</string>
+											<string>E9AC84BC0D55FD5200CA4B6D</string>
+											<string>E9AC84BD0D55FD5200CA4B6D</string>
+											<string>E9AC84BE0D55FD5200CA4B6D</string>
+											<string>E9AC84BF0D55FD5200CA4B6D</string>
+											<string>E9AC84C00D55FD5200CA4B6D</string>
+											<string>E9AC84C10D55FD5200CA4B6D</string>
+											<string>E9AC84C20D55FD5200CA4B6D</string>
+											<string>E9AC84C30D55FD5200CA4B6D</string>
+											<string>E9AC84D30D55FEB200CA4B6D</string>
+											<string>E9AC84D40D55FEB200CA4B6D</string>
+											<string>E9AC84DC0D56009900CA4B6D</string>
+											<string>E9AC84DD0D56009900CA4B6D</string>
+											<string>E9AC84EC0D56038100CA4B6D</string>
+											<string>E9AC84ED0D56038100CA4B6D</string>
+											<string>E9AC84EE0D56038100CA4B6D</string>
+											<string>E9AC84EF0D56038100CA4B6D</string>
+											<string>E9AC84F00D56038100CA4B6D</string>
+											<string>E9AC84F10D56038100CA4B6D</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -690,9 +711,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>E9AC84C80D55FDD600CA4B6D</string>
+		<string>E9AC84C90D55FDD600CA4B6D</string>
+		<string>E9AC84CA0D55FDD600CA4B6D</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
