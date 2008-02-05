@@ -14,5 +14,7 @@
     <true/>
     <key>usePost</key>
     <false/>
+    <key>windowTransparency</key>
+    <real>1.0</real>
 </dict>
 </plist>

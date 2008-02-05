@@ -79,8 +79,6 @@
 <h3>既知の問題</h3>
 <p>
 <ul>
-  <li>メッセージテキストの選択時に背景色、マウスカーソル、フォントサイズの挙動がおかしい <a href="http://jira.physalis.net/browse/NTLN-35">[NTLN-35]</a></li>
-  <li>メッセージが長い場合の表示領域拡張により全てのテキストが表示されない場合がある <a href="http://jira.physalis.net/browse/NTLN-43">[NTLN-43]</a></li>
   <li>メッセージ入力フィールドが拡張されるタイミングがおかしい <a href="http://jira.physalis.net/browse/NTLN-27">[NTLN-27]</a></li>
 </ul>
 [ ] 内は Issue 番号です。詳しくはこちらをご覧ください。<a href="http://jira.physalis.net/browse/NTLN">http://jira.physalis.net/browse/NTLN</a>
@@ -113,7 +111,33 @@
 </p>
 
 <h2>リリースノート</h2>
-<h3>Version 0.19</h3>
+<h3>Version 0.20 (2008/02/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.20.zip">ダウンロード</a>
+<p>
+<p>
+表示の改善と内部的なコードの改善が主です。新機能としてウィンドウの透過率を設定できるようになりました。
+</p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-35'>NTLN-35</a>] -         the background color of the message area changes to &quot;not-focused-on-window&quot; color when select  some text in it
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-43'>NTLN-43</a>] -         whole text does not appears even when message field is expanded
+</li>
+</ul>
+
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-101'>NTLN-101</a>] -         refactoring (introduce class name prefix, ...)
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-100'>NTLN-100</a>] -         ability to configure window alpha
+</li>
+</ul>
+</p>    
+
+<h3>Version 0.19</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.19.zip">ダウンロード</a>
 <p>
 Improvement
 <ul>

@@ -7,17 +7,23 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
-				<key>checkAuth</key>
+				<key>sheetCancel</key>
 				<string>id</string>
-				<key>exitApplication</key>
+				<key>sheetOk</key>
+				<string>id</string>
+				<key>showSheet</key>
 				<string>id</string>
 			</dict>
 			<key>CLASS</key>
-			<string>WelcomeWindowController</string>
+			<string>NTLNPreferencesWindowController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
+				<key>accountInfoSheet</key>
+				<string>NSPanel</string>
+				<key>appController</key>
+				<string>NTLNAppController</string>
 				<key>checkAuthProgressIndicator</key>
 				<string>NSProgressIndicator</string>
 				<key>messageArea</key>
@@ -34,9 +40,34 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
-			<string>Configuration</string>
+			<string>NTLNMessageInputTextField</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSTextField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMessageTableView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSTableView</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMessageTableViewController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>messageViewControllerArrayController</key>
+				<string>NSArrayController</string>
+				<key>scrollView</key>
+				<string>NSScrollView</string>
+				<key>viewColumn</key>
+				<string>NSTableColumn</string>
+			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
 		</dict>
@@ -60,105 +91,19 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
-			<key>CLASS</key>
-			<string>MessageTableView</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSTableView</string>
-		</dict>
-		<dict>
 			<key>ACTIONS</key>
 			<dict>
-				<key>checkForUpdates</key>
+				<key>checkAuth</key>
+				<string>id</string>
+				<key>exitApplication</key>
 				<string>id</string>
 			</dict>
 			<key>CLASS</key>
-			<string>SUUpdater</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>MessageTableViewController</string>
+			<string>NTLNWelcomeWindowController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
-				<key>configuration</key>
-				<string>Configuration</string>
-				<key>messageViewControllerArrayController</key>
-				<string>NSArrayController</string>
-				<key>scrollView</key>
-				<string>NSScrollView</string>
-				<key>viewColumn</key>
-				<string>NSTableColumn</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>MessageInputTextField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSTextField</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>sendMessage</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>MainWindowController</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>configuration</key>
-				<string>Configuration</string>
-				<key>downloadProgress</key>
-				<string>NSProgressIndicator</string>
-				<key>mainWindow</key>
-				<string>NSWindow</string>
-				<key>messageTableViewController</key>
-				<string>MessageTableViewController</string>
-				<key>messageTextField</key>
-				<string>MessageInputTextField</string>
-				<key>messageViewControllerArrayController</key>
-				<string>NSArrayController</string>
-				<key>statusTextField</key>
-				<string>NSTextField</string>
-			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSWindowController</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>sheetCancel</key>
-				<string>id</string>
-				<key>sheetOk</key>
-				<string>id</string>
-				<key>showSheet</key>
-				<string>id</string>
-				<key>updatePreferences</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>PreferencesWindow</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>OUTLETS</key>
-			<dict>
-				<key>accountInfoSheet</key>
-				<string>NSPanel</string>
-				<key>appController</key>
-				<string>AppController</string>
 				<key>checkAuthProgressIndicator</key>
 				<string>NSProgressIndicator</string>
 				<key>messageArea</key>
@@ -176,23 +121,74 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>checkForUpdates</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>SUUpdater</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>sendMessage</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NTLNMainWindowController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>downloadProgress</key>
+				<string>NSProgressIndicator</string>
+				<key>mainWindow</key>
+				<string>NSWindow</string>
+				<key>messageTableViewController</key>
+				<string>NTLNMessageTableViewController</string>
+				<key>messageTextField</key>
+				<string>NTLNMessageInputTextField</string>
+				<key>messageViewControllerArrayController</key>
+				<string>NSArrayController</string>
+				<key>postProgress</key>
+				<string>NSProgressIndicator</string>
+				<key>statusTextField</key>
+				<string>NSTextField</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSWindowController</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNConfiguration</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
 				<key>closePreferencesSheet</key>
 				<string>id</string>
 				<key>showPreferencesSheet</key>
 				<string>id</string>
 			</dict>
 			<key>CLASS</key>
-			<string>AppController</string>
+			<string>NTLNAppController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
 				<key>mainWindowController</key>
-				<string>MainWindowController</string>
+				<string>NTLNMainWindowController</string>
 				<key>preferencesWindowController</key>
-				<string>PreferencesWindow</string>
+				<string>NTLNPreferencesWindowController</string>
 				<key>welcomeWindowController</key>
-				<string>WelcomeWindowController</string>
+				<string>NTLNWelcomeWindowController</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>

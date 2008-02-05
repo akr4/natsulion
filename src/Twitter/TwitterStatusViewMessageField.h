@@ -1,5 +1,4 @@
 #import <Cocoa/Cocoa.h>
-#import "MessageViewTextField.h"
 
 @class TwitterStatusViewController;
 @class TwitterStatusViewMessageField;

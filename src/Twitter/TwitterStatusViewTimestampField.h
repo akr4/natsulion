@@ -1,8 +1,8 @@
 #import <Cocoa/Cocoa.h>
 #import "TwitterStatus.h"
-#import "MessageViewTimestampField.h"
+#import "NTLNMessageViewTimestampField.h"
 
-@interface TwitterStatusViewTimestampField : MessageViewTimestampField {
+@interface TwitterStatusViewTimestampField : NTLNMessageViewTimestampField {
     TwitterStatus *_status;
 }
 

@@ -10,74 +10,62 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		E90F0B400D2E8E190067A9CA /* Configuration.m in Sources */ = {isa = PBXBuildFile; fileRef = E90F0B3F0D2E8E190067A9CA /* Configuration.m */; };
-		E915200F0D16D3B7008D6992 /* PreferencesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E915200E0D16D3B7008D6992 /* PreferencesWindow.m */; };
-		E9160B770D11B1B700C9EEFF /* AsyncUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */; };
+		E90F0B400D2E8E190067A9CA /* NTLNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */; };
+		E915200F0D16D3B7008D6992 /* NTLNPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */; };
+		E9160B770D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */; };
 		E9160B8E0D11C0C400C9EEFF /* TwitterStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B8D0D11C0C400C9EEFF /* TwitterStatus.m */; };
 		E9160BBE0D11D2EB00C9EEFF /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160BBD0D11D2EB00C9EEFF /* Twitter.m */; };
-		E9160BC80D11F4F500C9EEFF /* IconRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160BC70D11F4F500C9EEFF /* IconRepository.m */; };
-		E91B3DAD0D13F3B5007C9762 /* MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */; };
-		E91B3DB60D13F593007C9762 /* CustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DB50D13F593007C9762 /* CustomViewCell.m */; };
-		E922CD380D21588700F3D411 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922CD370D21588700F3D411 /* Growl.framework */; };
-		E922CD4D0D21591F00F3D411 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E922CD370D21588700F3D411 /* Growl.framework */; };
-		E93467030D32DF6400F779CB /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467020D32DF6400F779CB /* UIUtils.m */; };
+		E9160BC80D11F4F500C9EEFF /* NTLNIconRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160BC70D11F4F500C9EEFF /* NTLNIconRepository.m */; };
+		E91B3DAD0D13F3B5007C9762 /* NTLNMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */; };
+		E91B3DB60D13F593007C9762 /* NTLNCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */; };
+		E93467030D32DF6400F779CB /* NTLNUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467020D32DF6400F779CB /* NTLNUIUtils.m */; };
 		E93467130D32EDB800F779CB /* TwitterStatusViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467120D32EDB800F779CB /* TwitterStatusViewTimestampField.m */; };
-		E93467160D32EE7D00F779CB /* MessageViewClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467150D32EE7D00F779CB /* MessageViewClickableTextField.m */; };
+		E93467160D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467150D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m */; };
 		E93F7BE80D27DC6B00366600 /* TwitterStatusViewMessageField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */; };
 		E95D34FB0D2F3F6700EA6958 /* NTLNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */; };
-		E9614CE10D27BC75009743CE /* URLExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* URLExtractor.m */; };
-		E9614D130D27BEA4009743CE /* URLExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* URLExtractor.m */; };
-		E9614D140D27BEBA009743CE /* URLExtractorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CDC0D27BADC009743CE /* URLExtractorTest.m */; };
+		E9614CE10D27BC75009743CE /* NTLNURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* NTLNURLUtils.m */; };
+		E9614D130D27BEA4009743CE /* NTLNURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* NTLNURLUtils.m */; };
+		E9614D140D27BEBA009743CE /* NTLNURLUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CDC0D27BADC009743CE /* NTLNURLUtilsTest.m */; };
 		E96A459E0D43D0BF00D6E1AF /* star-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E96A459C0D43D0BF00D6E1AF /* star-highlighted.png */; };
 		E96A459F0D43D0BF00D6E1AF /* star-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E96A459D0D43D0BF00D6E1AF /* star-normal.png */; };
 		E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96C36200D2A6EA300CED33F /* Security.framework */; };
-		E96C362C0D2A71BA00CED33F /* KeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C362B0D2A71BA00CED33F /* KeyChain.m */; };
-		E96C36930D2A83E300CED33F /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36920D2A83E300CED33F /* Account.m */; };
+		E96C362C0D2A71BA00CED33F /* NTLNKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C362B0D2A71BA00CED33F /* NTLNKeyChain.m */; };
+		E96C36930D2A83E300CED33F /* NTLNAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36920D2A83E300CED33F /* NTLNAccount.m */; };
 		E96C36A90D2A897800CED33F /* Welcome.nib in Resources */ = {isa = PBXBuildFile; fileRef = E96C36A80D2A897800CED33F /* Welcome.nib */; };
-		E96C36AD0D2A8C3700CED33F /* WelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36AC0D2A8C3700CED33F /* WelcomeWindowController.m */; };
-		E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* GrowlNotifier.m */; };
+		E96C36AD0D2A8C3700CED33F /* NTLNWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */; };
+		E98B093C0D2172B90002A75E /* NTLNGrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */; };
 		E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */; };
-		E991C6650D2AC7FC00F410B6 /* ErrorMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6640D2AC7FC00F410B6 /* ErrorMessageViewController.m */; };
+		E991C6650D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */; };
 		E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */; };
-		E991C66C0D2AE41200F410B6 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C66B0D2AE41200F410B6 /* MessageViewController.m */; };
-		E991C6BA0D2AE7AE00F410B6 /* MessageViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6B90D2AE7AE00F410B6 /* MessageViewTextField.m */; };
-		E991C6BD0D2AE9A300F410B6 /* MessageViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6BC0D2AE9A300F410B6 /* MessageViewTimestampField.m */; };
-		E996326B0D1E5D2400860515 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = E996326A0D1E5D2400860515 /* Message.m */; };
-		E9A411290D29904F003BFA9F /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* AppController.m */; };
+		E991C6BA0D2AE7AE00F410B6 /* NTLNMessageViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */; };
+		E991C6BD0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */; };
+		E996326B0D1E5D2400860515 /* NTLNMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E996326A0D1E5D2400860515 /* NTLNMessage.m */; };
+		E9A411290D29904F003BFA9F /* NTLNAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* NTLNAppController.m */; };
+		E9B832D50D58D67F000F6E1C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B832D40D58D67F000F6E1C /* Growl.framework */; };
+		E9B832D90D58D688000F6E1C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B832D80D58D688000F6E1C /* Sparkle.framework */; };
 		E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFD5950D183E630024C8B4 /* MainMenu.nib */; };
 		E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */; };
 		E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */; };
 		E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */; };
-		E9CE391F0D145DB700D14D9F /* MessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */; };
+		E9CE391F0D145DB700D14D9F /* NTLNMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */; };
+		E9D5B1EB0D5633CB0000456F /* NTLNMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */; };
 		E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
-		E9E5BF9F0D28988800F34B9B /* XMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */; };
-		E9E5BFA20D2898D200F34B9B /* XMLHTTPEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */; };
-		E9E5BFA30D2898F300F34B9B /* XMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */; };
+		E9E5BF9F0D28988800F34B9B /* NTLNXMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* NTLNXMLHTTPEncoder.m */; };
+		E9E5BFA20D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BFA10D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m */; };
+		E9E5BFA30D2898F300F34B9B /* NTLNXMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* NTLNXMLHTTPEncoder.m */; };
 		E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */; };
 		E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */; };
-		E9F960930D25D03A007829C4 /* MessageInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* MessageInputTextField.m */; };
-		E9F961550D2622B5007829C4 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F961540D2622B5007829C4 /* Sparkle.framework */; };
-		E9F961740D262336007829C4 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9F961540D2622B5007829C4 /* Sparkle.framework */; };
+		E9F960930D25D03A007829C4 /* NTLNMessageInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E90C12380D279FA3003BDD69 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		E922CD480D2158D800F3D411 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E922CD4D0D21591F00F3D411 /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +75,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E9F961740D262336007829C4 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,89 +90,89 @@
 		32CA4F630368D1EE00C91783 /* NatsuLion_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatsuLion_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* NatsuLion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatsuLion.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E90F0B3E0D2E8E190067A9CA /* Configuration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Configuration.h; sourceTree = "<group>"; };
-		E90F0B3F0D2E8E190067A9CA /* Configuration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Configuration.m; sourceTree = "<group>"; };
-		E915200D0D16D3B7008D6992 /* PreferencesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreferencesWindow.h; sourceTree = "<group>"; };
-		E915200E0D16D3B7008D6992 /* PreferencesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreferencesWindow.m; sourceTree = "<group>"; };
-		E9160B750D11B1B700C9EEFF /* AsyncUrlConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUrlConnection.h; sourceTree = "<group>"; };
-		E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUrlConnection.m; sourceTree = "<group>"; };
+		E90F0B3E0D2E8E190067A9CA /* NTLNConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNConfiguration.h; sourceTree = "<group>"; };
+		E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNConfiguration.m; sourceTree = "<group>"; };
+		E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNPreferencesWindowController.h; sourceTree = "<group>"; };
+		E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNPreferencesWindowController.m; sourceTree = "<group>"; };
+		E9160B750D11B1B700C9EEFF /* NTLNAsyncUrlConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAsyncUrlConnection.h; sourceTree = "<group>"; };
+		E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNAsyncUrlConnection.m; sourceTree = "<group>"; };
 		E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatus.h; sourceTree = "<group>"; };
 		E9160B8D0D11C0C400C9EEFF /* TwitterStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatus.m; sourceTree = "<group>"; };
 		E9160BBC0D11D2EB00C9EEFF /* Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Twitter.h; sourceTree = "<group>"; };
 		E9160BBD0D11D2EB00C9EEFF /* Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Twitter.m; sourceTree = "<group>"; };
-		E9160BC60D11F4F500C9EEFF /* IconRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconRepository.h; sourceTree = "<group>"; };
-		E9160BC70D11F4F500C9EEFF /* IconRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconRepository.m; sourceTree = "<group>"; };
-		E91B3DAB0D13F3B5007C9762 /* MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainWindowController.h; sourceTree = "<group>"; };
-		E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainWindowController.m; sourceTree = "<group>"; };
-		E91B3DB40D13F593007C9762 /* CustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewCell.h; sourceTree = "<group>"; };
-		E91B3DB50D13F593007C9762 /* CustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewCell.m; sourceTree = "<group>"; };
-		E922CD370D21588700F3D411 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
-		E93467010D32DF6400F779CB /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
-		E93467020D32DF6400F779CB /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
+		E9160BC60D11F4F500C9EEFF /* NTLNIconRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTLNIconRepository.h; path = Twitter/NTLNIconRepository.h; sourceTree = "<group>"; };
+		E9160BC70D11F4F500C9EEFF /* NTLNIconRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTLNIconRepository.m; path = Twitter/NTLNIconRepository.m; sourceTree = "<group>"; };
+		E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMainWindowController.h; sourceTree = "<group>"; };
+		E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMainWindowController.m; sourceTree = "<group>"; };
+		E91B3DB40D13F593007C9762 /* NTLNCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNCustomViewCell.h; sourceTree = "<group>"; };
+		E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNCustomViewCell.m; sourceTree = "<group>"; };
+		E93467010D32DF6400F779CB /* NTLNUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNUIUtils.h; sourceTree = "<group>"; };
+		E93467020D32DF6400F779CB /* NTLNUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNUIUtils.m; sourceTree = "<group>"; };
 		E93467110D32EDB800F779CB /* TwitterStatusViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewTimestampField.h; sourceTree = "<group>"; };
 		E93467120D32EDB800F779CB /* TwitterStatusViewTimestampField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewTimestampField.m; sourceTree = "<group>"; };
-		E93467140D32EE7D00F779CB /* MessageViewClickableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewClickableTextField.h; sourceTree = "<group>"; };
-		E93467150D32EE7D00F779CB /* MessageViewClickableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewClickableTextField.m; sourceTree = "<group>"; };
+		E93467140D32EE7D00F779CB /* NTLNMessageViewClickableTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewClickableTextField.h; sourceTree = "<group>"; };
+		E93467150D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewClickableTextField.m; sourceTree = "<group>"; };
 		E93F7BE60D27DC6B00366600 /* TwitterStatusViewMessageField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewMessageField.h; sourceTree = "<group>"; };
 		E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewMessageField.m; sourceTree = "<group>"; };
 		E95D34F90D2F3F6700EA6958 /* NTLNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNColors.h; sourceTree = "<group>"; };
 		E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNColors.m; sourceTree = "<group>"; };
-		E9614CDB0D27BADC009743CE /* URLExtractorTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLExtractorTest.h; sourceTree = "<group>"; };
-		E9614CDC0D27BADC009743CE /* URLExtractorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLExtractorTest.m; sourceTree = "<group>"; };
-		E9614CDF0D27BC75009743CE /* URLExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLExtractor.h; sourceTree = "<group>"; };
-		E9614CE00D27BC75009743CE /* URLExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLExtractor.m; sourceTree = "<group>"; };
+		E9614CDB0D27BADC009743CE /* NTLNURLUtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNURLUtilsTest.h; sourceTree = "<group>"; };
+		E9614CDC0D27BADC009743CE /* NTLNURLUtilsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNURLUtilsTest.m; sourceTree = "<group>"; };
+		E9614CE00D27BC75009743CE /* NTLNURLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNURLUtils.m; sourceTree = "<group>"; };
 		E9614CE70D27BCBB009743CE /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9614CE80D27BCBB009743CE /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
 		E96801F30D2748DB0048A163 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E96A459C0D43D0BF00D6E1AF /* star-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-highlighted.png"; sourceTree = "<group>"; };
 		E96A459D0D43D0BF00D6E1AF /* star-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-normal.png"; sourceTree = "<group>"; };
 		E96C36200D2A6EA300CED33F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
-		E96C362A0D2A71BA00CED33F /* KeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyChain.h; sourceTree = "<group>"; };
-		E96C362B0D2A71BA00CED33F /* KeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyChain.m; sourceTree = "<group>"; };
-		E96C36910D2A83E300CED33F /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
-		E96C36920D2A83E300CED33F /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
+		E96C362A0D2A71BA00CED33F /* NTLNKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNKeyChain.h; sourceTree = "<group>"; };
+		E96C362B0D2A71BA00CED33F /* NTLNKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNKeyChain.m; sourceTree = "<group>"; };
+		E96C36910D2A83E300CED33F /* NTLNAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAccount.h; sourceTree = "<group>"; };
+		E96C36920D2A83E300CED33F /* NTLNAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNAccount.m; sourceTree = "<group>"; };
 		E96C36A80D2A897800CED33F /* Welcome.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Welcome.nib; sourceTree = "<group>"; };
-		E96C36AB0D2A8C3700CED33F /* WelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeWindowController.h; sourceTree = "<group>"; };
-		E96C36AC0D2A8C3700CED33F /* WelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeWindowController.m; sourceTree = "<group>"; };
-		E98B093A0D2172B90002A75E /* GrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrowlNotifier.h; sourceTree = "<group>"; };
-		E98B093B0D2172B90002A75E /* GrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrowlNotifier.m; sourceTree = "<group>"; };
+		E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNWelcomeWindowController.h; sourceTree = "<group>"; };
+		E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNWelcomeWindowController.m; sourceTree = "<group>"; };
+		E98113C90D563B8A001E390C /* NTLNURLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNURLUtils.h; sourceTree = "<group>"; };
+		E98B093A0D2172B90002A75E /* NTLNGrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNGrowlNotifier.h; sourceTree = "<group>"; };
+		E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNGrowlNotifier.m; sourceTree = "<group>"; };
 		E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
-		E991C6630D2AC7FC00F410B6 /* ErrorMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorMessageViewController.h; sourceTree = "<group>"; };
-		E991C6640D2AC7FC00F410B6 /* ErrorMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorMessageViewController.m; sourceTree = "<group>"; };
+		E991C6630D2AC7FC00F410B6 /* NTLNErrorMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNErrorMessageViewController.h; sourceTree = "<group>"; };
+		E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNErrorMessageViewController.m; sourceTree = "<group>"; };
 		E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ErrorMessageView.nib; sourceTree = "<group>"; };
-		E991C66A0D2AE41100F410B6 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MessageViewController.h; path = ../MessageViewController.h; sourceTree = "<group>"; };
-		E991C66B0D2AE41200F410B6 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MessageViewController.m; path = ../MessageViewController.m; sourceTree = "<group>"; };
+		E991C66A0D2AE41100F410B6 /* NTLNMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTLNMessageViewController.h; path = ../NTLNMessageViewController.h; sourceTree = "<group>"; };
 		E991C6B70D2AE79D00F410B6 /* TwitterStatusViewNameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewNameField.h; sourceTree = "<group>"; };
-		E991C6B80D2AE7AE00F410B6 /* MessageViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewTextField.h; sourceTree = "<group>"; };
-		E991C6B90D2AE7AE00F410B6 /* MessageViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewTextField.m; sourceTree = "<group>"; };
-		E991C6BB0D2AE9A300F410B6 /* MessageViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewTimestampField.h; sourceTree = "<group>"; };
-		E991C6BC0D2AE9A300F410B6 /* MessageViewTimestampField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewTimestampField.m; sourceTree = "<group>"; };
-		E99632690D1E5D2400860515 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
-		E996326A0D1E5D2400860515 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
-		E9A411270D29904F003BFA9F /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
-		E9A411280D29904F003BFA9F /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTextField.m; sourceTree = "<group>"; };
+		E991C6BB0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTimestampField.h; sourceTree = "<group>"; };
+		E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTimestampField.m; sourceTree = "<group>"; };
+		E99632690D1E5D2400860515 /* NTLNMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessage.h; sourceTree = "<group>"; };
+		E996326A0D1E5D2400860515 /* NTLNMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessage.m; sourceTree = "<group>"; };
+		E9A411270D29904F003BFA9F /* NTLNAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAppController.h; sourceTree = "<group>"; };
+		E9A411280D29904F003BFA9F /* NTLNAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNAppController.m; sourceTree = "<group>"; };
+		E9B832D40D58D67F000F6E1C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = frameworks/Growl.framework; sourceTree = "<group>"; };
+		E9B832D80D58D688000F6E1C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = frameworks/Sparkle.framework; sourceTree = "<group>"; };
 		E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewController.h; sourceTree = "<group>"; };
 		E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewController.m; sourceTree = "<group>"; };
 		E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewNameField.m; sourceTree = "<group>"; };
 		E9BFD61C0D1857320024C8B4 /* TwitterStatusViewImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewImageView.h; sourceTree = "<group>"; };
 		E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewImageView.m; sourceTree = "<group>"; };
-		E9CE391D0D145DB700D14D9F /* MessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewController.h; sourceTree = "<group>"; };
-		E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewController.m; sourceTree = "<group>"; };
+		E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageTableViewController.h; sourceTree = "<group>"; };
+		E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageTableViewController.m; sourceTree = "<group>"; };
+		E9D5B1DA0D56335F0000456F /* NTLNMessageViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTextField.h; sourceTree = "<group>"; };
+		E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTLNMessageViewController.m; path = src/NTLNMessageViewController.m; sourceTree = SOURCE_ROOT; };
 		E9DC0FD00D3D226A00CC6D41 /* TwitterTestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTestStub.h; sourceTree = "<group>"; };
 		E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTestStub.m; sourceTree = "<group>"; };
 		E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusView.h; sourceTree = "<group>"; };
 		E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusView.m; sourceTree = "<group>"; };
-		E9E5BF9D0D28988800F34B9B /* XMLHTTPEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLHTTPEncoder.h; sourceTree = "<group>"; };
-		E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLHTTPEncoder.m; sourceTree = "<group>"; };
-		E9E5BFA00D2898D200F34B9B /* XMLHTTPEncoderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLHTTPEncoderTest.h; sourceTree = "<group>"; };
-		E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLHTTPEncoderTest.m; sourceTree = "<group>"; };
+		E9E5BF9D0D28988800F34B9B /* NTLNXMLHTTPEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNXMLHTTPEncoder.h; sourceTree = "<group>"; };
+		E9E5BF9E0D28988800F34B9B /* NTLNXMLHTTPEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNXMLHTTPEncoder.m; sourceTree = "<group>"; };
+		E9E5BFA00D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNXMLHTTPEncoderTest.h; sourceTree = "<group>"; };
+		E9E5BFA10D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNXMLHTTPEncoderTest.m; sourceTree = "<group>"; };
 		E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUtils.h; sourceTree = "<group>"; };
 		E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUtils.m; sourceTree = "<group>"; };
 		E9F1DB3C0D13CF000072CE81 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterStatusView.nib; sourceTree = "<group>"; };
-		E9F960910D25D03A007829C4 /* MessageInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageInputTextField.h; sourceTree = "<group>"; };
-		E9F960920D25D03A007829C4 /* MessageInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageInputTextField.m; sourceTree = "<group>"; };
-		E9F961540D2622B5007829C4 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageInputTextField.h; sourceTree = "<group>"; };
+		E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageInputTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,9 +181,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				E922CD380D21588700F3D411 /* Growl.framework in Frameworks */,
-				E9F961550D2622B5007829C4 /* Sparkle.framework in Frameworks */,
 				E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */,
+				E9B832D50D58D67F000F6E1C /* Growl.framework in Frameworks */,
+				E9B832D90D58D688000F6E1C /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,32 +203,34 @@
 				E9614CDE0D27BC65009743CE /* util */,
 				E991C66D0D2AE62300F410B6 /* view */,
 				E91B3DBA0D13F893007C9762 /* Twitter */,
-				E9A411270D29904F003BFA9F /* AppController.h */,
-				E9A411280D29904F003BFA9F /* AppController.m */,
-				E9160B750D11B1B700C9EEFF /* AsyncUrlConnection.h */,
-				E9160B760D11B1B700C9EEFF /* AsyncUrlConnection.m */,
-				E98B093A0D2172B90002A75E /* GrowlNotifier.h */,
-				E98B093B0D2172B90002A75E /* GrowlNotifier.m */,
-				E91B3DAB0D13F3B5007C9762 /* MainWindowController.h */,
-				E91B3DAC0D13F3B5007C9762 /* MainWindowController.m */,
-				E91B3DB40D13F593007C9762 /* CustomViewCell.h */,
-				E91B3DB50D13F593007C9762 /* CustomViewCell.m */,
-				E9CE391D0D145DB700D14D9F /* MessageTableViewController.h */,
-				E9CE391E0D145DB700D14D9F /* MessageTableViewController.m */,
-				E96C36AB0D2A8C3700CED33F /* WelcomeWindowController.h */,
-				E96C36AC0D2A8C3700CED33F /* WelcomeWindowController.m */,
-				E915200D0D16D3B7008D6992 /* PreferencesWindow.h */,
-				E915200E0D16D3B7008D6992 /* PreferencesWindow.m */,
-				E99632690D1E5D2400860515 /* Message.h */,
-				E996326A0D1E5D2400860515 /* Message.m */,
-				E9F960910D25D03A007829C4 /* MessageInputTextField.h */,
-				E9F960920D25D03A007829C4 /* MessageInputTextField.m */,
-				E96C362A0D2A71BA00CED33F /* KeyChain.h */,
-				E96C362B0D2A71BA00CED33F /* KeyChain.m */,
-				E96C36910D2A83E300CED33F /* Account.h */,
-				E96C36920D2A83E300CED33F /* Account.m */,
-				E90F0B3E0D2E8E190067A9CA /* Configuration.h */,
-				E90F0B3F0D2E8E190067A9CA /* Configuration.m */,
+				E9160BC60D11F4F500C9EEFF /* NTLNIconRepository.h */,
+				E9160BC70D11F4F500C9EEFF /* NTLNIconRepository.m */,
+				E9A411270D29904F003BFA9F /* NTLNAppController.h */,
+				E9A411280D29904F003BFA9F /* NTLNAppController.m */,
+				E9160B750D11B1B700C9EEFF /* NTLNAsyncUrlConnection.h */,
+				E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */,
+				E98B093A0D2172B90002A75E /* NTLNGrowlNotifier.h */,
+				E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */,
+				E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */,
+				E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */,
+				E91B3DB40D13F593007C9762 /* NTLNCustomViewCell.h */,
+				E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */,
+				E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */,
+				E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */,
+				E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */,
+				E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */,
+				E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */,
+				E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */,
+				E99632690D1E5D2400860515 /* NTLNMessage.h */,
+				E996326A0D1E5D2400860515 /* NTLNMessage.m */,
+				E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */,
+				E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */,
+				E96C362A0D2A71BA00CED33F /* NTLNKeyChain.h */,
+				E96C362B0D2A71BA00CED33F /* NTLNKeyChain.m */,
+				E96C36910D2A83E300CED33F /* NTLNAccount.h */,
+				E96C36920D2A83E300CED33F /* NTLNAccount.m */,
+				E90F0B3E0D2E8E190067A9CA /* NTLNConfiguration.h */,
+				E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */,
 				E95D34F90D2F3F6700EA6958 /* NTLNColors.h */,
 				E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */,
 			);
@@ -251,8 +240,8 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E922CD370D21588700F3D411 /* Growl.framework */,
-				E9F961540D2622B5007829C4 /* Sparkle.framework */,
+				E9B832D80D58D688000F6E1C /* Sparkle.framework */,
+				E9B832D40D58D67F000F6E1C /* Growl.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -334,8 +323,6 @@
 				E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */,
 				E9160B8C0D11C0C400C9EEFF /* TwitterStatus.h */,
 				E9160B8D0D11C0C400C9EEFF /* TwitterStatus.m */,
-				E9160BC60D11F4F500C9EEFF /* IconRepository.h */,
-				E9160BC70D11F4F500C9EEFF /* IconRepository.m */,
 				E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */,
 				E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */,
 				E9BFD61C0D1857320024C8B4 /* TwitterStatusViewImageView.h */,
@@ -357,10 +344,10 @@
 		E9614CDA0D27BAAD009743CE /* test */ = {
 			isa = PBXGroup;
 			children = (
-				E9614CDB0D27BADC009743CE /* URLExtractorTest.h */,
-				E9614CDC0D27BADC009743CE /* URLExtractorTest.m */,
-				E9E5BFA00D2898D200F34B9B /* XMLHTTPEncoderTest.h */,
-				E9E5BFA10D2898D200F34B9B /* XMLHTTPEncoderTest.m */,
+				E9614CDB0D27BADC009743CE /* NTLNURLUtilsTest.h */,
+				E9614CDC0D27BADC009743CE /* NTLNURLUtilsTest.m */,
+				E9E5BFA00D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.h */,
+				E9E5BFA10D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -368,12 +355,12 @@
 		E9614CDE0D27BC65009743CE /* util */ = {
 			isa = PBXGroup;
 			children = (
-				E9614CDF0D27BC75009743CE /* URLExtractor.h */,
-				E9614CE00D27BC75009743CE /* URLExtractor.m */,
-				E9E5BF9D0D28988800F34B9B /* XMLHTTPEncoder.h */,
-				E9E5BF9E0D28988800F34B9B /* XMLHTTPEncoder.m */,
-				E93467010D32DF6400F779CB /* UIUtils.h */,
-				E93467020D32DF6400F779CB /* UIUtils.m */,
+				E98113C90D563B8A001E390C /* NTLNURLUtils.h */,
+				E9614CE00D27BC75009743CE /* NTLNURLUtils.m */,
+				E9E5BF9D0D28988800F34B9B /* NTLNXMLHTTPEncoder.h */,
+				E9E5BF9E0D28988800F34B9B /* NTLNXMLHTTPEncoder.m */,
+				E93467010D32DF6400F779CB /* NTLNUIUtils.h */,
+				E93467020D32DF6400F779CB /* NTLNUIUtils.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -390,16 +377,16 @@
 		E991C66D0D2AE62300F410B6 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				E991C66A0D2AE41100F410B6 /* MessageViewController.h */,
-				E991C66B0D2AE41200F410B6 /* MessageViewController.m */,
-				E991C6630D2AC7FC00F410B6 /* ErrorMessageViewController.h */,
-				E991C6640D2AC7FC00F410B6 /* ErrorMessageViewController.m */,
-				E991C6B80D2AE7AE00F410B6 /* MessageViewTextField.h */,
-				E991C6B90D2AE7AE00F410B6 /* MessageViewTextField.m */,
-				E93467140D32EE7D00F779CB /* MessageViewClickableTextField.h */,
-				E93467150D32EE7D00F779CB /* MessageViewClickableTextField.m */,
-				E991C6BB0D2AE9A300F410B6 /* MessageViewTimestampField.h */,
-				E991C6BC0D2AE9A300F410B6 /* MessageViewTimestampField.m */,
+				E991C66A0D2AE41100F410B6 /* NTLNMessageViewController.h */,
+				E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */,
+				E991C6630D2AC7FC00F410B6 /* NTLNErrorMessageViewController.h */,
+				E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */,
+				E9D5B1DA0D56335F0000456F /* NTLNMessageViewTextField.h */,
+				E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */,
+				E93467140D32EE7D00F779CB /* NTLNMessageViewClickableTextField.h */,
+				E93467150D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m */,
+				E991C6BB0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.h */,
+				E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -416,7 +403,6 @@
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				E922CD480D2158D800F3D411 /* CopyFiles */,
 				E9F961720D262301007829C4 /* CopyFiles */,
-				E90C12380D279FA3003BDD69 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -511,39 +497,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				E9160B770D11B1B700C9EEFF /* AsyncUrlConnection.m in Sources */,
+				E9160B770D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m in Sources */,
 				E9160B8E0D11C0C400C9EEFF /* TwitterStatus.m in Sources */,
 				E9160BBE0D11D2EB00C9EEFF /* Twitter.m in Sources */,
-				E9160BC80D11F4F500C9EEFF /* IconRepository.m in Sources */,
-				E91B3DAD0D13F3B5007C9762 /* MainWindowController.m in Sources */,
-				E91B3DB60D13F593007C9762 /* CustomViewCell.m in Sources */,
-				E9CE391F0D145DB700D14D9F /* MessageTableViewController.m in Sources */,
-				E915200F0D16D3B7008D6992 /* PreferencesWindow.m in Sources */,
+				E9160BC80D11F4F500C9EEFF /* NTLNIconRepository.m in Sources */,
+				E91B3DAD0D13F3B5007C9762 /* NTLNMainWindowController.m in Sources */,
+				E91B3DB60D13F593007C9762 /* NTLNCustomViewCell.m in Sources */,
+				E9CE391F0D145DB700D14D9F /* NTLNMessageTableViewController.m in Sources */,
+				E915200F0D16D3B7008D6992 /* NTLNPreferencesWindowController.m in Sources */,
 				E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */,
 				E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */,
 				E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */,
-				E996326B0D1E5D2400860515 /* Message.m in Sources */,
-				E98B093C0D2172B90002A75E /* GrowlNotifier.m in Sources */,
+				E996326B0D1E5D2400860515 /* NTLNMessage.m in Sources */,
+				E98B093C0D2172B90002A75E /* NTLNGrowlNotifier.m in Sources */,
 				E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */,
-				E9F960930D25D03A007829C4 /* MessageInputTextField.m in Sources */,
-				E9614CE10D27BC75009743CE /* URLExtractor.m in Sources */,
+				E9F960930D25D03A007829C4 /* NTLNMessageInputTextField.m in Sources */,
+				E9614CE10D27BC75009743CE /* NTLNURLUtils.m in Sources */,
 				E93F7BE80D27DC6B00366600 /* TwitterStatusViewMessageField.m in Sources */,
-				E9E5BF9F0D28988800F34B9B /* XMLHTTPEncoder.m in Sources */,
+				E9E5BF9F0D28988800F34B9B /* NTLNXMLHTTPEncoder.m in Sources */,
 				E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */,
-				E9A411290D29904F003BFA9F /* AppController.m in Sources */,
-				E96C362C0D2A71BA00CED33F /* KeyChain.m in Sources */,
-				E96C36930D2A83E300CED33F /* Account.m in Sources */,
-				E96C36AD0D2A8C3700CED33F /* WelcomeWindowController.m in Sources */,
-				E991C6650D2AC7FC00F410B6 /* ErrorMessageViewController.m in Sources */,
-				E991C66C0D2AE41200F410B6 /* MessageViewController.m in Sources */,
-				E991C6BA0D2AE7AE00F410B6 /* MessageViewTextField.m in Sources */,
-				E991C6BD0D2AE9A300F410B6 /* MessageViewTimestampField.m in Sources */,
-				E90F0B400D2E8E190067A9CA /* Configuration.m in Sources */,
+				E9A411290D29904F003BFA9F /* NTLNAppController.m in Sources */,
+				E96C362C0D2A71BA00CED33F /* NTLNKeyChain.m in Sources */,
+				E96C36930D2A83E300CED33F /* NTLNAccount.m in Sources */,
+				E96C36AD0D2A8C3700CED33F /* NTLNWelcomeWindowController.m in Sources */,
+				E991C6650D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m in Sources */,
+				E991C6BA0D2AE7AE00F410B6 /* NTLNMessageViewTextField.m in Sources */,
+				E991C6BD0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m in Sources */,
+				E90F0B400D2E8E190067A9CA /* NTLNConfiguration.m in Sources */,
 				E95D34FB0D2F3F6700EA6958 /* NTLNColors.m in Sources */,
-				E93467030D32DF6400F779CB /* UIUtils.m in Sources */,
+				E93467030D32DF6400F779CB /* NTLNUIUtils.m in Sources */,
 				E93467130D32EDB800F779CB /* TwitterStatusViewTimestampField.m in Sources */,
-				E93467160D32EE7D00F779CB /* MessageViewClickableTextField.m in Sources */,
+				E93467160D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m in Sources */,
 				E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */,
+				E9D5B1EB0D5633CB0000456F /* NTLNMessageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,10 +537,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9614D130D27BEA4009743CE /* URLExtractor.m in Sources */,
-				E9614D140D27BEBA009743CE /* URLExtractorTest.m in Sources */,
-				E9E5BFA20D2898D200F34B9B /* XMLHTTPEncoderTest.m in Sources */,
-				E9E5BFA30D2898F300F34B9B /* XMLHTTPEncoder.m in Sources */,
+				E9614D130D27BEA4009743CE /* NTLNURLUtils.m in Sources */,
+				E9614D140D27BEBA009743CE /* NTLNURLUtilsTest.m in Sources */,
+				E9E5BFA20D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m in Sources */,
+				E9E5BFA30D2898F300F34B9B /* NTLNXMLHTTPEncoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
-#import "AsyncUrlConnection.h"
-#import "IconRepository.h"
+#import "TwitterStatus.h"
+#import "NTLNAsyncUrlConnection.h"
+#import "NTLNIconRepository.h"
 
 enum NTLNErrorType {
     NTLN_ERROR_TYPE_HIT_API_LIMIT,
@@ -21,19 +22,13 @@ enum NTLNErrorType {
 - (void) setOriginalMessage:(NSString*)message;
 @end
 
-@protocol TimelineCallback
+@protocol TwitterTimelineCallback
 - (void) finishedToGetTimeline:(NSArray *)statuses;
 - (void) failedToGetTimeline:(NTLNErrorInfo*)info;
-- (void) started;
-- (void) stopped;
+- (void) finishedAll;
 @end
 
 @protocol TwitterPostCallback
-- (void) finishedToPost;
-- (void) failedToPost:(NSString*)message;
-@end
-
-@protocol TwitterPostInternalCallback
 - (void) finishedToPost;
 - (void) failedToPost:(NSString*)message;
 @end
@@ -43,14 +38,20 @@ enum NTLNErrorType {
 - (void) failedToChangeFavorite:(NSString*)statusId errorInfo:(NTLNErrorInfo*)info;
 @end
 
-// callback for post
-@interface TwitterPostCallbackHandler : NSObject<AsyncUrlConnectionCallback> {
-    id<TwitterPostInternalCallback> _callback;
+@interface TwitterTimelineCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> {
+    id<TwitterTimelineCallback> _callback;
+    id _parent;
 }
-- (id) initWithCallback:(id<TwitterPostInternalCallback>)callback;
+- (id) initWithCallback:(id<TwitterTimelineCallback>)callback parent:(id)parent;
 @end
 
-@interface TwitterFavoriteCallbackHandler : NSObject<AsyncUrlConnectionCallback> {
+@interface TwitterPostCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> {
+    id<TwitterPostCallback> _callback;
+}
+- (id) initWithPostCallback:(id<TwitterPostCallback>)callback;
+@end
+
+@interface TwitterFavoriteCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> {
     id<TwitterFavoriteCallback> _callback;
     NSString *_statusId;
 }
@@ -60,29 +61,31 @@ enum NTLNErrorType {
 @interface Twitter : NSObject {
     
 }
-- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<TimelineCallback>*)callback;
-- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterFavoriteCallback>*)callback;
-- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback;
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
+- (void) repliesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
+- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password;
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password;
 @end
 
-@interface TwitterImpl : Twitter <AsyncUrlConnectionCallback, IconCallback, TwitterPostInternalCallback> {
-    NSObject<TimelineCallback> *_friendTimelineCallback;
-    NSObject<TwitterPostCallback> *_twitterPostCallback;
-    NSObject<TwitterFavoriteCallback> *_twitterFavoriteCallback;
+@interface TwitterImpl : Twitter<NTLNIconCallback> {
+    id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback> _callback;
+    NTLNIconRepository *_iconRepository;
     
-    AsyncUrlConnection *_connectionForFriendTimeline;
-    AsyncUrlConnection *_connectionForPost;
-    AsyncUrlConnection *_connectionForFavorite;
+    NTLNAsyncUrlConnection *_connectionForFriendTimeline;
+    NTLNAsyncUrlConnection *_connectionForReplies;
+    NTLNAsyncUrlConnection *_connectionForPost;
+    NTLNAsyncUrlConnection *_connectionForFavorite;
     
     NSMutableDictionary *_waitingIconTwitterStatuses;
-    IconRepository *_iconRepository;
-    TwitterPostCallbackHandler *_postCallbackHandler;
-    TwitterFavoriteCallbackHandler *_favoriteCallbackHandler;
 
-    BOOL _downloadingTimeline;
-    BOOL _postingMessage;
+    int _downloadingTimeline;
 }
-- (id) init;
+- (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback>)callback;
+
+// methods for TwitterTimelineCallbackHandler
+- (void) pushIconWaiter:(TwitterStatus*)waiter forUrl:(NSString*)url;
+- (NSSet*) popIconWaiterSet:(NSString*)url;
+- (void) finishDownloadingTimeline;
 @end
 
 #define NTLN_TWITTERCHECK_SUCESS 0
@@ -93,9 +96,9 @@ enum NTLNErrorType {
 - (void) finishedToCheck:(int)result;
 @end
 
-@interface TwitterCheck : NSObject<AsyncUrlConnectionCallback> {
+@interface TwitterCheck : NSObject<NTLNAsyncUrlConnectionCallback> {
     NSObject<TwitterCheckCallback> *_callback;
-    AsyncUrlConnection *_connection;
+    NTLNAsyncUrlConnection *_connection;
 }    
 - (void) checkAuthentication:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterCheckCallback>*)callback;
 @end

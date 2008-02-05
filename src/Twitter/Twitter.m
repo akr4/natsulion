@@ -1,6 +1,6 @@
 #import "Twitter.h"
-#import "TwitterStatus.h"
-#import "XMLHTTPEncoder.h"
+
+#import "NTLNXMLHTTPEncoder.h"
 
 @implementation NTLNErrorInfo
 + (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message {
@@ -33,9 +33,111 @@
 }
 @end
 
+@implementation TwitterTimelineCallbackHandler
+
+- (NSString*) convertToLargeIconUrl:(NSString*)url {
+    return url;
+    
+    //    // [@"_normal.jpg" length] = 11
+    //    int loc = [url length] - 11;
+    //    NSRange normalSuffixRange;
+    //    normalSuffixRange.location = loc;
+    //    normalSuffixRange.length = 7; // "_normal"
+    //    NSString *suffix = [url substringWithRange:normalSuffixRange];
+    //    if ([suffix isEqualToString:@"_normal"]) {
+    //        NSMutableString *u = [url mutableCopy];
+    //        NSRange r;
+    //        r.location = loc;
+    //        r.length = 7;
+    //        [u deleteCharactersInRange:r];
+    //        [u insertString:@"_bigger" atIndex:loc];
+    //        return u;
+    //    }
+    //
+    //    return url;
+}
+
+- (NSString*) stringValueFromNSXMLNode:(NSXMLNode*)node byXPath:(NSString*)xpath {
+    NSArray *nodes = [node nodesForXPath:xpath error:NULL];
+    if ([nodes count] != 1) {
+        return nil;
+    }
+    return [(NSXMLNode *)[nodes objectAtIndex:0] stringValue];
+}
+
+- (id) initWithCallback:(id<TwitterTimelineCallback>)callback parent:(id)parent {
+    _callback = callback;
+    _parent = parent;
+    return self;
+}
+
+- (void) responseArrived:(NSData*)response statusCode:(int)code {
+    [_parent finishDownloadingTimeline];
+
+    NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
+    
+//    NSLog(@"responseArrived:%@", responseStr);
+    
+    NSXMLDocument *document = nil;
+    
+    if (responseStr) {
+        document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
+    }
+    
+    if (!document || code >= 400) {
+        NSLog(@"status code: %d - response:%@", code, responseStr);        
+        switch (code) {
+            case 400:
+                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_HIT_API_LIMIT originalMessage:nil]];
+                break;
+            case 401:
+                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_NOT_AUTHORIZED originalMessage:nil]];
+                break;
+            case 500:
+            case 502:
+            case 503:
+                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_SERVER_ERROR originalMessage:nil]];
+                break;
+            default:
+                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:nil]];
+                break;
+        }
+        return;
+    }
+    
+    NSArray *statuses = [document nodesForXPath:@"/statuses/status" error:NULL];
+    if ([statuses count] == 0) {
+        NSLog(@"status code: %d - response:%@", code, responseStr);
+        [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:@"no message received"]];
+    }
+    
+    for (NSXMLNode *status in statuses) {
+        TwitterStatus *backStatus = [[[TwitterStatus alloc] init] autorelease];
+        
+        [backStatus setStatusId:[self stringValueFromNSXMLNode:status byXPath:@"id/text()"]];
+        [backStatus setName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/name/text()"]]];
+        [backStatus setScreenName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/screen_name/text()"]]];
+        [backStatus setText:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"text/text()"]]];
+        
+        NSString *timestampStr = [[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"created_at/text()"]];
+        [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];
+        
+        NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"user/profile_image_url/text()"]];
+       
+        [backStatus finishedToSetProperties];
+        [_parent pushIconWaiter:backStatus forUrl:iconUrl];
+    }
+}
+
+- (void) connectionFailed:(NSError*)error {
+    [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
+}
+
+@end
+
 @implementation TwitterPostCallbackHandler
 
-- (id) initWithCallback:(id<TwitterPostInternalCallback>)callback {
+- (id) initWithPostCallback:(id<TwitterPostCallback>)callback {
     _callback = callback;
     return self;
 }
@@ -43,10 +145,12 @@
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
 //    NSLog(@"post responseArrived:%@", [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding]);
     [_callback finishedToPost];
+    [self autorelease];
 }
 
 - (void) connectionFailed:(NSError*)error {
     [_callback failedToPost:[error localizedDescription]];
+    [self autorelease];
 }
 
 @end
@@ -80,15 +184,19 @@
 
 
 @implementation Twitter
-- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<TimelineCallback>*)callback {
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
 
 }
 
-- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {
+- (void) repliesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
     
 }
 
-- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterFavoriteCallback>*)callback {
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
+    
+}
+
+- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password {
     
 }
 
@@ -96,7 +204,119 @@
 
 @implementation TwitterImpl
 
-// internal 
+////////////////////////////////////////////////////////////////////
+
+- (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback>)callback {
+    [super init];
+    _callback = callback;
+    _waitingIconTwitterStatuses = [[NSMutableDictionary alloc] initWithCapacity:100];
+    _iconRepository = [[NTLNIconRepository alloc] initWithIconCallback:self];
+    return self;
+}
+
+- (void) dealloc {
+    [_connectionForFriendTimeline release];
+    [_connectionForReplies release];
+    [_connectionForFavorite release];
+    [_connectionForPost release];
+    [_waitingIconTwitterStatuses release];
+    [_iconRepository release];
+    [super dealloc];
+}
+
+// download status ////////////////////////////////////////////////////////////////
+
+- (void) updateDownloadStatus {
+//    NSLog(@"*** %d - %d", _downloadingTimeline, [_waitingIconTwitterStatuses count]);
+    if (_downloadingTimeline == 0 && [_waitingIconTwitterStatuses count] == 0) {
+        [_callback finishedAll];
+    }
+}
+
+- (void) startDownloading {
+    _downloadingTimeline++;
+    [self updateDownloadStatus];
+}
+
+- (void) stopDownloading {
+    _downloadingTimeline--;
+    [self updateDownloadStatus];
+}
+
+// methods for TwitterTimelineCallbackHandler /////////////////////////////////////////////////////////////////
+- (void) pushIconWaiter:(TwitterStatus*)waiter forUrl:(NSString*)url {
+    NSMutableSet *set = [_waitingIconTwitterStatuses objectForKey:url];
+    if (!set) {
+        set = [[[NSMutableSet alloc] initWithCapacity:3] autorelease];
+        [_waitingIconTwitterStatuses setObject:set forKey:url];
+    }
+    [set addObject:waiter];
+    [_iconRepository registerUrl:url];
+}
+
+- (NSSet*) popIconWaiterSet:(NSString*)url {
+    NSSet *back = [_waitingIconTwitterStatuses objectForKey:url];
+    [back retain];
+    [_waitingIconTwitterStatuses removeObjectForKey:url];
+    [back autorelease];
+    [self updateDownloadStatus];
+    return back;
+}
+
+- (void) finishDownloadingTimeline {
+    [self stopDownloading];
+}
+
+////////////////////////////////////////////////////////////////////
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
+    
+    if (_connectionForFriendTimeline && ![_connectionForFriendTimeline isFinished]) {
+        NSLog(@"connection for friend timeline is running.");
+        return;
+    }
+    
+    TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
+    
+    [_connectionForFriendTimeline release];
+    _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" 
+                                                                  username:username
+                                                                  password:password
+                                                                   usePost:post
+                                                                  callback:handler];
+    if (!_connectionForFriendTimeline) {
+        NSLog(@"failed to get connection.");
+        return;
+    }
+
+    [self startDownloading];
+}
+
+// replies //////////////////////////////////////////////////////////////////////////////////////
+- (void) repliesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
+
+    if (_connectionForReplies && ![_connectionForReplies isFinished]) {
+        NSLog(@"connection for replies is running.");
+        return;
+    }
+    
+    TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
+    
+    [_connectionForReplies release];
+    _connectionForReplies = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/replies.xml" 
+                                                                      username:username
+                                                                      password:password
+                                                                       usePost:post
+                                                                      callback:handler];
+    if (!_connectionForReplies) {
+        NSLog(@"failed to get connection.");
+        return;
+    }
+    
+    [self startDownloading];
+}
+
+// icon callback ////////////////////////////////////////////////////////////////////////////////
+
 - (NSArray*) arrayWithSet:(NSSet*)set {
     NSMutableArray* array = [[[NSMutableArray alloc] initWithCapacity:10] autorelease];
     
@@ -110,289 +330,84 @@
     return array;
 }
 
-- (void) updateDownloadStatus {
-    if (_postingMessage || _downloadingTimeline || [_waitingIconTwitterStatuses count] > 0) {
-        [_friendTimelineCallback started];
+- (void) finishedToGetIcon:(NSImage*)icon forKey:(NSString*)key {
+    NSMutableArray *back = [[[NSMutableArray alloc] initWithCapacity:20] autorelease];
+    NSSet* set = [self popIconWaiterSet:key];
+    NSEnumerator *e = [set objectEnumerator];
+    TwitterStatus *s = [e nextObject];
+    while (s) {
+        [icon setSize:NSMakeSize(48.0, 48.0)];
+        [s setIcon:icon];
+        [back addObject:s];
+        s = [e nextObject];
     }
-    
-    if (!_postingMessage && !_downloadingTimeline && [_waitingIconTwitterStatuses count] == 0) {
-        [_friendTimelineCallback stopped];
-    }
+    [_callback finishedToGetTimeline:back];
 }
 
-- (void) startDownloading {
-    _downloadingTimeline = TRUE;
-    [self updateDownloadStatus];
-}
-
-- (void) stopDownloading {
-    _downloadingTimeline = FALSE;
-    [self updateDownloadStatus];
-}
-
-- (void) startPosting {
-    _postingMessage = TRUE;
-    [self updateDownloadStatus];
-}
-
-- (void) stopPosting {
-    _postingMessage = FALSE;
-    [self updateDownloadStatus];
-}
-
-
-- (void) finishWaiting:(NSString*)key {
-    [_waitingIconTwitterStatuses removeObjectForKey:key];
-    [self updateDownloadStatus];
-}
-
-
-- (NSString*) stringValueFromNSXMLNode:(NSXMLNode*)node byXPath:(NSString*)xpath {
-    NSArray *nodes = [node nodesForXPath:xpath error:NULL];
-    if ([nodes count] != 1) {
-        return nil;
-    }
-    return [(NSXMLNode *)[nodes objectAtIndex:0] stringValue];
-}
-
-- (NSString*) convertToLargeIconUrl:(NSString*)url {
-    return url;
-    
-    //    // [@"_normal.jpg" length] = 11
-    //    int loc = [url length] - 11;
-    //    NSRange normalSuffixRange;
-    //    normalSuffixRange.location = loc;
-    //    normalSuffixRange.length = 7; // "_normal"
-    //    NSString *suffix = [url substringWithRange:normalSuffixRange];
-    //    if ([suffix isEqualToString:@"_normal"]) {
-    //        NSMutableString *u = [url mutableCopy];
-    //        NSRange r;
-    //        r.location = loc;
-    //        r.length = 7;
-    //        [u deleteCharactersInRange:r];
-    //        [u insertString:@"_bigger" atIndex:loc];
-    //        return u;
-    //    }
-    //
-    //    return url;
-}
-
-////////////////////////////////////////////////////////////////////
-- (id) init {
-    [super init];
-    _waitingIconTwitterStatuses = [[NSMutableDictionary alloc] initWithCapacity:100];
-    _iconRepository = [[IconRepository alloc] initWithCallback:self];
-    return self;
-}
-
-- (void) dealloc {
-    [_connectionForFriendTimeline release];
-    [_connectionForPost release];
-    [_waitingIconTwitterStatuses release];
-    [_iconRepository release];
-    [super dealloc];
-}
-
-////////////////////////////////////////////////////////////////////
-- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<TimelineCallback>*)callback {
-    
-    _friendTimelineCallback = callback;
-    
-    [_connectionForFriendTimeline release];
-    _connectionForFriendTimeline = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" 
-                                                                  username:username
-                                                                  password:password
-                                                                   usePost:post
-                                                                  callback:self];
-    if (!_connectionForFriendTimeline) {
-        NSLog(@"failed to get connection.");
-        return;
-    }
-
-    [self startDownloading];
-}
-
-- (void) responseArrived:(NSData*)response statusCode:(int)code {
-
-    [self stopDownloading];
-
-    NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
-    
-//    NSLog(@"responseArrived:%@", responseStr);
-    
-    NSXMLDocument *document = nil;
-    
-    if (responseStr) {
-        document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
-    }
-    
-    if (!document || code >= 400) {
-        NSLog(@"status code: %d - response:%@", code, responseStr);        
-        switch (code) {
-            case 400:
-                [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_HIT_API_LIMIT originalMessage:nil]];
-                break;
-            case 401:
-                [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_NOT_AUTHORIZED originalMessage:nil]];
-                break;
-            case 500:
-            case 502:
-            case 503:
-                [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_SERVER_ERROR originalMessage:nil]];
-                break;
-            default:
-                [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:nil]];
-                break;
-        }
-        return;
-    }
-    
-    NSArray *statuses = [document nodesForXPath:@"/statuses/status" error:NULL];
-    if ([statuses count] == 0) {
-        NSLog(@"status code: %d - response:%@", code, responseStr);
-        [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:@"no message received"]];
-    }
-    
-    for (NSXMLNode *status in statuses) {
-        TwitterStatus *backStatus = [[[TwitterStatus alloc] init] autorelease];
-        
-        [backStatus setStatusId:[self stringValueFromNSXMLNode:status byXPath:@"id/text()"]];
-        [backStatus setName:[[XMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/name/text()"]]];
-        [backStatus setScreenName:[[XMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/screen_name/text()"]]];
-        [backStatus setText:[[XMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"text/text()"]]];
-        
-        NSString *timestampStr = [[XMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"created_at/text()"]];
-        [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];
-
-        NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"user/profile_image_url/text()"]];
-        NSMutableSet *set = [_waitingIconTwitterStatuses objectForKey:iconUrl];
-        if (!set) {
-            set = [[[NSMutableSet alloc] initWithCapacity:3] autorelease];
-            [_waitingIconTwitterStatuses setObject:set forKey:iconUrl];
-        }
-        
-        [backStatus finishedToSetProperties];
-        
-        [set addObject:backStatus];
-        [_iconRepository registerUrl:iconUrl];
-        
-//        NSLog(@"%@, %@", [backStatus statusId], [backStatus name]);
-    }
-
-}
-
-- (void) connectionFailed:(NSError*)error {
-    [_friendTimelineCallback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
+- (void) failedToGetIconForKey:(NSString*)key {
+    NSMutableArray *back = [[[NSMutableArray alloc] initWithCapacity:20] autorelease];
+    [back addObjectsFromArray:[self arrayWithSet:[self popIconWaiterSet:key]]];
+    [_callback finishedToGetTimeline:back];
 }
 
 // sendMessage //////////////////////////////////////////////////////////////////////////////////
 
-- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
     
-    if (_twitterPostCallback) {
-        NSLog(@"%s: Warning: called while running (_twitterPostCallback)", __PRETTY_FUNCTION__);
+    if (_connectionForPost && ![_connectionForPost isFinished]) {
+        NSLog(@"connection for post is running.");
+        return;
     }
-    _twitterPostCallback = callback;
-    
-    if (_postCallbackHandler) {
-        NSLog(@"%s: Warning: called while running (_postCallbackHandler)", __PRETTY_FUNCTION__);
-    }
-    [_postCallbackHandler release];
-    _postCallbackHandler = [[TwitterPostCallbackHandler alloc] initWithCallback:self];
 
-    NSString *requestStr =  [@"status=" stringByAppendingString:[[XMLHTTPEncoder encoder] encodeHTTP:message]];
+    NSString *requestStr =  [@"status=" stringByAppendingString:[[NTLNXMLHTTPEncoder encoder] encodeHTTP:message]];
     requestStr = [requestStr stringByAppendingString:@"&source=natsulion"];
 
+    TwitterPostCallbackHandler *handler = [[TwitterPostCallbackHandler alloc] initWithPostCallback:_callback];
     [_connectionForPost release];
-    _connectionForPost = [[AsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
+    _connectionForPost = [[NTLNAsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
                                                                     bodyString:requestStr 
                                                                       username:username
                                                                       password:password
-                                                                      callback:_postCallbackHandler];
+                                                                      callback:handler];
     
 //    NSLog(@"sent data [%@]", requestStr);
     
     if (!_connectionForPost) {
-        [_twitterPostCallback failedToPost:@"Posting a message failure. unable to get connection."];
-        _twitterPostCallback = nil;
+        [_callback failedToPost:@"Posting a message failure. unable to get connection."];
         return;
     }
-
-    [self startPosting];
-//    NSLog(@"sending post status request.");
-}
-
-- (void) finishedToPost {
-    [self stopPosting];
-    [_twitterPostCallback finishedToPost];
-    _twitterPostCallback = nil;
-    [_postCallbackHandler release];
-    _postCallbackHandler = nil;
-}
-
-- (void) failedToPost:(NSString*)message {
-    [self stopPosting];
-    [_twitterPostCallback failedToPost:message];
-    _twitterPostCallback = nil;
-    [_postCallbackHandler release];
-    _postCallbackHandler = nil;
 }
 
 // createFavorite /////////////////////////////////////////////////////////////////////////////////////////
 
-- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterFavoriteCallback>*)callback {
-    _favoriteCallbackHandler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:callback];
+- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password {
+
+    if (_connectionForFavorite && ![_connectionForFavorite isFinished]) {
+        NSLog(@"connection for favorite is running.");
+        return;
+    }
     
     NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
     [urlStr appendString:@"http://twitter.com/favourings/create/"];
     [urlStr appendString:statusId];
     [urlStr appendString:@".xml"];
     
-    [_connectionForFavorite release];
-    _connectionForFavorite = [[AsyncUrlConnection alloc] initWithUrl:urlStr
+    TwitterFavoriteCallbackHandler *handler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:_callback];
+    [_connectionForPost release];
+    _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:urlStr
                                                             username:username
                                                             password:password
                                                              usePost:FALSE
-                                                            callback:_favoriteCallbackHandler];
+                                                            callback:handler];
     
     NSLog(@"sent data [%@]", urlStr);
     
     if (!_connectionForFavorite) {
-        [callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
+        [_callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
                                                                         originalMessage:@"Sending a message failure. unable to get connection."]];
         return;
     }
 }
-
-// /////////////////////////////////////////////////////////////////////////////
-- (void) finishedToGetIcon:(NSImage*)icon forKey:(NSString*)key {
-    NSMutableArray *back = [[[NSMutableArray alloc] initWithCapacity:20] autorelease];
-
-    NSSet* set = [_waitingIconTwitterStatuses objectForKey:key];
-    NSEnumerator *e = [set objectEnumerator];
-    TwitterStatus *s = [e nextObject];
-    while (s) {
-        NSSize size;
-        size.width = 48;
-        size.height = 48;
-        [icon setSize:size];
-        [s setIcon:icon];
-        [back addObject:s];
-        s = [e nextObject];        
-    }
-    
-    [self finishWaiting:key];
-    [_friendTimelineCallback finishedToGetTimeline:back];
-}
-
-- (void) failedToGetIconForKey:(NSString*)key {
-    NSMutableArray *back = [[[NSMutableArray alloc] initWithCapacity:20] autorelease];
-    [back addObjectsFromArray:[self arrayWithSet:[_waitingIconTwitterStatuses objectForKey:key]]];
-
-    [self finishWaiting:key];
-    [_friendTimelineCallback finishedToGetTimeline:back];
-}
-
 
 @end
 
@@ -406,7 +421,7 @@
     _callback = callback;
     [_callback retain];
     
-    _connection = [[AsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/account/verify_credentials.xml" 
+    _connection = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/account/verify_credentials.xml" 
                                                  username:username
                                                  password:password
                                                   usePost:FALSE

@@ -1,11 +1,11 @@
 #import "TwitterStatus.h"
-#import "PreferencesWindow.h"
+#import "NTLNPreferencesWindowController.h"
 
 
 @implementation TwitterStatus
 
 - (BOOL) isReplyToMe {
-    if ([text hasPrefix:[@"@" stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:PREFERENCE_USERID]]]) {
+    if ([text hasPrefix:[@"@" stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:NTLN_PREFERENCE_USERID]]]) {
 //        NSLog(@"reply");
         return TRUE;
     }
@@ -14,7 +14,7 @@
 }
 
 - (BOOL) isProbablyReplyToMe {
-    NSString *query = [@"@" stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:PREFERENCE_USERID]];
+    NSString *query = [@"@" stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:NTLN_PREFERENCE_USERID]];
     NSRange range = [text rangeOfString:query];
     
     if (range.location != NSNotFound) {

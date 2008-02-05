@@ -1,8 +1,8 @@
 #import <Cocoa/Cocoa.h>
-#import "MessageViewClickableTextField.h"
+#import "NTLNMessageViewClickableTextField.h"
 #import "TwitterStatus.h"
 
-@interface TwitterStatusViewNameField : MessageViewClickableTextField {
+@interface TwitterStatusViewNameField : NTLNMessageViewClickableTextField {
     TwitterStatus *_status;
 }
 

@@ -1,5 +1,5 @@
 #import "TwitterStatusViewController.h"
-#import "MainWindowController.h"
+#import "NTLNMainWindowController.h"
 
 static NSImage *favoliteIcon;
 static NSImage *highlightedFavoliteIcon;
@@ -20,7 +20,7 @@ static TwitterStatusViewController *starred = nil;
     [view setFrame:frame];
 }
 
-- (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<MessageViewListener>*)listener {
+- (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener {
     [super init];
 
     _status = status;
@@ -52,7 +52,7 @@ static TwitterStatusViewController *starred = nil;
     return self;
 }
 
-- (Message*) message {
+- (NTLNMessage*) message {
     return _status;
 }
 

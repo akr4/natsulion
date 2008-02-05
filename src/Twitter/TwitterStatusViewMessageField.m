@@ -1,9 +1,9 @@
 #import "TwitterStatusViewMessageField.h"
-#import "URLExtractor.h"
-#import "UIUtils.h"
+#import "NTLNURLUtils.h"
+#import "NTLNUIUtils.h"
 #import "TwitterUtils.h"
 #import "NTLNColors.h"
-#import "Configuration.h"
+#import "NTLNConfiguration.h"
 #import "TwitterStatusViewController.h"
 
 @interface NSAttributedString (Hyperlink)
@@ -80,19 +80,19 @@
 - (void) setValueAndFormat:(NSString*)aString colorForText:(NSColor*)colorForText {
     //    NSLog(@"%s", __PRETTY_FUNCTION__);
     
-    URLExtractor *extractor = [[[URLExtractor alloc] init] autorelease];
-    NSArray *tokens = [extractor tokenizeByAll:aString];
+    NTLNURLUtils *utils = [NTLNURLUtils utils];
+    NSArray *tokens = [utils tokenizeByAll:aString];
     
     NSMutableAttributedString* string = [[[NSMutableAttributedString alloc] init] autorelease];
     int i;
     for (i = 0; i < [tokens count]; i++) {
         NSString *token = [tokens objectAtIndex:i];
         //        NSLog(@"token: %@", token);
-        if ([extractor isURLToken:token]) {
+        if ([utils isURLToken:token]) {
             [string appendAttributedString:[NSAttributedString hyperlinkFromString:token 
                                                                                URL:[NSURL URLWithString:token] 
                                                                         attributes:[self defaultFontAttributes]]];
-        } else if ([extractor isIDToken:token]) {
+        } else if ([utils isIDToken:token]) {
             [string appendAttributedString:
             [NSAttributedString hyperlinkFromString:token
                                                 URL:[NSURL URLWithString:
@@ -142,7 +142,7 @@
     _highlighted = FALSE;
     [self setValueAndFormat:[[textView textStorage] string] colorForText:[NTLNColors colorForText]];
     [textView setSelectable:FALSE];
-    if (![[Configuration instance] alwaysExpandMessage]) {
+    if (![[NTLNConfiguration instance] alwaysExpandMessage]) {
         [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
     }
     [textView setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:

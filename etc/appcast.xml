@@ -7,6 +7,39 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.20</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.20
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-35'&gt;NTLN-35&lt;/a&gt;] -         the background color of the message area changes to &quot;not-focused-on-window&quot; color when select  some text in it
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-43'&gt;NTLN-43&lt;/a&gt;] -         whole text does not appears even when message field is expanded
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-101'&gt;NTLN-101&lt;/a&gt;] -         refactoring (introduce class name prefix, ...)
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-100'&gt;NTLN-100&lt;/a&gt;] -         ability to configure window alpha
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Mon, 04 Feb 2008 07:30:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.20.zip"
+        length="736812"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.19</title>
       <description>
         Release Notes - NatsuLion - Version 0.19

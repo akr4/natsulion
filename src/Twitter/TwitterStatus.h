@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
-#import "Message.h"
+#import "NTLNMessage.h"
 
-@interface TwitterStatus : Message {
+@interface TwitterStatus : NTLNMessage {
 }
 @end

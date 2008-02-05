@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "MessageViewController.h"
+#import "NTLNMessageViewController.h"
 #import "TwitterStatus.h"
 #import "TwitterStatusViewNameField.h"
 #import "TwitterStatusViewMessageField.h"
@@ -7,9 +7,9 @@
 #import "TwitterStatusViewImageView.h"
 #import "TwitterStatusView.h"
 
-@protocol MessageViewListener;
+@protocol NTLNMessageViewListener;
 
-@interface TwitterStatusViewController : MessageViewController {
+@interface TwitterStatusViewController : NTLNMessageViewController {
     IBOutlet TwitterStatusView *view;
     IBOutlet TwitterStatusViewImageView *iconView;
     IBOutlet TwitterStatusViewMessageField *textField;
@@ -18,14 +18,14 @@
     IBOutlet NSButton *favoliteButton;
     TwitterStatus *_status;
     
-    NSObject<MessageViewListener> *_listener;
+    NSObject<NTLNMessageViewListener> *_listener;
     BOOL _starHighlighted;
     BOOL _favoriteIsCreating;
 }
 
 - (IBAction) toggleFavorite:(id)sender;
 
-- (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<MessageViewListener>*)listener;
+- (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener;
 - (BOOL) isEqual:(id)anObject;
 - (void) showStar:(BOOL)show;
 

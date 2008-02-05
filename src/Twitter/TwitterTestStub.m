@@ -1,10 +1,10 @@
 #import "TwitterTestStub.h"
-#import "Message.h"
+#import "NTLNMessage.h"
 #import "TwitterStatus.h"
 
 @implementation TwitterTestStub
-- (Message*) messageForId:(NSString*)statusId {
-    Message *m = [[[TwitterStatus alloc] init] autorelease];
+- (NTLNMessage*) messageForId:(NSString*)statusId {
+    NTLNMessage *m = [[[TwitterStatus alloc] init] autorelease];
     [m setStatusId:statusId]; 
     [m setName:@"akr"];
     [m setScreenName:@"akr"];
@@ -14,8 +14,7 @@
     return m;
 }
 
-- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TimelineCallback>*)callback {
-    [callback started];
+- (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterTimelineCallback>*)callback {
     
     NSMutableArray *messages = [[[NSMutableArray alloc] init] autorelease];
 
@@ -26,7 +25,7 @@
     [callback finishedToGetTimeline:messages];
     
 //    [callback failedToGetTimeline:[NTLNErrorInfo infoWithType:999 originalMessage:nil]];
-    [callback stopped];
+    [callback finishedAll];
 }
 
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {

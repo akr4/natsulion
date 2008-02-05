@@ -1,7 +1,7 @@
 #import "TwitterStatusViewNameField.h"
 #import "NTLNColors.h"
 #import "TwitterUtils.h"
-#import "UIUtils.h"
+#import "NTLNUIUtils.h"
 
 @implementation TwitterStatusViewNameField
 

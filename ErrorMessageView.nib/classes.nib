@@ -6,11 +6,35 @@
 	<array>
 		<dict>
 			<key>CLASS</key>
-			<string>MessageViewController</string>
+			<string>NTLNMessageViewClickableTextField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NTLNMessageViewTextField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMessageViewController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMessageViewTextField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSTextField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMessageViewTimestampField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NTLNMessageViewClickableTextField</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>
@@ -22,38 +46,22 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
-			<string>MessageViewTimestampField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>MessageViewTextField</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>MessageViewTextField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSTextField</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>ErrorMessageViewController</string>
+			<string>NTLNErrorMessageViewController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
 				<key>messageField</key>
-				<string>MessageViewTextField</string>
+				<string>NTLNMessageViewTextField</string>
 				<key>messageView</key>
 				<string>NSView</string>
 				<key>timestampField</key>
-				<string>MessageViewTimestampField</string>
+				<string>NTLNMessageViewTimestampField</string>
 				<key>titleField</key>
-				<string>MessageViewTextField</string>
+				<string>NTLNMessageViewTextField</string>
 			</dict>
 			<key>SUPERCLASS</key>
-			<string>MessageViewController</string>
+			<string>NTLNMessageViewController</string>
 		</dict>
 	</array>
 	<key>IBVersion</key>

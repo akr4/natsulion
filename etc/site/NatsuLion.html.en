@@ -81,8 +81,6 @@ You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip">download</a> t
 <h3>Known Problems</h3>
 <p>
 <ul>
-  <li>the background color of the message area changes to "not-focused-on-window" color when select some text in it <a href="http://jira.physalis.net/browse/NTLN-35">[NTLN-35]</a></li>
-  <li>whole text does not appears even when message field is expanded <a href="http://jira.physalis.net/browse/NTLN-43">[NTLN-43]</a></li>
   <li>need to improve auto resizing textfield for message input <a href="http://jira.physalis.net/browse/NTLN-27">[NTLN-27]</a></li>
 </ul>
 Please refer <a href="http://jira.physalis.net/browse/NTLN">http://jira.physalis.net/browse/NTLN</a> for details.
@@ -109,7 +107,30 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
-<h3>Version 0.19</h3>
+<h3>Version 0.20 (2008/02/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.20.zip">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-35'>NTLN-35</a>] -         the background color of the message area changes to &quot;not-focused-on-window&quot; color when select  some text in it
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-43'>NTLN-43</a>] -         whole text does not appears even when message field is expanded
+</li>
+</ul>
+
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-101'>NTLN-101</a>] -         refactoring (introduce class name prefix, ...)
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-100'>NTLN-100</a>] -         ability to configure window alpha
+</li>
+</ul>
+</p>    
+
+<h3>Version 0.19</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.19.zip">download</a>
 <p>
 Improvement
 <ul>

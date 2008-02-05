@@ -1,7 +1,7 @@
 #import "TwitterStatusView.h"
 #import "NTLNColors.h"
 #import "TwitterStatusViewController.h"
-#import "Configuration.h"
+#import "NTLNConfiguration.h"
 
 @implementation TwitterStatusView
 
@@ -53,7 +53,7 @@
 
     float back;
     _sizeShouldBeCalculated = FALSE;
-    if ([[Configuration instance] alwaysExpandMessage]) {
+    if ([[NTLNConfiguration instance] alwaysExpandMessage]) {
         back = [self expandTextField];
     } else {
         back = _requiredHeight;
@@ -68,7 +68,7 @@
 - (void) setTwitterStatus:(TwitterStatus*)status {
     _status = status;
     [_status retain];
-    if ([[Configuration instance] alwaysExpandMessage]) {
+    if ([[NTLNConfiguration instance] alwaysExpandMessage]) {
         [self requiredHeight];
     }
 }
@@ -96,7 +96,7 @@
             break;
     }
     
-    if (![[Configuration instance] alwaysExpandMessage]) {
+    if (![[NTLNConfiguration instance] alwaysExpandMessage]) {
         [self expandTextField];
     }
 }
@@ -117,7 +117,7 @@
             break;
     }
 
-    if (![[Configuration instance] alwaysExpandMessage]) {
+    if (![[NTLNConfiguration instance] alwaysExpandMessage]) {
         _requiredHeight = _defaultHeight;
     }
 }
