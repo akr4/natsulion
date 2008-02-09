@@ -24,7 +24,7 @@
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
-    [request setTimeoutInterval:10.0];
+    [request setTimeoutInterval:5.0];
     [request setHTTPShouldHandleCookies:FALSE];
     if (post) {
         [request setHTTPMethod:@"POST"];

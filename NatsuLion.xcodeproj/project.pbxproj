@@ -26,6 +26,8 @@
 		E9614CE10D27BC75009743CE /* NTLNURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* NTLNURLUtils.m */; };
 		E9614D130D27BEA4009743CE /* NTLNURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* NTLNURLUtils.m */; };
 		E9614D140D27BEBA009743CE /* NTLNURLUtilsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CDC0D27BADC009743CE /* NTLNURLUtilsTest.m */; };
+		E9648CA10D5A0AE000746425 /* PSMTabBarControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9648CA00D5A0AE000746425 /* PSMTabBarControl.framework */; };
+		E9648CA60D5A0AE300746425 /* PSMTabBarControl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9648CA00D5A0AE000746425 /* PSMTabBarControl.framework */; };
 		E96A459E0D43D0BF00D6E1AF /* star-highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = E96A459C0D43D0BF00D6E1AF /* star-highlighted.png */; };
 		E96A459F0D43D0BF00D6E1AF /* star-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = E96A459D0D43D0BF00D6E1AF /* star-normal.png */; };
 		E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96C36200D2A6EA300CED33F /* Security.framework */; };
@@ -43,6 +45,9 @@
 		E9A411290D29904F003BFA9F /* NTLNAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* NTLNAppController.m */; };
 		E9B832D50D58D67F000F6E1C /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B832D40D58D67F000F6E1C /* Growl.framework */; };
 		E9B832D90D58D688000F6E1C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B832D80D58D688000F6E1C /* Sparkle.framework */; };
+		E9B832DC0D58D6D1000F6E1C /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9B832D40D58D67F000F6E1C /* Growl.framework */; };
+		E9B832DD0D58D6D6000F6E1C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9B832D80D58D688000F6E1C /* Sparkle.framework */; };
+		E9B832F60D58E830000F6E1C /* MessageTableView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9B832F50D58E830000F6E1C /* MessageTableView.nib */; };
 		E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFD5950D183E630024C8B4 /* MainMenu.nib */; };
 		E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */; };
 		E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */; };
@@ -66,6 +71,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E9648CA60D5A0AE300746425 /* PSMTabBarControl.framework in CopyFiles */,
+				E9B832DC0D58D6D1000F6E1C /* Growl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +82,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E9B832DD0D58D6D6000F6E1C /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +111,7 @@
 		E9160BC60D11F4F500C9EEFF /* NTLNIconRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTLNIconRepository.h; path = Twitter/NTLNIconRepository.h; sourceTree = "<group>"; };
 		E9160BC70D11F4F500C9EEFF /* NTLNIconRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTLNIconRepository.m; path = Twitter/NTLNIconRepository.m; sourceTree = "<group>"; };
 		E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMainWindowController.h; sourceTree = "<group>"; };
-		E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMainWindowController.m; sourceTree = "<group>"; };
+		E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = NTLNMainWindowController.m; sourceTree = "<group>"; };
 		E91B3DB40D13F593007C9762 /* NTLNCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNCustomViewCell.h; sourceTree = "<group>"; };
 		E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNCustomViewCell.m; sourceTree = "<group>"; };
 		E93467010D32DF6400F779CB /* NTLNUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNUIUtils.h; sourceTree = "<group>"; };
@@ -121,6 +129,7 @@
 		E9614CE00D27BC75009743CE /* NTLNURLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNURLUtils.m; sourceTree = "<group>"; };
 		E9614CE70D27BCBB009743CE /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9614CE80D27BCBB009743CE /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
+		E9648CA00D5A0AE000746425 /* PSMTabBarControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PSMTabBarControl.framework; path = frameworks/PSMTabBarControl.framework; sourceTree = "<group>"; };
 		E96801F30D2748DB0048A163 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E96A459C0D43D0BF00D6E1AF /* star-highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-highlighted.png"; sourceTree = "<group>"; };
 		E96A459D0D43D0BF00D6E1AF /* star-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "star-normal.png"; sourceTree = "<group>"; };
@@ -150,6 +159,7 @@
 		E9A411280D29904F003BFA9F /* NTLNAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNAppController.m; sourceTree = "<group>"; };
 		E9B832D40D58D67F000F6E1C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = frameworks/Growl.framework; sourceTree = "<group>"; };
 		E9B832D80D58D688000F6E1C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = frameworks/Sparkle.framework; sourceTree = "<group>"; };
+		E9B832F50D58E830000F6E1C /* MessageTableView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = MessageTableView.nib; path = Resources/MessageTableView.nib; sourceTree = "<group>"; };
 		E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewController.h; sourceTree = "<group>"; };
 		E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewController.m; sourceTree = "<group>"; };
 		E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewNameField.m; sourceTree = "<group>"; };
@@ -184,6 +194,7 @@
 				E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */,
 				E9B832D50D58D67F000F6E1C /* Growl.framework in Frameworks */,
 				E9B832D90D58D688000F6E1C /* Sparkle.framework in Frameworks */,
+				E9648CA10D5A0AE000746425 /* PSMTabBarControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +251,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9648CA00D5A0AE000746425 /* PSMTabBarControl.framework */,
 				E9B832D80D58D688000F6E1C /* Sparkle.framework */,
 				E9B832D40D58D67F000F6E1C /* Growl.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
@@ -301,6 +313,7 @@
 				E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */,
 				E96C36A80D2A897800CED33F /* Welcome.nib */,
 				E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */,
+				E9B832F50D58E830000F6E1C /* MessageTableView.nib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -463,6 +476,7 @@
 				E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */,
 				E96A459E0D43D0BF00D6E1AF /* star-highlighted.png in Resources */,
 				E96A459F0D43D0BF00D6E1AF /* star-normal.png in Resources */,
+				E9B832F60D58E830000F6E1C /* MessageTableView.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +589,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/frameworks\"",
+					"\"$(SRCROOT)/../../../../Library/Frameworks\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -598,6 +613,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/frameworks\"",
+					"\"$(SRCROOT)/../../../../Library/Frameworks\"",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_MODEL_TUNING = G5;

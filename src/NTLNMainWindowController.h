@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
-#import "NTLNMessageTableViewController.h"
+#import <PSMTabBarControl/PSMTabBarControl.h>
 #import "Twitter.h"
+#import "NTLNMessageTableViewController.h"
 #import "NTLNGrowlNotifier.h"
 #import "NTLNMessageInputTextField.h"
 
@@ -17,12 +18,13 @@
 
 @interface NTLNMainWindowController : NSWindowController <NTLNMessageViewListener, NTLNTimelineSortOrderChangeObserver, TwitterTimelineCallback, TwitterPostCallback, TwitterFavoriteCallback, NTLNMessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
-    IBOutlet NTLNMessageTableViewController *messageTableViewController;
     IBOutlet NSProgressIndicator *downloadProgress;
     IBOutlet NSProgressIndicator *postProgress;
     IBOutlet NTLNMessageInputTextField *messageTextField;
     IBOutlet NSTextField *statusTextField;
     IBOutlet NSArrayController *messageViewControllerArrayController;
+    IBOutlet NTLNMessageTableViewController *messageTableViewController;
+    IBOutlet NSSegmentedControl *messageFilterSelector;
     
     Twitter *_twitter;
     NTLNGrowlNotifier *_growl;
@@ -32,13 +34,15 @@
     NSTimer *_afterLaunchedTimer;
     BOOL _growlEnabled;
     BOOL _createFavoriteIsWorking;
+    NSPredicate *_predicate;
+    NSMutableDictionary *_toolbarItems;
 }
 
 - (IBAction) sendMessage:(id) sender;
+- (IBAction) changeView:(id) sender;
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;
-- (NSArray*) timelineSortDescriptors;
 - (void) updateReplies;
 
 @end

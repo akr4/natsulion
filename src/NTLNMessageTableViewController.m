@@ -19,7 +19,11 @@
     _verticalScroller = [[scrollView verticalScroller] retain];
 
     [[viewColumn tableView] setIntercellSpacing:NSMakeSize(0, 0)];
-
+    [[viewColumn tableView] setDataSource:self];
+    [[viewColumn tableView] setDelegate:self];
+    
+    [self reloadTimelineSortDescriptors];
+    
     _autoscrollMinLimit = 1.0;
     _cumulativeDeltaHeight = 0.0;
     
@@ -31,7 +35,12 @@
 
 - (void) dealloc {
     [_verticalScroller release];
+    [messageViewControllerArrayController release];
     [super dealloc];
+}
+
+- (NSView*) viewForTabItem {
+    return scrollView;
 }
 
 // for display custom view /////////////////////////////////////////////////////
@@ -52,7 +61,7 @@
     }
 }
 
-- (void) recluculateViewSizes {
+- (void) recalculateViewSizes {
     for (NTLNMessageViewController *c in [messageViewControllerArrayController arrangedObjects]) {
         [c markNeedCalculateHeight];
     }
@@ -95,7 +104,6 @@
 //    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[controller message] text]);
 
     [self reloadTableView];
-    
     if ([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
         [self selectionDown];
         [self scrollDownInDescendingOrder:controller];
@@ -104,22 +112,17 @@
     }
 }
 
-- (void) resize:(float)deltaHeight {
-    float originalKnobPosition = [_verticalScroller floatValue];
-    
-    NSRect frame = [scrollView frame];
-    frame.size.height += deltaHeight;
-    frame.origin.y -= deltaHeight;
-    [scrollView setFrame:frame];
-
-    if ([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING
-        && originalKnobPosition >= _autoscrollMinLimit) {
-        _autoscrollMinLimit = [_verticalScroller floatValue];
-    }
-}
-
 - (float) columnWidth {
     return [viewColumn width];
+}
+
+- (void) reloadTimelineSortDescriptors {
+    [messageViewControllerArrayController setSortDescriptors:
+     [NSArray arrayWithObject:
+      [[[NSSortDescriptor alloc] initWithKey:@"message.timestamp" 
+                                   ascending:([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING)] autorelease]]];
+    [messageViewControllerArrayController rearrangeObjects];
+    [self reloadTableView];
 }
 
 // NSTableView datasource method ///////////////////////////////////////////////
@@ -155,12 +158,28 @@
 
 // Configuration change makes below method call //////////////////////////////////////////////////////////////////////////////
 - (void) setChangeExpandMode:(BOOL)mode {
-    [self recluculateViewSizes];
+    [self recalculateViewSizes];
     [self reloadTableView];
 }
 
 - (BOOL) changeExpandMode {
     return TRUE;
 }
+
+/////////////////////////////////////////////////////////////////////////////////////////
+- (void) resize:(float)deltaHeight {
+    float originalKnobPosition = [_verticalScroller floatValue];
+    
+    NSRect frame = [scrollView frame];
+    frame.size.height += deltaHeight;
+    frame.origin.y -= deltaHeight;
+    [scrollView setFrame:frame];
+    
+    if ([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING
+        && originalKnobPosition >= _autoscrollMinLimit) {
+        _autoscrollMinLimit = [_verticalScroller floatValue];
+    }
+}
+
 
 @end

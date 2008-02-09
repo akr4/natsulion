@@ -9,7 +9,7 @@
     IBOutlet NSTableColumn *viewColumn;
     IBOutlet NSScrollView *scrollView;
     IBOutlet NSArrayController *messageViewControllerArrayController;
-    
+
     NSScroller *_verticalScroller;
     
     // in the case of ascending sort order, some text are input and then the height is shrinked,
@@ -22,10 +22,14 @@
     float _cumulativeDeltaHeight;
 }
 
+- (NSView*) viewForTabItem;
 - (void) newMessageArrived:(NTLNMessageViewController*)controller;
 - (void) resize:(float)deltaHeight;
 - (void) reloadTableView;
 - (float) columnWidth;
-- (void) recluculateViewSizes;
+- (void) recalculateViewSizes;
+- (void) reloadTimelineSortDescriptors;
+- (void) setPredicate:(NSPredicate*)predicate;
+
 
 @end

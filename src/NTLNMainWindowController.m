@@ -9,10 +9,30 @@
 
 @implementation NTLNMainWindowController
 
+- (void) setupToolbar {
+    NSToolbar *toolbar=[[[NSToolbar alloc] initWithIdentifier:@"mainToolbar"] autorelease];
+    [toolbar setDelegate:self];
+    [toolbar setAutosavesConfiguration:YES];
+    [toolbar setAllowsUserCustomization:YES];
+    [toolbar setDisplayMode:NSToolbarDisplayModeIconAndLabel];
+    
+    _toolbarItems = [[NSMutableDictionary alloc] init];
+    
+    NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:@"messageView"] autorelease];
+    [item setLabel:@"Message View"];
+    [item setTarget:self];
+    [item setAction:@selector(changeView:)]; // this is not working (i don't know why). instead of this, the NSSegmentControl's sent action works. (see IB)
+    [item setView:messageFilterSelector];
+    [_toolbarItems setObject:item forKey:[item itemIdentifier]];
+
+    [[self window] setToolbar:toolbar];
+}
+
 - (id) init {
     _twitter = [[TwitterImpl alloc] initWithCallback:self];
 //    _twitter = [[TwitterTestStub alloc] init];
     _growlEnabled = FALSE;
+    
     _afterLaunchedTimer = [[NSTimer scheduledTimerWithTimeInterval:60 // TODO: consider refreshInterval
                                                             target:self
                                                           selector:@selector(enableGrowl)
@@ -27,6 +47,7 @@
     [_twitter release];
     [_growl release];
     [_afterLaunchedTimer release];
+    [_toolbarItems release];
     [super dealloc];
 }
 
@@ -40,17 +61,18 @@
       toObject:[NSUserDefaultsController sharedUserDefaultsController] 
    withKeyPath:@"values.windowTransparency"
        options:nil];
-}
-
-- (NSArray*) timelineSortDescriptors {
-    //    NSString *sortOrder = [[NSUserDefaults standardUserDefaults] stringForKey:@"timelineSortOrder"];
-    return [NSArray arrayWithObject:[[[NSSortDescriptor alloc] 
-                                      initWithKey:@"timestamp" 
-                                      ascending:([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING)] autorelease]];
+    
+    // toolbar
+    [self setupToolbar];
 }
 
 // this method is not needed actually but called by array controller's binding
 - (void) setTimelineSortDescriptors:(NSArray*)descriptors {
+}
+
+- (void) setPredicate:(NSPredicate*)predicate {
+    _predicate = predicate;
+    [messageViewControllerArrayController setFilterPredicate:_predicate];
 }
 
 - (void) enableGrowl {
@@ -113,9 +135,9 @@
     [postProgress stopAnimation:self];
 }
 
-
 - (void) addMessageViewController:(NTLNMessageViewController*)controller {
     [messageViewControllerArrayController addObject:controller];
+    [messageViewControllerArrayController setFilterPredicate:_predicate];
     [messageTableViewController newMessageArrived:controller];
 //    NSLog(@"count: %d", [[messageViewControllerArrayController arrangedObjects] count]);
 }
@@ -175,6 +197,23 @@
     [_twitter sendMessage:[messageTextField stringValue]
                  username:[[NTLNAccount instance] username]
                  password:password];
+}
+
+- (IBAction) changeView:(id) sender {
+    switch ([sender selectedSegment]) {
+        default:
+        case 0:
+            [self setPredicate:nil];
+            break;
+        case 1:
+            [self setPredicate:[NSPredicate predicateWithFormat:@"message.replyType == %@", [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY]]];
+            break;
+        case 2:
+            [self setPredicate:[NSPredicate predicateWithFormat:@"message.screenName == %@", [[NTLNAccount instance] username]]];
+            break;
+    }
+    NSLog(@"count: %d", [[messageViewControllerArrayController arrangedObjects] count]);
+    [messageTableViewController reloadTableView];
 }
 
 - (void) enableMessageTextField {
@@ -277,7 +316,7 @@
 // MessageInputTextField callback ///////////////////////////////////////////////////////
 - (void) messageInputTextFieldResized:(float)heightDelta {
     [self windowTransparency];
-
+    
     [messageTableViewController resize:heightDelta];
 }
 
@@ -293,19 +332,13 @@
 
 // TimelineSortOrderChangeObserver //////////////////////////////////////////////////
 - (void) timelineSortOrderChangeObserverSortOrderChanged {
-    [messageViewControllerArrayController setSortDescriptors:[self timelineSortDescriptors]];
-    [messageViewControllerArrayController rearrangeObjects];
-    [messageTableViewController reloadTableView];
+    [messageTableViewController reloadTimelineSortDescriptors];
 }
 
 // MessageViewListener ////////////////////////////////////////////////////////////////
 - (void) replyDesiredFor:(NSString*)username {
     [messageTextField addReplyTo:username];
     [self focusMessageTextFieldAndLocateCursorEnd];
-}
-
-- (float) viewWidth {
-    return [messageTableViewController columnWidth];
 }
 
 - (void) createFavoriteDesiredFor:(NSString*)statusId {
@@ -321,17 +354,22 @@
                     password:password];
 }
 
+- (float) viewWidth {
+    return [messageTableViewController columnWidth];
+}
+
 // NSWindow delegate methods ////////////////////////////////////////////////////////
 - (void)windowDidResize:(NSNotification *)notification {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
-    [messageTableViewController recluculateViewSizes];
+    [messageTableViewController recalculateViewSizes];
     [messageTableViewController reloadTableView];
 }
 
 // TwitterFavoriteCallback /////////////////////////////////////////////////////////////
 
-- (void) finishedToChangeFavorite:(NSString*)statusId {
-    for (NTLNMessageViewController *c in [messageViewControllerArrayController arrangedObjects]) {
+- (void) finishedToChangeFavorite:(NSString*)statusId {           
+    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
+        NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
         if ([statusId isEqualToString:[[c message] statusId]]) {
             [c favoriteCreated];
             break;
@@ -341,7 +379,8 @@
 }
 
 - (void) failedToChangeFavorite:(NSString*)statusId errorInfo:(NTLNErrorInfo*)info {
-    for (NTLNMessageViewController *c in [messageViewControllerArrayController arrangedObjects]) {
+    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
+        NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
         if ([statusId isEqualToString:[[c message] statusId]]) {
             [c favoriteCreationFailed];
             break;
@@ -352,6 +391,19 @@
 
 - (BOOL) isCreatingFavoriteWorking {
     return _createFavoriteIsWorking;
+}
+
+// NSToolbar delegate methods ////////////////////////////////////////////////////////////////
+- (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
+    return [_toolbarItems objectForKey:itemIdentifier];
+}
+
+- (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar {
+    return [NSArray arrayWithObjects:@"messageView", nil];
+}
+
+- (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
+    return [NSArray arrayWithObjects:@"messageView", nil];
 }
 
 @end

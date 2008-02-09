@@ -106,10 +106,6 @@ static TwitterStatusViewController *starred = nil;
     return [view requiredHeight];
 }
 
-- (NSDate*) timestamp {
-    return [_status timestamp];
-}
-
 - (void) iconViewClicked {
     [_listener replyDesiredFor:[_status screenName]];
 }

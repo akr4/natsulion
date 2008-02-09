@@ -41,7 +41,7 @@
     _defaultHeight = [self frame].size.height;
     _defaultY = [self frame].origin.y;
     [textView setParentView:self];
-    [textView setAutomaticLinkDetectionEnabled:TRUE];
+    [textView setAutomaticLinkDetectionEnabled:FALSE];
 //    [self setAllowsEditingTextAttributes:TRUE];
 }
 

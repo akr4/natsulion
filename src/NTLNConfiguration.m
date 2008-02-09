@@ -72,6 +72,7 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 
 - (void) setTimelineSortOrder:(int)sortOrder {
     [[NSUserDefaults standardUserDefaults] setInteger:sortOrder forKey:@"timelineSortOrder"];
+    NSLog(@"==== aaa");
     [_timelineSortOrderChangeObserver timelineSortOrderChangeObserverSortOrderChanged];
 }
 

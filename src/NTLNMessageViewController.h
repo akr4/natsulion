@@ -11,7 +11,6 @@
 - (NTLNMessage*) message;
 - (float) requiredHeight;
 - (void) markNeedCalculateHeight;
-- (NSDate*) timestamp;
 
 // methods for subviews
 - (void) iconViewClicked;
