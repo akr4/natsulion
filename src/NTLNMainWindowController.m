@@ -111,24 +111,6 @@
                    andSticky:sticky];
 }
 
-// progress indicators ///////////////////////////////////////////////////////////
-
-- (void) downloadStarted {
-    [downloadProgress startAnimation:self];
-}
-
-- (void) downloadStopped {
-    [downloadProgress stopAnimation:self];
-}
-
-- (void) postStarted {
-    [postProgress startAnimation:self];
-}
-
-- (void) postStopped {
-    [postProgress stopAnimation:self];
-}
-
 - (void) addMessageViewController:(NTLNMessageViewController*)controller {
     [messageViewControllerArrayController addObject:controller];
     [messageListViewsController applyCurrentPredicate];
@@ -156,7 +138,6 @@
         NSLog(@"password not set. skip updateStatus");
         return;
     }
-    [self downloadStarted];
     [_twitter friendTimelineWithUsername:[[NTLNAccount instance] username]
                                 password:password
                                  usePost:[[NTLNConfiguration instance] usePost]];
@@ -169,7 +150,6 @@
         NSLog(@"password not set. skip updateStatus");
         return;
     }
-    [self downloadStarted];
     [_twitter repliesWithUsername:[[NTLNAccount instance] username]
                                 password:password
                                  usePost:[[NTLNConfiguration instance] usePost]];
@@ -187,7 +167,6 @@
         return;
     }
     [messageTextField setEnabled:FALSE];
-    [self postStarted];
     [_twitter sendMessage:[messageTextField stringValue]
                  username:[[NTLNAccount instance] username]
                  password:password];
@@ -210,7 +189,6 @@
 - (void) finishedToPost {
     [self enableMessageTextField];
     [self focusMessageTextFieldAndLocateCursorEnd];
-    [self postStopped];
 }
 
 - (void) failedToPost:(NSString*)message {
@@ -218,7 +196,6 @@
                                                                            message:message
                                                                          timestamp:[NSDate date]]];    
     [self enableMessageTextField];
-    [self postStopped];
 }
 
 // TimelineCallback methods ///////////////////////////////////////////////////////
@@ -255,8 +232,6 @@
 }
 
 - (void) failedToGetTimeline:(NTLNErrorInfo*)info {
-    [self downloadStopped];
-    
     NSString *message;
     
     switch ([info type]) {
@@ -286,9 +261,14 @@
                                                                          timestamp:[NSDate date]]];
 }
 
-- (void) finishedAll {
-    [self downloadStopped];
+- (void) twitterStartTask {
+    [progressIndicator startTask];
 }
+
+- (void) twitterStopTask {
+    [progressIndicator stopTask];
+}
+
 
 // MessageInputTextField callback ///////////////////////////////////////////////////////
 - (void) messageInputTextFieldResized:(float)heightDelta {

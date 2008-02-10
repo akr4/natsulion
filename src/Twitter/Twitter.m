@@ -72,7 +72,7 @@
 }
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
-    [_parent finishDownloadingTimeline];
+    [_callback twitterStopTask];
 
     NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
     
@@ -125,11 +125,13 @@
         NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"user/profile_image_url/text()"]];
        
         [backStatus finishedToSetProperties];
+        [_callback twitterStartTask];
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
     }
 }
 
 - (void) connectionFailed:(NSError*)error {
+    [_callback twitterStopTask];
     [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
 }
 
@@ -144,11 +146,13 @@
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
 //    NSLog(@"post responseArrived:%@", [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding]);
+    [_callback twitterStopTask];
     [_callback finishedToPost];
     [self autorelease];
 }
 
 - (void) connectionFailed:(NSError*)error {
+    [_callback twitterStopTask];
     [_callback failedToPost:[error localizedDescription]];
     [self autorelease];
 }
@@ -170,12 +174,15 @@
 }
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
+    [_callback twitterStopTask];
     [_callback finishedToChangeFavorite:_statusId];
     NSLog(@"favorite responseArrived:%@", [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding]);
     [self autorelease];
+
 }
 
 - (void) connectionFailed:(NSError*)error {
+    [_callback twitterStopTask];
     [_callback failedToChangeFavorite:_statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
     [self autorelease];
 }
@@ -224,25 +231,6 @@
     [super dealloc];
 }
 
-// download status ////////////////////////////////////////////////////////////////
-
-- (void) updateDownloadStatus {
-//    NSLog(@"*** %d - %d", _downloadingTimeline, [_waitingIconTwitterStatuses count]);
-    if (_downloadingTimeline == 0 && [_waitingIconTwitterStatuses count] == 0) {
-        [_callback finishedAll];
-    }
-}
-
-- (void) startDownloading {
-    _downloadingTimeline++;
-    [self updateDownloadStatus];
-}
-
-- (void) stopDownloading {
-    _downloadingTimeline--;
-    [self updateDownloadStatus];
-}
-
 // methods for TwitterTimelineCallbackHandler /////////////////////////////////////////////////////////////////
 - (void) pushIconWaiter:(TwitterStatus*)waiter forUrl:(NSString*)url {
     NSMutableSet *set = [_waitingIconTwitterStatuses objectForKey:url];
@@ -259,12 +247,7 @@
     [back retain];
     [_waitingIconTwitterStatuses removeObjectForKey:url];
     [back autorelease];
-    [self updateDownloadStatus];
     return back;
-}
-
-- (void) finishDownloadingTimeline {
-    [self stopDownloading];
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -288,7 +271,7 @@
         return;
     }
 
-    [self startDownloading];
+    [_callback twitterStartTask];
 }
 
 // replies //////////////////////////////////////////////////////////////////////////////////////
@@ -312,7 +295,7 @@
         return;
     }
     
-    [self startDownloading];
+    [_callback twitterStartTask];
 }
 
 // icon callback ////////////////////////////////////////////////////////////////////////////////
@@ -336,6 +319,7 @@
     NSEnumerator *e = [set objectEnumerator];
     TwitterStatus *s = [e nextObject];
     while (s) {
+        [_callback twitterStopTask];
         [icon setSize:NSMakeSize(48.0, 48.0)];
         [s setIcon:icon];
         [back addObject:s];
@@ -348,6 +332,9 @@
     NSMutableArray *back = [[[NSMutableArray alloc] initWithCapacity:20] autorelease];
     [back addObjectsFromArray:[self arrayWithSet:[self popIconWaiterSet:key]]];
     [_callback finishedToGetTimeline:back];
+    for (int i = 0; i < [[self popIconWaiterSet:key] count]; i++) {
+        [_callback twitterStopTask];
+    }
 }
 
 // sendMessage //////////////////////////////////////////////////////////////////////////////////
@@ -376,6 +363,8 @@
         [_callback failedToPost:@"Posting a message failure. unable to get connection."];
         return;
     }
+
+    [_callback twitterStartTask];
 }
 
 // createFavorite /////////////////////////////////////////////////////////////////////////////////////////
@@ -407,6 +396,8 @@
                                                                         originalMessage:@"Sending a message failure. unable to get connection."]];
         return;
     }
+
+    [_callback twitterStartTask];
 }
 
 @end

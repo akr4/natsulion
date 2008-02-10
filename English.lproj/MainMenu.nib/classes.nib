@@ -169,8 +169,6 @@
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
-				<key>downloadProgress</key>
-				<string>NSProgressIndicator</string>
 				<key>mainToolbar</key>
 				<string>NSToolbar</string>
 				<key>mainWindow</key>
@@ -185,13 +183,21 @@
 				<string>NSArrayController</string>
 				<key>messageViewSelector</key>
 				<string>NSSegmentedControl</string>
-				<key>postProgress</key>
-				<string>NSProgressIndicator</string>
+				<key>progressIndicator</key>
+				<string>NTLNMultiTasksProgressIndicator</string>
 				<key>statusTextField</key>
 				<string>NSTextField</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSWindowController</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMultiTasksProgressIndicator</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSProgressIndicator</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

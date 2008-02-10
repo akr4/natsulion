@@ -15,6 +15,7 @@
 }
 
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterTimelineCallback>*)callback {
+    [callback twitterStartTask];
     
     NSMutableArray *messages = [[[NSMutableArray alloc] init] autorelease];
 
@@ -25,7 +26,8 @@
     [callback finishedToGetTimeline:messages];
     
 //    [callback failedToGetTimeline:[NTLNErrorInfo infoWithType:999 originalMessage:nil]];
-    [callback finishedAll];
+    
+    [callback twitterStopTask];
 }
 
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterPostCallback>*)callback {

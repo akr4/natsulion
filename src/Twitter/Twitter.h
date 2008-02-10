@@ -25,17 +25,22 @@ enum NTLNErrorType {
 @protocol TwitterTimelineCallback
 - (void) finishedToGetTimeline:(NSArray *)statuses;
 - (void) failedToGetTimeline:(NTLNErrorInfo*)info;
-- (void) finishedAll;
+- (void) twitterStartTask;
+- (void) twitterStopTask;
 @end
 
 @protocol TwitterPostCallback
 - (void) finishedToPost;
 - (void) failedToPost:(NSString*)message;
+- (void) twitterStartTask;
+- (void) twitterStopTask;
 @end
 
 @protocol TwitterFavoriteCallback
 - (void) finishedToChangeFavorite:(NSString*)statusId;
 - (void) failedToChangeFavorite:(NSString*)statusId errorInfo:(NTLNErrorInfo*)info;
+- (void) twitterStartTask;
+- (void) twitterStopTask;
 @end
 
 @interface TwitterTimelineCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> {
@@ -77,15 +82,12 @@ enum NTLNErrorType {
     NTLNAsyncUrlConnection *_connectionForFavorite;
     
     NSMutableDictionary *_waitingIconTwitterStatuses;
-
-    int _downloadingTimeline;
 }
 - (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback>)callback;
 
 // methods for TwitterTimelineCallbackHandler
 - (void) pushIconWaiter:(TwitterStatus*)waiter forUrl:(NSString*)url;
 - (NSSet*) popIconWaiterSet:(NSString*)url;
-- (void) finishDownloadingTimeline;
 @end
 
 #define NTLN_TWITTERCHECK_SUCESS 0

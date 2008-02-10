@@ -51,7 +51,11 @@
     
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:nil]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
-                                      [NSPredicate predicateWithFormat:@"message.replyType == %@", [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY]]]];
+                                      [NSPredicate predicateWithFormat:@"message.replyType IN %@",
+                                       [NSArray arrayWithObjects:
+                                        [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY],
+                                        [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY_PROBABLE],
+                                        nil]]]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
                                       [NSPredicate predicateWithFormat:@"message.screenName == %@", [[NTLNAccount instance] username]]]];
     

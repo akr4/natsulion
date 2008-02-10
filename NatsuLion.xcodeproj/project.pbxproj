@@ -34,6 +34,7 @@
 		E96C36930D2A83E300CED33F /* NTLNAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36920D2A83E300CED33F /* NTLNAccount.m */; };
 		E96C36A90D2A897800CED33F /* Welcome.nib in Resources */ = {isa = PBXBuildFile; fileRef = E96C36A80D2A897800CED33F /* Welcome.nib */; };
 		E96C36AD0D2A8C3700CED33F /* NTLNWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */; };
+		E97DF2AE0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */; };
 		E98B093C0D2172B90002A75E /* NTLNGrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */; };
 		E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */; };
 		E991C6650D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */; };
@@ -140,6 +141,8 @@
 		E96C36A80D2A897800CED33F /* Welcome.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Welcome.nib; sourceTree = "<group>"; };
 		E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNWelcomeWindowController.h; sourceTree = "<group>"; };
 		E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNWelcomeWindowController.m; sourceTree = "<group>"; };
+		E97DF2AC0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMultiTasksProgressIndicator.h; sourceTree = "<group>"; };
+		E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMultiTasksProgressIndicator.m; sourceTree = "<group>"; };
 		E98113C90D563B8A001E390C /* NTLNURLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNURLUtils.h; sourceTree = "<group>"; };
 		E98B093A0D2172B90002A75E /* NTLNGrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNGrowlNotifier.h; sourceTree = "<group>"; };
 		E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNGrowlNotifier.m; sourceTree = "<group>"; };
@@ -218,6 +221,8 @@
 				E9A411280D29904F003BFA9F /* NTLNAppController.m */,
 				E9160B750D11B1B700C9EEFF /* NTLNAsyncUrlConnection.h */,
 				E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */,
+				E97DF2AC0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.h */,
+				E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */,
 				E98B093A0D2172B90002A75E /* NTLNGrowlNotifier.h */,
 				E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */,
 				E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */,
@@ -544,6 +549,7 @@
 				E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */,
 				E9D5B1EB0D5633CB0000456F /* NTLNMessageViewController.m in Sources */,
 				E900C14F0D5EAB160071837C /* NTLNMessageListViewsController.m in Sources */,
+				E97DF2AE0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

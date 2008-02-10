@@ -5,6 +5,7 @@
 #import "NTLNGrowlNotifier.h"
 #import "NTLNMessageInputTextField.h"
 #import "NTLNMessageListViewsController.h"
+#import "NTLNMultiTasksProgressIndicator.h"
 
 @protocol NTLNTimelineSortOrderChangeObserver
 - (void) timelineSortOrderChangeObserverSortOrderChanged;
@@ -22,8 +23,7 @@
 
 @interface NTLNMainWindowController : NSWindowController <NTLNMessageViewListener, NTLNTimelineSortOrderChangeObserver, TwitterTimelineCallback, TwitterPostCallback, TwitterFavoriteCallback, NTLNMessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
-    IBOutlet NSProgressIndicator *downloadProgress;
-    IBOutlet NSProgressIndicator *postProgress;
+    IBOutlet NTLNMultiTasksProgressIndicator *progressIndicator;
     IBOutlet NTLNMessageInputTextField *messageTextField;
     IBOutlet NSTextField *statusTextField;
     IBOutlet NSArrayController *messageViewControllerArrayController;
