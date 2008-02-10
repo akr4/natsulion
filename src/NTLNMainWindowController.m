@@ -22,7 +22,7 @@
     [item setLabel:@"Message View"];
     [item setTarget:self];
     [item setAction:@selector(changeView:)]; // this is not working (i don't know why). instead of this, the NSSegmentControl's sent action works. (see IB)
-    [item setView:messageFilterSelector];
+    [item setView:messageViewSelector];
     [_toolbarItems setObject:item forKey:[item itemIdentifier]];
 
     [[self window] setToolbar:toolbar];
@@ -39,7 +39,6 @@
                                                           userInfo:nil
                                                            repeats:FALSE] retain];
     [NTLNConfiguration setTimelineSortOrderChangeObserver:self];
-    
     return self;
 }
 
@@ -68,11 +67,6 @@
 
 // this method is not needed actually but called by array controller's binding
 - (void) setTimelineSortDescriptors:(NSArray*)descriptors {
-}
-
-- (void) setPredicate:(NSPredicate*)predicate {
-    _predicate = predicate;
-    [messageViewControllerArrayController setFilterPredicate:_predicate];
 }
 
 - (void) enableGrowl {
@@ -137,9 +131,8 @@
 
 - (void) addMessageViewController:(NTLNMessageViewController*)controller {
     [messageViewControllerArrayController addObject:controller];
-    [messageViewControllerArrayController setFilterPredicate:_predicate];
+    [messageListViewsController applyCurrentPredicate];
     [messageTableViewController newMessageArrived:controller];
-//    NSLog(@"count: %d", [[messageViewControllerArrayController arrangedObjects] count]);
 }
 
 - (BOOL) addIfNewMessage:(NTLNMessage*)message {
@@ -147,6 +140,7 @@
                                                    initWithTwitterStatus:(TwitterStatus*)message
                                                    messageViewListener:self] autorelease];
     
+    [messageViewControllerArrayController setFilterPredicate:nil];
     if ([[messageViewControllerArrayController arrangedObjects] containsObject:newController]) {
         return FALSE;
     }
@@ -197,23 +191,6 @@
     [_twitter sendMessage:[messageTextField stringValue]
                  username:[[NTLNAccount instance] username]
                  password:password];
-}
-
-- (IBAction) changeView:(id) sender {
-    switch ([sender selectedSegment]) {
-        default:
-        case 0:
-            [self setPredicate:nil];
-            break;
-        case 1:
-            [self setPredicate:[NSPredicate predicateWithFormat:@"message.replyType == %@", [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY]]];
-            break;
-        case 2:
-            [self setPredicate:[NSPredicate predicateWithFormat:@"message.screenName == %@", [[NTLNAccount instance] username]]];
-            break;
-    }
-    NSLog(@"count: %d", [[messageViewControllerArrayController arrangedObjects] count]);
-    [messageTableViewController reloadTableView];
 }
 
 - (void) enableMessageTextField {

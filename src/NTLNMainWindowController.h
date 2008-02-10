@@ -4,6 +4,7 @@
 #import "NTLNMessageTableViewController.h"
 #import "NTLNGrowlNotifier.h"
 #import "NTLNMessageInputTextField.h"
+#import "NTLNMessageListViewsController.h"
 
 @protocol NTLNTimelineSortOrderChangeObserver
 - (void) timelineSortOrderChangeObserverSortOrderChanged;
@@ -16,6 +17,9 @@
 - (BOOL) isCreatingFavoriteWorking;
 @end
 
+// defined and used internally
+@class NTLNMessageListViewsController;
+
 @interface NTLNMainWindowController : NSWindowController <NTLNMessageViewListener, NTLNTimelineSortOrderChangeObserver, TwitterTimelineCallback, TwitterPostCallback, TwitterFavoriteCallback, NTLNMessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
     IBOutlet NSProgressIndicator *downloadProgress;
@@ -24,7 +28,8 @@
     IBOutlet NSTextField *statusTextField;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageTableViewController *messageTableViewController;
-    IBOutlet NSSegmentedControl *messageFilterSelector;
+    IBOutlet NSSegmentedControl *messageViewSelector;
+    IBOutlet NTLNMessageListViewsController *messageListViewsController;
     
     Twitter *_twitter;
     NTLNGrowlNotifier *_growl;
@@ -32,14 +37,15 @@
     // TODO: is it better AppController has this instance instead of MainWindowController?
     // timing after launched
     NSTimer *_afterLaunchedTimer;
+
     BOOL _growlEnabled;
     BOOL _createFavoriteIsWorking;
-    NSPredicate *_predicate;
     NSMutableDictionary *_toolbarItems;
+    
+    NTLNMessageListViewsController *_viewsController;
 }
 
 - (IBAction) sendMessage:(id) sender;
-- (IBAction) changeView:(id) sender;
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;

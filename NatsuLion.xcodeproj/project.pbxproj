@@ -10,6 +10,7 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		E900C14F0D5EAB160071837C /* NTLNMessageListViewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */; };
 		E90F0B400D2E8E190067A9CA /* NTLNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */; };
 		E915200F0D16D3B7008D6992 /* NTLNPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */; };
 		E9160B770D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */; };
@@ -95,6 +96,8 @@
 		32CA4F630368D1EE00C91783 /* NatsuLion_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NatsuLion_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* NatsuLion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatsuLion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageListViewsController.h; sourceTree = "<group>"; };
+		E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageListViewsController.m; sourceTree = "<group>"; };
 		E90F0B3E0D2E8E190067A9CA /* NTLNConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNConfiguration.h; sourceTree = "<group>"; };
 		E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNConfiguration.m; sourceTree = "<group>"; };
 		E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 				E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */,
 				E98B093A0D2172B90002A75E /* NTLNGrowlNotifier.h */,
 				E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */,
+				E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */,
+				E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */,
 				E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */,
 				E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */,
 				E91B3DB40D13F593007C9762 /* NTLNCustomViewCell.h */,
@@ -538,6 +543,7 @@
 				E93467160D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m in Sources */,
 				E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */,
 				E9D5B1EB0D5633CB0000456F /* NTLNMessageViewController.m in Sources */,
+				E900C14F0D5EAB160071837C /* NTLNMessageListViewsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

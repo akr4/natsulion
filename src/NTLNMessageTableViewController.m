@@ -75,6 +75,14 @@
     [self updateSelection];
 }
 
+- (float) knobPosition {
+    return [[[viewColumn tableView] superview] bounds].origin.y;
+}
+
+- (void) setKnobPosition:(float)position {
+    [[viewColumn tableView] scrollPoint:NSMakePoint(0, position)];
+}
+
 - (void) selectionDown {
     NSIndexSet *target = [NSIndexSet indexSetWithIndex:[[[viewColumn tableView] selectedRowIndexes] firstIndex] + 1];
     [[viewColumn tableView] selectRowIndexes:target byExtendingSelection:FALSE];

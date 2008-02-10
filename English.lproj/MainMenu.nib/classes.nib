@@ -142,6 +142,24 @@
 			<dict>
 				<key>changeView</key>
 				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NTLNMessageListViewsController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>messageTableViewController</key>
+				<string>NTLNMessageTableViewController</string>
+				<key>messageViewControllerArrayController</key>
+				<string>NSArrayController</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
 				<key>sendMessage</key>
 				<string>id</string>
 			</dict>
@@ -157,14 +175,16 @@
 				<string>NSToolbar</string>
 				<key>mainWindow</key>
 				<string>NSWindow</string>
-				<key>messageFilterSelector</key>
-				<string>NSSegmentedControl</string>
+				<key>messageListViewsController</key>
+				<string>NTLNMessageListViewsController</string>
 				<key>messageTableViewController</key>
 				<string>NTLNMessageTableViewController</string>
 				<key>messageTextField</key>
 				<string>NTLNMessageInputTextField</string>
 				<key>messageViewControllerArrayController</key>
 				<string>NSArrayController</string>
+				<key>messageViewSelector</key>
+				<string>NSSegmentedControl</string>
 				<key>postProgress</key>
 				<string>NSProgressIndicator</string>
 				<key>statusTextField</key>

@@ -26,10 +26,10 @@
 - (void) newMessageArrived:(NTLNMessageViewController*)controller;
 - (void) resize:(float)deltaHeight;
 - (void) reloadTableView;
+- (float) knobPosition;
+- (void) setKnobPosition:(float)position;
 - (float) columnWidth;
 - (void) recalculateViewSizes;
 - (void) reloadTimelineSortDescriptors;
-- (void) setPredicate:(NSPredicate*)predicate;
-
 
 @end
