@@ -44,6 +44,15 @@
     [menu addItem:item];
 }
 
+- (void) addToolbarItemWithIdentifier:(NSString*)identifier label:(NSString*)label target:(id)target action:(SEL)action view:(NSView*)view {
+    NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:identifier] autorelease];
+    [item setLabel:label];
+    [item setTarget:target];
+    [item setAction:action];
+    [item setView:view];
+    [_toolbarItems setObject:item forKey:[item itemIdentifier]];
+}
+
 - (void) setupMenuAndToolbar {
     NSToolbar *toolbar=[[[NSToolbar alloc] initWithIdentifier:@"mainToolbar"] autorelease];
     [toolbar setDelegate:self];
@@ -54,7 +63,7 @@
     _toolbarItems = [[NSMutableDictionary alloc] init];
     
     // setup segumented control
-    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 250, 25)] autorelease];
+    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 235, 25)] autorelease];
     [_messageViewSelector setSegmentCount:3];
     [_messageViewSelector setLabel:@"Friends" forSegment:0];
     [_messageViewSelector setLabel:@"Replies" forSegment:1];
@@ -62,7 +71,26 @@
     [_messageViewSelector setSelected:TRUE forSegment:0];
     [_messageViewSelector setTarget:messageListViewsController];
     [_messageViewSelector setAction:@selector(changeViewByToolbar:)];
+    [self addToolbarItemWithIdentifier:@"messageView" 
+                                 label:@"View Mode"
+                                target:messageListViewsController 
+                                action:@selector(changeView:)
+                                  view:_messageViewSelector];
+    
+    // refresh button
+    NSButton *refreshButton = [[[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 25, 25)] autorelease];
+    [refreshButton setImage:[NSImage imageNamed:NSImageNameRefreshTemplate]];
+    [refreshButton setBezelStyle:NSTexturedSquareBezelStyle];
+    [refreshButton setTarget:self];
+    [refreshButton setAction:@selector(updateTimelineCorrespondsToView:)];
+    [self addToolbarItemWithIdentifier:@"refresh"
+                                 label:@"Refresh"
+                                target:self
+                                action:@selector(updateTimelineCorrespondsToView:)
+                                  view:refreshButton];
+    [[self window] setToolbar:toolbar];
 
+    // menu
     [self addMenuItemWithTitle:@"Friends"
                         target:self
                         action:@selector(changeViewByMenu:)
@@ -83,15 +111,6 @@
                  keyEquivalent:@"3" 
                            tag:2 
                         toMenu:viewMenu];
-    
-    NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:@"messageView"] autorelease];
-    [item setLabel:@"View Mode"];
-    [item setTarget:messageListViewsController];
-    [item setAction:@selector(changeView:)]; // this is not working (i don't know why). instead of this, the NSSegmentControl's sent action works.
-    [item setView:_messageViewSelector];
-    [_toolbarItems setObject:item forKey:[item itemIdentifier]];
-    
-    [[self window] setToolbar:toolbar];
 }
 
 - (void) awakeFromNib {
@@ -175,6 +194,7 @@
 }
 
 - (void) updateStatus {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {
         // TODO inform error to user
@@ -187,6 +207,7 @@
 }
 
 - (void) updateReplies {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {
         // TODO inform error to user
@@ -194,8 +215,21 @@
         return;
     }
     [_twitter repliesWithUsername:[[NTLNAccount instance] username]
-                                password:password
-                                 usePost:[[NTLNConfiguration instance] usePost]];
+                         password:password
+                          usePost:[[NTLNConfiguration instance] usePost]];
+}
+
+- (void) updateSentMessages {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSString *password = [[NTLNAccount instance] password];
+    if (!password) {
+        // TODO inform error to user
+        NSLog(@"password not set. skip updateStatus");
+        return;
+    }
+    [_twitter sentMessagesWithUsername:[[NTLNAccount instance] username]
+                              password:password
+                               usePost:[[NTLNConfiguration instance] usePost]];
 }
 
 - (IBAction) sendMessage:(id) sender {
@@ -399,10 +433,26 @@
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", nil];
 }
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", nil];
 }
+
+- (IBAction) updateTimelineCorrespondsToView:(id)sender {
+    switch ([_messageViewSelector selectedSegment]) {
+        case 0:
+            [self updateStatus];
+            break;
+        case 1:
+            [self updateReplies];
+            break;
+        case 2:
+            [self updateSentMessages];
+        default:
+            break;
+    }
+}
+
 @end

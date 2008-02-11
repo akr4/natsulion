@@ -42,11 +42,13 @@
     
     // Menu & Toolbar
     IBOutlet NSMenu *viewMenu;
+    IBOutlet NSMenuItem *refreshMenuItem;
     NSMutableDictionary *_toolbarItems;
     NSSegmentedControl *_messageViewSelector;
 }
 
 - (IBAction) sendMessage:(id) sender;
+- (IBAction) updateTimelineCorrespondsToView:(id)sender;
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;

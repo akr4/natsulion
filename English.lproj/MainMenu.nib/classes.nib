@@ -164,6 +164,8 @@
 			<dict>
 				<key>sendMessage</key>
 				<string>id</string>
+				<key>updateTimelineCorrespondsToView</key>
+				<string>id</string>
 			</dict>
 			<key>CLASS</key>
 			<string>NTLNMainWindowController</string>
@@ -185,6 +187,8 @@
 				<string>NSArrayController</string>
 				<key>progressIndicator</key>
 				<string>NTLNMultiTasksProgressIndicator</string>
+				<key>refreshMenuItem</key>
+				<string>NSMenuItem</string>
 				<key>statusTextField</key>
 				<string>NSTextField</string>
 				<key>viewMenu</key>

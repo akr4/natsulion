@@ -68,6 +68,7 @@ enum NTLNErrorType {
 }
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
 - (void) repliesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
+- (void) sentMessagesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
 - (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password;
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password;
 @end
@@ -78,6 +79,7 @@ enum NTLNErrorType {
     
     NTLNAsyncUrlConnection *_connectionForFriendTimeline;
     NTLNAsyncUrlConnection *_connectionForReplies;
+    NTLNAsyncUrlConnection *_connectionForSentMessages;
     NTLNAsyncUrlConnection *_connectionForPost;
     NTLNAsyncUrlConnection *_connectionForFavorite;
     

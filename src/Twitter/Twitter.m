@@ -199,6 +199,10 @@
     
 }
 
+- (void) sentMessagesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
+    
+}
+
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
     
 }
@@ -224,6 +228,7 @@
 - (void) dealloc {
     [_connectionForFriendTimeline release];
     [_connectionForReplies release];
+    [_connectionForSentMessages release];
     [_connectionForFavorite release];
     [_connectionForPost release];
     [_waitingIconTwitterStatuses release];
@@ -291,6 +296,29 @@
                                                                        usePost:post
                                                                       callback:handler];
     if (!_connectionForReplies) {
+        NSLog(@"failed to get connection.");
+        return;
+    }
+    
+    [_callback twitterStartTask];
+}
+
+- (void) sentMessagesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
+    
+    if (_connectionForSentMessages && ![_connectionForSentMessages isFinished]) {
+        NSLog(@"connection for sent messages is running.");
+        return;
+    }
+    
+    TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
+    
+    [_connectionForSentMessages release];
+    _connectionForSentMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/user_timeline.xml" 
+                                                               username:username
+                                                               password:password
+                                                                usePost:post
+                                                               callback:handler];
+    if (!_connectionForSentMessages) {
         NSLog(@"failed to get connection.");
         return;
     }
