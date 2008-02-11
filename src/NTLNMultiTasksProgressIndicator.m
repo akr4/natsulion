@@ -7,7 +7,7 @@
         [self startAnimation:self];
     }
     _runningTasks++;
-    NSLog(@"start task: %d", _runningTasks);
+//    NSLog(@"start task: %d", _runningTasks);
 }
 
 - (void) stopTask {
@@ -15,6 +15,6 @@
     if (_runningTasks == 0) {
         [self stopAnimation:self];
     }
-    NSLog(@"stop task: %d", _runningTasks);
+//    NSLog(@"stop task: %d", _runningTasks);
 }
 @end
