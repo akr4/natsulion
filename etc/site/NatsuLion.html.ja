@@ -111,7 +111,16 @@
 </p>
 
 <h2>リリースノート</h2>
-<h3>Version 0.21 (2008/02/11)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.21.zip">download</a>
+<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.22.zip">download</a>
+<p>    
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-111'>NTLN-111</a>] -         only show 1 message at the boot time and stop
+</li>
+</ul>
+</p>            
+
+<h3>Version 0.21 (2008/02/11)</h3>
 <p>
 <p>
 メイン (Friends)、リプライ (Replies)、自分の発言 (My Updates) のビューを切り替えが可能になりました (NTLN-103)。また、それぞれのビューに対応したメッセージ再取得が可能になっています (NTLN-86)。ツールバーやメニュー、ショートカットから実行できます。
