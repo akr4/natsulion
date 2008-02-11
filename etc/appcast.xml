@@ -7,6 +7,49 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.21</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.21
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-105'&gt;NTLN-105&lt;/a&gt;] -         duplicated message can be added when selected filtered view
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-77'&gt;NTLN-77&lt;/a&gt;] -         hide the progress indicator for updating timeline.
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-102'&gt;NTLN-102&lt;/a&gt;] -         refactoring connection callbacks
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-104'&gt;NTLN-104&lt;/a&gt;] -         need View specific colors
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-106'&gt;NTLN-106&lt;/a&gt;] -         add menu for message view
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-107'&gt;NTLN-107&lt;/a&gt;] -         better progress indicator
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-110'&gt;NTLN-110&lt;/a&gt;] -         make setting &quot;always expand message to show all text&quot; non-configurable (enabled only)
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-86'&gt;NTLN-86&lt;/a&gt;] -         ability to refresh tweets manually
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-103'&gt;NTLN-103&lt;/a&gt;] -         switchable message view
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Mon, 11 Feb 2008 20:40:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.21.zip"
+        length="748009"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.20</title>
       <description>
         Release Notes - NatsuLion - Version 0.20

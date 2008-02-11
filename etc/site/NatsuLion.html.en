@@ -107,6 +107,39 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.21 (2008/02/11)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.21.zip">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-105'>NTLN-105</a>] -         duplicated message can be added when selected filtered view
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-77'>NTLN-77</a>] -         hide the progress indicator for updating timeline.
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-102'>NTLN-102</a>] -         refactoring connection callbacks
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-104'>NTLN-104</a>] -         need View specific colors
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-106'>NTLN-106</a>] -         add menu for message view
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-107'>NTLN-107</a>] -         better progress indicator
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-110'>NTLN-110</a>] -         make setting &quot;always expand message to show all text&quot; non-configurable (enabled only)
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-86'>NTLN-86</a>] -         ability to refresh tweets manually
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-103'>NTLN-103</a>] -         switchable message view
+</li>
+</ul>
+</p>
+    
 <h3>Version 0.20 (2008/02/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.20.zip">download</a>
 <p>
 Bug

@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -319,8 +321,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -335,10 +335,6 @@
 										<string>E95D35960D2F753A00EA6958</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>NTLNMainWindowController.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>E99A0A910D60697100F6327F</string>
 										<key>history</key>
 										<array>
 											<string>E9CDE5170D41893C0084A563</string>
@@ -497,18 +493,7 @@
 											<string>E900C1590D5EAC5A0071837C</string>
 											<string>E97DF2CA0D5F816E002AA043</string>
 											<string>E97DF2CC0D5F816E002AA043</string>
-											<string>E99A0A730D6068A400F6327F</string>
-											<string>E99A0A740D6068A400F6327F</string>
 											<string>E99A0A750D6068A400F6327F</string>
-											<string>E99A0A760D6068A400F6327F</string>
-											<string>E99A0A770D6068A400F6327F</string>
-											<string>E99A0A780D6068A400F6327F</string>
-											<string>E99A0A790D6068A400F6327F</string>
-											<string>E99A0A7A0D6068A400F6327F</string>
-											<string>E99A0A7B0D6068A400F6327F</string>
-											<string>E99A0A8E0D60697100F6327F</string>
-											<string>E99A0A8F0D60697100F6327F</string>
-											<string>E99A0A900D60697100F6327F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -566,9 +551,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E99A0A650D60670700F6327F</string>
+				<string>E99A0A970D606B9700F6327F</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E99A0A660D60670700F6327F</string>
+				<string>E99A0A980D606B9700F6327F</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -702,9 +687,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -785,7 +768,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E9160C000D11F6C700C9EEFF</string>
-				<string>E99A0A7D0D6068A400F6327F</string>
+				<string>E99A0A9A0D606BA400F6327F</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
