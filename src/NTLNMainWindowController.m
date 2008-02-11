@@ -85,7 +85,7 @@
                         toMenu:viewMenu];
     
     NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:@"messageView"] autorelease];
-    [item setLabel:@"Message View"];
+    [item setLabel:@"View Mode"];
     [item setTarget:messageListViewsController];
     [item setAction:@selector(changeView:)]; // this is not working (i don't know why). instead of this, the NSSegmentControl's sent action works.
     [item setView:_messageViewSelector];
