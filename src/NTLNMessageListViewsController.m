@@ -72,17 +72,25 @@
 //    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:predicate]];
 //}
 
-- (IBAction) changeView:(id) sender {
+- (void) changeView:(int)index {
     // save status
     [[_messageViewInfoArray objectAtIndex:_currentViewIndex] setKnobPosition:[messageTableViewController knobPosition]];
     
+    _currentViewIndex = index;
     // change view
-    _currentViewIndex = [sender selectedSegment];
     NTLNMessageViewInfo *messageViewInfo = [_messageViewInfoArray objectAtIndex:_currentViewIndex];
     // to use original one causes an exception
     [messageViewControllerArrayController setFilterPredicate:[[messageViewInfo predicate] copy]];
     [messageTableViewController reloadTableView];
     [messageTableViewController setKnobPosition:[messageViewInfo knobPosition]];
+}
+
+- (IBAction) changeViewByToolbar:(id) sender {
+    [self changeView:[sender selectedSegment]];
+}
+
+- (IBAction) changeViewByMenu:(id) sender {
+    [self changeView:[sender tag]];
 }
 
 - (void) applyCurrentPredicate {

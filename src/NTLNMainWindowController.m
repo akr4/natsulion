@@ -9,25 +9,7 @@
 
 @implementation NTLNMainWindowController
 
-- (void) setupToolbar {
-    NSToolbar *toolbar=[[[NSToolbar alloc] initWithIdentifier:@"mainToolbar"] autorelease];
-    [toolbar setDelegate:self];
-    [toolbar setAutosavesConfiguration:YES];
-    [toolbar setAllowsUserCustomization:YES];
-    [toolbar setDisplayMode:NSToolbarDisplayModeIconAndLabel];
-    
-    _toolbarItems = [[NSMutableDictionary alloc] init];
-    
-    NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:@"messageView"] autorelease];
-    [item setLabel:@"Message View"];
-    [item setTarget:self];
-    [item setAction:@selector(changeView:)]; // this is not working (i don't know why). instead of this, the NSSegmentControl's sent action works. (see IB)
-    [item setView:messageViewSelector];
-    [_toolbarItems setObject:item forKey:[item itemIdentifier]];
-
-    [[self window] setToolbar:toolbar];
-}
-
+#pragma mark Initialization
 - (id) init {
     _twitter = [[TwitterImpl alloc] initWithCallback:self];
 //    _twitter = [[TwitterTestStub alloc] init];
@@ -50,6 +32,68 @@
     [super dealloc];
 }
 
+- (void) changeViewByMenu:(id)sender {
+    [_messageViewSelector setSelected:TRUE forSegment:[sender tag]];
+    [messageListViewsController changeViewByMenu:sender];
+}
+
+- (void) addMenuItemWithTitle:(NSString*)title target:(id)target action:(SEL)action keyEquivalent:(NSString*)keyEquivalent tag:(int)tag toMenu:(NSMenu*) menu {
+    NSMenuItem *item = [[[NSMenuItem alloc] initWithTitle:title action:action keyEquivalent:keyEquivalent] autorelease];
+    [item setTarget:target];
+    [item setTag:tag];
+    [menu addItem:item];
+}
+
+- (void) setupMenuAndToolbar {
+    NSToolbar *toolbar=[[[NSToolbar alloc] initWithIdentifier:@"mainToolbar"] autorelease];
+    [toolbar setDelegate:self];
+    [toolbar setAutosavesConfiguration:YES];
+    [toolbar setAllowsUserCustomization:YES];
+    [toolbar setDisplayMode:NSToolbarDisplayModeIconAndLabel];
+    
+    _toolbarItems = [[NSMutableDictionary alloc] init];
+    
+    // setup segumented control
+    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 250, 25)] autorelease];
+    [_messageViewSelector setSegmentCount:3];
+    [_messageViewSelector setLabel:@"Friends" forSegment:0];
+    [_messageViewSelector setLabel:@"Replies" forSegment:1];
+    [_messageViewSelector setLabel:@"My Updates" forSegment:2];
+    [_messageViewSelector setSelected:TRUE forSegment:0];
+    [_messageViewSelector setTarget:messageListViewsController];
+    [_messageViewSelector setAction:@selector(changeViewByToolbar:)];
+
+    [self addMenuItemWithTitle:@"Friends"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"1" 
+                           tag:0 
+                        toMenu:viewMenu];
+
+    [self addMenuItemWithTitle:@"Replies"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"2" 
+                           tag:1 
+                        toMenu:viewMenu];
+
+    [self addMenuItemWithTitle:@"My Updates"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"3" 
+                           tag:2 
+                        toMenu:viewMenu];
+    
+    NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:@"messageView"] autorelease];
+    [item setLabel:@"Message View"];
+    [item setTarget:messageListViewsController];
+    [item setAction:@selector(changeView:)]; // this is not working (i don't know why). instead of this, the NSSegmentControl's sent action works.
+    [item setView:_messageViewSelector];
+    [_toolbarItems setObject:item forKey:[item itemIdentifier]];
+    
+    [[self window] setToolbar:toolbar];
+}
+
 - (void) awakeFromNib {
     [mainWindow setReleasedWhenClosed:FALSE];
     
@@ -61,8 +105,7 @@
    withKeyPath:@"values.windowTransparency"
        options:nil];
     
-    // toolbar
-    [self setupToolbar];
+    [self setupMenuAndToolbar];
 }
 
 // this method is not needed actually but called by array controller's binding
@@ -185,7 +228,7 @@
     [(NSText *)[[messageTextField window] firstResponder] setSelectedRange:NSMakeRange([[messageTextField stringValue] length], 0)];
 }
 
-// TwitterPostCallback methods ///////////////////////////////////////////////////
+#pragma mark TwitterPostCallback
 - (void) finishedToPost {
     [self enableMessageTextField];
     [self focusMessageTextFieldAndLocateCursorEnd];
@@ -198,7 +241,7 @@
     [self enableMessageTextField];
 }
 
-// TimelineCallback methods ///////////////////////////////////////////////////////
+#pragma mark TimelineCallback
 - (void) finishedToGetTimeline:(NSArray*)statuses {
     for (int i = 0; i < [statuses count]; i++) {
         TwitterStatus *s = [statuses objectAtIndex:i];
@@ -270,7 +313,7 @@
 }
 
 
-// MessageInputTextField callback ///////////////////////////////////////////////////////
+#pragma mark MessageInputTextField callback
 - (void) messageInputTextFieldResized:(float)heightDelta {
     [self windowTransparency];
     
@@ -287,12 +330,12 @@
     }
 }
 
-// TimelineSortOrderChangeObserver //////////////////////////////////////////////////
+#pragma mark TimelineSortOrderChangeObserver
 - (void) timelineSortOrderChangeObserverSortOrderChanged {
     [messageTableViewController reloadTimelineSortDescriptors];
 }
 
-// MessageViewListener ////////////////////////////////////////////////////////////////
+#pragma mark MessageViewListener
 - (void) replyDesiredFor:(NSString*)username {
     [messageTextField addReplyTo:username];
     [self focusMessageTextFieldAndLocateCursorEnd];
@@ -315,15 +358,14 @@
     return [messageTableViewController columnWidth];
 }
 
-// NSWindow delegate methods ////////////////////////////////////////////////////////
+#pragma mark NSWindow delegate methods
 - (void)windowDidResize:(NSNotification *)notification {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
     [messageTableViewController recalculateViewSizes];
     [messageTableViewController reloadTableView];
 }
 
-// TwitterFavoriteCallback /////////////////////////////////////////////////////////////
-
+#pragma mark TwitterFavoriteCallback
 - (void) finishedToChangeFavorite:(NSString*)statusId {           
     for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
         NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
@@ -350,7 +392,8 @@
     return _createFavoriteIsWorking;
 }
 
-// NSToolbar delegate methods ////////////////////////////////////////////////////////////////
+
+#pragma mark NSToolber delegate methods
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
     return [_toolbarItems objectForKey:itemIdentifier];
 }
@@ -362,5 +405,4 @@
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
     return [NSArray arrayWithObjects:@"messageView", nil];
 }
-
 @end

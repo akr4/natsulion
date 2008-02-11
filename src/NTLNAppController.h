@@ -8,7 +8,7 @@
     IBOutlet NTLNMainWindowController *mainWindowController;
     IBOutlet NTLNPreferencesWindowController *preferencesWindowController;
     IBOutlet NTLNWelcomeWindowController *welcomeWindowController;
-    
+
     int _refreshInterval;
     NSTimer *_refreshTimer;
     

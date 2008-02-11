@@ -10,6 +10,7 @@
 }
 - (id) init;
 //- (void) addInfoWithPredicate:(NSPredicate*)predicate;
-- (IBAction) changeView:(id) sender;
+- (IBAction) changeViewByToolbar:(id) sender;
+- (IBAction) changeViewByMenu:(id) sender;
 - (void) applyCurrentPredicate;
 @end

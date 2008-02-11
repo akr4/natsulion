@@ -28,7 +28,6 @@
     IBOutlet NSTextField *statusTextField;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageTableViewController *messageTableViewController;
-    IBOutlet NSSegmentedControl *messageViewSelector;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     
     Twitter *_twitter;
@@ -40,9 +39,11 @@
 
     BOOL _growlEnabled;
     BOOL _createFavoriteIsWorking;
-    NSMutableDictionary *_toolbarItems;
     
-    NTLNMessageListViewsController *_viewsController;
+    // Menu & Toolbar
+    IBOutlet NSMenu *viewMenu;
+    NSMutableDictionary *_toolbarItems;
+    NSSegmentedControl *_messageViewSelector;
 }
 
 - (IBAction) sendMessage:(id) sender;

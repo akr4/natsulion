@@ -338,7 +338,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E97DF3100D5F92F3002AA043</string>
+										<string>E97DF3DD0D601A92002AA043</string>
 										<key>history</key>
 										<array>
 											<string>E9CDE5170D41893C0084A563</string>
@@ -388,7 +388,6 @@
 											<string>E99EBCFA0D57777B00983106</string>
 											<string>E99EBD290D578D5700983106</string>
 											<string>E909F5A30D592F4D00493AE9</string>
-											<string>E909F5A40D592F4D00493AE9</string>
 											<string>E909F5DE0D59309600493AE9</string>
 											<string>E9648D4D0D5A222D00746425</string>
 											<string>E9648D510D5A222D00746425</string>
@@ -404,8 +403,6 @@
 											<string>E907AF850D5B97B10054F26C</string>
 											<string>E93E95C70D5CA5EE00ACCDBF</string>
 											<string>E93E95C80D5CA5EE00ACCDBF</string>
-											<string>E93FC5050D5D54160022E22B</string>
-											<string>E93FC5060D5D54160022E22B</string>
 											<string>E93FC5080D5D54160022E22B</string>
 											<string>E9D2BEB00D5DB086007C0343</string>
 											<string>E900C0EB0D5E9F080071837C</string>
@@ -414,16 +411,19 @@
 											<string>E900C1520D5EAC5A0071837C</string>
 											<string>E900C19B0D5EB2290071837C</string>
 											<string>E900C1C50D5EC2A70071837C</string>
-											<string>E97DF2BA0D5F816E002AA043</string>
 											<string>E97DF2BB0D5F816E002AA043</string>
 											<string>E97DF2BC0D5F816E002AA043</string>
 											<string>E97DF2BD0D5F816E002AA043</string>
-											<string>E97DF2BE0D5F816E002AA043</string>
 											<string>E97DF2C00D5F816E002AA043</string>
-											<string>E97DF2C10D5F816E002AA043</string>
 											<string>E97DF2C20D5F816E002AA043</string>
 											<string>E97DF2F20D5F86C6002AA043</string>
-											<string>E97DF2F10D5F86C6002AA043</string>
+											<string>E97DF3600D5FFC2D002AA043</string>
+											<string>E97DF38F0D5FFC70002AA043</string>
+											<string>E97DF3AE0D601610002AA043</string>
+											<string>E97DF3CC0D6018A9002AA043</string>
+											<string>E97DF3CD0D6018A9002AA043</string>
+											<string>E97DF3D70D6019AE002AA043</string>
+											<string>E97DF3D80D6019AE002AA043</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -509,6 +509,82 @@
 											<string>E900C1620D5EAC5A0071837C</string>
 											<string>E97DF2CA0D5F816E002AA043</string>
 											<string>E97DF2CC0D5F816E002AA043</string>
+											<string>E97DF3240D5FF0DF002AA043</string>
+											<string>E97DF3250D5FF0DF002AA043</string>
+											<string>E97DF3260D5FF0DF002AA043</string>
+											<string>E97DF3270D5FF0DF002AA043</string>
+											<string>E97DF3280D5FF0DF002AA043</string>
+											<string>E97DF3290D5FF0DF002AA043</string>
+											<string>E97DF32A0D5FF0DF002AA043</string>
+											<string>E97DF32B0D5FF0DF002AA043</string>
+											<string>E97DF32C0D5FF0DF002AA043</string>
+											<string>E97DF3480D5FF4B8002AA043</string>
+											<string>E97DF3490D5FF4B8002AA043</string>
+											<string>E97DF34A0D5FF4B8002AA043</string>
+											<string>E97DF34B0D5FF4B8002AA043</string>
+											<string>E97DF3550D5FF5F0002AA043</string>
+											<string>E97DF3560D5FF5F0002AA043</string>
+											<string>E97DF3640D5FFC2D002AA043</string>
+											<string>E97DF3650D5FFC2D002AA043</string>
+											<string>E97DF3660D5FFC2D002AA043</string>
+											<string>E97DF3670D5FFC2D002AA043</string>
+											<string>E97DF3680D5FFC2D002AA043</string>
+											<string>E97DF3690D5FFC2D002AA043</string>
+											<string>E97DF36A0D5FFC2D002AA043</string>
+											<string>E97DF36B0D5FFC2D002AA043</string>
+											<string>E97DF36C0D5FFC2D002AA043</string>
+											<string>E97DF36D0D5FFC2D002AA043</string>
+											<string>E97DF36E0D5FFC2D002AA043</string>
+											<string>E97DF36F0D5FFC2D002AA043</string>
+											<string>E97DF3700D5FFC2D002AA043</string>
+											<string>E97DF3710D5FFC2D002AA043</string>
+											<string>E97DF3720D5FFC2D002AA043</string>
+											<string>E97DF3730D5FFC2D002AA043</string>
+											<string>E97DF3740D5FFC2D002AA043</string>
+											<string>E97DF3750D5FFC2D002AA043</string>
+											<string>E97DF3760D5FFC2D002AA043</string>
+											<string>E97DF3770D5FFC2D002AA043</string>
+											<string>E97DF3780D5FFC2D002AA043</string>
+											<string>E97DF3790D5FFC2D002AA043</string>
+											<string>E97DF37A0D5FFC2D002AA043</string>
+											<string>E97DF37B0D5FFC2D002AA043</string>
+											<string>E97DF37C0D5FFC2D002AA043</string>
+											<string>E97DF37D0D5FFC2D002AA043</string>
+											<string>E97DF37E0D5FFC2D002AA043</string>
+											<string>E97DF37F0D5FFC2D002AA043</string>
+											<string>E97DF3800D5FFC2D002AA043</string>
+											<string>E97DF3810D5FFC2D002AA043</string>
+											<string>E97DF3820D5FFC2D002AA043</string>
+											<string>E97DF3830D5FFC2D002AA043</string>
+											<string>E97DF3840D5FFC2D002AA043</string>
+											<string>E97DF3850D5FFC2D002AA043</string>
+											<string>E97DF3860D5FFC2D002AA043</string>
+											<string>E97DF3870D5FFC2D002AA043</string>
+											<string>E97DF38C0D5FFC53002AA043</string>
+											<string>E97DF3910D5FFC70002AA043</string>
+											<string>E97DF3920D5FFC70002AA043</string>
+											<string>E97DF3970D5FFD0B002AA043</string>
+											<string>E97DF39F0D5FFE5F002AA043</string>
+											<string>E97DF3A00D5FFE5F002AA043</string>
+											<string>E97DF3A10D5FFE5F002AA043</string>
+											<string>E97DF3A80D601596002AA043</string>
+											<string>E97DF3A90D601596002AA043</string>
+											<string>E97DF3AA0D601596002AA043</string>
+											<string>E97DF3AF0D601610002AA043</string>
+											<string>E97DF3B00D601610002AA043</string>
+											<string>E97DF3C40D601851002AA043</string>
+											<string>E97DF3C50D601851002AA043</string>
+											<string>E97DF3C60D601851002AA043</string>
+											<string>E97DF3C70D601851002AA043</string>
+											<string>E97DF3C80D601851002AA043</string>
+											<string>E97DF3C90D601851002AA043</string>
+											<string>E97DF3CA0D601851002AA043</string>
+											<string>E97DF3CE0D6018A9002AA043</string>
+											<string>E97DF3CF0D6018A9002AA043</string>
+											<string>E97DF3D00D6018A9002AA043</string>
+											<string>E97DF3D10D6018A9002AA043</string>
+											<string>E97DF3D90D6019AE002AA043</string>
+											<string>E97DF3DA0D6019AE002AA043</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -702,9 +778,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -724,12 +800,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>NTLNMessageListViewsController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -796,7 +874,7 @@
 			<key>WindowToolGUID</key>
 			<string>E9160C000D11F6C700C9EEFF</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -1038,6 +1116,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -1083,7 +1163,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

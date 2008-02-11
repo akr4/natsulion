@@ -79,7 +79,7 @@
     [[preferencesWindowController window] orderOut:self];
 }
 
-// NSApplicatoin delegate /////////////////////////////////////////////////////////////////
+#pragma mark NSApplicatoin delegate methods
 - (BOOL)applicationOpenUntitledFile:(NSApplication *)theApplication {
     //    NSLog(@"%s", __PRETTY_FUNCTION__);    
     [mainWindowController showWindowToFront];
@@ -115,12 +115,11 @@
 }
 
 
-// WelcomeWindowCallback ///////////////////////////////////////////////////////////////////////
+#pragma mark WelcomeWindowCallback methods
 - (void) finishedToSetup {
     [welcomeWindowController close];
     [mainWindowController showWindow:nil];
     [self startTimer];
     [_refreshTimer fire];
 }
-
 @end

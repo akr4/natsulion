@@ -140,7 +140,9 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
-				<key>changeView</key>
+				<key>changeViewByMenu</key>
+				<string>id</string>
+				<key>changeViewByToolbar</key>
 				<string>id</string>
 			</dict>
 			<key>CLASS</key>
@@ -181,12 +183,12 @@
 				<string>NTLNMessageInputTextField</string>
 				<key>messageViewControllerArrayController</key>
 				<string>NSArrayController</string>
-				<key>messageViewSelector</key>
-				<string>NSSegmentedControl</string>
 				<key>progressIndicator</key>
 				<string>NTLNMultiTasksProgressIndicator</string>
 				<key>statusTextField</key>
 				<string>NSTextField</string>
+				<key>viewMenu</key>
+				<string>NSMenu</string>
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSWindowController</string>
