@@ -53,11 +53,7 @@
 
     float back;
     _sizeShouldBeCalculated = FALSE;
-    if ([[NTLNConfiguration instance] alwaysExpandMessage]) {
-        back = [self expandTextField];
-    } else {
-        back = _requiredHeight;
-    }
+    back = [self expandTextField];
     NSSize size = [self frame].size;
     size.height = back;
     [self setFrameSize:size];
@@ -68,9 +64,7 @@
 - (void) setTwitterStatus:(TwitterStatus*)status {
     _status = status;
     [_status retain];
-    if ([[NTLNConfiguration instance] alwaysExpandMessage]) {
-        [self requiredHeight];
-    }
+    [self requiredHeight];
 }
 
 - (void) dealloc {
@@ -95,10 +89,6 @@
         default:
             break;
     }
-    
-    if (![[NTLNConfiguration instance] alwaysExpandMessage]) {
-        [self expandTextField];
-    }
 }
 
 - (void) unhighlight {
@@ -115,10 +105,6 @@
         case MESSAGE_REPLY_TYPE_NORMAL:
         default:
             break;
-    }
-
-    if (![[NTLNConfiguration instance] alwaysExpandMessage]) {
-        _requiredHeight = _defaultHeight;
     }
 }
 

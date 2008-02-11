@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -291,7 +289,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 175}, {243, 600}}</string>
+							<string>{{0, 0}, {243, 600}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -321,6 +319,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -335,6 +335,10 @@
 										<string>E95D35960D2F753A00EA6958</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>NTLNMainWindowController.m</string>
+										<key>_historyCapacity</key>
+										<integer>0</integer>
+										<key>bookmark</key>
+										<string>E99A0A910D60697100F6327F</string>
 										<key>history</key>
 										<array>
 											<string>E9CDE5170D41893C0084A563</string>
@@ -385,7 +389,6 @@
 											<string>E9648D510D5A222D00746425</string>
 											<string>E9648D540D5A222D00746425</string>
 											<string>E9648DE30D5A2F8A00746425</string>
-											<string>E9FCA1B40D5A8F9B00D09602</string>
 											<string>E9FCA2760D5A99D500D09602</string>
 											<string>E9FCA2770D5A99D500D09602</string>
 											<string>E9FCA2780D5A99D500D09602</string>
@@ -400,6 +403,16 @@
 											<string>E97DF3AE0D601610002AA043</string>
 											<string>E99A09A80D60584900F6327F</string>
 											<string>E99A09A90D60584900F6327F</string>
+											<string>E99A0A6C0D6068A400F6327F</string>
+											<string>E99A0A6D0D6068A400F6327F</string>
+											<string>E99A0A6E0D6068A400F6327F</string>
+											<string>E99A0A6F0D6068A400F6327F</string>
+											<string>E99A0A700D6068A400F6327F</string>
+											<string>E99A0A710D6068A400F6327F</string>
+											<string>E99A0A8A0D60697100F6327F</string>
+											<string>E99A0A8B0D60697100F6327F</string>
+											<string>E99A0A8C0D60697100F6327F</string>
+											<string>E99A0A8D0D60697100F6327F</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -484,6 +497,18 @@
 											<string>E900C1590D5EAC5A0071837C</string>
 											<string>E97DF2CA0D5F816E002AA043</string>
 											<string>E97DF2CC0D5F816E002AA043</string>
+											<string>E99A0A730D6068A400F6327F</string>
+											<string>E99A0A740D6068A400F6327F</string>
+											<string>E99A0A750D6068A400F6327F</string>
+											<string>E99A0A760D6068A400F6327F</string>
+											<string>E99A0A770D6068A400F6327F</string>
+											<string>E99A0A780D6068A400F6327F</string>
+											<string>E99A0A790D6068A400F6327F</string>
+											<string>E99A0A7A0D6068A400F6327F</string>
+											<string>E99A0A7B0D6068A400F6327F</string>
+											<string>E99A0A8E0D60697100F6327F</string>
+											<string>E99A0A8F0D60697100F6327F</string>
+											<string>E99A0A900D60697100F6327F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -677,6 +702,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1CD10A99069EF8BA00B06720</string>
+		<string>E9160C000D11F6C700C9EEFF</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -696,14 +724,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NTLNConfiguration.m</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -759,7 +785,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E9160C000D11F6C700C9EEFF</string>
-				<string>E99A09BA0D60584900F6327F</string>
+				<string>E99A0A7D0D6068A400F6327F</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -770,7 +796,7 @@
 			<key>WindowToolGUID</key>
 			<string>E9160C000D11F6C700C9EEFF</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -879,13 +905,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>E99A09BB0D60584900F6327F</string>
+				<string>E99A0A7E0D6068A400F6327F</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>E99A09BC0D60584900F6327F</string>
-				<string>E99A09BD0D60584900F6327F</string>
-				<string>E99A09BE0D60584900F6327F</string>
-				<string>E99A09BF0D60584900F6327F</string>
-				<string>E99A09C00D60584900F6327F</string>
+				<string>E99A0A7F0D6068A400F6327F</string>
+				<string>E99A0A800D6068A400F6327F</string>
+				<string>E99A0A810D6068A400F6327F</string>
+				<string>E99A0A820D6068A400F6327F</string>
+				<string>E99A0A830D6068A400F6327F</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -1049,7 +1075,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>E99A09C10D60584900F6327F</string>
+				<string>E99A0A840D6068A400F6327F</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>

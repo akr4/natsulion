@@ -3,7 +3,7 @@
 
 @implementation NTLNConfiguration
 
-@synthesize useGrowl, showWindowWhenNewMessage, alwaysExpandMessage, refreshInterval, usePost, windowTransparency;
+@synthesize useGrowl, showWindowWhenNewMessage, refreshInterval, usePost, windowTransparency;
 
 static id _instance = nil;
 
@@ -59,7 +59,6 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 - (id) init {
     [self bindToProperty:@"useGrowl"];
     [self bindToProperty:@"showWindowWhenNewMessage"];
-    [self bindToProperty:@"alwaysExpandMessage"];
     [self bindToProperty:@"usePost"];
     [self bindToProperty:@"refreshInterval"];
     [self bindToProperty:@"windowTransparency"];

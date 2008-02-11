@@ -110,7 +110,7 @@
         if ([[NTLNAccount instance] password]) {
             [_refreshTimer fire];
         }
-        [mainWindowController updateReplies];
+//        [mainWindowController updateReplies];
     }
 }
 

@@ -26,11 +26,6 @@
     
     _autoscrollMinLimit = 1.0;
     _cumulativeDeltaHeight = 0.0;
-    
-    [self bind:@"changeExpandMode"
-      toObject:[NSUserDefaultsController sharedUserDefaultsController] 
-   withKeyPath:@"values.alwaysExpandMessarage"
-       options:nil];
 }
 
 - (void) dealloc {
@@ -56,9 +51,6 @@
 
 - (void) updateSelection {
     [self selectedRowIndexes:[[viewColumn tableView] selectedRowIndexes]];
-    if (![[NTLNConfiguration instance] alwaysExpandMessage]) {
-        [[viewColumn tableView] noteHeightOfRowsWithIndexesChanged:[[viewColumn tableView] selectedRowIndexes]];
-    }
 }
 
 - (void) recalculateViewSizes {
@@ -162,16 +154,6 @@
     TwitterStatusViewController *controller = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:row];
 //    NSLog(@"%s: %d - %f", __PRETTY_FUNCTION__, row, [controller requiredHeight]);
     return [controller requiredHeight];
-}
-
-// Configuration change makes below method call //////////////////////////////////////////////////////////////////////////////
-- (void) setChangeExpandMode:(BOOL)mode {
-    [self recalculateViewSizes];
-    [self reloadTableView];
-}
-
-- (BOOL) changeExpandMode {
-    return TRUE;
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////

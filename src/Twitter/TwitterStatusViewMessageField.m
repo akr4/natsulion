@@ -142,9 +142,6 @@
     _highlighted = FALSE;
     [self setValueAndFormat:[[textView textStorage] string] colorForText:[NTLNColors colorForText]];
     [textView setSelectable:FALSE];
-    if (![[NTLNConfiguration instance] alwaysExpandMessage]) {
-        [self setFrameSize:NSMakeSize([self frame].size.width, _defaultHeight)];
-    }
     [textView setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSNumber numberWithInt:NSUnderlineStyleNone], NSUnderlineStyleAttributeName,
                                  [NTLNColors colorForLink], NSForegroundColorAttributeName,

@@ -8,14 +8,13 @@
 @interface NTLNConfiguration : NSObject {
     BOOL useGrowl;
     BOOL showWindowWhenNewMessage;
-    BOOL alwaysExpandMessage;
     BOOL usePost;
     int refreshInterval;
     int timelineSortOrder;
     float windowTransparency;
 }
 
-@property BOOL useGrowl, showWindowWhenNewMessage, alwaysExpandMessage, usePost;
+@property BOOL useGrowl, showWindowWhenNewMessage, usePost;
 @property int refreshInterval;
 @property float windowTransparency;
 

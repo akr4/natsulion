@@ -194,7 +194,7 @@
 }
 
 - (void) updateStatus {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {
         // TODO inform error to user
@@ -207,7 +207,7 @@
 }
 
 - (void) updateReplies {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {
         // TODO inform error to user
@@ -220,7 +220,7 @@
 }
 
 - (void) updateSentMessages {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {
         // TODO inform error to user
