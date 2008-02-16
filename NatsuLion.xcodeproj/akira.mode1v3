@@ -340,7 +340,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9A3BA7D0D66A4CB00EAA53F</string>
+										<string>E9A786EE0D66A528001672AC</string>
 										<key>history</key>
 										<array>
 											<string>E96A458B0D43CF4C00D6E1AF</string>
@@ -428,7 +428,7 @@
 											<string>E9A3BA660D669E9400EAA53F</string>
 											<string>E9A3BA6D0D669EF800EAA53F</string>
 											<string>E9A3BA760D66A06100EAA53F</string>
-											<string>E9A3BA770D66A06100EAA53F</string>
+											<string>E9A3BA7E0D66A4E700EAA53F</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -516,88 +516,7 @@
 											<string>E97DF2CC0D5F816E002AA043</string>
 											<string>E9E2AA500D65ED0B007ABBF1</string>
 											<string>E95EB8550D666D9B00DB05BF</string>
-											<string>E9A3B9BD0D66900200EAA53F</string>
-											<string>E9A3B9BE0D66900200EAA53F</string>
-											<string>E9A3B9BF0D66900200EAA53F</string>
-											<string>E9A3B9C00D66900200EAA53F</string>
-											<string>E9A3B9C10D66900200EAA53F</string>
-											<string>E9A3B9C20D66900200EAA53F</string>
 											<string>E9A3B9C30D66900200EAA53F</string>
-											<string>E9A3B9C40D66900200EAA53F</string>
-											<string>E9A3B9C50D66900200EAA53F</string>
-											<string>E9A3B9C60D66900200EAA53F</string>
-											<string>E9A3B9C70D66900200EAA53F</string>
-											<string>E9A3B9C80D66900200EAA53F</string>
-											<string>E9A3B9C90D66900200EAA53F</string>
-											<string>E9A3B9CA0D66900200EAA53F</string>
-											<string>E9A3B9CB0D66900200EAA53F</string>
-											<string>E9A3B9CC0D66900200EAA53F</string>
-											<string>E9A3B9CD0D66900200EAA53F</string>
-											<string>E9A3B9CE0D66900200EAA53F</string>
-											<string>E9A3B9CF0D66900200EAA53F</string>
-											<string>E9A3B9D00D66900200EAA53F</string>
-											<string>E9A3B9D10D66900200EAA53F</string>
-											<string>E9A3B9D20D66900200EAA53F</string>
-											<string>E9A3B9D30D66900200EAA53F</string>
-											<string>E9A3B9D40D66900200EAA53F</string>
-											<string>E9A3B9D50D66900200EAA53F</string>
-											<string>E9A3B9D60D66900200EAA53F</string>
-											<string>E9A3B9D70D66900200EAA53F</string>
-											<string>E9A3B9D80D66900200EAA53F</string>
-											<string>E9A3B9D90D66900200EAA53F</string>
-											<string>E9A3B9DA0D66900200EAA53F</string>
-											<string>E9A3B9DB0D66900200EAA53F</string>
-											<string>E9A3B9E70D6691C400EAA53F</string>
-											<string>E9A3B9E80D6691C400EAA53F</string>
-											<string>E9A3B9E90D6691C400EAA53F</string>
-											<string>E9A3B9EA0D6691C400EAA53F</string>
-											<string>E9A3B9EB0D6691C400EAA53F</string>
-											<string>E9A3B9F70D66937A00EAA53F</string>
-											<string>E9A3B9F80D66937A00EAA53F</string>
-											<string>E9A3B9F90D66937A00EAA53F</string>
-											<string>E9A3B9FA0D66937A00EAA53F</string>
-											<string>E9A3B9FB0D66937A00EAA53F</string>
-											<string>E9A3B9FC0D66937A00EAA53F</string>
-											<string>E9A3B9FD0D66937A00EAA53F</string>
-											<string>E9A3B9FE0D66937A00EAA53F</string>
-											<string>E9A3B9FF0D66937A00EAA53F</string>
-											<string>E9A3BA000D66937A00EAA53F</string>
-											<string>E9A3BA010D66937A00EAA53F</string>
-											<string>E9A3BA020D66937A00EAA53F</string>
-											<string>E9A3BA030D66937A00EAA53F</string>
-											<string>E9A3BA040D66937A00EAA53F</string>
-											<string>E9A3BA0D0D6693B700EAA53F</string>
-											<string>E9A3BA0E0D6693B700EAA53F</string>
-											<string>E9A3BA150D6695AC00EAA53F</string>
-											<string>E9A3BA160D6695AC00EAA53F</string>
-											<string>E9A3BA170D6695AC00EAA53F</string>
-											<string>E9A3BA210D66969C00EAA53F</string>
-											<string>E9A3BA220D66969C00EAA53F</string>
-											<string>E9A3BA230D66969C00EAA53F</string>
-											<string>E9A3BA310D66984800EAA53F</string>
-											<string>E9A3BA320D66984800EAA53F</string>
-											<string>E9A3BA390D669B0000EAA53F</string>
-											<string>E9A3BA3A0D669B0000EAA53F</string>
-											<string>E9A3BA3B0D669B0000EAA53F</string>
-											<string>E9A3BA420D669B8100EAA53F</string>
-											<string>E9A3BA480D669CB200EAA53F</string>
-											<string>E9A3BA490D669CB200EAA53F</string>
-											<string>E9A3BA4A0D669CB200EAA53F</string>
-											<string>E9A3BA4E0D669D4D00EAA53F</string>
-											<string>E9A3BA590D669E4100EAA53F</string>
-											<string>E9A3BA5A0D669E4100EAA53F</string>
-											<string>E9A3BA5B0D669E4100EAA53F</string>
-											<string>E9A3BA5C0D669E4100EAA53F</string>
-											<string>E9A3BA5D0D669E4100EAA53F</string>
-											<string>E9A3BA5E0D669E4100EAA53F</string>
-											<string>E9A3BA5F0D669E4100EAA53F</string>
-											<string>E9A3BA600D669E4100EAA53F</string>
-											<string>E9A3BA670D669E9400EAA53F</string>
-											<string>E9A3BA680D669E9400EAA53F</string>
-											<string>E9A3BA690D669E9400EAA53F</string>
-											<string>E9A3BA6E0D669EF800EAA53F</string>
-											<string>E9A3BA6F0D669EF800EAA53F</string>
-											<string>E9A3BA780D66A06100EAA53F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -655,9 +574,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E9A3B98E0D6687B300EAA53F</string>
+				<string>E9A786EF0D66A528001672AC</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E9A3B98F0D6687B300EAA53F</string>
+				<string>E9A786F00D66A528001672AC</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -791,9 +710,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
-		<string>E9160C000D11F6C700C9EEFF</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

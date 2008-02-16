@@ -419,7 +419,7 @@
     [urlStr appendString:@".xml"];
     
     TwitterFavoriteCallbackHandler *handler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:_callback];
-    [_connectionForPost release];
+    [_connectionForFavorite release];
     _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:urlStr
                                                             username:username
                                                             password:password

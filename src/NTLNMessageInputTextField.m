@@ -26,7 +26,7 @@
     _defaultHeight = [self frame].size.height;
     [self setupColors];
     [self setupPlaceholderString];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSettingChanged:)
                                                  name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
