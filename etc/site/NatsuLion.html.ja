@@ -62,6 +62,7 @@
 </p>
 <p>
 <img src="images/ss1.png" alt="screen shot 1">
+<img src="images/ss_dark1.png" alt="screen shot 2 (dark color scheme)">
 </p>
 
 <h3>主な機能</h3>
@@ -114,7 +115,7 @@
 <h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip">download</a>
 <p>
 <p>
-カラースキームを選択できるようになり、デフォルトが Dark になりました。以前の状態に戻すには 設定/Appearance タブで Light を選択し Window Transparency を一番右に設定してください。
+カラースキームを選択できるようになり、デフォルトで透過ウィンドウになりました。以前の状態に戻すには 設定/Appearance タブで Light を選択し Window Transparency を一番右に設定してください。
 </p>
 Improvement
 <ul>
