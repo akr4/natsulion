@@ -1,18 +1,45 @@
 #import "NTLNMessageInputTextField.h"
 #import "NTLNURLUtils.h"
+#import "NTLNColors.h"
+#import "NTLNConfiguration.h"
 
 #define MARGIN 4.0f
 
 @implementation NTLNMessageInputTextField
 
+- (void) setupColors {
+    _backgroundColor = [[[NTLNColors instance] colorForBackground] retain];
+    [self setBackgroundColor:_backgroundColor];
+    [self setTextColor:[[NTLNColors instance] colorForText]];
+    [(NSTextView*)[[self window] fieldEditor:TRUE forObject:self] setInsertionPointColor:[[NTLNColors instance] colorForText]];
+}
+
+- (void) setupPlaceholderString {
+    NSMutableAttributedString *placeHolderString = [[[NSMutableAttributedString alloc] initWithString:@"Input your message and press \"Enter\" key"] autorelease];
+    NSRange range = NSMakeRange(0, [placeHolderString length]);
+    [placeHolderString addAttribute:NSForegroundColorAttributeName value:[[NTLNColors instance] colorForSubText2] range:range];
+    [[self cell] setPlaceholderAttributedString:placeHolderString];
+}
+
 - (void) awakeFromNib {
     [self setDelegate:self];
     _defaultHeight = [self frame].size.height;
-    _defaultBackgroundColor = [[self backgroundColor] retain];
+    [self setupColors];
+    [self setupPlaceholderString];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(colorSettingChanged:)
+                                                 name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(colorSettingChanged:)
+                                                 name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
+                                               object:nil];
+    
 }
 
 - (void) dealloc  {
-    [_defaultBackgroundColor release];
+    [_backgroundColor release];
     [super dealloc];
 }
 
@@ -74,21 +101,24 @@
     if (_maxLength <= [[self stringValue] length]) {
         _lengthState = NTLN_LENGTH_STATE_MAXIMUM;
         //                [self setEnabled:FALSE];
-        [self setBackgroundColor:[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:1 alpha:1]];
+        [_backgroundColor release];
+        _backgroundColor = [[[NTLNColors instance] colorForError] retain];
     }
 }
 
 - (void) checkAndUpdateWarningLength {
     if (_warningLength <= [[self stringValue] length] && [[self stringValue] length] < _maxLength) {
         _lengthState = NTLN_LENGTH_STATE_WARNING;
-        [self setBackgroundColor:[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:1 alpha:1]];
+        [_backgroundColor release];
+        _backgroundColor = [[[NTLNColors instance] colorForWarning] retain];
     }
 }
 
 - (void) checkAndUpdateNormalLength {
     if ([[self stringValue] length] < _warningLength) {
         _lengthState = NTLN_LENGTH_STATE_NORMAL;
-        [self setBackgroundColor:_defaultBackgroundColor];
+        [_backgroundColor release];
+        _backgroundColor = [[[NTLNColors instance] colorForBackground] retain];
     }
 }
 
@@ -194,6 +224,13 @@
 //    
 //    [self setStringValue:newText];
 //    [self textChanged];
+}
+
+#pragma mark Notification
+- (void) colorSettingChanged:(NSNotification*)notification {
+    [self setupColors];
+    [self setupPlaceholderString];
+    [self setNeedsDisplay:TRUE];
 }
 
 @end

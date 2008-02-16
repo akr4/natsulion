@@ -8,6 +8,7 @@
     TwitterStatusViewController *_controller;
 }
 
+- (void) notifyColorChange;
 - (void) highlight;
 - (void) unhighlight;
 - (void) setStatus:(TwitterStatus*)status;

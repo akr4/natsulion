@@ -48,16 +48,16 @@
 
 - (void)mouseEntered:(NSEvent *)theEvent {
     if ([self highlighted]) {
-        [self setTextColor:[NTLNColors colorForHighlightedLink]];
+        [self setTextColor:[[NTLNColors instance] colorForHighlightedLink]];
     } else {
-        [self setTextColor:[NTLNColors colorForLink]];
+        [self setTextColor:[[NTLNColors instance] colorForLink]];
     }
     _mouseIsOnText = TRUE;
 }
 
 - (void)mouseExited:(NSEvent *)theEvent {
     if ([self highlighted]) {
-        [self setTextColor:[NTLNColors colorForHighlightedText]];
+        [self setTextColor:[[NTLNColors instance] colorForHighlightedText]];
     } else {
         [self setTextColor:[self defaultColor]];
     }

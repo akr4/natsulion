@@ -10,11 +10,9 @@
 	<false/>
     <key>timelineSortOrder</key>
 	<real>0</real>
-    <key>alwaysExpandMessage</key>
-    <true/>
     <key>usePost</key>
     <false/>
-    <key>windowTransparency</key>
-    <real>1.0</real>
+    <key>colorScheme</key>
+    <real>1</real>
 </dict>
 </plist>

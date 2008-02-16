@@ -33,6 +33,9 @@
     [self setImageFrameStyle:NSImageFrameNone];
 }
 
+- (void) notifyColorChange {
+}
+
 - (void) highlight {
 }
 

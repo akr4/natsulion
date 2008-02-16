@@ -1,5 +1,6 @@
 #import "TwitterStatusViewController.h"
 #import "NTLNMainWindowController.h"
+#import "NTLNConfiguration.h"
 
 static NSImage *favoliteIcon;
 static NSImage *highlightedFavoliteIcon;
@@ -49,6 +50,16 @@ static TwitterStatusViewController *starred = nil;
     [view setViewController:self];
     [view setTwitterStatus:_status];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(colorSchemeChanged:)
+                                                 name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(colorSchemeChanged:)
+                                                 name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
+                                               object:nil];
+    
+
     return self;
 }
 
@@ -61,6 +72,7 @@ static TwitterStatusViewController *starred = nil;
 }
 
 - (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [_status release];
     [_listener release];
     [textField removeFromSuperview];
@@ -86,6 +98,7 @@ static TwitterStatusViewController *starred = nil;
 }
      
 - (void) highlight {
+    _highlighted = TRUE;
     [view highlight];
     [textField highlight];
     [nameField highlight];
@@ -94,6 +107,7 @@ static TwitterStatusViewController *starred = nil;
 }
 
 - (void) unhighlight {
+    _highlighted = FALSE;
     [view unhighlight];
     [textField unhighlight];
     [nameField unhighlight];
@@ -139,6 +153,17 @@ static TwitterStatusViewController *starred = nil;
         }
         [favoliteButton setHidden:!show];
     }
+}
+
+#pragma mark Notification
+- (void) colorSchemeChanged:(NSNotification*)notification {
+    if (_highlighted) {
+        [self highlight];
+    } else {
+        [self unhighlight];
+    }
+    
+    [view notifyColorChange];
 }
 
 @end

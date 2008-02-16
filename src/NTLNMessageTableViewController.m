@@ -2,12 +2,26 @@
 #import "NTLNCustomViewCell.h"
 #import "TwitterStatusViewController.h"
 #import "NTLNConfiguration.h"
+#import "NTLNColors.h"
 
 @implementation NTLNMessageTableView
 
 - (void) _highlightRow:(int) row clipRect:(NSRect) clip {
-    [[NSColor alternateSelectedControlColor] set];
+    [[[NTLNColors instance] colorForHighlightedBackground] set];
     NSRectFill([self rectOfRow:row]);
+//    NSRectFillUsingOperation([self rectOfRow:row], NSCompositeCopy);
+}
+
+- (void) drawBackgroundInClipRect:(NSRect)clipRect {
+	// make sure we do nothing so the drawRow method's drawing will take effect
+}
+
+- (void) drawRow:(int)row clipRect:(NSRect)rect {
+	[super drawRow:row clipRect:rect];
+    if ([self selectedRow] != row) {
+        [[[[NTLNColors instance] controlAlternatingRowBackgroundColors] objectAtIndex:(row % 2)] set];
+        NSRectFillUsingOperation([self rectOfRow:row], NSCompositeCopy);
+    }
 }
 
 @end
@@ -21,11 +35,25 @@
     [[viewColumn tableView] setIntercellSpacing:NSMakeSize(0, 0)];
     [[viewColumn tableView] setDataSource:self];
     [[viewColumn tableView] setDelegate:self];
+    [[viewColumn tableView] setBackgroundColor:nil];
     
     [self reloadTimelineSortDescriptors];
     
     _autoscrollMinLimit = 1.0;
     _cumulativeDeltaHeight = 0.0;
+
+    // add objservers
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(colorSchemeChanged:)
+                                                 name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(windowAlphaChanged:)
+                                                 name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
+                                               object:nil];
+    
+    // TODO
+    [scrollView setBackgroundColor:[[NTLNColors instance] colorForBackground]];
 }
 
 - (void) dealloc {
@@ -33,6 +61,7 @@
     [messageViewControllerArrayController release];
     [super dealloc];
 }
+
 
 - (NSView*) viewForTabItem {
     return scrollView;
@@ -171,5 +200,13 @@
     }
 }
 
+#pragma mark Notification
+- (void) colorSchemeChanged:(NSNotification*)notification {
+    [self reloadTableView];
+}
+
+- (void) windowAlphaChanged:(NSNotification*)notification {
+//    [[viewColumn tableView] setAlphaValue:[[NTLNConfiguration instance] windowAlpha]];
+}
 
 @end

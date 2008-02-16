@@ -21,6 +21,7 @@
     NSObject<NTLNMessageViewListener> *_listener;
     BOOL _starHighlighted;
     BOOL _favoriteIsCreating;
+    BOOL _highlighted;
 }
 
 - (IBAction) toggleFavorite:(id)sender;

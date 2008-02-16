@@ -16,6 +16,7 @@
 + (void) initialize {
 //    NSLog(@"%s", __PRETTY_FUNCTION__); 
     [NTLNAppController setupDefaults];
+    [NSColor setIgnoresAlpha:FALSE];
 }
 
 - (void) dealloc {
@@ -60,7 +61,7 @@
     }
 }
 
-- (void) awakeFromNib {
+- (void) awakeFromNib { 
 }
 
 - (IBAction) showPreferencesSheet:(id)sender {

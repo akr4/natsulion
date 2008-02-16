@@ -6,6 +6,7 @@
 #import "NTLNErrorMessageViewController.h"
 #import "TwitterTestStub.h"
 #import "NTLNConfiguration.h"
+#import "NTLNColors.h"
 
 @implementation NTLNMainWindowController
 
@@ -119,12 +120,12 @@
     [messageTextField setCallback:self];
     [messageTextField setLengthForWarning:140 max:160];
     
-    [self bind:@"windowTransparency"
-      toObject:[NSUserDefaultsController sharedUserDefaultsController] 
-   withKeyPath:@"values.windowTransparency"
-       options:nil];
-    
     [self setupMenuAndToolbar];
+    [[self window] setOpaque:FALSE];
+    
+    //    NSColor *semiTransparentBlue =
+//    [NSColor colorWithDeviceRed:0.0 green:0.0 blue:1.0 alpha:0.5];
+//    [[self window] setBackgroundColor:semiTransparentBlue];
 }
 
 // this method is not needed actually but called by array controller's binding
@@ -135,14 +136,6 @@
     _growlEnabled = TRUE;
     [_afterLaunchedTimer release];
 //    NSLog(@"growl enabled");
-}
-
-- (void) setWindowTransparency:(float)alpha {
-    [mainWindow setAlphaValue:alpha];
-}
-
-- (float) windowTransparency {
-    return [mainWindow alphaValue];
 }
 
 - (void) showWindowToFront {
@@ -349,8 +342,6 @@
 
 #pragma mark MessageInputTextField callback
 - (void) messageInputTextFieldResized:(float)heightDelta {
-    [self windowTransparency];
-    
     [messageTableViewController resize:heightDelta];
 }
 

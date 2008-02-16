@@ -5,10 +5,6 @@
 
 @implementation TwitterStatusViewNameField
 
-- (void) awakeFromNib {
-    [super awakeFromNib];
-}
-
 - (void) setStatus:(TwitterStatus*)status {
     _status = status;
     [status retain];

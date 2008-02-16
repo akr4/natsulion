@@ -124,27 +124,27 @@
 }
 
 - (void) setMessage:(NSString*)message {
-    [self setValueAndFormat:message colorForText:[NTLNColors colorForText]];
+    [self setValueAndFormat:message colorForText:[[NTLNColors instance] colorForText]];
 }
 
 - (void) highlight {
     _highlighted = TRUE;
-    [self setValueAndFormat:[[textView textStorage] string] colorForText:[NTLNColors colorForHighlightedText]];
+    [self setValueAndFormat:[[textView textStorage] string] colorForText:[[NTLNColors instance] colorForHighlightedText]];
     [textView setSelectable:TRUE];
     [textView setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                     [NSNumber numberWithInt:NSUnderlineStyleNone], NSUnderlineStyleAttributeName,
-                                    [NTLNColors colorForHighlightedLink], NSForegroundColorAttributeName,
+                                    [[NTLNColors instance] colorForHighlightedLink], NSForegroundColorAttributeName,
                                     [NSCursor pointingHandCursor], NSCursorAttributeName,
                                     nil]];
 }
 
 - (void) unhighlight {
     _highlighted = FALSE;
-    [self setValueAndFormat:[[textView textStorage] string] colorForText:[NTLNColors colorForText]];
+    [self setValueAndFormat:[[textView textStorage] string] colorForText:[[NTLNColors instance] colorForText]];
     [textView setSelectable:FALSE];
     [textView setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSNumber numberWithInt:NSUnderlineStyleNone], NSUnderlineStyleAttributeName,
-                                 [NTLNColors colorForLink], NSForegroundColorAttributeName,
+                                 [[NTLNColors instance] colorForLink], NSForegroundColorAttributeName,
                                  [NSCursor pointingHandCursor], NSCursorAttributeName,
                                  nil]];
 }

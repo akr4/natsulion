@@ -3,8 +3,15 @@
 
 @implementation NTLNMessageViewTextField
 
-- (id) init {
-    return self;
+- (void) setupColors {
+    [_defaultColor release];
+    _defaultColor = [[[NTLNColors instance] colorForSubText] retain];
+    [self setTextColor:_defaultColor];
+}
+
+- (void) awakeFromNib {
+    _highlighted = FALSE;
+    [self setupColors];
 }
 
 - (void) dealloc {
@@ -12,18 +19,23 @@
     [super dealloc];
 }
 
-- (void) awakeFromNib {
-    _defaultColor = [[self textColor] retain];
-    _highlighted = FALSE;
+- (void) notifyColorChange {
+    if (_highlighted) {
+        [self highlight];
+    } else {
+        [self unhighlight];
+    }
+    [self setupColors];
+    [self setNeedsDisplay:TRUE];
 }
 
 - (void) highlight {
-    [self setTextColor:[NTLNColors colorForHighlightedText]];
+    [self setTextColor:[[NTLNColors instance] colorForHighlightedText]];
     _highlighted = TRUE;
 }
 
 - (void) unhighlight {
-    [self setTextColor:_defaultColor];
+    [self setTextColor:[[NTLNColors instance] colorForSubText]];
     _highlighted = FALSE;
 }
 

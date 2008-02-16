@@ -14,7 +14,7 @@ enum NTLNMessageInputTextFieldLengthState {
 @interface NTLNMessageInputTextField : NSTextField {
     NSObject<NTLNMessageInputTextFieldCallback> *_callback;
     float _defaultHeight;
-    NSColor *_defaultBackgroundColor;
+    NSColor *_backgroundColor;
     BOOL _frameSizeInternalChanging;
     int _warningLength;
     int _maxLength;

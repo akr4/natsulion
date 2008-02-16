@@ -10,5 +10,6 @@
 - (void) unhighlight;
 - (BOOL) highlighted;
 - (NSColor*) defaultColor;
+- (void) notifyColorChange;
 
 @end

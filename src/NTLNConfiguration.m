@@ -1,9 +1,10 @@
 #import "NTLNConfiguration.h"
 #import "NTLNMainWindowController.h"
+#import "NTLNColors.h"
 
 @implementation NTLNConfiguration
 
-@synthesize useGrowl, showWindowWhenNewMessage, refreshInterval, usePost, windowTransparency;
+@synthesize useGrowl, showWindowWhenNewMessage, refreshInterval, usePost, editWindowAlphaManually;
 
 static id _instance = nil;
 
@@ -60,8 +61,8 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self bindToProperty:@"useGrowl"];
     [self bindToProperty:@"showWindowWhenNewMessage"];
     [self bindToProperty:@"usePost"];
+    [self bindToProperty:@"editWindowAlphaManually"];
     [self bindToProperty:@"refreshInterval"];
-    [self bindToProperty:@"windowTransparency"];
     return self;
 }
 
@@ -76,6 +77,35 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 
 + (void) setTimelineSortOrderChangeObserver:(id<NTLNTimelineSortOrderChangeObserver>)observer {
     _timelineSortOrderChangeObserver = observer;
+}
+
+- (int) colorScheme {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"colorScheme"];
+}
+
+- (void) setColorScheme:(int)scheme {
+    [[NSUserDefaults standardUserDefaults] setInteger:scheme forKey:@"colorScheme"];
+    [[NTLNColors instance] notifyConfigurationChange];
+    if (!editWindowAlphaManually) {
+        if (scheme == NTLN_CONFIGURATION_COLOR_SCHEME_LIGHT) {
+            [self setWindowAlpha:NTLN_COLORS_LIGHT_SCHEME_DEFAULT_ALPHA];
+        } else {
+            [self setWindowAlpha:NTLN_COLORS_DARK_SCHEME_DEFAULT_ALPHA];
+        }
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED object:nil];
+}
+
+- (float) windowAlpha {
+//    NSLog(@"%s: %f", __PRETTY_FUNCTION__, [[NSUserDefaults standardUserDefaults] floatForKey:@"windowTransparency"]);
+    return [[NSUserDefaults standardUserDefaults] floatForKey:@"windowAlpha"];
+}
+
+- (void) setWindowAlpha:(float)value {
+//    NSLog(@"%s: %f", __PRETTY_FUNCTION__, value);
+    [[NSUserDefaults standardUserDefaults] setFloat:value forKey:@"windowAlpha"];
+    [[NTLNColors instance] notifyConfigurationChange];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED object:nil];
 }
 
 @end

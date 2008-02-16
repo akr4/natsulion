@@ -74,19 +74,28 @@
     [super dealloc];
 }
 
+- (void) notifyColorChange {
+    [self setNeedsDisplay:TRUE];
+}
+
 - (void) highlight {
     _highlighted = TRUE;
     
     switch ([_status replyType]) {
         case MESSAGE_REPLY_TYPE_DIRECT:
         case MESSAGE_REPLY_TYPE_REPLY:
-            _backgroundColor = [NTLNColors colorForHighlightedReply];
+            [_backgroundColor release];
+            _backgroundColor = [[[NTLNColors instance] colorForHighlightedReply] retain];
             break;
         case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
-            _backgroundColor = [NTLNColors colorForHighlightedProbableReply];
+            [_backgroundColor release];
+            _backgroundColor = [[[NTLNColors instance] colorForHighlightedProbableReply] retain];
             break;
         case MESSAGE_REPLY_TYPE_NORMAL:
+//            [_backgroundColor release];
+//            _backgroundColor = [[[NTLNColors instance] colorForHighlightedBackground] retain];
         default:
+            _backgroundColor = nil;
             break;
     }
 }
@@ -97,13 +106,18 @@
     switch ([_status replyType]) {
         case MESSAGE_REPLY_TYPE_DIRECT:
         case MESSAGE_REPLY_TYPE_REPLY:
-            _backgroundColor = [NTLNColors colorForReply];
+            [_backgroundColor release];
+            _backgroundColor = [[[NTLNColors instance] colorForReply] retain];
             break;
         case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
-            _backgroundColor = [NTLNColors colorForProbableReply];
+            [_backgroundColor release];
+            _backgroundColor = [[[NTLNColors instance] colorForProbableReply] retain];
             break;
         case MESSAGE_REPLY_TYPE_NORMAL:
+//            [_backgroundColor release];
+//            _backgroundColor = [[[NTLNColors instance] colorForBackground] retain];
         default:
+            _backgroundColor = nil;
             break;
     }
 }
@@ -113,7 +127,7 @@
         return;
     }
     [_backgroundColor set];
-    NSRectFill(aRect);
+    NSRectFillUsingOperation(aRect, NSCompositeCopy);
 }
 
 - (void) setViewController:(TwitterStatusViewController*)controller {

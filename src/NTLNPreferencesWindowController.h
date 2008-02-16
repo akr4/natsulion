@@ -9,14 +9,17 @@
 #define NTLN_PREFERENCE_REFRESH_INTERVAL @"refreshInterval"
 
 @interface NTLNPreferencesWindowController : NSWindowController<TwitterCheckCallback> {
+
+    IBOutlet NTLNAppController *appController;
+
+#pragma mark Basic Tab
     IBOutlet NSPanel *accountInfoSheet;
     IBOutlet NSProgressIndicator *checkAuthProgressIndicator;
     IBOutlet NSTextField *messageArea;
     IBOutlet NSTextField *userIdField;
     IBOutlet NSTextField *passwordField;
     IBOutlet NSButton *nextButton;
-    IBOutlet NTLNAppController *appController;
-    
+
     TwitterCheck *_twitterCheck;
 }
 
