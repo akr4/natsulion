@@ -187,7 +187,6 @@
 }
 
 - (void) updateStatus {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {
         // TODO inform error to user

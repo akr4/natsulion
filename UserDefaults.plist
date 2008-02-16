@@ -2,8 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>refreshInterval</key>
-	<real>1</real>
+	<key>refreshIntervalSeconds</key>
+	<real>60</real>
 	<key>showWindowWhenNewMessage</key>
 	<false/>
 	<key>useGrowl</key>

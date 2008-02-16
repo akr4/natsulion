@@ -4,7 +4,7 @@
 
 @implementation NTLNConfiguration
 
-@synthesize useGrowl, showWindowWhenNewMessage, refreshInterval, usePost, editWindowAlphaManually, decodeHeart;
+@synthesize useGrowl, showWindowWhenNewMessage, refreshIntervalSeconds, usePost, editWindowAlphaManually, decodeHeart;
 
 static id _instance = nil;
 
@@ -57,16 +57,32 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
        options:nil];
 }
 
+// TODO: remove this method at 0.30 or 1.0)
+- (void) migrateRefreshInterval {
+    NSNumber *i = [[NSUserDefaults standardUserDefaults] objectForKey:@"refreshInterval"];
+    if (i) {
+        int sec = [i intValue] * 60;
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:sec] forKey:@"refreshIntervalSeconds"];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"refreshInterval"];
+        NSLog(@"refreshInterval has been migrated to refreshIntervalSeconds:%d", sec);
+    }
+}
+
+- (void) migrateConfiguration {
+    [self migrateRefreshInterval];
+}
+
 - (id) init {
     [self bindToProperty:@"useGrowl"];
     [self bindToProperty:@"showWindowWhenNewMessage"];
     [self bindToProperty:@"usePost"];
     [self bindToProperty:@"editWindowAlphaManually"];
     [self bindToProperty:@"decodeHeart"];
-    [self bindToProperty:@"refreshInterval"];
+    [self bindToProperty:@"refreshIntervalSeconds"];
     
     [[NSUserDefaults standardUserDefaults] setObject:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"] forKey:@"version"];
-
+    [self migrateConfiguration];
+    
     return self;
 }
 

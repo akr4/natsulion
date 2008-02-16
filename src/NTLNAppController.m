@@ -43,11 +43,11 @@
 - (void) startTimer {
     [self resetTimer];
     
-    if (_refreshInterval < 1) {
+    if (_refreshInterval < 30) {
         return;
     }
 
-    _refreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval * 60
+    _refreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval
                                                       target:mainWindowController
                                                     selector:@selector(updateStatus)
                                                     userInfo:nil
@@ -95,7 +95,7 @@
     
     [self bind:@"refreshInterval"
       toObject:[NSUserDefaultsController sharedUserDefaultsController] 
-   withKeyPath:@"values.refreshInterval"
+   withKeyPath:@"values.refreshIntervalSeconds"
        options:nil];
     
     [welcomeWindowController setWelcomeWindowControllerCallback:self];

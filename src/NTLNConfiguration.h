@@ -18,11 +18,11 @@
     BOOL editWindowAlphaManually;
     BOOL decodeHeart;
     NSString *version;
-    int refreshInterval;
+    int refreshIntervalSeconds;
 }
 
 @property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart;
-@property int refreshInterval;
+@property int refreshIntervalSeconds;
 
 + (id) instance;
 - (int) timelineSortOrder;
