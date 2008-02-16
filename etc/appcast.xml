@@ -9,6 +9,25 @@
     <item>
       <title>NatsuLion Version 0.23</title>
       <description>
+        Release Notes - NatsuLion - Version 0.23
+        
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-112'&gt;NTLN-112&lt;/a&gt;] -         move Refresh menu item under View menu
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-113'&gt;NTLN-113&lt;/a&gt;] -         add version number to the plist file
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-108'&gt;NTLN-108&lt;/a&gt;] -         provide dark color scheme
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-114'&gt;NTLN-114&lt;/a&gt;] -         display &lt;3 as a heart mark
+&lt;/li&gt;
+&lt;/ul&gt;
       </description>
       <pubDate>Sat, 16 Feb 2008 13:09:00 +9000</pubDate>
       <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip"

@@ -16,5 +16,9 @@
     <true/>
     <key>colorScheme</key>
     <real>1</real>
+    <key>editWindowAlphaManually</key>
+    <false/>
+    <key>windowAlpha</key>
+    <real>0.6</real>
 </dict>
 </plist>

@@ -111,6 +111,28 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip">download</a>
+<p>
+<p>
+カラースキームを選択できるようになり、デフォルトが Dark になりました。以前の状態に戻すには 設定/Appearance タブで Light を選択し Window Transparency を一番右に設定してください。
+</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-112'>NTLN-112</a>] -         move Refresh menu item under View menu
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-113'>NTLN-113</a>] -         add version number to the plist file
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-108'>NTLN-108</a>] -         provide dark color scheme
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-114'>NTLN-114</a>] -         display &lt;3 as a heart mark
+</li>
+</ul>
+</p>
+    
 <h3>Version 0.22 (2008/02/11) </h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.22.zip">download</a>
 <p>    
 Bug
