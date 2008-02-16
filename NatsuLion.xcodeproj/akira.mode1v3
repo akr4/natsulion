@@ -197,48 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>E9A3B96B0D66819F00EAA53F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>TwitterStatusViewMessageField.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E9A3B96C0D66819F00EAA53F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>TwitterStatusViewMessageField.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E9A3B9870D66831200EAA53F</string>
-						<key>history</key>
-						<array>
-							<string>E9A3B95A0D6680A500EAA53F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {821, 744}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 388 821 785 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -272,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -362,8 +323,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -378,10 +337,6 @@
 										<string>E95D35960D2F753A00EA6958</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>NTLNColors.m</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>E9A3B9860D66831200EAA53F</string>
 										<key>history</key>
 										<array>
 											<string>E96A458B0D43CF4C00D6E1AF</string>
@@ -556,19 +511,6 @@
 											<string>E97DF2CC0D5F816E002AA043</string>
 											<string>E9E2AA500D65ED0B007ABBF1</string>
 											<string>E95EB8550D666D9B00DB05BF</string>
-											<string>E9A3B93B0D667CA600EAA53F</string>
-											<string>E9A3B9640D66819F00EAA53F</string>
-											<string>E9A3B9650D66819F00EAA53F</string>
-											<string>E9A3B9660D66819F00EAA53F</string>
-											<string>E9A3B9670D66819F00EAA53F</string>
-											<string>E9A3B9680D66819F00EAA53F</string>
-											<string>E9A3B9690D66819F00EAA53F</string>
-											<string>E9A3B9720D66820F00EAA53F</string>
-											<string>E9A3B9730D66820F00EAA53F</string>
-											<string>E9A3B97A0D66829D00EAA53F</string>
-											<string>E9A3B97B0D66829D00EAA53F</string>
-											<string>E9A3B97C0D66829D00EAA53F</string>
-											<string>E9A3B9820D6682DF00EAA53F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -626,9 +568,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>E9A3B93D0D667CA600EAA53F</string>
+				<string>E9A3B98E0D6687B300EAA53F</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>E9A3B93E0D667CA600EAA53F</string>
+				<string>E9A3B98F0D6687B300EAA53F</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -762,10 +704,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
-		<string>E9A3B96B0D66819F00EAA53F</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -846,7 +785,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E9160C000D11F6C700C9EEFF</string>
-				<string>E9A3B93F0D667CA600EAA53F</string>
+				<string>E9A3B9900D6687B300EAA53F</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
