@@ -1,6 +1,7 @@
 #import "NTLNAppController.h"
 #import "NTLNPreferencesWindowController.h"
 #import "NTLNAccount.h"
+#import "NTLNConfiguration.h"
 
 @implementation NTLNAppController
 

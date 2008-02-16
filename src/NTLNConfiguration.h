@@ -16,11 +16,12 @@
     BOOL showWindowWhenNewMessage;
     BOOL usePost;
     BOOL editWindowAlphaManually;
+    BOOL decodeHeart;
+    NSString *version;
     int refreshInterval;
-
 }
 
-@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually;
+@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart;
 @property int refreshInterval;
 
 + (id) instance;

@@ -1,5 +1,5 @@
 #import "Twitter.h"
-
+#import "NTLNConfiguration.h"
 #import "NTLNXMLHTTPEncoder.h"
 
 @implementation NTLNErrorInfo
@@ -55,6 +55,12 @@
     //    }
     //
     //    return url;
+}
+
+- (NSString*) decodeHeart:(NSString*)aString {
+    NSMutableString *s = [[aString mutableCopy] autorelease];
+    [s replaceOccurrencesOfString:@"<3" withString:@"♥" options:0 range:NSMakeRange(0, [s length])];
+    return s;
 }
 
 - (NSString*) stringValueFromNSXMLNode:(NSXMLNode*)node byXPath:(NSString*)xpath {
@@ -118,6 +124,9 @@
         [backStatus setName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/name/text()"]]];
         [backStatus setScreenName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/screen_name/text()"]]];
         [backStatus setText:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"text/text()"]]];
+        if ([[NTLNConfiguration instance] decodeHeart]) {
+            [backStatus setText:[self decodeHeart:[backStatus text]]];
+        }
         
         NSString *timestampStr = [[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"created_at/text()"]];
         [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];

@@ -12,6 +12,8 @@
 	<real>0</real>
     <key>usePost</key>
     <false/>
+    <key>decodeHeart</key>
+    <true/>
     <key>colorScheme</key>
     <real>1</real>
 </dict>

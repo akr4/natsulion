@@ -7,6 +7,15 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.23</title>
+      <description>
+      </description>
+      <pubDate>Sat, 16 Feb 2008 13:09:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip"
+        length="754469"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.22</title>
       <description>
         Release Notes - NatsuLion - Version 0.22
