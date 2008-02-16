@@ -270,7 +270,6 @@
 								<string>E9614CDA0D27BAAD009743CE</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>E9614CDE0D27BC65009743CE</string>
-								<string>E91B3DBA0D13F893007C9762</string>
 								<string>29B97315FDCFA39411CA2CEA</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>089C165CFE840E0CC02AAC07</string>
@@ -285,13 +284,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>39</integer>
+									<integer>26</integer>
 									<integer>6</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 388}, {243, 600}}</string>
+							<string>{{0, 102}, {243, 600}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -328,7 +327,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NTLNAppController.m</string>
+								<string>NTLNMessageListViewsController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,11 +335,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>E95D35960D2F753A00EA6958</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NTLNAppController.m</string>
+										<string>NTLNMessageListViewsController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9A787290D66D385001672AC</string>
+										<string>E9A787920D66F841001672AC</string>
 										<key>history</key>
 										<array>
 											<string>E96A458B0D43CF4C00D6E1AF</string>
@@ -366,7 +365,6 @@
 											<string>E97DF2BD0D5F816E002AA043</string>
 											<string>E97DF2C00D5F816E002AA043</string>
 											<string>E97DF3AE0D601610002AA043</string>
-											<string>E97DF3CC0D6018A9002AA043</string>
 											<string>E97DF3D70D6019AE002AA043</string>
 											<string>E9A4EECF0D603F85008FDA13</string>
 											<string>E9A4EED00D603F85008FDA13</string>
@@ -390,7 +388,6 @@
 											<string>E95EB74E0D65F45700DB05BF</string>
 											<string>E95EB7510D65F45700DB05BF</string>
 											<string>E95EB7870D66056800DB05BF</string>
-											<string>E95EB78F0D66056800DB05BF</string>
 											<string>E95EB7900D66056800DB05BF</string>
 											<string>E95EB7910D66056800DB05BF</string>
 											<string>E95EB7E80D660EE400DB05BF</string>
@@ -413,22 +410,24 @@
 											<string>E9A3B9E40D6691C400EAA53F</string>
 											<string>E9A3B9F10D66937A00EAA53F</string>
 											<string>E9A3BA0C0D6693B700EAA53F</string>
-											<string>E9A3BA120D6695AC00EAA53F</string>
 											<string>E9A3BA380D669B0000EAA53F</string>
-											<string>E9A3BA400D669B8100EAA53F</string>
 											<string>E9A3BA540D669E4100EAA53F</string>
 											<string>E9A3BA650D669E9400EAA53F</string>
-											<string>E9A3BA660D669E9400EAA53F</string>
 											<string>E9A3BA6D0D669EF800EAA53F</string>
 											<string>E9A786FE0D66CBB3001672AC</string>
-											<string>E9A786FF0D66CBB3001672AC</string>
 											<string>E9A787000D66CBB3001672AC</string>
 											<string>E9A787010D66CBB3001672AC</string>
 											<string>E9A787020D66CBB3001672AC</string>
-											<string>E9A787030D66CBB3001672AC</string>
 											<string>E9A787240D66D385001672AC</string>
-											<string>E9A787250D66D385001672AC</string>
-											<string>E9A787260D66D385001672AC</string>
+											<string>E9A7873B0D66EB0B001672AC</string>
+											<string>E9A7874E0D66EBDD001672AC</string>
+											<string>E9A787650D66ED87001672AC</string>
+											<string>E9A787700D66F028001672AC</string>
+											<string>E9A787790D66F244001672AC</string>
+											<string>E9A787830D66F718001672AC</string>
+											<string>E9A787840D66F718001672AC</string>
+											<string>E9A7878C0D66F770001672AC</string>
+											<string>E9A7878D0D66F770001672AC</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -535,6 +534,39 @@
 											<string>E9A787160D66CBB3001672AC</string>
 											<string>E9A787270D66D385001672AC</string>
 											<string>E9A787280D66D385001672AC</string>
+											<string>E9A7873F0D66EB0B001672AC</string>
+											<string>E9A787400D66EB0B001672AC</string>
+											<string>E9A787410D66EB0B001672AC</string>
+											<string>E9A787420D66EB0B001672AC</string>
+											<string>E9A787430D66EB0B001672AC</string>
+											<string>E9A787440D66EB0B001672AC</string>
+											<string>E9A787450D66EB0B001672AC</string>
+											<string>E9A787460D66EB0B001672AC</string>
+											<string>E9A787470D66EB0B001672AC</string>
+											<string>E9A787480D66EB0B001672AC</string>
+											<string>E9A787490D66EB0B001672AC</string>
+											<string>E9A7874A0D66EB0B001672AC</string>
+											<string>E9A787500D66EBDD001672AC</string>
+											<string>E9A787510D66EBDD001672AC</string>
+											<string>E9A787520D66EBDD001672AC</string>
+											<string>E9A787530D66EBDD001672AC</string>
+											<string>E9A7875E0D66EC9A001672AC</string>
+											<string>E9A7875F0D66EC9A001672AC</string>
+											<string>E9A787670D66ED87001672AC</string>
+											<string>E9A787680D66ED87001672AC</string>
+											<string>E9A787690D66ED87001672AC</string>
+											<string>E9A7876A0D66ED87001672AC</string>
+											<string>E9A787720D66F028001672AC</string>
+											<string>E9A787730D66F028001672AC</string>
+											<string>E9A787740D66F028001672AC</string>
+											<string>E9A787750D66F028001672AC</string>
+											<string>E9A7877B0D66F244001672AC</string>
+											<string>E9A787870D66F718001672AC</string>
+											<string>E9A787880D66F718001672AC</string>
+											<string>E9A787890D66F718001672AC</string>
+											<string>E9A7878A0D66F718001672AC</string>
+											<string>E9A7878E0D66F770001672AC</string>
+											<string>E9A7878F0D66F770001672AC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -728,9 +760,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

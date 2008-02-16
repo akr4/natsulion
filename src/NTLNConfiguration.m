@@ -129,4 +129,12 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED object:nil];
 }
 
+- (NSTimeInterval) latestTimestampOfMessage {
+    return [[NSUserDefaults standardUserDefaults] doubleForKey:@"latestTimestampOfMessage"];
+}
+
+- (void) setLatestTimestampOfMessage:(NSTimeInterval)interval {
+    [[NSUserDefaults standardUserDefaults] setFloat:interval forKey:@"latestTimestampOfMessage"];
+}
+
 @end

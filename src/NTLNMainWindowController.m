@@ -179,9 +179,11 @@
     
     [messageViewControllerArrayController setFilterPredicate:nil];
     if ([[messageViewControllerArrayController arrangedObjects] containsObject:newController]) {
+        [messageListViewsController applyCurrentPredicate];
         return FALSE;
     }
     
+
     [self addMessageViewController:newController];
     return TRUE;
 }
@@ -278,6 +280,9 @@
                 case MESSAGE_REPLY_TYPE_REPLY:
                     priority = 2;
                     sticky = TRUE;
+                    if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
+                        [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
+                    }
                     break;
                 case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
                     priority = 1;

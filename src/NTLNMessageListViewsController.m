@@ -1,5 +1,6 @@
 #import "NTLNMessageListViewsController.h"
 #import "NTLNAccount.h"
+#import "NTLNConfiguration.h"
 
 // class holds an information of a message view which can be switched by messageViewSelector.
 @interface NTLNMessageViewInfo : NSObject {
@@ -49,7 +50,10 @@
     _messageViewInfoArray = [[NSMutableArray alloc] initWithCapacity:10];
     _currentViewIndex = 0;
     
-    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:nil]];
+//    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:nil]];
+    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
+                                      [NSPredicate predicateWithFormat:@"message.replyType != 2 OR (message.replyType == 2 AND message.timestamp > %@)",
+                                       [NSDate dateWithTimeIntervalSince1970:[[NTLNConfiguration instance] latestTimestampOfMessage]]]]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
                                       [NSPredicate predicateWithFormat:@"message.replyType IN %@",
                                        [NSArray arrayWithObjects:

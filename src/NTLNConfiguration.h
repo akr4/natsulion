@@ -32,5 +32,7 @@
 - (void) setColorScheme:(int)scheme;
 - (float) windowAlpha;
 - (void) setWindowAlpha:(float)value;
-
+- (NSTimeInterval) latestTimestampOfMessage;
+- (void) setLatestTimestampOfMessage:(NSTimeInterval)interval;
+    
 @end
