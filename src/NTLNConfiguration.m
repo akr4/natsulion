@@ -91,6 +91,7 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [[NSUserDefaults standardUserDefaults] setInteger:scheme forKey:@"colorScheme"];
     [[NTLNColors instance] notifyConfigurationChange];
     if (!editWindowAlphaManually) {
+        
         if (scheme == NTLN_CONFIGURATION_COLOR_SCHEME_LIGHT) {
             [self setWindowAlpha:NTLN_COLORS_LIGHT_SCHEME_DEFAULT_ALPHA];
         } else {

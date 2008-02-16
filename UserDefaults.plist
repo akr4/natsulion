@@ -15,10 +15,10 @@
     <key>decodeHeart</key>
     <true/>
     <key>colorScheme</key>
-    <real>1</real>
+    <real>0</real>
     <key>editWindowAlphaManually</key>
     <false/>
     <key>windowAlpha</key>
-    <real>0.6</real>
+    <real>0.8</real>
 </dict>
 </plist>
