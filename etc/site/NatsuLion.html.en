@@ -108,6 +108,31 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-115'>NTLN-115</a>] -         crash on sending message
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-116'>NTLN-116</a>] -         refresh interval value is not shown
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-117'>NTLN-117</a>] -         not applicable messages are shown in &quot;replies&quot; tab when new message arrived
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-109'>NTLN-109</a>] -         hide replies shown at the previouse runtime
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-71'>NTLN-71</a>] -         download replies at startup
+</li>
+</ul>
+</p>
+
 <h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip">download</a>
 <p>
 Improvement
