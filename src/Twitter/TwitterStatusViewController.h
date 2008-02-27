@@ -16,7 +16,7 @@
     IBOutlet TwitterStatusViewNameField *nameField;
     IBOutlet TwitterStatusViewTimestampField *timestampField;
     IBOutlet NSButton *favoliteButton;
-    IBOutlet NSImageView *newIcon;
+    IBOutlet NSImageView *newIconImageView;
     
     TwitterStatus *_status;
     

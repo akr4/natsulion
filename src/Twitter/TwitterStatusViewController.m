@@ -5,7 +5,8 @@
 
 static NSImage *favoliteIcon;
 static NSImage *highlightedFavoliteIcon;
-static NSImage *newIcon;
+static NSImage *newLightIcon;
+static NSImage *newDarkIcon;
 static TwitterStatusViewController *starred = nil;
 
 @implementation TwitterStatusViewController
@@ -15,8 +16,10 @@ static TwitterStatusViewController *starred = nil;
     favoliteIcon = [[NSImage alloc] initByReferencingFile:path];
     path = [[NSBundle mainBundle] pathForResource:@"star-highlighted" ofType:@"png"];
     highlightedFavoliteIcon = [[NSImage alloc] initByReferencingFile:path];
-    path = [[NSBundle mainBundle] pathForResource:@"new" ofType:@"tiff"];
-    newIcon = [[NSImage alloc] initByReferencingFile:path];
+    path = [[NSBundle mainBundle] pathForResource:@"new_light" ofType:@"tiff"];
+    newLightIcon = [[NSImage alloc] initByReferencingFile:path];
+    path = [[NSBundle mainBundle] pathForResource:@"new_dark" ofType:@"tiff"];
+    newDarkIcon = [[NSImage alloc] initByReferencingFile:path];
 }
 
 - (void) fitToSuperviewWidth {
@@ -126,7 +129,7 @@ static TwitterStatusViewController *starred = nil;
 
 - (void) markAsRead {
     NSLog(@"%s: =%@", __PRETTY_FUNCTION__, [_status screenName]);
-    [newIcon setHidden:TRUE];
+    [newIconImageView setHidden:TRUE];
     [_status setStatus:NTLN_MESSAGE_STATUS_READ];
 }
 
@@ -205,6 +208,12 @@ static TwitterStatusViewController *starred = nil;
         [self highlight];
     } else {
         [self unhighlight];
+    }
+
+    if ([[NTLNConfiguration instance] colorScheme] == NTLN_CONFIGURATION_COLOR_SCHEME_LIGHT) {
+        [newIconImageView setImage:newLightIcon];
+    } else {
+        [newIconImageView setImage:newDarkIcon];
     }
     
     [view notifyColorChange];

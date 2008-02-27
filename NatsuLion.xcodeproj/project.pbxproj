@@ -31,7 +31,6 @@
 		E94B13CF0D6AA6C700F80617 /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = E94B13CE0D6AA6C700F80617 /* CTGradient.m */; };
 		E94B14DD0D6C18E700F80617 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94B14DC0D6C18E700F80617 /* QuartzCore.framework */; };
 		E94B14E00D6C18F700F80617 /* QuartzCore.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E94B14DC0D6C18E700F80617 /* QuartzCore.framework */; };
-		E951C1160D73E7B200D90FEC /* new.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E951C1150D73E7B200D90FEC /* new.tiff */; };
 		E95D34FB0D2F3F6700EA6958 /* NTLNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */; };
 		E9614CE10D27BC75009743CE /* NTLNURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* NTLNURLUtils.m */; };
 		E9614D130D27BEA4009743CE /* NTLNURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* NTLNURLUtils.m */; };
@@ -45,6 +44,8 @@
 		E96C36AD0D2A8C3700CED33F /* NTLNWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */; };
 		E97DF2AE0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */; };
 		E98B093C0D2172B90002A75E /* NTLNGrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */; };
+		E98B18840D75A4B2000F0FED /* new_light.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E98B18820D75A4B2000F0FED /* new_light.tiff */; };
+		E98B18850D75A4B2000F0FED /* new_dark.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E98B18830D75A4B2000F0FED /* new_dark.tiff */; };
 		E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */; };
 		E991C6650D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */; };
 		E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */; };
@@ -142,7 +143,6 @@
 		E94B13CD0D6AA6C700F80617 /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
 		E94B13CE0D6AA6C700F80617 /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
 		E94B14DC0D6C18E700F80617 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
-		E951C1150D73E7B200D90FEC /* new.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = new.tiff; sourceTree = "<group>"; };
 		E95D34F90D2F3F6700EA6958 /* NTLNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNColors.h; sourceTree = "<group>"; };
 		E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNColors.m; sourceTree = "<group>"; };
 		E9614CDB0D27BADC009743CE /* NTLNURLUtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNURLUtilsTest.h; sourceTree = "<group>"; };
@@ -167,6 +167,8 @@
 		E98B093A0D2172B90002A75E /* NTLNGrowlNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNGrowlNotifier.h; sourceTree = "<group>"; };
 		E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNGrowlNotifier.m; sourceTree = "<group>"; };
 		E98B18610D75A076000F0FED /* NTLNNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNNotification.h; sourceTree = "<group>"; };
+		E98B18820D75A4B2000F0FED /* new_light.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = new_light.tiff; sourceTree = "<group>"; };
+		E98B18830D75A4B2000F0FED /* new_dark.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = new_dark.tiff; sourceTree = "<group>"; };
 		E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		E991C6630D2AC7FC00F410B6 /* NTLNErrorMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNErrorMessageViewController.h; sourceTree = "<group>"; };
 		E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNErrorMessageViewController.m; sourceTree = "<group>"; };
@@ -433,7 +435,8 @@
 		E96A459B0D43D0BF00D6E1AF /* images */ = {
 			isa = PBXGroup;
 			children = (
-				E951C1150D73E7B200D90FEC /* new.tiff */,
+				E98B18820D75A4B2000F0FED /* new_light.tiff */,
+				E98B18830D75A4B2000F0FED /* new_dark.tiff */,
 				E96A459C0D43D0BF00D6E1AF /* star-highlighted.png */,
 				E96A459D0D43D0BF00D6E1AF /* star-normal.png */,
 			);
@@ -534,7 +537,8 @@
 				E920C3750D6A1B3700A813EB /* CTBadge_3.pdf in Resources */,
 				E920C3760D6A1B3700A813EB /* CTBadge_4.pdf in Resources */,
 				E920C3770D6A1B3700A813EB /* CTBadge_5.pdf in Resources */,
-				E951C1160D73E7B200D90FEC /* new.tiff in Resources */,
+				E98B18840D75A4B2000F0FED /* new_light.tiff in Resources */,
+				E98B18850D75A4B2000F0FED /* new_dark.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

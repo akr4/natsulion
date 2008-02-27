@@ -30,8 +30,6 @@
 				<string>TwitterStatusViewImageView</string>
 				<key>nameField</key>
 				<string>TwitterStatusViewNameField</string>
-				<key>newIcon</key>
-				<string>NSImageView</string>
 				<key>newIconImageView</key>
 				<string>NSImageView</string>
 				<key>textField</key>
