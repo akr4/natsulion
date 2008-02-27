@@ -26,4 +26,7 @@
 - (void) markNeedCalculateHeight;
 - (void) setViewController:(TwitterStatusViewController*)controller;
 
+// for TwitterStatusViewController
+- (NSColor*) backgroundColor;
+
 @end

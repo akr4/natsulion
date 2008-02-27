@@ -57,7 +57,7 @@
 </ul>
 を目指しています。
 
-最新版を<a href="http://www.physalis.net/NatsuLion/NatsuLion.zip">ダウンロード</a>!
+最新版を<a href="http://www.physalis.net/NatsuLion/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">ダウンロード</a>!
 
 </p>
 <p>
@@ -112,7 +112,7 @@
 </p>
 
 <h2>リリースノート</h2>
-<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip">download</a>
+<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.24.zip');">download</a>
 <p>
 <p>
 主にバグ修正です。新機能として起動時にリプライを取得するようになりました。タイムラインがわかりにくくなるのを防ぐため前回起動時以降に取得したリプライは Friends タブに表示しません。(最後に取得したリプライのタイムスタンプより新しいものだけを表示)
@@ -141,7 +141,7 @@ New Feature
 </ul>
 </p>
 
-<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip">download</a>
+<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.23.zip');">download</a>
 <p>
 <p>
 カラースキームを選択できるようになり、デフォルトで透過ウィンドウになりました。以前の状態に戻すには 設定/Appearance タブで Light を選択し Window Transparency を一番右に設定してください。
@@ -163,7 +163,7 @@ New Feature
 </ul>
 </p>
     
-<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.22.zip">download</a>
+<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.22.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.22.zip');">download</a>
 <p>    
 Bug
 <ul>

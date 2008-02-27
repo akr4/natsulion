@@ -3,7 +3,7 @@
 
 @implementation NTLNMessage
 
-@synthesize statusId, name, screenName, text, icon, timestamp, replyType;
+@synthesize statusId, name, screenName, text, icon, timestamp, replyType, status;
 
 - (void) dealloc {
     [statusId release];
@@ -20,6 +20,11 @@
         return TRUE;
     }
     return FALSE;
+}
+
+- (void) setStatus:(enum NTLNMessageStatus)value {
+    status = value;
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_CHANGED object:nil];
 }
 
 - (void) finishedToSetProperties {

@@ -1,9 +1,11 @@
+#import <QuartzCore/CoreAnimation.h>
 #import "TwitterStatusViewController.h"
 #import "NTLNMainWindowController.h"
 #import "NTLNConfiguration.h"
 
 static NSImage *favoliteIcon;
 static NSImage *highlightedFavoliteIcon;
+static NSImage *newIcon;
 static TwitterStatusViewController *starred = nil;
 
 @implementation TwitterStatusViewController
@@ -13,6 +15,8 @@ static TwitterStatusViewController *starred = nil;
     favoliteIcon = [[NSImage alloc] initByReferencingFile:path];
     path = [[NSBundle mainBundle] pathForResource:@"star-highlighted" ofType:@"png"];
     highlightedFavoliteIcon = [[NSImage alloc] initByReferencingFile:path];
+    path = [[NSBundle mainBundle] pathForResource:@"new" ofType:@"tiff"];
+    newIcon = [[NSImage alloc] initByReferencingFile:path];
 }
 
 - (void) fitToSuperviewWidth {
@@ -49,7 +53,7 @@ static TwitterStatusViewController *starred = nil;
     [self fitToSuperviewWidth];
     [view setViewController:self];
     [view setTwitterStatus:_status];
-
+    
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSchemeChanged:)
                                                  name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
@@ -96,7 +100,36 @@ static TwitterStatusViewController *starred = nil;
         return FALSE;
     return [[self message] isEqual:[(TwitterStatusViewController*)anObject message]];
 }
-     
+
+- (void) enterInScrollView {
+//    NSLog(@"%s: +%@", __PRETTY_FUNCTION__, [_status screenName]);
+    if ([_status status] == NTLN_MESSAGE_STATUS_READ || _markAsReadTimer) {
+        return;
+    }
+
+    _markAsReadTimer = [[NSTimer scheduledTimerWithTimeInterval:3
+                                                         target:self
+                                                       selector:@selector(markAsRead)
+                                                       userInfo:nil
+                                                        repeats:FALSE] retain];
+}
+
+- (void) exitFromScrollView {
+//    NSLog(@"%s: -%@", __PRETTY_FUNCTION__, [_status screenName]);
+    if ([_status status] == NTLN_MESSAGE_STATUS_READ) {
+        return;
+    }
+    
+    [_markAsReadTimer invalidate];
+    _markAsReadTimer = nil;
+}
+
+- (void) markAsRead {
+    NSLog(@"%s: =%@", __PRETTY_FUNCTION__, [_status screenName]);
+    [newIcon setHidden:TRUE];
+    [_status setStatus:NTLN_MESSAGE_STATUS_READ];
+}
+
 - (void) highlight {
     _highlighted = TRUE;
     [view highlight];
@@ -153,6 +186,17 @@ static TwitterStatusViewController *starred = nil;
         }
         [favoliteButton setHidden:!show];
     }
+}
+
+- (void) startAnimation {
+    [[view layer] setHidden:FALSE];
+//    [view setWantsLayer:TRUE];
+}
+
+- (void) stopAnimation {
+    [[view layer] setHidden:TRUE];
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    [view setWantsLayer:FALSE];
 }
 
 #pragma mark Notification

@@ -141,6 +141,11 @@
 - (void) unhighlight {
     _highlighted = FALSE;
     [self setValueAndFormat:[[textView textStorage] string] colorForText:[[NTLNColors instance] colorForText]];
+//    if ([[_controller message] status] == NTLN_MESSAGE_STATUS_READ) {
+//        [self setValueAndFormat:[[textView textStorage] string] colorForText:[[NTLNColors instance] colorForText]];
+//    } else {
+//        [self setValueAndFormat:[[textView textStorage] string] colorForText:[[NTLNColors instance] colorForNewMessage]];
+//    }
     [textView setSelectable:FALSE];
     [textView setLinkTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                  [NSNumber numberWithInt:NSUnderlineStyleNone], NSUnderlineStyleAttributeName,

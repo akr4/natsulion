@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "NTLNMainWindowController.h"
 #import "NTLNWelcomeWindowController.h"
+#import "CTBadge.h"
 
 @class NTLNPreferencesWindowController;
 
@@ -8,10 +9,13 @@
     IBOutlet NTLNMainWindowController *mainWindowController;
     IBOutlet NTLNPreferencesWindowController *preferencesWindowController;
     IBOutlet NTLNWelcomeWindowController *welcomeWindowController;
-
+    IBOutlet NSArrayController *messageViewControllerArrayController;
+    IBOutlet NTLNMessageListViewsController *messageListViewsController;
+    
     int _refreshInterval;
     NSTimer *_refreshTimer;
     
+    CTBadge *_badge;
 }
 
 - (IBAction) showPreferencesSheet:(id)sender;

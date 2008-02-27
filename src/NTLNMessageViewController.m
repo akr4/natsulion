@@ -42,4 +42,20 @@
     
 }
 
+- (void) enterInScrollView {
+    
+}
+
+- (void) exitFromScrollView {
+
+}
+
+- (void) startAnimation {
+    
+}
+
+- (void) stopAnimation {
+    
+}
+
 @end

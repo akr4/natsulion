@@ -59,7 +59,7 @@ Its goals are the follows:
   <li>Feature icons</li>
   <li>Easy to use for Twitter light users</li>
 </ul>
-You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip">download</a> the latest version from.
+You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">download</a> the latest version from.
 
 </p>
 <p>
@@ -108,7 +108,7 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
-<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip">download</a>
+<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.24.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -133,7 +133,7 @@ New Feature
 </ul>
 </p>
 
-<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip">download</a>
+<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.23.zip');">download</a>
 <p>
 Improvement
 <ul>
@@ -152,7 +152,7 @@ New Feature
 </ul>
 </p>
     
-<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.22.zip">download</a>
+<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.22.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.22.zip');">download</a>
 <p>    
 Bug
 <ul>
@@ -194,7 +194,7 @@ New Feature
 </ul>
 </p>
     
-<h3>Version 0.20 (2008/02/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.20.zip">download</a>
+<h3>Version 0.20 (2008/02/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.20.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.20.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -217,7 +217,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.19</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.19.zip">download</a>
+<h3>Version 0.19</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.19.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.19.zip');">download</a>
 <p>
 Improvement
 <ul>

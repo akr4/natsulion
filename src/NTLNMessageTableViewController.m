@@ -4,6 +4,33 @@
 #import "NTLNConfiguration.h"
 #import "NTLNColors.h"
 
+@implementation NTLNMessageScrollView 
+- (void)reflectScrolledClipView:(NSClipView *)aClipView {
+    [super reflectScrolledClipView:aClipView];
+    float viewYMin = [self documentVisibleRect].origin.y;
+    float viewYMax = [self documentVisibleRect].origin.y + [self documentVisibleRect].size.height;
+    float max = 0;
+    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
+        TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
+        float min = max;
+        max += [c requiredHeight];
+        if (viewYMax < max) {
+            for (; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
+                TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
+                [c exitFromScrollView];
+            }
+            break;
+        }
+        if (viewYMin <= min) { // viewYMin <= min < max < viewYMax
+            [c enterInScrollView];
+        } else { // min < viewMin
+            [c exitFromScrollView];
+        }
+    }
+//    NSLog(@"%f %f", [[scrollView contentView] documentVisibleRect].size.width, [[scrollView contentView] documentVisibleRect].size.height);
+}
+@end
+
 @implementation NTLNMessageTableView
 
 - (void) _highlightRow:(int) row clipRect:(NSRect) clip {
@@ -50,6 +77,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(windowAlphaChanged:)
                                                  name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(messageStatusChanged:)
+                                                 name:NTLN_NOTIFICATION_MESSAGE_STATUS_CHANGED
                                                object:nil];
     
     // TODO
@@ -207,6 +238,10 @@
 
 - (void) windowAlphaChanged:(NSNotification*)notification {
 //    [[viewColumn tableView] setAlphaValue:[[NTLNConfiguration instance] windowAlpha]];
+}
+
+- (void) messageStatusChanged:(NSNotification*)notification {
+//    [self reloadTableView];
 }
 
 @end

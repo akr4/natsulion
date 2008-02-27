@@ -2,6 +2,7 @@
 #import "NTLNPreferencesWindowController.h"
 #import "NTLNAccount.h"
 #import "NTLNConfiguration.h"
+#import "NTLNNotification.h"
 
 @implementation NTLNAppController
 
@@ -22,6 +23,7 @@
 
 - (void) dealloc {
     [_refreshTimer release];
+    [_badge release];
     [super dealloc];
 }
 
@@ -63,6 +65,16 @@
 }
 
 - (void) awakeFromNib { 
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(numberOfMessageChanged:)
+                                                 name:NTLN_NOTIFICATION_MESSAGE_STATUS_CHANGED
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(numberOfMessageChanged:)
+                                                 name:NTLN_NOTIFICATION_NEW_MESSAGE
+                                               object:nil];
+    
+    _badge = [[CTBadge alloc] init];
 }
 
 - (IBAction) showPreferencesSheet:(id)sender {
@@ -123,5 +135,19 @@
     [mainWindowController showWindow:nil];
     [self startTimer];
     [_refreshTimer fire];
+}
+
+#pragma mark Notification methods
+- (void) numberOfMessageChanged:(NSNotification*)notification {
+    
+    [messageViewControllerArrayController setFilterPredicate:[NSPredicate predicateWithFormat:@"message.status == 0 AND (message.replyType != 2 OR (message.replyType == 2 AND message.timestamp > %@))",
+                                                              [NSDate dateWithTimeIntervalSince1970:[[NTLNConfiguration instance] latestTimestampOfMessage]]]];
+    int count = [[messageViewControllerArrayController arrangedObjects] count];
+    if (count == 0) {
+        [NSApp setApplicationIconImage:nil];
+    } else {
+        [_badge badgeApplicationDockIconWithValue:count insetX:3 y:0];
+    }
+    [messageListViewsController applyCurrentPredicate];
 }
 @end

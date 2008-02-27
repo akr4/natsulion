@@ -5,6 +5,14 @@
 	<key>IBClasses</key>
 	<array>
 		<dict>
+			<key>CLASS</key>
+			<string>NTLNMessageViewClickableTextField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NTLNMessageViewTextField</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>toggleFavorite</key>
@@ -22,6 +30,10 @@
 				<string>TwitterStatusViewImageView</string>
 				<key>nameField</key>
 				<string>TwitterStatusViewNameField</string>
+				<key>newIcon</key>
+				<string>NSImageView</string>
+				<key>newIconImageView</key>
+				<string>NSImageView</string>
 				<key>textField</key>
 				<string>TwitterStatusViewMessageField</string>
 				<key>timestampField</key>
@@ -31,14 +43,6 @@
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NTLNMessageViewController</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NTLNMessageViewClickableTextField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NTLNMessageViewTextField</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>
@@ -111,19 +115,19 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
-			<string>FirstResponder</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
 			<string>NTLNMessageViewTimestampField</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NTLNMessageViewClickableTextField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>FirstResponder</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

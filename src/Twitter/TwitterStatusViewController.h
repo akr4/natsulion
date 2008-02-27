@@ -16,12 +16,16 @@
     IBOutlet TwitterStatusViewNameField *nameField;
     IBOutlet TwitterStatusViewTimestampField *timestampField;
     IBOutlet NSButton *favoliteButton;
+    IBOutlet NSImageView *newIcon;
+    
     TwitterStatus *_status;
     
     NSObject<NTLNMessageViewListener> *_listener;
     BOOL _starHighlighted;
     BOOL _favoriteIsCreating;
     BOOL _highlighted;
+    
+    NSTimer *_markAsReadTimer;
 }
 
 - (IBAction) toggleFavorite:(id)sender;
@@ -29,6 +33,7 @@
 - (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener;
 - (BOOL) isEqual:(id)anObject;
 - (void) showStar:(BOOL)show;
+
 
 @end
 

@@ -123,25 +123,31 @@
 }
 
 - (void)drawRect:(NSRect)aRect {
-    if (!_backgroundColor) {
-        return;
+    if (_backgroundColor) {
+        [_backgroundColor set];
+        NSRectFillUsingOperation(aRect, NSCompositeCopy);
     }
-    [_backgroundColor set];
-    NSRectFillUsingOperation(aRect, NSCompositeCopy);
+
+//    if ([_status status] != NTLN_MESSAGE_STATUS_READ) {
+//        [[[NTLNColors instance] colorForText] set];
+//        [NSBezierPath setDefaultLineWidth:15.0f];
+//        [NSBezierPath strokeLineFromPoint:NSMakePoint([self bounds].origin.x, [self bounds].origin.y)
+//                                  toPoint:NSMakePoint([self bounds].origin.x, [self bounds].origin.y + [self bounds].size.height)];
+//    }
 }
 
 - (void) setViewController:(TwitterStatusViewController*)controller {
     _controller = controller; // weak reference
 }
 
-- (void) showStar:(NSTimer*)timer {
+- (void) mouseEnteredTimerExpired:(NSTimer*)timer {
     [_controller showStar:TRUE];
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
     _starTimer = [[NSTimer scheduledTimerWithTimeInterval:0.3
                                                    target:self
-                                                selector:@selector(showStar:)
+                                                selector:@selector(mouseEnteredTimerExpired:)
                                                  userInfo:nil 
                                                   repeats:FALSE] retain];
 }
@@ -153,6 +159,10 @@
     [_starTimer release];
     _starTimer = nil;
     [_controller showStar:FALSE];
+}
+
+- (NSColor*) backgroundColor {
+    return _backgroundColor;
 }
 
 @end

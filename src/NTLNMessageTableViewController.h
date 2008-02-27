@@ -1,6 +1,11 @@
 #import <Cocoa/Cocoa.h>
 #import "NTLNMessageViewController.h"
 
+@interface NTLNMessageScrollView : NSScrollView {
+    IBOutlet NSArrayController *messageViewControllerArrayController;
+}
+@end
+
 @interface NTLNMessageTableView : NSTableView {
 }
 @end

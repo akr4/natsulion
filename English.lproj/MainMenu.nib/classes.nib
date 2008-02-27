@@ -72,6 +72,12 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>toggleAutomaticLinkDetection</key>
@@ -89,12 +95,6 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NSObject</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -136,6 +136,19 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMessageScrollView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>messageViewControllerArrayController</key>
+				<string>NSArrayController</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSScrollView</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -206,6 +219,14 @@
 			<string>NSProgressIndicator</string>
 		</dict>
 		<dict>
+			<key>CLASS</key>
+			<string>NTLNConfiguration</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>closePreferencesSheet</key>
@@ -221,19 +242,15 @@
 			<dict>
 				<key>mainWindowController</key>
 				<string>NTLNMainWindowController</string>
+				<key>messageListViewsController</key>
+				<string>NTLNMessageListViewsController</string>
+				<key>messageViewControllerArrayController</key>
+				<string>NSArrayController</string>
 				<key>preferencesWindowController</key>
 				<string>NTLNPreferencesWindowController</string>
 				<key>welcomeWindowController</key>
 				<string>NTLNWelcomeWindowController</string>
 			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NTLNConfiguration</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
 		</dict>

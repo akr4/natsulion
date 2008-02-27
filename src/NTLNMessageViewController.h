@@ -11,6 +11,10 @@
 - (NTLNMessage*) message;
 - (float) requiredHeight;
 - (void) markNeedCalculateHeight;
+- (void) enterInScrollView;
+- (void) exitFromScrollView;
+- (void) startAnimation;
+- (void) stopAnimation;
 
 // methods for subviews
 - (void) iconViewClicked;
