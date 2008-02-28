@@ -68,19 +68,19 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
-			<string>TwitterStatusViewImageView</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSImageView</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
 			<string>TwitterStatusViewTimestampField</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NTLNMessageViewTimestampField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>TwitterStatusViewImageView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSImageView</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

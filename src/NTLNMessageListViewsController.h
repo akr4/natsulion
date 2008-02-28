@@ -13,4 +13,5 @@
 - (IBAction) changeViewByToolbar:(id) sender;
 - (IBAction) changeViewByMenu:(id) sender;
 - (void) applyCurrentPredicate;
+- (int) currentViewIndex;
 @end

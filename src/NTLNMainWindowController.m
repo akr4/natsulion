@@ -65,11 +65,12 @@
     _toolbarItems = [[NSMutableDictionary alloc] init];
     
     // setup segumented control
-    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 235, 25)] autorelease];
-    [_messageViewSelector setSegmentCount:3];
+    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 260, 25)] autorelease];
+    [_messageViewSelector setSegmentCount:4];
     [_messageViewSelector setLabel:@"Friends" forSegment:0];
     [_messageViewSelector setLabel:@"Replies" forSegment:1];
-    [_messageViewSelector setLabel:@"My Updates" forSegment:2];
+    [_messageViewSelector setLabel:@"Sent" forSegment:2];
+    [_messageViewSelector setLabel:@"Unread" forSegment:3];
     [_messageViewSelector setSelected:TRUE forSegment:0];
     [_messageViewSelector setTarget:messageListViewsController];
     [_messageViewSelector setAction:@selector(changeViewByToolbar:)];
@@ -107,11 +108,18 @@
                            tag:1 
                         toMenu:viewMenu];
 
-    [self addMenuItemWithTitle:@"My Updates"
+    [self addMenuItemWithTitle:@"Sent"
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"3" 
                            tag:2 
+                        toMenu:viewMenu];
+
+    [self addMenuItemWithTitle:@"Unread"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"4" 
+                           tag:3
                         toMenu:viewMenu];
 }
 
@@ -283,6 +291,9 @@
                     sticky = TRUE;
                     if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
                         [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
+                    } else {
+                        // might be retrieved in previous run
+                        [s setStatus:NTLN_MESSAGE_STATUS_READ];
                     }
                     break;
                 case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:

@@ -1,6 +1,7 @@
 #import "NTLNMessageListViewsController.h"
 #import "NTLNAccount.h"
 #import "NTLNConfiguration.h"
+#import "TwitterStatusViewController.h"
 
 // class holds an information of a message view which can be switched by messageViewSelector.
 @interface NTLNMessageViewInfo : NSObject {
@@ -62,6 +63,8 @@
                                         nil]]]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
                                       [NSPredicate predicateWithFormat:@"message.screenName == %@", [[NTLNAccount instance] username]]]];
+    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
+                                      [NSPredicate predicateWithFormat:@"message.status == 0"]]];
     
     return self;
 }
@@ -87,6 +90,11 @@
     [messageViewControllerArrayController setFilterPredicate:[[messageViewInfo predicate] copy]];
     [messageTableViewController reloadTableView];
     [messageTableViewController setKnobPosition:[messageViewInfo knobPosition]];
+
+    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
+        TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
+        [c exitFromScrollView];
+    }
 }
 
 - (IBAction) changeViewByToolbar:(id) sender {
@@ -99,6 +107,10 @@
 
 - (void) applyCurrentPredicate {
     [messageViewControllerArrayController setFilterPredicate:[[[_messageViewInfoArray objectAtIndex:_currentViewIndex] predicate] copy]];
+}
+
+- (int) currentViewIndex {
+    return _currentViewIndex;
 }
      
 @end

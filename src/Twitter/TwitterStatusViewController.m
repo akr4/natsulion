@@ -57,6 +57,12 @@ static TwitterStatusViewController *starred = nil;
     [view setViewController:self];
     [view setTwitterStatus:_status];
     
+    if ([_status status] == NTLN_MESSAGE_STATUS_NORMAL) {
+        [newIconImageView setHidden:FALSE];
+    } else {
+        [newIconImageView setHidden:TRUE];
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSchemeChanged:)
                                                  name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
@@ -128,7 +134,7 @@ static TwitterStatusViewController *starred = nil;
 }
 
 - (void) markAsRead {
-    NSLog(@"%s: =%@", __PRETTY_FUNCTION__, [_status screenName]);
+//    NSLog(@"%s: =%@", __PRETTY_FUNCTION__, [_status screenName]);
     [newIconImageView setHidden:TRUE];
     [_status setStatus:NTLN_MESSAGE_STATUS_READ];
 }

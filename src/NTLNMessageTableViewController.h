@@ -1,8 +1,11 @@
 #import <Cocoa/Cocoa.h>
 #import "NTLNMessageViewController.h"
 
+@class NTLNMessageListViewsController;
+
 @interface NTLNMessageScrollView : NSScrollView {
     IBOutlet NSArrayController *messageViewControllerArrayController;
+    IBOutlet NTLNMessageListViewsController *messageListViewsController;
 }
 @end
 
@@ -14,7 +17,7 @@
     IBOutlet NSTableColumn *viewColumn;
     IBOutlet NSScrollView *scrollView;
     IBOutlet NSArrayController *messageViewControllerArrayController;
-
+    
     NSScroller *_verticalScroller;
     
     // in the case of ascending sort order, some text are input and then the height is shrinked,

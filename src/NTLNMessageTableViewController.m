@@ -3,10 +3,16 @@
 #import "TwitterStatusViewController.h"
 #import "NTLNConfiguration.h"
 #import "NTLNColors.h"
+#import "NTLNMessageListViewsController.h"
 
 @implementation NTLNMessageScrollView 
 - (void)reflectScrolledClipView:(NSClipView *)aClipView {
     [super reflectScrolledClipView:aClipView];
+
+    if ([messageListViewsController currentViewIndex] == 3) {
+        return;
+    }
+    
     float viewYMin = [self documentVisibleRect].origin.y;
     float viewYMax = [self documentVisibleRect].origin.y + [self documentVisibleRect].size.height;
     float max = 0;
