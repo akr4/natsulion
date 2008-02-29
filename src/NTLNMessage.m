@@ -24,7 +24,6 @@
 
 - (void) setStatus:(enum NTLNMessageStatus)value {
     status = value;
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_CHANGED object:nil];
 }
 
 - (void) finishedToSetProperties {

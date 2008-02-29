@@ -91,6 +91,19 @@
                                 target:self
                                 action:@selector(updateTimelineCorrespondsToView:)
                                   view:refreshButton];
+
+    // mark all as read button
+    NSButton *markAllAsReadButton = [[[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 25, 25)] autorelease];
+    [markAllAsReadButton setImage:[NSImage imageNamed:NSImageNameStopProgressTemplate]];
+    [markAllAsReadButton setBezelStyle:NSTexturedSquareBezelStyle];
+    [markAllAsReadButton setTarget:self];
+    [markAllAsReadButton setAction:@selector(markAllAsRead:)];
+    [self addToolbarItemWithIdentifier:@"markallasread"
+                                 label:@"Mark all as read"
+                                target:self
+                                action:@selector(markAllAsRead:)
+                                  view:markAllAsReadButton];
+
     [[self window] setToolbar:toolbar];
 
     // menu
@@ -181,19 +194,14 @@
     [messageTableViewController newMessageArrived:controller];
 }
 
-- (BOOL) addIfNewMessage:(NTLNMessage*)message {
-    TwitterStatusViewController *newController = [[[TwitterStatusViewController alloc]
-                                                   initWithTwitterStatus:(TwitterStatus*)message
-                                                   messageViewListener:self] autorelease];
-    
+- (BOOL) addIfNewMessage:(TwitterStatusViewController*)controller {
     [messageViewControllerArrayController setFilterPredicate:nil];
-    if ([[messageViewControllerArrayController arrangedObjects] containsObject:newController]) {
+    if ([[messageViewControllerArrayController arrangedObjects] containsObject:controller]) {
         [messageListViewsController applyCurrentPredicate];
         return FALSE;
     }
-
-    [self addMessageViewController:newController];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE object:message];
+    [self addMessageViewController:controller];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE object:controller];
     return TRUE;
 }
 
@@ -282,7 +290,11 @@
 - (void) finishedToGetTimeline:(NSArray*)statuses {
     for (int i = 0; i < [statuses count]; i++) {
         TwitterStatus *s = [statuses objectAtIndex:i];
-        if ([self addIfNewMessage:s]) {
+        TwitterStatusViewController *controller = [[[TwitterStatusViewController alloc]
+                                                    initWithTwitterStatus:(TwitterStatus*)s
+                                                    messageViewListener:self] autorelease];
+        if ([self addIfNewMessage:controller]) {
+            
             int priority = 0;
             BOOL sticky = FALSE;
             switch ([s replyType]) {
@@ -293,7 +305,7 @@
                         [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
                     } else {
                         // might be retrieved in previous run
-                        [s setStatus:NTLN_MESSAGE_STATUS_READ];
+                        [controller markAsRead:false];
                     }
                     break;
                 case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
@@ -452,16 +464,17 @@
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", @"refresh", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", nil];
 }
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", @"refresh", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", nil];
 }
 
 - (IBAction) updateTimelineCorrespondsToView:(id)sender {
     switch ([_messageViewSelector selectedSegment]) {
         case 0:
+        case 3:
             [self updateStatus];
             break;
         case 1:
@@ -472,6 +485,20 @@
         default:
             break;
     }
+}
+
+- (IBAction) markAllAsRead:(id)sender {
+    [messageViewControllerArrayController setFilterPredicate:nil];
+    [messageViewControllerArrayController rearrangeObjects];
+    NSArray *a = [messageViewControllerArrayController arrangedObjects];
+    int count = [a count];
+    for (int i = 0; i < count; i++) {
+        TwitterStatusViewController *c = [a objectAtIndex:i];
+        [c markAsRead:false];
+    }
+    [messageListViewsController applyCurrentPredicate];
+    [messageTableViewController reloadTableView];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ object:nil];
 }
 
 @end

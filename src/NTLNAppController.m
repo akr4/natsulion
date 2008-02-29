@@ -67,7 +67,7 @@
 - (void) awakeFromNib { 
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(numberOfMessageChanged:)
-                                                 name:NTLN_NOTIFICATION_MESSAGE_STATUS_CHANGED
+                                                 name:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(numberOfMessageChanged:)

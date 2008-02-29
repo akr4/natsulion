@@ -49,6 +49,7 @@
 
 - (IBAction) sendMessage:(id) sender;
 - (IBAction) updateTimelineCorrespondsToView:(id)sender;
+- (IBAction) markAllAsRead:(id)sender;
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;

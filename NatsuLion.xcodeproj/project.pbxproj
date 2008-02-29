@@ -20,10 +20,6 @@
 		E91B3DAD0D13F3B5007C9762 /* NTLNMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */; };
 		E91B3DB60D13F593007C9762 /* NTLNCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */; };
 		E920C36E0D6A1ACC00A813EB /* CTBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = E920C36D0D6A1ACC00A813EB /* CTBadge.m */; };
-		E920C3740D6A1B3700A813EB /* CTBadge_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E920C3700D6A1B3700A813EB /* CTBadge_1.pdf */; };
-		E920C3750D6A1B3700A813EB /* CTBadge_3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E920C3710D6A1B3700A813EB /* CTBadge_3.pdf */; };
-		E920C3760D6A1B3700A813EB /* CTBadge_4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E920C3720D6A1B3700A813EB /* CTBadge_4.pdf */; };
-		E920C3770D6A1B3700A813EB /* CTBadge_5.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E920C3730D6A1B3700A813EB /* CTBadge_5.pdf */; };
 		E93467030D32DF6400F779CB /* NTLNUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467020D32DF6400F779CB /* NTLNUIUtils.m */; };
 		E93467130D32EDB800F779CB /* TwitterStatusViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467120D32EDB800F779CB /* TwitterStatusViewTimestampField.m */; };
 		E93467160D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467150D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m */; };
@@ -63,6 +59,10 @@
 		E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */; };
 		E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */; };
 		E9CE391F0D145DB700D14D9F /* NTLNMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */; };
+		E9D1130F0D78C954004D43BC /* CTBadge_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9D1130B0D78C953004D43BC /* CTBadge_1.pdf */; };
+		E9D113100D78C954004D43BC /* CTBadge_3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9D1130C0D78C953004D43BC /* CTBadge_3.pdf */; };
+		E9D113110D78C954004D43BC /* CTBadge_4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9D1130D0D78C953004D43BC /* CTBadge_4.pdf */; };
+		E9D113120D78C954004D43BC /* CTBadge_5.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9D1130E0D78C953004D43BC /* CTBadge_5.pdf */; };
 		E9D5B1EB0D5633CB0000456F /* NTLNMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */; };
 		E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
@@ -128,10 +128,6 @@
 		E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNCustomViewCell.m; sourceTree = "<group>"; };
 		E920C36C0D6A1ACC00A813EB /* CTBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBadge.h; sourceTree = "<group>"; };
 		E920C36D0D6A1ACC00A813EB /* CTBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBadge.m; sourceTree = "<group>"; };
-		E920C3700D6A1B3700A813EB /* CTBadge_1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_1.pdf; sourceTree = "<group>"; };
-		E920C3710D6A1B3700A813EB /* CTBadge_3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_3.pdf; sourceTree = "<group>"; };
-		E920C3720D6A1B3700A813EB /* CTBadge_4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_4.pdf; sourceTree = "<group>"; };
-		E920C3730D6A1B3700A813EB /* CTBadge_5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_5.pdf; sourceTree = "<group>"; };
 		E93467010D32DF6400F779CB /* NTLNUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNUIUtils.h; sourceTree = "<group>"; };
 		E93467020D32DF6400F779CB /* NTLNUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNUIUtils.m; sourceTree = "<group>"; };
 		E93467110D32EDB800F779CB /* TwitterStatusViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewTimestampField.h; sourceTree = "<group>"; };
@@ -192,6 +188,10 @@
 		E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewImageView.m; sourceTree = "<group>"; };
 		E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageTableViewController.h; sourceTree = "<group>"; };
 		E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageTableViewController.m; sourceTree = "<group>"; };
+		E9D1130B0D78C953004D43BC /* CTBadge_1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_1.pdf; sourceTree = "<group>"; };
+		E9D1130C0D78C953004D43BC /* CTBadge_3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_3.pdf; sourceTree = "<group>"; };
+		E9D1130D0D78C953004D43BC /* CTBadge_4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_4.pdf; sourceTree = "<group>"; };
+		E9D1130E0D78C953004D43BC /* CTBadge_5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_5.pdf; sourceTree = "<group>"; };
 		E9D5B1DA0D56335F0000456F /* NTLNMessageViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTextField.h; sourceTree = "<group>"; };
 		E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTLNMessageViewController.m; path = src/NTLNMessageViewController.m; sourceTree = SOURCE_ROOT; };
 		E9DC0FD00D3D226A00CC6D41 /* TwitterTestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTestStub.h; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E920C36F0D6A1B3700A813EB /* badges */,
+				E9D1130A0D78C953004D43BC /* badges */,
 				E96A459B0D43D0BF00D6E1AF /* images */,
 				E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -397,17 +397,6 @@
 			path = CT;
 			sourceTree = "<group>";
 		};
-		E920C36F0D6A1B3700A813EB /* badges */ = {
-			isa = PBXGroup;
-			children = (
-				E920C3700D6A1B3700A813EB /* CTBadge_1.pdf */,
-				E920C3710D6A1B3700A813EB /* CTBadge_3.pdf */,
-				E920C3720D6A1B3700A813EB /* CTBadge_4.pdf */,
-				E920C3730D6A1B3700A813EB /* CTBadge_5.pdf */,
-			);
-			path = badges;
-			sourceTree = "<group>";
-		};
 		E9614CDA0D27BAAD009743CE /* test */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +447,18 @@
 				E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		E9D1130A0D78C953004D43BC /* badges */ = {
+			isa = PBXGroup;
+			children = (
+				E9D1130B0D78C953004D43BC /* CTBadge_1.pdf */,
+				E9D1130C0D78C953004D43BC /* CTBadge_3.pdf */,
+				E9D1130D0D78C953004D43BC /* CTBadge_4.pdf */,
+				E9D1130E0D78C953004D43BC /* CTBadge_5.pdf */,
+			);
+			name = badges;
+			path = Resources/badges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,12 +534,12 @@
 				E96A459E0D43D0BF00D6E1AF /* star-highlighted.png in Resources */,
 				E96A459F0D43D0BF00D6E1AF /* star-normal.png in Resources */,
 				E9B832F60D58E830000F6E1C /* MessageTableView.nib in Resources */,
-				E920C3740D6A1B3700A813EB /* CTBadge_1.pdf in Resources */,
-				E920C3750D6A1B3700A813EB /* CTBadge_3.pdf in Resources */,
-				E920C3760D6A1B3700A813EB /* CTBadge_4.pdf in Resources */,
-				E920C3770D6A1B3700A813EB /* CTBadge_5.pdf in Resources */,
 				E98B18840D75A4B2000F0FED /* new_light.tiff in Resources */,
 				E98B18850D75A4B2000F0FED /* new_dark.tiff in Resources */,
+				E9D1130F0D78C954004D43BC /* CTBadge_1.pdf in Resources */,
+				E9D113100D78C954004D43BC /* CTBadge_3.pdf in Resources */,
+				E9D113110D78C954004D43BC /* CTBadge_4.pdf in Resources */,
+				E9D113120D78C954004D43BC /* CTBadge_5.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

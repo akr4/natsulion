@@ -6,6 +6,7 @@
 #import "TwitterStatusViewTimestampField.h"
 #import "TwitterStatusViewImageView.h"
 #import "TwitterStatusView.h"
+#import "NTLNMessage.h"
 
 @protocol NTLNMessageViewListener;
 
@@ -33,7 +34,5 @@
 - (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener;
 - (BOOL) isEqual:(id)anObject;
 - (void) showStar:(BOOL)show;
-
-
 @end
 

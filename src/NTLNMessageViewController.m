@@ -58,4 +58,7 @@
     
 }
 
+- (void) markAsRead:(bool)notification {
+}
+
 @end

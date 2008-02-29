@@ -84,10 +84,6 @@
                                              selector:@selector(windowAlphaChanged:)
                                                  name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
                                                object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(messageStatusChanged:)
-                                                 name:NTLN_NOTIFICATION_MESSAGE_STATUS_CHANGED
-                                               object:nil];
     
     // TODO
     [scrollView setBackgroundColor:[[NTLNColors instance] colorForBackground]];
@@ -244,10 +240,6 @@
 
 - (void) windowAlphaChanged:(NSNotification*)notification {
 //    [[viewColumn tableView] setAlphaValue:[[NTLNConfiguration instance] windowAlpha]];
-}
-
-- (void) messageStatusChanged:(NSNotification*)notification {
-//    [self reloadTableView];
 }
 
 @end

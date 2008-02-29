@@ -15,6 +15,7 @@
 - (void) exitFromScrollView;
 - (void) startAnimation;
 - (void) stopAnimation;
+- (void) markAsRead:(bool)notification;
 
 // methods for subviews
 - (void) iconViewClicked;

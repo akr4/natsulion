@@ -177,6 +177,8 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>markAllAsRead</key>
+				<string>id</string>
 				<key>sendMessage</key>
 				<string>id</string>
 				<key>updateTimelineCorrespondsToView</key>

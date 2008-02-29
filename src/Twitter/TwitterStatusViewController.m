@@ -2,6 +2,7 @@
 #import "TwitterStatusViewController.h"
 #import "NTLNMainWindowController.h"
 #import "NTLNConfiguration.h"
+#import "NTLNNotification.h"
 
 static NSImage *favoliteIcon;
 static NSImage *highlightedFavoliteIcon;
@@ -36,6 +37,11 @@ static TwitterStatusViewController *starred = nil;
     
     _listener = listener;
     [_listener retain];
+
+    [self bind:@"messageStatus"
+      toObject:_status
+   withKeyPath:@"status"
+       options:nil];
     
     if (![NSBundle loadNibNamed: @"TwitterStatusView" owner: self]) {
         NSLog(@"unable to load Nib TwitterStatusView.nib");
@@ -56,12 +62,6 @@ static TwitterStatusViewController *starred = nil;
     [self fitToSuperviewWidth];
     [view setViewController:self];
     [view setTwitterStatus:_status];
-    
-    if ([_status status] == NTLN_MESSAGE_STATUS_NORMAL) {
-        [newIconImageView setHidden:FALSE];
-    } else {
-        [newIconImageView setHidden:TRUE];
-    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSchemeChanged:)
@@ -133,10 +133,17 @@ static TwitterStatusViewController *starred = nil;
     _markAsReadTimer = nil;
 }
 
-- (void) markAsRead {
-//    NSLog(@"%s: =%@", __PRETTY_FUNCTION__, [_status screenName]);
+- (void) markAsRead:(bool)notification {
+    //    NSLog(@"%s: =%@", __PRETTY_FUNCTION__, [_status screenName]);
     [newIconImageView setHidden:TRUE];
     [_status setStatus:NTLN_MESSAGE_STATUS_READ];
+    if (notification) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ object:nil];
+    }
+}
+
+- (void) markAsRead {
+    [self markAsRead:true];
 }
 
 - (void) highlight {
@@ -206,6 +213,10 @@ static TwitterStatusViewController *starred = nil;
     [[view layer] setHidden:TRUE];
     //    NSLog(@"%s", __PRETTY_FUNCTION__);
 //    [view setWantsLayer:FALSE];
+}
+
+- (enum NTLNMessageStatus) messageStatus {
+    return [_status status];
 }
 
 #pragma mark Notification
