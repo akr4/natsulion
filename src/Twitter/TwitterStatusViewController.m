@@ -13,13 +13,13 @@ static TwitterStatusViewController *starred = nil;
 @implementation TwitterStatusViewController
 
 + (void) initialize {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"star-normal" ofType:@"png"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"star-normal" ofType:@"tiff"];
     favoliteIcon = [[NSImage alloc] initByReferencingFile:path];
-    path = [[NSBundle mainBundle] pathForResource:@"star-highlighted" ofType:@"png"];
+    path = [[NSBundle mainBundle] pathForResource:@"star-highlighted" ofType:@"tiff"];
     highlightedFavoliteIcon = [[NSImage alloc] initByReferencingFile:path];
-    path = [[NSBundle mainBundle] pathForResource:@"new_light" ofType:@"tiff"];
+    path = [[NSBundle mainBundle] pathForResource:@"new-light" ofType:@"tiff"];
     newLightIcon = [[NSImage alloc] initByReferencingFile:path];
-    path = [[NSBundle mainBundle] pathForResource:@"new_dark" ofType:@"tiff"];
+    path = [[NSBundle mainBundle] pathForResource:@"new-dark" ofType:@"tiff"];
     newDarkIcon = [[NSImage alloc] initByReferencingFile:path];
 }
 
@@ -27,6 +27,14 @@ static TwitterStatusViewController *starred = nil;
     NSRect frame = [view frame];
     frame.size.width = [_listener viewWidth];
     [view setFrame:frame];
+}
+
+- (void) setupNewIcon {
+    if ([[NTLNConfiguration instance] colorScheme] == NTLN_CONFIGURATION_COLOR_SCHEME_LIGHT) {
+        [newIconImageView setImage:newLightIcon];
+    } else {
+        [newIconImageView setImage:newDarkIcon];
+    }
 }
 
 - (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener {
@@ -62,6 +70,8 @@ static TwitterStatusViewController *starred = nil;
     [self fitToSuperviewWidth];
     [view setViewController:self];
     [view setTwitterStatus:_status];
+ 
+    [self setupNewIcon];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSchemeChanged:)
@@ -227,12 +237,7 @@ static TwitterStatusViewController *starred = nil;
         [self unhighlight];
     }
 
-    if ([[NTLNConfiguration instance] colorScheme] == NTLN_CONFIGURATION_COLOR_SCHEME_LIGHT) {
-        [newIconImageView setImage:newLightIcon];
-    } else {
-        [newIconImageView setImage:newDarkIcon];
-    }
-    
+    [self setupNewIcon];
     [view notifyColorChange];
 }
 
