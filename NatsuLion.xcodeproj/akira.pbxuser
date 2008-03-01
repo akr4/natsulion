@@ -1503,6 +1503,20 @@
 		path = /Developer/SDKs/MacOSX10.5.sdk/System/Library/Frameworks/AppKit.framework/Versions/C/Headers/NSImage.h;
 		sourceTree = "<absolute>";
 	};
+	E96A459C0D43D0BF00D6E1AF /* star-highlighted.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "star-highlighted.png";
+		path = "/Users/akira/Documents/program/xcode/NatsuLion/images/star-highlighted.png";
+		sourceTree = "<absolute>";
+	};
+	E96A459D0D43D0BF00D6E1AF /* star-normal.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = "star-normal.png";
+		path = "/Users/akira/Documents/program/xcode/NatsuLion/images/star-normal.png";
+		sourceTree = "<absolute>";
+	};
 	E96A45A10D43D0FE00D6E1AF /* PBXBookmark */ = {
 		isa = PBXBookmark;
 		fRef = E96A459D0D43D0BF00D6E1AF /* star-normal.png */;
