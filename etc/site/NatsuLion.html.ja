@@ -74,6 +74,7 @@
   <li>リプライの強調表示。先頭以外に @<自分の ID> が含まれるものも強調します。</li>
   <li>リプライの宛先入力支援。アイコンをクリックすると @&lt;ID&gt; が入力されます。</li>
   <li>Growl 通知 (リプライのプライオリティを高く Sticky 設定にしていますので見逃しを防止できます。)</li>
+  <li>未読管理</li>
 </ul>  
 </p>
 
@@ -91,7 +92,7 @@
 
 <a href="http://www.physalis.net/repos/natsulion/trunk/LICENSE">修正 BSD</a> ライセンスです。
 
-また <a href="http://sparkle.andymatuschak.org/">Sparkle</a> と <a href="http://growl.info/">Growl</a> を利用しています。これらのライセンスについては<a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">こちら</a>をご覧ください。
+また <a href="http://sparkle.andymatuschak.org/">Sparkle</a> と <a href="http://growl.info/">Growl</a>、<a href="http://blog.oofn.net/2006/01/08/badging-for-everyone/">CTBadge</a> を利用しています。これらのライセンスについては<a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">こちら</a>をご覧ください。
 </p>
 
 <h3>ソースコード</h3>
@@ -112,6 +113,33 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.25 (2008/03/01)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.25.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.25.zip');">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-119'>NTLN-119</a>] -         number of new message on the badge is not updated when new message
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-120'>NTLN-120</a>] -         lack of read mark for light color scheme
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-124'>NTLN-124</a>] -         star image update
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-41'>NTLN-41</a>] -         Emphasize newly arrived messages
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-121'>NTLN-121</a>] -         Unread tab
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-122'>NTLN-122</a>] -         mark all as read feature
+</li>
+</ul>
+</p>    
+
 <h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.24.zip');">download</a>
 <p>
 <p>

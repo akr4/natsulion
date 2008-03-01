@@ -7,6 +7,41 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.25</title>
+      <description>
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-119'&gt;NTLN-119&lt;/a&gt;] -         number of new message on the badge is not updated when new message
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-120'&gt;NTLN-120&lt;/a&gt;] -         lack of read mark for light color scheme
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-124'&gt;NTLN-124&lt;/a&gt;] -         star image update
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-41'&gt;NTLN-41&lt;/a&gt;] -         Emphasize newly arrived messages
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-121'&gt;NTLN-121&lt;/a&gt;] -         Unread tab
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-122'&gt;NTLN-122&lt;/a&gt;] -         mark all as read feature
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Sat, 01 Mar 2008 16:15:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.25.zip"
+        length="823498"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.24</title>
       <description>
         Release Notes - NatsuLion - Version 0.24

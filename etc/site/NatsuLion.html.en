@@ -76,6 +76,7 @@ You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip" onclick="javas
   <li>Replies including messages contain @<my ID> are emphasized</li>
   <li>Input support for "@&lt;ID&gt;". By clicking icon, @&lt;ID&gt; apears in the message input field</li>
   <li>Growl Notifications (replies are notified with a higher priority and stickied)</li>
+  <li>Manage unread tweets</li>
 </ul>  
 </p>
 
@@ -89,7 +90,7 @@ Please refer <a href="http://jira.physalis.net/browse/NTLN">http://jira.physalis
 
 <h3>License</h3>
 <p>
-NatsuLion is published under the <a href="http://www.physalis.net/repos/natsulion/trunk/LICENSE">Modified BSD</a> license and shipped with <a href="http://sparkle.andymatuschak.org/">Sparkle</a> and <a href="http://growl.info/">Growl</a> . Please find these licenses <a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">here</a>.
+NatsuLion is published under the <a href="http://www.physalis.net/repos/natsulion/trunk/LICENSE">Modified BSD</a> license and shipped with <a href="http://sparkle.andymatuschak.org/">Sparkle</a>, <a href="http://growl.info/">Growl</a> and <a href="http://blog.oofn.net/2006/01/08/badging-for-everyone/">CTBadge</a>. Please find these licenses <a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">here</a>.
 </p>
 
 <h3>Source Code</h3>
@@ -108,6 +109,33 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.25 (2008/03/01)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.25.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.25.zip');">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-119'>NTLN-119</a>] -         number of new message on the badge is not updated when new message
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-120'>NTLN-120</a>] -         lack of read mark for light color scheme
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-124'>NTLN-124</a>] -         star image update
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-41'>NTLN-41</a>] -         Emphasize newly arrived messages
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-121'>NTLN-121</a>] -         Unread tab
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-122'>NTLN-122</a>] -         mark all as read feature
+</li>
+</ul>
+</p>    
+
 <h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.24.zip');">download</a>
 <p>
 Bug
