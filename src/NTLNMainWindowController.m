@@ -268,15 +268,10 @@
     [statusTextField setStringValue:@""];
 }
 
-- (void) focusMessageTextFieldAndLocateCursorEnd {
-    [[self window] makeFirstResponder:messageTextField];
-    [(NSText *)[[messageTextField window] firstResponder] setSelectedRange:NSMakeRange([[messageTextField stringValue] length], 0)];
-}
-
 #pragma mark TwitterPostCallback
 - (void) finishedToPost {
     [self enableMessageTextField];
-    [self focusMessageTextFieldAndLocateCursorEnd];
+    [messageTextField focusAndLocateCursorEnd];
 }
 
 - (void) failedToPost:(NSString*)message {
@@ -391,7 +386,7 @@
 #pragma mark MessageViewListener
 - (void) replyDesiredFor:(NSString*)username {
     [messageTextField addReplyTo:username];
-    [self focusMessageTextFieldAndLocateCursorEnd];
+    [messageTextField focusAndLocateCursorEnd];
 }
 
 - (void) createFavoriteDesiredFor:(NSString*)statusId {
@@ -470,6 +465,8 @@
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
     return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", nil];
 }
+
+#pragma mark Actions
 
 - (IBAction) updateTimelineCorrespondsToView:(id)sender {
     switch ([_messageViewSelector selectedSegment]) {

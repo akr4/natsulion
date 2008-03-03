@@ -187,7 +187,18 @@ static TwitterStatusViewController *starred = nil;
     [view markNeedCalculateHeight];
 }
 
+- (void) showStar:(BOOL)show {
+    if (!_starHighlighted && !_favoriteIsCreating && ![_listener isCreatingFavoriteWorking]) {
+        if (show) {
+            [starred showStar:FALSE];
+            starred = self;
+        }
+        [favoliteButton setHidden:!show];
+    }
+}
+
 - (IBAction) toggleFavorite:(id)sender {
+    [self showStar:TRUE];
     [favoliteButton setEnabled:FALSE];
     _favoriteIsCreating = TRUE;
     [_listener createFavoriteDesiredFor:[_status statusId]];
@@ -202,16 +213,6 @@ static TwitterStatusViewController *starred = nil;
 - (void) favoriteCreationFailed {
     [favoliteButton setEnabled:TRUE];
     _favoriteIsCreating = FALSE;
-}
-
-- (void) showStar:(BOOL)show {
-    if (!_starHighlighted && !_favoriteIsCreating && ![_listener isCreatingFavoriteWorking]) {
-        if (show) {
-            [starred showStar:FALSE];
-            starred = self;
-        }
-        [favoliteButton setHidden:!show];
-    }
 }
 
 - (void) startAnimation {

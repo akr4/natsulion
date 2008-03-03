@@ -226,6 +226,11 @@
 //    [self textChanged];
 }
 
+- (void) focusAndLocateCursorEnd {
+    [[self window] makeFirstResponder:self];
+    [(NSText *)[[self window] firstResponder] setSelectedRange:NSMakeRange([[self stringValue] length], 0)];
+}
+
 #pragma mark Notification
 - (void) colorSettingChanged:(NSNotification*)notification {
     [self setupColors];

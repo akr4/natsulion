@@ -35,6 +35,24 @@
     }
 //    NSLog(@"%f %f", [[scrollView contentView] documentVisibleRect].size.width, [[scrollView contentView] documentVisibleRect].size.height);
 }
+
+- (void) keyDown:(NSEvent*)event {
+    unichar keyChar = [[event characters] characterAtIndex:0];
+//    NSLog(@"%d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
+    switch (keyChar) {
+        case 0x20:
+            if ([event modifierFlags] & NSShiftKeyMask) {
+                [self pageUp:self];
+            } else {
+                [self pageDown:self];
+            }
+            break;
+        default:
+            [super keyDown:event];
+            break;
+    }
+}
+
 @end
 
 @implementation NTLNMessageTableView
@@ -135,6 +153,11 @@
 
 - (void) setKnobPosition:(float)position {
     [[viewColumn tableView] scrollPoint:NSMakePoint(0, position)];
+}
+
+- (void) selectionUp {
+    NSIndexSet *target = [NSIndexSet indexSetWithIndex:[[[viewColumn tableView] selectedRowIndexes] firstIndex] - 1];
+    [[viewColumn tableView] selectRowIndexes:target byExtendingSelection:FALSE];
 }
 
 - (void) selectionDown {
@@ -240,6 +263,48 @@
 
 - (void) windowAlphaChanged:(NSNotification*)notification {
 //    [[viewColumn tableView] setAlphaValue:[[NTLNConfiguration instance] windowAlpha]];
+}
+
+#pragma mark Actions
+- (IBAction) makeSelectionsFavoraite:(id)sender {
+    NSIndexSet* indices = [[viewColumn tableView] selectedRowIndexes];
+    unsigned int bufSize = [indices count];
+    unsigned int* buf = malloc(sizeof(unsigned int) * bufSize);
+    NSRange range = NSMakeRange([indices firstIndex], [indices lastIndex]);
+    [indices getIndexes:buf maxCount:bufSize inIndexRange:&range];
+    for(unsigned int i = 0; i != bufSize; i++) {
+        unsigned int index = buf[i];
+        [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:index] toggleFavorite:self];
+    }
+    free(buf);
+}
+
+- (IBAction) addSelectionsToReplyTo:(id)sender {
+    NSIndexSet* indices = [[viewColumn tableView] selectedRowIndexes];
+    unsigned int bufSize = [indices count];
+    unsigned int* buf = malloc(sizeof(unsigned int) * bufSize);
+    NSRange range = NSMakeRange([indices firstIndex], [indices lastIndex]);
+    [indices getIndexes:buf maxCount:bufSize inIndexRange:&range];
+    for(unsigned int i = 0; i != bufSize; i++) {
+        unsigned int index = buf[i];
+        NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:index];
+        NTLNMessage *m = [c message];
+        NSString *s = [m screenName];
+        [messageInputTextField addReplyTo:s];
+    }
+    free(buf);
+    
+    [messageInputTextField focusAndLocateCursorEnd];
+}
+
+- (IBAction) nextMessage:(id)sender {
+    [self selectionDown];
+    [[viewColumn tableView] scrollRowToVisible:[[[viewColumn tableView] selectedRowIndexes] firstIndex]];
+}
+
+- (IBAction) previousMessage:(id)sender {
+    [self selectionUp];
+    [[viewColumn tableView] scrollRowToVisible:[[[viewColumn tableView] selectedRowIndexes] firstIndex]];
 }
 
 @end

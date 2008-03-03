@@ -55,12 +55,25 @@
 			<string>NSTableView</string>
 		</dict>
 		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>addSelectionsToReplyTo</key>
+				<string>id</string>
+				<key>makeSelectionsFavoraite</key>
+				<string>id</string>
+				<key>nextMessage</key>
+				<string>id</string>
+				<key>previousMessage</key>
+				<string>id</string>
+			</dict>
 			<key>CLASS</key>
 			<string>NTLNMessageTableViewController</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
+				<key>messageInputTextField</key>
+				<string>NTLNMessageInputTextField</string>
 				<key>messageViewControllerArrayController</key>
 				<string>NSArrayController</string>
 				<key>scrollView</key>
@@ -223,14 +236,6 @@
 			<string>NSProgressIndicator</string>
 		</dict>
 		<dict>
-			<key>CLASS</key>
-			<string>NTLNConfiguration</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
-		</dict>
-		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>closePreferencesSheet</key>
@@ -255,6 +260,14 @@
 				<key>welcomeWindowController</key>
 				<string>NTLNWelcomeWindowController</string>
 			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNConfiguration</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
 		</dict>

@@ -1,5 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import "NTLNMessageViewController.h"
+#import "NTLNMessageInputTextField.h"
 
 @class NTLNMessageListViewsController;
 
@@ -17,6 +18,7 @@
     IBOutlet NSTableColumn *viewColumn;
     IBOutlet NSScrollView *scrollView;
     IBOutlet NSArrayController *messageViewControllerArrayController;
+    IBOutlet NTLNMessageInputTextField *messageInputTextField;
     
     NSScroller *_verticalScroller;
     
@@ -39,5 +41,10 @@
 - (float) columnWidth;
 - (void) recalculateViewSizes;
 - (void) reloadTimelineSortDescriptors;
+
+- (IBAction) makeSelectionsFavoraite:(id)sender;
+- (IBAction) addSelectionsToReplyTo:(id)sender;
+- (IBAction) nextMessage:(id)sender;
+- (IBAction) previousMessage:(id)sender;
 
 @end
