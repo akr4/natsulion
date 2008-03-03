@@ -4,7 +4,7 @@
 
 @implementation NTLNConfiguration
 
-@synthesize useGrowl, showWindowWhenNewMessage, refreshIntervalSeconds, usePost, editWindowAlphaManually, decodeHeart;
+@synthesize useGrowl, showWindowWhenNewMessage, refreshIntervalSeconds, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier;
 
 static id _instance = nil;
 
@@ -78,6 +78,7 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self bindToProperty:@"usePost"];
     [self bindToProperty:@"editWindowAlphaManually"];
     [self bindToProperty:@"decodeHeart"];
+    [self bindToProperty:@"sendMessageWithEnterAndModifier"];
     [self bindToProperty:@"refreshIntervalSeconds"];
     
     [[NSUserDefaults standardUserDefaults] setObject:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"] forKey:@"version"];

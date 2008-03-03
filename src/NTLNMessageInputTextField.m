@@ -231,6 +231,21 @@
     [(NSText *)[[self window] firstResponder] setSelectedRange:NSMakeRange([[self stringValue] length], 0)];
 }
 
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command {
+    if (![[NTLNConfiguration instance] sendMessageWithEnterAndModifier]) {
+        return FALSE;
+    }
+    
+    if (command == @selector(insertNewline:)) {
+        return TRUE;
+    } else if (command == @selector(insertLineBreak:)) {
+        [[self target] performSelector:[self action]];
+        return FALSE;
+    } else {
+        return FALSE;
+    }
+}
+
 #pragma mark Notification
 - (void) colorSettingChanged:(NSNotification*)notification {
     [self setupColors];

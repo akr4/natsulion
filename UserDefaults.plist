@@ -20,5 +20,7 @@
     <false/>
     <key>windowAlpha</key>
     <real>0.8</real>
+    <key>sendMessageWithEnterAndModifier</key>
+    <false/>
 </dict>
 </plist>
