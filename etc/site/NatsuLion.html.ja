@@ -113,6 +113,24 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.26 (2008/03/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.26.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.26.zip');">download</a>
+<p>
+<p>
+Ctrl + Enter でポストするオプションを追加 (Enter のみでは何もしない)。ショートカットをいくつか追加。詳細はメニューをご覧ください。
+</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-125'>NTLN-125</a>] -         need shortcuts
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-126'>NTLN-126</a>] -         post with control + enter
+</li>
+</ul>
+</p>    
+
 <h3>Version 0.25 (2008/03/01)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.25.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.25.zip');">download</a>
 <p>
 Bug
