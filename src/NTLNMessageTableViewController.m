@@ -4,6 +4,7 @@
 #import "NTLNConfiguration.h"
 #import "NTLNColors.h"
 #import "NTLNMessageListViewsController.h"
+#import "NTLNNotification.h"
 
 @implementation NTLNMessageScrollView 
 - (void)reflectScrolledClipView:(NSClipView *)aClipView {
@@ -102,9 +103,21 @@
                                              selector:@selector(windowAlphaChanged:)
                                                  name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(messageViewChanging:)
+                                                 name:NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGING
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(messageViewChanged:)
+                                                 name:NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
+                                               object:nil];
     
     // TODO
     [scrollView setBackgroundColor:[[NTLNColors instance] colorForBackground]];
+}
+
+- (id) init {
+    return self;
 }
 
 - (void) dealloc {
@@ -120,12 +133,10 @@
 
 // for display custom view /////////////////////////////////////////////////////
 - (void) selectedRowIndexes:(NSIndexSet*)indexSet {
-    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
-        if ([indexSet containsIndex:i]) {
-            [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:i] highlight];
-        } else {
-            [[[messageViewControllerArrayController arrangedObjects] objectAtIndex:i] unhighlight];
-        }
+    [_highlightedViewController unhighlight];
+    if ([indexSet firstIndex] != NSNotFound) {
+        _highlightedViewController = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:[indexSet firstIndex]];
+        [_highlightedViewController highlight];
     }
 }
 
@@ -210,7 +221,21 @@
     [self reloadTableView];
 }
 
-// NSTableView datasource method ///////////////////////////////////////////////
+- (void) resize:(float)deltaHeight {
+    float originalKnobPosition = [_verticalScroller floatValue];
+    
+    NSRect frame = [scrollView frame];
+    frame.size.height += deltaHeight;
+    frame.origin.y -= deltaHeight;
+    [scrollView setFrame:frame];
+    
+    if ([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING
+        && originalKnobPosition >= _autoscrollMinLimit) {
+        _autoscrollMinLimit = [_verticalScroller floatValue];
+    }
+}
+
+#pragma mark NSTableView datasource methods
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView {
     return [[messageViewControllerArrayController arrangedObjects] count];
 }
@@ -221,7 +246,7 @@
     return @"";
 }
 
-// NSTableView delegate method /////////////////////////////////////////////////
+#pragma mark NSTableView delegate methods
 - (void)tableViewSelectionIsChanging:(NSNotification *)aNotification {
     [self updateSelection];
 }
@@ -241,21 +266,6 @@
     return [controller requiredHeight];
 }
 
-/////////////////////////////////////////////////////////////////////////////////////////
-- (void) resize:(float)deltaHeight {
-    float originalKnobPosition = [_verticalScroller floatValue];
-    
-    NSRect frame = [scrollView frame];
-    frame.size.height += deltaHeight;
-    frame.origin.y -= deltaHeight;
-    [scrollView setFrame:frame];
-    
-    if ([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING
-        && originalKnobPosition >= _autoscrollMinLimit) {
-        _autoscrollMinLimit = [_verticalScroller floatValue];
-    }
-}
-
 #pragma mark Notification
 - (void) colorSchemeChanged:(NSNotification*)notification {
     [self reloadTableView];
@@ -263,6 +273,15 @@
 
 - (void) windowAlphaChanged:(NSNotification*)notification {
 //    [[viewColumn tableView] setAlphaValue:[[NTLNConfiguration instance] windowAlpha]];
+}
+
+- (void) messageViewChanging:(NSNotification*)notification {
+    [_highlightedViewController unhighlight];
+}
+
+- (void) messageViewChanged:(NSNotification*)notification {
+    _highlightedViewController = nil;
+    [self reloadTableView];
 }
 
 #pragma mark Actions

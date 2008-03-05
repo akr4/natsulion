@@ -2,6 +2,7 @@
 #import "NTLNAccount.h"
 #import "NTLNConfiguration.h"
 #import "TwitterStatusViewController.h"
+#import "NTLNNotification.h"
 
 // class holds an information of a message view which can be switched by messageViewSelector.
 @interface NTLNMessageViewInfo : NSObject {
@@ -80,6 +81,8 @@
 //}
 
 - (void) changeView:(int)index {
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGING object:nil];
+    
     // save status
     [[_messageViewInfoArray objectAtIndex:_currentViewIndex] setKnobPosition:[messageTableViewController knobPosition]];
     
@@ -95,6 +98,8 @@
         TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
         [c exitFromScrollView];
     }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED object:nil];
 }
 
 - (IBAction) changeViewByToolbar:(id) sender {

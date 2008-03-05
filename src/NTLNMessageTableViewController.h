@@ -30,6 +30,8 @@
     
     // for determining current text area height is the same as original.
     float _cumulativeDeltaHeight;
+    
+    NTLNMessageViewController *_highlightedViewController;
 }
 
 - (NSView*) viewForTabItem;

@@ -81,7 +81,8 @@ static TwitterStatusViewController *starred = nil;
                                              selector:@selector(colorSchemeChanged:)
                                                  name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
                                                object:nil];
-    
+
+    [self unhighlight];
 
     return self;
 }
