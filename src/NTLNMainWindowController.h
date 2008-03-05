@@ -27,6 +27,7 @@
     IBOutlet NTLNMessageInputTextField *messageTextField;
     IBOutlet NSTextField *statusTextField;
     IBOutlet NSArrayController *messageViewControllerArrayController;
+    IBOutlet NSMutableArray *messageViewControllerArray;
     IBOutlet NTLNMessageTableViewController *messageTableViewController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     

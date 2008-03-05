@@ -195,11 +195,10 @@
 }
 
 - (BOOL) addIfNewMessage:(TwitterStatusViewController*)controller {
-    [messageViewControllerArrayController setFilterPredicate:nil];
-    if ([[messageViewControllerArrayController arrangedObjects] containsObject:controller]) {
-        [messageListViewsController applyCurrentPredicate];
+    if ([messageViewControllerArray containsObject:controller]) {
         return FALSE;
     }
+    [messageViewControllerArrayController setFilterPredicate:nil];
     [self addMessageViewController:controller];
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE object:controller];
     return TRUE;
