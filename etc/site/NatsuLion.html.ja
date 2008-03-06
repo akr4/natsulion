@@ -113,6 +113,24 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.28 (2008/03/07)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.28.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.28.zip');">download</a>
+<p>
+<p>
+Dock アイコンに表示する未読件数を replies 分だけにしました。ウィンドウが非アクティブのときは未読になりません。
+</p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-131'>NTLN-131</a>] -         not displayed tweet is made unread
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-129'>NTLN-129</a>] -         count only unread replies for the badge
+</li>
+</ul>
+</p>        
+
 <h3>Version 0.27 (2008/03/06)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.27.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.27.zip');">download</a>
 <p>
 <p>

@@ -310,12 +310,12 @@
 }
 
 - (void) windowActivated:(NSNotification*)notification {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     [scrollView notifyEnterExit];
 }
 
 - (void) windowDeactivated:(NSNotification*)notification {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     [scrollView notifyExit];
 }
 

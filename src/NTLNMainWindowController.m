@@ -39,20 +39,27 @@
     [messageListViewsController changeViewByMenu:sender];
 }
 
-- (void) addMenuItemWithTitle:(NSString*)title target:(id)target action:(SEL)action keyEquivalent:(NSString*)keyEquivalent tag:(int)tag toMenu:(NSMenu*) menu {
+- (NSMenuItem*) addMenuItemWithTitle:(NSString*)title target:(id)target action:(SEL)action keyEquivalent:(NSString*)keyEquivalent tag:(int)tag toMenu:(NSMenu*) menu {
     NSMenuItem *item = [[[NSMenuItem alloc] initWithTitle:title action:action keyEquivalent:keyEquivalent] autorelease];
     [item setTarget:target];
     [item setTag:tag];
     [menu addItem:item];
+    return item;
 }
 
-- (void) addToolbarItemWithIdentifier:(NSString*)identifier label:(NSString*)label target:(id)target action:(SEL)action view:(NSView*)view {
+- (NSToolbarItem*) addToolbarItemWithIdentifier:(NSString*)identifier label:(NSString*)label target:(id)target action:(SEL)action view:(NSView*)view {
     NSToolbarItem *item = [[[NSToolbarItem alloc] initWithItemIdentifier:identifier] autorelease];
     [item setLabel:label];
     [item setTarget:target];
     [item setAction:action];
     [item setView:view];
     [_toolbarItems setObject:item forKey:[item itemIdentifier]];
+    NSMenuItem *menuItem = [[[NSMenuItem alloc] init] autorelease];
+    [menuItem setTitle:label];
+    [menuItem setTarget:target];
+    [menuItem setAction:action];
+    [item setMenuFormRepresentation:menuItem];
+    return item;
 }
 
 - (void) setupMenuAndToolbar {
@@ -74,11 +81,66 @@
     [_messageViewSelector setSelected:TRUE forSegment:0];
     [_messageViewSelector setTarget:messageListViewsController];
     [_messageViewSelector setAction:@selector(changeViewByToolbar:)];
-    [self addToolbarItemWithIdentifier:@"messageView" 
-                                 label:@"View Mode"
-                                target:messageListViewsController 
-                                action:@selector(changeView:)
-                                  view:_messageViewSelector];
+    NSToolbarItem *messageViewSelectorToolbarItem = [self addToolbarItemWithIdentifier:@"messageView" 
+                                                                                 label:@"View Mode"
+                                                                                target:messageListViewsController 
+                                                                                action:@selector(changeView:)
+                                                                                  view:_messageViewSelector];
+    // action and keyEquivalent is not used
+    NSMenuItem *item = [[[NSMenuItem alloc] init] autorelease];
+    [item setTitle:@"View Mode"];
+    NSMenu *viewTextMenu  = [[[NSMenu alloc] initWithTitle:@"dummy menu"] autorelease];
+    [self addMenuItemWithTitle:@"Friends"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"1" 
+                           tag:0 
+                        toMenu:viewMenu];
+    [self addMenuItemWithTitle:@"Replies"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"2" 
+                           tag:1 
+                        toMenu:viewMenu];
+    [self addMenuItemWithTitle:@"Sent"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"3" 
+                           tag:2 
+                        toMenu:viewMenu];
+    [self addMenuItemWithTitle:@"Unread"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"4" 
+                           tag:3
+                        toMenu:viewMenu];
+    [self addMenuItemWithTitle:@"Friends"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"1" 
+                           tag:0 
+                        toMenu:viewTextMenu];
+    [self addMenuItemWithTitle:@"Replies"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"2" 
+                           tag:1 
+                        toMenu:viewTextMenu];
+    [self addMenuItemWithTitle:@"Sent"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"3" 
+                           tag:2 
+                        toMenu:viewTextMenu];
+    [self addMenuItemWithTitle:@"Unread"
+                        target:self
+                        action:@selector(changeViewByMenu:)
+                 keyEquivalent:@"4" 
+                           tag:3
+                        toMenu:viewTextMenu];
+    [item setSubmenu:viewTextMenu];
+    [messageViewSelectorToolbarItem setMenuFormRepresentation:item];
+    
     
     // refresh button
     NSButton *refreshButton = [[[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 25, 25)] autorelease];
@@ -105,35 +167,6 @@
                                   view:markAllAsReadButton];
 
     [[self window] setToolbar:toolbar];
-
-    // menu
-    [self addMenuItemWithTitle:@"Friends"
-                        target:self
-                        action:@selector(changeViewByMenu:)
-                 keyEquivalent:@"1" 
-                           tag:0 
-                        toMenu:viewMenu];
-
-    [self addMenuItemWithTitle:@"Replies"
-                        target:self
-                        action:@selector(changeViewByMenu:)
-                 keyEquivalent:@"2" 
-                           tag:1 
-                        toMenu:viewMenu];
-
-    [self addMenuItemWithTitle:@"Sent"
-                        target:self
-                        action:@selector(changeViewByMenu:)
-                 keyEquivalent:@"3" 
-                           tag:2 
-                        toMenu:viewMenu];
-
-    [self addMenuItemWithTitle:@"Unread"
-                        target:self
-                        action:@selector(changeViewByMenu:)
-                 keyEquivalent:@"4" 
-                           tag:3
-                        toMenu:viewMenu];
 }
 
 - (void) awakeFromNib {

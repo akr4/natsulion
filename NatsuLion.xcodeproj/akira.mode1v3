@@ -291,7 +291,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 520}, {243, 600}}</string>
+							<string>{{0, 532}, {243, 600}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -340,7 +340,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9FE910C0D8071F40012136E</string>
+										<string>E9FE913D0D807DC70012136E</string>
 										<key>history</key>
 										<array>
 											<string>E96A458B0D43CF4C00D6E1AF</string>
@@ -406,7 +406,6 @@
 											<string>E9EFD2C80D7F6B06000212B9</string>
 											<string>E9EFD2C90D7F6B06000212B9</string>
 											<string>E9EFD2CC0D7F6B06000212B9</string>
-											<string>E9EFD2CE0D7F6B06000212B9</string>
 											<string>E9EFD2CF0D7F6B06000212B9</string>
 											<string>E9FE90840D80696E0012136E</string>
 											<string>E9FE90860D80696E0012136E</string>
@@ -419,9 +418,10 @@
 											<string>E9FE90C30D806DD40012136E</string>
 											<string>E9FE90E90D806F040012136E</string>
 											<string>E9FE90FA0D8070E90012136E</string>
-											<string>E9FE90FB0D8070E90012136E</string>
 											<string>E9FE90FC0D8070E90012136E</string>
-											<string>E9FE90FD0D8070E90012136E</string>
+											<string>E9FE91180D8078B00012136E</string>
+											<string>E9FE913A0D807DC70012136E</string>
+											<string>E9FE913B0D807DC70012136E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -580,6 +580,9 @@
 											<string>E9FE91020D8070E90012136E</string>
 											<string>E9FE91030D8070E90012136E</string>
 											<string>E9FE91040D8070E90012136E</string>
+											<string>E9FE911A0D8078B00012136E</string>
+											<string>E9FE911B0D8078B00012136E</string>
+											<string>E9FE913C0D807DC70012136E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -773,9 +776,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E9FE91260D8079AB0012136E</string>
+		<string>E9FE91270D8079AB0012136E</string>
+		<string>E9FE91280D8079AB0012136E</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
