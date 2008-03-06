@@ -139,9 +139,14 @@
 
 #pragma mark Notification methods
 - (void) numberOfMessageChanged:(NSNotification*)notification {
+    [messageViewControllerArrayController setFilterPredicate:
+     [NSPredicate predicateWithFormat:
+      @"message.status == 0 AND message.replyType IN %@",
+      [NSArray arrayWithObjects:
+       [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY],
+       [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY_PROBABLE],
+       nil]]];
     
-    [messageViewControllerArrayController setFilterPredicate:[NSPredicate predicateWithFormat:@"message.status == 0 AND (message.replyType != 2 OR (message.replyType == 2 AND message.timestamp > %@))",
-                                                              [NSDate dateWithTimeIntervalSince1970:[[NTLNConfiguration instance] latestTimestampOfMessage]]]];
     int count = [[messageViewControllerArrayController arrangedObjects] count];
     if (count == 0) {
         [NSApp setApplicationIconImage:nil];
