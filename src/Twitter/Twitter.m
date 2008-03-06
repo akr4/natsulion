@@ -245,7 +245,7 @@
     [super dealloc];
 }
 
-// methods for TwitterTimelineCallbackHandler /////////////////////////////////////////////////////////////////
+#pragma mark methods for TwitterTimelineCallbackHandler
 - (void) pushIconWaiter:(TwitterStatus*)waiter forUrl:(NSString*)url {
     NSMutableSet *set = [_waitingIconTwitterStatuses objectForKey:url];
     if (!set) {
@@ -264,7 +264,7 @@
     return back;
 }
 
-////////////////////////////////////////////////////////////////////
+#pragma mark public methods
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
     
     if (_connectionForFriendTimeline && ![_connectionForFriendTimeline isFinished]) {
@@ -288,7 +288,6 @@
     [_callback twitterStartTask];
 }
 
-// replies //////////////////////////////////////////////////////////////////////////////////////
 - (void) repliesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
 
     if (_connectionForReplies && ![_connectionForReplies isFinished]) {
@@ -335,8 +334,66 @@
     [_callback twitterStartTask];
 }
 
-// icon callback ////////////////////////////////////////////////////////////////////////////////
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
+    
+    if (_connectionForPost && ![_connectionForPost isFinished]) {
+        NSLog(@"connection for post is running.");
+        return;
+    }
+    
+    NSString *requestStr =  [@"status=" stringByAppendingString:[[NTLNXMLHTTPEncoder encoder] encodeHTTP:message]];
+    requestStr = [requestStr stringByAppendingString:@"&source=natsulion"];
+    
+    TwitterPostCallbackHandler *handler = [[TwitterPostCallbackHandler alloc] initWithPostCallback:_callback];
+    [_connectionForPost release];
+    _connectionForPost = [[NTLNAsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
+                                                                        bodyString:requestStr 
+                                                                          username:username
+                                                                          password:password
+                                                                          callback:handler];
+    
+    //    NSLog(@"sent data [%@]", requestStr);
+    
+    if (!_connectionForPost) {
+        [_callback failedToPost:@"Posting a message failure. unable to get connection."];
+        return;
+    }
+    
+    [_callback twitterStartTask];
+}
 
+- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password {
+    
+    if (_connectionForFavorite && ![_connectionForFavorite isFinished]) {
+        NSLog(@"connection for favorite is running.");
+        return;
+    }
+    
+    NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
+    [urlStr appendString:@"http://twitter.com/favourings/create/"];
+    [urlStr appendString:statusId];
+    [urlStr appendString:@".xml"];
+    
+    TwitterFavoriteCallbackHandler *handler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:_callback];
+    [_connectionForFavorite release];
+    _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:urlStr
+                                                                username:username
+                                                                password:password
+                                                                 usePost:FALSE
+                                                                callback:handler];
+    
+    NSLog(@"sent data [%@]", urlStr);
+    
+    if (!_connectionForFavorite) {
+        [_callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
+                                                                         originalMessage:@"Sending a message failure. unable to get connection."]];
+        return;
+    }
+    
+    [_callback twitterStartTask];
+}
+
+#pragma mark icon callback
 - (NSArray*) arrayWithSet:(NSSet*)set {
     NSMutableArray* array = [[[NSMutableArray alloc] initWithCapacity:10] autorelease];
     
@@ -372,69 +429,6 @@
     for (int i = 0; i < [[self popIconWaiterSet:key] count]; i++) {
         [_callback twitterStopTask];
     }
-}
-
-// sendMessage //////////////////////////////////////////////////////////////////////////////////
-
-- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
-    
-    if (_connectionForPost && ![_connectionForPost isFinished]) {
-        NSLog(@"connection for post is running.");
-        return;
-    }
-
-    NSString *requestStr =  [@"status=" stringByAppendingString:[[NTLNXMLHTTPEncoder encoder] encodeHTTP:message]];
-    requestStr = [requestStr stringByAppendingString:@"&source=natsulion"];
-
-    TwitterPostCallbackHandler *handler = [[TwitterPostCallbackHandler alloc] initWithPostCallback:_callback];
-    [_connectionForPost release];
-    _connectionForPost = [[NTLNAsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
-                                                                    bodyString:requestStr 
-                                                                      username:username
-                                                                      password:password
-                                                                      callback:handler];
-    
-//    NSLog(@"sent data [%@]", requestStr);
-    
-    if (!_connectionForPost) {
-        [_callback failedToPost:@"Posting a message failure. unable to get connection."];
-        return;
-    }
-
-    [_callback twitterStartTask];
-}
-
-// createFavorite /////////////////////////////////////////////////////////////////////////////////////////
-
-- (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password {
-
-    if (_connectionForFavorite && ![_connectionForFavorite isFinished]) {
-        NSLog(@"connection for favorite is running.");
-        return;
-    }
-    
-    NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
-    [urlStr appendString:@"http://twitter.com/favourings/create/"];
-    [urlStr appendString:statusId];
-    [urlStr appendString:@".xml"];
-    
-    TwitterFavoriteCallbackHandler *handler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:_callback];
-    [_connectionForFavorite release];
-    _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:urlStr
-                                                            username:username
-                                                            password:password
-                                                             usePost:FALSE
-                                                            callback:handler];
-    
-    NSLog(@"sent data [%@]", urlStr);
-    
-    if (!_connectionForFavorite) {
-        [_callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
-                                                                        originalMessage:@"Sending a message failure. unable to get connection."]];
-        return;
-    }
-
-    [_callback twitterStartTask];
 }
 
 @end
