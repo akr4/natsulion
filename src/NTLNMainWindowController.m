@@ -227,14 +227,17 @@
     [messageTableViewController newMessageArrived:controller];
 }
 
-- (BOOL) addIfNewMessage:(TwitterStatusViewController*)controller {
+- (BOOL) isNewMessage:(TwitterStatusViewController*)controller {
     if ([messageViewControllerArray containsObject:controller]) {
         return FALSE;
     }
+    return TRUE;
+}
+
+- (void) addIfNewMessage:(TwitterStatusViewController*)controller {
     [messageViewControllerArrayController setFilterPredicate:nil];
     [self addMessageViewController:controller];
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE object:controller];
-    return TRUE;
 }
 
 - (void) updateStatus {
@@ -320,7 +323,7 @@
         TwitterStatusViewController *controller = [[[TwitterStatusViewController alloc]
                                                     initWithTwitterStatus:(TwitterStatus*)s
                                                     messageViewListener:self] autorelease];
-        if ([self addIfNewMessage:controller]) {
+        if ([self isNewMessage:controller]) {
             
             int priority = 0;
             BOOL sticky = FALSE;
@@ -342,6 +345,8 @@
                 default:
                     break;
             }
+            
+            [self addIfNewMessage:controller];
             
             [self sendToGrowlTitle:[s name]
                     andDescription:[s text]

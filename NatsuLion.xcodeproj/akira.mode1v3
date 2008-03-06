@@ -285,13 +285,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>58</integer>
+									<integer>54</integer>
 									<integer>6</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 532}, {243, 600}}</string>
+							<string>{{0, 487}, {243, 600}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -328,7 +328,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NTLNMessageTableViewController.m</string>
+								<string>NTLNMainWindowController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -336,11 +336,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>E95D35960D2F753A00EA6958</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NTLNMessageTableViewController.m</string>
+										<string>NTLNMainWindowController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9FE913D0D807DC70012136E</string>
+										<string>E9FE91520D8080680012136E</string>
 										<key>history</key>
 										<array>
 											<string>E96A458B0D43CF4C00D6E1AF</string>
@@ -413,15 +413,15 @@
 											<string>E9FE90880D80696E0012136E</string>
 											<string>E9FE90890D80696E0012136E</string>
 											<string>E9FE908A0D80696E0012136E</string>
-											<string>E9FE908F0D80696E0012136E</string>
 											<string>E9FE90C00D806DD40012136E</string>
 											<string>E9FE90C30D806DD40012136E</string>
 											<string>E9FE90E90D806F040012136E</string>
 											<string>E9FE90FA0D8070E90012136E</string>
 											<string>E9FE90FC0D8070E90012136E</string>
 											<string>E9FE91180D8078B00012136E</string>
-											<string>E9FE913A0D807DC70012136E</string>
-											<string>E9FE913B0D807DC70012136E</string>
+											<string>E9FE913F0D807F6E0012136E</string>
+											<string>E9FE91400D807F6E0012136E</string>
+											<string>E9FE91410D807F6E0012136E</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -583,6 +583,8 @@
 											<string>E9FE911A0D8078B00012136E</string>
 											<string>E9FE911B0D8078B00012136E</string>
 											<string>E9FE913C0D807DC70012136E</string>
+											<string>E9FE91420D807F6E0012136E</string>
+											<string>E9FE91430D807F6E0012136E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -779,9 +781,9 @@
 		<string>E9FE91260D8079AB0012136E</string>
 		<string>E9FE91270D8079AB0012136E</string>
 		<string>E9FE91280D8079AB0012136E</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -808,7 +810,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NTLNMessageTableViewController.m</string>
+								<string>NTLNAsyncUrlConnection.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

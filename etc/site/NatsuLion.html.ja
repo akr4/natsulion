@@ -116,17 +116,21 @@
 <h3>Version 0.28 (2008/03/07)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.28.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.28.zip');">download</a>
 <p>
 <p>
-Dock アイコンに表示する未読件数を replies 分だけにしました。ウィンドウが非アクティブのときは未読になりません。
+Dock アイコンに表示する未読件数を replies 分だけにしました。ウィンドウが非アクティブのときは未読になりません。ツールバーをテキストのみ表示にした場合でも View Mode が選択できるようになりました。
 </p>
 Bug
 <ul>
 <li>[<a href='http://jira.physalis.net/browse/NTLN-131'>NTLN-131</a>] -         not displayed tweet is made unread
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-133'>NTLN-133</a>] -         unread count badge switches 0 and 1 frequently at a boot time
 </li>
 </ul>
     
 Improvement
 <ul>
 <li>[<a href='http://jira.physalis.net/browse/NTLN-129'>NTLN-129</a>] -         count only unread replies for the badge
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-132'>NTLN-132</a>] -         &quot;view mode&quot; toolbar text does not work when text only mode
 </li>
 </ul>
 </p>        

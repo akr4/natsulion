@@ -7,6 +7,34 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.28</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.28
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-131'&gt;NTLN-131&lt;/a&gt;] -         not displayed tweet is made unread
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-133'&gt;NTLN-133&lt;/a&gt;] -         unread count badge switches 0 and 1 frequently at a boot time
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-129'&gt;NTLN-129&lt;/a&gt;] -         count only unread replies for the badge
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-132'&gt;NTLN-132&lt;/a&gt;] -         &quot;view mode&quot; toolbar text does not work when text only mode
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Fri, 07 Mar 2008 04:45:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.28.zip"
+        length="829094"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.27</title>
       <description>
         Release Notes - NatsuLion - Version 0.27

@@ -115,11 +115,15 @@ Bug
 <ul>
 <li>[<a href='http://jira.physalis.net/browse/NTLN-131'>NTLN-131</a>] -         not displayed tweet is made unread
 </li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-133'>NTLN-133</a>] -         unread count badge switches 0 and 1 frequently at a boot time
+</li>
 </ul>
     
 Improvement
 <ul>
 <li>[<a href='http://jira.physalis.net/browse/NTLN-129'>NTLN-129</a>] -         count only unread replies for the badge
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-132'>NTLN-132</a>] -         &quot;view mode&quot; toolbar text does not work when text only mode
 </li>
 </ul>
 </p>        
