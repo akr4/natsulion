@@ -7,6 +7,26 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.27</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.27
+        
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-127'&gt;NTLN-127&lt;/a&gt;] -         slow when clicking a tweet with a lot of tweets in the view
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-128'&gt;NTLN-128&lt;/a&gt;] -         freeze at arriving new messages
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+      <pubDate>Thu, 06 Mar 2008 08:59:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.27.zip"
+        length="827697"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.26</title>
       <description>
         Release Notes - NatsuLion - Version 0.26

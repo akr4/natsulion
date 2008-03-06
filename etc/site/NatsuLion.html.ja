@@ -113,6 +113,20 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.27 (2008/03/06)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.27.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.27.zip');">download</a>
+<p>
+<p>
+メッセージが増えてきたときの選択と新規メッセージ追加の速度を改善しました。
+</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-127'>NTLN-127</a>] -         slow when clicking a tweet with a lot of tweets in the view
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-128'>NTLN-128</a>] -         freeze at arriving new messages
+</li>
+</ul>
+</p>
+
 <h3>Version 0.26 (2008/03/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.26.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.26.zip');">download</a>
 <p>
 <p>
