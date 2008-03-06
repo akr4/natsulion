@@ -8,6 +8,8 @@
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
 }
+- (void)notifyExit;
+- (void)notifyEnterExit;
 @end
 
 @interface NTLNMessageTableView : NSTableView {
@@ -16,7 +18,7 @@
 
 @interface NTLNMessageTableViewController : NSObject {
     IBOutlet NSTableColumn *viewColumn;
-    IBOutlet NSScrollView *scrollView;
+    IBOutlet NTLNMessageScrollView *scrollView;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageInputTextField *messageInputTextField;
     

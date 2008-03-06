@@ -81,7 +81,7 @@ static TwitterStatusViewController *starred = nil;
                                              selector:@selector(colorSchemeChanged:)
                                                  name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
                                                object:nil];
-
+    
     [self unhighlight];
 
     return self;
@@ -127,7 +127,7 @@ static TwitterStatusViewController *starred = nil;
         return;
     }
 
-    _markAsReadTimer = [[NSTimer scheduledTimerWithTimeInterval:3
+    _markAsReadTimer = [[NSTimer scheduledTimerWithTimeInterval:2.0
                                                          target:self
                                                        selector:@selector(markAsRead)
                                                        userInfo:nil

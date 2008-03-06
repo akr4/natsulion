@@ -7,10 +7,19 @@
 #import "NTLNNotification.h"
 
 @implementation NTLNMessageScrollView 
-- (void)reflectScrolledClipView:(NSClipView *)aClipView {
-    [super reflectScrolledClipView:aClipView];
+- (void)notifyExit {
+    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
+        TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
+        [c exitFromScrollView];
+    }
+}
 
+- (void)notifyEnterExit {
     if ([messageListViewsController currentViewIndex] == 3) {
+        return;
+    }
+    
+    if (![[self window] isMainWindow]) {
         return;
     }
     
@@ -34,7 +43,12 @@
             [c exitFromScrollView];
         }
     }
-//    NSLog(@"%f %f", [[scrollView contentView] documentVisibleRect].size.width, [[scrollView contentView] documentVisibleRect].size.height);
+//    NSLog(@"%f %f", [self documentVisibleRect].size.width, [self documentVisibleRect].size.height);
+}
+
+- (void)reflectScrolledClipView:(NSClipView *)aClipView {
+    [super reflectScrolledClipView:aClipView];
+    [self notifyEnterExit];
 }
 
 - (void) keyDown:(NSEvent*)event {
@@ -111,6 +125,15 @@
                                              selector:@selector(messageViewChanged:)
                                                  name:NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(windowActivated:)
+                                                 name:NSWindowDidBecomeMainNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(windowDeactivated:)
+                                                 name:NSWindowDidResignMainNotification
+                                               object:nil];
+    
     
     // TODO
     [scrollView setBackgroundColor:[[NTLNColors instance] colorForBackground]];
@@ -277,11 +300,23 @@
 
 - (void) messageViewChanging:(NSNotification*)notification {
     [_highlightedViewController unhighlight];
+    [scrollView notifyExit];
 }
 
 - (void) messageViewChanged:(NSNotification*)notification {
     _highlightedViewController = nil;
     [self reloadTableView];
+    [scrollView notifyEnterExit];
+}
+
+- (void) windowActivated:(NSNotification*)notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [scrollView notifyEnterExit];
+}
+
+- (void) windowDeactivated:(NSNotification*)notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [scrollView notifyExit];
 }
 
 #pragma mark Actions
