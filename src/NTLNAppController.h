@@ -14,7 +14,8 @@
     
     int _refreshInterval;
     NSTimer *_refreshTimer;
-    
+    int _numberOfUnreadMessage;
+
     CTBadge *_badge;
 }
 

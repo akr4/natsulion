@@ -149,7 +149,8 @@ static TwitterStatusViewController *starred = nil;
     [newIconImageView setHidden:TRUE];
     [_status setStatus:NTLN_MESSAGE_STATUS_READ];
     if (notification) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ 
+                                                            object:self];
     }
 }
 

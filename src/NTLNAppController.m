@@ -3,6 +3,7 @@
 #import "NTLNAccount.h"
 #import "NTLNConfiguration.h"
 #import "NTLNNotification.h"
+#import "TwitterStatusViewController.h"
 
 @implementation NTLNAppController
 
@@ -66,12 +67,12 @@
 
 - (void) awakeFromNib { 
     [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(numberOfMessageChanged:)
+                                             selector:@selector(messageChangedToRead:)
                                                  name:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(numberOfMessageChanged:)
-                                                 name:NTLN_NOTIFICATION_NEW_MESSAGE
+                                             selector:@selector(messageAdded:)
+                                                 name:NTLN_NOTIFICATION_NEW_MESSAGE_ADDED
                                                object:nil];
     
     _badge = [[CTBadge alloc] init];
@@ -112,7 +113,6 @@
     
     [welcomeWindowController setWelcomeWindowControllerCallback:self];
     
-    
     NSString *username = [[NTLNAccount instance] username];
     if (!username) {
         // first time
@@ -138,21 +138,35 @@
 }
 
 #pragma mark Notification methods
-- (void) numberOfMessageChanged:(NSNotification*)notification {
-    [messageViewControllerArrayController setFilterPredicate:
-     [NSPredicate predicateWithFormat:
-      @"message.status == 0 AND message.replyType IN %@",
-      [NSArray arrayWithObjects:
-       [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY],
-       [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY_PROBABLE],
-       nil]]];
-    
-    int count = [[messageViewControllerArrayController arrangedObjects] count];
-    if (count == 0) {
+- (void) writeNumberOfUnread {
+    if (_numberOfUnreadMessage == 0) {
         [NSApp setApplicationIconImage:nil];
     } else {
-        [_badge badgeApplicationDockIconWithValue:count insetX:3 y:0];
+        [_badge badgeApplicationDockIconWithValue:_numberOfUnreadMessage insetX:3 y:0];
     }
-    [messageListViewsController applyCurrentPredicate];
+}
+
+- (void) messageAdded:(NSNotification*)notification {
+    NSArray *array = [notification object];
+    for (int i = 0; i < [array count]; i++) {
+        NTLNMessage *m = [(TwitterStatusViewController*)[array objectAtIndex:i] message];
+        if ([m status] != NTLN_MESSAGE_STATUS_READ
+            && ([m replyType] == MESSAGE_REPLY_TYPE_REPLY || [m replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE)) {
+            _numberOfUnreadMessage++;
+        }
+    }
+    [self writeNumberOfUnread];
+}
+
+- (void) messageChangedToRead:(NSNotification*)notification {
+    NTLNMessage *m = [(TwitterStatusViewController*)[notification object] message];
+    if (m == nil) {
+        _numberOfUnreadMessage = 0;
+    } else if ([m replyType] == MESSAGE_REPLY_TYPE_REPLY || [m replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
+        _numberOfUnreadMessage--;
+    } else {
+        return;
+    }
+    [self writeNumberOfUnread];
 }
 @end

@@ -23,6 +23,13 @@
                                                           userInfo:nil
                                                            repeats:FALSE] retain];
     [NTLNConfiguration setTimelineSortOrderChangeObserver:self];
+    
+    _messageNotifier = [[NTLNBufferedMessageNotifier alloc] initWithTimeout:5.0 maxMessage:20];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(addNewMessage:)
+                                                 name:NTLN_NOTIFICATION_NEW_MESSAGE_RECEIVED
+                                               object:nil];
     return self;
 }
 
@@ -31,6 +38,7 @@
     [_growl release];
     [_afterLaunchedTimer release];
     [_toolbarItems release];
+    [_messageNotifier release];
     [super dealloc];
 }
 
@@ -224,20 +232,21 @@
 - (void) addMessageViewController:(NTLNMessageViewController*)controller {
     [messageViewControllerArrayController addObject:controller];
     [messageListViewsController applyCurrentPredicate];
-    [messageTableViewController newMessageArrived:controller];
+    [messageTableViewController newMessageArrived:[NSArray arrayWithObject:controller]];
+}
+
+- (void) addMessageViewControllers:(NSArray*)controllers {
+    NSLog(@"%s: count:%d", __PRETTY_FUNCTION__, [controllers count]);
+    [messageViewControllerArrayController addObjects:controllers];
+    [messageListViewsController applyCurrentPredicate];
+    [messageTableViewController newMessageArrived:controllers];
 }
 
 - (BOOL) isNewMessage:(TwitterStatusViewController*)controller {
-    if ([messageViewControllerArray containsObject:controller]) {
+    if ([messageViewControllerArray containsObject:controller] || [_messageNotifier contains:controller]) {
         return FALSE;
     }
     return TRUE;
-}
-
-- (void) addIfNewMessage:(TwitterStatusViewController*)controller {
-    [messageViewControllerArrayController setFilterPredicate:nil];
-    [self addMessageViewController:controller];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE object:controller];
 }
 
 - (void) updateStatus {
@@ -324,39 +333,7 @@
                                                     initWithTwitterStatus:(TwitterStatus*)s
                                                     messageViewListener:self] autorelease];
         if ([self isNewMessage:controller]) {
-            
-            int priority = 0;
-            BOOL sticky = FALSE;
-            switch ([s replyType]) {
-                case MESSAGE_REPLY_TYPE_REPLY:
-                    priority = 2;
-                    sticky = TRUE;
-                    if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
-                        [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
-                    } else {
-                        // might be retrieved in previous run
-                        [controller markAsRead:false];
-                    }
-                    break;
-                case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
-                    priority = 1;
-                    sticky = TRUE;
-                    break;
-                default:
-                    break;
-            }
-            
-            [self addIfNewMessage:controller];
-            
-            [self sendToGrowlTitle:[s name]
-                    andDescription:[s text]
-                           andIcon:[[s icon] TIFFRepresentation]
-                       andPriority:priority
-                         andSticky:sticky];
-            
-            if ([[NSUserDefaults standardUserDefaults] boolForKey:NTLN_PREFERENCE_SHOW_WINDOW_WHEN_NEW_MESSAGE]) {
-                [mainWindow makeKeyAndOrderFront:nil];
-            }
+            [_messageNotifier addMessageViewController:controller];
         }
     }
 }
@@ -532,7 +509,55 @@
     }
     [messageListViewsController applyCurrentPredicate];
     [messageTableViewController reloadTableView];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ
+                                                        object:nil];
 }
+
+#pragma mark Notifications
+- (void) addNewMessage:(NSNotification*)notification {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSArray *messageArray = [notification object];
+    for (int i = 0; i < [messageArray count]; i++) {
+        TwitterStatusViewController *controller = [messageArray objectAtIndex:i];
+        NTLNMessage *s = [controller message];
+        int priority = 0;
+        BOOL sticky = FALSE;
+        switch ([s replyType]) {
+            case MESSAGE_REPLY_TYPE_REPLY:
+                priority = 2;
+                sticky = TRUE;
+                if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
+                    [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
+                } else {
+                    // might be retrieved in previous run
+                    [controller markAsRead:false];
+                }
+                break;
+            case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
+                priority = 1;
+                sticky = TRUE;
+                break;
+                default:
+                break;
+        }
+        
+        // TODO: use buffered
+        [self sendToGrowlTitle:[s name]
+                andDescription:[s text]
+                       andIcon:[[s icon] TIFFRepresentation]
+                   andPriority:priority
+                     andSticky:sticky];
+    }
+    
+    // adding
+    [messageViewControllerArrayController setFilterPredicate:nil];
+    [self addMessageViewControllers:messageArray];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE_ADDED object:messageArray];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:NTLN_PREFERENCE_SHOW_WINDOW_WHEN_NEW_MESSAGE]) {
+        [mainWindow makeKeyAndOrderFront:nil];
+    }
+}
+
 
 @end

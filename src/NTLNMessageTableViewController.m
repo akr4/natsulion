@@ -209,7 +209,9 @@
 }
 
 - (void) scrollDownInAscendingOrder:(NTLNMessageViewController*)controller {
-    if ([_verticalScroller floatValue] < _autoscrollMinLimit) {
+
+    NSLog(@"_knobPositionBeforeAddingMessage=%f", _knobPositionBeforeAddingMessage);
+    if (_knobPositionBeforeAddingMessage < _autoscrollMinLimit) {
         return;
     }
     
@@ -217,17 +219,17 @@
     [[viewColumn tableView] scrollPoint:targetPoint];
 }
 
-- (void) newMessageArrived:(NTLNMessageViewController*)controller {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    float newestMessageHeight = [controller requiredHeight];
-//    NSLog(@"newestMessageHeight: %f - %@", newestMessageHeight, [[controller message] text]);
-
+- (void) newMessageArrived:(NSArray*)controllers {
+    _knobPositionBeforeAddingMessage = [_verticalScroller floatValue];
     [self reloadTableView];
-    if ([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
-        [self selectionDown];
-        [self scrollDownInDescendingOrder:controller];
-    } else {
-        [self scrollDownInAscendingOrder:controller];
+    for (int i = 0; i < [controllers count]; i++) {
+        NTLNMessageViewController *controller = [controllers objectAtIndex:i];
+        if ([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING) {
+            [self selectionDown];
+            [self scrollDownInDescendingOrder:controller];
+        } else {
+            [self scrollDownInAscendingOrder:controller];
+        }
     }
 }
 

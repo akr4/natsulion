@@ -70,6 +70,7 @@
 		E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */; };
 		E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */; };
 		E9F960930D25D03A007829C4 /* NTLNMessageInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */; };
+		E9FE91670D81527C0012136E /* NTLNBufferedMessageNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FE91660D81527C0012136E /* NTLNBufferedMessageNotifier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -204,6 +205,8 @@
 		E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterStatusView.nib; sourceTree = "<group>"; };
 		E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageInputTextField.h; sourceTree = "<group>"; };
 		E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageInputTextField.m; sourceTree = "<group>"; };
+		E9FE91650D81527C0012136E /* NTLNBufferedMessageNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNBufferedMessageNotifier.h; sourceTree = "<group>"; };
+		E9FE91660D81527C0012136E /* NTLNBufferedMessageNotifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNBufferedMessageNotifier.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +273,8 @@
 				E95D34F90D2F3F6700EA6958 /* NTLNColors.h */,
 				E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */,
 				E98B18610D75A076000F0FED /* NTLNNotification.h */,
+				E9FE91650D81527C0012136E /* NTLNBufferedMessageNotifier.h */,
+				E9FE91660D81527C0012136E /* NTLNBufferedMessageNotifier.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -605,6 +610,7 @@
 				E97DF2AE0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m in Sources */,
 				E920C36E0D6A1ACC00A813EB /* CTBadge.m in Sources */,
 				E94B13CF0D6AA6C700F80617 /* CTGradient.m in Sources */,
+				E9FE91670D81527C0012136E /* NTLNBufferedMessageNotifier.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

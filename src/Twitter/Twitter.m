@@ -276,6 +276,7 @@
     
     [_connectionForFriendTimeline release];
     _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml" 
+//    _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/public_timeline.xml" 
                                                                   username:username
                                                                   password:password
                                                                    usePost:post

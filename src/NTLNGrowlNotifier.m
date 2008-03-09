@@ -1,7 +1,7 @@
 #import <Growl/Growl.h>
 #import "NTLNGrowlNotifier.h"
 
-#define NTLN_NOTIFICATION_MESSAGE_RECEIVED @"Message Received"
+#define NTLN_GROWL_MESSAGE_RECEIVED @"Message Received"
 
 @implementation NTLNGrowlNotifier
 
@@ -12,7 +12,7 @@
 
 - (NSDictionary *) registrationDictionaryForGrowl {
     NSMutableDictionary *d = [[[NSMutableDictionary alloc] initWithCapacity:10] autorelease];
-    NSArray *notifications = [[[NSArray alloc] initWithObjects:NTLN_NOTIFICATION_MESSAGE_RECEIVED, nil] autorelease];
+    NSArray *notifications = [[[NSArray alloc] initWithObjects:NTLN_GROWL_MESSAGE_RECEIVED, nil] autorelease];
     [d setObject:notifications forKey:GROWL_NOTIFICATIONS_ALL];
     [d setObject:notifications forKey:GROWL_NOTIFICATIONS_DEFAULT];
     return d;
@@ -22,7 +22,7 @@
     [GrowlApplicationBridge
      notifyWithTitle:title
      description:description
-     notificationName:NTLN_NOTIFICATION_MESSAGE_RECEIVED
+     notificationName:NTLN_GROWL_MESSAGE_RECEIVED
      iconData:iconData
      priority:priority
      isSticky:sticky

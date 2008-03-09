@@ -6,6 +6,7 @@
 #import "NTLNMessageInputTextField.h"
 #import "NTLNMessageListViewsController.h"
 #import "NTLNMultiTasksProgressIndicator.h"
+#import "NTLNBufferedMessageNotifier.h"
 
 @protocol NTLNTimelineSortOrderChangeObserver
 - (void) timelineSortOrderChangeObserverSortOrderChanged;
@@ -40,6 +41,7 @@
 
     BOOL _growlEnabled;
     BOOL _createFavoriteIsWorking;
+    NTLNBufferedMessageNotifier *_messageNotifier;
     
     // Menu & Toolbar
     IBOutlet NSMenu *viewMenu;

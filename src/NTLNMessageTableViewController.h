@@ -30,6 +30,8 @@
     // This variable is used to avoid that.
     float _autoscrollMinLimit;
     
+    float _knobPositionBeforeAddingMessage;
+    
     // for determining current text area height is the same as original.
     float _cumulativeDeltaHeight;
     
@@ -37,7 +39,7 @@
 }
 
 - (NSView*) viewForTabItem;
-- (void) newMessageArrived:(NTLNMessageViewController*)controller;
+- (void) newMessageArrived:(NSArray*)controllers;
 - (void) resize:(float)deltaHeight;
 - (void) reloadTableView;
 - (float) knobPosition;
