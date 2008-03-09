@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #import "NTLNMainWindowController.h"
 #import "NTLNWelcomeWindowController.h"
+#import "NTLNGrowlNotifier.h"
 #import "CTBadge.h"
 
 @class NTLNPreferencesWindowController;
@@ -11,12 +12,16 @@
     IBOutlet NTLNWelcomeWindowController *welcomeWindowController;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
+    IBOutlet NTLNMultiTasksProgressIndicator *progressIndicator;
     
     int _refreshInterval;
     NSTimer *_refreshTimer;
     int _numberOfUnreadMessage;
 
     CTBadge *_badge;
+    
+    BOOL _growlEnabled;
+    NTLNGrowlNotifier *_growl;
 }
 
 - (IBAction) showPreferencesSheet:(id)sender;

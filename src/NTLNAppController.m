@@ -22,9 +22,20 @@
     [NSColor setIgnoresAlpha:FALSE];
 }
 
+- (id) init {
+    _growlEnabled = FALSE;
+    [NSTimer scheduledTimerWithTimeInterval:60 // TODO: consider refreshInterval
+                                     target:self
+                                   selector:@selector(enableGrowl)
+                                   userInfo:nil
+                                    repeats:FALSE];
+    return self;
+}
+
 - (void) dealloc {
     [_refreshTimer release];
     [_badge release];
+    [_growl release];
     [super dealloc];
 }
 
@@ -137,7 +148,103 @@
     [_refreshTimer fire];
 }
 
-#pragma mark Notification methods
+#pragma mark Growl
+- (void) enableGrowl {
+    _growlEnabled = TRUE;
+}
+
+- (void) notifyByGrowl:(NSArray*)controllers {
+    if (!_growlEnabled || ![[NSUserDefaults standardUserDefaults] boolForKey:NTLN_PREFERENCE_USE_GROWL]) {
+        return;
+    }
+    
+    if (!_growl) {
+        _growl = [[NTLNGrowlNotifier alloc] init];
+    }
+    
+    int i;
+
+    NSMutableArray *messages = [NSMutableArray arrayWithCapacity:20];
+
+    int numberOfReplies = 0;
+    int showDetailThreashold;
+    if ([[NTLNConfiguration instance] summarizeGrowl]) {
+        // order reply first
+        for (i = 0; i < [controllers count]; i++) {
+            NTLNMessage *m = [(TwitterStatusViewController*)[controllers objectAtIndex:i] message];
+            if ([m replyType] == MESSAGE_REPLY_TYPE_REPLY || [m replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
+                [messages insertObject:m atIndex:numberOfReplies];
+                numberOfReplies++;
+            } else {
+                [messages addObject:m];
+            }
+        }
+        
+        showDetailThreashold = [[NTLNConfiguration instance] growlSummarizeThreshold] < [messages count]
+        ? [[NTLNConfiguration instance] growlSummarizeThreshold] - 1 : [messages count];
+    } else {
+        for (i = 0; i < [controllers count]; i++) {
+            NTLNMessage *m = [(TwitterStatusViewController*)[controllers objectAtIndex:i] message];
+            [messages addObject:m];
+        }
+        showDetailThreashold = [messages count]; // show details for all messages
+    }
+    
+    for (i = 0; i < showDetailThreashold; i++) {
+        NTLNMessage *m = [messages objectAtIndex:i];
+        int priority = 0;
+        BOOL sticky = FALSE;
+        switch ([m replyType]) {
+            case MESSAGE_REPLY_TYPE_REPLY:
+                priority = 2;
+                sticky = TRUE;
+                break;
+            case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
+                priority = 1;
+                sticky = TRUE;
+                break;
+            default:
+                break;
+        }
+        
+        [_growl sendToGrowlTitle:[m name]
+                  andDescription:[m text]
+                         andIcon:[[m icon] TIFFRepresentation]
+                     andPriority:priority
+                       andSticky:sticky];
+    }
+    
+    if (i < [messages count]) {
+        int priority = 0;
+        BOOL sticky = FALSE;
+
+        // replies still remain
+        if (i < numberOfReplies) {
+            priority = 2;
+            sticky = TRUE;
+        }
+        
+        NSMutableSet *names = [NSMutableSet setWithCapacity:20];
+        for (; i < [messages count]; i++) {
+            NTLNMessage *m = [messages objectAtIndex:i];
+            [names addObject:[m screenName]];
+        }
+        NSMutableString *s = [NSMutableString stringWithCapacity:500];
+//        [s appendString:@"New Messages from:"];
+        NSArray *namesArray = [names allObjects];
+        for (int j = 0; j < [namesArray count]; j++) {
+            [s appendString:[namesArray objectAtIndex:j]];
+            [s appendString:@" "];
+        }
+        [_growl sendToGrowlTitle:@"New Messages from:"
+                  andDescription:s
+                         andIcon:nil
+                     andPriority:priority
+                       andSticky:sticky];
+    } 
+}
+
+#pragma mark Badge
 - (void) writeNumberOfUnread {
     if (_numberOfUnreadMessage == 0) {
         [NSApp setApplicationIconImage:nil];
@@ -146,16 +253,22 @@
     }
 }
 
-- (void) messageAdded:(NSNotification*)notification {
-    NSArray *array = [notification object];
-    for (int i = 0; i < [array count]; i++) {
-        NTLNMessage *m = [(TwitterStatusViewController*)[array objectAtIndex:i] message];
+- (void) updateBudgeIfNeedIncrease:(NSArray*)messages {
+    for (int i = 0; i < [messages count]; i++) {
+        NTLNMessage *m = [(TwitterStatusViewController*)[messages objectAtIndex:i] message];
         if ([m status] != NTLN_MESSAGE_STATUS_READ
             && ([m replyType] == MESSAGE_REPLY_TYPE_REPLY || [m replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE)) {
             _numberOfUnreadMessage++;
         }
     }
     [self writeNumberOfUnread];
+}
+
+#pragma mark Notification methods
+- (void) messageAdded:(NSNotification*)notification {
+    NSArray *messages = [notification object];
+    [self updateBudgeIfNeedIncrease:messages];
+    [self notifyByGrowl:messages];
 }
 
 - (void) messageChangedToRead:(NSNotification*)notification {

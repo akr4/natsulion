@@ -8,6 +8,10 @@
 	<false/>
 	<key>useGrowl</key>
 	<false/>
+    <key>summarizeGrowl</key>
+    <false/>
+    <key>growlSummarizeThreshold</key>
+    <real>3</real>
     <key>timelineSortOrder</key>
 	<real>0</real>
     <key>usePost</key>

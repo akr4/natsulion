@@ -15,13 +15,7 @@
 - (id) init {
     _twitter = [[TwitterImpl alloc] initWithCallback:self];
 //    _twitter = [[TwitterTestStub alloc] init];
-    _growlEnabled = FALSE;
     
-    _afterLaunchedTimer = [[NSTimer scheduledTimerWithTimeInterval:60 // TODO: consider refreshInterval
-                                                            target:self
-                                                          selector:@selector(enableGrowl)
-                                                          userInfo:nil
-                                                           repeats:FALSE] retain];
     [NTLNConfiguration setTimelineSortOrderChangeObserver:self];
     
     _messageNotifier = [[NTLNBufferedMessageNotifier alloc] initWithTimeout:5.0 maxMessage:20];
@@ -35,8 +29,6 @@
 
 - (void) dealloc {
     [_twitter release];
-    [_growl release];
-    [_afterLaunchedTimer release];
     [_toolbarItems release];
     [_messageNotifier release];
     [super dealloc];
@@ -195,38 +187,12 @@
 - (void) setTimelineSortDescriptors:(NSArray*)descriptors {
 }
 
-- (void) enableGrowl {
-    _growlEnabled = TRUE;
-    [_afterLaunchedTimer release];
-//    NSLog(@"growl enabled");
-}
-
 - (void) showWindowToFront {
     [[self window] makeKeyAndOrderFront:nil];
 }
 
 - (void) setFrameAutosaveName:(NSString*)name {
     [mainWindow setFrameAutosaveName:name];
-}
-
-- (void) sendToGrowlTitle:(NSString*)title
-           andDescription:(NSString*)description
-                  andIcon:(NSData*)iconData 
-              andPriority:(int)priority
-                andSticky:(BOOL)sticky {
-    if (!_growlEnabled || ![[NSUserDefaults standardUserDefaults] boolForKey:NTLN_PREFERENCE_USE_GROWL]) {
-        return;
-    }
-    
-    if (!_growl) {
-        _growl = [[NTLNGrowlNotifier alloc] init];
-    }
-
-    [_growl sendToGrowlTitle:title
-              andDescription:description
-                     andIcon:iconData
-                 andPriority:priority
-                   andSticky:sticky];
 }
 
 - (void) addMessageViewController:(NTLNMessageViewController*)controller {
@@ -236,7 +202,7 @@
 }
 
 - (void) addMessageViewControllers:(NSArray*)controllers {
-    NSLog(@"%s: count:%d", __PRETTY_FUNCTION__, [controllers count]);
+//    NSLog(@"%s: count:%d", __PRETTY_FUNCTION__, [controllers count]);
     [messageViewControllerArrayController addObjects:controllers];
     [messageListViewsController applyCurrentPredicate];
     [messageTableViewController newMessageArrived:controllers];
@@ -334,6 +300,7 @@
                                                     messageViewListener:self] autorelease];
         if ([self isNewMessage:controller]) {
             [_messageNotifier addMessageViewController:controller];
+            [progressIndicator startTask];
         }
     }
 }
@@ -515,38 +482,20 @@
 
 #pragma mark Notifications
 - (void) addNewMessage:(NSNotification*)notification {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+//    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSArray *messageArray = [notification object];
     for (int i = 0; i < [messageArray count]; i++) {
         TwitterStatusViewController *controller = [messageArray objectAtIndex:i];
         NTLNMessage *s = [controller message];
-        int priority = 0;
-        BOOL sticky = FALSE;
-        switch ([s replyType]) {
-            case MESSAGE_REPLY_TYPE_REPLY:
-                priority = 2;
-                sticky = TRUE;
-                if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
-                    [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
-                } else {
-                    // might be retrieved in previous run
-                    [controller markAsRead:false];
-                }
-                break;
-            case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
-                priority = 1;
-                sticky = TRUE;
-                break;
-                default:
-                break;
+        if ([s replyType] == MESSAGE_REPLY_TYPE_REPLY || [s replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
+            if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
+                [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
+            } else {
+                // might be retrieved in previous run
+                [controller markAsRead:false];
+            }
         }
-        
-        // TODO: use buffered
-        [self sendToGrowlTitle:[s name]
-                andDescription:[s text]
-                       andIcon:[[s icon] TIFFRepresentation]
-                   andPriority:priority
-                     andSticky:sticky];
+        [progressIndicator stopTask];
     }
     
     // adding

@@ -33,13 +33,7 @@
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     
     Twitter *_twitter;
-    NTLNGrowlNotifier *_growl;
-    
-    // TODO: is it better AppController has this instance instead of MainWindowController?
-    // timing after launched
-    NSTimer *_afterLaunchedTimer;
 
-    BOOL _growlEnabled;
     BOOL _createFavoriteIsWorking;
     NTLNBufferedMessageNotifier *_messageNotifier;
     

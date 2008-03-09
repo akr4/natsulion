@@ -77,7 +77,7 @@
 				<key>messageViewControllerArrayController</key>
 				<string>NSArrayController</string>
 				<key>scrollView</key>
-				<string>NSScrollView</string>
+				<string>NTLNMessageScrollView</string>
 				<key>viewColumn</key>
 				<string>NSTableColumn</string>
 			</dict>
@@ -267,6 +267,8 @@
 				<string>NSArrayController</string>
 				<key>preferencesWindowController</key>
 				<string>NTLNPreferencesWindowController</string>
+				<key>progressIndicator</key>
+				<string>NTLNMultiTasksProgressIndicator</string>
 				<key>welcomeWindowController</key>
 				<string>NTLNWelcomeWindowController</string>
 			</dict>

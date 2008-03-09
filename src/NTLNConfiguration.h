@@ -20,10 +20,12 @@
     BOOL sendMessageWithEnterAndModifier;
     NSString *version;
     int refreshIntervalSeconds;
+    int growlSummarizeThreshold;
+    BOOL summarizeGrowl;
 }
 
-@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier;
-@property int refreshIntervalSeconds;
+@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, summarizeGrowl;
+@property int refreshIntervalSeconds, growlSummarizeThreshold;
 
 + (id) instance;
 - (int) timelineSortOrder;
@@ -35,5 +37,8 @@
 - (void) setWindowAlpha:(float)value;
 - (NSTimeInterval) latestTimestampOfMessage;
 - (void) setLatestTimestampOfMessage:(NSTimeInterval)interval;
-    
+
+// only for IB editable binding
+- (BOOL) useGrowlAndSummarizeGrowl;
+- (void) setUseGrowlAndSummarizeGrowl:(BOOL)value; // not used
 @end

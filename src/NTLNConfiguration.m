@@ -4,7 +4,7 @@
 
 @implementation NTLNConfiguration
 
-@synthesize useGrowl, showWindowWhenNewMessage, refreshIntervalSeconds, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier;
+@synthesize useGrowl, showWindowWhenNewMessage, refreshIntervalSeconds, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl;
 
 static id _instance = nil;
 
@@ -80,6 +80,8 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self bindToProperty:@"decodeHeart"];
     [self bindToProperty:@"sendMessageWithEnterAndModifier"];
     [self bindToProperty:@"refreshIntervalSeconds"];
+    [self bindToProperty:@"growlSummarizeThreshold"];
+    [self bindToProperty:@"summarizeGrowl"];
     
     [[NSUserDefaults standardUserDefaults] setObject:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"] forKey:@"version"];
     [self migrateConfiguration];
@@ -136,6 +138,14 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 
 - (void) setLatestTimestampOfMessage:(NSTimeInterval)interval {
     [[NSUserDefaults standardUserDefaults] setFloat:interval forKey:@"latestTimestampOfMessage"];
+}
+
+- (BOOL) useGrowlAndSummarizeGrowl {
+    return useGrowl && summarizeGrowl;
+}
+
+- (void) setUseGrowlAndSummarizeGrowl:(BOOL)value {
+    
 }
 
 @end

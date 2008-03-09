@@ -209,8 +209,6 @@
 }
 
 - (void) scrollDownInAscendingOrder:(NTLNMessageViewController*)controller {
-
-    NSLog(@"_knobPositionBeforeAddingMessage=%f", _knobPositionBeforeAddingMessage);
     if (_knobPositionBeforeAddingMessage < _autoscrollMinLimit) {
         return;
     }
