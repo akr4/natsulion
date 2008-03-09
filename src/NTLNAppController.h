@@ -12,8 +12,7 @@
     IBOutlet NTLNWelcomeWindowController *welcomeWindowController;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
-    IBOutlet NTLNMultiTasksProgressIndicator *progressIndicator;
-    
+   
     int _refreshInterval;
     NSTimer *_refreshTimer;
     int _numberOfUnreadMessage;
@@ -22,6 +21,10 @@
     
     BOOL _growlEnabled;
     NTLNGrowlNotifier *_growl;
+    
+    // statistics
+    NSMutableArray *_numberOfMessageHistory;
+    long _numberOfPostedMessages;
 }
 
 - (IBAction) showPreferencesSheet:(id)sender;

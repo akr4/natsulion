@@ -221,6 +221,8 @@
 				<string>NTLNMultiTasksProgressIndicator</string>
 				<key>refreshMenuItem</key>
 				<string>NSMenuItem</string>
+				<key>statisticsTextField</key>
+				<string>NSTextField</string>
 				<key>statusTextField</key>
 				<string>NSTextField</string>
 				<key>viewMenu</key>
@@ -236,14 +238,6 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSProgressIndicator</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NTLNConfiguration</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -267,11 +261,17 @@
 				<string>NSArrayController</string>
 				<key>preferencesWindowController</key>
 				<string>NTLNPreferencesWindowController</string>
-				<key>progressIndicator</key>
-				<string>NTLNMultiTasksProgressIndicator</string>
 				<key>welcomeWindowController</key>
 				<string>NTLNWelcomeWindowController</string>
 			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNConfiguration</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
 		</dict>

@@ -26,5 +26,7 @@
     <real>0.8</real>
     <key>sendMessageWithEnterAndModifier</key>
     <false/>
+    <key>showMessageStatisticsOnStatusBar</key>
+    <false/>
 </dict>
 </plist>

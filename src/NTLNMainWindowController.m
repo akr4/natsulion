@@ -178,6 +178,8 @@
     [self setupMenuAndToolbar];
     [[self window] setOpaque:FALSE];
     
+    [statisticsTextField setToolTip:@"number of messages per update (for recent 10 updates)/ number of posted messages"];
+    
     //    NSColor *semiTransparentBlue =
 //    [NSColor colorWithDeviceRed:0.0 green:0.0 blue:1.0 alpha:0.5];
 //    [[self window] setBackgroundColor:semiTransparentBlue];
@@ -276,6 +278,10 @@
     [messageTextField setEnabled:TRUE];
     [messageTextField updateHeight];
     [statusTextField setStringValue:@""];
+}
+
+- (void) setMessageStatisticsField:(NSString*)value {
+    [statisticsTextField setStringValue:value];
 }
 
 #pragma mark TwitterPostCallback

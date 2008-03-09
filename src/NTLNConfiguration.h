@@ -22,9 +22,10 @@
     int refreshIntervalSeconds;
     int growlSummarizeThreshold;
     BOOL summarizeGrowl;
+    BOOL showMessageStatisticsOnStatusBar;
 }
 
-@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, summarizeGrowl;
+@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, summarizeGrowl, showMessageStatisticsOnStatusBar;
 @property int refreshIntervalSeconds, growlSummarizeThreshold;
 
 + (id) instance;

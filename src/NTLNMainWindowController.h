@@ -31,6 +31,7 @@
     IBOutlet NSMutableArray *messageViewControllerArray;
     IBOutlet NTLNMessageTableViewController *messageTableViewController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
+    IBOutlet NSTextField *statisticsTextField;
     
     Twitter *_twitter;
 
@@ -52,4 +53,5 @@
 - (void) setFrameAutosaveName:(NSString*)name;
 - (void) updateReplies;
 
+- (void) setMessageStatisticsField:(NSString*)value;
 @end
