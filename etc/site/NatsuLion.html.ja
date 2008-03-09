@@ -113,6 +113,26 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.29 (2008/03/10)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.29.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.29.zip');">download</a>
+<p>
+<p>
+メッセージ新着時と未読化時のパフォーマンスを改善しました。Growl 表示を一定数に抑える機能が付きました。
+</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-130'>NTLN-130</a>] -         freeze at arriving new messages cont. (NTLN-128)
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-134'>NTLN-134</a>] -         summarize Growl notifications when a lot of notifications
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-135'>NTLN-135</a>] -         ability to know the number of messages post
+</li>
+</ul>
+</p>    
+
 <h3>Version 0.28 (2008/03/07)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.28.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.28.zip');">download</a>
 <p>
 <p>

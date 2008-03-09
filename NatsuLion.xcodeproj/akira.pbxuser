@@ -540,6 +540,13 @@
 			E959486D0D845A81005E9A07 /* PBXTextBookmark */ = E959486D0D845A81005E9A07 /* PBXTextBookmark */;
 			E959486F0D845AC0005E9A07 /* PBXTextBookmark */ = E959486F0D845AC0005E9A07 /* PBXTextBookmark */;
 			E95948720D845AF7005E9A07 /* PBXTextBookmark */ = E95948720D845AF7005E9A07 /* PBXTextBookmark */;
+			E95948750D845B9C005E9A07 /* PBXTextBookmark */ = E95948750D845B9C005E9A07 /* PBXTextBookmark */;
+			E95948760D845B9C005E9A07 /* PBXTextBookmark */ = E95948760D845B9C005E9A07 /* PBXTextBookmark */;
+			E95948770D845B9C005E9A07 /* PBXTextBookmark */ = E95948770D845B9C005E9A07 /* PBXTextBookmark */;
+			E95948780D845B9C005E9A07 /* PBXTextBookmark */ = E95948780D845B9C005E9A07 /* PBXTextBookmark */;
+			E95948790D845B9C005E9A07 /* PBXTextBookmark */ = E95948790D845B9C005E9A07 /* PBXTextBookmark */;
+			E959487A0D845B9C005E9A07 /* PBXTextBookmark */ = E959487A0D845B9C005E9A07 /* PBXTextBookmark */;
+			E959487B0D845B9C005E9A07 /* PBXTextBookmark */ = E959487B0D845B9C005E9A07 /* PBXTextBookmark */;
 			E95BD0050D74539B0099EA37 = E95BD0050D74539B0099EA37 /* PBXTextBookmark */;
 			E95BD01D0D745C380099EA37 = E95BD01D0D745C380099EA37 /* PBXTextBookmark */;
 			E95BD01E0D745C380099EA37 = E95BD01E0D745C380099EA37 /* PBXTextBookmark */;
@@ -960,8 +967,8 @@
 	};
 	8D1107310486CEB800E47090 /* Info.plist */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 558}}";
-			sepNavSelRange = "{843, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {872, 581}}";
+			sepNavSelRange = "{695, 0}";
 			sepNavVisRange = "{0, 982}";
 			sepNavWindowFrame = "{{15, 547}, {799, 626}}";
 		};
@@ -1358,7 +1365,7 @@
 	E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1004, 7182}}";
-			sepNavSelRange = "{7806, 0}";
+			sepNavSelRange = "{8179, 0}";
 			sepNavVisRange = "{6899, 1598}";
 			sepNavWindowFrame = "{{868, 287}, {799, 626}}";
 		};
@@ -5366,6 +5373,76 @@
 		vrLen = 1598;
 		vrLoc = 6899;
 	};
+	E95948750D845B9C005E9A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 185";
+		rLen = 0;
+		rLoc = 8179;
+		rType = 0;
+		vrLen = 1598;
+		vrLoc = 6899;
+	};
+	E95948760D845B9C005E9A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */;
+		name = "UserDefaults.plist: 30";
+		rLen = 0;
+		rLoc = 792;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 0;
+	};
+	E95948770D845B9C005E9A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 27";
+		rLen = 0;
+		rLoc = 843;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 0;
+	};
+	E95948780D845B9C005E9A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 185";
+		rLen = 0;
+		rLoc = 8179;
+		rType = 0;
+		vrLen = 1598;
+		vrLoc = 6899;
+	};
+	E95948790D845B9C005E9A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 27";
+		rLen = 0;
+		rLoc = 843;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 0;
+	};
+	E959487A0D845B9C005E9A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */;
+		name = "UserDefaults.plist: 30";
+		rLen = 0;
+		rLoc = 792;
+		rType = 0;
+		vrLen = 810;
+		vrLoc = 0;
+	};
+	E959487B0D845B9C005E9A07 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		name = "Info.plist: 22";
+		rLen = 0;
+		rLoc = 695;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 0;
+	};
 	E959D05D0D3F910F00B83CB7 /* PBXBookmarkGroup */ = {
 		isa = PBXBookmarkGroup;
 		children = (
@@ -5819,7 +5896,7 @@
 	};
 	E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 558}}";
+			sepNavIntBoundsRect = "{{0, 0}, {872, 581}}";
 			sepNavSelRange = "{792, 0}";
 			sepNavVisRange = "{0, 810}";
 		};

@@ -109,6 +109,23 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.29 (2008/03/10)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.29.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.29.zip');">download</a>
+<p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-130'>NTLN-130</a>] -         freeze at arriving new messages cont. (NTLN-128)
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-134'>NTLN-134</a>] -         summarize Growl notifications when a lot of notifications
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-135'>NTLN-135</a>] -         ability to know the number of messages post
+</li>
+</ul>
+</p>    
+
 <h3>Version 0.28 (2008/03/07)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.28.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.28.zip');">download</a>
 <p>
 Bug
