@@ -8,6 +8,8 @@
 #import "NTLNMultiTasksProgressIndicator.h"
 #import "NTLNBufferedMessageNotifier.h"
 
+#define NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER 3.0f
+
 @protocol NTLNTimelineSortOrderChangeObserver
 - (void) timelineSortOrderChangeObserverSortOrderChanged;
 @end
@@ -32,6 +34,7 @@
     IBOutlet NTLNMessageTableViewController *messageTableViewController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     IBOutlet NSTextField *statisticsTextField;
+    IBOutlet NSLevelIndicator *messagePostLevelIndicator;
     
     Twitter *_twitter;
 
@@ -51,7 +54,9 @@
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;
+- (void) updateStatus;
 - (void) updateReplies;
 
 - (void) setMessageStatisticsField:(NSString*)value;
+- (void) setMessagePostLevel:(float)level;
 @end

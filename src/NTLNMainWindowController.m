@@ -24,6 +24,11 @@
                                              selector:@selector(addNewMessage:)
                                                  name:NTLN_NOTIFICATION_NEW_MESSAGE_RECEIVED
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(statisticsDisplaySettingChanged:)
+                                                 name:NTLN_NOTIFICATION_STATISTICS_DISPLAY_SETTING_CHANGED
+                                               object:nil];
+
     return self;
 }
 
@@ -178,7 +183,8 @@
     [self setupMenuAndToolbar];
     [[self window] setOpaque:FALSE];
     
-    [statisticsTextField setToolTip:@"number of messages per update (for recent 10 updates)/ number of posted messages"];
+    [statisticsTextField setToolTip:@"number of posted messages"];
+    [messagePostLevelIndicator setToolTip:@"timeline speed"];
     
     //    NSColor *semiTransparentBlue =
 //    [NSColor colorWithDeviceRed:0.0 green:0.0 blue:1.0 alpha:0.5];
@@ -278,6 +284,12 @@
     [messageTextField setEnabled:TRUE];
     [messageTextField updateHeight];
     [statusTextField setStringValue:@""];
+}
+
+#pragma mark Statistics
+
+- (void) setMessagePostLevel:(float)level {
+    [messagePostLevelIndicator setFloatValue:level];
 }
 
 - (void) setMessageStatisticsField:(NSString*)value {
@@ -505,5 +517,10 @@
     }
 }
 
+- (void) statisticsDisplaySettingChanged:(NSNotification*)notification {
+    BOOL show = [[notification object] boolValue];
+    [messagePostLevelIndicator setHidden:!show];
+    [statisticsTextField setHidden:!show];
+}
 
 @end

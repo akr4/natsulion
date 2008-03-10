@@ -23,7 +23,7 @@
     NTLNGrowlNotifier *_growl;
     
     // statistics
-    NSMutableArray *_numberOfMessageHistory;
+    NSMutableArray *_messageCountHistory;
     long _numberOfPostedMessages;
 }
 

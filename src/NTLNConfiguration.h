@@ -19,10 +19,9 @@
     int refreshIntervalSeconds;
     int growlSummarizeThreshold;
     BOOL summarizeGrowl;
-    BOOL showMessageStatisticsOnStatusBar;
 }
 
-@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, summarizeGrowl, showMessageStatisticsOnStatusBar;
+@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, summarizeGrowl;
 @property int refreshIntervalSeconds, growlSummarizeThreshold;
 
 + (id) instance;
@@ -42,6 +41,8 @@
 - (IBAction) resetFontSize:(id)sender;
 - (BOOL) canIncreaseFontSize;
 - (BOOL) canDecreaseFontSize;
+- (BOOL) showMessageStatisticsOnStatusBar;
+- (void) setShowMessageStatisticsOnStatusBar:(BOOL)value;
 
 // only for IB editable binding
 - (BOOL) useGrowlAndSummarizeGrowl;

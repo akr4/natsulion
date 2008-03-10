@@ -209,6 +209,8 @@
 				<string>NSWindow</string>
 				<key>messageListViewsController</key>
 				<string>NTLNMessageListViewsController</string>
+				<key>messagePostLevelIndicator</key>
+				<string>NSLevelIndicator</string>
 				<key>messageTableViewController</key>
 				<string>NTLNMessageTableViewController</string>
 				<key>messageTextField</key>

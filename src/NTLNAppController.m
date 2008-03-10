@@ -29,7 +29,7 @@
                                    selector:@selector(enableGrowl)
                                    userInfo:nil
                                     repeats:FALSE];
-    _numberOfMessageHistory = [[NSMutableArray alloc] initWithCapacity:10];
+    _messageCountHistory = [[NSMutableArray alloc] initWithCapacity:30];
     _numberOfPostedMessages = 0;
     return self;
 }
@@ -38,7 +38,7 @@
     [_refreshTimer release];
     [_badge release];
     [_growl release];
-    [_numberOfMessageHistory release];
+    [_messageCountHistory release];
     [super dealloc];
 }
 
@@ -65,8 +65,8 @@
     }
 
     _refreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval
-                                                      target:mainWindowController
-                                                    selector:@selector(updateStatus)
+                                                      target:self
+                                                    selector:@selector(expireRefreshInterval)
                                                     userInfo:nil
                                                      repeats:YES] retain];
 }
@@ -108,24 +108,63 @@
     [[preferencesWindowController window] orderOut:self];
 }
 
-- (void)updateMessageStatistics:(NSArray*)messages {
-    if ([_numberOfMessageHistory count] == 10) {
-        [_numberOfMessageHistory removeObject:0];
-    }
-    [_numberOfMessageHistory addObject:[NSNumber numberWithInt:[messages count]]];
+#pragma mark Statistics
+- (void)storeMessageStatistics:(NSArray*)messages {
+    // store current data
     _numberOfPostedMessages += [messages count];
-    
-    float sum = 0;
-    for (int i = 0; i < [_numberOfMessageHistory count]; i++) {
-        sum += [[_numberOfMessageHistory objectAtIndex:i] intValue];
+    if ([[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithInt:[messages count]], @"count",
+                             [NSDate date], @"timestamp",
+                             nil];
+        [_messageCountHistory addObject:dic];
+    }
+}
+
+- (void)updateMessageStatistics {
+
+    if (![[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
+        return;
     }
 
-    if ([[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
-        [mainWindowController setMessageStatisticsField:
-         [NSString stringWithFormat:@"%.0f / %ld", (sum / [_numberOfMessageHistory count]), _numberOfPostedMessages]];
-    } else {
-        [mainWindowController setMessageStatisticsField:@""];
+    double period = [self refreshInterval] * NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER * 1.2;
+    
+    // remove old data
+    for (int i = 0; i < [_messageCountHistory count]; i++) {
+        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
+        NSDate *timestamp = [dic objectForKey:@"timestamp"];
+        if (-[timestamp timeIntervalSinceNow] > period) {
+            [_messageCountHistory removeObjectAtIndex:i];
+            i--;
+        }
     }
+
+#ifdef DEBUG
+    NSLog(@"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+    for (int i = 0; i < [_messageCountHistory count]; i++) {
+        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
+        NSLog(@"[%@, %d]", [dic objectForKey:@"timestamp"], [[dic objectForKey:@"count"] intValue]);
+    }
+    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+#endif
+    
+    // calculate statistics
+    float sum = 0;
+    for (int i = 0; i < [_messageCountHistory count]; i++) {
+        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
+        sum += [[dic objectForKey:@"count"] intValue];
+    }
+
+    [mainWindowController setMessagePostLevel:(sum / NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER)];
+    [mainWindowController setMessageStatisticsField:[NSString stringWithFormat:@"%ld", _numberOfPostedMessages]];
+    
+//    NSLog(@"level = %f", (sum / NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER));
+}
+
+#pragma mark Refresh interval timer
+- (void) expireRefreshInterval {
+    [mainWindowController updateStatus];
+    [self updateMessageStatistics];
 }
 
 #pragma mark NSApplicatoin delegate methods
@@ -292,7 +331,8 @@
     NSArray *messages = [notification object];
     [self updateBudgeIfNeedIncrease:messages];
     [self notifyByGrowl:messages];
-    [self updateMessageStatistics:messages];
+    [self storeMessageStatistics:messages];
+    [self updateMessageStatistics];
 }
 
 - (void) messageChangedToRead:(NSNotification*)notification {

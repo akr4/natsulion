@@ -6,7 +6,7 @@
 @implementation NTLNConfiguration
 
 @synthesize useGrowl, showWindowWhenNewMessage, refreshIntervalSeconds, usePost, editWindowAlphaManually,
-    decodeHeart, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl, showMessageStatisticsOnStatusBar;
+    decodeHeart, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl;
 
 static id _instance = nil;
 
@@ -84,7 +84,6 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self bindToProperty:@"refreshIntervalSeconds"];
     [self bindToProperty:@"growlSummarizeThreshold"];
     [self bindToProperty:@"summarizeGrowl"];
-    [self bindToProperty:@"showMessageStatisticsOnStatusBar"];
     
     [[NSUserDefaults standardUserDefaults] setObject:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"] forKey:@"version"];
     [self migrateConfiguration];
@@ -204,6 +203,16 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 
 - (BOOL) canDecreaseFontSize {
     return [self fontSize] > MIN_FONT_SIZE;
+}
+
+- (BOOL) showMessageStatisticsOnStatusBar {
+    return [[NSUserDefaults standardUserDefaults] floatForKey:@"showMessageStatisticsOnStatusBar"];
+}
+
+- (void) setShowMessageStatisticsOnStatusBar:(BOOL)value {
+    [[NSUserDefaults standardUserDefaults] setBool:value forKey:@"showMessageStatisticsOnStatusBar"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_STATISTICS_DISPLAY_SETTING_CHANGED
+                                                        object:[NSNumber numberWithBool:value]];
 }
 
 @end
