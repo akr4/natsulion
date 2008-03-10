@@ -2,6 +2,7 @@
 #import "NTLNURLUtils.h"
 #import "NTLNColors.h"
 #import "NTLNConfiguration.h"
+#import "NTLNNotification.h"
 
 #define MARGIN 4.0f
 
@@ -29,11 +30,11 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSettingChanged:)
-                                                 name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
+                                                 name:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED 
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSettingChanged:)
-                                                 name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
+                                                 name:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED
                                                object:nil];
     
 }

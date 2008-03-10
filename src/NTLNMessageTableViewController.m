@@ -111,11 +111,15 @@
     // add objservers
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSchemeChanged:)
-                                                 name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
+                                                 name:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED 
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(fontSizeChanged:)
+                                                 name:NTLN_NOTIFICATION_FONT_SIZE_CHANGED2
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(windowAlphaChanged:)
-                                                 name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
+                                                 name:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(messageViewChanging:)
@@ -291,6 +295,10 @@
 
 #pragma mark Notification
 - (void) colorSchemeChanged:(NSNotification*)notification {
+    [self reloadTableView];
+}
+
+- (void) fontSizeChanged:(NSNotification*)notification {
     [self reloadTableView];
 }
 

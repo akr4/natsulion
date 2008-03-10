@@ -1,8 +1,5 @@
 #import <Cocoa/Cocoa.h>
 
-#define NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED @"colorSchemeChanged"
-#define NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED @"windowAlphaChanged"
-
 #define NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING 0
 #define NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_DESCENDING 1
 
@@ -38,6 +35,13 @@
 - (void) setWindowAlpha:(float)value;
 - (NSTimeInterval) latestTimestampOfMessage;
 - (void) setLatestTimestampOfMessage:(NSTimeInterval)interval;
+- (float) fontSize;
+- (void) setFontSize:(float)size;
+- (IBAction) increaseFontSize:(id)sender;
+- (IBAction) decreaseFontSize:(id)sender;
+- (IBAction) resetFontSize:(id)sender;
+- (BOOL) canIncreaseFontSize;
+- (BOOL) canDecreaseFontSize;
 
 // only for IB editable binding
 - (BOOL) useGrowlAndSummarizeGrowl;

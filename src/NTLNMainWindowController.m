@@ -395,19 +395,10 @@
 
 #pragma mark NSWindow delegate methods
 - (NSSize)windowWillResize:(NSWindow *)window toSize:(NSSize)proposedFrameSize {
-    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
-        NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
-        [c stopAnimation];
-    }
     return proposedFrameSize;
 }
 
 - (void)windowDidResize:(NSNotification *)notification {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
-        NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
-        [c startAnimation];
-    }
     [messageTableViewController recalculateViewSizes];
     [messageTableViewController reloadTableView];
 }

@@ -60,7 +60,9 @@
 //    [style setLineSpacing:0.0];
 //    [style setMinimumLineHeight:4];
     return [NSDictionary dictionaryWithObjectsAndKeys:
-            [NSFont userFontOfSize:[NSFont systemFontSize]], NSFontAttributeName,
+//            [NSFont userFontOfSize:[NSFont systemFontSize]], NSFontAttributeName,
+            [NSFont userFontOfSize:[[NTLNConfiguration instance] fontSize]],
+            NSFontAttributeName,
             style, NSParagraphStyleAttributeName,
             nil];
 

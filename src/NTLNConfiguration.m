@@ -1,10 +1,12 @@
 #import "NTLNConfiguration.h"
 #import "NTLNMainWindowController.h"
 #import "NTLNColors.h"
+#import "NTLNNotification.h"
 
 @implementation NTLNConfiguration
 
-@synthesize useGrowl, showWindowWhenNewMessage, refreshIntervalSeconds, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl, showMessageStatisticsOnStatusBar;
+@synthesize useGrowl, showWindowWhenNewMessage, refreshIntervalSeconds, usePost, editWindowAlphaManually,
+    decodeHeart, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl, showMessageStatisticsOnStatusBar;
 
 static id _instance = nil;
 
@@ -118,7 +120,7 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
             [self setWindowAlpha:NTLN_COLORS_DARK_SCHEME_DEFAULT_ALPHA];
         }
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED object:nil];
 }
 
 - (float) windowAlpha {
@@ -130,7 +132,7 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 //    NSLog(@"%s: %f", __PRETTY_FUNCTION__, value);
     [[NSUserDefaults standardUserDefaults] setFloat:value forKey:@"windowAlpha"];
     [[NTLNColors instance] notifyConfigurationChange];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED object:nil];
 }
 
 - (NSTimeInterval) latestTimestampOfMessage {
@@ -147,6 +149,61 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 
 - (void) setUseGrowlAndSummarizeGrowl:(BOOL)value {
     
+}
+
+#pragma mark Font
+#define MAX_FONT_SIZE 32
+#define MIN_FONT_SIZE 9
+
+- (void) setFontSize:(float)size {
+    [[NSUserDefaults standardUserDefaults] setFloat:size forKey:@"fontSize"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_FONT_SIZE_CHANGED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_FONT_SIZE_CHANGED2 object:nil];
+}
+
+- (float) fontSize {
+    float size = [[NSUserDefaults standardUserDefaults] floatForKey:@"fontSize"];
+    if (size == 0.0) {
+        size = [NSFont systemFontSize];
+        [self setFontSize:size];
+    }
+    return size;
+}
+
+- (IBAction) increaseFontSize:(id)sender {
+    float fontSize = [self fontSize];
+    fontSize += (fontSize >= 14 ? 2 : 1);
+    if (fontSize > MAX_FONT_SIZE) {
+        fontSize = MAX_FONT_SIZE;
+    }
+    [self setFontSize:fontSize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_FONT_SIZE_CHANGED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_FONT_SIZE_CHANGED2 object:nil];
+}
+
+- (IBAction) decreaseFontSize:(id)sender {
+    float fontSize = [self fontSize];
+    fontSize -= (fontSize >= 16 ? 2 : 1);
+    if (fontSize < MIN_FONT_SIZE) {
+        fontSize = MIN_FONT_SIZE;
+    }
+    [self setFontSize:fontSize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_FONT_SIZE_CHANGED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_FONT_SIZE_CHANGED2 object:nil];
+}
+
+- (IBAction) resetFontSize:(id)sender {
+    [self setFontSize:[NSFont systemFontSize]];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_FONT_SIZE_CHANGED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_FONT_SIZE_CHANGED2 object:nil];
+}
+
+- (BOOL) canIncreaseFontSize {
+    return [self fontSize] < MAX_FONT_SIZE;
+}
+
+- (BOOL) canDecreaseFontSize {
+    return [self fontSize] > MIN_FONT_SIZE;
 }
 
 @end

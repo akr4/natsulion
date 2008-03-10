@@ -75,11 +75,15 @@ static TwitterStatusViewController *starred = nil;
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSchemeChanged:)
-                                                 name:NTLN_NOTIFICATION_NAME_COLOR_SCHEME_CHANGED 
+                                                 name:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED 
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSchemeChanged:)
-                                                 name:NTLN_NOTIFICATION_NAME_WINDOW_ALPHA_CHANGED
+                                                 name:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(fontSizeChanged:)
+                                                 name:NTLN_NOTIFICATION_FONT_SIZE_CHANGED
                                                object:nil];
     
     [self unhighlight];
@@ -217,17 +221,6 @@ static TwitterStatusViewController *starred = nil;
     _favoriteIsCreating = FALSE;
 }
 
-- (void) startAnimation {
-    [[view layer] setHidden:FALSE];
-//    [view setWantsLayer:TRUE];
-}
-
-- (void) stopAnimation {
-    [[view layer] setHidden:TRUE];
-    //    NSLog(@"%s", __PRETTY_FUNCTION__);
-//    [view setWantsLayer:FALSE];
-}
-
 - (enum NTLNMessageStatus) messageStatus {
     return [_status status];
 }
@@ -241,7 +234,15 @@ static TwitterStatusViewController *starred = nil;
     }
 
     [self setupNewIcon];
-    [view notifyColorChange];
+}
+
+- (void) fontSizeChanged:(NSNotification*)notification {
+    if (_highlighted) {
+        [self highlight];
+    } else {
+        [self unhighlight];
+    }
+    [self markNeedCalculateHeight];
 }
 
 @end

@@ -19,7 +19,6 @@
 }
 
 - (void) setTwitterStatus:(TwitterStatus*)status;
-- (void) notifyColorChange;
 - (void) highlight;
 - (void) unhighlight;
 - (float) requiredHeight;
