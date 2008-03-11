@@ -6,6 +6,7 @@
 <meta http-equiv="content-style-type" content="text/css">
 <title>SecretStaircase - NatsuLion</title>
 <link rel="stylesheet" type="text/css" href="csstemplate/style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="appcast.xml">
 </head>
 <body id="INDEX">
 <div id="PAGETOP">
@@ -109,6 +110,27 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.30 (2008/03/11)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.30.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.30.zip');">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-142'>NTLN-142</a>] -         crash when change color scheme
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-141'>NTLN-141</a>] -         use graphical indicator to show timeline speed 
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-136'>NTLN-136</a>] -         new feture to change fonts
+</li>
+</ul>
+</p>    
+
 <h3>Version 0.29 (2008/03/10)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.29.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.29.zip');">download</a>
 <p>
 Improvement
