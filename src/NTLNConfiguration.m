@@ -116,11 +116,6 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED object:nil];
 }
 
-- (void) setWindowAlphaWithoutNotification:(float)value {
-    [[NSUserDefaults standardUserDefaults] setFloat:value forKey:@"windowAlpha"];
-    [[NTLNColors instance] notifyConfigurationChange];
-}
-
 - (int) colorScheme {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"colorScheme"];
 }
@@ -130,9 +125,9 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [[NTLNColors instance] notifyConfigurationChange];
     if (!editWindowAlphaManually) {
         if (scheme == NTLN_CONFIGURATION_COLOR_SCHEME_LIGHT) {
-            [self setWindowAlphaWithoutNotification:NTLN_COLORS_LIGHT_SCHEME_DEFAULT_ALPHA];
+            [self setWindowAlpha:NTLN_COLORS_LIGHT_SCHEME_DEFAULT_ALPHA];
         } else {
-            [self setWindowAlphaWithoutNotification:NTLN_COLORS_DARK_SCHEME_DEFAULT_ALPHA];
+            [self setWindowAlpha:NTLN_COLORS_DARK_SCHEME_DEFAULT_ALPHA];
         }
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED object:nil];
