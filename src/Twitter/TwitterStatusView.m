@@ -10,14 +10,6 @@
     _defaultHeight = [self frame].size.height;
     _requiredHeight = _defaultHeight;
     _sizeShouldBeCalculated = TRUE;
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(colorSchemeChanged:)
-                                                 name:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED 
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(colorSchemeChanged:)
-                                                 name:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED
-                                               object:nil];
 }
 
 - (void) removeTrackingAreas {
@@ -170,8 +162,7 @@
     return _backgroundColor;
 }
 
-#pragma mark Notification
-- (void) colorSchemeChanged:(NSNotification*)notification {
+- (void) colorSchemeChanged {
     [self setNeedsDisplay:TRUE];
 }
 

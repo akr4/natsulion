@@ -104,24 +104,6 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     _timelineSortOrderChangeObserver = observer;
 }
 
-- (int) colorScheme {
-    return [[NSUserDefaults standardUserDefaults] integerForKey:@"colorScheme"];
-}
-
-- (void) setColorScheme:(int)scheme {
-    [[NSUserDefaults standardUserDefaults] setInteger:scheme forKey:@"colorScheme"];
-    [[NTLNColors instance] notifyConfigurationChange];
-    if (!editWindowAlphaManually) {
-        
-        if (scheme == NTLN_CONFIGURATION_COLOR_SCHEME_LIGHT) {
-            [self setWindowAlpha:NTLN_COLORS_LIGHT_SCHEME_DEFAULT_ALPHA];
-        } else {
-            [self setWindowAlpha:NTLN_COLORS_DARK_SCHEME_DEFAULT_ALPHA];
-        }
-    }
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED object:nil];
-}
-
 - (float) windowAlpha {
 //    NSLog(@"%s: %f", __PRETTY_FUNCTION__, [[NSUserDefaults standardUserDefaults] floatForKey:@"windowTransparency"]);
     return [[NSUserDefaults standardUserDefaults] floatForKey:@"windowAlpha"];
@@ -132,6 +114,28 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [[NSUserDefaults standardUserDefaults] setFloat:value forKey:@"windowAlpha"];
     [[NTLNColors instance] notifyConfigurationChange];
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED object:nil];
+}
+
+- (void) setWindowAlphaWithoutNotification:(float)value {
+    [[NSUserDefaults standardUserDefaults] setFloat:value forKey:@"windowAlpha"];
+    [[NTLNColors instance] notifyConfigurationChange];
+}
+
+- (int) colorScheme {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"colorScheme"];
+}
+
+- (void) setColorScheme:(int)scheme {
+    [[NSUserDefaults standardUserDefaults] setInteger:scheme forKey:@"colorScheme"];
+    [[NTLNColors instance] notifyConfigurationChange];
+    if (!editWindowAlphaManually) {
+        if (scheme == NTLN_CONFIGURATION_COLOR_SCHEME_LIGHT) {
+            [self setWindowAlphaWithoutNotification:NTLN_COLORS_LIGHT_SCHEME_DEFAULT_ALPHA];
+        } else {
+            [self setWindowAlphaWithoutNotification:NTLN_COLORS_DARK_SCHEME_DEFAULT_ALPHA];
+        }
+    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED object:nil];
 }
 
 - (NSTimeInterval) latestTimestampOfMessage {

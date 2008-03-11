@@ -15,6 +15,10 @@
     [(NSTextView*)[[self window] fieldEditor:TRUE forObject:self] setInsertionPointColor:[[NTLNColors instance] colorForText]];
 }
 
+- (void) setupFontSize {
+    [self setFont:[NSFont userFontOfSize:[[NTLNConfiguration instance] fontSize]]];
+}
+
 - (void) setupPlaceholderString {
     NSMutableAttributedString *placeHolderString = [[[NSMutableAttributedString alloc] initWithString:@"Input your message and press \"Enter\" key"] autorelease];
     NSRange range = NSMakeRange(0, [placeHolderString length]);
@@ -26,6 +30,7 @@
     [self setDelegate:self];
     _defaultHeight = [self frame].size.height;
     [self setupColors];
+    [self setupFontSize];
     [self setupPlaceholderString];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -36,7 +41,10 @@
                                              selector:@selector(colorSettingChanged:)
                                                  name:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED
                                                object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(fontSizeChanged:)
+                                                 name:NTLN_NOTIFICATION_FONT_SIZE_CHANGED
+                                               object:nil];    
 }
 
 - (void) dealloc  {
@@ -252,6 +260,10 @@
     [self setupColors];
     [self setupPlaceholderString];
     [self setNeedsDisplay:TRUE];
+}
+
+- (void) fontSizeChanged:(NSNotification*)notification {
+    [self setupFontSize];
 }
 
 @end

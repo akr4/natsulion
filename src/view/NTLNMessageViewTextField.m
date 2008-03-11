@@ -1,6 +1,7 @@
 #import "NTLNMessageViewTextField.h"
 #import "NTLNColors.h"
 #import "NTLNNotification.h"
+#import "NTLNConfiguration.h"
 
 @implementation NTLNMessageViewTextField
 
@@ -13,14 +14,6 @@
 - (void) awakeFromNib {
     _highlighted = FALSE;
     [self setupColors];
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(colorSchemeChanged:)
-                                                 name:NTLN_NOTIFICATION_COLOR_SCHEME_CHANGED 
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(colorSchemeChanged:)
-                                                 name:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED
-                                               object:nil];
 }
 
 - (void) dealloc {
@@ -46,10 +39,17 @@
     return _highlighted;
 }
 
-#pragma mark Notification
-- (void) colorSchemeChanged:(NSNotification*)notification {
+- (void) colorSchemeChanged {
     [self setupColors];
     [self setNeedsDisplay:TRUE];
+}
+
+- (void) fontSizeChanged {
+    float size = [[NTLNConfiguration instance] fontSize];
+    if (size > [NSFont systemFontSize]) {
+        size = [NSFont systemFontSize];
+    }
+    [self setFont:[NSFont userFontOfSize:size]];
 }
 
 @end

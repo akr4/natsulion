@@ -10,5 +10,7 @@
 - (void) unhighlight;
 - (BOOL) highlighted;
 - (NSColor*) defaultColor;
+- (void) colorSchemeChanged;
+- (void) fontSizeChanged;
 
 @end

@@ -27,5 +27,6 @@
 
 // for TwitterStatusViewController
 - (NSColor*) backgroundColor;
+- (void) colorSchemeChanged;
 
 @end

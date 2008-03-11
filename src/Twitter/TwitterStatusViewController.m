@@ -232,8 +232,10 @@ static TwitterStatusViewController *starred = nil;
     } else {
         [self unhighlight];
     }
-
     [self setupNewIcon];
+    [view colorSchemeChanged];
+    [nameField colorSchemeChanged];
+    [timestampField colorSchemeChanged];
 }
 
 - (void) fontSizeChanged:(NSNotification*)notification {
@@ -243,6 +245,8 @@ static TwitterStatusViewController *starred = nil;
         [self unhighlight];
     }
     [self markNeedCalculateHeight];
+    [nameField fontSizeChanged];
+    [timestampField fontSizeChanged];
 }
 
 @end
