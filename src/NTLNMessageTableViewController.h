@@ -3,10 +3,12 @@
 #import "NTLNMessageInputTextField.h"
 
 @class NTLNMessageListViewsController;
+@class NTLNMessageTableViewController;
 
 @interface NTLNMessageScrollView : NSScrollView {
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
+    IBOutlet NTLNMessageTableViewController *messageTableViewController;
 }
 - (void)notifyExit;
 - (void)notifyEnterExit;
@@ -50,7 +52,5 @@
 
 - (IBAction) makeSelectionsFavoraite:(id)sender;
 - (IBAction) addSelectionsToReplyTo:(id)sender;
-- (IBAction) nextMessage:(id)sender;
-- (IBAction) previousMessage:(id)sender;
 
 @end

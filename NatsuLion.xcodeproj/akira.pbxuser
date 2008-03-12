@@ -125,6 +125,51 @@
 		perUserProjectItems = {
 			E900C1590D5EAC5A0071837C = E900C1590D5EAC5A0071837C /* PBXTextBookmark */;
 			E900C1620D5EAC5A0071837C = E900C1620D5EAC5A0071837C /* PBXTextBookmark */;
+			E904518C0D88784C00FC02AD /* PBXTextBookmark */ = E904518C0D88784C00FC02AD /* PBXTextBookmark */;
+			E904518D0D88784C00FC02AD /* PBXTextBookmark */ = E904518D0D88784C00FC02AD /* PBXTextBookmark */;
+			E90451970D88784F00FC02AD /* PBXTextBookmark */ = E90451970D88784F00FC02AD /* PBXTextBookmark */;
+			E90451980D88784F00FC02AD /* PBXTextBookmark */ = E90451980D88784F00FC02AD /* PBXTextBookmark */;
+			E90451990D88784F00FC02AD /* PBXTextBookmark */ = E90451990D88784F00FC02AD /* PBXTextBookmark */;
+			E904519A0D88784F00FC02AD /* PBXTextBookmark */ = E904519A0D88784F00FC02AD /* PBXTextBookmark */;
+			E904519B0D88784F00FC02AD /* PBXTextBookmark */ = E904519B0D88784F00FC02AD /* PBXTextBookmark */;
+			E904519C0D88784F00FC02AD /* PBXTextBookmark */ = E904519C0D88784F00FC02AD /* PBXTextBookmark */;
+			E904519D0D88784F00FC02AD /* PBXTextBookmark */ = E904519D0D88784F00FC02AD /* PBXTextBookmark */;
+			E904519E0D88784F00FC02AD /* PBXTextBookmark */ = E904519E0D88784F00FC02AD /* PBXTextBookmark */;
+			E904519F0D88784F00FC02AD /* PBXTextBookmark */ = E904519F0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A00D88784F00FC02AD /* PBXTextBookmark */ = E90451A00D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A10D88784F00FC02AD /* PBXTextBookmark */ = E90451A10D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A20D88784F00FC02AD /* PBXTextBookmark */ = E90451A20D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A30D88784F00FC02AD /* PBXTextBookmark */ = E90451A30D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A40D88784F00FC02AD /* PBXTextBookmark */ = E90451A40D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A50D88784F00FC02AD /* PBXTextBookmark */ = E90451A50D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A60D88784F00FC02AD /* PBXTextBookmark */ = E90451A60D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A70D88784F00FC02AD /* PBXTextBookmark */ = E90451A70D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A80D88784F00FC02AD /* PBXTextBookmark */ = E90451A80D88784F00FC02AD /* PBXTextBookmark */;
+			E90451A90D88784F00FC02AD /* PBXTextBookmark */ = E90451A90D88784F00FC02AD /* PBXTextBookmark */;
+			E90451AA0D88784F00FC02AD /* PBXTextBookmark */ = E90451AA0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451AB0D88784F00FC02AD /* PBXTextBookmark */ = E90451AB0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451AC0D88784F00FC02AD /* PBXTextBookmark */ = E90451AC0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451AD0D88784F00FC02AD /* PBXTextBookmark */ = E90451AD0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451AE0D88784F00FC02AD /* PBXTextBookmark */ = E90451AE0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451AF0D88784F00FC02AD /* PBXTextBookmark */ = E90451AF0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B00D88784F00FC02AD /* PBXTextBookmark */ = E90451B00D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B10D88784F00FC02AD /* PBXTextBookmark */ = E90451B10D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B20D88784F00FC02AD /* PBXTextBookmark */ = E90451B20D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B30D88784F00FC02AD /* PBXTextBookmark */ = E90451B30D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B40D88784F00FC02AD /* PBXTextBookmark */ = E90451B40D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B50D88784F00FC02AD /* PBXTextBookmark */ = E90451B50D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B60D88784F00FC02AD /* PBXTextBookmark */ = E90451B60D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B70D88784F00FC02AD /* PBXTextBookmark */ = E90451B70D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B80D88784F00FC02AD /* PBXTextBookmark */ = E90451B80D88784F00FC02AD /* PBXTextBookmark */;
+			E90451B90D88784F00FC02AD /* PBXTextBookmark */ = E90451B90D88784F00FC02AD /* PBXTextBookmark */;
+			E90451BA0D88784F00FC02AD /* PBXTextBookmark */ = E90451BA0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451BB0D88784F00FC02AD /* PBXTextBookmark */ = E90451BB0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451BC0D88784F00FC02AD /* PBXTextBookmark */ = E90451BC0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451BD0D88784F00FC02AD /* PBXTextBookmark */ = E90451BD0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451BE0D88784F00FC02AD /* PBXTextBookmark */ = E90451BE0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451BF0D88784F00FC02AD /* PBXTextBookmark */ = E90451BF0D88784F00FC02AD /* PBXTextBookmark */;
+			E90451C00D88784F00FC02AD /* PBXTextBookmark */ = E90451C00D88784F00FC02AD /* PBXTextBookmark */;
+			E90451C10D88784F00FC02AD /* PBXTextBookmark */ = E90451C10D88784F00FC02AD /* PBXTextBookmark */;
 			E90662AA0D31B39500329057 = E90662AA0D31B39500329057 /* PBXTextBookmark */;
 			E90662B10D31B39500329057 = E90662B10D31B39500329057 /* PBXTextBookmark */;
 			E90662B90D31B39500329057 = E90662B90D31B39500329057 /* PBXTextBookmark */;
@@ -373,6 +418,454 @@
 		rLoc = 0;
 		rType = 0;
 		vrLen = 98;
+		vrLoc = 0;
+	};
+	E904518C0D88784C00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: syntax error before 'NTLNMessageTableViewController'";
+		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
+		rLen = 1;
+		rLoc = 10;
+		rType = 1;
+	};
+	E904518D0D88784C00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
+		name = "NTLNMessageTableViewController.h: 7";
+		rLen = 0;
+		rLoc = 179;
+		rType = 0;
+		vrLen = 650;
+		vrLoc = 0;
+	};
+	E90451970D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */;
+		name = "NTLNMessageInputTextField.h: 27";
+		rLen = 23;
+		rLoc = 857;
+		rType = 0;
+		vrLen = 1007;
+		vrLoc = 0;
+	};
+	E90451980D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */;
+		name = "NTLNMessageViewTextField.m: 32";
+		rLen = 0;
+		rLoc = 712;
+		rType = 0;
+		vrLen = 816;
+		vrLoc = 326;
+	};
+	E90451990D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */;
+		name = "NTLNMainWindowController.h: 11";
+		rLen = 0;
+		rLoc = 387;
+		rType = 0;
+		vrLen = 1604;
+		vrLoc = 0;
+	};
+	E904519A0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 282";
+		rLen = 11;
+		rLoc = 11648;
+		rType = 0;
+		vrLen = 1215;
+		vrLoc = 10837;
+	};
+	E904519B0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E95D34F90D2F3F6700EA6958 /* NTLNColors.h */;
+		name = "NTLNColors.h: 40";
+		rLen = 18;
+		rLoc = 1226;
+		rType = 0;
+		vrLen = 1332;
+		vrLoc = 25;
+	};
+	E904519C0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */;
+		name = "TwitterStatusView.m: 123";
+		rLen = 0;
+		rLoc = 3568;
+		rType = 0;
+		vrLen = 1686;
+		vrLoc = 2954;
+	};
+	E904519D0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 264";
+		rLen = 0;
+		rLoc = 9457;
+		rType = 0;
+		vrLen = 1305;
+		vrLoc = 8511;
+	};
+	E904519E0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 78";
+		rLen = 0;
+		rLoc = 2851;
+		rType = 0;
+		vrLen = 1257;
+		vrLoc = 1939;
+	};
+	E904519F0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 171";
+		rLen = 0;
+		rLoc = 7797;
+		rType = 0;
+		vrLen = 1755;
+		vrLoc = 7086;
+	};
+	E90451A00D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */;
+		name = "NTLNMessageInputTextField.h: 27";
+		rLen = 23;
+		rLoc = 857;
+		rType = 0;
+		vrLen = 1007;
+		vrLoc = 0;
+	};
+	E90451A10D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 257";
+		rLen = 0;
+		rLoc = 9634;
+		rType = 0;
+		vrLen = 1162;
+		vrLoc = 8276;
+	};
+	E90451A20D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */;
+		name = "NTLNMessageViewTextField.m: 32";
+		rLen = 0;
+		rLoc = 712;
+		rType = 0;
+		vrLen = 816;
+		vrLoc = 326;
+	};
+	E90451A30D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */;
+		name = "TwitterStatusView.m: 122";
+		rLen = 570;
+		rLoc = 3535;
+		rType = 0;
+		vrLen = 1441;
+		vrLoc = 3471;
+	};
+	E90451A40D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 250";
+		rLen = 0;
+		rLoc = 8981;
+		rType = 0;
+		vrLen = 1642;
+		vrLoc = 1943;
+	};
+	E90451A50D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 371";
+		rLen = 12;
+		rLoc = 14751;
+		rType = 0;
+		vrLen = 1372;
+		vrLoc = 13747;
+	};
+	E90451A60D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */;
+		name = "NTLNMainWindowController.h: 11";
+		rLen = 0;
+		rLoc = 387;
+		rType = 0;
+		vrLen = 1604;
+		vrLoc = 0;
+	};
+	E90451A70D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 282";
+		rLen = 11;
+		rLoc = 11648;
+		rType = 0;
+		vrLen = 1252;
+		vrLoc = 10800;
+	};
+	E90451A80D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 250";
+		rLen = 0;
+		rLoc = 8981;
+		rType = 0;
+		vrLen = 1582;
+		vrLoc = 2003;
+	};
+	E90451A90D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 282";
+		rLen = 11;
+		rLoc = 11648;
+		rType = 0;
+		vrLen = 1215;
+		vrLoc = 10837;
+	};
+	E90451AA0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 263";
+		rLen = 0;
+		rLoc = 9632;
+		rType = 0;
+		vrLen = 1176;
+		vrLoc = 8448;
+	};
+	E90451AB0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 96";
+		rLen = 0;
+		rLoc = 3972;
+		rType = 0;
+		vrLen = 1636;
+		vrLoc = 2521;
+	};
+	E90451AC0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
+		name = "NTLNMessageTableViewController.h: 33";
+		rLen = 32;
+		rLoc = 1211;
+		rType = 0;
+		vrLen = 1418;
+		vrLoc = 100;
+	};
+	E90451AD0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 71";
+		rLen = 0;
+		rLoc = 2932;
+		rType = 0;
+		vrLen = 1226;
+		vrLoc = 1692;
+	};
+	E90451AE0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 259";
+		rLen = 469;
+		rLoc = 9165;
+		rType = 0;
+		vrLen = 1176;
+		vrLoc = 8448;
+	};
+	E90451AF0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 73";
+		rLen = 0;
+		rLoc = 2983;
+		rType = 0;
+		vrLen = 1146;
+		vrLoc = 1692;
+	};
+	E90451B00D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E95D34F90D2F3F6700EA6958 /* NTLNColors.h */;
+		name = "NTLNColors.h: 40";
+		rLen = 18;
+		rLoc = 1226;
+		rType = 0;
+		vrLen = 1332;
+		vrLoc = 25;
+	};
+	E90451B10D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 73";
+		rLen = 0;
+		rLoc = 3018;
+		rType = 0;
+		vrLen = 1191;
+		vrLoc = 1682;
+	};
+	E90451B20D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 41";
+		rLen = 299;
+		rLoc = 1644;
+		rType = 0;
+		vrLen = 1844;
+		vrLoc = 693;
+	};
+	E90451B30D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 14";
+		rLen = 0;
+		rLoc = 514;
+		rType = 0;
+		vrLen = 1644;
+		vrLoc = 0;
+	};
+	E90451B40D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 267";
+		rLen = 181;
+		rLoc = 9635;
+		rType = 0;
+		vrLen = 1117;
+		vrLoc = 8513;
+	};
+	E90451B50D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 87";
+		rLen = 0;
+		rLoc = 3163;
+		rType = 0;
+		vrLen = 1194;
+		vrLoc = 2142;
+	};
+	E90451B60D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 12";
+		rLen = 108;
+		rLoc = 233;
+		rType = 0;
+		vrLen = 1790;
+		vrLoc = 0;
+	};
+	E90451B70D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */;
+		name = "TwitterStatusView.m: 123";
+		rLen = 0;
+		rLoc = 3568;
+		rType = 0;
+		vrLen = 1686;
+		vrLoc = 2954;
+	};
+	E90451B80D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 16";
+		rLen = 0;
+		rLoc = 603;
+		rType = 0;
+		vrLen = 1754;
+		vrLoc = 0;
+	};
+	E90451B90D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
+		name = "NTLNMessageInputTextField.m: 264";
+		rLen = 0;
+		rLoc = 9457;
+		rType = 0;
+		vrLen = 1305;
+		vrLoc = 8511;
+	};
+	E90451BA0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 74";
+		rLen = 0;
+		rLoc = 2851;
+		rType = 0;
+		vrLen = 1139;
+		vrLoc = 1904;
+	};
+	E90451BB0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
+		name = "NTLNMessageTableViewController.h: 53";
+		rLen = 0;
+		rLoc = 1822;
+		rType = 0;
+		vrLen = 1330;
+		vrLoc = 386;
+	};
+	E90451BC0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 293";
+		rLen = 0;
+		rLoc = 11127;
+		rType = 0;
+		vrLen = 1119;
+		vrLoc = 2129;
+	};
+	E90451BD0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
+		name = "NTLNMessageTableViewController.h: 53";
+		rLen = 0;
+		rLoc = 1822;
+		rType = 0;
+		vrLen = 1390;
+		vrLoc = 62;
+	};
+	E90451BE0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 285";
+		rLen = 0;
+		rLoc = 10824;
+		rType = 0;
+		vrLen = 1553;
+		vrLoc = 9805;
+	};
+	E90451BF0D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
+		name = "NTLNMessageTableViewController.h: 10";
+		rLen = 0;
+		rLoc = 416;
+		rType = 0;
+		vrLen = 1413;
+		vrLoc = 0;
+	};
+	E90451C00D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 78";
+		rLen = 0;
+		rLoc = 2851;
+		rType = 0;
+		vrLen = 1257;
+		vrLoc = 1939;
+	};
+	E90451C10D88784F00FC02AD /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
+		name = "NTLNMessageTableViewController.h: 11";
+		rLen = 73;
+		rLoc = 373;
+		rType = 0;
+		vrLen = 1421;
 		vrLoc = 0;
 	};
 	E90662AA0D31B39500329057 /* PBXTextBookmark */ = {
@@ -664,7 +1157,7 @@
 	};
 	E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1374, 882}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1374, 826}}";
 			sepNavSelRange = "{387, 0}";
 			sepNavVisRange = "{0, 1604}";
 			sepNavWindowFrame = "{{15, 547}, {799, 626}}";
@@ -672,9 +1165,9 @@
 	};
 	E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 7154}}";
-			sepNavSelRange = "{8164, 0}";
-			sepNavVisRange = "{7042, 1799}";
+			sepNavIntBoundsRect = "{{0, 0}, {872, 7630}}";
+			sepNavSelRange = "{11648, 11}";
+			sepNavVisRange = "{10837, 1215}";
 			sepNavWindowFrame = "{{868, 287}, {799, 626}}";
 		};
 	};
@@ -915,7 +1408,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
 		name = "NTLNMessageTableViewController.m: 101";
 		rLen = 19;
-		rLoc = 3388;
+		rLoc = 4168;
 		rType = 0;
 		vrLen = 1636;
 		vrLoc = 2521;
@@ -1027,7 +1520,7 @@
 		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
 		name = "NTLNMessageTableViewController.h: 25";
 		rLen = 0;
-		rLoc = 1339;
+		rLoc = 1451;
 		rType = 0;
 		vrLen = 1104;
 		vrLoc = 0;
@@ -1338,7 +1831,7 @@
 		fRef = E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */;
 		name = "NTLNMessageTableViewController.h: 33";
 		rLen = 32;
-		rLoc = 1099;
+		rLoc = 1211;
 		rType = 0;
 		vrLen = 1401;
 		vrLoc = 387;
@@ -1443,8 +1936,8 @@
 	E95D34F90D2F3F6700EA6958 /* NTLNColors.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {872, 644}}";
-			sepNavSelRange = "{328, 0}";
-			sepNavVisRange = "{0, 1304}";
+			sepNavSelRange = "{1226, 18}";
+			sepNavVisRange = "{25, 1332}";
 			sepNavWindowFrame = "{{15, 180}, {1044, 993}}";
 		};
 	};
@@ -1666,7 +2159,7 @@
 		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
 		name = "NTLNMessageTableViewController.m: 19";
 		rLen = 0;
-		rLoc = 1936;
+		rLoc = 2263;
 		rType = 0;
 		vrLen = 1612;
 		vrLoc = 0;
@@ -1822,8 +2315,8 @@
 	E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {872, 784}}";
-			sepNavSelRange = "{770, 0}";
-			sepNavVisRange = "{350, 792}";
+			sepNavSelRange = "{712, 0}";
+			sepNavVisRange = "{326, 816}";
 		};
 	};
 	E991C6BB0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.h */ = {
@@ -2115,7 +2608,7 @@
 		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
 		name = "NTLNMessageInputTextField.m: 258";
 		rLen = 0;
-		rLoc = 9164;
+		rLoc = 9634;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 8312;
@@ -2135,7 +2628,7 @@
 		fRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */;
 		name = "NTLNMessageInputTextField.m: 258";
 		rLen = 0;
-		rLoc = 9164;
+		rLoc = 9634;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 8312;
@@ -2466,17 +2959,17 @@
 	};
 	E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 798}}";
-			sepNavSelRange = "{1099, 32}";
-			sepNavVisRange = "{387, 1401}";
+			sepNavIntBoundsRect = "{{0, 0}, {872, 784}}";
+			sepNavSelRange = "{373, 73}";
+			sepNavVisRange = "{0, 1421}";
 			sepNavWindowFrame = "{{61, 505}, {799, 626}}";
 		};
 	};
 	E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 5348}}";
-			sepNavSelRange = "{3388, 19}";
-			sepNavVisRange = "{2521, 1636}";
+			sepNavIntBoundsRect = "{{0, 0}, {872, 5684}}";
+			sepNavSelRange = "{2851, 0}";
+			sepNavVisRange = "{1939, 1257}";
 			sepNavWindowFrame = "{{38, 152}, {799, 626}}";
 		};
 	};
@@ -2648,9 +3141,9 @@
 	};
 	E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 2324}}";
-			sepNavSelRange = "{3534, 157}";
-			sepNavVisRange = "{3471, 1441}";
+			sepNavIntBoundsRect = "{{0, 0}, {872, 2380}}";
+			sepNavSelRange = "{3568, 0}";
+			sepNavVisRange = "{2954, 1686}";
 		};
 	};
 	E9E5BF9D0D28988800F34B9B /* NTLNXMLHTTPEncoder.h */ = {
@@ -2707,16 +3200,16 @@
 	};
 	E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 558}}";
+			sepNavIntBoundsRect = "{{0, 0}, {872, 581}}";
 			sepNavSelRange = "{857, 23}";
 			sepNavVisRange = "{0, 1007}";
 		};
 	};
 	E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {984, 3962}}";
-			sepNavSelRange = "{9164, 0}";
-			sepNavVisRange = "{8312, 1126}";
+			sepNavIntBoundsRect = "{{0, 0}, {872, 4144}}";
+			sepNavSelRange = "{9457, 0}";
+			sepNavVisRange = "{8511, 1305}";
 		};
 	};
 	E9FA89AD0D3153DE00F50F79 /* PBXTextBookmark */ = {

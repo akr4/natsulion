@@ -61,7 +61,7 @@
 
 - (void) keyDown:(NSEvent*)event {
     unichar keyChar = [[event characters] characterAtIndex:0];
-//    NSLog(@"%d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
+    NSLog(@"%d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
     switch (keyChar) {
         case 0x20:
             if ([event modifierFlags] & NSShiftKeyMask) {
@@ -69,6 +69,12 @@
             } else {
                 [self pageDown:self];
             }
+            break;
+        case 0x6a:
+            [messageTableViewController nextMessage];
+            break;
+        case 0x6b:
+            [messageTableViewController previousMessage];
             break;
         default:
             [super keyDown:event];
@@ -280,6 +286,16 @@
     }
 }
 
+- (void) nextMessage {
+    [self selectionDown];
+    [[viewColumn tableView] scrollRowToVisible:[[[viewColumn tableView] selectedRowIndexes] firstIndex]];
+}
+
+- (void) previousMessage {
+    [self selectionUp];
+    [[viewColumn tableView] scrollRowToVisible:[[[viewColumn tableView] selectedRowIndexes] firstIndex]];
+}
+
 #pragma mark NSTableView datasource methods
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView {
     return [[messageViewControllerArrayController arrangedObjects] count];
@@ -375,16 +391,6 @@
     free(buf);
     
     [messageInputTextField focusAndLocateCursorEnd];
-}
-
-- (IBAction) nextMessage:(id)sender {
-    [self selectionDown];
-    [[viewColumn tableView] scrollRowToVisible:[[[viewColumn tableView] selectedRowIndexes] firstIndex]];
-}
-
-- (IBAction) previousMessage:(id)sender {
-    [self selectionUp];
-    [[viewColumn tableView] scrollRowToVisible:[[[viewColumn tableView] selectedRowIndexes] firstIndex]];
 }
 
 @end
