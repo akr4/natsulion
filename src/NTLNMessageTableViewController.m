@@ -7,6 +7,14 @@
 #import "NTLNNotification.h"
 
 @implementation NTLNMessageScrollView 
+
+- (void) awakeFromNib {
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(colorSettingChanged:)
+                                                 name:NTLN_NOTIFICATION_WINDOW_ALPHA_CHANGED
+                                               object:nil];
+}
+
 - (void)notifyExit {
     for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
         TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
@@ -66,6 +74,16 @@
             [super keyDown:event];
             break;
     }
+}
+
+- (void)drawRect:(NSRect)aRect {
+    [[[NTLNColors instance] colorForBackground] set];
+    NSRectFillUsingOperation(aRect, NSCompositeCopy);
+}
+
+#pragma mark Notification
+- (void) colorSettingChanged:(NSNotification*)notification {
+    [self setNeedsDisplay:TRUE];
 }
 
 @end
