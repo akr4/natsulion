@@ -9,6 +9,7 @@
 @implementation NTLNMessageInputTextField
 
 - (void) setupColors {
+    [_backgroundColor release];
     _backgroundColor = [[[NTLNColors instance] colorForBackground] retain];
     [self setBackgroundColor:_backgroundColor];
     [self setTextColor:[[NTLNColors instance] colorForText]];
