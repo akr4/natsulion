@@ -224,16 +224,26 @@
         _growl = [[NTLNGrowlNotifier alloc] init];
     }
     
+    // remove my updates
+    NSMutableArray *controllersWithoutMine = [NSMutableArray arrayWithArray:controllers];
+    for (int i = 0; i < [controllersWithoutMine count]; i++) {
+        NTLNMessage *m = [(TwitterStatusViewController*)[controllersWithoutMine objectAtIndex:i] message];
+        if ([m replyType] == MESSAGE_REPLY_TYPE_MYUPDATE) {
+            [controllersWithoutMine removeObjectAtIndex:i];
+            i--;
+        }
+    }
+    
     int i;
 
     NSMutableArray *messages = [NSMutableArray arrayWithCapacity:20];
-
+    
     int numberOfReplies = 0;
-    int showDetailThreashold;
+    int showDetailThreashold = 0; // if controllers has my updates only, this is left as 0.
     if ([[NTLNConfiguration instance] summarizeGrowl]) {
         // order reply first
-        for (i = 0; i < [controllers count]; i++) {
-            NTLNMessage *m = [(TwitterStatusViewController*)[controllers objectAtIndex:i] message];
+        for (i = 0; i < [controllersWithoutMine count]; i++) {
+            NTLNMessage *m = [(TwitterStatusViewController*)[controllersWithoutMine objectAtIndex:i] message];
             if ([m replyType] == MESSAGE_REPLY_TYPE_REPLY || [m replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
                 [messages insertObject:m atIndex:numberOfReplies];
                 numberOfReplies++;
@@ -245,8 +255,8 @@
         showDetailThreashold = [[NTLNConfiguration instance] growlSummarizeThreshold] < [messages count]
         ? [[NTLNConfiguration instance] growlSummarizeThreshold] - 1 : [messages count];
     } else {
-        for (i = 0; i < [controllers count]; i++) {
-            NTLNMessage *m = [(TwitterStatusViewController*)[controllers objectAtIndex:i] message];
+        for (i = 0; i < [controllersWithoutMine count]; i++) {
+            NTLNMessage *m = [(TwitterStatusViewController*)[controllersWithoutMine objectAtIndex:i] message];
             [messages addObject:m];
         }
         showDetailThreashold = [messages count]; // show details for all messages
@@ -269,21 +279,18 @@
                 break;
         }
         
-        [_growl sendToGrowlTitle:[m name]
-                  andDescription:[m text]
-                         andIcon:[[m icon] TIFFRepresentation]
-                     andPriority:priority
-                       andSticky:sticky];
+        [_growl sendToGrowl:m];
     }
-    
+
+    // summary
     if (i < [messages count]) {
-        int priority = 0;
-        BOOL sticky = FALSE;
+        enum NTLNReplyType type;
 
         // replies still remain
         if (i < numberOfReplies) {
-            priority = 2;
-            sticky = TRUE;
+            type = MESSAGE_REPLY_TYPE_REPLY;
+        } else {
+            type = MESSAGE_REPLY_TYPE_NORMAL;
         }
         
         NSMutableSet *names = [NSMutableSet setWithCapacity:20];
@@ -299,10 +306,8 @@
             [s appendString:@" "];
         }
         [_growl sendToGrowlTitle:@"New Messages from:"
-                  andDescription:s
-                         andIcon:nil
-                     andPriority:priority
-                       andSticky:sticky];
+                     description:s
+                       replyType:type];
     } 
 }
 

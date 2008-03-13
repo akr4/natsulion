@@ -1,6 +1,6 @@
 #import "TwitterStatus.h"
 #import "NTLNPreferencesWindowController.h"
-
+#import "NTLNAccount.h"
 
 @implementation TwitterStatus
 
@@ -25,8 +25,14 @@
     return FALSE;
 }
 
+- (BOOL) isMyUpdate {
+    return [screenName isEqualToString:[[NTLNAccount instance] username]];
+}
+
 - (void) finishedToSetProperties {
-    if ([self isReplyToMe]) {
+    if ([self isMyUpdate]) {
+        replyType = MESSAGE_REPLY_TYPE_MYUPDATE;
+    } else if ([self isReplyToMe]) {
         replyType = MESSAGE_REPLY_TYPE_REPLY;
     } else if ([self isProbablyReplyToMe]) {
         replyType = MESSAGE_REPLY_TYPE_REPLY_PROBABLE;

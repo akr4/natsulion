@@ -61,7 +61,7 @@
 
 - (void) keyDown:(NSEvent*)event {
     unichar keyChar = [[event characters] characterAtIndex:0];
-    NSLog(@"%d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
+//    NSLog(@"%d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
     switch (keyChar) {
         case 0x20:
             if ([event modifierFlags] & NSShiftKeyMask) {

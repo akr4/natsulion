@@ -49,7 +49,9 @@
 - (float) columnWidth;
 - (void) recalculateViewSizes;
 - (void) reloadTimelineSortDescriptors;
-
+- (void) nextMessage;
+- (void) previousMessage;
+    
 - (IBAction) makeSelectionsFavoraite:(id)sender;
 - (IBAction) addSelectionsToReplyTo:(id)sender;
 
