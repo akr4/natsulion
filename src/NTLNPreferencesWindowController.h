@@ -5,7 +5,6 @@
 
 #define NTLN_PREFERENCE_USERID @"userId"
 #define NTLN_PREFERENCE_USE_GROWL @"useGrowl"
-#define NTLN_PREFERENCE_SHOW_WINDOW_WHEN_NEW_MESSAGE @"showWindowWhenNewMessage"
 #define NTLN_PREFERENCE_REFRESH_INTERVAL @"refreshInterval"
 
 @interface NTLNPreferencesWindowController : NSWindowController<TwitterCheckCallback> {

@@ -416,6 +416,14 @@
     [messageTableViewController reloadTableView];
 }
 
+- (void)windowDidBecomeMain:(NSNotification *)notification {
+    [mainWindow setAlphaValue:1.0f];
+}
+
+- (void)windowDidResignMain:(NSNotification *)notification {
+    [mainWindow setAlphaValue:0.3f];
+}
+
 #pragma mark TwitterFavoriteCallback
 - (void) finishedToChangeFavorite:(NSString*)statusId {           
     for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
@@ -513,7 +521,7 @@
     [self addMessageViewControllers:messageArray];
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE_ADDED object:messageArray];
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:NTLN_PREFERENCE_SHOW_WINDOW_WHEN_NEW_MESSAGE]) {
+    if ([[NTLNConfiguration instance] raiseWindowWhenNewMessageArrives]) {
         [mainWindow makeKeyAndOrderFront:nil];
     }
 }

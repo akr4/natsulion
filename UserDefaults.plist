@@ -4,8 +4,10 @@
 <dict>
 	<key>refreshIntervalSeconds</key>
 	<real>60</real>
-	<key>showWindowWhenNewMessage</key>
+	<key>raiseWindowWhenNewMessageArrives</key>
 	<false/>
+    <key>increaseTransparencyWhileDeactivated</key>
+    <false/>
 	<key>useGrowl</key>
 	<false/>
     <key>summarizeGrowl</key>

@@ -85,12 +85,6 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
-			<key>CLASS</key>
-			<string>NSObject</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-		</dict>
-		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>toggleAutomaticLinkDetection</key>
@@ -108,6 +102,12 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -138,6 +138,19 @@
 			<string>NSWindowController</string>
 		</dict>
 		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>checkForUpdates</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>SUUpdater</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
 			<key>CLASS</key>
 			<string>NTLNMessageScrollView</string>
 			<key>LANGUAGE</key>
@@ -153,19 +166,6 @@
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSScrollView</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>checkForUpdates</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>SUUpdater</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -246,6 +246,23 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>decreaseFontSize</key>
+				<string>id</string>
+				<key>increaseFontSize</key>
+				<string>id</string>
+				<key>resetFontSize</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NTLNConfiguration</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
 				<key>closePreferencesSheet</key>
 				<string>id</string>
 				<key>showPreferencesSheet</key>
@@ -268,23 +285,6 @@
 				<key>welcomeWindowController</key>
 				<string>NTLNWelcomeWindowController</string>
 			</dict>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>decreaseFontSize</key>
-				<string>id</string>
-				<key>increaseFontSize</key>
-				<string>id</string>
-				<key>resetFontSize</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>NTLNConfiguration</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
 		</dict>

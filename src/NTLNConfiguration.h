@@ -10,7 +10,9 @@
 
 @interface NTLNConfiguration : NSObject {
     BOOL useGrowl;
-    BOOL showWindowWhenNewMessage;
+    BOOL raiseWindowWhenNewMessageArrives;
+    BOOL increaseTransparencyWhileDeactivated;
+    int newMessageNotificationWindowBehavior;
     BOOL usePost;
     BOOL editWindowAlphaManually;
     BOOL decodeHeart;
@@ -21,7 +23,9 @@
     BOOL summarizeGrowl;
 }
 
-@property BOOL useGrowl, showWindowWhenNewMessage, usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, summarizeGrowl;
+@property BOOL useGrowl, usePost, editWindowAlphaManually, decodeHeart, 
+    sendMessageWithEnterAndModifier, summarizeGrowl, raiseWindowWhenNewMessageArrives, 
+    increaseTransparencyWhileDeactivated;
 @property int refreshIntervalSeconds, growlSummarizeThreshold;
 
 + (id) instance;
