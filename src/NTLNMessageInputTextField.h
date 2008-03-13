@@ -19,6 +19,7 @@ enum NTLNMessageInputTextFieldLengthState {
     int _warningLength;
     int _maxLength;
     enum NTLNMessageInputTextFieldLengthState _lengthState;
+    NSCompositingOperation _backgroundCompositePolicy;
 }
 
 - (void) setLengthForWarning:(int)warning max:(int)max;

@@ -33,6 +33,7 @@
     [self setupColors];
     [self setupFontSize];
     [self setupPlaceholderString];
+    _backgroundCompositePolicy = NSCompositeCopy;
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(colorSettingChanged:)
@@ -262,11 +263,10 @@
     // without this enabled check, input text will disapear just after enter key is pressed.
     // by this way, input text will be shown but a white border is also shown.
     // if you know better way, please tell me. thanks.
-    if ([self isEnabled]) {
-        if (_backgroundColor) {
-            [_backgroundColor set];
-            NSRectFillUsingOperation(aRect, NSCompositeCopy);
-        }
+    if (_backgroundColor) {
+        [_backgroundColor set];
+        NSFrameRectWithWidth(aRect, 3.0);
+//            NSRectFillUsingOperation(aRect, NSCompositeCopy);
     }
 }
 
