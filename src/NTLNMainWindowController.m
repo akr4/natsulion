@@ -417,11 +417,15 @@
 }
 
 - (void)windowDidBecomeMain:(NSNotification *)notification {
-    [mainWindow setAlphaValue:1.0f];
+    if ([[NTLNConfiguration instance] increaseTransparencyWhileDeactivated]) {
+        [mainWindow setAlphaValue:1.0f];
+    }
 }
 
 - (void)windowDidResignMain:(NSNotification *)notification {
-    [mainWindow setAlphaValue:0.3f];
+    if ([[NTLNConfiguration instance] increaseTransparencyWhileDeactivated]) {
+        [mainWindow setAlphaValue:0.3f];
+    }
 }
 
 #pragma mark TwitterFavoriteCallback
