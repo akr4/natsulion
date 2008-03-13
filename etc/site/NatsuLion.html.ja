@@ -79,14 +79,6 @@
 </ul>  
 </p>
 
-<h3>既知の問題</h3>
-<p>
-<ul>
-  <li>メッセージ入力フィールドが拡張されるタイミングがおかしい <a href="http://jira.physalis.net/browse/NTLN-27">[NTLN-27]</a></li>
-</ul>
-[ ] 内は Issue 番号です。詳しくはこちらをご覧ください。<a href="http://jira.physalis.net/browse/NTLN">http://jira.physalis.net/browse/NTLN</a>
-</p>
-
 <h3>ライセンス</h3>
 <p>
 無料でご利用いただけます。
@@ -114,6 +106,37 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.31 (2008/03/14)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.31.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.31.zip');">download</a>
+<p>
+<p>
+主に細かなバグ修正。Growl 通知が通常の Tweet と Reply とで通知名を分けるようにしましたので、Growl 側でより細かなカスタマイズが可能になります。(例: Reply のみ表示し効果音を鳴らす。) 
+</p>
+
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-123'>NTLN-123</a>] -         wired white border in message input field
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-143'>NTLN-143</a>] -         NTLNMessageInputTextField does not release NSColor at changing color scheme
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-139'>NTLN-139</a>] -         better Growl notifications
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-144'>NTLN-144</a>] -         no message area is not drawn by trasparent color
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-145'>NTLN-145</a>] -         menu bar should not be highlighted when press j, k
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-146'>NTLN-146</a>] -         ability to increase transparency when inactivated
+</li>
+</ul>
+</p>
+
 <h3>Version 0.30 (2008/03/11)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.30.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.30.zip');">download</a>
 <p>
 <p>

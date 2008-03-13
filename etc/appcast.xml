@@ -7,6 +7,43 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.31</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.31
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-123'&gt;NTLN-123&lt;/a&gt;] -         wired white border in message input field
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-143'&gt;NTLN-143&lt;/a&gt;] -         NTLNMessageInputTextField does not release NSColor at changing color scheme
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-139'&gt;NTLN-139&lt;/a&gt;] -         better Growl notifications
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-144'&gt;NTLN-144&lt;/a&gt;] -         no message area is not drawn by trasparent color
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-145'&gt;NTLN-145&lt;/a&gt;] -         menu bar should not be highlighted when press j, k
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-146'&gt;NTLN-146&lt;/a&gt;] -         ability to increase transparency when inactivated
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Fri, 14 Mar 2008 02:35:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.31.zip"
+        length="845124"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.30</title>
       <description>
         Release Notes - NatsuLion - Version 0.30

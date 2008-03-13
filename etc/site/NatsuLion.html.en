@@ -76,17 +76,9 @@ You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip" onclick="javas
   <li>Create a favorite</li>
   <li>Replies including messages contain @<my ID> are emphasized</li>
   <li>Input support for "@&lt;ID&gt;". By clicking icon, @&lt;ID&gt; apears in the message input field</li>
-  <li>Growl Notifications (replies are notified with a higher priority and stickied)</li>
+  <li>Growl Notifications (replies are notified with a higher priority and stickied by default)</li>
   <li>Manage unread tweets</li>
 </ul>  
-</p>
-
-<h3>Known Problems</h3>
-<p>
-<ul>
-  <li>need to improve auto resizing textfield for message input <a href="http://jira.physalis.net/browse/NTLN-27">[NTLN-27]</a></li>
-</ul>
-Please refer <a href="http://jira.physalis.net/browse/NTLN">http://jira.physalis.net/browse/NTLN</a> for details.
 </p>
 
 <h3>License</h3>
@@ -110,6 +102,33 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.31 (2008/03/14)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.31.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.31.zip');">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-123'>NTLN-123</a>] -         wired white border in message input field
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-143'>NTLN-143</a>] -         NTLNMessageInputTextField does not release NSColor at changing color scheme
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-139'>NTLN-139</a>] -         better Growl notifications
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-144'>NTLN-144</a>] -         no message area is not drawn by trasparent color
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-145'>NTLN-145</a>] -         menu bar should not be highlighted when press j, k
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-146'>NTLN-146</a>] -         ability to increase transparency when inactivated
+</li>
+</ul>
+</p>
+
 <h3>Version 0.30 (2008/03/11)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.30.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.30.zip');">download</a>
 <p>
 Bug
