@@ -228,7 +228,7 @@
     NSMutableArray *controllersWithoutMine = [NSMutableArray arrayWithArray:controllers];
     for (int i = 0; i < [controllersWithoutMine count]; i++) {
         NTLNMessage *m = [(TwitterStatusViewController*)[controllersWithoutMine objectAtIndex:i] message];
-        if ([m replyType] == MESSAGE_REPLY_TYPE_MYUPDATE) {
+        if ([m replyType] == NTLN_MESSAGE_REPLY_TYPE_MYUPDATE) {
             [controllersWithoutMine removeObjectAtIndex:i];
             i--;
         }
@@ -244,7 +244,7 @@
         // order reply first
         for (i = 0; i < [controllersWithoutMine count]; i++) {
             NTLNMessage *m = [(TwitterStatusViewController*)[controllersWithoutMine objectAtIndex:i] message];
-            if ([m replyType] == MESSAGE_REPLY_TYPE_REPLY || [m replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
+            if ([m replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY || [m replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
                 [messages insertObject:m atIndex:numberOfReplies];
                 numberOfReplies++;
             } else {
@@ -267,11 +267,11 @@
         int priority = 0;
         BOOL sticky = FALSE;
         switch ([m replyType]) {
-            case MESSAGE_REPLY_TYPE_REPLY:
+            case NTLN_MESSAGE_REPLY_TYPE_REPLY:
                 priority = 2;
                 sticky = TRUE;
                 break;
-            case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
+            case NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
                 priority = 1;
                 sticky = TRUE;
                 break;
@@ -288,9 +288,9 @@
 
         // replies still remain
         if (i < numberOfReplies) {
-            type = MESSAGE_REPLY_TYPE_REPLY;
+            type = NTLN_MESSAGE_REPLY_TYPE_REPLY;
         } else {
-            type = MESSAGE_REPLY_TYPE_NORMAL;
+            type = NTLN_MESSAGE_REPLY_TYPE_NORMAL;
         }
         
         NSMutableSet *names = [NSMutableSet setWithCapacity:20];
@@ -324,7 +324,7 @@
     for (int i = 0; i < [messages count]; i++) {
         NTLNMessage *m = [(TwitterStatusViewController*)[messages objectAtIndex:i] message];
         if ([m status] != NTLN_MESSAGE_STATUS_READ
-            && ([m replyType] == MESSAGE_REPLY_TYPE_REPLY || [m replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE)) {
+            && ([m replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY || [m replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE)) {
             _numberOfUnreadMessage++;
         }
     }
@@ -344,7 +344,7 @@
     NTLNMessage *m = [(TwitterStatusViewController*)[notification object] message];
     if (m == nil) {
         _numberOfUnreadMessage = 0;
-    } else if ([m replyType] == MESSAGE_REPLY_TYPE_REPLY || [m replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
+    } else if ([m replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY || [m replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
         _numberOfUnreadMessage--;
     } else {
         return;

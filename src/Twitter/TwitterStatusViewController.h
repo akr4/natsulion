@@ -34,5 +34,6 @@
 - (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener;
 - (BOOL) isEqual:(id)anObject;
 - (void) showStar:(BOOL)show;
+- (TwitterStatus*) message;
 @end
 

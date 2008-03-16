@@ -432,7 +432,7 @@
 - (void) finishedToChangeFavorite:(NSString*)statusId {           
     for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
         NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
-        if ([statusId isEqualToString:[[c message] statusId]]) {
+        if ([statusId isEqualToString:[c messageId]]) {
             [c favoriteCreated];
             break;
         }
@@ -443,7 +443,7 @@
 - (void) failedToChangeFavorite:(NSString*)statusId errorInfo:(NTLNErrorInfo*)info {
     for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
         NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
-        if ([statusId isEqualToString:[[c message] statusId]]) {
+        if ([statusId isEqualToString:[c messageId]]) {
             [c favoriteCreationFailed];
             break;
         }
@@ -507,9 +507,13 @@
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSArray *messageArray = [notification object];
     for (int i = 0; i < [messageArray count]; i++) {
+        id o = [messageArray objectAtIndex:i];
+             if (![o isKindOfClass:[TwitterStatusViewController class]]) {
+             return;
+             }
         TwitterStatusViewController *controller = [messageArray objectAtIndex:i];
         NTLNMessage *s = [controller message];
-        if ([s replyType] == MESSAGE_REPLY_TYPE_REPLY || [s replyType] == MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
+        if ([s replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY || [s replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
             if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
                 [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
             } else {

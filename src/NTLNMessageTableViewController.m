@@ -266,7 +266,7 @@
 - (void) reloadTimelineSortDescriptors {
     [messageViewControllerArrayController setSortDescriptors:
      [NSArray arrayWithObject:
-      [[[NSSortDescriptor alloc] initWithKey:@"message.timestamp" 
+      [[[NSSortDescriptor alloc] initWithKey:@"timestamp" 
                                    ascending:([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING)] autorelease]]];
     [messageViewControllerArrayController rearrangeObjects];
     [self reloadTableView];
@@ -383,8 +383,8 @@
     [indices getIndexes:buf maxCount:bufSize inIndexRange:&range];
     for(unsigned int i = 0; i != bufSize; i++) {
         unsigned int index = buf[i];
-        NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:index];
-        NTLNMessage *m = [c message];
+        TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:index];
+        TwitterStatus *m = [c message];
         NSString *s = [m screenName];
         [messageInputTextField addReplyTo:s];
     }

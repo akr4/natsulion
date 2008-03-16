@@ -89,6 +89,38 @@
     if (responseStr) {
         document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
     }
+
+#define DEBUG 1
+#ifdef DEBUG
+    switch ((int) ((float) rand() / RAND_MAX * 10)) {
+        case 0:
+        case 1:
+        case 2:
+            code = 200;
+            break;
+        case 3:
+            code = 400;
+            break;
+        case 4:
+            code = 401;
+            break;
+        case 5:
+            code = 500;
+            break;
+        case 6:
+            code = 501;
+            break;
+        case 7:
+            code = 502;
+            break;
+        case 8:
+            code = 503;
+            break;
+        default:
+            code = 404;
+            break;
+    }
+#endif
     
     if (!document || code >= 400) {
         NSLog(@"status code: %d - response:%@", code, responseStr);        

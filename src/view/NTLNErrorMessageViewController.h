@@ -8,6 +8,9 @@
     IBOutlet NTLNMessageViewTextField *messageField;
     IBOutlet NTLNMessageViewTimestampField *timestampField;
     IBOutlet NSView *messageView;
+    
+    NSString *_messageId;
+    NSDate *_timestamp;
 }
 
 + (id) controllerWithTitle:(NSString*)title message:(NSString*)message timestamp:(NSDate*)timestamp;

@@ -54,13 +54,13 @@
     
 //    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:nil]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
-                                      [NSPredicate predicateWithFormat:@"message.replyType != 2 OR (message.replyType == 2 AND message.timestamp > %@)",
+                                      [NSPredicate predicateWithFormat:@"timestamp > %@",
                                        [NSDate dateWithTimeIntervalSince1970:[[NTLNConfiguration instance] latestTimestampOfMessage]]]]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
                                       [NSPredicate predicateWithFormat:@"message.replyType IN %@",
                                        [NSArray arrayWithObjects:
-                                        [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY],
-                                        [NSNumber numberWithInt:MESSAGE_REPLY_TYPE_REPLY_PROBABLE],
+                                        [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_REPLY],
+                                        [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE],
                                         nil]]]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
                                       [NSPredicate predicateWithFormat:@"message.screenName == %@", [[NTLNAccount instance] username]]]];

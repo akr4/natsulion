@@ -91,14 +91,6 @@ static TwitterStatusViewController *starred = nil;
     return self;
 }
 
-- (NTLNMessage*) message {
-    return _status;
-}
-
-- (NSView*) view {
-    return view;
-}
-
 - (void) dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [_status release];
@@ -110,6 +102,24 @@ static TwitterStatusViewController *starred = nil;
     [view removeFromSuperview];
     [view release];
     [super dealloc];
+}
+
+#pragma mark Message accessors
+- (NSString*) messageId {
+    return [_status statusId];
+}
+
+- (TwitterStatus*) message {
+    return _status;
+}
+
+- (NSDate*) timestamp {
+    return [_status timestamp];
+}
+
+#pragma mark UI component accessors
+- (NSView*) view {
+    return view;
 }
 
 - (NSTextField*) nameField {

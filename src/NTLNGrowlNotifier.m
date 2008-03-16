@@ -28,12 +28,12 @@
     BOOL sticky = FALSE;
     NSString *notificationName = NTLN_GROWL_EVENT_MESSAGE_RECEIVED;
     switch (type) {
-        case MESSAGE_REPLY_TYPE_REPLY:
+        case NTLN_MESSAGE_REPLY_TYPE_REPLY:
             priority = 2;
             sticky = TRUE;
             notificationName = NTLN_GROWL_EVENT_REPLY_RECEIVED;
             break;
-        case MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
+        case NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE:
             priority = 1;
             sticky = TRUE;
             notificationName = NTLN_GROWL_EVENT_REPLY_RECEIVED;

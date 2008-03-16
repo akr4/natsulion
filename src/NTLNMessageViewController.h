@@ -5,10 +5,14 @@
 
 }
 
+#pragma mark Message accessors
+- (NSString*) messageId;
+- (NSDate*) timestamp;
+
+#pragma mark
 - (void) highlight;
 - (void) unhighlight;
 - (NSView*) view;
-- (NTLNMessage*) message;
 - (float) requiredHeight;
 - (void) markNeedCalculateHeight;
 - (void) enterInScrollView;
@@ -17,7 +21,7 @@
 - (void) stopAnimation;
 - (void) markAsRead:(bool)notification;
 
-// methods for subviews
+#pragma mark methods for subclasses
 - (void) iconViewClicked;
 - (void) favoriteCreated;
 - (void) favoriteCreationFailed;

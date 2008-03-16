@@ -31,13 +31,13 @@
 
 - (void) finishedToSetProperties {
     if ([self isMyUpdate]) {
-        replyType = MESSAGE_REPLY_TYPE_MYUPDATE;
+        replyType = NTLN_MESSAGE_REPLY_TYPE_MYUPDATE;
     } else if ([self isReplyToMe]) {
-        replyType = MESSAGE_REPLY_TYPE_REPLY;
+        replyType = NTLN_MESSAGE_REPLY_TYPE_REPLY;
     } else if ([self isProbablyReplyToMe]) {
-        replyType = MESSAGE_REPLY_TYPE_REPLY_PROBABLE;
+        replyType = NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE;
     } else {
-        replyType = MESSAGE_REPLY_TYPE_NORMAL;
+        replyType = NTLN_MESSAGE_REPLY_TYPE_NORMAL;
     }
 }
 

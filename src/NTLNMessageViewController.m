@@ -3,10 +3,16 @@
 
 @implementation NTLNMessageViewController
 
-- (id) init {
-    return self;
+#pragma mark Message accessors
+- (NSString*) messageId {
+    return nil;
 }
 
+- (NSDate*) timestamp {
+    return nil;
+}
+
+#pragma mark Public methods
 - (void) highlight {
     
 }
