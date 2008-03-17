@@ -85,13 +85,13 @@
     [_messageViewSelector setTarget:messageListViewsController];
     [_messageViewSelector setAction:@selector(changeViewByToolbar:)];
     NSToolbarItem *messageViewSelectorToolbarItem = [self addToolbarItemWithIdentifier:@"messageView" 
-                                                                                 label:@"View Mode"
+                                                                                 label:NSLocalizedString(@"View Mode", @"Toolbar text")
                                                                                 target:messageListViewsController 
                                                                                 action:@selector(changeView:)
                                                                                   view:_messageViewSelector];
     // action and keyEquivalent is not used
     NSMenuItem *item = [[[NSMenuItem alloc] init] autorelease];
-    [item setTitle:@"View Mode"];
+    [item setTitle:NSLocalizedString(@"View Mode", @"Toolbar text")];
     NSMenu *viewTextMenu  = [[[NSMenu alloc] initWithTitle:@"dummy menu"] autorelease];
     [self addMenuItemWithTitle:@"Friends"
                         target:self
@@ -152,7 +152,7 @@
     [refreshButton setTarget:self];
     [refreshButton setAction:@selector(updateTimelineCorrespondsToView:)];
     [self addToolbarItemWithIdentifier:@"refresh"
-                                 label:@"Refresh"
+                                 label:NSLocalizedString(@"Refresh", @"Toolbar label")
                                 target:self
                                 action:@selector(updateTimelineCorrespondsToView:)
                                   view:refreshButton];
@@ -164,7 +164,7 @@
     [markAllAsReadButton setTarget:self];
     [markAllAsReadButton setAction:@selector(markAllAsRead:)];
     [self addToolbarItemWithIdentifier:@"markallasread"
-                                 label:@"Mark all as read"
+                                 label:NSLocalizedString(@"Mark all as read", "Toolbar label")
                                 target:self
                                 action:@selector(markAllAsRead:)
                                   view:markAllAsReadButton];
@@ -181,8 +181,8 @@
     [self setupMenuAndToolbar];
     [[self window] setOpaque:FALSE];
     
-    [statisticsTextField setToolTip:@"number of posted messages"];
-    [messagePostLevelIndicator setToolTip:@"timeline speed"];
+    [statisticsTextField setToolTip:NSLocalizedString(@"number of posted messages", @"status bar tool tip")];
+    [messagePostLevelIndicator setToolTip:NSLocalizedString(@"timeline speed", @"status bar tool tip")];
     [messagePostLevelIndicator setHidden:![[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]];
     
     _messageNotifier = [[NTLNBufferedMessageNotifier alloc] initWithTimeout:5.0 maxMessage:20 progressIndicator:progressIndicator];
@@ -346,7 +346,7 @@
 
 - (void) failedToPost:(NSString*)message {
     [self addNewErrorMessageWirthController:
-     [NTLNErrorMessageViewController controllerWithTitle:@"Sending a message failed"
+     [NTLNErrorMessageViewController controllerWithTitle:NSLocalizedString(@"Sending a message failed", @"Title of error message")
                                                  message:message
                                                timestamp:[NSDate date]]];
     [self enableMessageTextField];
@@ -366,34 +366,9 @@
 }
 
 - (void) failedToGetTimeline:(NTLNErrorInfo*)info {
-    NSString *message;
-    
-    switch ([info type]) {
-        case NTLN_ERROR_TYPE_HIT_API_LIMIT:
-            message = @"Reached API Limitation";
-            break;
-        case NTLN_ERROR_TYPE_NOT_AUTHORIZED:
-            message = @"Not Authorized";
-            break;
-        case NTLN_ERROR_TYPE_SERVER_ERROR:
-            message = @"Twitter Server Error";
-            break;
-        case NTLN_ERROR_TYPE_CONNECTION:
-            if ([info originalMessage]) {
-                message = [info originalMessage];
-            } else {
-                message = @"Connection Error";
-            }
-            break;
-        case NTLN_ERROR_TYPE_OTHER:
-        default:
-            message = @"Unknown Error (might be a server error)";
-            break;
-    }
-    
     [self addNewErrorMessageWirthController:
-     [NTLNErrorMessageViewController controllerWithTitle:@"Retrieving timeline failed"
-                                                 message:message
+     [NTLNErrorMessageViewController controllerWithTitle:NSLocalizedString(@"Retrieving timeline failed", @"Title of error message")
+                                                 message:[info originalMessage]
                                                timestamp:[NSDate date]]];
 }
 

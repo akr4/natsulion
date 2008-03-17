@@ -77,6 +77,10 @@
     return self;
 }
 
+- (NSString*) appendCode:(int)code to:(NSString*)string {
+    return [string stringByAppendingFormat:@" (%d)", code];
+}
+
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
     [_callback twitterStopTask];
 
@@ -126,18 +130,26 @@
 //        NSLog(@"status code: %d - response:%@", code, responseStr);        
         switch (code) {
             case 400:
-                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_HIT_API_LIMIT originalMessage:nil]];
+                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_HIT_API_LIMIT
+                                                           originalMessage:[self appendCode:code 
+                                                                                         to:NSLocalizedString(@"Exceeded the API rate limit", nil)]]];
                 break;
             case 401:
-                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_NOT_AUTHORIZED originalMessage:nil]];
+                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_NOT_AUTHORIZED
+                                                           originalMessage:[self appendCode:code
+                                                                                         to:NSLocalizedString(@"Not Authorized", nil)]]];
                 break;
             case 500:
             case 502:
             case 503:
-                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_SERVER_ERROR originalMessage:nil]];
+                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_SERVER_ERROR
+                                                           originalMessage:[self appendCode:code
+                                                                                         to:NSLocalizedString(@"Twitter Server Error", nil)]]];
                 break;
             default:
-                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:nil]];
+                [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER 
+                                                           originalMessage:[self appendCode:code
+                                                                                         to:NSLocalizedString(@"Unknown Error", nil)]]];
                 break;
         }
         return;
@@ -146,7 +158,9 @@
     NSArray *statuses = [document nodesForXPath:@"/statuses/status" error:NULL];
     if ([statuses count] == 0) {
         NSLog(@"status code: %d - response:%@", code, responseStr);
-        [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:@"no message received"]];
+        [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER 
+                                                   originalMessage:[self appendCode:code
+                                                                                 to:NSLocalizedString(@"No message received", nil)]]];
     }
     
     for (NSXMLNode *status in statuses) {
@@ -173,7 +187,8 @@
 
 - (void) connectionFailed:(NSError*)error {
     [_callback twitterStopTask];
-    [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
+    [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
+                                               originalMessage:[error localizedDescription]]];
 }
 
 @end
@@ -224,7 +239,8 @@
 
 - (void) connectionFailed:(NSError*)error {
     [_callback twitterStopTask];
-    [_callback failedToChangeFavorite:_statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER originalMessage:[error localizedDescription]]];
+    [_callback failedToChangeFavorite:_statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
+                                                                      originalMessage:[error localizedDescription]]];
     [self autorelease];
 }
 
@@ -419,7 +435,7 @@
     
     if (!_connectionForFavorite) {
         [_callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
-                                                                         originalMessage:@"Sending a message failure. unable to get connection."]];
+                                                                         originalMessage:NSLocalizedString(@"Sending a message failure. unable to get connection.", nil)]];
         return;
     }
     

@@ -14,6 +14,7 @@ enum NTLNErrorType {
 @interface NTLNErrorInfo : NSObject {
     enum NTLNErrorType _type;
     NSString *_originalMessage;
+    int _code;
 }
 + (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message;
 - (enum NTLNErrorType)type;

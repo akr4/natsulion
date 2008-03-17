@@ -61,6 +61,7 @@
 		E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */; };
 		E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */; };
 		E9CE391F0D145DB700D14D9F /* NTLNMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */; };
+		E9D23B710D8EF5BD006191EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9D23B6F0D8EF5BD006191EE /* Localizable.strings */; };
 		E9D5B1EB0D5633CB0000456F /* NTLNMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */; };
 		E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
@@ -189,6 +190,8 @@
 		E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewImageView.m; sourceTree = "<group>"; };
 		E9CE391D0D145DB700D14D9F /* NTLNMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageTableViewController.h; sourceTree = "<group>"; };
 		E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageTableViewController.m; sourceTree = "<group>"; };
+		E9D23B700D8EF5BD006191EE /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E9D23B720D8EF5D6006191EE /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9D5B1DA0D56335F0000456F /* NTLNMessageViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTextField.h; sourceTree = "<group>"; };
 		E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTLNMessageViewController.m; path = src/NTLNMessageViewController.m; sourceTree = SOURCE_ROOT; };
 		E9DC0FD00D3D226A00CC6D41 /* TwitterTestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTestStub.h; sourceTree = "<group>"; };
@@ -335,6 +338,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E9D23B6F0D8EF5BD006191EE /* Localizable.strings */,
 				E9A8A7360D79328D008567CC /* images */,
 				E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -539,6 +543,7 @@
 				E9A8A7450D79328E008567CC /* new-light.tiff in Resources */,
 				E9A8A74F0D793478008567CC /* star-normal.tiff in Resources */,
 				E9A8A7500D793478008567CC /* star-highlighted.tiff in Resources */,
+				E9D23B710D8EF5BD006191EE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +648,15 @@
 				E9F1DB3C0D13CF000072CE81 /* English */,
 			);
 			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		E9D23B6F0D8EF5BD006191EE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D23B700D8EF5BD006191EE /* English */,
+				E9D23B720D8EF5D6006191EE /* Japanese */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -60,13 +60,13 @@
                 [[NSApplication sharedApplication] endSheet:accountInfoSheet returnCode:NTLN_PREFRENCESWINDOW_SHEET_OK];
                 [appController startTimer];
             } else {
-                [messageArea setStringValue:@"Error occurred. Unable to store your password to your keychain."];
+                [messageArea setStringValue:NSLocalizedString(@"Unable to store your password to your keychain.", @"account setting")];
             }
             break;
         case NTLN_TWITTERCHECK_AUTH_FAILURE:
         case NTLN_TWITTERCHECK_FAILURE:
             // TODO internationalization
-            [messageArea setStringValue:@"Error occurred. Please check your username and password or try later."];
+            [messageArea setStringValue:NSLocalizedString(@"Please check your username and password or try later.", @"account setting")];
             break;
         default:
             break;

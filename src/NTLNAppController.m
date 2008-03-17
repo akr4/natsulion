@@ -305,7 +305,7 @@
             [s appendString:[namesArray objectAtIndex:j]];
             [s appendString:@" "];
         }
-        [_growl sendToGrowlTitle:@"New Messages from:"
+        [_growl sendToGrowlTitle:NSLocalizedString(@"New Messages from:", @"Growl notifiies summarized messages")
                      description:s
                        replyType:type];
     } 
