@@ -7,6 +7,7 @@
 #import "NTLNMessageListViewsController.h"
 #import "NTLNMultiTasksProgressIndicator.h"
 #import "NTLNBufferedMessageNotifier.h"
+#import "NTLNErrorMessageViewController.h"
 
 #define NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER 3.0f
 
@@ -46,6 +47,8 @@
     IBOutlet NSMenuItem *refreshMenuItem;
     NSMutableDictionary *_toolbarItems;
     NSSegmentedControl *_messageViewSelector;
+    
+    NTLNErrorMessageViewController *_lastErrorMessage;
 }
 
 - (IBAction) sendMessage:(id) sender;

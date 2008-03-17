@@ -2,13 +2,14 @@
 #import "NTLNNotification.h"
 
 @implementation NTLNBufferedMessageNotifier
-+ (id) notifierWithTimeout:(float)seconds maxMessage:(int)max {
-    return [[[self class] alloc] initWithTimeout:seconds maxMessage:max];
++ (id) notifierWithTimeout:(float)seconds maxMessage:(int)max progressIndicator:(NTLNMultiTasksProgressIndicator*)progressIndicator {
+    return [[[self class] alloc] initWithTimeout:seconds maxMessage:max progressIndicator:progressIndicator];
 }
 
-- (id) initWithTimeout:(float)seconds maxMessage:(int)max {
+- (id) initWithTimeout:(float)seconds maxMessage:(int)max progressIndicator:(NTLNMultiTasksProgressIndicator*)progressIndicator {
     _timeoutSeconds = seconds;
     _maxMessage = max;
+    _progressIndicator = progressIndicator;
     _messages = [[NSMutableArray alloc] initWithCapacity:20];
     return self;
 }
@@ -52,11 +53,15 @@
     [_shortTimer release];
     _shortTimer = nil;
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE_RECEIVED object:[[_messages copy] autorelease]];
+    for (int i = 0; i < [_messages count]; i++) {
+        [_progressIndicator stopTask];
+    }
     [_messages removeAllObjects];
 }
 
 - (void) addMessageViewController:(NTLNMessageViewController*)controller {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
+    [_progressIndicator startTask];
     [_messages addObject:controller];
     if ([_messages count] >= _maxMessage) {
         [self notify];

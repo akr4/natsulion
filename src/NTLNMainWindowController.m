@@ -18,10 +18,8 @@
     
     [NTLNConfiguration setTimelineSortOrderChangeObserver:self];
     
-    _messageNotifier = [[NTLNBufferedMessageNotifier alloc] initWithTimeout:5.0 maxMessage:20];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(addNewMessage:)
+                                             selector:@selector(addNewMessageWithNotification:)
                                                  name:NTLN_NOTIFICATION_NEW_MESSAGE_RECEIVED
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self 
@@ -187,6 +185,7 @@
     [messagePostLevelIndicator setToolTip:@"timeline speed"];
     [messagePostLevelIndicator setHidden:![[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]];
     
+    _messageNotifier = [[NTLNBufferedMessageNotifier alloc] initWithTimeout:5.0 maxMessage:20 progressIndicator:progressIndicator];
     //    NSColor *semiTransparentBlue =
 //    [NSColor colorWithDeviceRed:0.0 green:0.0 blue:1.0 alpha:0.5];
 //    [[self window] setBackgroundColor:semiTransparentBlue];
@@ -202,12 +201,6 @@
 
 - (void) setFrameAutosaveName:(NSString*)name {
     [mainWindow setFrameAutosaveName:name];
-}
-
-- (void) addMessageViewController:(NTLNMessageViewController*)controller {
-    [messageViewControllerArrayController addObject:controller];
-    [messageListViewsController applyCurrentPredicate];
-    [messageTableViewController newMessageArrived:[NSArray arrayWithObject:controller]];
 }
 
 - (void) addMessageViewControllers:(NSArray*)controllers {
@@ -287,8 +280,56 @@
     [statusTextField setStringValue:@""];
 }
 
-#pragma mark Statistics
+#pragma mark Add new message
+- (void) clearErrorMessage {
+    if (_lastErrorMessage) {
+        [messageViewControllerArrayController removeObject:_lastErrorMessage];
+        [messageTableViewController reloadTableView];
+        _lastErrorMessage = nil;
+    }
+}
 
+- (void) processNewMessage:(TwitterStatusViewController*)controller {
+    NTLNMessage *s = [controller message];
+    if ([s replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY || [s replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
+        if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
+            [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
+        } else {
+            // might be retrieved in previous run
+            [controller markAsRead:false];
+        }
+    }
+}
+
+- (void) addNewErrorMessageWirthController:(NTLNErrorMessageViewController*)controller {
+    [self clearErrorMessage];
+    _lastErrorMessage = controller;
+    [messageViewControllerArrayController setFilterPredicate:nil];
+    [self addMessageViewControllers:[NSArray arrayWithObject:controller]];
+}
+
+// controllers: TwitterStatusViewController objects
+- (void) addNewMessageWithControllers:(NSArray*)controllers {
+    for (int i = 0; i < [controllers count]; i++) {
+        id o = [controllers objectAtIndex:i];
+        if (![o isKindOfClass:[TwitterStatusViewController class]]) {
+            NSLog(@"ERROR: addNewMessageWithControllers received non-TwitterStatusViewController");
+        }
+        [self clearErrorMessage];
+        [self processNewMessage:o];
+    }
+    
+    // add
+    [messageViewControllerArrayController setFilterPredicate:nil];
+    [self addMessageViewControllers:controllers];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE_ADDED object:controllers];
+    
+    if ([[NTLNConfiguration instance] raiseWindowWhenNewMessageArrives]) {
+        [mainWindow makeKeyAndOrderFront:nil];
+    }
+}
+
+#pragma mark Statistics
 - (void) setMessagePostLevel:(float)level {
     [messagePostLevelIndicator setFloatValue:level];
 }
@@ -304,9 +345,10 @@
 }
 
 - (void) failedToPost:(NSString*)message {
-    [self addMessageViewController:[NTLNErrorMessageViewController controllerWithTitle:@"Sending a message failed"
-                                                                           message:message
-                                                                         timestamp:[NSDate date]]];    
+    [self addNewErrorMessageWirthController:
+     [NTLNErrorMessageViewController controllerWithTitle:@"Sending a message failed"
+                                                 message:message
+                                               timestamp:[NSDate date]]];
     [self enableMessageTextField];
 }
 
@@ -319,7 +361,6 @@
                                                     messageViewListener:self] autorelease];
         if ([self isNewMessage:controller]) {
             [_messageNotifier addMessageViewController:controller];
-            [progressIndicator startTask];
         }
     }
 }
@@ -349,9 +390,11 @@
             message = @"Unknown Error (might be a server error)";
             break;
     }
-    [self addMessageViewController:[NTLNErrorMessageViewController controllerWithTitle:@"Retrieving timeline failed"
-                                                                           message:message
-                                                                         timestamp:[NSDate date]]];
+    
+    [self addNewErrorMessageWirthController:
+     [NTLNErrorMessageViewController controllerWithTitle:@"Retrieving timeline failed"
+                                                 message:message
+                                               timestamp:[NSDate date]]];
 }
 
 - (void) twitterStartTask {
@@ -361,7 +404,6 @@
 - (void) twitterStopTask {
     [progressIndicator stopTask];
 }
-
 
 #pragma mark MessageInputTextField callback
 - (void) messageInputTextFieldResized:(float)heightDelta {
@@ -499,39 +541,14 @@
     [messageListViewsController applyCurrentPredicate];
     [messageTableViewController reloadTableView];
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ
-                                                        object:nil];
+                                                        object:nil];            
 }
 
 #pragma mark Notifications
-- (void) addNewMessage:(NSNotification*)notification {
+- (void) addNewMessageWithNotification:(NSNotification*)notification {
 //    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSArray *messageArray = [notification object];
-    for (int i = 0; i < [messageArray count]; i++) {
-        id o = [messageArray objectAtIndex:i];
-             if (![o isKindOfClass:[TwitterStatusViewController class]]) {
-             return;
-             }
-        TwitterStatusViewController *controller = [messageArray objectAtIndex:i];
-        NTLNMessage *s = [controller message];
-        if ([s replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY || [s replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
-            if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
-                [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
-            } else {
-                // might be retrieved in previous run
-                [controller markAsRead:false];
-            }
-        }
-        [progressIndicator stopTask];
-    }
-    
-    // adding
-    [messageViewControllerArrayController setFilterPredicate:nil];
-    [self addMessageViewControllers:messageArray];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE_ADDED object:messageArray];
-    
-    if ([[NTLNConfiguration instance] raiseWindowWhenNewMessageArrives]) {
-        [mainWindow makeKeyAndOrderFront:nil];
-    }
+    [self addNewMessageWithControllers:messageArray];
 }
 
 - (void) statisticsDisplaySettingChanged:(NSNotification*)notification {

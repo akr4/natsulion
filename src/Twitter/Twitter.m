@@ -123,7 +123,7 @@
 #endif
     
     if (!document || code >= 400) {
-        NSLog(@"status code: %d - response:%@", code, responseStr);        
+//        NSLog(@"status code: %d - response:%@", code, responseStr);        
         switch (code) {
             case 400:
                 [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_HIT_API_LIMIT originalMessage:nil]];
