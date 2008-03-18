@@ -6,7 +6,7 @@
 @implementation NTLNConfiguration
 
 @synthesize useGrowl, raiseWindowWhenNewMessageArrives, increaseTransparencyWhileDeactivated, refreshIntervalSeconds,
-    usePost, editWindowAlphaManually, decodeHeart, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl;
+    usePost, editWindowAlphaManually, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl;
 
 static id _instance = nil;
 
@@ -80,7 +80,6 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self bindToProperty:@"increaseTransparencyWhileDeactivated"];
     [self bindToProperty:@"usePost"];
     [self bindToProperty:@"editWindowAlphaManually"];
-    [self bindToProperty:@"decodeHeart"];
     [self bindToProperty:@"sendMessageWithEnterAndModifier"];
     [self bindToProperty:@"refreshIntervalSeconds"];
     [self bindToProperty:@"growlSummarizeThreshold"];

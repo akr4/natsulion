@@ -23,7 +23,7 @@
     BOOL summarizeGrowl;
 }
 
-@property BOOL useGrowl, usePost, editWindowAlphaManually, decodeHeart, 
+@property BOOL useGrowl, usePost, editWindowAlphaManually, 
     sendMessageWithEnterAndModifier, summarizeGrowl, raiseWindowWhenNewMessageArrives, 
     increaseTransparencyWhileDeactivated;
 @property int refreshIntervalSeconds, growlSummarizeThreshold;

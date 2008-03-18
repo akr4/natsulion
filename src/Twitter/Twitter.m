@@ -170,9 +170,7 @@
         [backStatus setName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/name/text()"]]];
         [backStatus setScreenName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/screen_name/text()"]]];
         [backStatus setText:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"text/text()"]]];
-        if ([[NTLNConfiguration instance] decodeHeart]) {
-            [backStatus setText:[self decodeHeart:[backStatus text]]];
-        }
+        [backStatus setText:[self decodeHeart:[backStatus text]]];
         
         NSString *timestampStr = [[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"created_at/text()"]];
         [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];
