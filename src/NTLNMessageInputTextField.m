@@ -21,7 +21,8 @@
 }
 
 - (void) setupPlaceholderString {
-    NSMutableAttributedString *placeHolderString = [[[NSMutableAttributedString alloc] initWithString:@"Input your message and press \"Enter\" key"] autorelease];
+    NSMutableAttributedString *placeHolderString = [[[NSMutableAttributedString alloc]
+                                                     initWithString:NSLocalizedString(@"Input your message and press \"Enter\" key", nil)] autorelease];
     NSRange range = NSMakeRange(0, [placeHolderString length]);
     [placeHolderString addAttribute:NSForegroundColorAttributeName value:[[NTLNColors instance] colorForSubText2] range:range];
     [[self cell] setPlaceholderAttributedString:placeHolderString];

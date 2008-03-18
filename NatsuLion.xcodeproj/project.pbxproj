@@ -588,7 +588,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ibtool --write Japanese.lproj/MainMenu.nib -d Japanese.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib";
+			shellScript = "ibtool --write Japanese.lproj/MainMenu.nib -d Japanese.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib\nibtool --write Japanese.lproj/Welcome.nib -d Japanese.lproj/Welcome.nib.strings English.lproj/Welcome.nib";
 		};
 /* End PBXShellScriptBuildPhase section */
 
