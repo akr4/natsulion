@@ -32,7 +32,6 @@
 		E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96C36200D2A6EA300CED33F /* Security.framework */; };
 		E96C362C0D2A71BA00CED33F /* NTLNKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C362B0D2A71BA00CED33F /* NTLNKeyChain.m */; };
 		E96C36930D2A83E300CED33F /* NTLNAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36920D2A83E300CED33F /* NTLNAccount.m */; };
-		E96C36A90D2A897800CED33F /* Welcome.nib in Resources */ = {isa = PBXBuildFile; fileRef = E96C36A80D2A897800CED33F /* Welcome.nib */; };
 		E96C36AD0D2A8C3700CED33F /* NTLNWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */; };
 		E97DF2AE0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */; };
 		E98B093C0D2172B90002A75E /* NTLNGrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */; };
@@ -41,6 +40,8 @@
 		E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */; };
 		E991C6BA0D2AE7AE00F410B6 /* NTLNMessageViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */; };
 		E991C6BD0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */; };
+		E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */; };
+		E993333B0D901CA600CDE7C4 /* Welcome.nib in Resources */ = {isa = PBXBuildFile; fileRef = E993333A0D901CA600CDE7C4 /* Welcome.nib */; };
 		E996326B0D1E5D2400860515 /* NTLNMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E996326A0D1E5D2400860515 /* NTLNMessage.m */; };
 		E9A411290D29904F003BFA9F /* NTLNAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* NTLNAppController.m */; };
 		E9A8A7400D79328E008567CC /* CTBadge_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9A8A7380D79328D008567CC /* CTBadge_1.pdf */; };
@@ -150,7 +151,7 @@
 		E96C362B0D2A71BA00CED33F /* NTLNKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNKeyChain.m; sourceTree = "<group>"; };
 		E96C36910D2A83E300CED33F /* NTLNAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAccount.h; sourceTree = "<group>"; };
 		E96C36920D2A83E300CED33F /* NTLNAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNAccount.m; sourceTree = "<group>"; };
-		E96C36A80D2A897800CED33F /* Welcome.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = Welcome.nib; sourceTree = "<group>"; };
+		E96C36A80D2A897800CED33F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNWelcomeWindowController.h; sourceTree = "<group>"; };
 		E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNWelcomeWindowController.m; sourceTree = "<group>"; };
 		E97DF2AC0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMultiTasksProgressIndicator.h; sourceTree = "<group>"; };
@@ -168,6 +169,9 @@
 		E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTextField.m; sourceTree = "<group>"; };
 		E991C6BB0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTimestampField.h; sourceTree = "<group>"; };
 		E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTimestampField.m; sourceTree = "<group>"; };
+		E99332F20D8FF1A900CDE7C4 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.nib.strings; sourceTree = "<group>"; };
+		E99333130D8FF29000CDE7C4 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		E993333C0D901D6800CDE7C4 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* NTLNMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessage.h; sourceTree = "<group>"; };
 		E996326A0D1E5D2400860515 /* NTLNMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessage.m; sourceTree = "<group>"; };
 		E9A411270D29904F003BFA9F /* NTLNAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAppController.h; sourceTree = "<group>"; };
@@ -340,12 +344,13 @@
 			children = (
 				E9D23B6F0D8EF5BD006191EE /* Localizable.strings */,
 				E9A8A7360D79328D008567CC /* images */,
+				E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */,
 				E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				E9BFD5950D183E630024C8B4 /* MainMenu.nib */,
 				E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */,
-				E96C36A80D2A897800CED33F /* Welcome.nib */,
+				E993333A0D901CA600CDE7C4 /* Welcome.nib */,
 				E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */,
 				E9B832F50D58E830000F6E1C /* MessageTableView.nib */,
 			);
@@ -471,6 +476,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "NatsuLion" */;
 			buildPhases = (
+				E99333010D8FF22A00CDE7C4 /* ShellScript */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
@@ -531,7 +537,7 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */,
 				E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */,
-				E96C36A90D2A897800CED33F /* Welcome.nib in Resources */,
+				E993333B0D901CA600CDE7C4 /* Welcome.nib in Resources */,
 				E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */,
 				E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */,
 				E9B832F60D58E830000F6E1C /* MessageTableView.nib in Resources */,
@@ -544,6 +550,7 @@
 				E9A8A74F0D793478008567CC /* star-normal.tiff in Resources */,
 				E9A8A7500D793478008567CC /* star-highlighted.tiff in Resources */,
 				E9D23B710D8EF5BD006191EE /* Localizable.strings in Resources */,
+				E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,6 +576,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		E99333010D8FF22A00CDE7C4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "ibtool --write Japanese.lproj/MainMenu.nib -d Japanese.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -642,10 +662,28 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E99332F20D8FF1A900CDE7C4 /* Japanese */,
+			);
+			name = MainMenu.nib.strings;
+			sourceTree = "<group>";
+		};
+		E993333A0D901CA600CDE7C4 /* Welcome.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E96C36A80D2A897800CED33F /* English */,
+				E993333C0D901D6800CDE7C4 /* Japanese */,
+			);
+			name = Welcome.nib;
+			sourceTree = "<group>";
+		};
 		E9BFD5950D183E630024C8B4 /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E9F1DB3C0D13CF000072CE81 /* English */,
+				E99333130D8FF29000CDE7C4 /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";

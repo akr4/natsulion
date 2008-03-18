@@ -34,6 +34,7 @@
     [_twitter release];
     [_toolbarItems release];
     [_messageNotifier release];
+    [_messageViewToolbarMenuItem release];
     [super dealloc];
 }
 
@@ -90,8 +91,8 @@
                                                                                 action:@selector(changeView:)
                                                                                   view:_messageViewSelector];
     // action and keyEquivalent is not used
-    NSMenuItem *item = [[[NSMenuItem alloc] init] autorelease];
-    [item setTitle:NSLocalizedString(@"View Mode", @"Toolbar text")];
+    _messageViewToolbarMenuItem = [[NSMenuItem alloc] init];
+    [_messageViewToolbarMenuItem setTitle:NSLocalizedString(@"View Mode", @"Toolbar text")];
     NSMenu *viewTextMenu  = [[[NSMenu alloc] initWithTitle:@"dummy menu"] autorelease];
     [self addMenuItemWithTitle:@"Friends"
                         target:self
@@ -141,8 +142,8 @@
                  keyEquivalent:@"4" 
                            tag:3
                         toMenu:viewTextMenu];
-    [item setSubmenu:viewTextMenu];
-    [messageViewSelectorToolbarItem setMenuFormRepresentation:item];
+    [_messageViewToolbarMenuItem setSubmenu:viewTextMenu];
+    [messageViewSelectorToolbarItem setMenuFormRepresentation:_messageViewToolbarMenuItem];
     
     
     // refresh button

@@ -47,6 +47,7 @@
     IBOutlet NSMenuItem *refreshMenuItem;
     NSMutableDictionary *_toolbarItems;
     NSSegmentedControl *_messageViewSelector;
+    NSMenuItem *_messageViewToolbarMenuItem;
     
     NTLNErrorMessageViewController *_lastErrorMessage;
 }

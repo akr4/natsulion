@@ -94,7 +94,7 @@
         document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
     }
 
-#define DEBUG 1
+//#define DEBUG 1
 #ifdef DEBUG
     switch ((int) ((float) rand() / RAND_MAX * 10)) {
         case 0:
