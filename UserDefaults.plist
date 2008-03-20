@@ -30,5 +30,7 @@
     <false/>
     <key>showMessageStatisticsOnStatusBar</key>
     <false/>
+    <key>autoscrollWhenNewMessageArrives</key>
+    <true/>
 </dict>
 </plist>

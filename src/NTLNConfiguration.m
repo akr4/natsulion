@@ -6,7 +6,8 @@
 @implementation NTLNConfiguration
 
 @synthesize useGrowl, raiseWindowWhenNewMessageArrives, increaseTransparencyWhileDeactivated, refreshIntervalSeconds,
-    usePost, editWindowAlphaManually, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl;
+    usePost, editWindowAlphaManually, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl,
+    autoscrollWhenNewMessageArrives;
 
 static id _instance = nil;
 
@@ -84,6 +85,7 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self bindToProperty:@"refreshIntervalSeconds"];
     [self bindToProperty:@"growlSummarizeThreshold"];
     [self bindToProperty:@"summarizeGrowl"];
+    [self bindToProperty:@"autoscrollWhenNewMessageArrives"];
     
     [[NSUserDefaults standardUserDefaults] setObject:[[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"] forKey:@"version"];
     [self migrateConfiguration];

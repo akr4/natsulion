@@ -21,11 +21,12 @@
     int refreshIntervalSeconds;
     int growlSummarizeThreshold;
     BOOL summarizeGrowl;
+    BOOL autoscrollWhenNewMessageArrives;
 }
 
 @property BOOL useGrowl, usePost, editWindowAlphaManually, 
     sendMessageWithEnterAndModifier, summarizeGrowl, raiseWindowWhenNewMessageArrives, 
-    increaseTransparencyWhileDeactivated;
+    increaseTransparencyWhileDeactivated, autoscrollWhenNewMessageArrives;
 @property int refreshIntervalSeconds, growlSummarizeThreshold;
 
 + (id) instance;

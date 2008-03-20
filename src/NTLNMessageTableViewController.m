@@ -228,6 +228,10 @@
 }
 
 - (void) scrollDownInDescendingOrder:(NTLNMessageViewController*)controller {
+    if (![[NTLNConfiguration instance] autoscrollWhenNewMessageArrives] ) {
+        return;
+    }
+    
     if ([_verticalScroller floatValue] == 0.0) {
         return;
     }
@@ -237,6 +241,10 @@
 }
 
 - (void) scrollDownInAscendingOrder:(NTLNMessageViewController*)controller {
+    if (![[NTLNConfiguration instance] autoscrollWhenNewMessageArrives] ) {
+        return;
+    }
+
     if (_knobPositionBeforeAddingMessage < _autoscrollMinLimit) {
         return;
     }
