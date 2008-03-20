@@ -21,8 +21,13 @@
 }
 
 - (void) setupPlaceholderString {
-    NSMutableAttributedString *placeHolderString = [[[NSMutableAttributedString alloc]
-                                                     initWithString:NSLocalizedString(@"Input your message and press \"Enter\" key", nil)] autorelease];
+    NSString *placeholderString;
+    if ([[NTLNConfiguration instance] sendMessageWithEnterAndModifier])  {
+        placeholderString = NSLocalizedString(@"Input your message and press \"Ctrl + Enter\" key", nil);
+    } else {
+        placeholderString = NSLocalizedString(@"Input your message and press \"Enter\" key", nil);
+    }
+    NSMutableAttributedString *placeHolderString = [[[NSMutableAttributedString alloc] initWithString:placeholderString] autorelease];
     NSRange range = NSMakeRange(0, [placeHolderString length]);
     [placeHolderString addAttribute:NSForegroundColorAttributeName value:[[NTLNColors instance] colorForSubText2] range:range];
     [[self cell] setPlaceholderAttributedString:placeHolderString];
@@ -48,6 +53,11 @@
                                              selector:@selector(fontSizeChanged:)
                                                  name:NTLN_NOTIFICATION_FONT_SIZE_CHANGED
                                                object:nil];    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(keyForSendChanged:)
+                                                 name:NTLN_NOTIFICATION_SEND_MESSAGE_WITH_ENTER_AND_MODIFIER_SETTING_CHANGED
+                                               object:nil];    
+
 }
 
 - (void) dealloc  {
@@ -282,4 +292,7 @@
     [self setupFontSize];
 }
 
+- (void) keyForSendChanged:(NSNotification*)notification {
+    [self setupPlaceholderString];
+}
 @end

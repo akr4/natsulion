@@ -36,6 +36,6 @@
 
 - (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password callback:(NSObject<TwitterFavoriteCallback>*)callback {
     [callback failedToChangeFavorite:statusId errorInfo:
-     [NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_SERVER_ERROR code:0 originalMessage:@"fav failed"]];
+     [NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_SERVER_ERROR originalMessage:@"fav failed"]];
 }
 @end

@@ -6,7 +6,7 @@
 @implementation NTLNConfiguration
 
 @synthesize useGrowl, raiseWindowWhenNewMessageArrives, increaseTransparencyWhileDeactivated, refreshIntervalSeconds,
-    usePost, editWindowAlphaManually, sendMessageWithEnterAndModifier, growlSummarizeThreshold, summarizeGrowl,
+    usePost, editWindowAlphaManually, growlSummarizeThreshold, summarizeGrowl,
     autoscrollWhenNewMessageArrives;
 
 static id _instance = nil;
@@ -81,7 +81,6 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self bindToProperty:@"increaseTransparencyWhileDeactivated"];
     [self bindToProperty:@"usePost"];
     [self bindToProperty:@"editWindowAlphaManually"];
-    [self bindToProperty:@"sendMessageWithEnterAndModifier"];
     [self bindToProperty:@"refreshIntervalSeconds"];
     [self bindToProperty:@"growlSummarizeThreshold"];
     [self bindToProperty:@"summarizeGrowl"];
@@ -91,6 +90,15 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [self migrateConfiguration];
     
     return self;
+}
+
+- (BOOL) sendMessageWithEnterAndModifier {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"sendMessageWithEnterAndModifier"];
+}
+
+- (void) setSendMessageWithEnterAndModifier:(BOOL)value {
+    [[NSUserDefaults standardUserDefaults] setBool:value forKey:@"sendMessageWithEnterAndModifier"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_SEND_MESSAGE_WITH_ENTER_AND_MODIFIER_SETTING_CHANGED object:nil];
 }
 
 - (int) timelineSortOrder {

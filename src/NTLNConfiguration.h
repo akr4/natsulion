@@ -25,11 +25,13 @@
 }
 
 @property BOOL useGrowl, usePost, editWindowAlphaManually, 
-    sendMessageWithEnterAndModifier, summarizeGrowl, raiseWindowWhenNewMessageArrives, 
+    summarizeGrowl, raiseWindowWhenNewMessageArrives, 
     increaseTransparencyWhileDeactivated, autoscrollWhenNewMessageArrives;
 @property int refreshIntervalSeconds, growlSummarizeThreshold;
 
 + (id) instance;
+- (BOOL) sendMessageWithEnterAndModifier;
+- (void) setSendMessageWithEnterAndModifier:(BOOL)value;
 - (int) timelineSortOrder;
 - (void) setTimelineSortOrder:(int)sortOrder;
 + (void) setTimelineSortOrderChangeObserver:(id<NTLNTimelineSortOrderChangeObserver>)observer;
