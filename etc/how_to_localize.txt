@@ -1,0 +1,27 @@
+1. generate English version of strings file
+
+ibtool --generate-stringsfile English.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib
+ibtool --generate-stringsfile English.lproj/Welcome.nib.strings English.lproj/Welcome.nib
+
+convert each strings file's encoding to utf-8 with unix new line. (e.g. utf-8-unix in Emacs)
+
+2. create message table
+
+etc/createMessageTable.rb English.lproj/MainMenu.nib.strings > etc/strings.ja.txt.new 
+etc/createMessageTable.rb English.lproj/Welcome.nib.strings >> etc/strings.ja.txt.new 
+sort etc/strings.ja.txt.new > etc/strings.ja.txt
+rm etc/strings.ja.txt.new
+
+* this step is needed only when new nib file is added
+
+3. generate Japanese version of strings files
+
+etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/MainMenu.nib.strings > Japanese.lproj/MainMenu.nib.strings
+etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/Welcome.nib.strings > Japanese.lproj/Welcome.nib.strings
+
+4. generate Japanese version of nib files
+
+* this step will be done by Xcode build automatically
+
+ibtool --write Japanese.lproj/MainMenu.nib -d Japanese.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib 
+ibtool --write Japanese.lproj/Welcome.nib -d Japanese.lproj/Welcome.nib.strings English.lproj/Welcome.nib

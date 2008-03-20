@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+message_hash = Hash::new
+
+message_table_file = open($*[0])
+message_table_file.each { |line|
+  a = line.chomp.split('=')
+  message_hash.store(a[0], a[1])
+}
+message_table_file.close
+
+src_strings_file = open($*[1])
+src_strings_file.each { |line|
+  if  /"(\d+)\.title" = "(.*)";/ =~ line
+    printf "\"%s.title\" = \"%s\";\n", $1, message_hash[$2] ? message_hash[$2] : "<EMPTY> " + $2
+  end
+}
+src_strings_file.close

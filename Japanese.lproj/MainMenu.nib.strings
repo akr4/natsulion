@@ -1,1 +1,88 @@
-/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "5"; */"5.title" = "すべてを手前に移動";/* Class = "NSMenuItem"; title = "Window"; ObjectID = "19"; */"19.title" = "ウインドウ";/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "23"; */"23.title" = "しまう";/* Class = "NSMenu"; title = "Window"; ObjectID = "24"; */"24.title" = "ウインドウ";/* Class = "NSMenu"; title = "AMainMenu"; ObjectID = "29"; */"29.title" = "AMainMenu";/* Class = "NSMenuItem"; title = "NatsuLion"; ObjectID = "56"; */"56.title" = "夏ライオン";/* Class = "NSMenu"; title = "NatsuLion"; ObjectID = "57"; */"57.title" = "夏ライオン";/* Class = "NSMenuItem"; title = "About NatsuLion"; ObjectID = "58"; */"58.title" = "夏ライオンについて";/* Class = "NSMenuItem"; title = "Help"; ObjectID = "103"; */"103.title" = "ヘルプ";/* Class = "NSMenu"; title = "Help"; ObjectID = "106"; */"106.title" = "ヘルプ";/* Class = "NSMenuItem"; title = "NatsuLion Help"; ObjectID = "111"; */"111.title" = "夏ライオンヘルプ";/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "129"; */"129.title" = "環境設定…";/* Class = "NSMenu"; title = "Services"; ObjectID = "130"; */"130.title" = "サービス";/* Class = "NSMenuItem"; title = "Services"; ObjectID = "131"; */"131.title" = "サービス";/* Class = "NSMenuItem"; title = "Hide NatsuLion"; ObjectID = "134"; */"134.title" = "夏ライオンを隠す";/* Class = "NSMenuItem"; title = "Quit NatsuLion"; ObjectID = "136"; */"136.title" = "夏ライオンを終了";/* Class = "NSMenuItem"; title = "Hide Others"; ObjectID = "145"; */"145.title" = "ほかを隠す";/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "150"; */"150.title" = "すべてを表示";/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "195"; */"195.title" = "読み上げを停止";/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "196"; */"196.title" = "読み上げを開始";/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "197"; */"197.title" = "コピー";/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "198"; */"198.title" = "すべてを選択";/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "199"; */"199.title" = "カット";/* Class = "NSMenu"; title = "Spelling and Grammar"; ObjectID = "200"; */"200.title" = "スペル";/* Class = "NSMenuItem"; title = "Check Spelling"; ObjectID = "201"; */"201.title" = "スペルを確認";/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "202"; */"202.title" = "削除";/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "203"; */"203.title" = "ペースト";/* Class = "NSMenuItem"; title = "Show Spelling…"; ObjectID = "204"; */"204.title" = "スペルと文法を表示";/* Class = "NSMenu"; title = "Edit"; ObjectID = "205"; */"205.title" = "編集";/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "207"; */"207.title" = "取り消す";/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "211"; */"211.title" = "スピーチ";/* Class = "NSMenu"; title = "Speech"; ObjectID = "212"; */"212.title" = "スピーチ";/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "215"; */"215.title" = "やり直す";/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "216"; */"216.title" = "スペル";/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "217"; */"217.title" = "編集";/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "219"; */"219.title" = "入力中にスペルチェック";/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "239"; */"239.title" = "拡大/縮小";/* Class = "NSMenuItem"; title = "View"; ObjectID = "295"; */"295.title" = "ビュー";/* Class = "NSMenu"; title = "View"; ObjectID = "296"; */"296.title" = "ビュー";/* Class = "NSMenuItem"; title = "Show Toolbar"; ObjectID = "297"; */"297.title" = "ツールバーを表示";/* Class = "NSMenuItem"; title = "Customize Toolbar…"; ObjectID = "298"; */"298.title" = "ツールバーをカスタマイズ…";/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "346"; */"346.title" = "スペルと一緒に文法をチェック";/* Class = "NSWindow"; title = "NatsuLion"; ObjectID = "348"; */"348.title" = "夏ライオン";/* Class = "NSMenuItem"; title = "Check for updates..."; ObjectID = "684"; */"684.title" = "アップデートを確認...";/* Class = "NSPanel"; title = "Window"; ObjectID = "899"; */"899.title" = "ウインドウ";/* Class = "NSPanel"; title = "Window"; ObjectID = "930"; */"930.title" = "ウインドウ";/* Class = "NSBox"; title = "Account Information"; ObjectID = "934"; */"934.title" = "アカウント";/* Class = "NSBox"; title = "Box"; ObjectID = "940"; */"940.title" = "Box";/* Class = "IBBindingConnection"; designableDisplayPattern = "%{value1}@"; ObjectID = "955"; */"955.designableDisplayPattern" = "%{value1}@";/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "1660"; */"1660.title" = "Text Cell";/* Class = "NSMenuItem"; title = "File"; ObjectID = "1788"; */"1788.title" = "ファイル";/* Class = "NSMenu"; title = "File"; ObjectID = "1789"; */"1789.title" = "ファイル";/* Class = "NSMenuItem"; title = "Close"; ObjectID = "1790"; */"1790.title" = "閉じる";/* Class = "NSMenuItem"; title = "Select Message View"; ObjectID = "1891"; */"1891.title" = "ビューを選択";/* Class = "NSMenu"; title = "Select Message View"; ObjectID = "1892"; */"1892.title" = "ビューを選択";/* Class = "NSTabViewItem"; label = "Basic"; ObjectID = "2001"; */"2001.label" = "基本";/* Class = "NSTabViewItem"; label = "Appearance"; ObjectID = "2003"; */"2003.label" = "外観";/* Class = "NSMenuItem"; title = "Refresh"; ObjectID = "2071"; */"2071.title" = "更新";/* Class = "NSTabViewItem"; label = "Advanced"; ObjectID = "2073"; */"2073.label" = "詳細";/* Class = "NSMenuItem"; title = "Message"; ObjectID = "2361"; */"2361.title" = "メッセージ";/* Class = "NSMenu"; title = "Message"; ObjectID = "2362"; */"2362.title" = "メッセージ";/* Class = "NSMenuItem"; title = "Mark All As Read"; ObjectID = "2364"; */"2364.title" = "全て既読にする";/* Class = "NSMenuItem"; title = "Make Selected Tweet Favorite"; ObjectID = "2365"; */"2365.title" = "favorite に入れる";/* Class = "NSMenuItem"; title = "Reply"; ObjectID = "2366"; */"2366.title" = "返信";/* Class = "NSTabViewItem"; label = "Growl"; ObjectID = "2449"; */"2449.label" = "Growl";/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "2655"; */"2655.title" = "OtherViews";/* Class = "NSMenuItem"; title = "Ascending"; ObjectID = "2656"; */"2656.title" = "昇順";/* Class = "NSMenuItem"; title = "Descending"; ObjectID = "2657"; */"2657.title" = "降順";/* Class = "NSMenuItem"; title = "Font Size"; ObjectID = "2799"; */"2799.title" = "フォントサイズ";/* Class = "NSMenu"; title = "Font Size"; ObjectID = "2800"; */"2800.title" = "フォントサイズ";/* Class = "NSMenuItem"; title = "Make Text Bigger"; ObjectID = "2802"; */"2802.title" = "大きく";/* Class = "NSMenuItem"; title = "Make Text Normal Size"; ObjectID = "2804"; */"2804.title" = "標準サイズ";/* Class = "NSMenuItem"; title = "Make Text Smaller"; ObjectID = "2805"; */"2805.title" = "小さく";/* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "2816"; */"2818.title" = "パスワード:";/* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "2818"; */"2818.title" = "パスワード:";/* Class = "NSButtonCell"; title = "Apply"; ObjectID = "2819"; */"2819.title" = "適用する";/* Class = "NSTextFieldCell"; title = "Username:"; ObjectID = "2818"; */"2820.title" = "ユーザ ID:";/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "2819"; */"2821.title" = "キャンセル";/* Class = "NSButtonCell"; title = "Close"; ObjectID = "2821"; */"2823.title" = "閉じる";/* Class = "NSButtonCell"; title = "Change"; ObjectID = "2822"; */"2824.title" = "変更";/* Class = "NSTextFieldCell"; placeholderString = "no Username"; ObjectID = "2823"; */"2825.placeholderString" = "ユーザ ID 未入力";/* Class = "NSTextFieldCell"; title = "User ID:"; ObjectID = "2826"; */"2828.title" = "ユーザ:";/* Class = "NSTextFieldCell"; title = "Refresh Interval (sec):"; ObjectID = "2827"; */"2829.title" = "更新間隔 (秒):";/* Class = "NSTextFieldCell"; title = "Timeline sort order:"; ObjectID = "2828"; */"2830.title" = "ソート順:";/* Class = "NSButtonCell"; title = "Raise window when new message arrives"; ObjectID = "2830"; */"2832.title" = "メッセージ新着時にウインドウを最前面に表示";/* Class = "NSButtonCell"; title = "Increase transparency while deactivated"; ObjectID = "2831"; */"2833.title" = "非アクティブ時に透明化して隠れる";/* Class = "NSTextFieldCell"; title = "Window Transparency:"; ObjectID = "2832"; */"2834.title" = "透過度:";/* Class = "NSTextFieldCell"; title = "Color Scheme:"; ObjectID = "2833"; */"2835.title" = "カラースキーム:";/* Class = "NSSegmentedCell"; 2785.labels[0] = "Light"; ObjectID = "2834"; */"2836.labels[0]" = "ライト";/* Class = "NSSegmentedCell"; 2785.labels[1] = "Dark"; ObjectID = "2834"; */"2836.labels[1]" = "ダーク";/* Class = "NSButtonCell"; title = "Edit window transparency manually"; ObjectID = "2836"; */"2838.title" = "透過度を自分で設定する";/* Class = "NSButtonCell"; title = "Use POST method to get timeline"; ObjectID = "2837"; */"2839.title" = "タイムラインの取得に POST を用いる";/* Class = "NSButtonCell"; title = "Send message with Control + Enter"; ObjectID = "2839"; */"2840.title" = "コントロール + エンターキーで送信する";/* Class = "NSButtonCell"; title = "Show statistics on the status bar (experimental)"; ObjectID = "2840"; */"2841.title" = "統計情報をステータスバーに表示する (テスト中)";/* Class = "NSButtonCell"; title = "Use Growl notifications"; ObjectID = "2841"; */"2842.title" = "Growl 通知を使う";/* Class = "NSButtonCell"; title = "Summarize when more than:"; ObjectID = "2843"; */"2844.title" = "メッセージをまとめる個数:"; 
+"5.title" = "すべてを手前に移動";
+"19.title" = "ウインドウ";
+"23.title" = "しまう";
+"24.title" = "ウインドウ";
+"29.title" = "AMainMenu";
+"56.title" = "夏ライオン";
+"57.title" = "夏ライオン";
+"58.title" = "夏ライオンについて";
+"103.title" = "ヘルプ";
+"106.title" = "ヘルプ";
+"111.title" = "夏ライオンヘルプ";
+"129.title" = "環境設定…";
+"130.title" = "サービス";
+"131.title" = "サービス";
+"134.title" = "夏ライオンを隠す";
+"136.title" = "夏ライオンを終了";
+"145.title" = "ほかを隠す";
+"150.title" = "すべてを表示";
+"195.title" = "読み上げを停止";
+"196.title" = "読み上げを開始";
+"197.title" = "コピー";
+"198.title" = "すべてを選択";
+"199.title" = "カット";
+"200.title" = "スペル";
+"201.title" = "スペルを確認";
+"202.title" = "削除";
+"203.title" = "ペースト";
+"204.title" = "スペルと文法を表示";
+"205.title" = "編集";
+"207.title" = "取り消す";
+"211.title" = "スピーチ";
+"212.title" = "スピーチ";
+"215.title" = "やり直す";
+"216.title" = "スペル";
+"217.title" = "編集";
+"219.title" = "入力中にスペルチェック";
+"239.title" = "拡大/縮小";
+"295.title" = "ビュー";
+"296.title" = "ビュー";
+"297.title" = "ツールバーを表示";
+"298.title" = "ツールバーをカスタマイズ…";
+"346.title" = "スペルと一緒に文法をチェック";
+"348.title" = "夏ライオン";
+"684.title" = "アップデートを確認...";
+"899.title" = "ウインドウ";
+"930.title" = "ウインドウ";
+"934.title" = "アカウント";
+"940.title" = "Box";
+"1660.title" = "Text Cell";
+"1788.title" = "ファイル";
+"1789.title" = "ファイル";
+"1790.title" = "閉じる";
+"1891.title" = "ビューを選択";
+"1892.title" = "ビューを選択";
+"2071.title" = "更新";
+"2361.title" = "メッセージ";
+"2362.title" = "メッセージ";
+"2364.title" = "全て既読にする";
+"2365.title" = "Favorite に入れる";
+"2366.title" = "返信";
+"2655.title" = "OtherViews";
+"2656.title" = "昇順";
+"2657.title" = "降順";
+"2799.title" = "フォントサイズ";
+"2800.title" = "フォントサイズ";
+"2802.title" = "大きく";
+"2804.title" = "標準サイズ";
+"2805.title" = "小さく";
+"2862.title" = "パスワード:";
+"2863.title" = "適用";
+"2864.title" = "ユーザ名:";
+"2865.title" = "キャンセル";
+"2867.title" = "閉じる";
+"2868.title" = "変更";
+"2872.title" = "ユーザ名:";
+"2873.title" = "更新間隔 (秒):";
+"2874.title" = "ソート順:";
+"2876.title" = "新着時にウインドウを最前面に表示";
+"2877.title" = "非アクティブ時に透明化して隠れる";
+"2878.title" = "新着時にスクロールして表示";
+"2879.title" = "透過度:";
+"2880.title" = "カラースキーム:";
+"2883.title" = "透過度を自分で設定する";
+"2884.title" = "タイムラインの取得に POST を用いる";
+"2885.title" = "コントロール + Enter キーで送信する";
+"2886.title" = "統計情報をステータスバーに表示する (テスト中)";
+"2887.title" = "Growl 通知を使う";
+"2889.title" = "メッセージをまとめる個数:";
