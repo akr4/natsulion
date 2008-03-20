@@ -7,6 +7,56 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.32</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.32
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-47'&gt;NTLN-47&lt;/a&gt;] -         An error message is sometimes shown twice
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-85'&gt;NTLN-85&lt;/a&gt;] -         better error handling using http status code
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-87'&gt;NTLN-87&lt;/a&gt;] -         don't repeat the same error messages
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-93'&gt;NTLN-93&lt;/a&gt;] -         omit duplicate error messages
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-150'&gt;NTLN-150&lt;/a&gt;] -         need internationalization work for all messages (at first English and Japanese support)
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-152'&gt;NTLN-152&lt;/a&gt;] -         make &quot;show &lt;3 as heart&quot; not configurable (always do so)
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-155'&gt;NTLN-155&lt;/a&gt;] -         reflect ctrl+enter for POST setting to the placeholder text of the message input field
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-153'&gt;NTLN-153&lt;/a&gt;] -         make autoscroll configurable
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Task
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-148'&gt;NTLN-148&lt;/a&gt;] -         refactoring constant names
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-154'&gt;NTLN-154&lt;/a&gt;] -         build incremental i18nize environment
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Thu, 20 Mar 2008 20:15:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.32.zip"
+        length="891410"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.31</title>
       <description>
         Release Notes - NatsuLion - Version 0.31

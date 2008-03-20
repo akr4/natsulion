@@ -71,7 +71,7 @@
 <ul>
   <li>フレンドタイムライン表示</li>
   <li>メッセージのポスト</li>
-  <li>Favorite の作成</li>
+  <li>Favorite の登録</li>
   <li>リプライの強調表示。先頭以外に @<自分の ID> が含まれるものも強調します。</li>
   <li>リプライの宛先入力支援。アイコンをクリックすると @&lt;ID&gt; が入力されます。</li>
   <li>Growl 通知 (リプライのプライオリティを高く Sticky 設定にしていますので見逃しを防止できます。)</li>
@@ -106,6 +106,37 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.32 (2008/03/20)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.32.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.32.zip');">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-47'>NTLN-47</a>] -         An error message is sometimes shown twice
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-85'>NTLN-85</a>] -         better error handling using http status code
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-87'>NTLN-87</a>] -         don't repeat the same error messages
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-93'>NTLN-93</a>] -         omit duplicate error messages
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-150'>NTLN-150</a>] -         need internationalization work for all messages (at first English and Japanese support)
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-152'>NTLN-152</a>] -         make &quot;show &lt;3 as heart&quot; not configurable (always do so)
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-155'>NTLN-155</a>] -         reflect ctrl+enter for POST setting to the placeholder text of the message input field
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-153'>NTLN-153</a>] -         make autoscroll configurable
+</li>
+</ul>
+</p>
+
 <h3>Version 0.31 (2008/03/14)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.31.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.31.zip');">download</a>
 <p>
 <p>
