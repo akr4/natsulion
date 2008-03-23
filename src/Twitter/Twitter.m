@@ -86,7 +86,7 @@
 
     NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
     
-    NSLog(@"responseArrived:%@", responseStr);
+//    NSLog(@"responseArrived:%@", responseStr);
     
     NSXMLDocument *document = nil;
     
@@ -429,7 +429,7 @@
                                                                  usePost:FALSE
                                                                 callback:handler];
     
-    NSLog(@"sent data [%@]", urlStr);
+//    NSLog(@"sent data [%@]", urlStr);
     
     if (!_connectionForFavorite) {
         [_callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER

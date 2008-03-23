@@ -7,6 +7,39 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.33</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.33
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-137'&gt;NTLN-137&lt;/a&gt;] -         input text field does not change its background color when over 140 characters are input
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-157'&gt;NTLN-157&lt;/a&gt;] -         Some Japanese resource is not applied (view naems, ...)
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-151'&gt;NTLN-151&lt;/a&gt;] -         want Dock icon!
+&lt;/li&gt;
+&lt;/ul&gt;
+        
+&lt;h2&gt;        Task
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-156'&gt;NTLN-156&lt;/a&gt;] -         [Refactoring] make TwitterStatus deprecated (move to NTLNMessage)
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Mon, 24 Mar 2008 02:09:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.33.zip"
+        length="1149105"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.32</title>
       <description>
         Release Notes - NatsuLion - Version 0.32

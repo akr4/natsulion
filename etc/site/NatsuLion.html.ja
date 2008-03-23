@@ -106,6 +106,33 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 0.33 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.33.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.33.zip');">download</a>
+<p>
+<p>
+日本語化できていない部分があったので直しました。文字数オーバ時に入力欄の背景色が変わらなかったのを直しました。仮のアイコンを付けました。正式版リリース時にちゃんとしたものに変更します。
+</p>
+
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-137'>NTLN-137</a>] -         input text field does not change its background color when over 140 characters are input
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-157'>NTLN-157</a>] -         Some Japanese resource is not applied (view naems, ...)
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-151'>NTLN-151</a>] -         want Dock icon!
+</li>
+</ul>
+        
+Task
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-156'>NTLN-156</a>] -         [Refactoring] make TwitterStatus deprecated (move to NTLNMessage)
+</li>
+</ul>
+</p>
+
 <h3>Version 0.32 (2008/03/20)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.32.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.32.zip');">download</a>
 <p>
 Bug
