@@ -45,8 +45,8 @@ static NTLNColors *_instance;
     _colorForHighlightedProbableReply = [[NSColor colorWithDeviceHue:0.1167 saturation:0.55 brightness:1.0 alpha:alpha] retain];
     _colorForBackground = [[[NSColor whiteColor] colorWithAlphaComponent:alpha] retain];
     _colorForHighlightedBackground = [[[NSColor alternateSelectedControlColor] colorWithAlphaComponent:alpha] retain];
-    _colorForWarning = [[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:1 alpha:1] retain];
-    _colorForError = [[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:1 alpha:1] retain];
+    _colorForWarning = [[NSColor colorWithDeviceHue:0.1167 saturation:0.3 brightness:1.0 alpha:alpha] retain];
+    _colorForError = [[NSColor colorWithDeviceHue:0 saturation:0.3 brightness:1 alpha:alpha] retain];
     
     NSMutableArray *alternatingColors = [[[NSMutableArray alloc] initWithCapacity:2] retain];
     for (NSColor *c in [NSColor controlAlternatingRowBackgroundColors]) {
@@ -72,8 +72,8 @@ static NTLNColors *_instance;
     _colorForHighlightedProbableReply = [[_colorForProbableReply highlightWithLevel:0.5] retain];
     _colorForBackground = [[[NSColor blackColor] colorWithAlphaComponent:alpha] retain];
     _colorForHighlightedBackground = [[_colorForBackground highlightWithLevel:0.5] retain];
-    _colorForWarning = [[NSColor colorWithDeviceHue:0 saturation:0.10 brightness:1 alpha:1] retain];
-    _colorForError = [[NSColor colorWithDeviceHue:0 saturation:0.22 brightness:1 alpha:1] retain];
+    _colorForWarning = [[NSColor colorWithDeviceHue:0.1167 saturation:0.55 brightness:0.5 alpha:alpha] retain];
+    _colorForError = [[NSColor colorWithDeviceHue:0 saturation:0.55 brightness:0.5 alpha:alpha] retain];
     
     _controlAlternatingRowBackgroundColors = [[[NSArray alloc] initWithObjects:
                                               [[NSColor blackColor] colorWithAlphaComponent:alpha],

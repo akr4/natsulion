@@ -272,11 +272,11 @@
                  password:password];
 }
 
-- (void) enableMessageTextField {
+- (void) resetMessageTextField {
     [messageTextField setStringValue:@""];
     [messageTextField setEditable:TRUE];
     [messageTextField setEnabled:TRUE];
-    [messageTextField updateHeight];
+    [messageTextField updateState];
     [statusTextField setStringValue:@""];
 }
 
@@ -340,7 +340,7 @@
 
 #pragma mark TwitterPostCallback
 - (void) finishedToPost {
-    [self enableMessageTextField];
+    [self resetMessageTextField];
     [messageTextField focusAndLocateCursorEnd];
 }
 
@@ -349,7 +349,7 @@
      [NTLNErrorMessageViewController controllerWithTitle:NSLocalizedString(@"Sending a message failed", @"Title of error message")
                                                  message:message
                                                timestamp:[NSDate date]]];
-    [self enableMessageTextField];
+    [self resetMessageTextField];
 }
 
 #pragma mark TimelineCallback

@@ -144,7 +144,7 @@
     }
 }
 
-- (void) updateTextState {
+- (void) updateWarnError {
         
     switch (_lengthState) {
         case NTLN_LENGTH_STATE_NORMAL:
@@ -168,7 +168,7 @@
 }
 
 - (void) textChanged {
-    [self updateTextState];
+    [self updateWarnError];
     [self updateHeight];
     [_callback messageInputTextFieldChanged:[[self stringValue] length] state:_lengthState];
 }
@@ -183,6 +183,11 @@
     if (!_frameSizeInternalChanging) {
         [self updateHeight];
     }
+}
+
+- (void) updateState {
+    [self updateWarnError];
+    [self updateHeight];
 }
 
 - (void) addReplyTo:(NSString*)username {
@@ -277,7 +282,7 @@
     if (_backgroundColor) {
         [_backgroundColor set];
         NSFrameRectWithWidth(aRect, 3.0);
-//            NSRectFillUsingOperation(aRect, NSCompositeCopy);
+        NSRectFillUsingOperation(aRect, NSCompositeCopy);
     }
 }
 
