@@ -282,7 +282,9 @@
     if (_backgroundColor) {
         [_backgroundColor set];
         NSFrameRectWithWidth(aRect, 3.0);
-        NSRectFillUsingOperation(aRect, NSCompositeCopy);
+        if ([self isEnabled]) {
+            NSRectFillUsingOperation(aRect, NSCompositeCopy);
+        }
     }
 }
 
