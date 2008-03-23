@@ -62,7 +62,7 @@
     return back;
 }
 
-- (void) setTwitterStatus:(TwitterStatus*)status {
+- (void) setTwitterStatus:(NTLNMessage*)status {
     _status = status;
     [_status retain];
     [self requiredHeight];

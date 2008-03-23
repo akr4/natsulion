@@ -3,7 +3,7 @@
 
 @implementation TwitterStatusViewTimestampField
 
-- (void) setStatus:(TwitterStatus*)status {
+- (void) setStatus:(NTLNMessage*)status {
     _status = status;
     [status retain];
     

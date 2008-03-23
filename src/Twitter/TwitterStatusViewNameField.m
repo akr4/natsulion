@@ -5,7 +5,7 @@
 
 @implementation TwitterStatusViewNameField
 
-- (void) setStatus:(TwitterStatus*)status {
+- (void) setStatus:(NTLNMessage*)status {
     _status = status;
     [status retain];
     

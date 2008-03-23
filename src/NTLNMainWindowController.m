@@ -2,7 +2,6 @@
 #import "NTLNPreferencesWindowController.h"
 #import "NTLNAccount.h"
 #import "TwitterStatusViewController.h"
-#import "TwitterStatus.h"
 #import "NTLNErrorMessageViewController.h"
 #import "TwitterTestStub.h"
 #import "NTLNConfiguration.h"
@@ -356,9 +355,9 @@
 #pragma mark TimelineCallback
 - (void) finishedToGetTimeline:(NSArray*)statuses {
     for (int i = 0; i < [statuses count]; i++) {
-        TwitterStatus *s = [statuses objectAtIndex:i];
+        NTLNMessage *s = [statuses objectAtIndex:i];
         TwitterStatusViewController *controller = [[[TwitterStatusViewController alloc]
-                                                    initWithTwitterStatus:(TwitterStatus*)s
+                                                    initWithTwitterStatus:(NTLNMessage*)s
                                                     messageViewListener:self] autorelease];
         if ([self isNewMessage:controller]) {
             [_messageNotifier addMessageViewController:controller];

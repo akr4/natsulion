@@ -39,7 +39,7 @@
 - (void) unhighlight {
 }
 
-- (void) setStatus:(TwitterStatus*)status {
+- (void) setStatus:(NTLNMessage*)status {
     _status = status;
     [_status retain];
     [self setImage:[_status icon]];

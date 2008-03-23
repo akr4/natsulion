@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "TwitterStatus.h"
+#import "NTLNMessage.h"
 #import "TwitterStatusViewMessageField.h"
 
 @class TwitterStatusViewController;
@@ -7,7 +7,7 @@
 @interface TwitterStatusView : NSView {
     IBOutlet TwitterStatusViewMessageField *textField;
     
-    TwitterStatus *_status;
+    NTLNMessage *_status;
     TwitterStatusViewController *_controller;
     
     BOOL _highlighted;
@@ -18,7 +18,7 @@
     NSTimer *_starTimer;
 }
 
-- (void) setTwitterStatus:(TwitterStatus*)status;
+- (void) setTwitterStatus:(NTLNMessage*)status;
 - (void) highlight;
 - (void) unhighlight;
 - (float) requiredHeight;

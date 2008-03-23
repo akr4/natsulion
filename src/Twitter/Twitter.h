@@ -1,5 +1,5 @@
 #import <Cocoa/Cocoa.h>
-#import "TwitterStatus.h"
+#import "NTLNMessage.h"
 #import "NTLNAsyncUrlConnection.h"
 #import "NTLNIconRepository.h"
 
@@ -89,7 +89,7 @@ enum NTLNErrorType {
 - (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback>)callback;
 
 // methods for TwitterTimelineCallbackHandler
-- (void) pushIconWaiter:(TwitterStatus*)waiter forUrl:(NSString*)url;
+- (void) pushIconWaiter:(NTLNMessage*)waiter forUrl:(NSString*)url;
 - (NSSet*) popIconWaiterSet:(NSString*)url;
 @end
 

@@ -86,7 +86,7 @@
 
     NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
     
-//    NSLog(@"responseArrived:%@", responseStr);
+    NSLog(@"responseArrived:%@", responseStr);
     
     NSXMLDocument *document = nil;
     
@@ -164,7 +164,7 @@
     }
     
     for (NSXMLNode *status in statuses) {
-        TwitterStatus *backStatus = [[[TwitterStatus alloc] init] autorelease];
+        NTLNMessage *backStatus = [[[NTLNMessage alloc] init] autorelease];
         
         [backStatus setStatusId:[self stringValueFromNSXMLNode:status byXPath:@"id/text()"]];
         [backStatus setName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"user/name/text()"]]];
@@ -292,7 +292,7 @@
 }
 
 #pragma mark methods for TwitterTimelineCallbackHandler
-- (void) pushIconWaiter:(TwitterStatus*)waiter forUrl:(NSString*)url {
+- (void) pushIconWaiter:(NTLNMessage*)waiter forUrl:(NSString*)url {
     NSMutableSet *set = [_waitingIconTwitterStatuses objectForKey:url];
     if (!set) {
         set = [[[NSMutableSet alloc] initWithCapacity:3] autorelease];
@@ -458,7 +458,7 @@
     NSMutableArray *back = [[[NSMutableArray alloc] initWithCapacity:20] autorelease];
     NSSet* set = [self popIconWaiterSet:key];
     NSEnumerator *e = [set objectEnumerator];
-    TwitterStatus *s = [e nextObject];
+    NTLNMessage *s = [e nextObject];
     while (s) {
         [_callback twitterStopTask];
         [icon setSize:NSMakeSize(48.0, 48.0)];

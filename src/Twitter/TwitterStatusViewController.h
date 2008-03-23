@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
 #import "NTLNMessageViewController.h"
-#import "TwitterStatus.h"
+#import "NTLNMessage.h"
 #import "TwitterStatusViewNameField.h"
 #import "TwitterStatusViewMessageField.h"
 #import "TwitterStatusViewTimestampField.h"
@@ -19,7 +19,7 @@
     IBOutlet NSButton *favoliteButton;
     IBOutlet NSImageView *newIconImageView;
     
-    TwitterStatus *_status;
+    NTLNMessage *_status;
     
     NSObject<NTLNMessageViewListener> *_listener;
     BOOL _starHighlighted;
@@ -31,9 +31,9 @@
 
 - (IBAction) toggleFavorite:(id)sender;
 
-- (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener;
+- (id) initWithTwitterStatus:(NTLNMessage*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener;
 - (BOOL) isEqual:(id)anObject;
 - (void) showStar:(BOOL)show;
-- (TwitterStatus*) message;
+- (NTLNMessage*) message;
 @end
 

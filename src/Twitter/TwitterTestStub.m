@@ -1,10 +1,10 @@
 #import "TwitterTestStub.h"
 #import "NTLNMessage.h"
-#import "TwitterStatus.h"
+#import "NTLNMessage.h"
 
 @implementation TwitterTestStub
 - (NTLNMessage*) messageForId:(NSString*)statusId {
-    NTLNMessage *m = [[[TwitterStatus alloc] init] autorelease];
+    NTLNMessage *m = [[[NTLNMessage alloc] init] autorelease];
     [m setStatusId:statusId]; 
     [m setName:@"akr"];
     [m setScreenName:@"akr"];

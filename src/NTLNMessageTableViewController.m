@@ -392,7 +392,7 @@
     for(unsigned int i = 0; i != bufSize; i++) {
         unsigned int index = buf[i];
         TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:index];
-        TwitterStatus *m = [c message];
+        NTLNMessage *m = [c message];
         NSString *s = [m screenName];
         [messageInputTextField addReplyTo:s];
     }

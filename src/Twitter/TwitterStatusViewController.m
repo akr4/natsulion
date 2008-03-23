@@ -37,7 +37,7 @@ static TwitterStatusViewController *starred = nil;
     }
 }
 
-- (id) initWithTwitterStatus:(TwitterStatus*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener {
+- (id) initWithTwitterStatus:(NTLNMessage*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener {
     [super init];
 
     _status = status;
@@ -109,7 +109,7 @@ static TwitterStatusViewController *starred = nil;
     return [_status statusId];
 }
 
-- (TwitterStatus*) message {
+- (NTLNMessage*) message {
     return _status;
 }
 

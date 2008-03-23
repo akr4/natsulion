@@ -1,4 +1,5 @@
 #import <Cocoa/Cocoa.h>
+#import "NTLNUser.h"
 
 enum NTLNReplyType {
     NTLN_MESSAGE_REPLY_TYPE_NORMAL = 0,
@@ -22,6 +23,7 @@ enum NTLNMessageStatus {
     NSImage *icon;
     enum NTLNReplyType replyType;
     enum NTLNMessageStatus status;
+    NTLNUser *user;
 }
 
 @property(readwrite, retain) NSString *statusId, *name, *screenName, *text;
@@ -29,6 +31,7 @@ enum NTLNMessageStatus {
 @property(readwrite, retain) NSDate *timestamp;
 @property(readwrite) enum NTLNReplyType replyType;
 @property(readwrite) enum NTLNMessageStatus status;
+@property(readwrite, retain) NTLNUser *user;
 
 - (BOOL) isEqual:(id)anObject;
 - (void) finishedToSetProperties;
