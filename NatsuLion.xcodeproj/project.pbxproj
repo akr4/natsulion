@@ -17,6 +17,7 @@
 		E9160BBE0D11D2EB00C9EEFF /* Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160BBD0D11D2EB00C9EEFF /* Twitter.m */; };
 		E9160BC80D11F4F500C9EEFF /* NTLNIconRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160BC70D11F4F500C9EEFF /* NTLNIconRepository.m */; };
 		E916EEDB0D95381A00EA04C7 /* NTLNUser.m in Sources */ = {isa = PBXBuildFile; fileRef = E916EEDA0D95381A00EA04C7 /* NTLNUser.m */; };
+		E916EF7C0D96AE8600EA04C7 /* NatsuLion.icns in Resources */ = {isa = PBXBuildFile; fileRef = E916EF7B0D96AE8600EA04C7 /* NatsuLion.icns */; };
 		E91B3DAD0D13F3B5007C9762 /* NTLNMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */; };
 		E91B3DB60D13F593007C9762 /* NTLNCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */; };
 		E920C36E0D6A1ACC00A813EB /* CTBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = E920C36D0D6A1ACC00A813EB /* CTBadge.m */; };
@@ -122,6 +123,7 @@
 		E9160BC70D11F4F500C9EEFF /* NTLNIconRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTLNIconRepository.m; path = Twitter/NTLNIconRepository.m; sourceTree = "<group>"; };
 		E916EED90D95381A00EA04C7 /* NTLNUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNUser.h; sourceTree = "<group>"; };
 		E916EEDA0D95381A00EA04C7 /* NTLNUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNUser.m; sourceTree = "<group>"; };
+		E916EF7B0D96AE8600EA04C7 /* NatsuLion.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = NatsuLion.icns; path = Resources/NatsuLion.icns; sourceTree = "<group>"; };
 		E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMainWindowController.h; sourceTree = "<group>"; };
 		E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = NTLNMainWindowController.m; sourceTree = "<group>"; };
 		E91B3DB40D13F593007C9762 /* NTLNCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNCustomViewCell.h; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E916EF7B0D96AE8600EA04C7 /* NatsuLion.icns */,
 				E9D23B6F0D8EF5BD006191EE /* Localizable.strings */,
 				E9A8A7360D79328D008567CC /* images */,
 				E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */,
@@ -551,6 +554,7 @@
 				E9A8A7500D793478008567CC /* star-highlighted.tiff in Resources */,
 				E9D23B710D8EF5BD006191EE /* Localizable.strings in Resources */,
 				E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */,
+				E916EF7C0D96AE8600EA04C7 /* NatsuLion.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
