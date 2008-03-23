@@ -102,6 +102,15 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 0.34 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.34.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.34.zip');">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-160'>NTLN-160</a>] -         message disappears just after press enter key in input field
+</li>
+</ul>
+</p>
+
 <h3>Version 0.33 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.33.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.33.zip');">download</a>
 <p>
 Bug

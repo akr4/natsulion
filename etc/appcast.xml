@@ -7,6 +7,22 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 0.34</title>
+      <description>
+        Release Notes - NatsuLion - Version 0.34
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-160'&gt;NTLN-160&lt;/a&gt;] -         message disappears just after press enter key in input field
+&lt;/li&gt;
+&lt;/ul&gt;      </description>
+      <pubDate>Mon, 24 Mar 2008 03:02:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_0.34.zip"
+        length="1149094"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.33</title>
       <description>
         Release Notes - NatsuLion - Version 0.33
