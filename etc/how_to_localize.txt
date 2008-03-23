@@ -9,10 +9,14 @@ convert each strings file's encoding to utf-8 with unix new line. (e.g. utf-8-un
 
 etc/createMessageTable.rb English.lproj/MainMenu.nib.strings > etc/strings.ja.txt.new 
 etc/createMessageTable.rb English.lproj/Welcome.nib.strings >> etc/strings.ja.txt.new 
-sort etc/strings.ja.txt.new > etc/strings.ja.txt
-rm etc/strings.ja.txt.new
+cut -d = -f 1 etc/strings.ja.txt > etc/strings.ja.txt.key
+cut -d = -f 1 etc/strings.ja.txt.new > etc/strings.ja.txt.new.key 
+sort etc/strings.ja.txt.new.key > etc/strings.ja.txt.new.key.sort
+diff etc/strings.ja.txt.key etc/strings.ja.txt.new.key.sort
+# add new entries manually
+rm etc/strings.ja.txt.new.key etc/strings.ja.txt.new etc/strings.ja.txt.new.key etc/strings.ja.txt.new.key.sort
 
-* this step is needed only when new nib file is added
+* this step is needed only when new nib file is added or updated
 
 3. generate Japanese version of strings files
 

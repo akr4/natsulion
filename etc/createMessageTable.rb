@@ -4,7 +4,8 @@ message_hash = Hash::new
 
 src_strings_file = open($*[0])
 src_strings_file.each { |line|
-  if  /\/\* Class = ".*"; title = "(.*)"; ObjectID = ".*"; \*\// =~ line
+
+  if  /\/\* Class = ".*"; .* = "(.*)"; ObjectID = ".*"; \*\// =~ line
     message_hash.store($1, $1)
   end
 }

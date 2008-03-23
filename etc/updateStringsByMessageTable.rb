@@ -11,8 +11,11 @@ message_table_file.close
 
 src_strings_file = open($*[1])
 src_strings_file.each { |line|
-  if  /"(\d+)\.title" = "(.*)";/ =~ line
-    printf "\"%s.title\" = \"%s\";\n", $1, message_hash[$2] ? message_hash[$2] : "<EMPTY> " + $2
+  if  /"(\d+.*)" = "(.*)";/ =~ line
+    printf "\"%s\" = \"%s\";\n", $1, message_hash[$2] ? message_hash[$2] : "<EMPTY> " + $2
+    if (!message_hash[$2])
+      warn "missing: " + $2
+    end
   end
 }
 src_strings_file.close
