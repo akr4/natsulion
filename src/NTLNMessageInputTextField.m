@@ -286,6 +286,7 @@
             NSRectFillUsingOperation(aRect, NSCompositeCopy);
         }
     }
+
 }
 
 #pragma mark Notification
