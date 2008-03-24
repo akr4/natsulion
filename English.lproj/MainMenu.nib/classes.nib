@@ -24,6 +24,8 @@
 				<string>NSPanel</string>
 				<key>appController</key>
 				<string>NTLNAppController</string>
+				<key>backButton</key>
+				<string>NSButton</string>
 				<key>checkAuthProgressIndicator</key>
 				<string>NSProgressIndicator</string>
 				<key>messageArea</key>
@@ -31,6 +33,8 @@
 				<key>nextButton</key>
 				<string>NSButton</string>
 				<key>passwordField</key>
+				<string>NSTextField</string>
+				<key>passwordLabel</key>
 				<string>NSTextField</string>
 				<key>userIdField</key>
 				<string>NSTextField</string>

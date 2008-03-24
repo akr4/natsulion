@@ -7,19 +7,26 @@
 #define NTLN_PREFERENCE_USE_GROWL @"useGrowl"
 #define NTLN_PREFERENCE_REFRESH_INTERVAL @"refreshInterval"
 
+enum NTLNAccountConfigState {
+    NTLN_ACCOUNT_CONFIG_USERNAME,
+    NTLN_ACCOUNT_CONFIG_PASSWORD,
+};
+
 @interface NTLNPreferencesWindowController : NSWindowController<TwitterCheckCallback> {
 
     IBOutlet NTLNAppController *appController;
 
-#pragma mark Basic Tab
+#pragma mark Account sheet    
+    IBOutlet NSTextField *messageArea;
     IBOutlet NSPanel *accountInfoSheet;
     IBOutlet NSProgressIndicator *checkAuthProgressIndicator;
-    IBOutlet NSTextField *messageArea;
     IBOutlet NSTextField *userIdField;
     IBOutlet NSTextField *passwordField;
     IBOutlet NSButton *nextButton;
-
+    IBOutlet NSButton *backButton;
+    IBOutlet NSTextField *passwordLabel;
     TwitterCheck *_twitterCheck;
+    enum NTLNAccountConfigState _accountConfigState;
 }
 
 - (IBAction) showSheet:(id)sender;

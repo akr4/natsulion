@@ -40,6 +40,7 @@ static NTLNAccount *_instance;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:_username forKey:NTLN_PREFERENCE_USERID];
+    [defaults synchronize];
     
     return self;
 }
