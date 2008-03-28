@@ -17,9 +17,12 @@
 
 - (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
     [self initWithUrl:url username:username password:password];
-    
-    NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
-//    NSLog(@"sending request to %@", encodedUrl);
+
+    NSMutableString* url2 = [[url mutableCopy] autorelease];
+    [url2 insertString:[NSString stringWithFormat:@"%@:%@@", username, password] atIndex:7];
+
+    NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url2, NULL, NULL, kCFStringEncodingUTF8);
+    NSLog(@"sending request to %@", encodedUrl);
 
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
@@ -29,6 +32,8 @@
     if (post) {
         [request setHTTPMethod:@"POST"];
     }
+//    [request addValue:encode_to_base64([[username stringByAppendingString:@":"] stringByAppendingString:password])
+//   forHTTPHeaderField:@"Authorization"];
     
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
@@ -43,18 +48,24 @@
 
 - (id) initPostConnectionWithUrl:(NSString*)url bodyString:(NSString*)bodyString username:(NSString*)username password:(NSString*)password callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
     [self initWithUrl:url username:username password:password];
+
+    NSMutableString* url2 = [[url mutableCopy] autorelease];
+    [url2 insertString:[NSString stringWithFormat:@"%@:%@@", username, password] atIndex:7];
     
-    NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
-//    NSLog(@"sending (encoded) request to %@", encodedUrl);
+    NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url2, NULL, NULL, kCFStringEncodingUTF8);
+    NSLog(@"sending (encoded) request to %@", encodedUrl);
 
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
-    [request setCachePolicy:NSURLRequestUseProtocolCachePolicy];
+    [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
     [request setTimeoutInterval:10.0];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:FALSE];
- 
+    
+//    [request addValue:encode_to_base64([[username stringByAppendingString:@":"] stringByAppendingString:password])
+//   forHTTPHeaderField:@"Authorization"];
+
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
         NSLog(@"failed to get connection.");
@@ -101,15 +112,18 @@
 }
 
 -(void)connection:(NSURLConnection*)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge*)challenge { 
-    if ([challenge previousFailureCount] == 0) { 
-        NSURLCredential *newCredential = [NSURLCredential credentialWithUser:_username password:_password persistence:NSURLCredentialPersistenceNone]; 
+      NSLog(@"authentication error");
+      [[challenge sender] cancelAuthenticationChallenge:challenge]; 
+//
+//    if ([challenge previousFailureCount] == 0) { 
+//        NSURLCredential *newCredential = [NSURLCredential credentialWithUser:_username password:_password persistence:NSURLCredentialPersistenceNone]; 
 //        NSLog([newCredential description]);
-        [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge]; 
-    } else { 
-        NSLog(@"authentication failure");
-        // TODO: should be "real" code
-//        _statusCode = 401;
-        [[challenge sender] cancelAuthenticationChallenge:challenge]; 
-    } 
+//        [[challenge sender] useCredential:newCredential forAuthenticationChallenge:challenge]; 
+//    } else { 
+//        NSLog(@"authentication failure");
+//        // TODO: should be "real" code
+////        _statusCode = 401;
+//        [[challenge sender] cancelAuthenticationChallenge:challenge]; 
+//    } 
 }    
 @end

@@ -47,20 +47,18 @@ static NTLNAccount *_instance;
 
 - (void) dealloc {
     [_username release];
-    [_password release];
     [super dealloc];
 }
 
 - (NSString*) username {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults objectForKey:NTLN_PREFERENCE_USERID];
+    if (!_username) {
+        _username = [[NSUserDefaults standardUserDefaults] objectForKey:NTLN_PREFERENCE_USERID];
+    }
+    return _username;
 }
 
 - (NSString*) password {
-    if (!_password) {
-        _password = [[NTLNKeyChain keychain] getPasswordForUsername:[self username]];
-    }
-    return _password;
+    return [[NTLNKeyChain keychain] getPasswordForUsername:[self username]];
 }
 
 - (BOOL) addOrUpdateKeyChainWithPassword:(NSString*)password {

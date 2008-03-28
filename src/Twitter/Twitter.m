@@ -382,6 +382,8 @@
 }
 
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
+
+    NSLog(@"%@/%@", username, password);
     
     if (_connectionForPost && ![_connectionForPost isFinished]) {
         NSLog(@"connection for post is running.");
