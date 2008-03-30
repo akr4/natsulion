@@ -8,8 +8,10 @@
 @interface NTLNMessageViewInfo : NSObject {
     NSPredicate *_predicate;
     float _knobPosition;
+    SEL _predicateFactoryMethod;
 }
 - (id) initWithPredicate:(NSPredicate*)predicate;
+- (id) initWithPredicateFactory:(SEL)selector;
 - (NSPredicate*)predicate;
 - (float) knobPosition;
 - (void) setKnobPosition:(float)position;
@@ -27,13 +29,29 @@
     return self;
 }
 
++ (id) infoWithPredicateFactory:(SEL)selector {
+    return [[[[self class] alloc] initWithPredicateFactory:selector] autorelease];
+}
+
+- (id) initWithPredicateFactory:(SEL)selector {
+    _predicateFactoryMethod = selector;
+    return self;
+}
+
 - (void) dealloc {
     [_predicate release];
     [super dealloc];
 }
 
+- (NSPredicate*)predicateForSentMessages {
+    return [NSPredicate predicateWithFormat:@"message.screenName == %@", [[NTLNAccount instance] username]];
+}
+
 - (NSPredicate*)predicate {
-    return _predicate;
+    if (_predicate) {
+        return _predicate;
+    }
+    return [self performSelector:_predicateFactoryMethod];
 }
 
 - (float) knobPosition {
@@ -62,8 +80,7 @@
                                         [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_REPLY],
                                         [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE],
                                         nil]]]];
-    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
-                                      [NSPredicate predicateWithFormat:@"message.screenName == %@", [[NTLNAccount instance] username]]]];
+    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicateFactory:@selector(predicateForSentMessages)]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
                                       [NSPredicate predicateWithFormat:@"message.status == 0"]]];
     
