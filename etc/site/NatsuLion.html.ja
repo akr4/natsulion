@@ -85,8 +85,13 @@
 
 <a href="http://www.physalis.net/repos/natsulion/trunk/LICENSE">修正 BSD</a> ライセンスです。
 
-また <a href="http://sparkle.andymatuschak.org/">Sparkle</a> と <a href="http://growl.info/">Growl</a>、<a href="http://blog.oofn.net/2006/01/08/badging-for-everyone/">CTBadge</a> を利用しています。これらのライセンスについては<a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">こちら</a>をご覧ください。
+また <a href="http://sparkle.andymatuschak.org/">Sparkle</a> と <a href="http://growl.info/">Growl</a>、<a href="http://blog.oofn.net/2006/01/08/badging-for-everyone/">CTBadge</a>、および OpenSSL  を利用しています。これらのライセンスについては<a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">こちら</a>をご覧ください。
 </p>
+
+<dl>
+  <dt>ライセンス表示 (OpenSSL)</dt>
+  <dd>"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/)"</dd>
+</dl>
 
 <h3>ソースコード</h3>
 <p>

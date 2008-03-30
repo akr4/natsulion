@@ -83,8 +83,14 @@ You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip" onclick="javas
 
 <h3>License</h3>
 <p>
-NatsuLion is published under the <a href="http://www.physalis.net/repos/natsulion/trunk/LICENSE">Modified BSD</a> license and shipped with <a href="http://sparkle.andymatuschak.org/">Sparkle</a>, <a href="http://growl.info/">Growl</a> and <a href="http://blog.oofn.net/2006/01/08/badging-for-everyone/">CTBadge</a>. Please find these licenses <a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">here</a>.
+NatsuLion is published under the <a href="http://www.physalis.net/repos/natsulion/trunk/LICENSE">Modified BSD</a> license and shipped with <a href="http://sparkle.andymatuschak.org/">Sparkle</a>, <a href="http://growl.info/">Growl</a>, <a href="http://blog.oofn.net/2006/01/08/badging-for-everyone/">CTBadge</a> and OpenSSL.
+Please find these licenses <a href="http://www.physalis.net/repos/natsulion/trunk/licenses/">here</a>.
 </p>
+
+<dl>
+  <dt>License acknowledgment (OpenSSL)</dt>
+  <dd>"This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit. (http://www.openssl.org/)"</dd>
+</dl>
 
 <h3>Source Code</h3>
 <p>
