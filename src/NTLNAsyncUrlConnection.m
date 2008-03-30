@@ -2,28 +2,20 @@
 
 @implementation NTLNAsyncUrlConnection
 
-- (id) initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password {
+- (void) initInternalWithUsername:(NSString*)username password:(NSString*)password {
     _username = username;
     [_username retain];
     _password = password;
     [_password retain];
     _finished = FALSE;
-    return self;
 }
 
-- (id) initWithUrl:(NSString*)url callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
-    return [self initWithUrl:url username:nil password:nil usePost:FALSE callback:callback];
-}
-
-- (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
-    [self initWithUrl:url username:username password:password];
-
-    NSMutableString* url2 = [[url mutableCopy] autorelease];
-    [url2 insertString:[NSString stringWithFormat:@"%@:%@@", username, password] atIndex:7];
-
-    NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url2, NULL, NULL, kCFStringEncodingUTF8);
+- (id) initWithUrl:(NSString*)url usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
+    [self initInternalWithUsername:nil password:nil];
+    
+    NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
     NSLog(@"sending request to %@", encodedUrl);
-
+    
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
     [request setCachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData];
@@ -32,8 +24,6 @@
     if (post) {
         [request setHTTPMethod:@"POST"];
     }
-//    [request addValue:encode_to_base64([[username stringByAppendingString:@":"] stringByAppendingString:password])
-//   forHTTPHeaderField:@"Authorization"];
     
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
@@ -46,14 +36,25 @@
     return self;
 }
 
+- (id) initWithUrl:(NSString*)url callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
+    return [self initWithUrl:url usePost:FALSE callback:callback];
+}
+
+- (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
+    [self initInternalWithUsername:username password:password];
+    NSMutableString* url2 = [[url mutableCopy] autorelease];
+    [url2 insertString:[NSString stringWithFormat:@"%@:%@@", username, password] atIndex:7];
+    return [self initWithUrl:url2 usePost:FALSE callback:callback];
+}
+
 - (id) initPostConnectionWithUrl:(NSString*)url bodyString:(NSString*)bodyString username:(NSString*)username password:(NSString*)password callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
-    [self initWithUrl:url username:username password:password];
+    [self initInternalWithUsername:username password:password];
 
     NSMutableString* url2 = [[url mutableCopy] autorelease];
     [url2 insertString:[NSString stringWithFormat:@"%@:%@@", username, password] atIndex:7];
     
     NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url2, NULL, NULL, kCFStringEncodingUTF8);
-    NSLog(@"sending (encoded) request to %@", encodedUrl);
+    NSLog(@"sending post request to %@", encodedUrl);
 
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
@@ -63,9 +64,6 @@
     [request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:FALSE];
     
-//    [request addValue:encode_to_base64([[username stringByAppendingString:@":"] stringByAppendingString:password])
-//   forHTTPHeaderField:@"Authorization"];
-
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
         NSLog(@"failed to get connection.");
@@ -83,7 +81,7 @@
     [_connection release];
     [_username release];
     [_password release];
-//    [super dealloc]; // should be called but someone has experienced a crash with this line.
+//    [super dealloc]; // should be called but a user has experienced a crash with this line.
 }
 
 - (BOOL) isFinished {

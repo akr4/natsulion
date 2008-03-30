@@ -127,7 +127,7 @@
 #endif
     
     if (!document || code >= 400) {
-//        NSLog(@"status code: %d - response:%@", code, responseStr);        
+        NSLog(@"status code: %d - response:%@", code, responseStr);        
         switch (code) {
             case 400:
                 [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_HIT_API_LIMIT
@@ -383,8 +383,6 @@
 
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
 
-    NSLog(@"%@/%@", username, password);
-    
     if (_connectionForPost && ![_connectionForPost isFinished]) {
         NSLog(@"connection for post is running.");
         return;
