@@ -15,7 +15,6 @@
     BOOL _finished;
 }
 - (id) initWithUrl:(NSString*)url callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback;
-- (id) initWithUrl:(NSString*)url usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback;
 - (id) initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback;
 - (id) initPostConnectionWithUrl:(NSString*)url bodyString:(NSString*)bodyString username:(NSString*)username password:(NSString*)password callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback;
 - (BOOL) isFinished;

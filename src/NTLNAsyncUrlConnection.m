@@ -1,6 +1,13 @@
 #import "NTLNAsyncUrlConnection.h"
+#import "Crypto.h"
 
 @implementation NTLNAsyncUrlConnection
+
+- (NSString*) stringOfAuthorizationHeaderWithUsername:(NSString*)username password:(NSString*)password {
+    NSString *s = @"Basic ";
+    [s autorelease];
+    return [s stringByAppendingString:[[NSString stringWithFormat:@"%@:%@", username, password] stringEncodedWithBase64]];
+}
 
 - (void) initInternalWithUsername:(NSString*)username password:(NSString*)password {
     _username = username;
@@ -10,7 +17,7 @@
     _finished = FALSE;
 }
 
-- (id) initWithUrl:(NSString*)url usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
+- (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
     [self initInternalWithUsername:nil password:nil];
     
     NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
@@ -23,6 +30,10 @@
     [request setHTTPShouldHandleCookies:FALSE];
     if (post) {
         [request setHTTPMethod:@"POST"];
+    }
+    if (username && password) {
+       [request setValue:[self stringOfAuthorizationHeaderWithUsername:username password:password]
+      forHTTPHeaderField:@"Authorization"];
     }
     
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -37,23 +48,13 @@
 }
 
 - (id) initWithUrl:(NSString*)url callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
-    return [self initWithUrl:url usePost:FALSE callback:callback];
-}
-
-- (id)initWithUrl:(NSString*)url username:(NSString*)username password:(NSString*)password usePost:(BOOL)post callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
-    [self initInternalWithUsername:username password:password];
-    NSMutableString* url2 = [[url mutableCopy] autorelease];
-    [url2 insertString:[NSString stringWithFormat:@"%@:%@@", username, password] atIndex:7];
-    return [self initWithUrl:url2 usePost:FALSE callback:callback];
+    return [self initWithUrl:url username:nil password:nil usePost:FALSE callback:callback];
 }
 
 - (id) initPostConnectionWithUrl:(NSString*)url bodyString:(NSString*)bodyString username:(NSString*)username password:(NSString*)password callback:(NSObject<NTLNAsyncUrlConnectionCallback>*)callback {
     [self initInternalWithUsername:username password:password];
 
-    NSMutableString* url2 = [[url mutableCopy] autorelease];
-    [url2 insertString:[NSString stringWithFormat:@"%@:%@@", username, password] atIndex:7];
-    
-    NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url2, NULL, NULL, kCFStringEncodingUTF8);
+    NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
     NSLog(@"sending post request to %@", encodedUrl);
 
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
@@ -63,7 +64,11 @@
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPShouldHandleCookies:FALSE];
-    
+    if (username && password) {
+        [request setValue:[self stringOfAuthorizationHeaderWithUsername:username password:password]
+       forHTTPHeaderField:@"Authorization"];
+    }
+
     _connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     if (!_connection) {
         NSLog(@"failed to get connection.");

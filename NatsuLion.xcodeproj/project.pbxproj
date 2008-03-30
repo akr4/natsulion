@@ -34,6 +34,7 @@
 		E96C362C0D2A71BA00CED33F /* NTLNKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C362B0D2A71BA00CED33F /* NTLNKeyChain.m */; };
 		E96C36930D2A83E300CED33F /* NTLNAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36920D2A83E300CED33F /* NTLNAccount.m */; };
 		E96C36AD0D2A8C3700CED33F /* NTLNWelcomeWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */; };
+		E976152B0D9FDE10007893CC /* Crypto.m in Sources */ = {isa = PBXBuildFile; fileRef = E976152A0D9FDE10007893CC /* Crypto.m */; };
 		E97DF2AE0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */; };
 		E98B093C0D2172B90002A75E /* NTLNGrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */; };
 		E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */; };
@@ -156,6 +157,8 @@
 		E96C36A80D2A897800CED33F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNWelcomeWindowController.h; sourceTree = "<group>"; };
 		E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNWelcomeWindowController.m; sourceTree = "<group>"; };
+		E97615290D9FDE10007893CC /* Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crypto.h; sourceTree = "<group>"; };
+		E976152A0D9FDE10007893CC /* Crypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crypto.m; sourceTree = "<group>"; };
 		E97DF2AC0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMultiTasksProgressIndicator.h; sourceTree = "<group>"; };
 		E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMultiTasksProgressIndicator.m; sourceTree = "<group>"; };
 		E98113C90D563B8A001E390C /* NTLNURLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNURLUtils.h; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 				E98B18610D75A076000F0FED /* NTLNNotification.h */,
 				E9FE91650D81527C0012136E /* NTLNBufferedMessageNotifier.h */,
 				E9FE91660D81527C0012136E /* NTLNBufferedMessageNotifier.m */,
+				E97615290D9FDE10007893CC /* Crypto.h */,
+				E976152A0D9FDE10007893CC /* Crypto.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -640,6 +645,7 @@
 				E94B13CF0D6AA6C700F80617 /* CTGradient.m in Sources */,
 				E9FE91670D81527C0012136E /* NTLNBufferedMessageNotifier.m in Sources */,
 				E916EEDB0D95381A00EA04C7 /* NTLNUser.m in Sources */,
+				E976152B0D9FDE10007893CC /* Crypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,10 +776,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-laprutil-1",
-					"-lapr-1",
-				);
+				OTHER_LDFLAGS = "-lcrypto";
 				PREBINDING = NO;
 				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.5.sdk";
