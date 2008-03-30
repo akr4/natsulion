@@ -26,11 +26,9 @@
 }
 
 - (void)mouseEntered:(NSEvent *)theEvent {
-    [self setImageFrameStyle:NSImageFrameButton];
 }
 
 - (void)mouseExited:(NSEvent *)theEvent {
-    [self setImageFrameStyle:NSImageFrameNone];
 }
 
 - (void) highlight {
