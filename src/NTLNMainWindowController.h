@@ -1,5 +1,4 @@
 #import <Cocoa/Cocoa.h>
-#import <PSMTabBarControl/PSMTabBarControl.h>
 #import "Twitter.h"
 #import "NTLNMessageTableViewController.h"
 #import "NTLNGrowlNotifier.h"
