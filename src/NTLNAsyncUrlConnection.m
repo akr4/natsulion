@@ -86,7 +86,7 @@
     [_connection release];
     [_username release];
     [_password release];
-//    [super dealloc]; // should be called but a user has experienced a crash with this line.
+//    [super dealloc]; // should be called but a user has experienced a crash with this line. help wanted ;)
 }
 
 - (BOOL) isFinished {

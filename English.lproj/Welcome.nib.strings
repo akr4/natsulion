@@ -2,20 +2,20 @@
 /* Class = "NSWindow"; title = "NatsuLion"; ObjectID = "5"; */
 "5.title" = "NatsuLion";
 
-/* Class = "NSTextFieldCell"; title = "Thank you for choosing NatsuLion!"; ObjectID = "51"; */
-"51.title" = "Thank you for choosing NatsuLion!";
+/* Class = "NSTextFieldCell"; title = "Thank you for choosing NatsuLion!"; ObjectID = "63"; */
+"63.title" = "Thank you for choosing NatsuLion!";
 
-/* Class = "NSTextFieldCell"; title = "Please Tell me your Twitter account information."; ObjectID = "52"; */
-"52.title" = "Please Tell me your Twitter account information.";
+/* Class = "NSTextFieldCell"; title = "Please Tell me your Twitter account information."; ObjectID = "64"; */
+"64.title" = "Please Tell me your Twitter account information.";
 
-/* Class = "NSTextFieldCell"; title = "Username:"; ObjectID = "54"; */
-"54.title" = "Username:";
+/* Class = "NSTextFieldCell"; title = "Username:"; ObjectID = "66"; */
+"66.title" = "Username:";
 
-/* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "55"; */
-"55.title" = "Password:";
+/* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "67"; */
+"67.title" = "Password:";
 
-/* Class = "NSButtonCell"; title = "Next"; ObjectID = "57"; */
-"57.title" = "Next";
+/* Class = "NSButtonCell"; title = "Next"; ObjectID = "69"; */
+"69.title" = "Next";
 
-/* Class = "NSButtonCell"; title = "Exit"; ObjectID = "58"; */
-"58.title" = "Exit";
+/* Class = "NSButtonCell"; title = "Exit"; ObjectID = "70"; */
+"70.title" = "Exit";

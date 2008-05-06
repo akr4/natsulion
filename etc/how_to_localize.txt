@@ -1,9 +1,12 @@
 1. generate English version of strings file
 
 ibtool --generate-stringsfile English.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib
-ibtool --generate-stringsfile English.lproj/Welcome.nib.strings English.lproj/Welcome.nib
+nkf --unix --utf8 --overwrite English.lproj/MainMenu.nib.strings
 
-convert each strings file's encoding to utf-8 with unix new line. (e.g. utf-8-unix in Emacs)
+ibtool --generate-stringsfile English.lproj/Welcome.nib.strings English.lproj/Welcome.nib
+nkf --unix --utf8 --overwrite English.lproj/Welcome.nib.strings
+
+Note: nkf can be installed by the command "fink install nkf".
 
 2. create message table
 
@@ -13,8 +16,8 @@ cut -d = -f 1 etc/strings.ja.txt > etc/strings.ja.txt.key
 cut -d = -f 1 etc/strings.ja.txt.new > etc/strings.ja.txt.new.key 
 sort etc/strings.ja.txt.new.key > etc/strings.ja.txt.new.key.sort
 diff etc/strings.ja.txt.key etc/strings.ja.txt.new.key.sort
-# add new entries manually
-rm etc/strings.ja.txt.new.key etc/strings.ja.txt.new etc/strings.ja.txt.new.key etc/strings.ja.txt.new.key.sort
+# add new entries manually to etc/strings.ja.txt
+rm etc/strings.ja.txt.new.key etc/strings.ja.txt.new etc/strings.ja.txt.key etc/strings.ja.txt.new.key.sort
 
 * this step is needed only when new nib file is added or updated
 
