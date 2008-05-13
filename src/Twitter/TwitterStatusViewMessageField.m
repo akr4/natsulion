@@ -57,12 +57,11 @@
 
 - (NSDictionary*) defaultFontAttributes {
     NSMutableParagraphStyle *style = [[[NSParagraphStyle defaultParagraphStyle] mutableCopy] autorelease];
-//    [style setLineSpacing:0.0];
+    [style setLineSpacing:-4.0];
 //    [style setMinimumLineHeight:4];
     return [NSDictionary dictionaryWithObjectsAndKeys:
-//            [NSFont userFontOfSize:[NSFont systemFontSize]], NSFontAttributeName,
-            [NSFont userFontOfSize:[[NTLNConfiguration instance] fontSize]],
-            NSFontAttributeName,
+//            [NSFont fontWithName:@"HiraMaruPro-W4" size:[[NTLNConfiguration instance] fontSize]], NSFontAttributeName,
+            [NSFont userFontOfSize:[[NTLNConfiguration instance] fontSize]], NSFontAttributeName,
             style, NSParagraphStyleAttributeName,
             nil];
 
