@@ -7,6 +7,34 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.0</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.0
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-52'&gt;NTLN-52&lt;/a&gt;] -         password should not be required when the user changes username at account info panel
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-159'&gt;NTLN-159&lt;/a&gt;] -         changing account is not applied immediately (restart needed)
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-162'&gt;NTLN-162&lt;/a&gt;] -         need to change the filter predicate for &quot;sent&quot; view along with user switch
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-161'&gt;NTLN-161&lt;/a&gt;] -         need better mouse over effect for icon
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Mon, 31 Mar 2008 02:13:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_1.0.zip"
+        length="1154738"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 0.34</title>
       <description>
         Release Notes - NatsuLion - Version 0.34

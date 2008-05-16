@@ -9,6 +9,16 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="appcast.xml">
 </head>
 <body id="INDEX">
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-345529-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
 <div id="PAGETOP">
 
 
@@ -49,9 +59,9 @@
 <div class="text">
 <h3>About NatsuLion</h3>
 <p>
-NatsuLion is a Twitter client for Mac OSX. Currently in its beta state.<br/>
+NatsuLion is a simple Twitter client for Mac OSX.<br/>
 
-Note: Leopard (10.5) is required.
+Note: Leopard (10.5) is required currently.
 </p>
 
 Its goals are the follows:
@@ -61,11 +71,10 @@ Its goals are the follows:
   <li>Easy to use for Twitter light users</li>
 </ul>
 You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">download</a> the latest version from.
-
 </p>
 <p>
-<img src="images/ss1.png" alt="screen shot 1">
-<img src="images/ss_dark1.png" alt="screen shot 2 (dark color scheme)">
+<img src="images/ss_en_light.png" alt="screen shot 1 (light color scheme)">
+<img src="images/ss_en_dark.png" alt="screen shot 2 (dark color scheme)">
 </p>
 
 <h3>Main Functions</h3>
@@ -99,7 +108,7 @@ Please find these licenses <a href="http://www.physalis.net/repos/natsulion/trun
 
 <h3>Bug Tracking System</h3>
 <p>
-If you find a bug or have new feature ideas, please file issues to <a href="http://jira.physalis.net/browse/NTLN">JIRA</a>. Or tell me on Twitter.(<a href="http://twitter.com/akr">@akr</a>)
+If you find a bug or have new feature ideas, please file issues to <a href="http://jira.physalis.net/browse/NTLN">JIRA</a>. Or tell me on Twitter.(<a href="http://twitter.com/NatsuLionEn">@NatsuLionEn</a>)
 </p>
 
 <h3>Special Thanks</h3>
@@ -108,6 +117,25 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 1.0 (2008/03/31)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.0.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.0.zip');">download</a>
+<p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-52'>NTLN-52</a>] -         password should not be required when the user changes username at account info panel
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-159'>NTLN-159</a>] -         changing account is not applied immediately (restart needed)
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-162'>NTLN-162</a>] -         need to change the filter predicate for &quot;sent&quot; view along with user switch
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-161'>NTLN-161</a>] -         need better mouse over effect for icon
+</li>
+</ul>
+</p>
+        
 <h3>Version 0.34 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.34.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.34.zip');">download</a>
 <p>
 Bug
@@ -617,21 +645,12 @@ New Feature
 <h2>Addresses</h2>
 <ul>
  <li id="FOOTER01"><a href="#PAGETOP">Page Top</a></li>
+ <li id="FOOTER02"><a href="http://twitter.com/akr">akr</a></li>
  <li id="FOOTER02"><address><a href="mailto:ue@gol.com">ue@gol.com</a></address></li>
 </ul>
 </div>
 
 </div>
 
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-345529-1");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
 </body>
 </html>

@@ -52,6 +52,14 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
+			<string>NTLNKeywordSearchField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSSearchField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>NTLNMessageTableView</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
@@ -89,6 +97,12 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>toggleAutomaticLinkDetection</key>
@@ -106,12 +120,6 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NSObject</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -140,6 +148,14 @@
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSWindowController</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMainWindow</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSWindow</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -174,6 +190,28 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>filter</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NTLNKeywordFilterView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>messageListViewsController</key>
+				<string>NTLNMessageListViewsController</string>
+				<key>messageTableViewController</key>
+				<string>NTLNMessageTableViewController</string>
+				<key>searchTextField</key>
+				<string>NTLNKeywordSearchField</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSView</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
 				<key>changeViewByMenu</key>
 				<string>id</string>
 				<key>changeViewByToolbar</key>
@@ -196,7 +234,11 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>closeKeywordFilterView</key>
+				<string>id</string>
 				<key>markAllAsRead</key>
+				<string>id</string>
+				<key>openKeywordFilterView</key>
 				<string>id</string>
 				<key>sendMessage</key>
 				<string>id</string>
@@ -209,6 +251,8 @@
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
+				<key>keywordFilterView</key>
+				<string>NTLNKeywordFilterView</string>
 				<key>mainToolbar</key>
 				<string>NSToolbar</string>
 				<key>mainWindow</key>

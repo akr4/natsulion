@@ -8,6 +8,27 @@
 #import "NTLNColors.h"
 #import "NTLNNotification.h"
 
+@implementation NTLNMainWindow
+
+- (void)sendEvent:(NSEvent *)event {
+    if ([event type] == NSKeyDown) {
+        unichar keyChar = [[event characters] characterAtIndex:0];
+//        NSLog(@"MainWindow: %d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
+        switch (keyChar) {
+            case 27:
+                [[self windowController] closeKeywordFilterView:self];
+                break;
+            default:
+                [super sendEvent:event];
+                break;
+        }
+    } else {
+        [super sendEvent:event];
+    }
+}
+
+@end
+
 @implementation NTLNMainWindowController
 
 #pragma mark Initialization
@@ -189,6 +210,13 @@
     //    NSColor *semiTransparentBlue =
 //    [NSColor colorWithDeviceRed:0.0 green:0.0 blue:1.0 alpha:0.5];
 //    [[self window] setBackgroundColor:semiTransparentBlue];
+    
+    NSRect keywordFilterViewRect = [keywordFilterView frame];
+//    keywordFilterViewRect.size.height = 0;
+    keywordFilterViewRect.origin.y += [keywordFilterView defaultHeight];
+    [keywordFilterView setFrame:keywordFilterViewRect];
+    
+    [messageTableViewController resizeTop:[keywordFilterView defaultHeight]];
 }
 
 // this method is not needed actually but called by array controller's binding
@@ -278,6 +306,116 @@
     [messageTextField setEnabled:TRUE];
     [messageTextField updateState];
     [statusTextField setStringValue:@""];
+}
+
+- (id) enclosingTextField:(NSTextView*) view {
+    id back = view;
+    while (true) {
+        back = [(NSView*)back superview];
+        if ([back isKindOfClass:[NSTextField class]]) {
+            return back;
+        }
+        if ([back isKindOfClass:[NSWindow class]] || !back) {
+            return view;
+        }
+    }
+}
+
+- (BOOL) hasKeywordFilterTextFieldFocus {
+    if (![[mainWindow firstResponder] isKindOfClass:[NSView class]]) {
+        return FALSE;
+    }
+
+    NSView *v = (NSView*)[mainWindow firstResponder];
+    while (v) {
+        v = [v superview];
+        if (v == keywordFilterView) {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+- (void) openKeywordFilterViewInternal {
+    NSRect fromViewFrame = [keywordFilterView frame];
+    NSRect toViewFrame = fromViewFrame;
+    toViewFrame.origin.y -= [keywordFilterView defaultHeight];
+
+//    NSLog(@"open: %f -> %f", fromViewFrame.origin.y, toViewFrame.origin.y);
+    
+    NSMutableDictionary *viewDict = [NSMutableDictionary dictionary];
+    [viewDict setObject:keywordFilterView forKey:NSViewAnimationTargetKey];
+    [viewDict setObject:[NSValue valueWithRect:fromViewFrame] forKey:NSViewAnimationStartFrameKey];
+    [viewDict setObject:[NSValue valueWithRect:toViewFrame] forKey:NSViewAnimationEndFrameKey];
+
+    NSRect fromListFrame = [[messageTableViewController viewForTabItem] frame];
+    NSRect toListFrame = fromListFrame;
+    toListFrame.size.height -= [keywordFilterView defaultHeight];
+
+    NSMutableDictionary *listDict = [NSMutableDictionary dictionary];
+    [listDict setObject:[messageTableViewController viewForTabItem] forKey:NSViewAnimationTargetKey];
+    [listDict setObject:[NSValue valueWithRect:fromListFrame] forKey:NSViewAnimationStartFrameKey];
+    [listDict setObject:[NSValue valueWithRect:toListFrame] forKey:NSViewAnimationEndFrameKey];
+    
+    NSViewAnimation *theAnim = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObjects:listDict, viewDict, nil]];
+    [theAnim setDuration:0.15];
+    [theAnim setAnimationCurve:NSAnimationEaseInOut];
+    [theAnim startAnimation];
+    [theAnim release];
+}
+
+- (IBAction) openKeywordFilterView:(id)sender {
+    if ([self hasKeywordFilterTextFieldFocus]) {
+        return;
+    }
+    
+    if (![keywordFilterView opened]) {
+        [self openKeywordFilterViewInternal];
+    }
+
+    _previousFirstResponder = [mainWindow firstResponder];
+    if ([_previousFirstResponder isKindOfClass:[NSTextView class]]) {
+        _previousFirstResponder = [self enclosingTextField:(NSTextView*)_previousFirstResponder];
+    }
+
+    [keywordFilterView postOpen];
+}
+
+- (IBAction) closeKeywordFilterView:(id)sender {
+    if (![keywordFilterView opened]) {
+        return;
+    }
+
+    NSRect fromViewFrame = [keywordFilterView frame];
+    NSRect toViewFrame = fromViewFrame;
+    toViewFrame.origin.y += [keywordFilterView defaultHeight];
+    
+//    NSLog(@"close: %f -> %f", fromViewFrame.origin.y, toViewFrame.origin.y);
+
+    NSMutableDictionary *viewDict = [NSMutableDictionary dictionary];
+    [viewDict setObject:keywordFilterView forKey:NSViewAnimationTargetKey];
+    [viewDict setObject:[NSValue valueWithRect:fromViewFrame] forKey:NSViewAnimationStartFrameKey];
+    [viewDict setObject:[NSValue valueWithRect:toViewFrame] forKey:NSViewAnimationEndFrameKey];
+    
+    NSRect fromListFrame = [[messageTableViewController viewForTabItem] frame];
+    NSRect toListFrame = fromListFrame;
+    toListFrame.size.height += [keywordFilterView defaultHeight];
+    
+    NSMutableDictionary *listDict = [NSMutableDictionary dictionary];
+    [listDict setObject:[messageTableViewController viewForTabItem] forKey:NSViewAnimationTargetKey];
+    [listDict setObject:[NSValue valueWithRect:fromListFrame] forKey:NSViewAnimationStartFrameKey];
+    [listDict setObject:[NSValue valueWithRect:toListFrame] forKey:NSViewAnimationEndFrameKey];
+
+    NSViewAnimation *theAnim = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObjects:listDict, viewDict, nil]];
+    [theAnim setDuration:0.15];
+    [theAnim setAnimationCurve:NSAnimationEaseInOut];
+    [theAnim startAnimation];
+    [theAnim release];
+    
+    [keywordFilterView postClose];
+    if ([self hasKeywordFilterTextFieldFocus]) {
+        [mainWindow makeFirstResponder:_previousFirstResponder];
+    }
 }
 
 #pragma mark Add new message

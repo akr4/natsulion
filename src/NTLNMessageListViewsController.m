@@ -89,6 +89,7 @@
 
 - (void) dealloc {
     [_messageViewInfoArray release];
+    [_auxiliaryPredicate release];
     [super dealloc];
 }
 
@@ -127,12 +128,34 @@
     [self changeView:[sender tag]];
 }
 
+- (NSPredicate*) currentPredicate {
+    return [[[_messageViewInfoArray objectAtIndex:_currentViewIndex] predicate] copy];
+}
+
 - (void) applyCurrentPredicate {
-    [messageViewControllerArrayController setFilterPredicate:[[[_messageViewInfoArray objectAtIndex:_currentViewIndex] predicate] copy]];
+    [messageViewControllerArrayController
+     setFilterPredicate:[NSCompoundPredicate
+                         andPredicateWithSubpredicates:[NSArray arrayWithObjects:[self currentPredicate], _auxiliaryPredicate, nil]]];
 }
 
 - (int) currentViewIndex {
     return _currentViewIndex;
+}
+
+- (void) addAuxiliaryPredicate:(NSPredicate*) predicate {
+    if (_auxiliaryPredicate) {
+        [_auxiliaryPredicate release];
+    }
+    _auxiliaryPredicate = predicate;
+    [_auxiliaryPredicate retain];
+
+    [messageViewControllerArrayController setFilterPredicate:
+     [NSCompoundPredicate andPredicateWithSubpredicates:[NSArray arrayWithObjects:[self currentPredicate], predicate, nil]]]; 
+}
+
+- (void) resetAuxiliaryPredicate {
+    [_auxiliaryPredicate release];
+    _auxiliaryPredicate = nil;
 }
      
 @end

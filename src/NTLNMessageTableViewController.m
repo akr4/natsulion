@@ -294,6 +294,12 @@
     }
 }
 
+- (void) resizeTop:(float)deltaHeight {
+    NSRect frame = [scrollView frame];
+    frame.size.height += deltaHeight;
+    [scrollView setFrame:frame];
+}
+
 - (void) nextMessage {
     [self selectionDown];
     [[viewColumn tableView] scrollRowToVisible:[[[viewColumn tableView] selectedRowIndexes] firstIndex]];

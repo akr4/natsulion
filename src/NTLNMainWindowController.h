@@ -7,8 +7,14 @@
 #import "NTLNMultiTasksProgressIndicator.h"
 #import "NTLNBufferedMessageNotifier.h"
 #import "NTLNErrorMessageViewController.h"
+#import "NTLNKeywordFilterView.h"
 
 #define NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER 3.0f
+
+@interface NTLNMainWindow : NSWindow {
+    
+}
+@end
 
 @protocol NTLNTimelineSortOrderChangeObserver
 - (void) timelineSortOrderChangeObserverSortOrderChanged;
@@ -35,11 +41,13 @@
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     IBOutlet NSTextField *statisticsTextField;
     IBOutlet NSLevelIndicator *messagePostLevelIndicator;
+    IBOutlet NTLNKeywordFilterView *keywordFilterView;
     
     Twitter *_twitter;
 
     BOOL _createFavoriteIsWorking;
     NTLNBufferedMessageNotifier *_messageNotifier;
+    NSResponder *_previousFirstResponder;
     
     // Menu & Toolbar
     IBOutlet NSMenu *viewMenu;
@@ -54,6 +62,8 @@
 - (IBAction) sendMessage:(id) sender;
 - (IBAction) updateTimelineCorrespondsToView:(id)sender;
 - (IBAction) markAllAsRead:(id)sender;
+- (IBAction) openKeywordFilterView:(id)sender;
+- (IBAction) closeKeywordFilterView:(id)sender;
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;
@@ -62,4 +72,5 @@
 
 - (void) setMessageStatisticsField:(NSString*)value;
 - (void) setMessagePostLevel:(float)level;
+
 @end

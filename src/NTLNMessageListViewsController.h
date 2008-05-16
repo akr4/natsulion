@@ -7,6 +7,7 @@
     
     NSMutableArray *_messageViewInfoArray;
     int _currentViewIndex;
+    NSPredicate *_auxiliaryPredicate;
 }
 - (id) init;
 //- (void) addInfoWithPredicate:(NSPredicate*)predicate;
@@ -14,4 +15,6 @@
 - (IBAction) changeViewByMenu:(id) sender;
 - (void) applyCurrentPredicate;
 - (int) currentViewIndex;
+- (void) addAuxiliaryPredicate:(NSPredicate*) predicate;
+- (void) resetAuxiliaryPredicate;
 @end

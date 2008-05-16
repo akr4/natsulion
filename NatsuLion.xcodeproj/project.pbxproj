@@ -26,6 +26,7 @@
 		E93467160D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467150D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m */; };
 		E93F7BE80D27DC6B00366600 /* TwitterStatusViewMessageField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */; };
 		E94B13CF0D6AA6C700F80617 /* CTGradient.m in Sources */ = {isa = PBXBuildFile; fileRef = E94B13CE0D6AA6C700F80617 /* CTGradient.m */; };
+		E94CC0D10DD8C8B100D8711D /* NTLNKeywordFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E94CC0D00DD8C8B100D8711D /* NTLNKeywordFilterView.m */; };
 		E95D34FB0D2F3F6700EA6958 /* NTLNColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */; };
 		E9614CE10D27BC75009743CE /* NTLNURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* NTLNURLUtils.m */; };
 		E9614D130D27BEA4009743CE /* NTLNURLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9614CE00D27BC75009743CE /* NTLNURLUtils.m */; };
@@ -141,6 +142,8 @@
 		E93F7BE70D27DC6B00366600 /* TwitterStatusViewMessageField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewMessageField.m; sourceTree = "<group>"; };
 		E94B13CD0D6AA6C700F80617 /* CTGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTGradient.h; sourceTree = "<group>"; };
 		E94B13CE0D6AA6C700F80617 /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
+		E94CC0CF0DD8C8B100D8711D /* NTLNKeywordFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNKeywordFilterView.h; sourceTree = "<group>"; };
+		E94CC0D00DD8C8B100D8711D /* NTLNKeywordFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNKeywordFilterView.m; sourceTree = "<group>"; };
 		E95D34F90D2F3F6700EA6958 /* NTLNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNColors.h; sourceTree = "<group>"; };
 		E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNColors.m; sourceTree = "<group>"; };
 		E9614CDB0D27BADC009743CE /* NTLNURLUtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNURLUtilsTest.h; sourceTree = "<group>"; };
@@ -175,8 +178,6 @@
 		E991C6BB0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTimestampField.h; sourceTree = "<group>"; };
 		E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTimestampField.m; sourceTree = "<group>"; };
 		E99332F20D8FF1A900CDE7C4 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.nib.strings; sourceTree = "<group>"; };
-		E99333130D8FF29000CDE7C4 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		E993333C0D901D6800CDE7C4 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* NTLNMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessage.h; sourceTree = "<group>"; };
 		E996326A0D1E5D2400860515 /* NTLNMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessage.m; sourceTree = "<group>"; };
 		E9A411270D29904F003BFA9F /* NTLNAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAppController.h; sourceTree = "<group>"; };
@@ -274,6 +275,8 @@
 				E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */,
 				E99632690D1E5D2400860515 /* NTLNMessage.h */,
 				E996326A0D1E5D2400860515 /* NTLNMessage.m */,
+				E94CC0CF0DD8C8B100D8711D /* NTLNKeywordFilterView.h */,
+				E94CC0D00DD8C8B100D8711D /* NTLNKeywordFilterView.m */,
 				E916EED90D95381A00EA04C7 /* NTLNUser.h */,
 				E916EEDA0D95381A00EA04C7 /* NTLNUser.m */,
 				E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */,
@@ -632,6 +635,7 @@
 				E9FE91670D81527C0012136E /* NTLNBufferedMessageNotifier.m in Sources */,
 				E916EEDB0D95381A00EA04C7 /* NTLNUser.m in Sources */,
 				E976152B0D9FDE10007893CC /* Crypto.m in Sources */,
+				E94CC0D10DD8C8B100D8711D /* NTLNKeywordFilterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,7 +674,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E96C36A80D2A897800CED33F /* English */,
-				E993333C0D901D6800CDE7C4 /* Japanese */,
 			);
 			name = Welcome.nib;
 			sourceTree = "<group>";
@@ -679,7 +682,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9F1DB3C0D13CF000072CE81 /* English */,
-				E99333130D8FF29000CDE7C4 /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";

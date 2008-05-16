@@ -9,6 +9,15 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" href="appcast.xml">
 </head>
 <body id="INDEX">
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-345529-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
 <div id="PAGETOP">
 
 
@@ -48,8 +57,8 @@
 <h2>夏ライオン</h2>
 <div class="text">
 <h3>夏ライオンとは</h3>
-<p>OSX 用の Twitter クライアントです。ベータ版を公開しています。<br/>
-※ Mac OSX Leopard のみで動作します。</p>
+<p>OSX 用の Twitter クライアントです。<br/>
+※ 現在のところ Mac OSX Leopard のみで動作します。</p>
 
 <ul>
   <li>シンプル</li>
@@ -102,7 +111,7 @@
 
 <h3>バグトラッキングシステム</h3>
 <p>
-バグ報告、ご要望は<a href="http://jira.physalis.net/browse/NTLN">こちら</a>からどうぞ。Twitter でもお気軽にどうぞ。(<a href="http://twitter.com/akr">@akr</a>)
+バグ報告、ご要望は<a href="http://jira.physalis.net/browse/NTLN">こちら</a>からどうぞ。Twitter でもお気軽にどうぞ。(<a href="http://twitter.com/NatsuLion">@NatsuLion</a>)
 </p>
 
 <h3>謝辞</h3>
@@ -111,6 +120,26 @@
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 1.0 (2008/03/31)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.0.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.0.zip');">download</a>
+<p>
+
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-52'>NTLN-52</a>] -         password should not be required when the user changes username at account info panel
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-159'>NTLN-159</a>] -         changing account is not applied immediately (restart needed)
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-162'>NTLN-162</a>] -         need to change the filter predicate for &quot;sent&quot; view along with user switch
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-161'>NTLN-161</a>] -         need better mouse over effect for icon
+</li>
+</ul>
+</p>
+
 <h3>Version 0.34 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.34.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.34.zip');">download</a>
 <p>
 Bug
@@ -665,6 +694,7 @@ New Feature
 <h2>連絡先</h2>
 <ul>
  <li id="FOOTER01"><a href="#PAGETOP">ページトップ</a></li>
+ <li id="FOOTER02"><a href="http://twitter.com/akr">akr</a></li>
  <li id="FOOTER02"><address><a href="mailto:ue@gol.com">ue@gol.com</a></address></li>
 </ul>
 </div>
@@ -672,15 +702,6 @@ New Feature
 </div>
 
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-345529-1");
-pageTracker._initData();
-pageTracker._trackPageview();
-</script>
 </body>
 </html>
 

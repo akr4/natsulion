@@ -31,6 +31,7 @@
                                     repeats:FALSE];
     _messageCountHistory = [[NSMutableArray alloc] initWithCapacity:30];
     _numberOfPostedMessages = 0;
+    
     return self;
 }
 

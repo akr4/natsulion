@@ -43,6 +43,7 @@
 - (NSView*) viewForTabItem;
 - (void) newMessageArrived:(NSArray*)controllers;
 - (void) resize:(float)deltaHeight;
+- (void) resizeTop:(float)deltaHeight;
 - (void) reloadTableView;
 - (float) knobPosition;
 - (void) setKnobPosition:(float)position;

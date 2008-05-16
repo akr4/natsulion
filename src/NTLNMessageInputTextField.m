@@ -65,6 +65,11 @@
     [super dealloc];
 }
 
+- (BOOL)becomeFirstResponder {
+    [(NSTextView*)[[self window] fieldEditor:TRUE forObject:self] setInsertionPointColor:[[NTLNColors instance] colorForText]];
+    return [super becomeFirstResponder];
+}
+
 - (void) setLengthForWarning:(int)warning max:(int)max {
     _warningLength = warning;
     _maxLength = max;
@@ -282,9 +287,9 @@
     if (_backgroundColor) {
         [_backgroundColor set];
         NSFrameRectWithWidth(aRect, 3.0);
-        if ([self isEnabled]) {
-            NSRectFillUsingOperation(aRect, NSCompositeCopy);
-        }
+//        if ([self isEnabled]) {
+//            NSRectFillUsingOperation(aRect, NSCompositeCopy);
+//        }
     }
 
 }
