@@ -117,6 +117,26 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 1.1 (2008/05/17)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.1.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.1.zip');">download</a>
+<p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-171'>NTLN-171</a>] -         smaller line spacing (thanks <a href="http://twitter.com/takuma104">@takuma104</a>)
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-172'>NTLN-172</a>] -         word filter feature (thanks <a href="http://twitter.com/mootoh">@mootoh</a> for the patch <a href="http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/">http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/)</a>))
+</li>
+</ul>
+    
+Task
+<li>[<a href='http://jira.physalis.net/browse/NTLN-173'>NTLN-173</a>] -         new app icon
+</li>
+</ul>
+</p>
+
 <h3>Version 1.0 (2008/03/31)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.0.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.0.zip');">download</a>
 <p>
 Bug
