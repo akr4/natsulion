@@ -1,5 +1,5 @@
-//  Based on NTLNFilterController.h created by mootoh on 4/30/08.
-//  Copyright 2008 mootoh. All rights reserved.
+// Based on NTLNFilterController.m created by mootoh on 4/30/08.
+// http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/
 
 #import <Cocoa/Cocoa.h>
 #import "NTLNMessageListViewsController.h"
