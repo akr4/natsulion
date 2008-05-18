@@ -712,6 +712,7 @@
 					"\"$(SRCROOT)/frameworks\"",
 					"\"$(SRCROOT)/../../../../Library/Frameworks\"",
 				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -720,6 +721,7 @@
 				GCC_PREFIX_HEADER = NatsuLion_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = "-lcrypto";
 				PRODUCT_NAME = NatsuLion;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
