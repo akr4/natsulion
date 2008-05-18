@@ -151,6 +151,8 @@
 		E9614CE00D27BC75009743CE /* NTLNURLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNURLUtils.m; sourceTree = "<group>"; };
 		E9614CE70D27BCBB009743CE /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9614CE80D27BCBB009743CE /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
+		E9657F0C0DDF138100F6DE92 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		E9657F0E0DDF138E00F6DE92 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E96801F30D2748DB0048A163 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E96C36200D2A6EA300CED33F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		E96C362A0D2A71BA00CED33F /* NTLNKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNKeyChain.h; sourceTree = "<group>"; };
@@ -674,6 +676,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E96C36A80D2A897800CED33F /* English */,
+				E9657F0E0DDF138E00F6DE92 /* Japanese */,
 			);
 			name = Welcome.nib;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9F1DB3C0D13CF000072CE81 /* English */,
+				E9657F0C0DDF138100F6DE92 /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";

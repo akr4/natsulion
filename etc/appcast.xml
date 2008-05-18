@@ -7,6 +7,37 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.1</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.1
+        
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-171'&gt;NTLN-171&lt;/a&gt;] -         smaller line spacing (thanks &lt;a href="http://twitter.com/takuma104"&gt;@takuma104&lt;/a&gt;)
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-172'&gt;NTLN-172&lt;/a&gt;] -         word filter feature (thanks &lt;a href="http://twitter.com/mootoh"&gt;@mootoh&lt;/a&gt; for the patch &lt;a href="http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/"&gt;http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/&lt;/a&gt;)
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Task
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-173'&gt;NTLN-173&lt;/a&gt;] -         new app icon
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Sat, 17 May 2008 22:32:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_1.1.zip"
+        length="1246929"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.0</title>
       <description>
         Release Notes - NatsuLion - Version 1.0

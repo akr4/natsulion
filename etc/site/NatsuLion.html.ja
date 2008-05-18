@@ -122,6 +122,9 @@ pageTracker._trackPageview();
 <h2>リリースノート</h2>
 <h3>Version 1.1 (2008/05/17)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.1.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.1.zip');">download</a>
 <p>
+<p>フィルタ機能が追加されました。command + F でダイアログが表示されます。@mootoh さんに送っていただいたパッチを参考にしています。
+</p>
+
 Improvement
 <ul>
 <li>[<a href='http://jira.physalis.net/browse/NTLN-171'>NTLN-171</a>] -         smaller line spacing (thanks <a href="http://twitter.com/takuma104">@takuma104</a>)
@@ -130,11 +133,12 @@ Improvement
     
 New Feature
 <ul>
-<li>[<a href='http://jira.physalis.net/browse/NTLN-172'>NTLN-172</a>] -         word filter feature (thanks <a href="http://twitter.com/mootoh">@mootoh</a> for the patch <a href="http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/">http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/)</a>))
+<li>[<a href='http://jira.physalis.net/browse/NTLN-172'>NTLN-172</a>] -         word filter feature (thanks <a href="http://twitter.com/mootoh">@mootoh</a> for the patch <a href="http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/">http://blog.deadbeaf.org/2008/05/01/hack-natsulion-to-filter-messages/</a>)
 </li>
 </ul>
     
 Task
+<ul>
 <li>[<a href='http://jira.physalis.net/browse/NTLN-173'>NTLN-173</a>] -         new app icon
 </li>
 </ul>
