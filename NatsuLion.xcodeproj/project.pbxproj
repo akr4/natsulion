@@ -11,6 +11,10 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E900C14F0D5EAB160071837C /* NTLNMessageListViewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */; };
+		E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F300DE1A4A4008CC765 /* friends.tiff */; };
+		E90B0F350DE1A4B9008CC765 /* replies.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F320DE1A4B9008CC765 /* replies.tiff */; };
+		E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F330DE1A4B9008CC765 /* sent.tiff */; };
+		E90B0F370DE1A4B9008CC765 /* unread.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F340DE1A4B9008CC765 /* unread.tiff */; };
 		E90F0B400D2E8E190067A9CA /* NTLNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */; };
 		E915200F0D16D3B7008D6992 /* NTLNPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */; };
 		E9160B770D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */; };
@@ -113,6 +117,10 @@
 		8D1107320486CEB800E47090 /* NatsuLion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatsuLion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageListViewsController.h; sourceTree = "<group>"; };
 		E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageListViewsController.m; sourceTree = "<group>"; };
+		E90B0F300DE1A4A4008CC765 /* friends.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = friends.tiff; sourceTree = "<group>"; };
+		E90B0F320DE1A4B9008CC765 /* replies.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = replies.tiff; sourceTree = "<group>"; };
+		E90B0F330DE1A4B9008CC765 /* sent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sent.tiff; sourceTree = "<group>"; };
+		E90B0F340DE1A4B9008CC765 /* unread.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = unread.tiff; sourceTree = "<group>"; };
 		E90F0B3E0D2E8E190067A9CA /* NTLNConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNConfiguration.h; sourceTree = "<group>"; };
 		E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNConfiguration.m; sourceTree = "<group>"; };
 		E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -151,8 +159,6 @@
 		E9614CE00D27BC75009743CE /* NTLNURLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNURLUtils.m; sourceTree = "<group>"; };
 		E9614CE70D27BCBB009743CE /* Test.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Test.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9614CE80D27BCBB009743CE /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
-		E9657F0C0DDF138100F6DE92 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		E9657F0E0DDF138E00F6DE92 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E96801F30D2748DB0048A163 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E96C36200D2A6EA300CED33F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		E96C362A0D2A71BA00CED33F /* NTLNKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNKeyChain.h; sourceTree = "<group>"; };
@@ -461,6 +467,10 @@
 		E9A8A7360D79328D008567CC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E90B0F320DE1A4B9008CC765 /* replies.tiff */,
+				E90B0F330DE1A4B9008CC765 /* sent.tiff */,
+				E90B0F340DE1A4B9008CC765 /* unread.tiff */,
+				E90B0F300DE1A4A4008CC765 /* friends.tiff */,
 				E9A8A7370D79328D008567CC /* badges */,
 				E9A8A73C0D79328D008567CC /* new-dark.tiff */,
 				E9A8A73D0D79328D008567CC /* new-light.tiff */,
@@ -564,6 +574,10 @@
 				E9D23B710D8EF5BD006191EE /* Localizable.strings in Resources */,
 				E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */,
 				E916EF7C0D96AE8600EA04C7 /* NatsuLion.icns in Resources */,
+				E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */,
+				E90B0F350DE1A4B9008CC765 /* replies.tiff in Resources */,
+				E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */,
+				E90B0F370DE1A4B9008CC765 /* unread.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,7 +690,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E96C36A80D2A897800CED33F /* English */,
-				E9657F0E0DDF138E00F6DE92 /* Japanese */,
 			);
 			name = Welcome.nib;
 			sourceTree = "<group>";
@@ -685,7 +698,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9F1DB3C0D13CF000072CE81 /* English */,
-				E9657F0C0DDF138100F6DE92 /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";

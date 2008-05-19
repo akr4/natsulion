@@ -96,12 +96,12 @@
     _toolbarItems = [[NSMutableDictionary alloc] init];
     
     // setup segumented control
-    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 260, 25)] autorelease];
+    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 150, 25)] autorelease];
     [_messageViewSelector setSegmentCount:4];
-    [_messageViewSelector setLabel:@"Friends" forSegment:0];
-    [_messageViewSelector setLabel:@"Replies" forSegment:1];
-    [_messageViewSelector setLabel:@"Sent" forSegment:2];
-    [_messageViewSelector setLabel:@"Unread" forSegment:3];
+    [_messageViewSelector setImage:[NSImage imageNamed:@"friends"] forSegment:0];
+    [_messageViewSelector setImage:[NSImage imageNamed:@"replies"] forSegment:1];
+    [_messageViewSelector setImage:[NSImage imageNamed:@"sent"] forSegment:2];
+    [_messageViewSelector setImage:[NSImage imageNamed:@"unread"] forSegment:3];
     [_messageViewSelector setSelected:TRUE forSegment:0];
     [_messageViewSelector setTarget:messageListViewsController];
     [_messageViewSelector setAction:@selector(changeViewByToolbar:)];
@@ -185,10 +185,19 @@
     [markAllAsReadButton setTarget:self];
     [markAllAsReadButton setAction:@selector(markAllAsRead:)];
     [self addToolbarItemWithIdentifier:@"markallasread"
-                                 label:NSLocalizedString(@"Mark all as read", "Toolbar label")
+                                 label:NSLocalizedString(@"Mark all as read", @"Toolbar label")
                                 target:self
                                 action:@selector(markAllAsRead:)
                                   view:markAllAsReadButton];
+    
+    // location combobox
+    NSComboBox *locationComoboBox = [[[NSComboBox alloc] initWithFrame:NSMakeRect(0, 0, 100, 25)] autorelease];
+    [locationComoboBox setButtonBordered:FALSE];
+    [self addToolbarItemWithIdentifier:@"location" 
+                                 label:NSLocalizedString(@"Location", @"Toolbar label")
+                                target:self 
+                                action:@selector(changeLocation:)
+                                  view:locationComoboBox];
 
     [[self window] setToolbar:toolbar];
 }
@@ -621,7 +630,7 @@
 }
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", @"location", nil];
 }
 
 #pragma mark Actions
@@ -655,6 +664,10 @@
     [messageTableViewController reloadTableView];
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ
                                                         object:nil];            
+}
+
+- (IBAction) changeLocation:(id)sender {
+    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 #pragma mark Notifications
