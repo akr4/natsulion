@@ -12,7 +12,6 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E900C14F0D5EAB160071837C /* NTLNMessageListViewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */; };
 		E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F300DE1A4A4008CC765 /* friends.tiff */; };
-		E90B0F350DE1A4B9008CC765 /* replies.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F320DE1A4B9008CC765 /* replies.tiff */; };
 		E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F330DE1A4B9008CC765 /* sent.tiff */; };
 		E90B0F370DE1A4B9008CC765 /* unread.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F340DE1A4B9008CC765 /* unread.tiff */; };
 		E90F0B400D2E8E190067A9CA /* NTLNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */; };
@@ -49,6 +48,12 @@
 		E991C6BD0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */; };
 		E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */; };
 		E993333B0D901CA600CDE7C4 /* Welcome.nib in Resources */ = {isa = PBXBuildFile; fileRef = E993333A0D901CA600CDE7C4 /* Welcome.nib */; };
+		E99408070DEF43FD0009A365 /* NTLNSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99408060DEF43FD0009A365 /* NTLNSegmentedCell.m */; };
+		E99408300DEF456A0009A365 /* friends-highlighted.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E99408280DEF456A0009A365 /* friends-highlighted.tiff */; };
+		E99408330DEF456A0009A365 /* sent-highlighted.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E994082B0DEF456A0009A365 /* sent-highlighted.tiff */; };
+		E99408340DEF456A0009A365 /* replies-highlighted.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E994082C0DEF456A0009A365 /* replies-highlighted.tiff */; };
+		E99408350DEF456A0009A365 /* unread-highlighted.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E994082D0DEF456A0009A365 /* unread-highlighted.tiff */; };
+		E99408610DEF4BA50009A365 /* replies.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E99408600DEF4BA50009A365 /* replies.tiff */; };
 		E996326B0D1E5D2400860515 /* NTLNMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = E996326A0D1E5D2400860515 /* NTLNMessage.m */; };
 		E9A411290D29904F003BFA9F /* NTLNAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A411280D29904F003BFA9F /* NTLNAppController.m */; };
 		E9A8A7400D79328E008567CC /* CTBadge_1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E9A8A7380D79328D008567CC /* CTBadge_1.pdf */; };
@@ -118,7 +123,6 @@
 		E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageListViewsController.h; sourceTree = "<group>"; };
 		E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageListViewsController.m; sourceTree = "<group>"; };
 		E90B0F300DE1A4A4008CC765 /* friends.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = friends.tiff; sourceTree = "<group>"; };
-		E90B0F320DE1A4B9008CC765 /* replies.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = replies.tiff; sourceTree = "<group>"; };
 		E90B0F330DE1A4B9008CC765 /* sent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sent.tiff; sourceTree = "<group>"; };
 		E90B0F340DE1A4B9008CC765 /* unread.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = unread.tiff; sourceTree = "<group>"; };
 		E90F0B3E0D2E8E190067A9CA /* NTLNConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNConfiguration.h; sourceTree = "<group>"; };
@@ -186,6 +190,15 @@
 		E991C6BB0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTimestampField.h; sourceTree = "<group>"; };
 		E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTimestampField.m; sourceTree = "<group>"; };
 		E99332F20D8FF1A900CDE7C4 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.nib.strings; sourceTree = "<group>"; };
+		E99408050DEF43FD0009A365 /* NTLNSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNSegmentedCell.h; sourceTree = "<group>"; };
+		E99408060DEF43FD0009A365 /* NTLNSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNSegmentedCell.m; sourceTree = "<group>"; };
+		E99408280DEF456A0009A365 /* friends-highlighted.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "friends-highlighted.tiff"; sourceTree = "<group>"; };
+		E994082B0DEF456A0009A365 /* sent-highlighted.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "sent-highlighted.tiff"; sourceTree = "<group>"; };
+		E994082C0DEF456A0009A365 /* replies-highlighted.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "replies-highlighted.tiff"; sourceTree = "<group>"; };
+		E994082D0DEF456A0009A365 /* unread-highlighted.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "unread-highlighted.tiff"; sourceTree = "<group>"; };
+		E99408600DEF4BA50009A365 /* replies.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = replies.tiff; sourceTree = "<group>"; };
+		E99408640DEF4C760009A365 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		E99408740DEF4C7A0009A365 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* NTLNMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessage.h; sourceTree = "<group>"; };
 		E996326A0D1E5D2400860515 /* NTLNMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessage.m; sourceTree = "<group>"; };
 		E9A411270D29904F003BFA9F /* NTLNAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAppController.h; sourceTree = "<group>"; };
@@ -271,6 +284,8 @@
 				E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */,
 				E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */,
 				E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */,
+				E99408050DEF43FD0009A365 /* NTLNSegmentedCell.h */,
+				E99408060DEF43FD0009A365 /* NTLNSegmentedCell.m */,
 				E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */,
 				E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */,
 				E91B3DB40D13F593007C9762 /* NTLNCustomViewCell.h */,
@@ -467,8 +482,12 @@
 		E9A8A7360D79328D008567CC /* images */ = {
 			isa = PBXGroup;
 			children = (
-				E90B0F320DE1A4B9008CC765 /* replies.tiff */,
+				E99408280DEF456A0009A365 /* friends-highlighted.tiff */,
+				E994082B0DEF456A0009A365 /* sent-highlighted.tiff */,
+				E994082C0DEF456A0009A365 /* replies-highlighted.tiff */,
+				E994082D0DEF456A0009A365 /* unread-highlighted.tiff */,
 				E90B0F330DE1A4B9008CC765 /* sent.tiff */,
+				E99408600DEF4BA50009A365 /* replies.tiff */,
 				E90B0F340DE1A4B9008CC765 /* unread.tiff */,
 				E90B0F300DE1A4A4008CC765 /* friends.tiff */,
 				E9A8A7370D79328D008567CC /* badges */,
@@ -575,9 +594,13 @@
 				E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */,
 				E916EF7C0D96AE8600EA04C7 /* NatsuLion.icns in Resources */,
 				E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */,
-				E90B0F350DE1A4B9008CC765 /* replies.tiff in Resources */,
 				E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */,
 				E90B0F370DE1A4B9008CC765 /* unread.tiff in Resources */,
+				E99408300DEF456A0009A365 /* friends-highlighted.tiff in Resources */,
+				E99408330DEF456A0009A365 /* sent-highlighted.tiff in Resources */,
+				E99408340DEF456A0009A365 /* replies-highlighted.tiff in Resources */,
+				E99408350DEF456A0009A365 /* unread-highlighted.tiff in Resources */,
+				E99408610DEF4BA50009A365 /* replies.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +675,7 @@
 				E916EEDB0D95381A00EA04C7 /* NTLNUser.m in Sources */,
 				E976152B0D9FDE10007893CC /* Crypto.m in Sources */,
 				E94CC0D10DD8C8B100D8711D /* NTLNKeywordFilterView.m in Sources */,
+				E99408070DEF43FD0009A365 /* NTLNSegmentedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +714,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E96C36A80D2A897800CED33F /* English */,
+				E99408740DEF4C7A0009A365 /* Japanese */,
 			);
 			name = Welcome.nib;
 			sourceTree = "<group>";
@@ -698,6 +723,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9F1DB3C0D13CF000072CE81 /* English */,
+				E99408640DEF4C760009A365 /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";

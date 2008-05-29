@@ -158,6 +158,19 @@
 			<string>NSWindow</string>
 		</dict>
 		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>checkForUpdates</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>SUUpdater</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
 			<key>CLASS</key>
 			<string>NTLNMessageScrollView</string>
 			<key>LANGUAGE</key>
@@ -173,19 +186,6 @@
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NSScrollView</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>checkForUpdates</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>SUUpdater</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
