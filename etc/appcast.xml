@@ -7,6 +7,24 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.2</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.2
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-118'&gt;NTLN-118&lt;/a&gt;] - New Toolbar icons! Friends and Sent icons has been contributed by @epytwen
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-176'&gt;NTLN-176&lt;/a&gt;] - To avoid timeout caused by Twitter's overload, now NatsuLion wait 30 seconds until timeout
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Fri, 30 May 2008 07:03:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_1.2.zip"
+        length="1286733"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.1</title>
       <description>
         Release Notes - NatsuLion - Version 1.1

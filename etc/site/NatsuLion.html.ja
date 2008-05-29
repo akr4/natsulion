@@ -120,6 +120,21 @@ pageTracker._trackPageview();
 </p>
 
 <h2>リリースノート</h2>
+<h3>Version 1.2 (2008/05/30)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.2.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.2.zip');">download</a>
+<p>
+<p>Twitter の不調によるタイムアウトを解消するためにタイムアウト値を大きくしました (NTLN-176)。
+</p>
+<p>Friends と Sent のツールバーアイコンを @epytwen に作っていただきました (NTLN-118)。
+</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-118'>NTLN-118</a>] -         use icons for &quot;message view&quot; tool  bar buttons
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-176'>NTLN-176</a>] -         Timeout is occurred frequently
+</li>
+</ul>
+</p>        
+
 <h3>Version 1.1 (2008/05/17)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.1.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.1.zip');">download</a>
 <p>
 <p>フィルタ機能が追加されました。command + F でダイアログが表示されます。@mootoh さんに送っていただいたパッチを参考にしています。

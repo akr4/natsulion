@@ -117,6 +117,21 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+<h3>Version 1.2 (2008/05/30)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.2.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.2.zip');">download</a>
+<p>
+<p>To avoid timeout caused by Twitter's overload, now NatsuLion wait 30 seconds until timeout (NTLN-176)
+</p>
+<p>Friends and Sent icons has been contributed by @epytwen (NTLN-118).
+</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-118'>NTLN-118</a>] -         use icons for &quot;message view&quot; tool  bar buttons
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-176'>NTLN-176</a>] -         Timeout is occurred frequently
+</li>
+</ul>
+</p>        
+
 <h3>Version 1.1 (2008/05/17)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.1.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.1.zip');">download</a>
 <p>
 Improvement
