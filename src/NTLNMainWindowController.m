@@ -7,13 +7,14 @@
 #import "NTLNConfiguration.h"
 #import "NTLNColors.h"
 #import "NTLNNotification.h"
+#import "NTLNSegmentedCell.h"
 
 @implementation NTLNMainWindow
 
 - (void)sendEvent:(NSEvent *)event {
     if ([event type] == NSKeyDown) {
         unichar keyChar = [[event characters] characterAtIndex:0];
-//        NSLog(@"MainWindow: %d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
+        //        NSLog(@"MainWindow: %d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
         switch (keyChar) {
             case 27:
                 [[self windowController] closeKeywordFilterView:self];
@@ -34,7 +35,7 @@
 #pragma mark Initialization
 - (id) init {
     _twitter = [[TwitterImpl alloc] initWithCallback:self];
-//    _twitter = [[TwitterTestStub alloc] init];
+    //    _twitter = [[TwitterTestStub alloc] init];
     
     [NTLNConfiguration setTimelineSortOrderChangeObserver:self];
     
@@ -46,7 +47,7 @@
                                              selector:@selector(statisticsDisplaySettingChanged:)
                                                  name:NTLN_NOTIFICATION_STATISTICS_DISPLAY_SETTING_CHANGED
                                                object:nil];
-
+    
     return self;
 }
 
@@ -59,7 +60,7 @@
 }
 
 - (void) changeViewByMenu:(id)sender {
-    [_messageViewSelector setSelected:TRUE forSegment:[sender tag]];
+    [_messageViewSelector setSelectedSegment:[sender tag]];
     [messageListViewsController changeViewByMenu:sender];
 }
 
@@ -96,15 +97,25 @@
     _toolbarItems = [[NSMutableDictionary alloc] init];
     
     // setup segumented control
-    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 150, 25)] autorelease];
-    [_messageViewSelector setSegmentCount:4];
-    [_messageViewSelector setImage:[NSImage imageNamed:@"friends"] forSegment:0];
-    [_messageViewSelector setImage:[NSImage imageNamed:@"replies"] forSegment:1];
-    [_messageViewSelector setImage:[NSImage imageNamed:@"sent"] forSegment:2];
-    [_messageViewSelector setImage:[NSImage imageNamed:@"unread"] forSegment:3];
-    [_messageViewSelector setSelected:TRUE forSegment:0];
-    [_messageViewSelector setTarget:messageListViewsController];
-    [_messageViewSelector setAction:@selector(changeViewByToolbar:)];
+    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 160, 25)] autorelease];
+    NTLNSegmentedCell *_messageViewSelectorCell = [[[NTLNSegmentedCell alloc] init] autorelease];
+    [_messageViewSelector setCell:_messageViewSelectorCell];
+    [_messageViewSelectorCell setSegmentCount:4];
+    [_messageViewSelectorCell setImage:[NSImage imageNamed:@"friends"] forSegment:0];
+    [_messageViewSelectorCell setImage:[NSImage imageNamed:@"replies"] forSegment:1];
+    [_messageViewSelectorCell setImage:[NSImage imageNamed:@"sent"] forSegment:2];
+    [_messageViewSelectorCell setImage:[NSImage imageNamed:@"unread"] forSegment:3];
+    [_messageViewSelectorCell setHighlightedImage:[NSImage imageNamed:@"friends-highlighted"] forSegment:0];
+    [_messageViewSelectorCell setHighlightedImage:[NSImage imageNamed:@"replies-highlighted"] forSegment:1];
+    [_messageViewSelectorCell setHighlightedImage:[NSImage imageNamed:@"sent-highlighted"] forSegment:2];
+    [_messageViewSelectorCell setHighlightedImage:[NSImage imageNamed:@"unread-highlighted"] forSegment:3];
+    [_messageViewSelectorCell setToolTip:NSLocalizedString(@"Friends", @"toolbar icon tooltip") forSegment:0];
+    [_messageViewSelectorCell setToolTip:NSLocalizedString(@"Replies", @"toolbar icon tooltip") forSegment:1];
+    [_messageViewSelectorCell setToolTip:NSLocalizedString(@"Sent", @"toolbar icon tooltip") forSegment:2];
+    [_messageViewSelectorCell setToolTip:NSLocalizedString(@"Unread", @"toolbar icon tooltip") forSegment:3];
+    [_messageViewSelectorCell setSelectedSegment:0];
+    [_messageViewSelectorCell setTarget:messageListViewsController];
+    [_messageViewSelectorCell setAction:@selector(changeViewByToolbar:)];
     NSToolbarItem *messageViewSelectorToolbarItem = [self addToolbarItemWithIdentifier:@"messageView" 
                                                                                  label:NSLocalizedString(@"View Mode", @"Toolbar text")
                                                                                 target:messageListViewsController 
@@ -190,15 +201,6 @@
                                 action:@selector(markAllAsRead:)
                                   view:markAllAsReadButton];
     
-    // location combobox
-    NSComboBox *locationComoboBox = [[[NSComboBox alloc] initWithFrame:NSMakeRect(0, 0, 100, 25)] autorelease];
-    [locationComoboBox setButtonBordered:FALSE];
-    [self addToolbarItemWithIdentifier:@"location" 
-                                 label:NSLocalizedString(@"Location", @"Toolbar label")
-                                target:self 
-                                action:@selector(changeLocation:)
-                                  view:locationComoboBox];
-
     [[self window] setToolbar:toolbar];
 }
 
@@ -630,7 +632,7 @@
 }
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", @"location", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", nil];
 }
 
 #pragma mark Actions
@@ -664,10 +666,6 @@
     [messageTableViewController reloadTableView];
     [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_MESSAGE_STATUS_MARKED_AS_READ
                                                         object:nil];            
-}
-
-- (IBAction) changeLocation:(id)sender {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 #pragma mark Notifications
