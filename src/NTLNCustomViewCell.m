@@ -28,7 +28,7 @@
 
 //- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView*)controlView {
 //    
-//}
+//}masu 
 
 - (void) drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
 //    NSLog(@"x: %.1f, y:%.1f, w:%.1f, h:%.1f", cellFrame.origin.x, cellFrame.origin.y, cellFrame.size.width, cellFrame.size.height);

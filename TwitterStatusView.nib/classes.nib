@@ -5,14 +5,6 @@
 	<key>IBClasses</key>
 	<array>
 		<dict>
-			<key>CLASS</key>
-			<string>NTLNMessageViewClickableTextField</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NTLNMessageViewTextField</string>
-		</dict>
-		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>toggleFavorite</key>
@@ -41,6 +33,14 @@
 			</dict>
 			<key>SUPERCLASS</key>
 			<string>NTLNMessageViewController</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NTLNMessageViewClickableTextField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NTLNMessageViewTextField</string>
 		</dict>
 		<dict>
 			<key>CLASS</key>

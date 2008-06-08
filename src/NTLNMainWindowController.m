@@ -97,7 +97,7 @@
     _toolbarItems = [[NSMutableDictionary alloc] init];
     
     // setup segumented control
-    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 160, 25)] autorelease];
+    _messageViewSelector = [[[NSSegmentedControl alloc] initWithFrame:NSMakeRect(0, 0, 180, 25)] autorelease];
     NTLNSegmentedCell *_messageViewSelectorCell = [[[NTLNSegmentedCell alloc] init] autorelease];
     [_messageViewSelector setCell:_messageViewSelectorCell];
     [_messageViewSelectorCell setSegmentCount:4];
@@ -113,6 +113,10 @@
     [_messageViewSelectorCell setToolTip:NSLocalizedString(@"Replies", @"toolbar icon tooltip") forSegment:1];
     [_messageViewSelectorCell setToolTip:NSLocalizedString(@"Sent", @"toolbar icon tooltip") forSegment:2];
     [_messageViewSelectorCell setToolTip:NSLocalizedString(@"Unread", @"toolbar icon tooltip") forSegment:3];
+    [_messageViewSelectorCell setWidth:40.0 forSegment:0];
+    [_messageViewSelectorCell setWidth:40.0 forSegment:1];
+    [_messageViewSelectorCell setWidth:40.0 forSegment:2];
+    [_messageViewSelectorCell setWidth:40.0 forSegment:3];
     [_messageViewSelectorCell setSelectedSegment:0];
     [_messageViewSelectorCell setTarget:messageListViewsController];
     [_messageViewSelectorCell setAction:@selector(changeViewByToolbar:)];
