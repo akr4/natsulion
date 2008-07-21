@@ -312,7 +312,7 @@
     } 
 }
 
-#pragma mark Badge
+#pragma mark Application icon
 - (void) writeNumberOfUnread {
     if (_numberOfUnreadMessage == 0) {
         [NSApp setApplicationIconImage:nil];
@@ -330,6 +330,16 @@
         }
     }
     [self writeNumberOfUnread];
+}
+
+- (void) setIconImageToNormal
+{
+    [NSApp setApplicationIconImage:[NSImage imageNamed:@"NatsuLion"]];
+}
+
+- (void) setIconImageForError
+{
+    [NSApp setApplicationIconImage:[NSImage imageNamed:@"NatsuLion_error"]];
 }
 
 #pragma mark Notification methods

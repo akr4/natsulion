@@ -34,5 +34,7 @@
 - (void) setRefreshInterval:(int)interval;
 - (void) startTimer;
 - (void) stopTimer;
+- (void) setIconImageToNormal;
+- (void) setIconImageForError;
 
 @end

@@ -8,6 +8,7 @@
 #import "NTLNColors.h"
 #import "NTLNNotification.h"
 #import "NTLNSegmentedCell.h"
+#import "NTLNAppController.h"
 
 @implementation NTLNMainWindow
 
@@ -495,6 +496,7 @@
 - (void) finishedToPost {
     [self resetMessageTextField];
     [messageTextField focusAndLocateCursorEnd];
+    [appController setIconImageToNormal];
 }
 
 - (void) failedToPost:(NSString*)message {
@@ -503,6 +505,7 @@
                                                  message:message
                                                timestamp:[NSDate date]]];
     [self resetMessageTextField];
+    [appController setIconImageForError];
 }
 
 #pragma mark TimelineCallback
@@ -516,6 +519,7 @@
             [_messageNotifier addMessageViewController:controller];
         }
     }
+    [appController setIconImageToNormal];
 }
 
 - (void) failedToGetTimeline:(NTLNErrorInfo*)info {
@@ -523,6 +527,8 @@
      [NTLNErrorMessageViewController controllerWithTitle:NSLocalizedString(@"Retrieving timeline failed", @"Title of error message")
                                                  message:[info originalMessage]
                                                timestamp:[NSDate date]]];
+    NSLog(@"%s: %@", __PRETTY_FUNCTION__, [appController description]);
+    [appController setIconImageForError];
 }
 
 - (void) twitterStartTask {
@@ -608,6 +614,7 @@
         }
     }
     _createFavoriteIsWorking = FALSE;
+    [appController setIconImageToNormal];
 }
 
 - (void) failedToChangeFavorite:(NSString*)statusId errorInfo:(NTLNErrorInfo*)info {
@@ -619,6 +626,7 @@
         }
     }
     _createFavoriteIsWorking = FALSE;
+    [appController setIconImageToError];
 }
 
 - (BOOL) isCreatingFavoriteWorking {

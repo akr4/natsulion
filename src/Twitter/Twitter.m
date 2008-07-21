@@ -320,15 +320,8 @@
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
-    NSString *url_suffix = [[NSDate date] descriptionWithCalendarFormat:@"%Y%m%d%02H%02M%02S"
-                                                               timeZone:[NSTimeZone localTimeZone]
-                                                                 locale:[[NSUserDefaults standardUserDefaults]
-                                                                         dictionaryRepresentation]];
-    
-    NSString *url = [@"http://twitter.com/statuses/friends_timeline.xml?" stringByAppendingString:url_suffix];
-    
     [_connectionForFriendTimeline release];
-    _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
+    _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml"
                                                                   username:username
                                                                   password:password
                                                                    usePost:post

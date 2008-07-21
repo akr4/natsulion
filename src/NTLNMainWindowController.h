@@ -11,6 +11,8 @@
 
 #define NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER 3.0f
 
+@class NTLNAppController;
+
 @interface NTLNMainWindow : NSWindow {
     
 }
@@ -42,6 +44,7 @@
     IBOutlet NSTextField *statisticsTextField;
     IBOutlet NSLevelIndicator *messagePostLevelIndicator;
     IBOutlet NTLNKeywordFilterView *keywordFilterView;
+    IBOutlet NTLNAppController *appController;
     
     Twitter *_twitter;
 
