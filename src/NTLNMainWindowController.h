@@ -12,9 +12,9 @@
 #define NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER 3.0f
 
 @class NTLNAppController;
+@class NTLNTextView;
 
 @interface NTLNMainWindow : NSWindow {
-    
 }
 @end
 
@@ -51,6 +51,7 @@
     BOOL _createFavoriteIsWorking;
     NTLNBufferedMessageNotifier *_messageNotifier;
     NSResponder *_previousFirstResponder;
+    NTLNTextView *_fieldEditor;
     
     // Menu & Toolbar
     IBOutlet NSMenu *viewMenu;

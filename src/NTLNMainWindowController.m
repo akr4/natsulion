@@ -10,6 +10,45 @@
 #import "NTLNSegmentedCell.h"
 #import "NTLNAppController.h"
 
+@interface NTLNTextView : NSTextView {
+    
+}
+@end
+
+@implementation NTLNTextView
+
+- (id)initWithFrame:(NSRect)frameRect
+{
+	self = [super initWithFrame:frameRect];
+    [self setFieldEditor:YES];
+	return self;
+}
+
+- (void)setMarkedText:(id)aString selectedRange:(NSRange)selRange
+{
+//    NSLog(@"%@", [aString description]);
+
+    id string;
+    
+    if ([aString isKindOfClass:[NSAttributedString class]]) {
+        string = [aString mutableCopy];
+        // in my investigation, selRange is always (0, 0). so replace it here.
+        selRange = NSMakeRange( 0, [string length]);
+        NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [NSNumber numberWithInt:NSUnderlineStyleSingle], NSUnderlineStyleAttributeName,
+                              [[NTLNColors instance] colorForText], NSUnderlineColorAttributeName,
+                               nil];
+        [string setAttributes:attrs range:selRange];
+    } else {
+        string = aString;
+    }
+    
+    [super setMarkedText:string selectedRange:selRange];
+}
+
+@end
+
+
 @implementation NTLNMainWindow
 
 - (void)sendEvent:(NSEvent *)event {
@@ -49,6 +88,8 @@
                                                  name:NTLN_NOTIFICATION_STATISTICS_DISPLAY_SETTING_CHANGED
                                                object:nil];
     
+    _fieldEditor = [[NTLNTextView alloc] init];
+    
     return self;
 }
 
@@ -57,6 +98,7 @@
     [_toolbarItems release];
     [_messageNotifier release];
     [_messageViewToolbarMenuItem release];
+    [_fieldEditor release];
     [super dealloc];
 }
 
@@ -604,6 +646,11 @@
     }
 }
 
+- (id)windowWillReturnFieldEditor:(NSWindow *)window toObject:(id)anObject
+{
+    return _fieldEditor;
+}
+
 #pragma mark TwitterFavoriteCallback
 - (void) finishedToChangeFavorite:(NSString*)statusId {           
     for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
@@ -626,7 +673,7 @@
         }
     }
     _createFavoriteIsWorking = FALSE;
-    [appController setIconImageToError];
+    [appController setIconImageForError];
 }
 
 - (BOOL) isCreatingFavoriteWorking {
