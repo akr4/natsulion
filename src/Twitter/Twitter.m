@@ -2,6 +2,8 @@
 #import "NTLNConfiguration.h"
 #import "NTLNXMLHTTPEncoder.h"
 
+#define API_BASE @"http://twitter.com"
+
 @implementation NTLNErrorInfo
 + (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message {
     NTLNErrorInfo *info = [[[NTLNErrorInfo alloc] init] autorelease];
@@ -321,7 +323,7 @@
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
     [_connectionForFriendTimeline release];
-    _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/friends_timeline.xml"
+    _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml"]
                                                                   username:username
                                                                   password:password
                                                                    usePost:post
@@ -344,7 +346,7 @@
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
     [_connectionForReplies release];
-    _connectionForReplies = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/replies.xml" 
+    _connectionForReplies = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/statuses/replies.xml"]
                                                                       username:username
                                                                       password:password
                                                                        usePost:post
@@ -367,7 +369,7 @@
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
     [_connectionForSentMessages release];
-    _connectionForSentMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/statuses/user_timeline.xml" 
+    _connectionForSentMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/statuses/user_timeline.xml"]
                                                                username:username
                                                                password:password
                                                                 usePost:post
@@ -392,7 +394,7 @@
     
     TwitterPostCallbackHandler *handler = [[TwitterPostCallbackHandler alloc] initWithPostCallback:_callback];
     [_connectionForPost release];
-    _connectionForPost = [[NTLNAsyncUrlConnection alloc] initPostConnectionWithUrl:@"http://twitter.com/statuses/update.xml"
+    _connectionForPost = [[NTLNAsyncUrlConnection alloc] initPostConnectionWithUrl:[API_BASE stringByAppendingString:@"/statuses/update.xml"]
                                                                         bodyString:requestStr 
                                                                           username:username
                                                                           password:password
@@ -416,7 +418,7 @@
     }
     
     NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
-    [urlStr appendString:@"http://twitter.com/favourings/create/"];
+    [urlStr appendString:[API_BASE stringByAppendingString:@"/favourings/create/"]];
     [urlStr appendString:statusId];
     [urlStr appendString:@".xml"];
     
@@ -489,7 +491,7 @@
     _callback = callback;
     [_callback retain];
     
-    _connection = [[NTLNAsyncUrlConnection alloc] initWithUrl:@"http://twitter.com/account/verify_credentials.xml" 
+    _connection = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/account/verify_credentials.xml"]
                                                  username:username
                                                  password:password
                                                   usePost:FALSE
