@@ -53,10 +53,10 @@
 
 - (void)sendEvent:(NSEvent *)event {
     if ([event type] == NSKeyDown) {
-        unichar keyChar = [[event characters] characterAtIndex:0];
-        //        NSLog(@"MainWindow: %d - %d", keyChar, [event modifierFlags] & NSShiftKeyMask);
-        switch (keyChar) {
-            case 27:
+        unsigned short keyCode = [event keyCode];
+//        NSLog(@"MainWindow: %d - %d", keyCode, [event modifierFlags] & NSShiftKeyMask);
+        switch (keyCode) {
+            case 53:
                 [[self windowController] closeKeywordFilterView:self];
                 break;
             default:

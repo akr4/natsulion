@@ -279,19 +279,19 @@
 }
 
 - (void)drawRect:(NSRect)aRect {
-    [super drawRect:aRect];
+    NSRect bounds = [self bounds]; 
+    [super drawRect:bounds]; 
     
     // without this enabled check, input text will disapear just after enter key is pressed.
     // by this way, input text will be shown but a white border is also shown.
     // if you know better way, please tell me. thanks.
     if (_backgroundColor) {
         [_backgroundColor set];
-        NSFrameRectWithWidth(aRect, 3.0);
+        NSFrameRectWithWidth(bounds, 3.0); 
 //        if ([self isEnabled]) {
 //            NSRectFillUsingOperation(aRect, NSCompositeCopy);
 //        }
     }
-
 }
 
 #pragma mark Notification
