@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E9D8278B0E3C91120099DE72</string>
+						<string>E9D828170E3C9B520099DE72</string>
 						<key>history</key>
 						<array>
 							<string>E9D8276D0E3C8E570099DE72</string>
@@ -235,7 +235,7 @@
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>777 267 792 842 0 0 1920 1178 </string>
+				<string>474 75 792 842 0 0 1920 1178 </string>
 			</dict>
 		</dict>
 		<dict>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E9D8278C0E3C91120099DE72</string>
+						<string>E9D828180E3C9B520099DE72</string>
 						<key>history</key>
 						<array>
 							<string>E92172E00E3C665E0093BC5B</string>
@@ -423,7 +423,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9D8278A0E3C91120099DE72</string>
+										<string>E9D828160E3C9B520099DE72</string>
 										<key>history</key>
 										<array>
 											<string>E9AC853B0D560AFA00CA4B6D</string>

@@ -127,7 +127,6 @@
 - (void) checkAndUpdateMaxLength {
     if (_maxLength <= [[self stringValue] length]) {
         _lengthState = NTLN_LENGTH_STATE_MAXIMUM;
-        //                [self setEnabled:FALSE];
         [_backgroundColor release];
         _backgroundColor = [[[NTLNColors instance] colorForError] retain];
     }
@@ -282,15 +281,11 @@
     NSRect bounds = [self bounds]; 
     [super drawRect:bounds]; 
     
-    // without this enabled check, input text will disapear just after enter key is pressed.
-    // by this way, input text will be shown but a white border is also shown.
-    // if you know better way, please tell me. thanks.
     if (_backgroundColor) {
         [_backgroundColor set];
-        NSFrameRectWithWidth(bounds, 3.0); 
-//        if ([self isEnabled]) {
-//            NSRectFillUsingOperation(aRect, NSCompositeCopy);
-//        }
+        // there is a white border without this NSFrameRectWithWidth. if you know better way, please tell me. thanks.
+        NSFrameRectWithWidth(bounds, 2.0); 
+        NSRectFillUsingOperation(aRect, NSCompositeDestinationAtop);
     }
 }
 
