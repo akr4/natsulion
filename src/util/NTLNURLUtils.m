@@ -69,7 +69,7 @@
 - (NSArray*) tokenizeByAll:(NSString*)aString {
     NSMutableArray *back = [NSMutableArray arrayWithCapacity:100];
 
-    NSArray *tokensById = [[self tokenizeByID:aString] mutableCopy];
+    NSArray *tokensById = [self tokenizeByID:aString];
     
     int i;
     for (i = 0; i < [tokensById count]; i++) {

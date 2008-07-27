@@ -408,6 +408,31 @@
 			E9D828160E3C9B520099DE72 /* PBXBookmark */ = E9D828160E3C9B520099DE72 /* PBXBookmark */;
 			E9D828170E3C9B520099DE72 /* PBXTextBookmark */ = E9D828170E3C9B520099DE72 /* PBXTextBookmark */;
 			E9D828180E3C9B520099DE72 /* PBXTextBookmark */ = E9D828180E3C9B520099DE72 /* PBXTextBookmark */;
+			E9D8281B0E3CA4490099DE72 /* PBXBookmark */ = E9D8281B0E3CA4490099DE72 /* PBXBookmark */;
+			E9D8281C0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8281C0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8281D0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8281D0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8281E0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8281E0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8281F0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8281F0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828200E3CA4490099DE72 /* PBXTextBookmark */ = E9D828200E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828210E3CA4490099DE72 /* PBXTextBookmark */ = E9D828210E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828220E3CA4490099DE72 /* PBXTextBookmark */ = E9D828220E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828230E3CA4490099DE72 /* PBXTextBookmark */ = E9D828230E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828240E3CA4490099DE72 /* PBXTextBookmark */ = E9D828240E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828250E3CA4490099DE72 /* PBXTextBookmark */ = E9D828250E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828260E3CA4490099DE72 /* PBXBookmark */ = E9D828260E3CA4490099DE72 /* PBXBookmark */;
+			E9D828270E3CA4490099DE72 /* PBXTextBookmark */ = E9D828270E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828280E3CA4490099DE72 /* PBXTextBookmark */ = E9D828280E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828290E3CA4490099DE72 /* PBXTextBookmark */ = E9D828290E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8282A0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8282A0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8282B0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8282B0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8282C0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8282C0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8282D0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8282D0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8282E0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8282E0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D8282F0E3CA4490099DE72 /* PBXTextBookmark */ = E9D8282F0E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828300E3CA4490099DE72 /* PBXTextBookmark */ = E9D828300E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828310E3CA4490099DE72 /* PBXTextBookmark */ = E9D828310E3CA4490099DE72 /* PBXTextBookmark */;
+			E9D828320E3CA4630099DE72 /* PBXTextBookmark */ = E9D828320E3CA4630099DE72 /* PBXTextBookmark */;
+			E9D828330E3CA4630099DE72 /* PBXTextBookmark */ = E9D828330E3CA4630099DE72 /* PBXTextBookmark */;
 			E9D9D5F80D909DB20014F896 = E9D9D5F80D909DB20014F896 /* PBXTextBookmark */;
 			E9DC0FF80D3D450600CC6D41 = E9DC0FF80D3D450600CC6D41 /* PBXTextBookmark */;
 			E9DC10150D3D450600CC6D41 = E9DC10150D3D450600CC6D41 /* PBXTextBookmark */;
@@ -461,16 +486,17 @@
 	};
 	E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {444, 294}}";
 			sepNavSelRange = "{626, 0}";
-			sepNavVisRange = "{0, 694}";
+			sepNavVisRange = "{0, 0}";
 		};
 	};
 	E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 2268}}";
-			sepNavSelRange = "{5590, 0}";
-			sepNavVisRange = "{4349, 1255}";
+			sepNavIntBoundsRect = "{{0, 0}, {816, 2156}}";
+			sepNavSelRange = "{3668, 0}";
+			sepNavVisRange = "{0, 0}";
+			sepNavWindowFrame = "{{313, 113}, {792, 842}}";
 		};
 	};
 	E900C1620D5EAC5A0071837C /* PBXTextBookmark */ = {
@@ -665,9 +691,9 @@
 	};
 	E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {588, 532}}";
 			sepNavSelRange = "{360, 0}";
-			sepNavVisRange = "{0, 1159}";
+			sepNavVisRange = "{0, 0}";
 		};
 	};
 	E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */ = {
@@ -901,17 +927,17 @@
 	};
 	E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1374, 1134}}";
-			sepNavSelRange = "{1980, 0}";
-			sepNavVisRange = "{1222, 1470}";
+			sepNavIntBoundsRect = "{{0, 0}, {444, 1106}}";
+			sepNavSelRange = "{1756, 47}";
+			sepNavVisRange = "{0, 0}";
 			sepNavWindowFrame = "{{15, 547}, {799, 626}}";
 		};
 	};
 	E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {724, 10766}}";
-			sepNavSelRange = "{1565, 0}";
-			sepNavVisRange = "{936, 1033}";
+			sepNavIntBoundsRect = "{{0, 0}, {758, 10738}}";
+			sepNavSelRange = "{816, 0}";
+			sepNavVisRange = "{553, 2277}";
 			sepNavWindowFrame = "{{535, 488}, {783, 551}}";
 		};
 	};
@@ -997,7 +1023,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 936;
@@ -1397,9 +1423,9 @@
 	};
 	E94CC0CF0DD8C8B100D8711D /* NTLNKeywordFilterView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {450, 420}}";
 			sepNavSelRange = "{701, 0}";
-			sepNavVisRange = "{0, 728}";
+			sepNavVisRange = "{0, 0}";
 		};
 	};
 	E94CC0D00DD8C8B100D8711D /* NTLNKeywordFilterView.m */ = {
@@ -1622,7 +1648,7 @@
 		fRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */;
 		name = "NTLNMessageListViewsController.m: 158";
 		rLen = 0;
-		rLoc = 5590;
+		rLoc = 5618;
 		rType = 0;
 		vrLen = 1255;
 		vrLoc = 4349;
@@ -1696,9 +1722,9 @@
 	};
 	E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 616}}";
+			sepNavIntBoundsRect = "{{0, 0}, {558, 364}}";
 			sepNavSelRange = "{124, 0}";
-			sepNavVisRange = "{0, 682}";
+			sepNavVisRange = "{0, 0}";
 		};
 	};
 	E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */ = {
@@ -1861,9 +1887,9 @@
 	};
 	E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {959, 558}}";
+			sepNavIntBoundsRect = "{{0, 0}, {294, 294}}";
 			sepNavSelRange = "{208, 0}";
-			sepNavVisRange = "{0, 423}";
+			sepNavVisRange = "{0, 0}";
 		};
 	};
 	E97DF2CA0D5F816E002AA043 /* PBXTextBookmark */ = {
@@ -2069,6 +2095,13 @@
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 2400;
+	};
+	E99408050DEF43FD0009A365 /* NTLNSegmentedCell.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {150, 214}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 0}";
+		};
 	};
 	E99408060DEF43FD0009A365 /* NTLNSegmentedCell.m */ = {
 		uiCtxt = {
@@ -2447,7 +2480,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 54";
 		rLen = 0;
-		rLoc = 1485;
+		rLoc = 1499;
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 697;
@@ -2477,7 +2510,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 106";
 		rLen = 0;
-		rLoc = 5315;
+		rLoc = 5329;
 		rType = 0;
 		vrLen = 0;
 		vrLoc = 0;
@@ -2506,7 +2539,7 @@
 	};
 	E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {12, 5712}}";
+			sepNavIntBoundsRect = "{{0, 0}, {264, 5712}}";
 			sepNavSelRange = "{868, 0}";
 			sepNavVisRange = "{0, 0}";
 			sepNavWindowFrame = "{{462, 243}, {799, 626}}";
@@ -2610,7 +2643,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 936;
@@ -2660,7 +2693,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2684,7 +2717,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2708,7 +2741,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2732,7 +2765,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2756,7 +2789,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2780,7 +2813,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2804,7 +2837,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2828,7 +2861,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2852,7 +2885,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2876,7 +2909,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2890,7 +2923,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 936;
@@ -2924,7 +2957,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2948,7 +2981,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2972,7 +3005,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -2996,7 +3029,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3020,7 +3053,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3044,7 +3077,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3068,7 +3101,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3092,7 +3125,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3116,7 +3149,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3140,7 +3173,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3164,7 +3197,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3188,7 +3221,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3212,7 +3245,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3236,7 +3269,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3260,7 +3293,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3284,7 +3317,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3308,7 +3341,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3332,7 +3365,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3356,7 +3389,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3380,7 +3413,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3404,7 +3437,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3428,7 +3461,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3452,7 +3485,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3476,7 +3509,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3500,7 +3533,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3524,7 +3557,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3548,7 +3581,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 936;
@@ -3572,7 +3605,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 936;
@@ -3596,10 +3629,248 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 56";
 		rLen = 0;
-		rLoc = 1565;
+		rLoc = 1579;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 936;
+	};
+	E9D8281B0E3CA4490099DE72 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = E9CCFDB70E3466B500C1FDAA /* NatsuLion_error.icns */;
+	};
+	E9D8281C0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */;
+		name = "NTLNMainWindowController.h: 47";
+		rLen = 47;
+		rLoc = 1756;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8281D0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */;
+		name = "NTLNMultiTasksProgressIndicator.m: 10";
+		rLen = 0;
+		rLoc = 208;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8281E0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E99408050DEF43FD0009A365 /* NTLNSegmentedCell.h */;
+		name = "NTLNSegmentedCell.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8281F0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 149";
+		rLen = 0;
+		rLoc = 5329;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828200E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 21";
+		rLen = 0;
+		rLoc = 868;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828210E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */;
+		name = "NTLNMessageListViewsController.h: 18";
+		rLen = 0;
+		rLoc = 626;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828220E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */;
+		name = "NTLNWelcomeWindowController.h: 8";
+		rLen = 0;
+		rLoc = 124;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828230E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */;
+		name = "NTLNPreferencesWindowController.h: 13";
+		rLen = 0;
+		rLoc = 360;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828240E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E94CC0CF0DD8C8B100D8711D /* NTLNKeywordFilterView.h */;
+		name = "NTLNKeywordFilterView.h: 26";
+		rLen = 0;
+		rLoc = 701;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828250E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */;
+		name = "NTLNMessageListViewsController.m: 106";
+		rLen = 0;
+		rLoc = 3668;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828260E3CA4490099DE72 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = E9CCFDB70E3466B500C1FDAA /* NatsuLion_error.icns */;
+	};
+	E9D828270E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */;
+		name = "NTLNMainWindowController.h: 47";
+		rLen = 47;
+		rLoc = 1756;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828280E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E97DF2AD0D5F5233002AA043 /* NTLNMultiTasksProgressIndicator.m */;
+		name = "NTLNMultiTasksProgressIndicator.m: 10";
+		rLen = 0;
+		rLoc = 208;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828290E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E99408050DEF43FD0009A365 /* NTLNSegmentedCell.h */;
+		name = "NTLNSegmentedCell.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8282A0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 149";
+		rLen = 0;
+		rLoc = 5329;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8282B0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */;
+		name = "NTLNMessageTableViewController.m: 21";
+		rLen = 0;
+		rLoc = 868;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8282C0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */;
+		name = "NTLNMessageListViewsController.h: 18";
+		rLen = 0;
+		rLoc = 626;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8282D0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */;
+		name = "NTLNWelcomeWindowController.h: 8";
+		rLen = 0;
+		rLoc = 124;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8282E0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */;
+		name = "NTLNPreferencesWindowController.h: 13";
+		rLen = 0;
+		rLoc = 360;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D8282F0E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E94CC0CF0DD8C8B100D8711D /* NTLNKeywordFilterView.h */;
+		name = "NTLNKeywordFilterView.h: 26";
+		rLen = 0;
+		rLoc = 701;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828300E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */;
+		name = "NTLNMessageListViewsController.m: 106";
+		rLen = 0;
+		rLoc = 3668;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828310E3CA4490099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 34";
+		rLen = 0;
+		rLoc = 779;
+		rType = 0;
+		vrLen = 2263;
+		vrLoc = 553;
+	};
+	E9D828320E3CA4630099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */;
+		name = "NTLNMessageListViewsController.m: 106";
+		rLen = 0;
+		rLoc = 3668;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
+	E9D828330E3CA4630099DE72 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
+		name = "NTLNMainWindowController.m: 34";
+		rLen = 0;
+		rLoc = 816;
+		rType = 0;
+		vrLen = 2277;
+		vrLoc = 553;
 	};
 	E9D9D5F80D909DB20014F896 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3737,7 +4008,7 @@
 		fRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */;
 		name = "NTLNMainWindowController.m: 378";
 		rLen = 0;
-		rLoc = 18240;
+		rLoc = 18254;
 		rType = 0;
 		vrLen = 1790;
 		vrLoc = 14358;
@@ -3782,9 +4053,9 @@
 	E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {733, 4648}}";
-			sepNavSelRange = "{10574, 0}";
+			sepNavSelRange = "{10080, 1}";
 			sepNavVisRange = "{9180, 1576}";
-			sepNavWindowFrame = "{{777, 937}, {713, 172}}";
+			sepNavWindowFrame = "{{474, 75}, {792, 842}}";
 		};
 	};
 	E9FA89AD0D3153DE00F50F79 /* PBXTextBookmark */ = {

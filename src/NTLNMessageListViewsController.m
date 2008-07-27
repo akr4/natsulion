@@ -108,7 +108,7 @@
     // change view
     NTLNMessageViewInfo *messageViewInfo = [_messageViewInfoArray objectAtIndex:_currentViewIndex];
     // to use original one causes an exception
-    [messageViewControllerArrayController setFilterPredicate:[[messageViewInfo predicate] copy]];
+    [messageViewControllerArrayController setFilterPredicate:[[[messageViewInfo predicate] copy] autorelease]];
     [messageTableViewController reloadTableView];
     [messageTableViewController setKnobPosition:[messageViewInfo knobPosition]];
 
@@ -129,7 +129,7 @@
 }
 
 - (NSPredicate*) currentPredicate {
-    return [[[_messageViewInfoArray objectAtIndex:_currentViewIndex] predicate] copy];
+    return [[[[_messageViewInfoArray objectAtIndex:_currentViewIndex] predicate] copy] autorelease];
 }
 
 - (void) applyCurrentPredicate {

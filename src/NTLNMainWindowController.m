@@ -31,7 +31,7 @@
     id string;
     
     if ([aString isKindOfClass:[NSAttributedString class]]) {
-        string = [aString mutableCopy];
+        string = [[aString mutableCopy] autorelease];
         // in my investigation, selRange is always (0, 0). so replace it here.
         selRange = NSMakeRange( 0, [string length]);
         NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
