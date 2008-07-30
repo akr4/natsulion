@@ -27,7 +27,7 @@
 }
 
 - (BOOL) isReplyToMe {
-    if ([text hasPrefix:[@"@" stringByAppendingString:[[NTLNAccount instance] username]]]) {
+    if ([[text lowercaseString] hasPrefix:[@"@" stringByAppendingString:[[[NTLNAccount instance] username] lowercaseString]]]) {
         //        NSLog(@"reply");
         return TRUE;
     }
@@ -37,7 +37,7 @@
 
 - (BOOL) isProbablyReplyToMe {
     NSString *query = [@"@" stringByAppendingString:[[NTLNAccount instance] username]];
-    NSRange range = [text rangeOfString:query];
+    NSRange range = [text rangeOfString:query options:NSCaseInsensitiveSearch];
     
     if (range.location != NSNotFound) {
         //        NSLog(@"probable reply");
