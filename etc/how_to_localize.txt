@@ -1,9 +1,9 @@
 1. generate English version of strings file
 
-ibtool --generate-stringsfile English.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib
+/Developer/usr/bin/ibtool --generate-stringsfile English.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib
 nkf --unix --utf8 --overwrite English.lproj/MainMenu.nib.strings
 
-ibtool --generate-stringsfile English.lproj/Welcome.nib.strings English.lproj/Welcome.nib
+/Developer/usr/bin/ibtool --generate-stringsfile English.lproj/Welcome.nib.strings English.lproj/Welcome.nib
 nkf --unix --utf8 --overwrite English.lproj/Welcome.nib.strings
 
 Note: nkf can be installed by the command "fink install nkf".
@@ -30,5 +30,5 @@ etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/Welcome.nib.
 
 * this step will be done by Xcode build automatically
 
-ibtool --write Japanese.lproj/MainMenu.nib -d Japanese.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib 
-ibtool --write Japanese.lproj/Welcome.nib -d Japanese.lproj/Welcome.nib.strings English.lproj/Welcome.nib
+/Developer/usr/bin/ibtool --write Japanese.lproj/MainMenu.nib -d Japanese.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib 
+/Developer/usr/bin/ibtool --write Japanese.lproj/Welcome.nib -d Japanese.lproj/Welcome.nib.strings English.lproj/Welcome.nib

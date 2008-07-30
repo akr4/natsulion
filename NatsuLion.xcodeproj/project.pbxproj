@@ -14,6 +14,7 @@
 		E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F300DE1A4A4008CC765 /* friends.tiff */; };
 		E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F330DE1A4B9008CC765 /* sent.tiff */; };
 		E90B0F370DE1A4B9008CC765 /* unread.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F340DE1A4B9008CC765 /* unread.tiff */; };
+		E90EFF5E0E40C664008FCF8E /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E90EFF5C0E40C664008FCF8E /* MainMenu.nib */; };
 		E90F0B400D2E8E190067A9CA /* NTLNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */; };
 		E915200F0D16D3B7008D6992 /* NTLNPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */; };
 		E9160B770D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */; };
@@ -69,7 +70,6 @@
 		E9B832DC0D58D6D1000F6E1C /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9B832D40D58D67F000F6E1C /* Growl.framework */; };
 		E9B832DD0D58D6D6000F6E1C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9B832D80D58D688000F6E1C /* Sparkle.framework */; };
 		E9B832F60D58E830000F6E1C /* MessageTableView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9B832F50D58E830000F6E1C /* MessageTableView.nib */; };
-		E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9BFD5950D183E630024C8B4 /* MainMenu.nib */; };
 		E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */; };
 		E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */; };
 		E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */; };
@@ -126,6 +126,8 @@
 		E90B0F300DE1A4A4008CC765 /* friends.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = friends.tiff; sourceTree = "<group>"; };
 		E90B0F330DE1A4B9008CC765 /* sent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sent.tiff; sourceTree = "<group>"; };
 		E90B0F340DE1A4B9008CC765 /* unread.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = unread.tiff; sourceTree = "<group>"; };
+		E90EFF5D0E40C664008FCF8E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		E90EFF5F0E40C675008FCF8E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E90F0B3E0D2E8E190067A9CA /* NTLNConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNConfiguration.h; sourceTree = "<group>"; };
 		E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNConfiguration.m; sourceTree = "<group>"; };
 		E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -236,7 +238,6 @@
 		E9E5BFA10D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNXMLHTTPEncoderTest.m; sourceTree = "<group>"; };
 		E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUtils.h; sourceTree = "<group>"; };
 		E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUtils.m; sourceTree = "<group>"; };
-		E9F1DB3C0D13CF000072CE81 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterStatusView.nib; sourceTree = "<group>"; };
 		E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageInputTextField.h; sourceTree = "<group>"; };
 		E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageInputTextField.m; sourceTree = "<group>"; };
@@ -386,7 +387,7 @@
 				E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				E9BFD5950D183E630024C8B4 /* MainMenu.nib */,
+				E90EFF5C0E40C664008FCF8E /* MainMenu.nib */,
 				E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */,
 				E993333A0D901CA600CDE7C4 /* Welcome.nib */,
 				E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */,
@@ -578,7 +579,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				E9BFD5960D183E630024C8B4 /* MainMenu.nib in Resources */,
 				E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */,
 				E993333B0D901CA600CDE7C4 /* Welcome.nib in Resources */,
 				E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */,
@@ -604,6 +604,7 @@
 				E99408350DEF456A0009A365 /* unread-highlighted.tiff in Resources */,
 				E99408610DEF4BA50009A365 /* replies.tiff in Resources */,
 				E9CCFDB80E3466B600C1FDAA /* NatsuLion_error.icns in Resources */,
+				E90EFF5E0E40C664008FCF8E /* MainMenu.nib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +706,15 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		E90EFF5C0E40C664008FCF8E /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E90EFF5D0E40C664008FCF8E /* English */,
+				E90EFF5F0E40C675008FCF8E /* Japanese */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
 		E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -720,14 +730,6 @@
 				E99408740DEF4C7A0009A365 /* Japanese */,
 			);
 			name = Welcome.nib;
-			sourceTree = "<group>";
-		};
-		E9BFD5950D183E630024C8B4 /* MainMenu.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E9F1DB3C0D13CF000072CE81 /* English */,
-			);
-			name = MainMenu.nib;
 			sourceTree = "<group>";
 		};
 		E9D23B6F0D8EF5BD006191EE /* Localizable.strings */ = {

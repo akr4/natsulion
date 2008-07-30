@@ -14,8 +14,8 @@
 /* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "67"; */
 "67.title" = "Password:";
 
-/* Class = "NSButtonCell"; title = "Next"; ObjectID = "69"; */
-"69.title" = "Next";
+/* Class = "NSButtonCell"; title = "Start Twittering"; ObjectID = "69"; */
+"69.title" = "Start Twittering";
 
 /* Class = "NSButtonCell"; title = "Exit"; ObjectID = "70"; */
 "70.title" = "Exit";
