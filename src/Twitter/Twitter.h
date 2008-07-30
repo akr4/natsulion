@@ -84,6 +84,8 @@ enum NTLNErrorType {
     NTLNAsyncUrlConnection *_connectionForPost;
     NTLNAsyncUrlConnection *_connectionForFavorite;
     
+    NSDate *_friendsTimelineTimestamp;
+    
     NSMutableDictionary *_waitingIconTwitterStatuses;
 }
 - (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback>)callback;
@@ -91,6 +93,7 @@ enum NTLNErrorType {
 // methods for TwitterTimelineCallbackHandler
 - (void) pushIconWaiter:(NTLNMessage*)waiter forUrl:(NSString*)url;
 - (NSSet*) popIconWaiterSet:(NSString*)url;
+- (void) setFriendsTimelineTimestamp:(NSDate*)timestamp;
 @end
 
 #define NTLN_TWITTERCHECK_SUCESS 0

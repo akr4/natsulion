@@ -182,6 +182,9 @@
         [backStatus finishedToSetProperties];
         [_callback twitterStartTask];
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
+        
+        // keep last status id for "since" parameter
+        [_parent setFriendsTimelineTimestamp:[backStatus timestamp]];
     }
 }
 
@@ -312,6 +315,13 @@
     return back;
 }
 
+- (void) setFriendsTimelineTimestamp:(NSDate*)timestamp {
+//    NSLog(@"%s: %@", __PRETTY_FUNCTION__, [timestamp description]);
+    [_friendsTimelineTimestamp release];
+    _friendsTimelineTimestamp = timestamp;
+    [_friendsTimelineTimestamp retain];
+}
+
 #pragma mark public methods
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
     
@@ -322,8 +332,19 @@
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
+    NSString *url = [API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml"];
+    if (_friendsTimelineTimestamp) {
+//        [[url stringByAppendingString:@"?since_id="] stringByAppendingString:_lastStatusIdForFriendTimeline];
+        
+        // @"%a,%d %b %Y %H:%M:%S GMT"
+        NSCalendarDate *c = [_friendsTimelineTimestamp dateWithCalendarFormat:@"%a%%2C+%d+%b+%Y+%H%%3A%M%%3A%S+GMT" timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+        url = [[url stringByAppendingString:@"?since="] stringByAppendingString:[c description]];
+    }
+    
+    NSLog(@"requesting: %@", url);
+    
     [_connectionForFriendTimeline release];
-    _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml"]
+    _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
                                                                   username:username
                                                                   password:password
                                                                    usePost:post
