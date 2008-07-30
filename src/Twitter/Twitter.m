@@ -341,7 +341,7 @@
         url = [[url stringByAppendingString:@"?since="] stringByAppendingString:[c description]];
     }
     
-    NSLog(@"requesting: %@", url);
+//    NSLog(@"requesting: %@", url);
     
     [_connectionForFriendTimeline release];
     _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
