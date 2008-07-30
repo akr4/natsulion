@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E9D828590E3CBEE80099DE72</string>
+						<string>E9D8286B0E3CCEB40099DE72</string>
 						<key>history</key>
 						<array>
 							<string>E9D828490E3CBCE10099DE72</string>
@@ -385,7 +385,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9D828580E3CBEE80099DE72</string>
+										<string>E9D8286A0E3CCEB40099DE72</string>
 										<key>history</key>
 										<array>
 											<string>E9AC853B0D560AFA00CA4B6D</string>
@@ -769,9 +769,9 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
 		<string>E9D827750E3C8FC40099DE72</string>
-		<string>/Users/akira/Documents/program/xcode/NatsuLion1/NatsuLion.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>E9D8283E0E3CBB810099DE72</string>
+		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/akira/Documents/program/xcode/NatsuLion1/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 312 397 866 0 0 1920 1178 </string>
