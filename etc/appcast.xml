@@ -7,6 +7,52 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.3</title>
+      <description>
+
+        Release Notes - NatsuLion - Version 1.3
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-137'&gt;NTLN-137&lt;/a&gt;] -         input text field does not change its background color when over 140 characters are input
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-174'&gt;NTLN-174&lt;/a&gt;] -         difficult to recognize IME's underline in dark color scheme
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-183'&gt;NTLN-183&lt;/a&gt;] -         Cant' insert &#xE9;,&#xE1;,&#xF3;, etc
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-184'&gt;NTLN-184&lt;/a&gt;] -         use case insensitive matching for screen name
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-188'&gt;NTLN-188&lt;/a&gt;] -         &quot;next&quot; button in account input sheet is not japanese localized
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-189'&gt;NTLN-189&lt;/a&gt;] -         &quot;next&quot; button in the last welcome page should be &quot;finish&quot; or something like that
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-190'&gt;NTLN-190&lt;/a&gt;] -         Rendering problem of the input text field
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-191'&gt;NTLN-191&lt;/a&gt;] -         Memory leaks
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-192'&gt;NTLN-192&lt;/a&gt;] -         since parameter for friends_timeline
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-185'&gt;NTLN-185&lt;/a&gt;] -         show &quot;sad&quot; app icon when error
+&lt;/li&gt;
+&lt;/ul&gt;
+          </description>
+      <pubDate>Thu, 31 Jul 2008 04:03:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_1.3.zip"
+        length="1653802"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.2</title>
       <description>
         Release Notes - NatsuLion - Version 1.2

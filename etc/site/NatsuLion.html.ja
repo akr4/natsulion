@@ -120,6 +120,42 @@ pageTracker._trackPageview();
 </p>
 
 <h2>リリースノート</h2>
+<h3 id="1.3">Version 1.3 (2008/07/31)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.3.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.3.zip');">download</a>
+<p>
+<p>主にいくつかのバグを修正したメンテナンスリリースです。謝辞: @Psychs (patches for NTLN-183, NTLN-190, NTLN-191), @chap_py (idea for NTLN-185)</p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-137'>NTLN-137</a>] -         input text field does not change its background color when over 140 characters are input
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-174'>NTLN-174</a>] -         difficult to recognize IME's underline in dark color scheme
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-183'>NTLN-183</a>] -         Cant' insert &#xE9;,&#xE1;,&#xF3;, etc
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-184'>NTLN-184</a>] -         use case insensitive matching for screen name
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-188'>NTLN-188</a>] -         &quot;next&quot; button in account input sheet is not japanese localized
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-189'>NTLN-189</a>] -         &quot;next&quot; button in the last welcome page should be &quot;finish&quot; or something like that
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-190'>NTLN-190</a>] -         Rendering problem of the input text field
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-191'>NTLN-191</a>] -         Memory leaks
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-192'>NTLN-192</a>] -         since parameter for friends_timeline
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-185'>NTLN-185</a>] -         show &quot;sad&quot; app icon when error
+</li>
+</ul>
+</p>
+
 <h3>Version 1.2 (2008/05/30)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.2.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.2.zip');">download</a>
 <p>
 <p>Twitter の不調によるタイムアウトを解消するためにタイムアウト値を大きくしました (NTLN-176)。
