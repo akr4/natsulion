@@ -234,8 +234,15 @@
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
     [_callback twitterStopTask];
-    [_callback finishedToChangeFavorite:_statusId];
-    NSLog(@"favorite responseArrived:%@", [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding]);
+    
+    if (code == 200) {
+        [_callback finishedToChangeFavorite:_statusId];
+    } else {
+        NSLog(@"favorite failed:%@", [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding]);
+        [_callback failedToChangeFavorite:_statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
+                                                                         originalMessage:NSLocalizedString(@"Creating favorite failure. unable to get connection.", nil)]];
+    }
+
     [self autorelease];
 
 }
@@ -439,7 +446,7 @@
     }
     
     NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
-    [urlStr appendString:[API_BASE stringByAppendingString:@"/favourings/create/"]];
+    [urlStr appendString:[API_BASE stringByAppendingString:@"/favorites/create/"]];
     [urlStr appendString:statusId];
     [urlStr appendString:@".xml"];
     
@@ -448,14 +455,14 @@
     _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:urlStr
                                                                 username:username
                                                                 password:password
-                                                                 usePost:FALSE
+                                                                 usePost:TRUE
                                                                 callback:handler];
     
 //    NSLog(@"sent data [%@]", urlStr);
     
     if (!_connectionForFavorite) {
         [_callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
-                                                                         originalMessage:NSLocalizedString(@"Sending a message failure. unable to get connection.", nil)]];
+                                                                         originalMessage:NSLocalizedString(@"Creating favorite failure. unable to get connection.", nil)]];
         return;
     }
     
