@@ -71,6 +71,7 @@ enum NTLNErrorType {
 - (void) repliesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
 - (void) sentMessagesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
 - (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password;
+- (void) destroyFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password;
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password;
 @end
 

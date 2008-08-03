@@ -620,6 +620,18 @@
                     password:password];
 }
 
+- (void) destroyFavoriteDesiredFor:(NSString*)statusId {
+    NSString *password = [[NTLNAccount instance] password];
+    if (!password) {
+        NSLog(@"password not set. skip destroy favorite");
+        return;
+    }
+    _createFavoriteIsWorking = TRUE;
+    [_twitter destroyFavorite:statusId
+                     username:[[NTLNAccount instance] username]
+                     password:password];
+}
+
 - (float) viewWidth {
     return [messageTableViewController columnWidth];
 }

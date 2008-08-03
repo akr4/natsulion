@@ -278,6 +278,10 @@
     
 }
 
+- (void) destroyFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password {
+    
+}
+
 @end
 
 @implementation TwitterImpl
@@ -458,11 +462,42 @@
                                                                  usePost:TRUE
                                                                 callback:handler];
     
-//    NSLog(@"sent data [%@]", urlStr);
+    //    NSLog(@"sent data [%@]", urlStr);
     
     if (!_connectionForFavorite) {
         [_callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
                                                                          originalMessage:NSLocalizedString(@"Creating favorite failure. unable to get connection.", nil)]];
+        return;
+    }
+    
+    [_callback twitterStartTask];
+}
+
+- (void) destroyFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password {
+    
+    if (_connectionForFavorite && ![_connectionForFavorite isFinished]) {
+        NSLog(@"connection for favorite is running.");
+        return;
+    }
+    
+    NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
+    [urlStr appendString:[API_BASE stringByAppendingString:@"/favorites/destroy/"]];
+    [urlStr appendString:statusId];
+    [urlStr appendString:@".xml"];
+    
+    TwitterFavoriteCallbackHandler *handler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:_callback];
+    [_connectionForFavorite release];
+    _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:urlStr
+                                                                username:username
+                                                                password:password
+                                                                 usePost:TRUE
+                                                                callback:handler];
+    
+    //    NSLog(@"sent data [%@]", urlStr);
+    
+    if (!_connectionForFavorite) {
+        [_callback failedToChangeFavorite:statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
+                                                                         originalMessage:NSLocalizedString(@"Destroying favorite failure. unable to get connection.", nil)]];
         return;
     }
     

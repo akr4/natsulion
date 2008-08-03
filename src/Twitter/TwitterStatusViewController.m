@@ -217,18 +217,30 @@ static TwitterStatusViewController *starred = nil;
     [self showStar:TRUE];
     [favoliteButton setEnabled:FALSE];
     _favoriteIsCreating = TRUE;
-    [_listener createFavoriteDesiredFor:[_status statusId]];
+    
+    if (_starHighlighted) {
+        [_listener destroyFavoriteDesiredFor:[_status statusId]];
+    } else {
+        [_listener createFavoriteDesiredFor:[_status statusId]];
+    }
 }
 
 - (void) favoriteCreated {
-    [favoliteButton setImage:highlightedFavoliteIcon];
-    _starHighlighted = TRUE;
+    if (_starHighlighted) {
+        [favoliteButton setImage:favoliteIcon];
+        _starHighlighted = FALSE;
+    } else {
+        [favoliteButton setImage:highlightedFavoliteIcon];
+        _starHighlighted = TRUE;
+    }
+    
     _favoriteIsCreating = FALSE;
+    [favoliteButton setEnabled:TRUE];
 }
 
 - (void) favoriteCreationFailed {
-    [favoliteButton setEnabled:TRUE];
     _favoriteIsCreating = FALSE;
+    [favoliteButton setEnabled:TRUE];
 }
 
 - (enum NTLNMessageStatus) messageStatus {

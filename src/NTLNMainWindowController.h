@@ -26,6 +26,7 @@
 - (void) replyDesiredFor:(NSString*)username;
 - (float) viewWidth;
 - (void) createFavoriteDesiredFor:(NSString*)statusId;
+- (void) destroyFavoriteDesiredFor:(NSString*)statusId;
 - (BOOL) isCreatingFavoriteWorking;
 @end
 
