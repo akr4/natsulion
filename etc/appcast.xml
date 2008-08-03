@@ -7,6 +7,31 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.4</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.4
+            
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-169'&gt;NTLN-169&lt;/a&gt;] -         destroy favorite feature
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Task
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-194'&gt;NTLN-194&lt;/a&gt;] -         adapt new fav API (favourings -&gt; favorites)
+&lt;/li&gt;
+&lt;/ul&gt;
+
+          </description>
+      <pubDate>Sun, 03 Aug 2008 22:20:00 +9000</pubDate>
+      <enclosure url="http://www.physalis.net/NatsuLion/NatsuLion_1.4.zip"
+        length="1654517"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.3</title>
       <description>
 

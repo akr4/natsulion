@@ -197,146 +197,7 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>E9B150130E45D0540075FB5F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>TwitterStatusViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E9B150140E45D0540075FB5F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>TwitterStatusViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E9B150460E45D3280075FB5F</string>
-						<key>history</key>
-						<array>
-							<string>E9B150380E45D2BF0075FB5F</string>
-							<string>E9B150390E45D2BF0075FB5F</string>
-						</array>
-						<key>prevStack</key>
-						<array>
-							<string>E9B150170E45D0540075FB5F</string>
-							<string>E9B150180E45D0540075FB5F</string>
-							<string>E9B150190E45D0540075FB5F</string>
-							<string>E9B1501A0E45D0540075FB5F</string>
-							<string>E9B1503A0E45D2BF0075FB5F</string>
-							<string>E9B1503B0E45D2BF0075FB5F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {817, 936}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 196 817 977 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>E9B14FF20E45CB080075FB5F</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>NTLNMainWindowController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E9B14FF30E45CB080075FB5F</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>NTLNMainWindowController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E9B150470E45D3280075FB5F</string>
-						<key>history</key>
-						<array>
-							<string>E9B14FEF0E45C8400075FB5F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {817, 936}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>535 62 817 977 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>E90EFFA20E40E0BF008FCF8E</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>Twitter.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E90EFFA30E40E0BF008FCF8E</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>Twitter.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E9B150480E45D3280075FB5F</string>
-						<key>history</key>
-						<array>
-							<string>E9B1503E0E45D2BF0075FB5F</string>
-							<string>E9B1503F0E45D2BF0075FB5F</string>
-						</array>
-						<key>prevStack</key>
-						<array>
-							<string>E90EFFA60E40E0BF008FCF8E</string>
-							<string>E90EFFA70E40E0BF008FCF8E</string>
-							<string>E9B150400E45D2BF0075FB5F</string>
-							<string>E9B150410E45D2BF0075FB5F</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1044, 952}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>816 175 1044 993 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-	</array>
+	<array/>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>1328</integer>
@@ -480,7 +341,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9B150450E45D3280075FB5F</string>
+										<string>E9B150520E45E47F0075FB5F</string>
 										<key>history</key>
 										<array>
 											<string>E9AC853B0D560AFA00CA4B6D</string>
@@ -493,7 +354,6 @@
 											<string>E9A8A7B60D7B8502008567CC</string>
 											<string>E928642A0D86AD5300D40C31</string>
 											<string>E92864BF0D86B9DC00D40C31</string>
-											<string>E90452220D88BD4800FC02AD</string>
 											<string>E9B82A870D8D2E4A0035F823</string>
 											<string>E9B82B1F0D8D49F90035F823</string>
 											<string>E9B82B8F0D8D564F0035F823</string>
@@ -515,9 +375,7 @@
 											<string>E97614FC0D9FBD1A007893CC</string>
 											<string>E97614FE0D9FBD1A007893CC</string>
 											<string>E97614FF0D9FBD1A007893CC</string>
-											<string>E976152C0D9FDEAF007893CC</string>
 											<string>E976152E0D9FDEAF007893CC</string>
-											<string>E976152F0D9FDEAF007893CC</string>
 											<string>E97615A40D9FE87E007893CC</string>
 											<string>E97615B40D9FF3D6007893CC</string>
 											<string>E97100A00DD8A54800B4133A</string>
@@ -532,7 +390,6 @@
 											<string>E9E7E1FF0DDD89FB00C5A764</string>
 											<string>E9657EFD0DDF124D00F6DE92</string>
 											<string>E90B0F6C0DE1F457008CC765</string>
-											<string>E90B0F6D0DE1F457008CC765</string>
 											<string>E90B0F950DE1FBD4008CC765</string>
 											<string>E994080F0DEF44B80009A365</string>
 											<string>E99408390DEF45A00009A365</string>
@@ -549,7 +406,6 @@
 											<string>E9CCFDBC0E3466F500C1FDAA</string>
 											<string>E9D8281B0E3CA4490099DE72</string>
 											<string>E9D8281E0E3CA4490099DE72</string>
-											<string>E9D828200E3CA4490099DE72</string>
 											<string>E9D828210E3CA4490099DE72</string>
 											<string>E9D828220E3CA4490099DE72</string>
 											<string>E9D828230E3CA4490099DE72</string>
@@ -559,8 +415,6 @@
 											<string>E90EFF6C0E40C790008FCF8E</string>
 											<string>E90EFF6D0E40C790008FCF8E</string>
 											<string>E90EFF9E0E40E0BF008FCF8E</string>
-											<string>E90EFFF10E40EAFA008FCF8E</string>
-											<string>E9B150310E45D2BF0075FB5F</string>
 											<string>E9B150320E45D2BF0075FB5F</string>
 											<string>E9B150330E45D2BF0075FB5F</string>
 										</array>
@@ -573,7 +427,6 @@
 											<string>E945D9160D2F91C0001C39B1</string>
 											<string>E945D91C0D2F91C0001C39B1</string>
 											<string>E945D91E0D2F91C0001C39B1</string>
-											<string>E945D91F0D2F91C0001C39B1</string>
 											<string>E945D9200D2F91C0001C39B1</string>
 											<string>E945D9270D2F91C0001C39B1</string>
 											<string>E945D9520D2F91C0001C39B1</string>
@@ -598,9 +451,7 @@
 											<string>E90662B90D31B39500329057</string>
 											<string>E90662BA0D31B39500329057</string>
 											<string>E90662BC0D31B39500329057</string>
-											<string>E90662C40D31B39500329057</string>
 											<string>E90662C80D31B39500329057</string>
-											<string>E90662CA0D31B39500329057</string>
 											<string>E90662CC0D31B39500329057</string>
 											<string>E90662D80D31B39500329057</string>
 											<string>E90662E50D31B39500329057</string>
@@ -621,7 +472,6 @@
 											<string>E9D5B1E30D5633920000456F</string>
 											<string>E9D5B1E40D5633920000456F</string>
 											<string>E9D5B1E60D5633920000456F</string>
-											<string>E9D5B2080D5634680000456F</string>
 											<string>E9648D5E0D5A222D00746425</string>
 											<string>E93E960A0D5CAAD900ACCDBF</string>
 											<string>E97DF2CA0D5F816E002AA043</string>
@@ -631,8 +481,6 @@
 											<string>E9A3B9C30D66900200EAA53F</string>
 											<string>E95BD01D0D745C380099EA37</string>
 											<string>E98B187C0D75A191000F0FED</string>
-											<string>E9959D2C0D77769900307F3A</string>
-											<string>E9959D310D77769900307F3A</string>
 											<string>E9A8A7940D793AB0008567CC</string>
 											<string>E9A8A7BF0D7B8502008567CC</string>
 											<string>E958CAA40D7C30E700BD6BAC</string>
@@ -644,12 +492,10 @@
 											<string>E916EEF20D96991C00EA04C7</string>
 											<string>E916EF3F0D96A5ED00EA04C7</string>
 											<string>E916EF990D96BCFC00EA04C7</string>
-											<string>E97615340D9FDEAF007893CC</string>
 											<string>E97615370D9FDEAF007893CC</string>
 											<string>E94CC0E90DD9149E00D8711D</string>
 											<string>E98B48A70DDA0B880069E985</string>
 											<string>E98B48A80DDA0B880069E985</string>
-											<string>E9E7E1430DDCAD9000C5A764</string>
 											<string>E994083F0DEF45A00009A365</string>
 											<string>E99408400DEF45A00009A365</string>
 											<string>E99408410DEF45A00009A365</string>
@@ -657,10 +503,8 @@
 											<string>E994088C0DEF723C0009A365</string>
 											<string>E9D828260E3CA4490099DE72</string>
 											<string>E9D828290E3CA4490099DE72</string>
-											<string>E9D8282B0E3CA4490099DE72</string>
 											<string>E9D828510E3CBD1C0099DE72</string>
 											<string>E90EFF6F0E40C790008FCF8E</string>
-											<string>E9B150340E45D2BF0075FB5F</string>
 											<string>E9B150350E45D2BF0075FB5F</string>
 										</array>
 									</dict>
@@ -805,8 +649,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>8</integer>
+									<integer>22</integer>
+									<integer>16</integer>
 									<integer>6</integer>
 									<integer>0</integer>
 								</array>
@@ -881,15 +725,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E9B150530E45E47F0075FB5F</string>
+		<string>E9B150540E45E47F0075FB5F</string>
 		<string>E9B82A1E0D8C53AF0035F823</string>
 		<string>E9B150100E45CE040075FB5F</string>
+		<string>E9B150130E45D0540075FB5F</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
-		<string>/Users/akira/Documents/program/xcode/NatsuLion1/NatsuLion.xcodeproj</string>
-		<string>E90EFFA20E40E0BF008FCF8E</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>E9B14FF20E45CB080075FB5F</string>
-		<string>E9B150130E45D0540075FB5F</string>
+		<string>/Users/akira/Documents/program/xcode/NatsuLion1/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 188 358 990 0 0 1920 1178 </string>
@@ -908,28 +752,26 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Twitter.m</string>
+								<string>&lt;エディタがありません&gt;</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {840, 331}}</string>
+								<string>{{0, 0}, {840, 0}}</string>
 								<key>RubberWindowFrame</key>
 								<string>459 382 840 658 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>331pt</string>
+							<string>0pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -946,14 +788,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 336}, {840, 281}}</string>
+								<string>{{0, 5}, {840, 612}}</string>
 								<key>RubberWindowFrame</key>
 								<string>459 382 840 658 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXBuildResultsModule</string>
 							<key>Proportion</key>
-							<string>281pt</string>
+							<string>612pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>

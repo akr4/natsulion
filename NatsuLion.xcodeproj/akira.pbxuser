@@ -353,6 +353,7 @@
 			E9B150460E45D3280075FB5F /* PBXTextBookmark */ = E9B150460E45D3280075FB5F /* PBXTextBookmark */;
 			E9B150470E45D3280075FB5F /* PBXTextBookmark */ = E9B150470E45D3280075FB5F /* PBXTextBookmark */;
 			E9B150480E45D3280075FB5F /* PBXTextBookmark */ = E9B150480E45D3280075FB5F /* PBXTextBookmark */;
+			E9B150520E45E47F0075FB5F /* PBXTextBookmark */ = E9B150520E45E47F0075FB5F /* PBXTextBookmark */;
 			E9B82A870D8D2E4A0035F823 = E9B82A870D8D2E4A0035F823 /* PBXTextBookmark */;
 			E9B82B1F0D8D49F90035F823 = E9B82B1F0D8D49F90035F823 /* PBXTextBookmark */;
 			E9B82B8F0D8D564F0035F823 = E9B82B8F0D8D564F0035F823 /* PBXTextBookmark */;
@@ -511,7 +512,7 @@
 		rLen = 0;
 		rLoc = 345;
 		rType = 0;
-		vrLen = 357;
+		vrLen = 345;
 		vrLoc = 0;
 	};
 	E90662C80D31B39500329057 /* PBXTextBookmark */ = {
@@ -1122,10 +1123,10 @@
 	};
 	E9160BBD0D11D2EB00C9EEFF /* Twitter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1050, 8290}}";
-			sepNavSelRange = "{8343, 18}";
-			sepNavVisRange = "{7495, 2021}";
-			sepNavWindowFrame = "{{351, 150}, {1044, 993}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1038, 8624}}";
+			sepNavSelRange = "{8559, 0}";
+			sepNavVisRange = "{8324, 840}";
+			sepNavWindowFrame = "{{816, 175}, {1044, 993}}";
 		};
 	};
 	E9160BC60D11F4F500C9EEFF /* NTLNIconRepository.h */ = {
@@ -1272,18 +1273,18 @@
 	};
 	E91B3DAB0D13F3B5007C9762 /* NTLNMainWindowController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1374, 1148}}";
-			sepNavSelRange = "{726, 0}";
-			sepNavVisRange = "{0, 1278}";
-			sepNavWindowFrame = "{{15, 547}, {799, 626}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1374, 1134}}";
+			sepNavSelRange = "{106, 0}";
+			sepNavVisRange = "{0, 2284}";
+			sepNavWindowFrame = "{{535, 62}, {817, 977}}";
 		};
 	};
 	E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {822, 10864}}";
-			sepNavSelRange = "{26913, 0}";
-			sepNavVisRange = "{25581, 2195}";
-			sepNavWindowFrame = "{{15, 547}, {799, 626}}";
+			sepNavIntBoundsRect = "{{0, 0}, {912, 10486}}";
+			sepNavSelRange = "{28242, 0}";
+			sepNavVisRange = "{26808, 2040}";
+			sepNavWindowFrame = "{{535, 62}, {817, 977}}";
 		};
 	};
 	E91B3DB40D13F593007C9762 /* NTLNCustomViewCell.h */ = {
@@ -2018,9 +2019,10 @@
 	};
 	E97615290D9FDE10007893CC /* Crypto.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 558}}";
-			sepNavSelRange = "{21, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {758, 882}}";
+			sepNavSelRange = "{584, 0}";
 			sepNavVisRange = "{0, 584}";
+			sepNavWindowFrame = "{{38, 175}, {817, 977}}";
 		};
 	};
 	E976152A0D9FDE10007893CC /* Crypto.m */ = {
@@ -2163,7 +2165,7 @@
 	};
 	E98B093A0D2172B90002A75E /* NTLNGrowlNotifier.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 558}}";
+			sepNavIntBoundsRect = "{{0, 0}, {740, 531}}";
 			sepNavSelRange = "{345, 0}";
 			sepNavVisRange = "{0, 345}";
 			sepNavWindowFrame = "{{15, 547}, {799, 626}}";
@@ -2171,9 +2173,10 @@
 	};
 	E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {954, 924}}";
-			sepNavSelRange = "{730, 0}";
-			sepNavVisRange = "{225, 1435}";
+			sepNavIntBoundsRect = "{{0, 0}, {858, 969}}";
+			sepNavSelRange = "{1508, 0}";
+			sepNavVisRange = "{0, 2157}";
+			sepNavWindowFrame = "{{433, 91}, {789, 1064}}";
 		};
 	};
 	E98B18610D75A076000F0FED /* NTLNNotification.h */ = {
@@ -2247,9 +2250,10 @@
 	};
 	E991C66A0D2AE41100F410B6 /* NTLNMessageViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 581}}";
-			sepNavSelRange = "{159, 23}";
+			sepNavIntBoundsRect = "{{0, 0}, {696, 779}}";
+			sepNavSelRange = "{590, 0}";
 			sepNavVisRange = "{0, 590}";
+			sepNavWindowFrame = "{{61, 257}, {755, 874}}";
 		};
 	};
 	E991C6B70D2AE79D00F410B6 /* TwitterStatusViewNameField.h */ = {
@@ -2492,17 +2496,17 @@
 	};
 	E9A411270D29904F003BFA9F /* NTLNAppController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {762, 647}}";
-			sepNavSelRange = "{748, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {696, 779}}";
+			sepNavSelRange = "{803, 0}";
 			sepNavVisRange = "{0, 1153}";
 		};
 	};
 	E9A411280D29904F003BFA9F /* NTLNAppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {663, 5180}}";
-			sepNavSelRange = "{10485, 0}";
-			sepNavVisRange = "{9898, 128}";
-			sepNavWindowFrame = "{{1720, 1006}, {722, 172}}";
+			sepNavIntBoundsRect = "{{0, 0}, {762, 5250}}";
+			sepNavSelRange = "{8491, 0}";
+			sepNavVisRange = "{7650, 2281}";
+			sepNavWindowFrame = "{{648, 161}, {755, 874}}";
 		};
 	};
 	E9A8A7910D793AB0008567CC /* PBXTextBookmark */ = {
@@ -3211,6 +3215,16 @@
 		vrLen = 2021;
 		vrLoc = 7495;
 	};
+	E9B150520E45E47F0075FB5F /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E93467010D32DF6400F779CB /* NTLNUIUtils.h */;
+		name = "NTLNUIUtils.h: 4";
+		rLen = 0;
+		rLoc = 41;
+		rType = 0;
+		vrLen = 0;
+		vrLoc = 0;
+	};
 	E9B82A870D8D2E4A0035F823 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = E991C66A0D2AE41100F410B6 /* NTLNMessageViewController.h */;
@@ -3264,16 +3278,16 @@
 	E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {758, 882}}";
-			sepNavSelRange = "{921, 0}";
+			sepNavSelRange = "{755, 0}";
 			sepNavVisRange = "{0, 1206}";
 		};
 	};
 	E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {758, 3850}}";
-			sepNavSelRange = "{7230, 0}";
-			sepNavVisRange = "{6162, 1585}";
-			sepNavWindowFrame = "{{15, 196}, {817, 977}}";
+			sepNavIntBoundsRect = "{{0, 0}, {758, 3682}}";
+			sepNavSelRange = "{5167, 0}";
+			sepNavVisRange = "{3858, 1892}";
+			sepNavWindowFrame = "{{693, 135}, {817, 977}}";
 		};
 	};
 	E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */ = {
@@ -3322,9 +3336,9 @@
 	};
 	E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {774, 5740}}";
-			sepNavSelRange = "{14220, 0}";
-			sepNavVisRange = "{13493, 1526}";
+			sepNavIntBoundsRect = "{{0, 0}, {828, 5698}}";
+			sepNavSelRange = "{605, 0}";
+			sepNavVisRange = "{0, 1447}";
 			sepNavWindowFrame = "{{462, 243}, {799, 626}}";
 		};
 	};
@@ -3402,9 +3416,9 @@
 	};
 	E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {872, 938}}";
-			sepNavSelRange = "{83, 117}";
-			sepNavVisRange = "{0, 493}";
+			sepNavIntBoundsRect = "{{0, 0}, {696, 966}}";
+			sepNavSelRange = "{157, 0}";
+			sepNavVisRange = "{0, 638}";
 		};
 	};
 	E9D5B2080D5634680000456F /* PBXTextBookmark */ = {

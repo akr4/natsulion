@@ -282,6 +282,23 @@ New Feature
 </ul>
 </p>
 
+<h3 id="1.4">Version 1.4 (2008/08/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.4.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.4.zip');">download</a>
+<p>
+<p>fav に関する Twitter  API が変更されたので対応版です。おまけとして fav 解除もできるようになっています。</p>
+
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-169'>NTLN-169</a>] -         destroy favorite feature
+</li>
+</ul>
+    
+Task
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-194'>NTLN-194</a>] -         adapt new fav API (favourings -&gt; favorites)
+</li>
+</ul>
+</p>
+
 <h3>Version 0.31 (2008/03/14)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.31.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.31.zip');">download</a>
 <p>
 <p>
