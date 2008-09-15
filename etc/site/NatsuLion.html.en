@@ -26,7 +26,7 @@ pageTracker._trackPageview();
 <!--　　ヘッダー　　-->
 <!--================-->
 <div id="HEADER">
-<h1>SecretStaircase - NatsuLion</h1>
+<h1>NatsuLion</h1>
 <ul id="PAN">
   <li><a href="/ss">Site Top</a></li>
   <li>NatsuLion</li>
@@ -42,9 +42,10 @@ pageTracker._trackPageview();
 <h2>menu</h2>
  <ul>
    <li id="MENU01" class="menu-on"><a href="index.html">index</a></li>
-   <li id="MENU02"><a href="/ss/space/start">Blog</a></li>
-   <li id="MENU03"><a href="/ss/space/Wicket">Wicket</a></li>
-   <li id="MENU04"><a href="/ss/space/SnipSnap">SnipSnap</a></li>
+<!--   <li id="MENU02"><a href="/ss/space/start">Blog</a></li> -->
+<!--   <li id="MENU03"><a href="/ss/space/Wicket">Wicket</a></li> -->
+<!--   <li id="MENU04"><a href="/ss/space/SnipSnap">SnipSnap</a></li> -->
+   <li id="MENU05"><a href="http://iphone.natsulion.org">NatsuLiphone</a></li>
   </ul>
 </div>
 <hr>
@@ -61,8 +62,10 @@ pageTracker._trackPageview();
 <p>
 NatsuLion is a simple Twitter client for Mac OSX.<br/>
 
-Note: Leopard (10.5) is required currently.
+Note: Leopard (10.5) is required.
 </p>
+
+<p><em>News</em>: <a href="http://iphone.natsulion.org">NatsuLiphone</a> is coming soon!</p>
 
 Its goals are the follows:
 <ul>
