@@ -121,6 +121,17 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 
 <h2>Release Notes</h2>
 
+<h3 id="1.6">Version 1.6 (2008/09/15)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.6.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.6.zip');">download</a>
+<p>
+<p>version 1.5 has a major bug NTLN-202 which minus value is shown on the app badge. This is the version just fixes the problem.</p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-202'>NTLN-202</a>] -         number of unread tweets on the app badge appears as minus value
+</li>
+</ul>
+</p>
+                
+
 <h3 id="1.5">Version 1.5 (2008/09/15)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.5.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.5.zip');">download</a>
 <p>
 <p>now replies is refreshed automatically every 10 times of friends_timeline refresh</p>

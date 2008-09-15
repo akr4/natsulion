@@ -7,7 +7,24 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
-      <title>NatsuLion Version 1.4</title>
+      <title>NatsuLion Version 1.6</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.6
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-202'&gt;NTLN-202&lt;/a&gt;] -         number of unread tweets on the app badge appears as minus value
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Mon, 15 Oct 2008 23:59:00 +9000</pubDate>
+      <enclosure url="http://www.natsulion.org/download/NatsuLion_1.6.zip"
+        length="1655590"
+        type="application/octet-stream"/>
+    </item>
+    <item>
+      <title>NatsuLion Version 1.5</title>
       <description>
         Release Notes - NatsuLion - Version 1.5
         
