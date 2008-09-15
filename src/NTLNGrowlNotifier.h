@@ -2,10 +2,15 @@
 #import <Growl/Growl.h>
 #import "NTLNMessage.h"
 
-@interface NTLNGrowlNotifier : NSObject<GrowlApplicationBridgeDelegate> {
+@protocol NTLNGrowlClickCallbackTarget
+- (void) markAsRead:(NSString*)statusId;
+@end
 
+@interface NTLNGrowlNotifier : NSObject<GrowlApplicationBridgeDelegate> {
+    NSObject<NTLNGrowlClickCallbackTarget> *_callbackTarget;
 }
 
+- (void) setCallbackTarget:(NSObject<NTLNGrowlClickCallbackTarget>*)target;
 - (void) sendToGrowlTitle:(NSString*)title
               description:(NSString*)description
                 replyType:(enum NTLNReplyType)type;

@@ -11,6 +11,18 @@
     return self;
 }
 
+- (void) dealloc
+{
+    [_callbackTarget release];
+    [super dealloc];
+}
+
+- (void) setCallbackTarget:(NSObject<NTLNGrowlClickCallbackTarget>*)target
+{
+    _callbackTarget = target;
+    [_callbackTarget retain];
+}
+
 - (NSDictionary *) registrationDictionaryForGrowl {
     NSMutableDictionary *d = [[[NSMutableDictionary alloc] initWithCapacity:10] autorelease];
     NSArray *notifications = [[[NSArray alloc] initWithObjects:NTLN_GROWL_EVENT_MESSAGE_RECEIVED, 
@@ -20,10 +32,18 @@
     return d;
 }
 
+- (void) growlNotificationWasClicked:(id)clickContext
+{
+    NSString* statusId = clickContext;
+    [_callbackTarget markAsRead:statusId];
+}
+
 - (void) sendToGrowlTitle:(NSString*)title
               description:(NSString*)description
                 replyType:(enum NTLNReplyType)type
-                     icon:(NSData*)iconData {
+                     icon:(NSData*)iconData
+                 statusId:(NSString*)statusId
+{
     int priority = 0;
     BOOL sticky = FALSE;
     NSString *notificationName = NTLN_GROWL_EVENT_MESSAGE_RECEIVED;
@@ -49,17 +69,21 @@
      iconData:iconData
      priority:priority
      isSticky:sticky
-     clickContext:nil];
+     clickContext:statusId];
 }
 
 - (void) sendToGrowlTitle:(NSString*)title
               description:(NSString*)description
                 replyType:(enum NTLNReplyType)type {
-    [self sendToGrowlTitle:title description:description replyType:type icon:nil];
+    [self sendToGrowlTitle:title description:description replyType:type icon:nil statusId:nil];
 }
 
 - (void) sendToGrowl:(NTLNMessage*)message {
-    [self sendToGrowlTitle:[message name] description:[message text] replyType:[message replyType] icon:[[message icon] TIFFRepresentation]];
+    [self sendToGrowlTitle:[message name] 
+               description:[message text]
+                 replyType:[message replyType] 
+                      icon:[[message icon] TIFFRepresentation]
+                  statusId:[message statusId]];
 }
 
 @end

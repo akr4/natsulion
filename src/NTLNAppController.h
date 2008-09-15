@@ -6,7 +6,7 @@
 
 @class NTLNPreferencesWindowController;
 
-@interface NTLNAppController : NSObject<NTLNWelcomeWindowCallback> {
+@interface NTLNAppController : NSObject<NTLNWelcomeWindowCallback, NTLNGrowlClickCallbackTarget> {
     IBOutlet NTLNMainWindowController *mainWindowController;
     IBOutlet NTLNPreferencesWindowController *preferencesWindowController;
     IBOutlet NTLNWelcomeWindowController *welcomeWindowController;
@@ -37,5 +37,6 @@
 - (void) stopTimer;
 - (void) setIconImageToNormal;
 - (void) setIconImageForError;
+- (void) markAsRead:(NSString*)statusId;
 
 @end

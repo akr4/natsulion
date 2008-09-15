@@ -227,6 +227,7 @@
     
     if (!_growl) {
         _growl = [[NTLNGrowlNotifier alloc] init];
+        [_growl setCallbackTarget:self];
     }
     
     // remove my updates
@@ -314,6 +315,16 @@
                      description:s
                        replyType:type];
     } 
+}
+
+- (void) markAsRead:(NSString*)statusId
+{
+    for (TwitterStatusViewController* c in [messageViewControllerArrayController arrangedObjects]) {
+        if ([[[c message] statusId] isEqualToString:statusId]) {
+            [c markAsRead];
+            break;
+        }
+    }
 }
 
 #pragma mark Application icon

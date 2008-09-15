@@ -35,5 +35,6 @@
 - (BOOL) isEqual:(id)anObject;
 - (void) showStar:(BOOL)show;
 - (NTLNMessage*) message;
+- (void) markAsRead;
 @end
 
