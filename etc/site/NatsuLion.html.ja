@@ -132,7 +132,7 @@ pageTracker._trackPageview();
 <h2>リリースノート</h2>
 <h3 id="1.5">Version 1.5 (2008/09/15)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.5.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.5.zip');">download</a>
 <p>
-<p>このバージョンからリプライも自動で取得するようにしました。更新間隔設定の 10 倍の間隔で取得します。たとえば更新間隔を 60 秒にしているとリプライを 10 分ごとに取得します。</p>
+<p>このバージョンからリプライも自動で取得するようにしました。Twitter の API 制限を回避するために更新間隔設定の 10 倍の間隔で取得します。たとえば更新間隔を 60 秒にしているとリプライを 10 分ごとに取得します。</p>
 
 Improvement
 <ul>
