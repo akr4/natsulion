@@ -14,6 +14,7 @@
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
    
     int _refreshInterval;
+    int _refreshCount;
     NSTimer *_refreshTimer;
     int _numberOfUnreadMessage;
 

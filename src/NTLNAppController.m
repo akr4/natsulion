@@ -165,7 +165,11 @@
 #pragma mark Refresh interval timer
 - (void) expireRefreshInterval {
     [mainWindowController updateStatus];
+    if (_refreshCount % 10 == 0) {
+        [mainWindowController updateReplies];
+    }
     [self updateMessageStatistics];
+    _refreshCount++;
 }
 
 #pragma mark NSApplicatoin delegate methods
