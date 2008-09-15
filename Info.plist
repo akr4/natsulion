@@ -27,6 +27,6 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>http://www.physalis.net/NatsuLion/appcast.xml</string>
+	<string>http://www.natsulion.org/appcast.xml</string>
 </dict>
 </plist>

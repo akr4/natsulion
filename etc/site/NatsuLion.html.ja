@@ -71,7 +71,7 @@ pageTracker._trackPageview();
 </ul>
 を目指しています。
 
-最新版を<a href="http://www.physalis.net/NatsuLion/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">ダウンロード</a>!
+最新版を<a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">ダウンロード</a>!
 
 </p>
 <p>
@@ -118,13 +118,50 @@ pageTracker._trackPageview();
 バグ報告、ご要望は<a href="http://jira.physalis.net/browse/NTLN">こちら</a>からどうぞ。Twitter でもお気軽にどうぞ。(<a href="http://twitter.com/NatsuLion">@NatsuLion</a>)
 </p>
 
+<h4>主な既知の問題</h4>
+<dl>
+  <dt>NTLN-197 (http://jira.physalis.net/browse/NTLN-197)</dt>
+  <dd>ことえりと ATOK で入力エリアで ESC キーが効かない (egbridge で変換結果が 2 重になるのも同じ問題かもしれません)</dd>
+</dl>
+
 <h3>謝辞</h3>
 <p>
 開発初期の段階からテストに参加してたくさんの指摘やアイデアをくれた @yusukey どうもありがとう。
 </p>
 
 <h2>リリースノート</h2>
-<h3 id="1.3">Version 1.3 (2008/07/31)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.3.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.3.zip');">download</a>
+<h3 id="1.5">Version 1.5 (2008/09/15)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.5.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.5.zip');">download</a>
+<p>
+<p>このバージョンからリプライも自動で取得するようにしました。更新間隔設定の 10 倍の間隔で取得します。たとえば更新間隔を 60 秒にしているとリプライを 10 分ごとに取得します。</p>
+
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-198'>NTLN-198</a>] -         auto refresh for replies
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-199'>NTLN-199</a>] -         make tweet unread when growl notification is clicked
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-200'>NTLN-200</a>] -         friends_timline now support count parameter up to 200
+</li>
+</p>
+
+<h3 id="1.4">Version 1.4 (2008/08/04)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.4.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.4.zip');">download</a>
+<p>
+<p>fav に関する Twitter  API が変更されたので対応版です。おまけとして fav 解除もできるようになっています。</p>
+
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-169'>NTLN-169</a>] -         destroy favorite feature
+</li>
+</ul>
+    
+Task
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-194'>NTLN-194</a>] -         adapt new fav API (favourings -&gt; favorites)
+</li>
+</ul>
+</p>
+
+<h3 id="1.3">Version 1.3 (2008/07/31)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.3.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.3.zip');">download</a>
 <p>
 <p>主にいくつかのバグを修正したメンテナンスリリースです。謝辞: @Psychs (patches for NTLN-183, NTLN-190, NTLN-191), @chap_py (idea for NTLN-185)</p>
 Bug
@@ -160,7 +197,7 @@ New Feature
 </ul>
 </p>
 
-<h3>Version 1.2 (2008/05/30)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.2.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.2.zip');">download</a>
+<h3>Version 1.2 (2008/05/30)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.2.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.2.zip');">download</a>
 <p>
 <p>Twitter の不調によるタイムアウトを解消するためにタイムアウト値を大きくしました (NTLN-176)。
 </p>
@@ -175,7 +212,7 @@ Improvement
 </ul>
 </p>        
 
-<h3>Version 1.1 (2008/05/17)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.1.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.1.zip');">download</a>
+<h3>Version 1.1 (2008/05/17)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.1.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.1.zip');">download</a>
 <p>
 <p>フィルタ機能が追加されました。command + F でダイアログが表示されます。@mootoh さんに送っていただいたパッチを参考にしています。
 </p>
@@ -199,7 +236,7 @@ Task
 </ul>
 </p>
 
-<h3>Version 1.0 (2008/03/31)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.0.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.0.zip');">download</a>
+<h3>Version 1.0 (2008/03/31)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.0.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.0.zip');">download</a>
 <p>
 
 Bug
@@ -219,7 +256,7 @@ Improvement
 </ul>
 </p>
 
-<h3>Version 0.34 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.34.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.34.zip');">download</a>
+<h3>Version 0.34 (2008/03/24)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.34.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.34.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -228,7 +265,7 @@ Bug
 </ul>
 </p>
 
-<h3>Version 0.33 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.33.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.33.zip');">download</a>
+<h3>Version 0.33 (2008/03/24)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.33.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.33.zip');">download</a>
 <p>
 <p>
 日本語化できていない部分があったので直しました。文字数オーバ時に入力欄の背景色が変わらなかったのを直しました。仮のアイコンを付けました。正式版リリース時にちゃんとしたものに変更します。
@@ -255,7 +292,7 @@ Task
 </ul>
 </p>
 
-<h3>Version 0.32 (2008/03/20)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.32.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.32.zip');">download</a>
+<h3>Version 0.32 (2008/03/20)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.32.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.32.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -286,24 +323,7 @@ New Feature
 </ul>
 </p>
 
-<h3 id="1.4">Version 1.4 (2008/08/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.4.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.4.zip');">download</a>
-<p>
-<p>fav に関する Twitter  API が変更されたので対応版です。おまけとして fav 解除もできるようになっています。</p>
-
-New Feature
-<ul>
-<li>[<a href='http://jira.physalis.net/browse/NTLN-169'>NTLN-169</a>] -         destroy favorite feature
-</li>
-</ul>
-    
-Task
-<ul>
-<li>[<a href='http://jira.physalis.net/browse/NTLN-194'>NTLN-194</a>] -         adapt new fav API (favourings -&gt; favorites)
-</li>
-</ul>
-</p>
-
-<h3>Version 0.31 (2008/03/14)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.31.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.31.zip');">download</a>
+<h3>Version 0.31 (2008/03/14)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.31.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.31.zip');">download</a>
 <p>
 <p>
 主に細かなバグ修正。Growl 通知が通常の Tweet と Reply とで通知名を分けるようにしましたので、Growl 側でより細かなカスタマイズが可能になります。(例: Reply のみ表示し効果音を鳴らす。) 
@@ -334,7 +354,7 @@ New Feature
 </ul>
 </p>
 
-<h3>Version 0.30 (2008/03/11)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.30.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.30.zip');">download</a>
+<h3>Version 0.30 (2008/03/11)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.30.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.30.zip');">download</a>
 <p>
 <p>
 フォントサイズが変更できるようになりました。お遊び機能的なものですがタイムラインのスピードとメッセージ総数を表示するオプションが付きました。
@@ -358,7 +378,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.29 (2008/03/10)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.29.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.29.zip');">download</a>
+<h3>Version 0.29 (2008/03/10)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.29.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.29.zip');">download</a>
 <p>
 <p>
 メッセージ新着時と未読化時のパフォーマンスを改善しました。Growl 表示を一定数に抑える機能が付きました。
@@ -378,7 +398,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.28 (2008/03/07)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.28.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.28.zip');">download</a>
+<h3>Version 0.28 (2008/03/07)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.28.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.28.zip');">download</a>
 <p>
 <p>
 Dock アイコンに表示する未読件数を replies 分だけにしました。ウィンドウが非アクティブのときは未読になりません。ツールバーをテキストのみ表示にした場合でも View Mode が選択できるようになりました。
@@ -400,7 +420,7 @@ Improvement
 </ul>
 </p>        
 
-<h3>Version 0.27 (2008/03/06)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.27.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.27.zip');">download</a>
+<h3>Version 0.27 (2008/03/06)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.27.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.27.zip');">download</a>
 <p>
 <p>
 メッセージが増えてきたときの選択と新規メッセージ追加の速度を改善しました。
@@ -414,7 +434,7 @@ Improvement
 </ul>
 </p>
 
-<h3>Version 0.26 (2008/03/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.26.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.26.zip');">download</a>
+<h3>Version 0.26 (2008/03/04)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.26.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.26.zip');">download</a>
 <p>
 <p>
 Ctrl + Enter でポストするオプションを追加 (Enter のみでは何もしない)。ショートカットをいくつか追加。詳細はメニューをご覧ください。
@@ -432,7 +452,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.25 (2008/03/01)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.25.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.25.zip');">download</a>
+<h3>Version 0.25 (2008/03/01)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.25.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.25.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -459,7 +479,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.24.zip');">download</a>
+<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.24.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.24.zip');">download</a>
 <p>
 <p>
 主にバグ修正です。新機能として起動時にリプライを取得するようになりました。タイムラインがわかりにくくなるのを防ぐため前回起動時以降に取得したリプライは Friends タブに表示しません。(最後に取得したリプライのタイムスタンプより新しいものだけを表示)
@@ -488,7 +508,7 @@ New Feature
 </ul>
 </p>
 
-<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.23.zip');">download</a>
+<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.23.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.23.zip');">download</a>
 <p>
 <p>
 カラースキームを選択できるようになり、デフォルトで透過ウィンドウになりました。以前の状態に戻すには 設定/Appearance タブで Light を選択し Window Transparency を一番右に設定してください。
@@ -510,7 +530,7 @@ New Feature
 </ul>
 </p>
     
-<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.22.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.22.zip');">download</a>
+<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.natsulion.org/download/NatsuLion_0.22.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.22.zip');">download</a>
 <p>    
 Bug
 <ul>
@@ -555,7 +575,7 @@ New Feature
 </ul>
 </p>
 
-<h3>Version 0.20 (2008/02/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.20.zip">ダウンロード</a>
+<h3>Version 0.20 (2008/02/04)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.20.zip">ダウンロード</a>
 <p>
 <p>
 表示の改善と内部的なコードの改善が主です。新機能としてウィンドウの透過率を設定できるようになりました。
@@ -581,7 +601,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.19</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.19.zip">ダウンロード</a>
+<h3>Version 0.19</h3><a href="http://www.natsulion.org/download/NatsuLion_0.19.zip">ダウンロード</a>
 <p>
 Improvement
 <ul>

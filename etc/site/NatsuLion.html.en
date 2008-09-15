@@ -73,7 +73,7 @@ Its goals are the follows:
   <li>Feature icons</li>
   <li>Easy to use for Twitter light users</li>
 </ul>
-You can <a href="http://www.physalis.net/NatsuLion/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">download</a> the latest version from.
+You can <a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">download</a> the latest version from.
 </p>
 <p>
 <img src="images/ss_en_light.png" alt="screen shot 1 (light color scheme)">
@@ -120,7 +120,22 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
-<h3 id="1.4">Version 1.4 (2008/08/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.4.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.4.zip');">download</a>
+
+<h3 id="1.5">Version 1.5 (2008/09/15)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.5.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.5.zip');">download</a>
+<p>
+<p>now replies is refreshed automatically every 10 times of friends_timeline refresh</p>
+
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-198'>NTLN-198</a>] -         auto refresh for replies
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-199'>NTLN-199</a>] -         make tweet unread when growl notification is clicked
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-200'>NTLN-200</a>] -         friends_timline now support count parameter up to 200
+</li>
+</p>
+
+<h3 id="1.4">Version 1.4 (2008/08/04)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.4.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.4.zip');">download</a>
 <p>
 <p>Twitter changed API for manipulating favorites recently. In this version, NatsuLion follows those API changes and supports destroying favorites.</p>
 
@@ -137,7 +152,7 @@ Task
 </ul>
 </p>
 
-<h3 id="1.3">Version 1.3 (2008/07/31)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.3.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.3.zip');">download</a>
+<h3 id="1.3">Version 1.3 (2008/07/31)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.3.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.3.zip');">download</a>
 <p>
 <p>This is a maintenance release including several fixes. Thanks: @Psychs (patches for NTLN-183, NTLN-190, NTLN-191), @chap_py (idea for NTLN-185)</p>
 Bug
@@ -173,7 +188,7 @@ New Feature
 </ul>
 </p>
     
-<h3>Version 1.2 (2008/05/30)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.2.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.2.zip');">download</a>
+<h3>Version 1.2 (2008/05/30)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.2.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.2.zip');">download</a>
 <p>
 <p>To avoid timeout caused by Twitter's overload, now NatsuLion wait 30 seconds until timeout (NTLN-176)
 </p>
@@ -188,7 +203,7 @@ Improvement
 </ul>
 </p>        
 
-<h3>Version 1.1 (2008/05/17)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.1.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.1.zip');">download</a>
+<h3>Version 1.1 (2008/05/17)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.1.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.1.zip');">download</a>
 <p>
 Improvement
 <ul>
@@ -209,7 +224,7 @@ Task
 </ul>
 </p>
 
-<h3>Version 1.0 (2008/03/31)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_1.0.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.0.zip');">download</a>
+<h3>Version 1.0 (2008/03/31)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.0.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.0.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -228,7 +243,7 @@ Improvement
 </ul>
 </p>
         
-<h3>Version 0.34 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.34.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.34.zip');">download</a>
+<h3>Version 0.34 (2008/03/24)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.34.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.34.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -237,7 +252,7 @@ Bug
 </ul>
 </p>
 
-<h3>Version 0.33 (2008/03/24)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.33.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.33.zip');">download</a>
+<h3>Version 0.33 (2008/03/24)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.33.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.33.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -260,7 +275,7 @@ Task
 </ul>
 </p>
 
-<h3>Version 0.32 (2008/03/20)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.32.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.32.zip');">download</a>
+<h3>Version 0.32 (2008/03/20)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.32.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.32.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -292,7 +307,7 @@ New Feature
     
 </p>
 
-<h3>Version 0.31 (2008/03/14)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.31.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.31.zip');">download</a>
+<h3>Version 0.31 (2008/03/14)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.31.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.31.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -319,7 +334,7 @@ New Feature
 </ul>
 </p>
 
-<h3>Version 0.30 (2008/03/11)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.30.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.30.zip');">download</a>
+<h3>Version 0.30 (2008/03/11)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.30.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.30.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -340,7 +355,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.29 (2008/03/10)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.29.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.29.zip');">download</a>
+<h3>Version 0.29 (2008/03/10)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.29.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.29.zip');">download</a>
 <p>
 Improvement
 <ul>
@@ -357,7 +372,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.28 (2008/03/07)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.28.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.28.zip');">download</a>
+<h3>Version 0.28 (2008/03/07)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.28.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.28.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -376,7 +391,7 @@ Improvement
 </ul>
 </p>        
 
-<h3>Version 0.27 (2008/03/06)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.27.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.27.zip');">download</a>
+<h3>Version 0.27 (2008/03/06)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.27.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.27.zip');">download</a>
 <p>
 Improvement
 <ul>
@@ -387,7 +402,7 @@ Improvement
 </ul>
 </p>
         
-<h3>Version 0.26 (2008/03/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.26.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.26.zip');">download</a>
+<h3>Version 0.26 (2008/03/04)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.26.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.26.zip');">download</a>
 <p>
 Improvement
 <ul>
@@ -402,7 +417,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.25 (2008/03/01)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.25.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.25.zip');">download</a>
+<h3>Version 0.25 (2008/03/01)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.25.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.25.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -429,7 +444,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.24.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.24.zip');">download</a>
+<h3>Version 0.24 (2008/02/16)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.24.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.24.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -454,7 +469,7 @@ New Feature
 </ul>
 </p>
 
-<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.23.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.23.zip');">download</a>
+<h3>Version 0.23 (2008/02/16)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.23.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.23.zip');">download</a>
 <p>
 Improvement
 <ul>
@@ -473,7 +488,7 @@ New Feature
 </ul>
 </p>
     
-<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.22.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.22.zip');">download</a>
+<h3>Version 0.22 (2008/02/11) </h3><a href="http://www.natsulion.org/download/NatsuLion_0.22.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.22.zip');">download</a>
 <p>    
 Bug
 <ul>
@@ -515,7 +530,7 @@ New Feature
 </ul>
 </p>
     
-<h3>Version 0.20 (2008/02/04)</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.20.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.20.zip');">download</a>
+<h3>Version 0.20 (2008/02/04)</h3><a href="http://www.natsulion.org/download/NatsuLion_0.20.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.20.zip');">download</a>
 <p>
 Bug
 <ul>
@@ -538,7 +553,7 @@ New Feature
 </ul>
 </p>    
 
-<h3>Version 0.19</h3><a href="http://www.physalis.net/NatsuLion/NatsuLion_0.19.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.19.zip');">download</a>
+<h3>Version 0.19</h3><a href="http://www.natsulion.org/download/NatsuLion_0.19.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_0.19.zip');">download</a>
 <p>
 Improvement
 <ul>

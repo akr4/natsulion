@@ -3,9 +3,30 @@
     xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
   <channel>
     <title>NatsuLion Appcast</title>
-    <link>http://www.physalis.net/NatsuLion/appcast.xml</link>
+    <link>http://www.natsulion.org/appcast.xml</link>
     <description>NatsuLion Releases</description>
     <language>en</language>
+    <item>
+      <title>NatsuLion Version 1.4</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.5
+        
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-198'&gt;NTLN-198&lt;/a&gt;] -         auto refresh for replies
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-199'&gt;NTLN-199&lt;/a&gt;] -         make tweet unread when growl notification is clicked
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-200'&gt;NTLN-200&lt;/a&gt;] -         friends_timline now support count parameter up to 200
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Mon, 15 Oct 2008 22:14:00 +9000</pubDate>
+      <enclosure url="http://www.natsulion.org/download/NatsuLion_1.5.zip"
+        length="1655491"
+        type="application/octet-stream"/>
+    </item>
     <item>
       <title>NatsuLion Version 1.4</title>
       <description>
