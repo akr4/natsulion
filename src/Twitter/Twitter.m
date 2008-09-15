@@ -343,13 +343,13 @@
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
-    NSString *url = [API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml"];
+    NSString *url = [API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml?count=200"];
     if (_friendsTimelineTimestamp) {
 //        [[url stringByAppendingString:@"?since_id="] stringByAppendingString:_lastStatusIdForFriendTimeline];
         
         // @"%a,%d %b %Y %H:%M:%S GMT"
         NSCalendarDate *c = [_friendsTimelineTimestamp dateWithCalendarFormat:@"%a%%2C+%d+%b+%Y+%H%%3A%M%%3A%S+GMT" timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
-        url = [[url stringByAppendingString:@"?since="] stringByAppendingString:[c description]];
+        url = [[url stringByAppendingString:@"&since="] stringByAppendingString:[c description]];
     }
     
 //    NSLog(@"requesting: %@", url);
