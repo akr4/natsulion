@@ -7,6 +7,25 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.7</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.7
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-205'&gt;NTLN-205&lt;/a&gt;] -         slow when retrieving timeline
+&lt;/li&gt;
+&lt;/ul&gt;
+
+Thank you so much, Beta testers!
+      </description>
+      <pubDate>Mon, 16 Oct 2008 10:29:00 +9000</pubDate>
+      <enclosure url="http://www.natsulion.org/download/NatsuLion_1.7.zip"
+        length="1655637"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.6</title>
       <description>
         Release Notes - NatsuLion - Version 1.6

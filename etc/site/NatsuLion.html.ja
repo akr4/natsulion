@@ -131,6 +131,16 @@ pageTracker._trackPageview();
 
 <h2>リリースノート</h2>
 
+<h3 id="1.7">Version 1.7 (2008/09/16)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.7.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.7.zip');">download</a>
+<p>
+<p>1.5 と 1.6 はタイムライン取得時に遅くなる問題がありました。本バージョンで対応しています。ご迷惑おかけしました。</p>
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-205'>NTLN-205</a>] -         slow when retrieving timeline
+</li>
+</ul>
+</p>
+
 <h3 id="1.6">Version 1.6 (2008/09/15)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.6.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.6.zip');">download</a>
 <p>
 <p>version 1.5 has a major bug NTLN-202 which minus value is shown on the app badge. This is the version just fixes the problem.</p>
