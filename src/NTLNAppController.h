@@ -12,6 +12,7 @@
     IBOutlet NTLNMainWindowController *mainWindowController;
     IBOutlet NTLNPreferencesWindowController *preferencesWindowController;
     IBOutlet NTLNWelcomeWindowController *welcomeWindowController;
+    IBOutlet NSMutableArray *messageViewControllerArray;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     IBOutlet NTLNMultiTasksProgressIndicator *progressIndicator; // should be hold by MainWindowController?

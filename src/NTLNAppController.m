@@ -526,7 +526,7 @@
 }
 
 - (BOOL) isNewMessage:(TwitterStatusViewController*)controller {
-    if ([[messageViewControllerArrayController arrangedObjects] containsObject:controller] || [_messageNotifier contains:controller]) {
+    if ([messageViewControllerArray containsObject:controller] || [_messageNotifier contains:controller]) {
         return FALSE;
     }
     return TRUE;

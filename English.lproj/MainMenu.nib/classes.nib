@@ -267,8 +267,6 @@
 				<string>NTLNMessageTableViewController</string>
 				<key>messageTextField</key>
 				<string>NTLNMessageInputTextField</string>
-				<key>messageViewControllerArray</key>
-				<string>NSMutableArray</string>
 				<key>messageViewControllerArrayController</key>
 				<string>NSArrayController</string>
 				<key>progressIndicator</key>
@@ -328,6 +326,8 @@
 				<string>NTLNMainWindowController</string>
 				<key>messageListViewsController</key>
 				<string>NTLNMessageListViewsController</string>
+				<key>messageViewControllerArray</key>
+				<string>NSMutableArray</string>
 				<key>messageViewControllerArrayController</key>
 				<string>NSArrayController</string>
 				<key>preferencesWindowController</key>
