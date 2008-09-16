@@ -42,7 +42,9 @@
 }
 
 - (void) dealloc {
-    [_refreshTimer release];
+    [_friendsTimelineRefreshTimer release];
+    [_repliesRefreshTimer release];
+    [_directMessagesRefreshTimer release];
     [_badge release];
     [_growl release];
     [_messageCountHistory release];
@@ -70,31 +72,128 @@
     _badge = [[CTBadge alloc] init];
 }
 
-#pragma mark Timer
-
-- (void) resetTimer {
-    if (_refreshTimer) {
-        [_refreshTimer invalidate];
-        [_refreshTimer release];
+#pragma mark Statistics
+- (void)storeMessageStatistics:(NSArray*)messages {
+    // store current data
+    _numberOfPostedMessages += [messages count];
+    if ([[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithInt:[messages count]], @"count",
+                             [NSDate date], @"timestamp",
+                             nil];
+        [_messageCountHistory addObject:dic];
     }
 }
 
-- (void) stopTimer {
-    [self resetTimer];
+- (void)updateMessageStatistics {
+    
+    if (![[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
+        return;
+    }
+    
+    double period = [self refreshInterval] * NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER * 1.2;
+    
+    // remove old data
+    for (int i = 0; i < [_messageCountHistory count]; i++) {
+        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
+        NSDate *timestamp = [dic objectForKey:@"timestamp"];
+        if (-[timestamp timeIntervalSinceNow] > period) {
+            [_messageCountHistory removeObjectAtIndex:i];
+            i--;
+        }
+    }
+    
+#ifdef DEBUG
+    NSLog(@"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+    for (int i = 0; i < [_messageCountHistory count]; i++) {
+        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
+        NSLog(@"[%@, %d]", [dic objectForKey:@"timestamp"], [[dic objectForKey:@"count"] intValue]);
+    }
+    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+#endif
+    
+    // calculate statistics
+    float sum = 0;
+    for (int i = 0; i < [_messageCountHistory count]; i++) {
+        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
+        sum += [[dic objectForKey:@"count"] intValue];
+    }
+    
+    [mainWindowController setMessagePostLevel:(sum / NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER)];
+    [mainWindowController setMessageStatisticsField:[NSString stringWithFormat:@"%ld", _numberOfPostedMessages]];
+    
+    //    NSLog(@"level = %f", (sum / NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER));
 }
 
-- (void) startTimer {
-    [self resetTimer];
-    
+#pragma mark Timer
+
+- (void) restartFriendsTimelineRefreshTimer
+{
+    if (_friendsTimelineRefreshTimer) {
+        [_friendsTimelineRefreshTimer invalidate];
+        [_friendsTimelineRefreshTimer release];
+    }
+
+    _friendsTimelineRefreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval
+                                                                     target:self
+                                                                   selector:@selector(expireFriendsTimelineRefreshInterval)
+                                                                   userInfo:nil
+                                                                    repeats:YES] retain];
+}
+
+- (void) restartRepliesRefreshTimer
+{
+    if (_repliesRefreshTimer) {
+        [_repliesRefreshTimer invalidate];
+        [_repliesRefreshTimer release];
+    }
+
+    _repliesRefreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval * 8.5
+                                                             target:self
+                                                           selector:@selector(expireRepliesRefreshInterval)
+                                                           userInfo:nil
+                                                            repeats:YES] retain];
+}
+
+- (void) restartDirectMessagesRefreshTimer
+{
+    if (_directMessagesRefreshTimer) {
+        [_directMessagesRefreshTimer invalidate];
+        [_directMessagesRefreshTimer release];
+    }
+
+    _directMessagesRefreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval * 10.5
+                                                                    target:self
+                                                                  selector:@selector(expireDirectMessagesRefreshInterval)
+                                                                  userInfo:nil
+                                                                   repeats:YES] retain];
+}
+
+- (void) expireFriendsTimelineRefreshInterval
+{
+    [self updateStatus];
+    [self updateMessageStatistics];
+}
+
+- (void) expireRepliesRefreshInterval
+{
+    [self updateReplies];
+}
+
+- (void) expireDirectMessagesRefreshInterval
+{
+    [self updateDirectMessages];
+}
+
+- (void) restartTimer
+{
     if (_refreshInterval < 30) {
         return;
     }
 
-    _refreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval
-                                                      target:self
-                                                    selector:@selector(expireRefreshInterval)
-                                                    userInfo:nil
-                                                     repeats:YES] retain];
+    [self restartFriendsTimelineRefreshTimer];
+    [self restartRepliesRefreshTimer];
+    [self restartDirectMessagesRefreshTimer];
 }
 
 - (int) refreshInterval {
@@ -105,7 +204,7 @@
     _refreshInterval = interval;
     
     if ([[NTLNAccount instance] username]) {
-        [self startTimer];
+        [self restartTimer];
     }
 }
 
@@ -123,72 +222,6 @@
 
 - (void)sheetDidEnd:(NSWindow*)sheet returnCode:(int)returnCode contextInfo:(void*)contextInfo {
     [[preferencesWindowController window] orderOut:self];
-}
-
-#pragma mark Statistics
-- (void)storeMessageStatistics:(NSArray*)messages {
-    // store current data
-    _numberOfPostedMessages += [messages count];
-    if ([[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSNumber numberWithInt:[messages count]], @"count",
-                             [NSDate date], @"timestamp",
-                             nil];
-        [_messageCountHistory addObject:dic];
-    }
-}
-
-- (void)updateMessageStatistics {
-
-    if (![[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
-        return;
-    }
-
-    double period = [self refreshInterval] * NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER * 1.2;
-    
-    // remove old data
-    for (int i = 0; i < [_messageCountHistory count]; i++) {
-        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
-        NSDate *timestamp = [dic objectForKey:@"timestamp"];
-        if (-[timestamp timeIntervalSinceNow] > period) {
-            [_messageCountHistory removeObjectAtIndex:i];
-            i--;
-        }
-    }
-
-#ifdef DEBUG
-    NSLog(@"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-    for (int i = 0; i < [_messageCountHistory count]; i++) {
-        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
-        NSLog(@"[%@, %d]", [dic objectForKey:@"timestamp"], [[dic objectForKey:@"count"] intValue]);
-    }
-    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-#endif
-    
-    // calculate statistics
-    float sum = 0;
-    for (int i = 0; i < [_messageCountHistory count]; i++) {
-        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
-        sum += [[dic objectForKey:@"count"] intValue];
-    }
-
-    [mainWindowController setMessagePostLevel:(sum / NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER)];
-    [mainWindowController setMessageStatisticsField:[NSString stringWithFormat:@"%ld", _numberOfPostedMessages]];
-    
-//    NSLog(@"level = %f", (sum / NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER));
-}
-
-#pragma mark Refresh interval timer
-- (void) expireRefreshInterval {
-    [self updateStatus];
-    if (_refreshCount % 10 == 6) {
-        [self updateReplies];
-    }
-    if (_refreshCount % 10 == 9) {
-        [self updateDirectMessages];
-    }
-    [self updateMessageStatistics];
-    _refreshCount++;
 }
 
 #pragma mark NSApplicatoin delegate methods
@@ -219,7 +252,7 @@
     } else {
         [mainWindowController showWindow:nil];
         if ([[NTLNAccount instance] password]) {
-            [_refreshTimer fire];
+            [_friendsTimelineRefreshTimer fire];
         }
         [self updateReplies];
         [self updateDirectMessages];
@@ -231,8 +264,8 @@
 - (void) finishedToSetup {
     [welcomeWindowController close];
     [mainWindowController showWindow:nil];
-    [self startTimer];
-    [_refreshTimer fire];
+    [self restartTimer];
+    [_friendsTimelineRefreshTimer fire];
 }
 
 #pragma mark Growl
@@ -360,6 +393,7 @@
     [_twitter friendTimelineWithUsername:[[NTLNAccount instance] username]
                                 password:password
                                  usePost:[[NTLNConfiguration instance] usePost]];
+    [self restartFriendsTimelineRefreshTimer];
 }
 
 - (void) updateReplies {
@@ -373,6 +407,7 @@
     [_twitter repliesWithUsername:[[NTLNAccount instance] username]
                          password:password
                           usePost:[[NTLNConfiguration instance] usePost]];
+    [self restartRepliesRefreshTimer];
 }
 
 - (void) updateSentMessages {
@@ -411,6 +446,7 @@
     [_twitter sendMessage:message
                  username:[[NTLNAccount instance] username]
                  password:password];
+    [self restartDirectMessagesRefreshTimer];
 }
 
 - (void) createFavoriteFor:(NSString*)statusId {

@@ -15,25 +15,28 @@
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     IBOutlet NTLNMultiTasksProgressIndicator *progressIndicator; // should be hold by MainWindowController?
-   
-    int _refreshInterval;
-    int _refreshCount;
-    NSTimer *_refreshTimer;
-    int _numberOfUnreadMessage;
 
+#pragma mark Timer
+    int _refreshInterval;
+    NSTimer *_friendsTimelineRefreshTimer;
+    NSTimer *_repliesRefreshTimer;
+    NSTimer *_directMessagesRefreshTimer;
+
+#pragma mark Twitter
     Twitter *_twitter;
     BOOL _createFavoriteIsWorking;
     NTLNErrorMessageViewController *_lastErrorMessage;
     NTLNBufferedMessageNotifier *_messageNotifier;
 
+#pragma mark Badge
     CTBadge *_badge;
-    
+    int _numberOfUnreadMessage;
+
+#pragma mark Growl
     BOOL _growlEnabled;
     NTLNGrowlNotifier *_growl;
 
-                
-                
-    // statistics
+#pragma mark Statistics
     NSMutableArray *_messageCountHistory;
     long _numberOfPostedMessages;
 }
@@ -43,8 +46,7 @@
 
 - (int) refreshInterval;
 - (void) setRefreshInterval:(int)interval;
-- (void) startTimer;
-- (void) stopTimer;
+- (void) restartTimer;
 - (void) setIconImageToNormal;
 - (void) setIconImageForError;
 - (void) markAsRead:(NSString*)statusId;

@@ -94,7 +94,7 @@
                 }
             }
             [[NSApplication sharedApplication] endSheet:accountInfoSheet returnCode:NTLN_PREFRENCESWINDOW_SHEET_OK];
-            [appController startTimer];
+            [appController restartTimer];
             break;
         case NTLN_TWITTERCHECK_AUTH_FAILURE:
         case NTLN_TWITTERCHECK_FAILURE:
