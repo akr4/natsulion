@@ -17,6 +17,8 @@ static NTLNColors *_instance;
     [_colorForHighlightedReply release];
     [_colorForProbableReply release];
     [_colorForHighlightedProbableReply release];
+    [_colorForDirectMessage release];
+    [_colorForHighlightedDirectMessage release];
     [_colorForLink release];
     [_colorForHighlightedLink release];
     [_colorForText release];
@@ -43,6 +45,8 @@ static NTLNColors *_instance;
     _colorForHighlightedReply = [[NSColor colorWithDeviceHue:0 saturation:0.55 brightness:1.0 alpha:alpha] retain];
     _colorForProbableReply = [[NSColor colorWithDeviceHue:0.1167 saturation:0.3 brightness:1.0 alpha:alpha] retain];
     _colorForHighlightedProbableReply = [[NSColor colorWithDeviceHue:0.1167 saturation:0.55 brightness:1.0 alpha:alpha] retain];
+    _colorForDirectMessage = [[NSColor colorWithDeviceHue:0.583 saturation:0.3 brightness:1.0 alpha:alpha] retain];
+    _colorForHighlightedDirectMessage = [[NSColor colorWithDeviceHue:0.583 saturation:0.55 brightness:1.0 alpha:alpha] retain];
     _colorForBackground = [[[NSColor whiteColor] colorWithAlphaComponent:alpha] retain];
     _colorForHighlightedBackground = [[[NSColor alternateSelectedControlColor] colorWithAlphaComponent:alpha] retain];
     _colorForWarning = [[NSColor colorWithDeviceHue:0.1167 saturation:0.3 brightness:1.0 alpha:alpha] retain];
@@ -70,6 +74,8 @@ static NTLNColors *_instance;
     _colorForHighlightedReply = [[_colorForReply highlightWithLevel:0.4] retain];
     _colorForProbableReply = [[NSColor colorWithDeviceHue:0.1167 saturation:0.55 brightness:0.5 alpha:alpha] retain];
     _colorForHighlightedProbableReply = [[_colorForProbableReply highlightWithLevel:0.5] retain];
+    _colorForDirectMessage = [[NSColor colorWithDeviceHue:0.583 saturation:0.55 brightness:1.0 alpha:alpha] retain];
+    _colorForHighlightedDirectMessage = [[_colorForDirectMessage highlightWithLevel:0.5] retain];
     _colorForBackground = [[[NSColor blackColor] colorWithAlphaComponent:alpha] retain];
     _colorForHighlightedBackground = [[_colorForBackground highlightWithLevel:0.5] retain];
     _colorForWarning = [[NSColor colorWithDeviceHue:0.1167 saturation:0.55 brightness:0.5 alpha:alpha] retain];
@@ -118,6 +124,14 @@ static NTLNColors *_instance;
 
 - (NSColor*) colorForHighlightedProbableReply {
     return _colorForHighlightedProbableReply;
+}
+
+- (NSColor*) colorForDirectMessage {
+    return _colorForDirectMessage;
+}
+
+- (NSColor*) colorForHighlightedDirectMessage {
+    return _colorForHighlightedDirectMessage;
 }
 
 - (NSColor*) colorForLink {

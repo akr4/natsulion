@@ -165,8 +165,11 @@
 #pragma mark Refresh interval timer
 - (void) expireRefreshInterval {
     [mainWindowController updateStatus];
-    if (_refreshCount % 10 == 9) {
+    if (_refreshCount % 10 == 6) {
         [mainWindowController updateReplies];
+    }
+    if (_refreshCount % 10 == 9) {
+        [mainWindowController updateDirectMessages];
     }
     [self updateMessageStatistics];
     _refreshCount++;
@@ -203,6 +206,7 @@
             [_refreshTimer fire];
         }
         [mainWindowController updateReplies];
+        [mainWindowController updateDirectMessages];
     }
 }
 

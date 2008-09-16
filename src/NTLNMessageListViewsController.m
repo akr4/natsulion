@@ -79,6 +79,7 @@
                                        [NSArray arrayWithObjects:
                                         [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_REPLY],
                                         [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE],
+                                        [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_DIRECT],
                                         nil]]]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicateFactory:@selector(predicateForSentMessages)]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:

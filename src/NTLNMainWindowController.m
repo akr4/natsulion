@@ -303,6 +303,9 @@
     return TRUE;
 }
 
+#pragma mark -
+#pragma mark Twitter API
+
 - (void) updateStatus {
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {
@@ -329,7 +332,7 @@
 }
 
 - (void) updateSentMessages {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {
         // TODO inform error to user
@@ -339,6 +342,19 @@
     [_twitter sentMessagesWithUsername:[[NTLNAccount instance] username]
                               password:password
                                usePost:[[NTLNConfiguration instance] usePost]];
+}
+
+- (void) updateDirectMessages {
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSString *password = [[NTLNAccount instance] password];
+    if (!password) {
+        // TODO inform error to user
+        NSLog(@"password not set. skip updateStatus");
+        return;
+    }
+    [_twitter directMessagesWithUsername:[[NTLNAccount instance] username]
+                                password:password
+                                 usePost:[[NTLNConfiguration instance] usePost]];
 }
 
 - (IBAction) sendMessage:(id) sender {
@@ -357,6 +373,8 @@
                  username:[[NTLNAccount instance] username]
                  password:password];
 }
+
+#pragma mark -
 
 - (void) resetMessageTextField {
     [messageTextField setStringValue:@""];

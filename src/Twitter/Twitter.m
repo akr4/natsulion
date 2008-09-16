@@ -35,28 +35,9 @@
 }
 @end
 
-@implementation TwitterTimelineCallbackHandler
-
+@implementation NTLNAbstractTimelineCallbackHandler
 - (NSString*) convertToLargeIconUrl:(NSString*)url {
     return url;
-    
-    //    // [@"_normal.jpg" length] = 11
-    //    int loc = [url length] - 11;
-    //    NSRange normalSuffixRange;
-    //    normalSuffixRange.location = loc;
-    //    normalSuffixRange.length = 7; // "_normal"
-    //    NSString *suffix = [url substringWithRange:normalSuffixRange];
-    //    if ([suffix isEqualToString:@"_normal"]) {
-    //        NSMutableString *u = [url mutableCopy];
-    //        NSRange r;
-    //        r.location = loc;
-    //        r.length = 7;
-    //        [u deleteCharactersInRange:r];
-    //        [u insertString:@"_bigger" atIndex:loc];
-    //        return u;
-    //    }
-    //
-    //    return url;
 }
 
 - (NSString*) decodeHeart:(NSString*)aString {
@@ -85,18 +66,18 @@
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
     [_callback twitterStopTask];
-
+    
     NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
     
-//    NSLog(@"responseArrived:%@", responseStr);
+    //    NSLog(@"responseArrived:%@", responseStr);
     
     NSXMLDocument *document = nil;
     
     if (responseStr) {
         document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
     }
-
-//#define DEBUG 1
+    
+    //#define DEBUG 1
 #ifdef DEBUG
     switch ((int) ((float) rand() / RAND_MAX * 10)) {
         case 0:
@@ -157,11 +138,36 @@
         return;
     }
     
+    [self parseResponse:document];
+}
+
+- (void) parseResponse:(NSXMLDocument*)document
+{
+  // subclass must imeplement  
+  // must:
+    // call [_parent pushIconWaiter:backStatus forUrl:iconUrl] with [_callback twitterStartTask]
+    // call [_parent setFriendsTimelineTimestamp:lastTimestamp]
+}
+
+- (void) connectionFailed:(NSError*)error {
+    [_callback twitterStopTask];
+    [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
+                                               originalMessage:[error localizedDescription]]];
+}
+
+@end
+
+@implementation TwitterTimelineCallbackHandler
+
+- (void) parseResponse:(NSXMLDocument*)document
+{
     NSArray *statuses = [document nodesForXPath:@"/statuses/status" error:NULL];
     if ([statuses count] == 0) {
-//        NSLog(@"status code: %d - response:%@", code, responseStr);
+        //        NSLog(@"status code: %d - response:%@", code, responseStr);
         return;
     }
+    
+    NSLog(@"status count = %d", [statuses count]);
     
     NSDate *lastTimestamp = nil;
     for (NSXMLNode *status in statuses) {
@@ -177,7 +183,7 @@
         [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];
         
         NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"user/profile_image_url/text()"]];
-       
+        
         [backStatus finishedToSetProperties];
         [_callback twitterStartTask];
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
@@ -192,10 +198,41 @@
     }
 }
 
-- (void) connectionFailed:(NSError*)error {
-    [_callback twitterStopTask];
-    [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
-                                               originalMessage:[error localizedDescription]]];
+@end
+
+@implementation TwitterDirectMessagesCallbackHandler
+
+- (void) parseResponse:(NSXMLDocument*)document
+{
+    NSArray *statuses = [document nodesForXPath:@"/direct-messages/direct_message" error:NULL];
+    if ([statuses count] == 0) {
+        //        NSLog(@"status code: %d - response:%@", code, responseStr);
+        return;
+    }
+    
+    NSLog(@"status count = %d", [statuses count]);
+    
+    for (NSXMLNode *status in statuses) {
+        NTLNMessage *backStatus = [[[NTLNMessage alloc] init] autorelease];
+        
+        [backStatus setStatusId:[self stringValueFromNSXMLNode:status byXPath:@"id/text()"]];
+        [backStatus setName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"sender/name/text()"]]];
+        [backStatus setScreenName:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"sender/screen_name/text()"]]];
+        [backStatus setText:[[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"text/text()"]]];
+        [backStatus setText:[self decodeHeart:[backStatus text]]];
+        
+        NSString *timestampStr = [[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"created_at/text()"]];
+        [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];
+        
+        NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"sender/profile_image_url/text()"]];
+        
+        [backStatus setReplyType:NTLN_MESSAGE_REPLY_TYPE_DIRECT];
+        
+        NSLog(@"DM { %@ }", backStatus);
+        [backStatus finishedToSetProperties];
+        [_callback twitterStartTask];
+        [_parent pushIconWaiter:backStatus forUrl:iconUrl];
+    }
 }
 
 @end
@@ -278,6 +315,10 @@
     
 }
 
+- (void) directMessagesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
+    
+}
+
 - (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password {
     
 }
@@ -356,7 +397,7 @@
         url = [[url stringByAppendingString:@"&since="] stringByAppendingString:[c description]];
     }
     
-//    NSLog(@"requesting: %@", url);
+    NSLog(@"requesting: %@", url);
     
     [_connectionForFriendTimeline release];
     _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
@@ -411,6 +452,29 @@
                                                                 usePost:post
                                                                callback:handler];
     if (!_connectionForSentMessages) {
+        NSLog(@"failed to get connection.");
+        return;
+    }
+    
+    [_callback twitterStartTask];
+}
+
+- (void) directMessagesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post
+{
+    if (_connectionForDirectMessages && ![_connectionForDirectMessages isFinished]) {
+        NSLog(@"connection for direct messages is running.");
+        return;
+    }
+    
+    TwitterDirectMessagesCallbackHandler *handler = [[TwitterDirectMessagesCallbackHandler alloc] initWithCallback:_callback parent:self];
+    
+    [_connectionForDirectMessages release];
+    _connectionForDirectMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/direct_messages.xml"]
+                                                                    username:username
+                                                                    password:password
+                                                                     usePost:post
+                                                                    callback:handler];
+    if (!_connectionForDirectMessages) {
         NSLog(@"failed to get connection.");
         return;
     }

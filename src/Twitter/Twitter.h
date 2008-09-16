@@ -44,11 +44,24 @@ enum NTLNErrorType {
 - (void) twitterStopTask;
 @end
 
-@interface TwitterTimelineCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> {
+@interface NTLNAbstractTimelineCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> 
+{
+@protected
     id<TwitterTimelineCallback> _callback;
     id _parent;
 }
 - (id) initWithCallback:(id<TwitterTimelineCallback>)callback parent:(id)parent;
+- (void) parseResponse:(NSXMLDocument*)document;
+@end
+
+@interface TwitterTimelineCallbackHandler : NTLNAbstractTimelineCallbackHandler
+{
+}
+@end
+
+@interface TwitterDirectMessagesCallbackHandler : NTLNAbstractTimelineCallbackHandler
+{
+}
 @end
 
 @interface TwitterPostCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> {
@@ -70,6 +83,7 @@ enum NTLNErrorType {
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
 - (void) repliesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
 - (void) sentMessagesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
+- (void) directMessagesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post;
 - (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password;
 - (void) destroyFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password;
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password;
@@ -82,6 +96,7 @@ enum NTLNErrorType {
     NTLNAsyncUrlConnection *_connectionForFriendTimeline;
     NTLNAsyncUrlConnection *_connectionForReplies;
     NTLNAsyncUrlConnection *_connectionForSentMessages;
+    NTLNAsyncUrlConnection *_connectionForDirectMessages;
     NTLNAsyncUrlConnection *_connectionForPost;
     NTLNAsyncUrlConnection *_connectionForFavorite;
     

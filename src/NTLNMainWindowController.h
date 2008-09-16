@@ -74,6 +74,7 @@
 - (void) setFrameAutosaveName:(NSString*)name;
 - (void) updateStatus;
 - (void) updateReplies;
+- (void) updateDirectMessages;
 
 - (void) setMessageStatisticsField:(NSString*)value;
 - (void) setMessagePostLevel:(float)level;

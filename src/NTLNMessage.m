@@ -51,8 +51,11 @@
     return [screenName isEqualToString:[[NTLNAccount instance] username]];
 }
 
+// determin type of message (DM is checked in Twitter.m)
 - (void) finishedToSetProperties {
-    if ([self isMyUpdate]) {
+    if (replyType != 0) {
+        // do nothing
+    } else if ([self isMyUpdate]) {
         replyType = NTLN_MESSAGE_REPLY_TYPE_MYUPDATE;
     } else if ([self isReplyToMe]) {
         replyType = NTLN_MESSAGE_REPLY_TYPE_REPLY;
@@ -61,6 +64,12 @@
     } else {
         replyType = NTLN_MESSAGE_REPLY_TYPE_NORMAL;
     }
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"statusId:%@, name:%@, screenName:%@, text:%@, icon:%@, timestamp:%@",
+            statusId, name, screenName, text, icon, timestamp];
 }
 
 @end

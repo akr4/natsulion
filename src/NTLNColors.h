@@ -15,6 +15,9 @@
     NSColor *_colorForHighlightedReply;
     NSColor *_colorForProbableReply;
     NSColor *_colorForHighlightedProbableReply;
+    NSColor *_colorForDirectMessage;
+    NSColor *_colorForHighlightedDirectMessage;
+    
     NSColor *_colorForHighlightedBackground;
     NSColor *_colorForBackground;
     NSColor *_colorForWarning;
@@ -36,6 +39,8 @@
 - (NSColor*) colorForHighlightedReply;
 - (NSColor*) colorForProbableReply;
 - (NSColor*) colorForHighlightedProbableReply;
+- (NSColor*) colorForDirectMessage;
+- (NSColor*) colorForHighlightedDirectMessage;
 - (NSColor*) colorForHighlightedBackground;
 - (NSColor*) colorForBackground;
 - (NSColor*) colorForWarning;

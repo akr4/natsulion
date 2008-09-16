@@ -80,6 +80,9 @@
     
     switch ([_status replyType]) {
         case NTLN_MESSAGE_REPLY_TYPE_DIRECT:
+            [_backgroundColor release];
+            _backgroundColor = [[[NTLNColors instance] colorForHighlightedDirectMessage] retain];
+            break;
         case NTLN_MESSAGE_REPLY_TYPE_REPLY:
             [_backgroundColor release];
             _backgroundColor = [[[NTLNColors instance] colorForHighlightedReply] retain];
@@ -102,6 +105,9 @@
 
     switch ([_status replyType]) {
         case NTLN_MESSAGE_REPLY_TYPE_DIRECT:
+            [_backgroundColor release];
+            _backgroundColor = [[[NTLNColors instance] colorForDirectMessage] retain];
+            break;
         case NTLN_MESSAGE_REPLY_TYPE_REPLY:
             [_backgroundColor release];
             _backgroundColor = [[[NTLNColors instance] colorForReply] retain];
