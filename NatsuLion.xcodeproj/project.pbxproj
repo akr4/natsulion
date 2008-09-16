@@ -127,7 +127,6 @@
 		E90B0F330DE1A4B9008CC765 /* sent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sent.tiff; sourceTree = "<group>"; };
 		E90B0F340DE1A4B9008CC765 /* unread.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = unread.tiff; sourceTree = "<group>"; };
 		E90EFF5D0E40C664008FCF8E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		E90EFF5F0E40C675008FCF8E /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E90F0B3E0D2E8E190067A9CA /* NTLNConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNConfiguration.h; sourceTree = "<group>"; };
 		E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNConfiguration.m; sourceTree = "<group>"; };
 		E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -710,7 +709,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				E90EFF5D0E40C664008FCF8E /* English */,
-				E90EFF5F0E40C675008FCF8E /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";

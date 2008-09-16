@@ -4,7 +4,6 @@
 #import "NTLNGrowlNotifier.h"
 #import "NTLNMessageInputTextField.h"
 #import "NTLNMessageListViewsController.h"
-#import "NTLNMultiTasksProgressIndicator.h"
 #import "NTLNBufferedMessageNotifier.h"
 #import "NTLNErrorMessageViewController.h"
 #import "NTLNKeywordFilterView.h"
@@ -33,9 +32,8 @@
 // defined and used internally
 @class NTLNMessageListViewsController;
 
-@interface NTLNMainWindowController : NSWindowController <NTLNMessageViewListener, NTLNTimelineSortOrderChangeObserver, TwitterTimelineCallback, TwitterPostCallback, TwitterFavoriteCallback, NTLNMessageInputTextFieldCallback> {
+@interface NTLNMainWindowController : NSWindowController <NTLNMessageViewListener, NTLNTimelineSortOrderChangeObserver, NTLNMessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
-    IBOutlet NTLNMultiTasksProgressIndicator *progressIndicator;
     IBOutlet NTLNMessageInputTextField *messageTextField;
     IBOutlet NSTextField *statusTextField;
     IBOutlet NSArrayController *messageViewControllerArrayController;
@@ -47,10 +45,6 @@
     IBOutlet NTLNKeywordFilterView *keywordFilterView;
     IBOutlet NTLNAppController *appController;
     
-    Twitter *_twitter;
-
-    BOOL _createFavoriteIsWorking;
-    NTLNBufferedMessageNotifier *_messageNotifier;
     NSResponder *_previousFirstResponder;
     NTLNTextView *_fieldEditor;
     
@@ -60,8 +54,6 @@
     NSMutableDictionary *_toolbarItems;
     NSSegmentedControl *_messageViewSelector;
     NSMenuItem *_messageViewToolbarMenuItem;
-    
-    NTLNErrorMessageViewController *_lastErrorMessage;
 }
 
 - (IBAction) sendMessage:(id) sender;
@@ -72,11 +64,15 @@
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;
-- (void) updateStatus;
-- (void) updateReplies;
-- (void) updateDirectMessages;
 
 - (void) setMessageStatisticsField:(NSString*)value;
 - (void) setMessagePostLevel:(float)level;
 
+- (void) addMessageViewControllers:(NSArray*)controllers;
+
+#pragma Message input text field
+- (void) resetAndFocusMessageTextField;
+
+#pragma Message table view
+- (void) reloadTableView;
 @end

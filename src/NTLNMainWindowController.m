@@ -74,15 +74,8 @@
 
 #pragma mark Initialization
 - (id) init {
-    _twitter = [[TwitterImpl alloc] initWithCallback:self];
-    //    _twitter = [[TwitterTestStub alloc] init];
-    
     [NTLNConfiguration setTimelineSortOrderChangeObserver:self];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(addNewMessageWithNotification:)
-                                                 name:NTLN_NOTIFICATION_NEW_MESSAGE_RECEIVED
-                                               object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(statisticsDisplaySettingChanged:)
                                                  name:NTLN_NOTIFICATION_STATISTICS_DISPLAY_SETTING_CHANGED
@@ -94,9 +87,7 @@
 }
 
 - (void) dealloc {
-    [_twitter release];
     [_toolbarItems release];
-    [_messageNotifier release];
     [_messageViewToolbarMenuItem release];
     [_fieldEditor release];
     [super dealloc];
@@ -264,7 +255,6 @@
     [messagePostLevelIndicator setToolTip:NSLocalizedString(@"timeline speed", @"status bar tool tip")];
     [messagePostLevelIndicator setHidden:![[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]];
     
-    _messageNotifier = [[NTLNBufferedMessageNotifier alloc] initWithTimeout:5.0 maxMessage:20 progressIndicator:progressIndicator];
     //    NSColor *semiTransparentBlue =
 //    [NSColor colorWithDeviceRed:0.0 green:0.0 blue:1.0 alpha:0.5];
 //    [[self window] setBackgroundColor:semiTransparentBlue];
@@ -296,92 +286,21 @@
     [messageTableViewController newMessageArrived:controllers];
 }
 
-- (BOOL) isNewMessage:(TwitterStatusViewController*)controller {
-    if ([messageViewControllerArray containsObject:controller] || [_messageNotifier contains:controller]) {
-        return FALSE;
-    }
-    return TRUE;
-}
-
-#pragma mark -
-#pragma mark Twitter API
-
-- (void) updateStatus {
-    NSString *password = [[NTLNAccount instance] password];
-    if (!password) {
-        // TODO inform error to user
-        NSLog(@"password not set. skip updateStatus");
-        return;
-    }
-    [_twitter friendTimelineWithUsername:[[NTLNAccount instance] username]
-                                password:password
-                                 usePost:[[NTLNConfiguration instance] usePost]];
-}
-
-- (void) updateReplies {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSString *password = [[NTLNAccount instance] password];
-    if (!password) {
-        // TODO inform error to user
-        NSLog(@"password not set. skip updateStatus");
-        return;
-    }
-    [_twitter repliesWithUsername:[[NTLNAccount instance] username]
-                         password:password
-                          usePost:[[NTLNConfiguration instance] usePost]];
-}
-
-- (void) updateSentMessages {
-    //    NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSString *password = [[NTLNAccount instance] password];
-    if (!password) {
-        // TODO inform error to user
-        NSLog(@"password not set. skip updateStatus");
-        return;
-    }
-    [_twitter sentMessagesWithUsername:[[NTLNAccount instance] username]
-                              password:password
-                               usePost:[[NTLNConfiguration instance] usePost]];
-}
-
-- (void) updateDirectMessages {
-    //    NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSString *password = [[NTLNAccount instance] password];
-    if (!password) {
-        // TODO inform error to user
-        NSLog(@"password not set. skip updateStatus");
-        return;
-    }
-    [_twitter directMessagesWithUsername:[[NTLNAccount instance] username]
-                                password:password
-                                 usePost:[[NTLNConfiguration instance] usePost]];
-}
-
-- (IBAction) sendMessage:(id) sender {
-    if ([[messageTextField stringValue] length] == 0) {
-        return;
-    }
-    
-    NSString *password = [[NTLNAccount instance] password];
-    if (!password) {
-        // TODO inform error to user
-        NSLog(@"password not set. skip updateStatus");
-        return;
-    }
-    [messageTextField setEnabled:FALSE];
-    [_twitter sendMessage:[messageTextField stringValue]
-                 username:[[NTLNAccount instance] username]
-                 password:password];
-}
-
 #pragma mark -
 
-- (void) resetMessageTextField {
+#pragma Message input text field
+- (void) resetAndFocusMessageTextField {
     [messageTextField setStringValue:@""];
     [messageTextField setEditable:TRUE];
     [messageTextField setEnabled:TRUE];
     [messageTextField updateState];
     [statusTextField setStringValue:@""];
+}
+
+#pragma Message table view
+- (void) reloadTableView
+{
+    [messageTableViewController reloadTableView];
 }
 
 - (id) enclosingTextField:(NSTextView*) view {
@@ -494,55 +413,6 @@
     }
 }
 
-#pragma mark Add new message
-- (void) clearErrorMessage {
-    if (_lastErrorMessage) {
-        [messageViewControllerArrayController removeObject:_lastErrorMessage];
-        [messageTableViewController reloadTableView];
-        _lastErrorMessage = nil;
-    }
-}
-
-- (void) processNewMessage:(TwitterStatusViewController*)controller {
-    NTLNMessage *s = [controller message];
-    if ([s replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY || [s replyType] == NTLN_MESSAGE_REPLY_TYPE_REPLY_PROBABLE) {
-        if ([[NTLNConfiguration instance] latestTimestampOfMessage] < [[s timestamp] timeIntervalSince1970]) {
-            [[NTLNConfiguration instance] setLatestTimestampOfMessage:[[s timestamp] timeIntervalSince1970]];
-        } else {
-            // might be retrieved in previous run
-            [controller markAsRead:false];
-        }
-    }
-}
-
-- (void) addNewErrorMessageWirthController:(NTLNErrorMessageViewController*)controller {
-    [self clearErrorMessage];
-    _lastErrorMessage = controller;
-    [messageViewControllerArrayController setFilterPredicate:nil];
-    [self addMessageViewControllers:[NSArray arrayWithObject:controller]];
-}
-
-// controllers: TwitterStatusViewController objects
-- (void) addNewMessageWithControllers:(NSArray*)controllers {
-    for (int i = 0; i < [controllers count]; i++) {
-        id o = [controllers objectAtIndex:i];
-        if (![o isKindOfClass:[TwitterStatusViewController class]]) {
-            NSLog(@"ERROR: addNewMessageWithControllers received non-TwitterStatusViewController");
-        }
-        [self clearErrorMessage];
-        [self processNewMessage:o];
-    }
-    
-    // add
-    [messageViewControllerArrayController setFilterPredicate:nil];
-    [self addMessageViewControllers:controllers];
-    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_NEW_MESSAGE_ADDED object:controllers];
-    
-    if ([[NTLNConfiguration instance] raiseWindowWhenNewMessageArrives]) {
-        [mainWindow makeKeyAndOrderFront:nil];
-    }
-}
-
 #pragma mark Statistics
 - (void) setMessagePostLevel:(float)level {
     [messagePostLevelIndicator setFloatValue:level];
@@ -550,53 +420,6 @@
 
 - (void) setMessageStatisticsField:(NSString*)value {
     [statisticsTextField setStringValue:value];
-}
-
-#pragma mark TwitterPostCallback
-- (void) finishedToPost {
-    [self resetMessageTextField];
-    [messageTextField focusAndLocateCursorEnd];
-    [appController setIconImageToNormal];
-}
-
-- (void) failedToPost:(NSString*)message {
-    [self addNewErrorMessageWirthController:
-     [NTLNErrorMessageViewController controllerWithTitle:NSLocalizedString(@"Sending a message failed", @"Title of error message")
-                                                 message:message
-                                               timestamp:[NSDate date]]];
-    [self resetMessageTextField];
-    [appController setIconImageForError];
-}
-
-#pragma mark TimelineCallback
-- (void) finishedToGetTimeline:(NSArray*)statuses {
-    for (int i = 0; i < [statuses count]; i++) {
-        NTLNMessage *s = [statuses objectAtIndex:i];
-        TwitterStatusViewController *controller = [[[TwitterStatusViewController alloc]
-                                                    initWithTwitterStatus:(NTLNMessage*)s
-                                                    messageViewListener:self] autorelease];
-        if ([self isNewMessage:controller]) {
-            [_messageNotifier addMessageViewController:controller];
-        }
-    }
-    [appController setIconImageToNormal];
-}
-
-- (void) failedToGetTimeline:(NTLNErrorInfo*)info {
-    [self addNewErrorMessageWirthController:
-     [NTLNErrorMessageViewController controllerWithTitle:NSLocalizedString(@"Retrieving timeline failed", @"Title of error message")
-                                                 message:[info originalMessage]
-                                               timestamp:[NSDate date]]];
-    NSLog(@"%s: %@", __PRETTY_FUNCTION__, [appController description]);
-    [appController setIconImageForError];
-}
-
-- (void) twitterStartTask {
-    [progressIndicator startTask];
-}
-
-- (void) twitterStopTask {
-    [progressIndicator stopTask];
 }
 
 #pragma mark MessageInputTextField callback
@@ -625,33 +448,23 @@
     [messageTextField focusAndLocateCursorEnd];
 }
 
-- (void) createFavoriteDesiredFor:(NSString*)statusId {
-    NSString *password = [[NTLNAccount instance] password];
-    if (!password) {
-        // TODO inform error to user
-        NSLog(@"password not set. skip create favorite");
-        return;
-    }
-    _createFavoriteIsWorking = TRUE;
-    [_twitter createFavorite:statusId
-                    username:[[NTLNAccount instance] username]
-                    password:password];
+- (void) createFavoriteDesiredFor:(NSString*)statusId
+{
+    [appController createFavoriteFor:statusId];
 }
 
-- (void) destroyFavoriteDesiredFor:(NSString*)statusId {
-    NSString *password = [[NTLNAccount instance] password];
-    if (!password) {
-        NSLog(@"password not set. skip destroy favorite");
-        return;
-    }
-    _createFavoriteIsWorking = TRUE;
-    [_twitter destroyFavorite:statusId
-                     username:[[NTLNAccount instance] username]
-                     password:password];
+- (void) destroyFavoriteDesiredFor:(NSString*)statusId
+{
+    [appController destroyFavoriteFor:statusId];
 }
 
 - (float) viewWidth {
     return [messageTableViewController columnWidth];
+}
+
+- (BOOL) isCreatingFavoriteWorking
+{
+    return [appController isCreatingFavoriteWorking];
 }
 
 #pragma mark NSWindow delegate methods
@@ -681,36 +494,6 @@
     return _fieldEditor;
 }
 
-#pragma mark TwitterFavoriteCallback
-- (void) finishedToChangeFavorite:(NSString*)statusId {           
-    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
-        NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
-        if ([statusId isEqualToString:[c messageId]]) {
-            [c favoriteCreated];
-            break;
-        }
-    }
-    _createFavoriteIsWorking = FALSE;
-    [appController setIconImageToNormal];
-}
-
-- (void) failedToChangeFavorite:(NSString*)statusId errorInfo:(NTLNErrorInfo*)info {
-    for (int i = 0; i < [[messageViewControllerArrayController arrangedObjects] count]; i++) {
-        NTLNMessageViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:i];
-        if ([statusId isEqualToString:[c messageId]]) {
-            [c favoriteCreationFailed];
-            break;
-        }
-    }
-    _createFavoriteIsWorking = FALSE;
-    [appController setIconImageForError];
-}
-
-- (BOOL) isCreatingFavoriteWorking {
-    return _createFavoriteIsWorking;
-}
-
-
 #pragma mark NSToolber delegate methods
 - (NSToolbarItem *)toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSString *)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
     return [_toolbarItems objectForKey:itemIdentifier];
@@ -726,17 +509,27 @@
 
 #pragma mark Actions
 
+- (IBAction) sendMessage:(id) sender
+{
+    if ([[messageTextField stringValue] length] == 0) {
+        return;
+    }
+    
+    [messageTextField setEnabled:FALSE];
+    [appController sendMessage:[messageTextField stringValue]];
+}
+    
 - (IBAction) updateTimelineCorrespondsToView:(id)sender {
     switch ([_messageViewSelector selectedSegment]) {
         case 0:
         case 3:
-            [self updateStatus];
+            [appController updateStatus];
             break;
         case 1:
-            [self updateReplies];
+            [appController updateReplies];
             break;
         case 2:
-            [self updateSentMessages];
+            [appController updateSentMessages];
         default:
             break;
     }
@@ -758,12 +551,6 @@
 }
 
 #pragma mark Notifications
-- (void) addNewMessageWithNotification:(NSNotification*)notification {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-    NSArray *messageArray = [notification object];
-    [self addNewMessageWithControllers:messageArray];
-}
-
 - (void) statisticsDisplaySettingChanged:(NSNotification*)notification {
     BOOL show = [[notification object] boolValue];
     [messagePostLevelIndicator setHidden:!show];

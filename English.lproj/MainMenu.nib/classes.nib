@@ -97,12 +97,6 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
-			<key>CLASS</key>
-			<string>NSObject</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-		</dict>
-		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>toggleAutomaticLinkDetection</key>
@@ -120,6 +114,12 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -332,6 +332,8 @@
 				<string>NSArrayController</string>
 				<key>preferencesWindowController</key>
 				<string>NTLNPreferencesWindowController</string>
+				<key>progressIndicator</key>
+				<string>NTLNMultiTasksProgressIndicator</string>
 				<key>welcomeWindowController</key>
 				<string>NTLNWelcomeWindowController</string>
 			</dict>

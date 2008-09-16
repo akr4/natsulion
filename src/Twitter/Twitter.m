@@ -228,7 +228,7 @@
         
         [backStatus setReplyType:NTLN_MESSAGE_REPLY_TYPE_DIRECT];
         
-        NSLog(@"DM { %@ }", backStatus);
+//        NSLog(@"DM { %@ }", backStatus);
         [backStatus finishedToSetProperties];
         [_callback twitterStartTask];
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
