@@ -164,7 +164,9 @@
                                                    originalMessage:[self appendCode:code
                                                                                  to:NSLocalizedString(@"No message received", nil)]]];
     }
+//    NSLog(@"*********** status count: %d", [statuses count]);
     
+    NSDate *lastTimestamp = nil;
     for (NSXMLNode *status in statuses) {
         NTLNMessage *backStatus = [[[NTLNMessage alloc] init] autorelease];
         
@@ -184,7 +186,12 @@
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
         
         // keep last status id for "since" parameter
-        [_parent setFriendsTimelineTimestamp:[backStatus timestamp]];
+        if (!lastTimestamp) {
+            lastTimestamp = [backStatus timestamp];
+        } else {
+            lastTimestamp = [lastTimestamp laterDate:[backStatus timestamp]];
+        }
+        [_parent setFriendsTimelineTimestamp:lastTimestamp];
     }
 }
 
@@ -343,7 +350,7 @@
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
-    NSString *url = [API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml?count=200"];
+    NSString *url = [API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml?count=20"];
     if (_friendsTimelineTimestamp) {
 //        [[url stringByAppendingString:@"?since_id="] stringByAppendingString:_lastStatusIdForFriendTimeline];
         
