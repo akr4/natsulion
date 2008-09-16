@@ -159,12 +159,9 @@
     
     NSArray *statuses = [document nodesForXPath:@"/statuses/status" error:NULL];
     if ([statuses count] == 0) {
-        NSLog(@"status code: %d - response:%@", code, responseStr);
-        [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER 
-                                                   originalMessage:[self appendCode:code
-                                                                                 to:NSLocalizedString(@"No message received", nil)]]];
+//        NSLog(@"status code: %d - response:%@", code, responseStr);
+        return;
     }
-//    NSLog(@"*********** status count: %d", [statuses count]);
     
     NSDate *lastTimestamp = nil;
     for (NSXMLNode *status in statuses) {
@@ -350,12 +347,12 @@
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
-    NSString *url = [API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml?count=20"];
+    NSString *url = [API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml?count=100"];
     if (_friendsTimelineTimestamp) {
 //        [[url stringByAppendingString:@"?since_id="] stringByAppendingString:_lastStatusIdForFriendTimeline];
         
         // @"%a,%d %b %Y %H:%M:%S GMT"
-        NSCalendarDate *c = [_friendsTimelineTimestamp dateWithCalendarFormat:@"%a%%2C+%d+%b+%Y+%H%%3A%M%%3A%S+GMT" timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+        NSCalendarDate *c = [_friendsTimelineTimestamp dateWithCalendarFormat:@"%a,+%d+%b+%Y+%H:%M:%S+GMT" timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
         url = [[url stringByAppendingString:@"&since="] stringByAppendingString:[c description]];
     }
     
