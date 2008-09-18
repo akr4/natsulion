@@ -503,7 +503,7 @@
     _connectionForDirectMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/direct_messages.xml"]
                                                                     username:username
                                                                     password:password
-                                                                     usePost:post
+                                                                     usePost:false // direct_messages does not accept POST
                                                                     callback:handler];
     if (!_connectionForDirectMessages) {
         NSLog(@"failed to get connection.");
