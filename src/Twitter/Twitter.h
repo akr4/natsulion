@@ -102,6 +102,8 @@ enum NTLNErrorType {
     
     NSDate *_friendsTimelineTimestamp;
     
+    BOOL _invalidTimestampReturned;
+    
     NSMutableDictionary *_waitingIconTwitterStatuses;
 }
 - (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback>)callback;
@@ -110,6 +112,8 @@ enum NTLNErrorType {
 - (void) pushIconWaiter:(NTLNMessage*)waiter forUrl:(NSString*)url;
 - (NSSet*) popIconWaiterSet:(NSString*)url;
 - (void) setFriendsTimelineTimestamp:(NSDate*)timestamp;
+- (void) gotInvalidTimestamp;
+- (void) gotValidTimestampAfterInvalidOne;
 @end
 
 #define NTLN_TWITTERCHECK_SUCESS 0

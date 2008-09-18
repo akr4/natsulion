@@ -109,7 +109,7 @@
     }
 #endif
     
-    if (!document || code >= 400) {
+    if (code != 200 && (!document || code >= 400)) {
         NSLog(@"status code: %d - response:%@", code, responseStr);        
         switch (code) {
             case 400:
@@ -137,8 +137,10 @@
         }
         return;
     }
-    
-    [self parseResponse:document];
+
+    if (document) {
+        [self parseResponse:document];
+    }
 }
 
 - (void) parseResponse:(NSXMLDocument*)document
@@ -146,7 +148,7 @@
   // subclass must imeplement  
   // must:
     // call [_parent pushIconWaiter:backStatus forUrl:iconUrl] with [_callback twitterStartTask]
-    // call [_parent setFriendsTimelineTimestamp:lastTimestamp]
+    // call [_parent setFriendsTimelineTimestamp:lastTimestamp] (for friends_timeline only)
 }
 
 - (void) connectionFailed:(NSError*)error {
@@ -189,12 +191,17 @@
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
         
         // keep last status id for "since" parameter
-        if (!lastTimestamp) {
-            lastTimestamp = [backStatus timestamp];
+        if ([[backStatus timestamp] compare:[NSDate date]] == NSOrderedDescending) {
+            [_parent gotInvalidTimestamp];
         } else {
-            lastTimestamp = [lastTimestamp laterDate:[backStatus timestamp]];
+            [_parent gotValidTimestampAfterInvalidOne];
+            if (!lastTimestamp) {
+                lastTimestamp = [backStatus timestamp];
+            } else {
+                lastTimestamp = [lastTimestamp laterDate:[backStatus timestamp]];
+            }
+            [_parent setFriendsTimelineTimestamp:lastTimestamp];
         }
-        [_parent setFriendsTimelineTimestamp:lastTimestamp];
     }
 }
 
@@ -378,6 +385,21 @@
     [_friendsTimelineTimestamp retain];
 }
 
+- (void) gotInvalidTimestamp
+{
+    NSLog(@"future timestamp returned from Twitter");
+    _invalidTimestampReturned = true;
+}
+
+- (void) gotValidTimestampAfterInvalidOne
+{
+    if (_invalidTimestampReturned) {
+        NSLog(@"valid timestamp returned.");
+    }
+    _invalidTimestampReturned = false;
+}
+
+
 #pragma mark public methods
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
     
@@ -387,8 +409,17 @@
     }
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
-    
-    NSString *url = [API_BASE stringByAppendingString:@"/statuses/friends_timeline.xml?count=100"];
+
+    // in the case of invalid (future) timestamp is returned from API, use older timestamp and less count value
+    int count;
+    if (_invalidTimestampReturned) {
+        count = 20;
+    } else {
+        count = 100;
+    }
+
+    NSString *url = [API_BASE stringByAppendingString:[NSString stringWithFormat:@"/statuses/friends_timeline.xml?count=%d", count]];
+
     if (_friendsTimelineTimestamp) {
 //        [[url stringByAppendingString:@"?since_id="] stringByAppendingString:_lastStatusIdForFriendTimeline];
         

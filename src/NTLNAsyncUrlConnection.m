@@ -21,7 +21,7 @@
     [self initInternalWithUsername:nil password:nil];
     
     NSString *encodedUrl = (NSString*)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)url, NULL, NULL, kCFStringEncodingUTF8);
-    NSLog(@"sending request to %@", encodedUrl);
+//    NSLog(@"sending request to %@", encodedUrl);
     
     NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
     [request setURL:[NSURL URLWithString:encodedUrl]];
