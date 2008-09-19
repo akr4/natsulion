@@ -3,6 +3,7 @@
 
 #define NTLN_GROWL_EVENT_MESSAGE_RECEIVED @"Message Received"
 #define NTLN_GROWL_EVENT_REPLY_RECEIVED @"Reply Received"
+#define NTLN_GROWL_EVENT_DIRECT_MESSAGE_RECEIVED @"Direct Message Received"
 
 @implementation NTLNGrowlNotifier
 
@@ -25,8 +26,11 @@
 
 - (NSDictionary *) registrationDictionaryForGrowl {
     NSMutableDictionary *d = [[[NSMutableDictionary alloc] initWithCapacity:10] autorelease];
-    NSArray *notifications = [[[NSArray alloc] initWithObjects:NTLN_GROWL_EVENT_MESSAGE_RECEIVED, 
-                               NTLN_GROWL_EVENT_REPLY_RECEIVED, nil] autorelease];
+    NSArray *notifications = [[[NSArray alloc] initWithObjects:
+                               NTLN_GROWL_EVENT_MESSAGE_RECEIVED, 
+                               NTLN_GROWL_EVENT_REPLY_RECEIVED,
+                               NTLN_GROWL_EVENT_DIRECT_MESSAGE_RECEIVED
+                               , nil] autorelease];
     [d setObject:notifications forKey:GROWL_NOTIFICATIONS_ALL];
     [d setObject:notifications forKey:GROWL_NOTIFICATIONS_DEFAULT];
     return d;
@@ -57,6 +61,12 @@
             priority = 1;
             sticky = TRUE;
             notificationName = NTLN_GROWL_EVENT_REPLY_RECEIVED;
+            break;
+        case NTLN_MESSAGE_REPLY_TYPE_DIRECT:
+            priority = 2;
+            sticky = TRUE;
+            notificationName = NTLN_GROWL_EVENT_DIRECT_MESSAGE_RECEIVED;
+            title = [@"(DM) " stringByAppendingString:title];
             break;
         default:
             break;
