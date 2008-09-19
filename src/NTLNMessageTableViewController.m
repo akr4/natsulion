@@ -274,7 +274,7 @@
 - (void) reloadTimelineSortDescriptors {
     [messageViewControllerArrayController setSortDescriptors:
      [NSArray arrayWithObject:
-      [[[NSSortDescriptor alloc] initWithKey:@"timestamp" 
+      [[[NSSortDescriptor alloc] initWithKey:@"message.statusId" 
                                    ascending:([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING)] autorelease]]];
     [messageViewControllerArrayController rearrangeObjects];
     [self reloadTableView];

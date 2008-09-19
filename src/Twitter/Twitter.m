@@ -423,8 +423,11 @@
     if (_friendsTimelineTimestamp) {
 //        [[url stringByAppendingString:@"?since_id="] stringByAppendingString:_lastStatusIdForFriendTimeline];
         
+        // accept 5 seconds clock lag in Twitter servers
+        NSDate *since = [[[NSDate alloc] initWithTimeInterval:-5 sinceDate:_friendsTimelineTimestamp] autorelease];
+        
         // @"%a,%d %b %Y %H:%M:%S GMT"
-        NSCalendarDate *c = [_friendsTimelineTimestamp dateWithCalendarFormat:@"%a,+%d+%b+%Y+%H:%M:%S+GMT" timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+        NSCalendarDate *c = [since dateWithCalendarFormat:@"%a,+%d+%b+%Y+%H:%M:%S+GMT" timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
         url = [[url stringByAppendingString:@"&since="] stringByAppendingString:[c description]];
     }
     

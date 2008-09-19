@@ -158,6 +158,7 @@
 		E94B13CE0D6AA6C700F80617 /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
 		E94CC0CF0DD8C8B100D8711D /* NTLNKeywordFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNKeywordFilterView.h; sourceTree = "<group>"; };
 		E94CC0D00DD8C8B100D8711D /* NTLNKeywordFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNKeywordFilterView.m; sourceTree = "<group>"; };
+		E95516500E82A64000924598 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E95D34F90D2F3F6700EA6958 /* NTLNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNColors.h; sourceTree = "<group>"; };
 		E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNColors.m; sourceTree = "<group>"; };
 		E9614CDB0D27BADC009743CE /* NTLNURLUtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNURLUtilsTest.h; sourceTree = "<group>"; };
@@ -709,6 +710,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				E90EFF5D0E40C664008FCF8E /* English */,
+				E95516500E82A64000924598 /* Japanese */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
