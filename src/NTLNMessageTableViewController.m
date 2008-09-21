@@ -272,10 +272,9 @@
 }
 
 - (void) reloadTimelineSortDescriptors {
-    // sort by dictionaly order - this is a possible bug. but how can I sort normal tweets and errors which does not have id?
     [messageViewControllerArrayController setSortDescriptors:
      [NSArray arrayWithObject:
-      [[[NSSortDescriptor alloc] initWithKey:@"message.statusId" 
+      [[[NSSortDescriptor alloc] initWithKey:@"message.timestamp" 
                                    ascending:([[NTLNConfiguration instance] timelineSortOrder] == NTLN_CONFIGURATION_TIMELINE_SORT_ORDER_ASCENDING)] autorelease]]];
     [messageViewControllerArrayController rearrangeObjects];
     [self reloadTableView];

@@ -39,8 +39,10 @@
 - (void) setColorScheme:(int)scheme;
 - (float) windowAlpha;
 - (void) setWindowAlpha:(float)value;
-- (NSTimeInterval) latestTimestampOfMessage;
+- (NSTimeInterval) latestTimestampOfMessage; // for reply
 - (void) setLatestTimestampOfMessage:(NSTimeInterval)interval;
+- (NSTimeInterval) latestTimestampOfDirectMessage;
+- (void) setLatestTimestampOfDirectMessage:(NSTimeInterval)interval;
 - (float) fontSize;
 - (void) setFontSize:(float)size;
 - (IBAction) increaseFontSize:(id)sender;

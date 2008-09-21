@@ -72,8 +72,13 @@
     
 //    [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:nil]];
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
-                                      [NSPredicate predicateWithFormat:@"timestamp > %@",
-                                       [NSDate dateWithTimeIntervalSince1970:[[NTLNConfiguration instance] latestTimestampOfMessage]]]]];
+                                      [NSPredicate predicateWithFormat:@"(message.replyType != %@ and timestamp > %@) or (message.replyType == %@ and timestamp > %@)",
+                                       [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_DIRECT],
+                                       [NSDate dateWithTimeIntervalSince1970:[[NTLNConfiguration instance] latestTimestampOfMessage]],
+                                       [NSNumber numberWithInt:NTLN_MESSAGE_REPLY_TYPE_DIRECT],
+                                       [NSDate dateWithTimeIntervalSince1970:[[NTLNConfiguration instance] latestTimestampOfDirectMessage]]
+                                       ]]];
+                                      
     [_messageViewInfoArray addObject:[NTLNMessageViewInfo infoWithPredicate:
                                       [NSPredicate predicateWithFormat:@"message.replyType IN %@",
                                        [NSArray arrayWithObjects:

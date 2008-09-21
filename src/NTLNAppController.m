@@ -476,6 +476,14 @@
             [controller markAsRead:false];
         }
     }
+    if ([s replyType] == NTLN_MESSAGE_REPLY_TYPE_DIRECT) {
+        if ([[NTLNConfiguration instance] latestTimestampOfDirectMessage] < [[s timestamp] timeIntervalSince1970]) {
+            [[NTLNConfiguration instance] setLatestTimestampOfDirectMessage:[[s timestamp] timeIntervalSince1970]];
+        } else {
+            // might be retrieved in previous run
+            [controller markAsRead:false];
+        }
+    }
 }
 
 - (void) addNewErrorMessageWirthController:(NTLNErrorMessageViewController*)controller {

@@ -151,6 +151,14 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
     [[NSUserDefaults standardUserDefaults] setFloat:interval forKey:@"latestTimestampOfMessage"];
 }
 
+- (NSTimeInterval) latestTimestampOfDirectMessage {
+    return [[NSUserDefaults standardUserDefaults] doubleForKey:@"latestTimestampOfDirectMessage"];
+}
+
+- (void) setLatestTimestampOfDirectMessage:(NSTimeInterval)interval {
+    [[NSUserDefaults standardUserDefaults] setFloat:interval forKey:@"latestTimestampOfDirectMessage"];
+}
+
 - (BOOL) useGrowlAndSummarizeGrowl {
     return useGrowl && summarizeGrowl;
 }
