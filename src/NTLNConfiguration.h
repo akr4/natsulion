@@ -48,8 +48,8 @@
 - (IBAction) resetFontSize:(id)sender;
 - (BOOL) canIncreaseFontSize;
 - (BOOL) canDecreaseFontSize;
-- (BOOL) showMessageStatisticsOnStatusBar;
-- (void) setShowMessageStatisticsOnStatusBar:(BOOL)value;
+- (BOOL) showRateLimitStatusOnStatusBar;
+- (void) setShowRateLimitStatusOnStatusBar:(BOOL)value;
 
 // only for IB editable binding
 - (BOOL) useGrowlAndSummarizeGrowl;

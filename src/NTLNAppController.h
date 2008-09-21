@@ -8,7 +8,8 @@
 
 @class NTLNMultiTasksProgressIndicator;
 
-@interface NTLNAppController : NSObject<NTLNWelcomeWindowCallback, NTLNGrowlClickCallbackTarget, TwitterTimelineCallback, TwitterPostCallback, TwitterFavoriteCallback> {
+@interface NTLNAppController : NSObject<NTLNWelcomeWindowCallback, NTLNGrowlClickCallbackTarget, 
+        TwitterTimelineCallback, TwitterPostCallback, TwitterFavoriteCallback, TwitterRateLimitStatusCallback> {
     IBOutlet NTLNMainWindowController *mainWindowController;
     IBOutlet NTLNPreferencesWindowController *preferencesWindowController;
     IBOutlet NTLNWelcomeWindowController *welcomeWindowController;
@@ -56,9 +57,11 @@
 - (void) updateReplies;
 - (void) updateSentMessages;
 - (void) updateDirectMessages;
+- (void) rateLimitStatus;
 - (void) createFavoriteFor:(NSString*)statusId;
 - (void) destroyFavoriteFor:(NSString*)statusId;
 - (void) sendMessage:(NSString*)message;
 
 - (BOOL) isCreatingFavoriteWorking;
+
 @end

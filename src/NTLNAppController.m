@@ -72,59 +72,6 @@
     _badge = [[CTBadge alloc] init];
 }
 
-#pragma mark Statistics
-- (void)storeMessageStatistics:(NSArray*)messages {
-    // store current data
-    _numberOfPostedMessages += [messages count];
-    if ([[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSNumber numberWithInt:[messages count]], @"count",
-                             [NSDate date], @"timestamp",
-                             nil];
-        [_messageCountHistory addObject:dic];
-    }
-}
-
-- (void)updateMessageStatistics {
-    
-    if (![[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]) {
-        return;
-    }
-    
-    double period = [self refreshInterval] * NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER * 1.2;
-    
-    // remove old data
-    for (int i = 0; i < [_messageCountHistory count]; i++) {
-        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
-        NSDate *timestamp = [dic objectForKey:@"timestamp"];
-        if (-[timestamp timeIntervalSinceNow] > period) {
-            [_messageCountHistory removeObjectAtIndex:i];
-            i--;
-        }
-    }
-    
-#ifdef DEBUG
-    NSLog(@"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-    for (int i = 0; i < [_messageCountHistory count]; i++) {
-        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
-        NSLog(@"[%@, %d]", [dic objectForKey:@"timestamp"], [[dic objectForKey:@"count"] intValue]);
-    }
-    NSLog(@">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
-#endif
-    
-    // calculate statistics
-    float sum = 0;
-    for (int i = 0; i < [_messageCountHistory count]; i++) {
-        NSDictionary *dic = [_messageCountHistory objectAtIndex:i];
-        sum += [[dic objectForKey:@"count"] intValue];
-    }
-    
-    [mainWindowController setMessagePostLevel:(sum / NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER)];
-    [mainWindowController setMessageStatisticsField:[NSString stringWithFormat:@"%ld", _numberOfPostedMessages]];
-    
-    //    NSLog(@"level = %f", (sum / NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER));
-}
-
 #pragma mark Timer
 
 - (void) restartFriendsTimelineRefreshTimer
@@ -172,12 +119,14 @@
 - (void) expireFriendsTimelineRefreshInterval
 {
     [self updateStatus];
-    [self updateMessageStatistics];
 }
 
 - (void) expireRepliesRefreshInterval
 {
     [self updateReplies];
+    
+    // check rate limit status at this time
+    [self rateLimitStatus];
 }
 
 - (void) expireDirectMessagesRefreshInterval
@@ -256,6 +205,7 @@
         }
         [self updateReplies];
         [self updateDirectMessages];
+        [self rateLimitStatus];
     }
 }
 
@@ -381,7 +331,25 @@
 }
 
 #pragma mark -
-#pragma mark Twitter API
+
+#pragma mark TwitterRateLimitStatusCallback
+
+- (void) updateRateLimitStatusIndicator
+{
+    // check valid value
+    if ([_twitter resetTime]) {
+        [mainWindowController setRateLimitStatusWithRemainingHits:[_twitter remainingHits]
+                                                      hourlyLimit:[_twitter hourlyLimit]
+                                                        resetTime:[_twitter resetTime]];
+    }
+}
+
+- (void) rateLimitStatusWithRemainingHits:(int)remainingHits hourlyLimit:(int)hourlyLimit resetTime:(NSDate*)resetTime
+{
+    [self updateRateLimitStatusIndicator];
+}
+
+#pragma mark Twitter API Call
 
 - (void) updateStatus {
     NSString *password = [[NTLNAccount instance] password];
@@ -394,6 +362,7 @@
                                 password:password
                                  usePost:[[NTLNConfiguration instance] usePost]];
     [self restartFriendsTimelineRefreshTimer];
+    [self updateRateLimitStatusIndicator];
 }
 
 - (void) updateReplies {
@@ -408,6 +377,7 @@
                          password:password
                           usePost:[[NTLNConfiguration instance] usePost]];
     [self restartRepliesRefreshTimer];
+    [self updateRateLimitStatusIndicator];
 }
 
 - (void) updateSentMessages {
@@ -421,6 +391,7 @@
     [_twitter sentMessagesWithUsername:[[NTLNAccount instance] username]
                               password:password
                                usePost:[[NTLNConfiguration instance] usePost]];
+    [self updateRateLimitStatusIndicator];
 }
 
 - (void) updateDirectMessages {
@@ -434,6 +405,8 @@
     [_twitter directMessagesWithUsername:[[NTLNAccount instance] username]
                                 password:password
                                  usePost:[[NTLNConfiguration instance] usePost]];
+    [self updateRateLimitStatusIndicator];
+    [self restartDirectMessagesRefreshTimer];
 }
 
 - (void) sendMessage:(NSString*)message {
@@ -446,7 +419,6 @@
     [_twitter sendMessage:message
                  username:[[NTLNAccount instance] username]
                  password:password];
-    [self restartDirectMessagesRefreshTimer];
 }
 
 - (void) createFavoriteFor:(NSString*)statusId {
@@ -460,6 +432,7 @@
     [_twitter createFavorite:statusId
                     username:[[NTLNAccount instance] username]
                     password:password];
+    [self updateRateLimitStatusIndicator];
 }
 
 - (void) destroyFavoriteFor:(NSString*)statusId {
@@ -472,6 +445,19 @@
     [_twitter destroyFavorite:statusId
                      username:[[NTLNAccount instance] username]
                      password:password];
+    [self updateRateLimitStatusIndicator];
+}
+
+- (void) rateLimitStatus {
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSString *password = [[NTLNAccount instance] password];
+    if (!password) {
+        // TODO inform error to user
+        NSLog(@"password not set. skip updateStatus");
+        return;
+    }
+    [_twitter rateLimitStatusWithUsername:[[NTLNAccount instance] username]
+                                 password:password];
 }
 
 #pragma mark Add new message
@@ -562,9 +548,21 @@
 }
 
 - (void) failedToGetTimeline:(NTLNErrorInfo*)info {
+    NSString *s;
+    if ([info type] == NTLN_ERROR_TYPE_HIT_API_LIMIT) {
+        if ([_twitter resetTime]) {
+            s = [NSString stringWithFormat:NSLocalizedString(@"Exceeded API rate limit\nwill be reset at %@", nil),
+                 [[_twitter resetTime] descriptionWithCalendarFormat:@"%H:%M" timeZone:nil locale:nil]];
+        } else {
+            s = [NSString stringWithFormat:NSLocalizedString(@"Exceeded API rate limit", nil)];
+        }
+    } else {
+        s = [info originalMessage];
+    }
+
     [self addNewErrorMessageWirthController:
      [NTLNErrorMessageViewController controllerWithTitle:NSLocalizedString(@"Retrieving timeline failed", @"Title of error message")
-                                                 message:[info originalMessage]
+                                                 message:s
                                                timestamp:[NSDate date]]];
     NSLog(@"%s: %@", __PRETTY_FUNCTION__, [self description]);
     [self setIconImageForError];
@@ -607,6 +605,7 @@
     return _createFavoriteIsWorking;
 }
 
+#pragma mark -
 #pragma mark Application icon
 - (void) writeNumberOfUnread {
     if (_numberOfUnreadMessage == 0) {
@@ -642,8 +641,6 @@
     NSArray *messages = [notification object];
     [self updateBudgeIfNeedIncrease:messages];
     [self notifyByGrowl:messages];
-    [self storeMessageStatistics:messages];
-    [self updateMessageStatistics];
 }
 
 - (void) messageChangedToRead:(NSNotification*)notification {

@@ -4,6 +4,8 @@
 
 #define API_BASE @"http://twitter.com"
 
+#define DEBUG
+
 @implementation NTLNErrorInfo
 + (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message {
     NTLNErrorInfo *info = [[[NTLNErrorInfo alloc] init] autorelease];
@@ -33,6 +35,57 @@
     [_originalMessage release];
     [super dealloc];
 }
+
+- (NSString*) description
+{
+    return _originalMessage;
+}
+@end
+
+#pragma mark -
+#pragma mark Timeline Callback Handlers
+
+// provides common function to its subclasses
+@interface NTLNAbstractTwitterCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> 
+{
+    
+}
+- (NSString*) stringValueFromNSXMLNode:(NSXMLNode*)node byXPath:(NSString*)xpath;
+
+@end
+
+@implementation NTLNAbstractTwitterCallbackHandler
+
+- (NSString*) stringValueFromNSXMLNode:(NSXMLNode*)node byXPath:(NSString*)xpath
+{
+    NSArray *nodes = [node nodesForXPath:xpath error:NULL];
+    if ([nodes count] != 1) {
+        return nil;
+    }
+    return [(NSXMLNode *)[nodes objectAtIndex:0] stringValue];
+}
+
+- (void) responseArrived:(NSData*)response statusCode:(int)code
+{
+    [self autorelease];
+}
+
+- (void) connectionFailed:(NSError*)error
+{
+    [self autorelease];
+}
+
+@end
+
+// provides common function and template methods to 'retrieving timeline' handlers
+@interface NTLNAbstractTimelineCallbackHandler : NTLNAbstractTwitterCallbackHandler 
+{
+@protected
+    id<TwitterTimelineCallback> _callback;
+    id _parent;
+}
+- (id) initWithCallback:(id<TwitterTimelineCallback>)callback parent:(id)parent;
+- (void) parseResponse:(NSXMLDocument*)document;
 @end
 
 @implementation NTLNAbstractTimelineCallbackHandler
@@ -46,14 +99,6 @@
     return s;
 }
 
-- (NSString*) stringValueFromNSXMLNode:(NSXMLNode*)node byXPath:(NSString*)xpath {
-    NSArray *nodes = [node nodesForXPath:xpath error:NULL];
-    if ([nodes count] != 1) {
-        return nil;
-    }
-    return [(NSXMLNode *)[nodes objectAtIndex:0] stringValue];
-}
-
 - (id) initWithCallback:(id<TwitterTimelineCallback>)callback parent:(id)parent {
     _callback = callback;
     _parent = parent;
@@ -65,9 +110,12 @@
 }
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
+    [self autorelease];
     [_callback twitterStopTask];
     
-    NSString *responseStr = [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding];
+    NSMutableData *cstringStyleData = [[response mutableCopy] autorelease];
+    [cstringStyleData appendData:[NSData dataWithBytes:"\0" length:1]];
+    NSString *responseStr = [NSString stringWithCString:[cstringStyleData bytes] encoding:NSUTF8StringEncoding];
     
     //    NSLog(@"responseArrived:%@", responseStr);
     
@@ -77,8 +125,8 @@
         document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
     }
     
-    //#define DEBUG 1
-#ifdef DEBUG
+//#define DEBUG_RANDOM_ERROR 1
+#ifdef DEBUG_RANDOM_ERROR
     switch ((int) ((float) rand() / RAND_MAX * 10)) {
         case 0:
         case 1:
@@ -113,9 +161,9 @@
         NSLog(@"status code: %d - response:%@", code, responseStr);        
         switch (code) {
             case 400:
+                [_parent apiRateLimitExceeded];
                 [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_HIT_API_LIMIT
-                                                           originalMessage:[self appendCode:code 
-                                                                                         to:NSLocalizedString(@"Exceeded the API rate limit", nil)]]];
+                                                           originalMessage:[self appendCode:code to:NSLocalizedString(@"Exceeded API rate limit", nil)]]];
                 break;
             case 401:
                 [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_NOT_AUTHORIZED
@@ -135,28 +183,40 @@
                                                                                          to:NSLocalizedString(@"Unknown Error", nil)]]];
                 break;
         }
+
         return;
     }
-
+    
     if (document) {
+        [_parent apiRateLimitReset];
         [self parseResponse:document];
     }
 }
 
 - (void) parseResponse:(NSXMLDocument*)document
 {
-  // subclass must imeplement  
-  // must:
-    // call [_parent pushIconWaiter:backStatus forUrl:iconUrl] with [_callback twitterStartTask]
-    // call [_parent setFriendsTimelineTimestamp:lastTimestamp] (for friends_timeline only)
+    // subclass must imeplement  
+    // might call:
+    // [_parent pushIconWaiter:backStatus forUrl:iconUrl] with [_callback twitterStartTask]
+    // [_parent setFriendsTimelineTimestamp:lastTimestamp] (for friends_timeline only)
+    // call any other parent methods
 }
 
 - (void) connectionFailed:(NSError*)error {
+    [self autorelease];
     [_callback twitterStopTask];
+
+    NSLog([error description]);
+
     [_callback failedToGetTimeline:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
                                                originalMessage:[error localizedDescription]]];
 }
 
+@end
+
+@interface TwitterTimelineCallbackHandler : NTLNAbstractTimelineCallbackHandler
+{
+}
 @end
 
 @implementation TwitterTimelineCallbackHandler
@@ -169,7 +229,9 @@
         return;
     }
     
+#ifdef DEBUG
     NSLog(@"status count = %d", [statuses count]);
+#endif
     
     NSDate *lastTimestamp = nil;
     for (NSXMLNode *status in statuses) {
@@ -207,6 +269,11 @@
 
 @end
 
+@interface TwitterDirectMessagesCallbackHandler : NTLNAbstractTimelineCallbackHandler
+{
+}
+@end
+
 @implementation TwitterDirectMessagesCallbackHandler
 
 - (void) parseResponse:(NSXMLDocument*)document
@@ -217,7 +284,9 @@
         return;
     }
     
+#ifdef DEBUG
     NSLog(@"status count = %d", [statuses count]);
+#endif
     
     for (NSXMLNode *status in statuses) {
         NTLNMessage *backStatus = [[[NTLNMessage alloc] init] autorelease];
@@ -235,13 +304,77 @@
         
         [backStatus setReplyType:NTLN_MESSAGE_REPLY_TYPE_DIRECT];
         
-//        NSLog(@"DM { %@ }", backStatus);
+        //        NSLog(@"DM { %@ }", backStatus);
         [backStatus finishedToSetProperties];
         [_callback twitterStartTask];
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
     }
 }
 
+@end
+
+@interface TwitterRateLimitStatusCallbackHandler : NTLNAbstractTwitterCallbackHandler
+{
+    id<TwitterRateLimitStatusCallback> _callback;
+    id _parent;
+}
+@end
+
+@implementation TwitterRateLimitStatusCallbackHandler
+
+- (id) initWithCallback:(id<TwitterRateLimitStatusCallback>) callback parent:(id)parent
+{
+    _callback = callback;
+    _parent = parent;
+    return self;
+}
+
+- (void) responseArrived:(NSData*)response statusCode:(int)code {
+    [self autorelease];
+    [_callback twitterStopTask];
+    
+    NSMutableData *cstringStyleData = [[response mutableCopy] autorelease];
+    [cstringStyleData appendData:[NSData dataWithBytes:"\0" length:1]];
+    NSString *responseStr = [NSString stringWithCString:[cstringStyleData bytes] encoding:NSUTF8StringEncoding];
+    
+    NSXMLDocument *document = nil;
+    
+    if (responseStr) {
+        document = [[[NSXMLDocument alloc] initWithXMLString:responseStr options:0 error:NULL] autorelease];
+    }
+    
+    if (code != 200 || !document) {
+        NSLog(@"status code: %d - response:%@", code, responseStr);        
+    } else {
+        NSArray *nodes = [document nodesForXPath:@"/hash" error:NULL];
+        if ([nodes count] == 0) {
+            return;
+        }
+        
+        NSXMLNode *status = [nodes objectAtIndex:0];
+        
+        int remainingHits = [[self stringValueFromNSXMLNode:status byXPath:@"remaining-hits/text()"] intValue];
+        int hourlyLimit = [[self stringValueFromNSXMLNode:status byXPath:@"hourly-limit/text()"] intValue];
+        NSDate *resetTime = [NSCalendarDate dateWithString:[self stringValueFromNSXMLNode:status byXPath:@"reset-time/text()"]
+                                            calendarFormat:@"%Y-%m-%dT%H:%M:%S+%z"];
+        
+        [_parent rateLimitStatusWithRemainingHits:remainingHits hourlyLimit:hourlyLimit resetTime:resetTime];
+        [_callback rateLimitStatusWithRemainingHits:remainingHits hourlyLimit:hourlyLimit resetTime:resetTime];
+    }
+}
+
+- (void) connectionFailed:(NSError*)error {
+    [self autorelease];
+    [_callback twitterStopTask];
+    NSLog([error description]);
+}
+
+@end
+
+@interface TwitterPostCallbackHandler : NTLNAbstractTwitterCallbackHandler {
+    id<TwitterPostCallback> _callback;
+}
+- (id) initWithPostCallback:(id<TwitterPostCallback>)callback;
 @end
 
 @implementation TwitterPostCallbackHandler
@@ -253,17 +386,24 @@
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
 //    NSLog(@"post responseArrived:%@", [NSString stringWithCString:[response bytes] encoding:NSUTF8StringEncoding]);
+    [self autorelease];
     [_callback twitterStopTask];
     [_callback finishedToPost];
-    [self autorelease];
 }
 
 - (void) connectionFailed:(NSError*)error {
+    [self autorelease];
     [_callback twitterStopTask];
     [_callback failedToPost:[error localizedDescription]];
-    [self autorelease];
 }
 
+@end
+
+@interface TwitterFavoriteCallbackHandler : NTLNAbstractTwitterCallbackHandler {
+    id<TwitterFavoriteCallback> _callback;
+    NSString *_statusId;
+}
+- (id) initWithStatusId:(NSString*)statusId callback:(id<TwitterFavoriteCallback>)callback;
 @end
 
 @implementation TwitterFavoriteCallbackHandler
@@ -281,6 +421,7 @@
 }
 
 - (void) responseArrived:(NSData*)response statusCode:(int)code {
+    [self autorelease];
     [_callback twitterStopTask];
     
     if (code == 200) {
@@ -290,20 +431,19 @@
         [_callback failedToChangeFavorite:_statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
                                                                          originalMessage:NSLocalizedString(@"Creating favorite failure. unable to get connection.", nil)]];
     }
-
-    [self autorelease];
-
 }
 
 - (void) connectionFailed:(NSError*)error {
+    [self autorelease];
     [_callback twitterStopTask];
     [_callback failedToChangeFavorite:_statusId errorInfo:[NTLNErrorInfo infoWithType:NTLN_ERROR_TYPE_OTHER
                                                                       originalMessage:[error localizedDescription]]];
-    [self autorelease];
 }
 
 @end
 
+#pragma mark -
+#pragma mark Twitter
 
 @implementation Twitter
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
@@ -334,13 +474,32 @@
     
 }
 
+- (void) rateLimitStatusWithUsername:(NSString*)username password:(NSString*)password {
+    
+}
+
+- (int) remainingHits
+{
+    return 0;
+}
+
+- (int) hourlyLimit
+{
+    return 0;
+}
+
+- (NSDate*) resetTime
+{
+    return nil;
+}
+
 @end
 
 @implementation TwitterImpl
 
 ////////////////////////////////////////////////////////////////////
 
-- (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback>)callback {
+- (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback, TwitterRateLimitStatusCallback>)callback {
     [super init];
     _callback = callback;
     _waitingIconTwitterStatuses = [[NSMutableDictionary alloc] initWithCapacity:100];
@@ -354,6 +513,8 @@
     [_connectionForSentMessages release];
     [_connectionForFavorite release];
     [_connectionForPost release];
+    [_connectionForDirectMessages release];
+    [_connectionForRateLimitStatus release];
     [_waitingIconTwitterStatuses release];
     [_iconRepository release];
     [super dealloc];
@@ -399,6 +560,38 @@
     _invalidTimestampReturned = false;
 }
 
+- (void) apiRateLimitExceeded
+{
+    _apiLimitExceeded = true;
+    if (_remainingHits > 0) {
+        _remainingHits = 0;
+    }
+}
+
+- (void) apiRateLimitReset
+{
+    _apiLimitExceeded = false;
+    if (_remainingHits >= _hourlyLimit) {
+        _remainingHits = _hourlyLimit;
+    }
+}
+
+- (void) apiUsed
+{
+    _remainingHits--;
+}
+
+- (void) rateLimitStatusWithRemainingHits:(int)remainingHits hourlyLimit:(int)hourlyLimit resetTime:(NSDate*)resetTime
+{
+    NSLog(@"limit: %d / %d, %@", remainingHits, hourlyLimit, resetTime);
+    
+    _remainingHits = remainingHits;
+    _hourlyLimit = hourlyLimit;
+
+    [_resetTime release];
+    _resetTime = resetTime;
+    [_resetTime retain];
+}
 
 #pragma mark public methods
 - (void) friendTimelineWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
@@ -431,7 +624,13 @@
         url = [[url stringByAppendingString:@"&since="] stringByAppendingString:[c description]];
     }
     
+#ifdef DEBUG
     NSLog(@"requesting: %@", url);
+#endif
+    
+    if (!post) {
+        [self apiUsed];
+    }
     
     [_connectionForFriendTimeline release];
     _connectionForFriendTimeline = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
@@ -456,8 +655,18 @@
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
     
+    NSString *url = [API_BASE stringByAppendingString:@"/statuses/replies.xml"];
+
+#ifdef DEBUG
+    NSLog(@"requesting: %@", url);
+#endif
+    
+    if (!post) {
+        [self apiUsed];
+    }
+    
     [_connectionForReplies release];
-    _connectionForReplies = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/statuses/replies.xml"]
+    _connectionForReplies = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
                                                                       username:username
                                                                       password:password
                                                                        usePost:post
@@ -478,9 +687,19 @@
     }
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
+
+    NSString *url = [API_BASE stringByAppendingString:@"/statuses/user_timeline.xml"];
+
+#ifdef DEBUG
+    NSLog(@"requesting: %@", url);
+#endif
+    
+    if (!post) {
+        [self apiUsed];
+    }
     
     [_connectionForSentMessages release];
-    _connectionForSentMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/statuses/user_timeline.xml"]
+    _connectionForSentMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
                                                                username:username
                                                                password:password
                                                                 usePost:post
@@ -501,9 +720,17 @@
     }
     
     TwitterDirectMessagesCallbackHandler *handler = [[TwitterDirectMessagesCallbackHandler alloc] initWithCallback:_callback parent:self];
+
+    NSString *url = [API_BASE stringByAppendingString:@"/direct_messages.xml"];
+
+#ifdef DEBUG
+    NSLog(@"requesting: %@", url);
+#endif
     
+    [self apiUsed];
+
     [_connectionForDirectMessages release];
-    _connectionForDirectMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:[API_BASE stringByAppendingString:@"/direct_messages.xml"]
+    _connectionForDirectMessages = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
                                                                     username:username
                                                                     password:password
                                                                      usePost:false // direct_messages does not accept POST
@@ -526,9 +753,15 @@
     NSString *requestStr =  [@"status=" stringByAppendingString:[[NTLNXMLHTTPEncoder encoder] encodeHTTP:message]];
     requestStr = [requestStr stringByAppendingString:@"&source=natsulion"];
     
+    NSString *url = [API_BASE stringByAppendingString:@"/statuses/update.xml"];
+    
+#ifdef DEBUG
+    NSLog(@"requesting: %@", url);
+#endif
+
     TwitterPostCallbackHandler *handler = [[TwitterPostCallbackHandler alloc] initWithPostCallback:_callback];
     [_connectionForPost release];
-    _connectionForPost = [[NTLNAsyncUrlConnection alloc] initPostConnectionWithUrl:[API_BASE stringByAppendingString:@"/statuses/update.xml"]
+    _connectionForPost = [[NTLNAsyncUrlConnection alloc] initPostConnectionWithUrl:url
                                                                         bodyString:requestStr 
                                                                           username:username
                                                                           password:password
@@ -551,14 +784,19 @@
         return;
     }
     
-    NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
-    [urlStr appendString:[API_BASE stringByAppendingString:@"/favorites/create/"]];
-    [urlStr appendString:statusId];
-    [urlStr appendString:@".xml"];
+    NSMutableString *url = [[[NSMutableString alloc] init] autorelease];
+    [url appendString:[API_BASE stringByAppendingString:@"/favorites/create/"]];
+    [url appendString:statusId];
+    [url appendString:@".xml"];
     
     TwitterFavoriteCallbackHandler *handler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:_callback];
+
+#ifdef DEBUG
+    NSLog(@"requesting: %@", url);
+#endif
+    
     [_connectionForFavorite release];
-    _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:urlStr
+    _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
                                                                 username:username
                                                                 password:password
                                                                  usePost:TRUE
@@ -582,14 +820,19 @@
         return;
     }
     
-    NSMutableString *urlStr = [[[NSMutableString alloc] init] autorelease];
-    [urlStr appendString:[API_BASE stringByAppendingString:@"/favorites/destroy/"]];
-    [urlStr appendString:statusId];
-    [urlStr appendString:@".xml"];
+    NSMutableString *url = [[[NSMutableString alloc] init] autorelease];
+    [url appendString:[API_BASE stringByAppendingString:@"/favorites/destroy/"]];
+    [url appendString:statusId];
+    [url appendString:@".xml"];
     
     TwitterFavoriteCallbackHandler *handler = [[TwitterFavoriteCallbackHandler alloc] initWithStatusId:statusId callback:_callback];
+    
+#ifdef DEBUG
+    NSLog(@"requesting: %@", url);
+#endif
+    
     [_connectionForFavorite release];
-    _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:urlStr
+    _connectionForFavorite = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
                                                                 username:username
                                                                 password:password
                                                                  usePost:TRUE
@@ -604,6 +847,50 @@
     }
     
     [_callback twitterStartTask];
+}
+
+- (void) rateLimitStatusWithUsername:(NSString*)username password:(NSString*)password
+{
+    if (_connectionForRateLimitStatus && ![_connectionForRateLimitStatus isFinished]) {
+        NSLog(@"connection for direct messages is running.");
+        return;
+    }
+    
+    TwitterRateLimitStatusCallbackHandler *handler = [[TwitterRateLimitStatusCallbackHandler alloc] initWithCallback:_callback parent:self];
+    
+    NSString *url = [API_BASE stringByAppendingString:@"/account/rate_limit_status.xml"];
+    
+#ifdef DEBUG
+    NSLog(@"requesting: %@", url);
+#endif
+    
+    [_connectionForRateLimitStatus release];
+    _connectionForRateLimitStatus = [[NTLNAsyncUrlConnection alloc] initWithUrl:url
+                                                                      username:username
+                                                                      password:password
+                                                                       usePost:false
+                                                                      callback:handler];
+    if (!_connectionForRateLimitStatus) {
+        NSLog(@"failed to get connection.");
+        return;
+    }
+    
+    [_callback twitterStartTask];
+}
+
+- (int) remainingHits
+{
+    return _remainingHits;
+}
+
+- (int) hourlyLimit
+{
+    return _hourlyLimit;
+}
+
+- (NSDate*) resetTime
+{
+    return _resetTime;
 }
 
 #pragma mark icon callback

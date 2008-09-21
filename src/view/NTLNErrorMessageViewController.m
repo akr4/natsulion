@@ -1,6 +1,5 @@
 #import "NTLNErrorMessageViewController.h"
-
-static long messageCounter;
+#import "NTLNMessage.h"
 
 @implementation NTLNErrorMessageViewController
 
@@ -16,8 +15,9 @@ static long messageCounter;
     [messageField setStringValue:message];
     [timestampField setTimestamp:timestamp];
     
-    _messageId = [NSString stringWithFormat:@"error-%ld", messageCounter++];
-    _timestamp = timestamp;
+    _message = [[NTLNMessage alloc] init];
+    [_message setStatusId:@"a"]; // to be shown at the bottom
+    [_message setTimestamp:timestamp];
     
     return self;
 }
@@ -26,15 +26,27 @@ static long messageCounter;
     return [[[NTLNErrorMessageViewController alloc] initWithTitle:title message:message timestamp:timestamp] autorelease];
 }
 
+- (void) dealloc
+{
+    [_message release];
+    [super dealloc];
+}
+
+#pragma mark Message accessors
+- (NTLNMessage*) message
+{
+    return _message;
+}
+
 #pragma mark Message accessors
 - (NSString*) messageId {
-    return _messageId;
+    return [_message statusId];
 }
-
+    
 - (NSDate*) timestamp {
-    return _timestamp;
+    return [_message timestamp];
 }
-
+        
 #pragma mark
 - (void) highlight {
     [titleField highlight];

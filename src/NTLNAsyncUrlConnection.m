@@ -43,7 +43,7 @@
     }
     
     _callback = callback;
-    _recievedData = [[NSMutableData alloc] init];
+    _receivedData = [[NSMutableData alloc] init];
     return self;
 }
 
@@ -76,13 +76,13 @@
     }
     
     _callback = callback;
-    _recievedData = [[NSMutableData alloc] init];
+    _receivedData = [[NSMutableData alloc] init];
     return self;
 }
 
 - (void) dealloc {
 //    NSLog(@"AsyncUrlConnection#dealloc: %@ (%x)", self, self);
-    [_recievedData release];
+    [_receivedData release];
     [_connection release];
     [_username release];
     [_password release];
@@ -100,12 +100,12 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [_recievedData appendData:data];
+    [_receivedData appendData:data];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     _finished = TRUE;
-    [_callback responseArrived:_recievedData statusCode:_statusCode];
+    [_callback responseArrived:_receivedData statusCode:_statusCode];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError*) error {

@@ -197,11 +197,11 @@
 /* Class = "NSMenu"; title = "OtherViews"; ObjectID = "2655"; */
 "2655.title" = "OtherViews";
 
-/* Class = "NSMenuItem"; title = "Ascending"; ObjectID = "2656"; */
-"2656.title" = "Ascending";
+/* Class = "NSMenuItem"; title = "Shown at bottom"; ObjectID = "2656"; */
+"2656.title" = "Shown at bottom";
 
-/* Class = "NSMenuItem"; title = "Descending"; ObjectID = "2657"; */
-"2657.title" = "Descending";
+/* Class = "NSMenuItem"; title = "Shown at top"; ObjectID = "2657"; */
+"2657.title" = "Shown at top";
 
 /* Class = "NSMenuItem"; title = "Font Size"; ObjectID = "2799"; */
 "2799.title" = "Font Size";
@@ -221,74 +221,74 @@
 /* Class = "NSMenuItem"; title = "Find"; ObjectID = "3110"; */
 "3110.title" = "Find";
 
-/* Class = "NSButtonCell"; title = "Done"; ObjectID = "3512"; */
-"3512.title" = "Done";
+/* Class = "NSButtonCell"; title = "Done"; ObjectID = "3601"; */
+"3601.title" = "Done";
 
-/* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "3515"; */
-"3515.title" = "Password:";
+/* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "3604"; */
+"3604.title" = "Password:";
 
-/* Class = "NSButtonCell"; title = "Apply"; ObjectID = "3516"; */
-"3516.title" = "Apply";
+/* Class = "NSButtonCell"; title = "Apply"; ObjectID = "3605"; */
+"3605.title" = "Apply";
 
-/* Class = "NSTextFieldCell"; title = "Username:"; ObjectID = "3517"; */
-"3517.title" = "Username:";
+/* Class = "NSTextFieldCell"; title = "Username:"; ObjectID = "3606"; */
+"3606.title" = "Username:";
 
-/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "3518"; */
-"3518.title" = "Cancel";
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "3607"; */
+"3607.title" = "Cancel";
 
-/* Class = "NSButtonCell"; title = "Close"; ObjectID = "3520"; */
-"3520.title" = "Close";
+/* Class = "NSButtonCell"; title = "Close"; ObjectID = "3609"; */
+"3609.title" = "Close";
 
-/* Class = "NSButtonCell"; title = "Change"; ObjectID = "3521"; */
-"3521.title" = "Change";
+/* Class = "NSButtonCell"; title = "Change"; ObjectID = "3610"; */
+"3610.title" = "Change";
 
-/* Class = "NSTextFieldCell"; placeholderString = "no Username"; ObjectID = "3522"; */
-"3522.placeholderString" = "no Username";
+/* Class = "NSTextFieldCell"; placeholderString = "no Username"; ObjectID = "3611"; */
+"3611.placeholderString" = "no Username";
 
-/* Class = "NSTextFieldCell"; title = "User ID:"; ObjectID = "3525"; */
-"3525.title" = "User ID:";
+/* Class = "NSTextFieldCell"; title = "User ID:"; ObjectID = "3614"; */
+"3614.title" = "User ID:";
 
-/* Class = "NSTextFieldCell"; title = "Refresh Interval (sec):"; ObjectID = "3526"; */
-"3526.title" = "Refresh Interval (sec):";
+/* Class = "NSTextFieldCell"; title = "Refresh Interval (sec):"; ObjectID = "3615"; */
+"3615.title" = "Refresh Interval (sec):";
 
-/* Class = "NSTextFieldCell"; title = "Timeline sort order:"; ObjectID = "3527"; */
-"3527.title" = "Timeline sort order:";
+/* Class = "NSTextFieldCell"; title = "New message:"; ObjectID = "3616"; */
+"3616.title" = "New message:";
 
-/* Class = "NSButtonCell"; title = "Raise window when new message arrives"; ObjectID = "3529"; */
-"3529.title" = "Raise window when new message arrives";
+/* Class = "NSButtonCell"; title = "Raise window when new message arrives"; ObjectID = "3618"; */
+"3618.title" = "Raise window when new message arrives";
 
-/* Class = "NSButtonCell"; title = "Increase transparency while deactivated"; ObjectID = "3530"; */
-"3530.title" = "Increase transparency while deactivated";
+/* Class = "NSButtonCell"; title = "Increase transparency while deactivated"; ObjectID = "3619"; */
+"3619.title" = "Increase transparency while deactivated";
 
-/* Class = "NSButtonCell"; title = "Autoscroll when new message arrives"; ObjectID = "3531"; */
-"3531.title" = "Autoscroll when new message arrives";
+/* Class = "NSButtonCell"; title = "Autoscroll when new message arrives"; ObjectID = "3620"; */
+"3620.title" = "Autoscroll when new message arrives";
 
-/* Class = "NSTextFieldCell"; title = "Window Transparency:"; ObjectID = "3532"; */
-"3532.title" = "Window Transparency:";
+/* Class = "NSTextFieldCell"; title = "Window Transparency:"; ObjectID = "3621"; */
+"3621.title" = "Window Transparency:";
 
-/* Class = "NSTextFieldCell"; title = "Color Scheme:"; ObjectID = "3533"; */
-"3533.title" = "Color Scheme:";
+/* Class = "NSTextFieldCell"; title = "Color Scheme:"; ObjectID = "3622"; */
+"3622.title" = "Color Scheme:";
 
-/* Class = "NSSegmentedCell"; 3534.labels[0] = "Light"; ObjectID = "3534"; */
-"3534.labels[0]" = "Light";
+/* Class = "NSSegmentedCell"; 3623.labels[0] = "Light"; ObjectID = "3623"; */
+"3623.labels[0]" = "Light";
 
-/* Class = "NSSegmentedCell"; 3534.labels[1] = "Dark"; ObjectID = "3534"; */
-"3534.labels[1]" = "Dark";
+/* Class = "NSSegmentedCell"; 3623.labels[1] = "Dark"; ObjectID = "3623"; */
+"3623.labels[1]" = "Dark";
 
-/* Class = "NSButtonCell"; title = "Edit window transparency manually"; ObjectID = "3536"; */
-"3536.title" = "Edit window transparency manually";
+/* Class = "NSButtonCell"; title = "Edit window transparency manually"; ObjectID = "3625"; */
+"3625.title" = "Edit window transparency manually";
 
-/* Class = "NSButtonCell"; title = "Use POST method to get timeline"; ObjectID = "3537"; */
-"3537.title" = "Use POST method to get timeline";
+/* Class = "NSButtonCell"; title = "Use POST method to get timeline"; ObjectID = "3626"; */
+"3626.title" = "Use POST method to get timeline";
 
-/* Class = "NSButtonCell"; title = "Send message with Control + Enter"; ObjectID = "3538"; */
-"3538.title" = "Send message with Control + Enter";
+/* Class = "NSButtonCell"; title = "Send message with Control + Enter"; ObjectID = "3627"; */
+"3627.title" = "Send message with Control + Enter";
 
-/* Class = "NSButtonCell"; title = "Show statistics on the status bar (experimental)"; ObjectID = "3539"; */
-"3539.title" = "Show statistics on the status bar (experimental)";
+/* Class = "NSButtonCell"; title = "Show detail status on the status bar"; ObjectID = "3628"; */
+"3628.title" = "Show detail status on the status bar";
 
-/* Class = "NSButtonCell"; title = "Use Growl notifications"; ObjectID = "3540"; */
-"3540.title" = "Use Growl notifications";
+/* Class = "NSButtonCell"; title = "Use Growl notifications"; ObjectID = "3629"; */
+"3629.title" = "Use Growl notifications";
 
-/* Class = "NSButtonCell"; title = "Summarize when more than:"; ObjectID = "3542"; */
-"3542.title" = "Summarize when more than:";
+/* Class = "NSButtonCell"; title = "Summarize when more than:"; ObjectID = "3631"; */
+"3631.title" = "Summarize when more than:";

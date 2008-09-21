@@ -10,6 +10,9 @@
 #import "NTLNSegmentedCell.h"
 #import "NTLNAppController.h"
 
+#define NTLN_RATE_LIMIT_WARNING_THREASHOLD 0.5f
+#define NTLN_RATE_LIMIT_CRITICAL_THREASHOLD 0.7f
+
 @interface NTLNTextView : NSTextView {
     
 }
@@ -77,8 +80,13 @@
     [NTLNConfiguration setTimelineSortOrderChangeObserver:self];
     
     [[NSNotificationCenter defaultCenter] addObserver:self 
-                                             selector:@selector(statisticsDisplaySettingChanged:)
-                                                 name:NTLN_NOTIFICATION_STATISTICS_DISPLAY_SETTING_CHANGED
+                                             selector:@selector(rateLimitDisplaySettingChanged:)
+                                                 name:NTLN_NOTIFICATION_RATE_LIMIT_DISPLAY_SETTING_CHANGED
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(messageViewChanged:)
+                                                 name:    NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
                                                object:nil];
     
     _fieldEditor = [[NTLNTextView alloc] init];
@@ -251,9 +259,9 @@
     [self setupMenuAndToolbar];
     [[self window] setOpaque:FALSE];
     
-    [statisticsTextField setToolTip:NSLocalizedString(@"number of posted messages", @"status bar tool tip")];
-    [messagePostLevelIndicator setToolTip:NSLocalizedString(@"timeline speed", @"status bar tool tip")];
-    [messagePostLevelIndicator setHidden:![[NTLNConfiguration instance] showMessageStatisticsOnStatusBar]];
+    [statisticsTextField setToolTip:NSLocalizedString(@"number of messages", @"status bar tool tip")];
+    [apiCountIndicator setToolTip:NSLocalizedString(@"API limit", @"status bar tool tip")];
+    [apiCountIndicator setHidden:true];
     
     //    NSColor *semiTransparentBlue =
 //    [NSColor colorWithDeviceRed:0.0 green:0.0 blue:1.0 alpha:0.5];
@@ -279,11 +287,17 @@
     [mainWindow setFrameAutosaveName:name];
 }
 
+- (void) updateMessageCounterText
+{
+    [statisticsTextField setIntValue:[[messageViewControllerArrayController arrangedObjects] count]];
+}
+
 - (void) addMessageViewControllers:(NSArray*)controllers {
 //    NSLog(@"%s: count:%d", __PRETTY_FUNCTION__, [controllers count]);
     [messageViewControllerArrayController addObjects:controllers];
     [messageListViewsController applyCurrentPredicate];
     [messageTableViewController newMessageArrived:controllers];
+    [self updateMessageCounterText];
 }
 
 #pragma mark -
@@ -413,13 +427,39 @@
     }
 }
 
-#pragma mark Statistics
-- (void) setMessagePostLevel:(float)level {
-    [messagePostLevelIndicator setFloatValue:level];
+#pragma mark Rate limit status
+
+- (BOOL) isRateLimitStatusWarningLevel
+{
+    return [apiCountIndicator intValue] >= [apiCountIndicator warningValue];
 }
 
-- (void) setMessageStatisticsField:(NSString*)value {
-    [statisticsTextField setStringValue:value];
+- (void) setRateLimitStatusWithRemainingHits:(int)remainingHits hourlyLimit:(int)hourlyLimit resetTime:(NSDate*)resetTime
+{
+    [apiCountIndicator setMaxValue:hourlyLimit];
+    [apiCountIndicator setWarningValue:hourlyLimit * NTLN_RATE_LIMIT_WARNING_THREASHOLD];
+    [apiCountIndicator setCriticalValue:hourlyLimit * NTLN_RATE_LIMIT_CRITICAL_THREASHOLD];
+    [apiCountIndicator setFloatValue:hourlyLimit - remainingHits];
+    
+    NSMutableString *toolTipText = [NSMutableString stringWithCapacity:200];
+
+    if (remainingHits <= 0) {
+        [toolTipText appendString:NSLocalizedString(@"Attention: API limit exceeded", nil)];
+        [toolTipText appendString:@"\n"];
+    } else if ([self isRateLimitStatusWarningLevel]) {
+        [toolTipText appendString:NSLocalizedString(@"Attention: API limit warning", nil)];
+        [toolTipText appendString:@"\n"];
+    }
+    
+    [toolTipText appendFormat:@"%d / %d\n", hourlyLimit - remainingHits, hourlyLimit];
+    [toolTipText appendFormat:NSLocalizedString(@"Reset at %@", nil), [resetTime descriptionWithCalendarFormat:@"%H:%M" timeZone:nil locale:nil]];
+    [apiCountIndicator setToolTip:toolTipText];
+    
+    if ([self isRateLimitStatusWarningLevel]) {
+        [apiCountIndicator setHidden:false];
+    } else {
+        [apiCountIndicator setHidden:![[NTLNConfiguration instance] showRateLimitStatusOnStatusBar]];
+    }
 }
 
 #pragma mark MessageInputTextField callback
@@ -551,10 +591,17 @@
 }
 
 #pragma mark Notifications
-- (void) statisticsDisplaySettingChanged:(NSNotification*)notification {
+- (void) rateLimitDisplaySettingChanged:(NSNotification*)notification {
     BOOL show = [[notification object] boolValue];
-    [messagePostLevelIndicator setHidden:!show];
+    if (![self isRateLimitStatusWarningLevel]) {
+        [apiCountIndicator setHidden:!show];
+    }
     [statisticsTextField setHidden:!show];
+}
+
+- (void) messageViewChanged:(NSNotification*)notification
+{
+    [self updateMessageCounterText];
 }
 
 @end

@@ -272,6 +272,7 @@
 }
 
 - (void) reloadTimelineSortDescriptors {
+    // sort by dictionaly order - this is a possible bug. but how can I sort normal tweets and errors which does not have id?
     [messageViewControllerArrayController setSortDescriptors:
      [NSArray arrayWithObject:
       [[[NSSortDescriptor alloc] initWithKey:@"message.statusId" 

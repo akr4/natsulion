@@ -251,6 +251,8 @@
 			<string>ObjC</string>
 			<key>OUTLETS</key>
 			<dict>
+				<key>apiCountIndicator</key>
+				<string>NSLevelIndicator</string>
 				<key>appController</key>
 				<string>NTLNAppController</string>
 				<key>keywordFilterView</key>
@@ -261,8 +263,6 @@
 				<string>NSWindow</string>
 				<key>messageListViewsController</key>
 				<string>NTLNMessageListViewsController</string>
-				<key>messagePostLevelIndicator</key>
-				<string>NSLevelIndicator</string>
 				<key>messageTableViewController</key>
 				<string>NTLNMessageTableViewController</string>
 				<key>messageTextField</key>
@@ -271,6 +271,8 @@
 				<string>NSArrayController</string>
 				<key>progressIndicator</key>
 				<string>NTLNMultiTasksProgressIndicator</string>
+				<key>rateLimitStatusTextField</key>
+				<string>NSTextField</string>
 				<key>refreshMenuItem</key>
 				<string>NSMenuItem</string>
 				<key>statisticsTextField</key>

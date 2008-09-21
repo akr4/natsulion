@@ -8,7 +8,7 @@
 @interface NTLNAsyncUrlConnection : NSObject {
     NSObject<NTLNAsyncUrlConnectionCallback> *_callback;
     NSURLConnection *_connection;
-    NSMutableData *_recievedData;
+    NSMutableData *_receivedData;
     int _statusCode;
     NSString *_username;
     NSString *_password;

@@ -44,37 +44,10 @@ enum NTLNErrorType {
 - (void) twitterStopTask;
 @end
 
-@interface NTLNAbstractTimelineCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> 
-{
-@protected
-    id<TwitterTimelineCallback> _callback;
-    id _parent;
-}
-- (id) initWithCallback:(id<TwitterTimelineCallback>)callback parent:(id)parent;
-- (void) parseResponse:(NSXMLDocument*)document;
-@end
-
-@interface TwitterTimelineCallbackHandler : NTLNAbstractTimelineCallbackHandler
-{
-}
-@end
-
-@interface TwitterDirectMessagesCallbackHandler : NTLNAbstractTimelineCallbackHandler
-{
-}
-@end
-
-@interface TwitterPostCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> {
-    id<TwitterPostCallback> _callback;
-}
-- (id) initWithPostCallback:(id<TwitterPostCallback>)callback;
-@end
-
-@interface TwitterFavoriteCallbackHandler : NSObject<NTLNAsyncUrlConnectionCallback> {
-    id<TwitterFavoriteCallback> _callback;
-    NSString *_statusId;
-}
-- (id) initWithStatusId:(NSString*)statusId callback:(id<TwitterFavoriteCallback>)callback;
+@protocol TwitterRateLimitStatusCallback
+- (void) rateLimitStatusWithRemainingHits:(int)remainingHits hourlyLimit:(int)hourlyLimit resetTime:(NSDate*)resetTime;
+- (void) twitterStartTask;
+- (void) twitterStopTask;
 @end
 
 @interface Twitter : NSObject {
@@ -87,10 +60,14 @@ enum NTLNErrorType {
 - (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password;
 - (void) destroyFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password;
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password;
+- (void) rateLimitStatusWithUsername:(NSString*)username password:(NSString*)password;
+- (int) remainingHits;
+- (int) hourlyLimit;
+- (NSDate*) resetTime;
 @end
 
 @interface TwitterImpl : Twitter<NTLNIconCallback> {
-    id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback> _callback;
+    id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback, TwitterRateLimitStatusCallback> _callback;
     NTLNIconRepository *_iconRepository;
     
     NTLNAsyncUrlConnection *_connectionForFriendTimeline;
@@ -99,21 +76,32 @@ enum NTLNErrorType {
     NTLNAsyncUrlConnection *_connectionForDirectMessages;
     NTLNAsyncUrlConnection *_connectionForPost;
     NTLNAsyncUrlConnection *_connectionForFavorite;
+    NTLNAsyncUrlConnection *_connectionForRateLimitStatus;
     
     NSDate *_friendsTimelineTimestamp;
     
     BOOL _invalidTimestampReturned;
+    BOOL _apiLimitExceeded;
     
     NSMutableDictionary *_waitingIconTwitterStatuses;
+    
+#pragma mark Rate limit status
+    int _remainingHits;
+    int _hourlyLimit;
+    NSDate *_resetTime;
 }
-- (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback>)callback;
+- (id) initWithCallback:(id<TwitterTimelineCallback, TwitterFavoriteCallback, TwitterPostCallback, TwitterRateLimitStatusCallback>)callback;
 
-// methods for TwitterTimelineCallbackHandler
+// internal methods for TwitterTimelineCallbackHandler
 - (void) pushIconWaiter:(NTLNMessage*)waiter forUrl:(NSString*)url;
 - (NSSet*) popIconWaiterSet:(NSString*)url;
 - (void) setFriendsTimelineTimestamp:(NSDate*)timestamp;
 - (void) gotInvalidTimestamp;
 - (void) gotValidTimestampAfterInvalidOne;
+- (void) rateLimitStatusWithRemainingHits:(int)remainingHits hourlyLimit:(int)hourlyLimit resetTime:(NSDate*)resetTime;
+- (void) apiRateLimitExceeded;
+- (void) apiRateLimitReset;
+
 @end
 
 #define NTLN_TWITTERCHECK_SUCESS 0

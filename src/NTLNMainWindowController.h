@@ -8,8 +8,6 @@
 #import "NTLNErrorMessageViewController.h"
 #import "NTLNKeywordFilterView.h"
 
-#define NTLN_STATISTICS_CALCULATION_PERIOD_MULTIPLIER 3.0f
-
 @class NTLNAppController;
 @class NTLNTextView;
 
@@ -40,7 +38,7 @@
     IBOutlet NTLNMessageTableViewController *messageTableViewController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     IBOutlet NSTextField *statisticsTextField;
-    IBOutlet NSLevelIndicator *messagePostLevelIndicator;
+    IBOutlet NSLevelIndicator *apiCountIndicator;
     IBOutlet NTLNKeywordFilterView *keywordFilterView;
     IBOutlet NTLNAppController *appController;
     
@@ -64,14 +62,14 @@
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;
 
-- (void) setMessageStatisticsField:(NSString*)value;
-- (void) setMessagePostLevel:(float)level;
-
 - (void) addMessageViewControllers:(NSArray*)controllers;
 
-#pragma Message input text field
+#pragma mark API count
+- (void) setRateLimitStatusWithRemainingHits:(int)remainingHits hourlyLimit:(int)hourlyLimit resetTime:(NSDate*)resetTime;
+
+#pragma mark Message input text field
 - (void) resetAndFocusMessageTextField;
 
-#pragma Message table view
+#pragma mark Message table view
 - (void) reloadTableView;
 @end
