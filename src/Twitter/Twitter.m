@@ -541,9 +541,11 @@
 
 - (void) setFriendsTimelineTimestamp:(NSDate*)timestamp {
 //    NSLog(@"%s: %@", __PRETTY_FUNCTION__, [timestamp description]);
-    [_friendsTimelineTimestamp release];
-    _friendsTimelineTimestamp = timestamp;
-    [_friendsTimelineTimestamp retain];
+    if (!_friendsTimelineTimestamp || [timestamp compare:_friendsTimelineTimestamp] == NSOrderedDescending) {
+        [_friendsTimelineTimestamp release];
+        _friendsTimelineTimestamp = timestamp;
+        [_friendsTimelineTimestamp retain];
+    }
 }
 
 - (void) gotInvalidTimestamp
@@ -570,14 +572,16 @@
 
 - (void) apiRateLimitReset
 {
-    _apiLimitExceeded = false;
-    if (_remainingHits >= _hourlyLimit) {
-        _remainingHits = _hourlyLimit;
-    }
 }
 
 - (void) apiUsed
 {
+    if ([_resetTime compare:[NSDate date]] == NSOrderedAscending) {
+        NSLog(@"resetTime is passed.");
+        _remainingHits = _hourlyLimit;
+        [_resetTime release];
+        _resetTime = nil;
+    }
     _remainingHits--;
 }
 

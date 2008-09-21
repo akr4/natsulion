@@ -451,8 +451,11 @@
         [toolTipText appendString:@"\n"];
     }
     
-    [toolTipText appendFormat:@"%d / %d\n", hourlyLimit - remainingHits, hourlyLimit];
-    [toolTipText appendFormat:NSLocalizedString(@"Reset at %@", nil), [resetTime descriptionWithCalendarFormat:@"%H:%M" timeZone:nil locale:nil]];
+    [toolTipText appendFormat:@"%d / %d", hourlyLimit - remainingHits, hourlyLimit];
+    if (resetTime) {
+        [toolTipText appendString:@"\n"];
+        [toolTipText appendFormat:NSLocalizedString(@"Reset at %@", nil), [resetTime descriptionWithCalendarFormat:@"%H:%M" timeZone:nil locale:nil]];
+    }
     [apiCountIndicator setToolTip:toolTipText];
     
     if ([self isRateLimitStatusWarningLevel]) {

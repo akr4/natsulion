@@ -202,100 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>E9A80D940E86478700E4333B</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>Twitter.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E9A80D950E86478700E4333B</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>Twitter.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E9A80E090E86637300E4333B</string>
-						<key>history</key>
-						<array>
-							<string>E9A80DDD0E8657D500E4333B</string>
-							<string>E9A80DE90E86599300E4333B</string>
-						</array>
-						<key>prevStack</key>
-						<array>
-							<string>E9A80DA90E86530400E4333B</string>
-							<string>E9A80DAA0E86530400E4333B</string>
-							<string>E9A80DAB0E86530400E4333B</string>
-							<string>E9A80DAC0E86530400E4333B</string>
-							<string>E9A80DAD0E86530400E4333B</string>
-							<string>E9A80DAE0E86530400E4333B</string>
-							<string>E9A80DAF0E86530400E4333B</string>
-							<string>E9A80DB00E86530400E4333B</string>
-							<string>E9A80DC40E8654A200E4333B</string>
-							<string>E9A80DDE0E8657D500E4333B</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1044, 676}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>601 461 1044 717 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>E9A80DD90E8657D500E4333B</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>NTLNMessageTableViewController.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E9A80DDA0E8657D500E4333B</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>NTLNMessageTableViewController.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E9A80E0A0E86637300E4333B</string>
-						<key>history</key>
-						<array>
-							<string>E9A80DCF0E86578300E4333B</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {920, 755}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>629 171 920 796 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>E9A80D880E86464800E4333B</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>NTLNAppController.m</string>
@@ -310,16 +216,18 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E9A80E0B0E86637300E4333B</string>
+						<string>E9A80E3B0E86AA6100E4333B</string>
 						<key>history</key>
 						<array>
-							<string>E9A80D8A0E86464800E4333B</string>
-							<string>E9A80D8B0E86464800E4333B</string>
+							<string>E9A80E300E86A8E900E4333B</string>
+							<string>E9A80E310E86A8E900E4333B</string>
 						</array>
 						<key>prevStack</key>
 						<array>
 							<string>E9A80D8C0E86464800E4333B</string>
 							<string>E9A80D8D0E86464800E4333B</string>
+							<string>E9A80E320E86A8E900E4333B</string>
+							<string>E9A80E330E86A8E900E4333B</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -342,6 +250,62 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
+				<string>E9A80D940E86478700E4333B</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>Twitter.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>E9A80D950E86478700E4333B</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>Twitter.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>E9A80E400E86AA6100E4333B</string>
+						<key>history</key>
+						<array>
+							<string>E9A80E3C0E86AA6100E4333B</string>
+							<string>E9A80E3D0E86AA6100E4333B</string>
+						</array>
+						<key>prevStack</key>
+						<array>
+							<string>E9A80DA90E86530400E4333B</string>
+							<string>E9A80DAA0E86530400E4333B</string>
+							<string>E9A80DAB0E86530400E4333B</string>
+							<string>E9A80DAC0E86530400E4333B</string>
+							<string>E9A80DAD0E86530400E4333B</string>
+							<string>E9A80DAE0E86530400E4333B</string>
+							<string>E9A80DAF0E86530400E4333B</string>
+							<string>E9A80DB00E86530400E4333B</string>
+							<string>E9A80DC40E8654A200E4333B</string>
+							<string>E9A80DDE0E8657D500E4333B</string>
+							<string>E9A80E3E0E86AA6100E4333B</string>
+							<string>E9A80E3F0E86AA6100E4333B</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1044, 676}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>601 461 1044 717 0 0 1920 1178 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
 				<string>E9BCB1990E860ED500348B54</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>NTLNMainWindowController.m</string>
@@ -356,7 +320,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E9A80E0C0E86637300E4333B</string>
+						<string>E9A80E410E86AA6100E4333B</string>
 						<key>history</key>
 						<array>
 							<string>E9A80D080E863E0600E4333B</string>
@@ -536,7 +500,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9A80E080E86637300E4333B</string>
+										<string>E9A80E3A0E86AA6100E4333B</string>
 										<key>history</key>
 										<array>
 											<string>E9A80D000E863E0600E4333B</string>
@@ -781,9 +745,8 @@
 		<string>E9160C000D11F6C700C9EEFF</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion1/NatsuLion.xcodeproj</string>
 		<string>E9BCB1990E860ED500348B54</string>
-		<string>E9A80D880E86464800E4333B</string>
-		<string>E9A80DD90E8657D500E4333B</string>
 		<string>E9A80D940E86478700E4333B</string>
+		<string>E9A80D880E86464800E4333B</string>
 	</array>
 	<key>WindowString</key>
 	<string>-4 348 417 830 0 0 1920 1178 </string>
@@ -876,7 +839,7 @@
 			<key>WindowToolGUID</key>
 			<string>E9160C000D11F6C700C9EEFF</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -1132,7 +1095,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1325, 488}}</string>
 								<key>RubberWindowFrame</key>
-								<string>92 181 1325 529 0 0 1920 1178 </string>
+								<string>102 174 1325 529 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -1161,7 +1124,7 @@
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>92 181 1325 529 0 0 1920 1178 </string>
+			<string>102 174 1325 529 0 0 1920 1178 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

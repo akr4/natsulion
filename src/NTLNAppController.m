@@ -336,12 +336,9 @@
 
 - (void) updateRateLimitStatusIndicator
 {
-    // check valid value
-    if ([_twitter resetTime]) {
-        [mainWindowController setRateLimitStatusWithRemainingHits:[_twitter remainingHits]
-                                                      hourlyLimit:[_twitter hourlyLimit]
-                                                        resetTime:[_twitter resetTime]];
-    }
+    [mainWindowController setRateLimitStatusWithRemainingHits:[_twitter remainingHits]
+                                                  hourlyLimit:[_twitter hourlyLimit]
+                                                    resetTime:[_twitter resetTime]];
 }
 
 - (void) rateLimitStatusWithRemainingHits:(int)remainingHits hourlyLimit:(int)hourlyLimit resetTime:(NSDate*)resetTime
