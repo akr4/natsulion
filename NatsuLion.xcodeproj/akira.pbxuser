@@ -1296,9 +1296,9 @@
 	};
 	E9A411280D29904F003BFA9F /* NTLNAppController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {798, 9254}}";
-			sepNavSelRange = "{11830, 0}";
-			sepNavVisRange = "{11596, 1454}";
+			sepNavIntBoundsRect = "{{0, 0}, {804, 9128}}";
+			sepNavSelRange = "{2801, 10}";
+			sepNavVisRange = "{1611, 1990}";
 			sepNavWindowFrame = "{{340, 87}, {841, 716}}";
 		};
 	};
