@@ -101,7 +101,9 @@
 
 - (void) messageViewChanged:(NSNotification*)notification
 {
-    [self filterInternal];
+    if (_opened) {
+        [self filterInternal];
+    }
 }
 
 @end
