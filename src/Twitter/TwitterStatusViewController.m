@@ -197,7 +197,7 @@ static TwitterStatusViewController *starred = nil;
 }
 
 - (void) iconViewClicked {
-    [_listener replyDesiredFor:[_status screenName]];
+    [_listener replyDesiredFor:_status];
 }
 
 - (void) markNeedCalculateHeight {

@@ -1,5 +1,7 @@
 #import <Cocoa/Cocoa.h>
 
+@class NTLNMessage;
+
 enum NTLNMessageInputTextFieldLengthState {
     NTLN_LENGTH_STATE_NORMAL,
     NTLN_LENGTH_STATE_WARNING,
@@ -28,7 +30,7 @@ enum NTLNMessageInputTextFieldLengthState {
 - (void) updateState;
 - (void) focusAndLocateCursorEnd;
 
-// TODO: this assumes that reply is specified in a message like Twitter.
-- (void) addReplyTo:(NSString*)username;
+- (void) addReplyTo:(NTLNMessage*)message;
+- (void) addDmReplyTo:(NTLNMessage*)message;
 
 @end

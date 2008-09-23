@@ -3,6 +3,7 @@
 #import "NTLNColors.h"
 #import "NTLNConfiguration.h"
 #import "NTLNNotification.h"
+#import "NTLNMessage.h"
 
 #define MARGIN 4.0f
 
@@ -194,67 +195,23 @@
     [self updateHeight];
 }
 
-- (void) addReplyTo:(NSString*)username {
-//    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
+- (void) addReplyTo:(NTLNMessage*)message {
     NSMutableString *newText = [[[NSMutableString alloc] initWithCapacity:100] autorelease];
     [newText appendString:[self stringValue]];
     [newText appendString:@"@"];
-    [newText appendString:username];
+    [newText appendString:[message screenName]];
     [newText appendString:@" "];
     [self setStringValue:newText];
     [self textChanged];
     return;
-//    
-//    URLExtractor *extractor = [URLExtractor extractor];
-//    NSArray *tokens = [extractor tokenizeByID:[self stringValue]];
-//    
-//    if ([tokens count] == 0) {
-//        NSMutableString *newText = [[[NSMutableString alloc] initWithCapacity:100] autorelease];
-//        [newText appendString:@"@"];
-//        [newText appendString:username];
-//        [newText appendString:@" "];
-//        [self setStringValue:newText];
-//        [self textChanged];
-//        return;
-//    }
-//    
-////    NSLog(@"tokens: %@", [tokens description]);
-//    
-//    int lastIdTokenIndex = -1;
-//    int i;
-//    for (i = 0; i < [tokens count]; i++) {
-//        NSString *token = [tokens objectAtIndex:i];
-////        NSLog(@"i: %d, token: %@", i, [tokens objectAtIndex:i]);
-//        if ([extractor isWhiteSpace:token]) {
-//            continue;
-//        }
-//        if ([extractor isIDToken:token]) {
-//            lastIdTokenIndex = i;
-//        } else {
-//            break; // regard the id tokens continueing from begin as id token
-//        }
-//    }
-//    
-//    NSMutableString *newText = [[[NSMutableString alloc] initWithCapacity:100] autorelease];
-//    
-//    for (i = 0; i < [tokens count]; i++) {
-//        [newText appendString:[tokens objectAtIndex:i]];
-//        if (lastIdTokenIndex == i) {
-//            [newText appendString:@" "];
-//            [newText appendString:@"@"];
-//            [newText appendString:username];
-//        }
-//    }
-//    
-//    if (lastIdTokenIndex == -1) {
-//        [newText appendString:@"@"];
-//        [newText appendString:username];
-//        [newText appendString:@" "];
-//    }
-//    
-//    [self setStringValue:newText];
-//    [self textChanged];
+}
+
+- (void) addDmReplyTo:(NTLNMessage*)message {
+    if ([[self stringValue] length] == 0) {
+        [self setStringValue:[NSString stringWithFormat:@"D %@ ", [message screenName]]];
+    } else {
+        [self addReplyTo:message];
+    }
 }
 
 - (void) focusAndLocateCursorEnd {

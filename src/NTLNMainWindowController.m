@@ -496,9 +496,17 @@
 }
 
 #pragma mark MessageViewListener
-- (void) replyDesiredFor:(NSString*)username {
-    [messageTextField addReplyTo:username];
-    [messageTextField focusAndLocateCursorEnd];
+- (void) replyDesiredFor:(NTLNMessage*)message {
+    switch ([message replyType]) {
+        case NTLN_MESSAGE_REPLY_TYPE_DIRECT:
+            [messageTextField addDmReplyTo:message];
+            [messageTextField focusAndLocateCursorEnd];
+            break;
+
+        default:
+            [messageTextField addReplyTo:message];
+            [messageTextField focusAndLocateCursorEnd];
+    }
 }
 
 - (void) createFavoriteDesiredFor:(NSString*)statusId

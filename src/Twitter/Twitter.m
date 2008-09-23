@@ -278,14 +278,14 @@
 
 - (void) parseResponse:(NSXMLDocument*)document
 {
-    NSArray *statuses = [document nodesForXPath:@"/direct-messages/direct_message" error:NULL];
+    NSArray *statuses = [document nodesForXPath:@"/directmessages/direct_message" error:NULL];
     if ([statuses count] == 0) {
-        //        NSLog(@"status code: %d - response:%@", code, responseStr);
+        NSLog(@"DM not found");
         return;
     }
     
 #ifdef DEBUG
-    NSLog(@"status count = %d", [statuses count]);
+    NSLog(@"DM count = %d", [statuses count]);
 #endif
     
     for (NSXMLNode *status in statuses) {

@@ -20,7 +20,7 @@
 @end
 
 @protocol NTLNMessageViewListener
-- (void) replyDesiredFor:(NSString*)username;
+- (void) replyDesiredFor:(NTLNMessage*)message;
 - (float) viewWidth;
 - (void) createFavoriteDesiredFor:(NSString*)statusId;
 - (void) destroyFavoriteDesiredFor:(NSString*)statusId;
