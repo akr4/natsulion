@@ -221,8 +221,8 @@
 /* Class = "NSMenuItem"; title = "Find"; ObjectID = "3110"; */
 "3110.title" = "Find";
 
-/* Class = "NSMenuItem"; title = "Find by Screen Names"; ObjectID = "3717"; */
-"3717.title" = "Find by Screen Names";
+/* Class = "NSMenuItem"; title = "Show Conversation"; ObjectID = "3717"; */
+"3717.title" = "Show Conversation";
 
 /* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "3943"; */
 "3943.title" = "Password:";

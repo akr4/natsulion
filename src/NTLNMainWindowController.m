@@ -12,8 +12,8 @@
 #import "NTLNURLUtils.h"
 #import "NTLNFilterView.h"
 
-#define NTLN_RATE_LIMIT_WARNING_THREASHOLD 0.5f
-#define NTLN_RATE_LIMIT_CRITICAL_THREASHOLD 0.7f
+#define NTLN_RATE_LIMIT_WARNING_THREASHOLD 0.8f
+#define NTLN_RATE_LIMIT_CRITICAL_THREASHOLD 0.9f
 
 @interface NTLNTextView : NSTextView {
     
