@@ -4,7 +4,7 @@
 
 #define API_BASE @"http://twitter.com"
 
-#define DEBUG
+//#define DEBUG
 
 @implementation NTLNErrorInfo
 + (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message {
@@ -278,7 +278,7 @@
 
 - (void) parseResponse:(NSXMLDocument*)document
 {
-    NSArray *statuses = [document nodesForXPath:@"/directmessages/direct_message" error:NULL];
+    NSArray *statuses = [document nodesForXPath:@"/direct-messages/direct_message" error:NULL];
     if ([statuses count] == 0) {
         NSLog(@"DM not found");
         return;
