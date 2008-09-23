@@ -31,6 +31,14 @@
 
 @implementation NTLNKeywordFilterView
 
+- (void) awakeFromNib
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(messageViewChanged:)
+                                                 name:NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
+                                               object:nil];
+}
+
 - (BOOL) opened {
     return _opened;
 }
@@ -39,30 +47,37 @@
     return 26;
 }
 
-- (void) filterInternal:(NSString*)filterText {
+- (void) applyFilter:(NSString*)filterText {
     NSPredicate *predicate = [NSCompoundPredicate orPredicateWithSubpredicates:
                               [NSArray arrayWithObjects:
                                [NSPredicate predicateWithFormat:@"message.text like[c] %@", [NSString stringWithFormat:@"*%@*", filterText]],
                                [NSPredicate predicateWithFormat:@"message.screenName like[c] %@", [NSString stringWithFormat:@"*%@*", filterText]],
                                nil]];
-    NSLog(@"%@", [predicate description]);
+//    NSLog(@"%@", [predicate description]);
     [messageListViewsController addAuxiliaryPredicate:predicate];
     [messageListViewsController applyCurrentPredicate];
 	[messageTableViewController reloadTableView];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_KEYWORD_FILTER_APPLIED object:nil];
 }
 
 - (void) resetFilter {
     [messageListViewsController resetAuxiliaryPredicate];
     [messageListViewsController applyCurrentPredicate];
 	[messageTableViewController reloadTableView];
+    [[NSNotificationCenter defaultCenter] postNotificationName:NTLN_NOTIFICATION_KEYWORD_FILTER_APPLIED object:nil];
 }
 
-- (IBAction) filter:(id)sender {
+- (void) filterInternal
+{
     if ([[searchTextField stringValue] length] > 0) {
-        [self filterInternal:[searchTextField stringValue]];
+        [self applyFilter:[searchTextField stringValue]];
     } else {
         [self resetFilter];
     }
+}
+
+- (IBAction) filter:(id)sender {
+    [self filterInternal];
 }
 
 - (void)drawRect:(NSRect)aRect {
@@ -81,6 +96,12 @@
     //    [filterText setStringValue:@""];
     [self resignFirstResponder];
     [self resetFilter];
+}
+
+
+- (void) messageViewChanged:(NSNotification*)notification
+{
+    [self filterInternal];
 }
 
 @end

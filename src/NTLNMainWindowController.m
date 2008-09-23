@@ -84,9 +84,10 @@
                                                  name:NTLN_NOTIFICATION_RATE_LIMIT_DISPLAY_SETTING_CHANGED
                                                object:nil];
     
+    // happens after NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(messageViewChanged:)
-                                                 name:    NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
+                                                 name:NTLN_NOTIFICATION_KEYWORD_FILTER_APPLIED
                                                object:nil];
     
     _fieldEditor = [[NTLNTextView alloc] init];
