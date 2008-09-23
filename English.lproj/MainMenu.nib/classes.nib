@@ -124,6 +124,30 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
+				<key>filter</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NTLNFilterView</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>keywordFilterView</key>
+				<string>NTLNKeywordFilterView</string>
+				<key>messageListViewsController</key>
+				<string>NTLNMessageListViewsController</string>
+				<key>messageTableViewController</key>
+				<string>NTLNMessageTableViewController</string>
+				<key>screenNameFilterView</key>
+				<string>NTLNScreenNameFilterView</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSBox</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
 				<key>checkAuth</key>
 				<string>id</string>
 				<key>exitApplication</key>
@@ -234,11 +258,13 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
-				<key>closeKeywordFilterView</key>
+				<key>closeFilterView</key>
 				<string>id</string>
 				<key>markAllAsRead</key>
 				<string>id</string>
 				<key>openKeywordFilterView</key>
+				<string>id</string>
+				<key>openScreenNameFilterView</key>
 				<string>id</string>
 				<key>sendMessage</key>
 				<string>id</string>
@@ -255,6 +281,10 @@
 				<string>NSLevelIndicator</string>
 				<key>appController</key>
 				<string>NTLNAppController</string>
+				<key>filterView</key>
+				<string>NTLNFilterView</string>
+				<key>idFilterView</key>
+				<string>NTLNScreenNameFilterView</string>
 				<key>keywordFilterView</key>
 				<string>NTLNKeywordFilterView</string>
 				<key>mainToolbar</key>
@@ -287,11 +317,36 @@
 		</dict>
 		<dict>
 			<key>CLASS</key>
+			<string>NTLNScreenNameSearchField</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSTokenField</string>
+		</dict>
+		<dict>
+			<key>CLASS</key>
 			<string>NTLNMultiTasksProgressIndicator</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSProgressIndicator</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>decreaseFontSize</key>
+				<string>id</string>
+				<key>increaseFontSize</key>
+				<string>id</string>
+				<key>resetFontSize</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NTLNConfiguration</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -328,19 +383,24 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
-				<key>decreaseFontSize</key>
-				<string>id</string>
-				<key>increaseFontSize</key>
-				<string>id</string>
-				<key>resetFontSize</key>
+				<key>filter</key>
 				<string>id</string>
 			</dict>
 			<key>CLASS</key>
-			<string>NTLNConfiguration</string>
+			<string>NTLNScreenNameFilterView</string>
 			<key>LANGUAGE</key>
 			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>messageListViewsController</key>
+				<string>NTLNMessageListViewsController</string>
+				<key>messageTableViewController</key>
+				<string>NTLNMessageTableViewController</string>
+				<key>searchTextField</key>
+				<string>NTLNScreenNameSearchField</string>
+			</dict>
 			<key>SUPERCLASS</key>
-			<string>NSObject</string>
+			<string>NSView</string>
 		</dict>
 	</array>
 	<key>IBVersion</key>

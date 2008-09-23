@@ -4,6 +4,7 @@
 
 @class NTLNMessageListViewsController;
 @class NTLNMessageTableViewController;
+@class NTLNMessage;
 
 @interface NTLNMessageScrollView : NSScrollView {
     IBOutlet NSArrayController *messageViewControllerArrayController;
@@ -52,6 +53,7 @@
 - (void) reloadTimelineSortDescriptors;
 - (void) nextMessage;
 - (void) previousMessage;
+- (NTLNMessage*) selectedMessage;
     
 - (IBAction) makeSelectionsFavoraite:(id)sender;
 - (IBAction) addSelectionsToReplyTo:(id)sender;

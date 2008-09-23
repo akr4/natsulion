@@ -6,10 +6,10 @@
 #import "NTLNMessageListViewsController.h"
 #import "NTLNBufferedMessageNotifier.h"
 #import "NTLNErrorMessageViewController.h"
-#import "NTLNKeywordFilterView.h"
 
 @class NTLNAppController;
 @class NTLNTextView;
+@class NTLNFilterView;
 
 @interface NTLNMainWindow : NSWindow {
 }
@@ -39,7 +39,7 @@
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
     IBOutlet NSTextField *statisticsTextField;
     IBOutlet NSLevelIndicator *apiCountIndicator;
-    IBOutlet NTLNKeywordFilterView *keywordFilterView;
+    IBOutlet NTLNFilterView *filterView;
     IBOutlet NTLNAppController *appController;
     
     NSResponder *_previousFirstResponder;
@@ -57,7 +57,8 @@
 - (IBAction) updateTimelineCorrespondsToView:(id)sender;
 - (IBAction) markAllAsRead:(id)sender;
 - (IBAction) openKeywordFilterView:(id)sender;
-- (IBAction) closeKeywordFilterView:(id)sender;
+- (IBAction) openScreenNameFilterView:(id)sender;
+- (IBAction) closeFilterView:(id)sender;
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;

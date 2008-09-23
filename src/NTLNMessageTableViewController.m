@@ -5,6 +5,7 @@
 #import "NTLNColors.h"
 #import "NTLNMessageListViewsController.h"
 #import "NTLNNotification.h"
+#import "NTLNMessage.h"
 
 @implementation NTLNMessageScrollView 
 
@@ -310,6 +311,11 @@
     [[viewColumn tableView] scrollRowToVisible:[[[viewColumn tableView] selectedRowIndexes] firstIndex]];
 }
 
+- (NTLNMessage*) selectedMessage
+{
+    return [(TwitterStatusViewController*) [[messageViewControllerArrayController arrangedObjects] objectAtIndex:[[[viewColumn tableView] selectedRowIndexes] firstIndex]] message];
+}
+
 #pragma mark NSTableView datasource methods
 - (int)numberOfRowsInTableView:(NSTableView *)aTableView {
     return [[messageViewControllerArrayController arrangedObjects] count];
@@ -398,9 +404,7 @@
     for(unsigned int i = 0; i != bufSize; i++) {
         unsigned int index = buf[i];
         TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:index];
-        NTLNMessage *m = [c message];
-        NSString *s = [m screenName];
-        [messageInputTextField addReplyTo:s];
+        [messageInputTextField addReplyTo:[c message]];
     }
     free(buf);
     

@@ -25,6 +25,7 @@
 		E91B3DAD0D13F3B5007C9762 /* NTLNMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DAC0D13F3B5007C9762 /* NTLNMainWindowController.m */; };
 		E91B3DB60D13F593007C9762 /* NTLNCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */; };
 		E920C36E0D6A1ACC00A813EB /* CTBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = E920C36D0D6A1ACC00A813EB /* CTBadge.m */; };
+		E922F4620E88B7AF00DF4EB6 /* NTLNFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E922F4610E88B7AF00DF4EB6 /* NTLNFilterView.m */; };
 		E93467030D32DF6400F779CB /* NTLNUIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467020D32DF6400F779CB /* NTLNUIUtils.m */; };
 		E93467130D32EDB800F779CB /* TwitterStatusViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467120D32EDB800F779CB /* TwitterStatusViewTimestampField.m */; };
 		E93467160D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E93467150D32EE7D00F779CB /* NTLNMessageViewClickableTextField.m */; };
@@ -78,6 +79,7 @@
 		E9D23B710D8EF5BD006191EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9D23B6F0D8EF5BD006191EE /* Localizable.strings */; };
 		E9D5B1EB0D5633CB0000456F /* NTLNMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */; };
 		E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */; };
+		E9DE941F0E88C1C600D591A7 /* NTLNScreenNameFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE941E0E88C1C600D591A7 /* NTLNScreenNameFilterView.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
 		E9E5BF9F0D28988800F34B9B /* NTLNXMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* NTLNXMLHTTPEncoder.m */; };
 		E9E5BFA20D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BFA10D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m */; };
@@ -146,6 +148,8 @@
 		E91B3DB50D13F593007C9762 /* NTLNCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNCustomViewCell.m; sourceTree = "<group>"; };
 		E920C36C0D6A1ACC00A813EB /* CTBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBadge.h; sourceTree = "<group>"; };
 		E920C36D0D6A1ACC00A813EB /* CTBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBadge.m; sourceTree = "<group>"; };
+		E922F4600E88B7AF00DF4EB6 /* NTLNFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNFilterView.h; sourceTree = "<group>"; };
+		E922F4610E88B7AF00DF4EB6 /* NTLNFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNFilterView.m; sourceTree = "<group>"; };
 		E93467010D32DF6400F779CB /* NTLNUIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNUIUtils.h; sourceTree = "<group>"; };
 		E93467020D32DF6400F779CB /* NTLNUIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNUIUtils.m; sourceTree = "<group>"; };
 		E93467110D32EDB800F779CB /* TwitterStatusViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewTimestampField.h; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 		E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTLNMessageViewController.m; path = src/NTLNMessageViewController.m; sourceTree = SOURCE_ROOT; };
 		E9DC0FD00D3D226A00CC6D41 /* TwitterTestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTestStub.h; sourceTree = "<group>"; };
 		E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTestStub.m; sourceTree = "<group>"; };
+		E9DE941D0E88C1C600D591A7 /* NTLNScreenNameFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNScreenNameFilterView.h; sourceTree = "<group>"; };
+		E9DE941E0E88C1C600D591A7 /* NTLNScreenNameFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNScreenNameFilterView.m; sourceTree = "<group>"; };
 		E9E2ACDE0D22EB21008561C2 /* TwitterStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusView.h; sourceTree = "<group>"; };
 		E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusView.m; sourceTree = "<group>"; };
 		E9E5BF9D0D28988800F34B9B /* NTLNXMLHTTPEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNXMLHTTPEncoder.h; sourceTree = "<group>"; };
@@ -300,8 +306,12 @@
 				E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */,
 				E99632690D1E5D2400860515 /* NTLNMessage.h */,
 				E996326A0D1E5D2400860515 /* NTLNMessage.m */,
+				E922F4600E88B7AF00DF4EB6 /* NTLNFilterView.h */,
+				E922F4610E88B7AF00DF4EB6 /* NTLNFilterView.m */,
 				E94CC0CF0DD8C8B100D8711D /* NTLNKeywordFilterView.h */,
 				E94CC0D00DD8C8B100D8711D /* NTLNKeywordFilterView.m */,
+				E9DE941D0E88C1C600D591A7 /* NTLNScreenNameFilterView.h */,
+				E9DE941E0E88C1C600D591A7 /* NTLNScreenNameFilterView.m */,
 				E916EED90D95381A00EA04C7 /* NTLNUser.h */,
 				E916EEDA0D95381A00EA04C7 /* NTLNUser.m */,
 				E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */,
@@ -680,6 +690,8 @@
 				E976152B0D9FDE10007893CC /* Crypto.m in Sources */,
 				E94CC0D10DD8C8B100D8711D /* NTLNKeywordFilterView.m in Sources */,
 				E99408070DEF43FD0009A365 /* NTLNSegmentedCell.m in Sources */,
+				E922F4620E88B7AF00DF4EB6 /* NTLNFilterView.m in Sources */,
+				E9DE941F0E88C1C600D591A7 /* NTLNScreenNameFilterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
