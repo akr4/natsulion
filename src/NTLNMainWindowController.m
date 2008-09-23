@@ -309,7 +309,7 @@
     [messageTextField setEditable:TRUE];
     [messageTextField setEnabled:TRUE];
     [messageTextField updateState];
-    [statusTextField setStringValue:@""];
+    [messageLengthLabel setStringValue:@""];
 }
 
 #pragma Message table view
@@ -472,12 +472,21 @@
 }
 
 - (void) messageInputTextFieldChanged:(int)length state:(enum NTLNMessageInputTextFieldLengthState)state {
-    // TODO: statusTextField should do itself (need subclassing)
     if (length > 0) {
-        NSString *statusText = [NSString stringWithFormat:@"%d", length];
-        [statusTextField setStringValue:statusText];
+        [messageLengthLabel setStringValue:[NSString stringWithFormat:@"%d", 140 - length]];
+        switch (state) {
+            case NTLN_LENGTH_STATE_NORMAL:
+                [messageLengthLabel setToolTip:[NSString stringWithFormat:NSLocalizedString(@"%d characters remain", nil), 140 - length]];
+                break;
+            case NTLN_LENGTH_STATE_WARNING:
+                [messageLengthLabel setToolTip:NSLocalizedString(@"Your message can be truncated because it's too long.", nil)];
+                break;
+            case NTLN_LENGTH_STATE_MAXIMUM:
+                [messageLengthLabel setToolTip:NSLocalizedString(@"Your message will be truncated because it's too long.", nil)];
+                break;
+        }
     } else {
-        [statusTextField setStringValue:@""];
+        [messageLengthLabel setStringValue:@""];
     }
 }
 

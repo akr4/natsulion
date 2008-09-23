@@ -125,7 +125,7 @@
 }
 
 - (void) checkAndUpdateMaxLength {
-    if (_maxLength <= [[self stringValue] length]) {
+    if (_maxLength < [[self stringValue] length]) {
         _lengthState = NTLN_LENGTH_STATE_MAXIMUM;
         [_backgroundColor release];
         _backgroundColor = [[[NTLNColors instance] colorForError] retain];
@@ -133,7 +133,7 @@
 }
 
 - (void) checkAndUpdateWarningLength {
-    if (_warningLength <= [[self stringValue] length] && [[self stringValue] length] < _maxLength) {
+    if (_warningLength < [[self stringValue] length] && [[self stringValue] length] <= _maxLength) {
         _lengthState = NTLN_LENGTH_STATE_WARNING;
         [_backgroundColor release];
         _backgroundColor = [[[NTLNColors instance] colorForWarning] retain];

@@ -202,46 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>E922F3250E8885AB00DF4EB6</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>NTLNKeywordFilterView.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>E922F3260E8885AB00DF4EB6</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>NTLNKeywordFilterView.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>E922F3270E8885AB00DF4EB6</string>
-						<key>history</key>
-						<array>
-							<string>E922F3210E88853B00DF4EB6</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {936, 678}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>359 357 936 719 0 0 1920 1178 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>E9BCB1990E860ED500348B54</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>NTLNMainWindowController.m</string>
@@ -256,16 +216,22 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E922F3280E8885AB00DF4EB6</string>
+						<string>E922F3780E88915C00DF4EB6</string>
 						<key>history</key>
 						<array>
-							<string>E9A80D080E863E0600E4333B</string>
-							<string>E907ECE90E872647005A1876</string>
+							<string>E922F3470E88899200DF4EB6</string>
+							<string>E922F3310E8888C700DF4EB6</string>
 						</array>
 						<key>prevStack</key>
 						<array>
 							<string>E9BCB19D0E860ED500348B54</string>
 							<string>E9BCB19E0E860ED500348B54</string>
+							<string>E922F3330E8888C700DF4EB6</string>
+							<string>E922F3340E8888C700DF4EB6</string>
+							<string>E922F3350E8888C700DF4EB6</string>
+							<string>E922F3360E8888C700DF4EB6</string>
+							<string>E922F3370E8888C700DF4EB6</string>
+							<string>E922F3480E88899200DF4EB6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -290,7 +256,7 @@
 				<key>PBXProjectModuleGUID</key>
 				<string>E922F3290E8885AB00DF4EB6</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>NTLNMessageInputTextField.h</string>
+				<string>NTLNMessageInputTextField.m</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
@@ -298,14 +264,21 @@
 						<key>PBXProjectModuleGUID</key>
 						<string>E922F32A0E8885AB00DF4EB6</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>NTLNMessageInputTextField.h</string>
+						<string>NTLNMessageInputTextField.m</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E922F32B0E8885AB00DF4EB6</string>
+						<string>E922F3790E88915C00DF4EB6</string>
 						<key>history</key>
 						<array>
-							<string>E922F31F0E88823500DF4EB6</string>
+							<string>E922F34A0E88899200DF4EB6</string>
+							<string>E922F3390E8888C700DF4EB6</string>
+						</array>
+						<key>prevStack</key>
+						<array>
+							<string>E922F33B0E8888C700DF4EB6</string>
+							<string>E922F33C0E8888C700DF4EB6</string>
+							<string>E922F34B0E88899200DF4EB6</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -474,7 +447,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E922F3240E8885AB00DF4EB6</string>
+										<string>E922F3770E88915C00DF4EB6</string>
 										<key>history</key>
 										<array>
 											<string>E9A80D000E863E0600E4333B</string>
@@ -720,13 +693,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>E9B82A1E0D8C53AF0035F823</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
-		<string>E922F3290E8885AB00DF4EB6</string>
 		<string>/Users/akira/Documents/program/xcode/NatsuLion1/NatsuLion.xcodeproj</string>
+		<string>E922F3290E8885AB00DF4EB6</string>
 		<string>E9BCB1990E860ED500348B54</string>
-		<string>E922F3250E8885AB00DF4EB6</string>
 	</array>
 	<key>WindowString</key>
 	<string>-4 514 417 664 0 0 1920 1178 </string>
@@ -1638,7 +1611,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1108, 584}}</string>
 								<key>RubberWindowFrame</key>
-								<string>40 151 1108 625 0 0 1920 1178 </string>
+								<string>128 170 1108 625 0 0 1920 1178 </string>
 								<key>XCRefactoringSplitViewLowerHeight</key>
 								<real>391</real>
 								<key>XCRefactoringSplitViewTotalHeight</key>
@@ -1665,11 +1638,11 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>E9B82A1E0D8C53AF0035F823</string>
-				<string>E9A80DBD0E86544700E4333B</string>
+				<string>E922F33E0E8888C700DF4EB6</string>
 				<string>E9B82A1D0D8C53AF0035F823</string>
 			</array>
 			<key>WindowString</key>
-			<string>40 151 1108 625 0 0 1920 1178 </string>
+			<string>128 170 1108 625 0 0 1920 1178 </string>
 			<key>WindowToolGUID</key>
 			<string>E9B82A1E0D8C53AF0035F823</string>
 			<key>WindowToolIsVisible</key>

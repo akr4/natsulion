@@ -261,6 +261,8 @@
 				<string>NSToolbar</string>
 				<key>mainWindow</key>
 				<string>NSWindow</string>
+				<key>messageLengthLabel</key>
+				<string>NSTextField</string>
 				<key>messageListViewsController</key>
 				<string>NTLNMessageListViewsController</string>
 				<key>messageTableViewController</key>
@@ -277,8 +279,6 @@
 				<string>NSMenuItem</string>
 				<key>statisticsTextField</key>
 				<string>NSTextField</string>
-				<key>statusTextField</key>
-				<string>NSTextField</string>
 				<key>viewMenu</key>
 				<string>NSMenu</string>
 			</dict>
@@ -292,23 +292,6 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSProgressIndicator</string>
-		</dict>
-		<dict>
-			<key>ACTIONS</key>
-			<dict>
-				<key>decreaseFontSize</key>
-				<string>id</string>
-				<key>increaseFontSize</key>
-				<string>id</string>
-				<key>resetFontSize</key>
-				<string>id</string>
-			</dict>
-			<key>CLASS</key>
-			<string>NTLNConfiguration</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
-			<key>SUPERCLASS</key>
-			<string>NSObject</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -339,6 +322,23 @@
 				<key>welcomeWindowController</key>
 				<string>NTLNWelcomeWindowController</string>
 			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>decreaseFontSize</key>
+				<string>id</string>
+				<key>increaseFontSize</key>
+				<string>id</string>
+				<key>resetFontSize</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>NTLNConfiguration</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
 		</dict>

@@ -33,7 +33,7 @@
 @interface NTLNMainWindowController : NSWindowController <NTLNMessageViewListener, NTLNTimelineSortOrderChangeObserver, NTLNMessageInputTextFieldCallback> {
     IBOutlet NSWindow *mainWindow;
     IBOutlet NTLNMessageInputTextField *messageTextField;
-    IBOutlet NSTextField *statusTextField;
+    IBOutlet NSTextField *messageLengthLabel;
     IBOutlet NSArrayController *messageViewControllerArrayController;
     IBOutlet NTLNMessageTableViewController *messageTableViewController;
     IBOutlet NTLNMessageListViewsController *messageListViewsController;
