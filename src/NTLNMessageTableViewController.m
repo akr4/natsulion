@@ -395,20 +395,4 @@
     free(buf);
 }
 
-- (IBAction) addSelectionsToReplyTo:(id)sender {
-    NSIndexSet* indices = [[viewColumn tableView] selectedRowIndexes];
-    unsigned int bufSize = [indices count];
-    unsigned int* buf = malloc(sizeof(unsigned int) * bufSize);
-    NSRange range = NSMakeRange([indices firstIndex], [indices lastIndex]);
-    [indices getIndexes:buf maxCount:bufSize inIndexRange:&range];
-    for(unsigned int i = 0; i != bufSize; i++) {
-        unsigned int index = buf[i];
-        TwitterStatusViewController *c = [[messageViewControllerArrayController arrangedObjects] objectAtIndex:index];
-        [messageInputTextField addReplyTo:[c message]];
-    }
-    free(buf);
-    
-    [messageInputTextField focusAndLocateCursorEnd];
-}
-
 @end

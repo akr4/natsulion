@@ -641,6 +641,11 @@
                                                         object:nil];            
 }
 
+- (IBAction) replyToSelectedMessage:(id)sender
+{
+    [self replyDesiredFor:[messageTableViewController selectedMessage]];
+}
+
 #pragma mark Notifications
 - (void) rateLimitDisplaySettingChanged:(NSNotification*)notification {
     BOOL show = [[notification object] boolValue];

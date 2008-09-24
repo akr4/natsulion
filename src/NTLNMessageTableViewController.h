@@ -56,6 +56,5 @@
 - (NTLNMessage*) selectedMessage;
     
 - (IBAction) makeSelectionsFavoraite:(id)sender;
-- (IBAction) addSelectionsToReplyTo:(id)sender;
 
 @end

@@ -69,8 +69,6 @@
 		<dict>
 			<key>ACTIONS</key>
 			<dict>
-				<key>addSelectionsToReplyTo</key>
-				<string>id</string>
 				<key>makeSelectionsFavoraite</key>
 				<string>id</string>
 				<key>nextMessage</key>
@@ -97,6 +95,12 @@
 			<string>NSObject</string>
 		</dict>
 		<dict>
+			<key>CLASS</key>
+			<string>NSObject</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+		</dict>
+		<dict>
 			<key>ACTIONS</key>
 			<dict>
 				<key>toggleAutomaticLinkDetection</key>
@@ -114,12 +118,6 @@
 			<string>ObjC</string>
 			<key>SUPERCLASS</key>
 			<string>NSObject</string>
-		</dict>
-		<dict>
-			<key>CLASS</key>
-			<string>NSObject</string>
-			<key>LANGUAGE</key>
-			<string>ObjC</string>
 		</dict>
 		<dict>
 			<key>ACTIONS</key>
@@ -265,6 +263,8 @@
 				<key>openKeywordFilterView</key>
 				<string>id</string>
 				<key>openScreenNameFilterView</key>
+				<string>id</string>
+				<key>replyToSelectedMessage</key>
 				<string>id</string>
 				<key>sendMessage</key>
 				<string>id</string>
