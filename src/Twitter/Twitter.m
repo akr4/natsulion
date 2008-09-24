@@ -930,7 +930,8 @@
 - (void) failedToGetIconForKey:(NSString*)key {
     NSMutableArray *back = [[[NSMutableArray alloc] initWithCapacity:20] autorelease];
     [back addObjectsFromArray:[self arrayWithSet:[self popIconWaiterSet:key]]];
-    for (int i = 0; i < [[self popIconWaiterSet:key] count]; i++) {
+    int count = [[self popIconWaiterSet:key] count];
+    for (int i = 0; i < count; i++) {
         [_callback twitterStopTask];
     }
     [_callback finishedToGetTimeline:back];
