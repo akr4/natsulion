@@ -7,6 +7,49 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.8</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.8
+    
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-204'&gt;NTLN-204&lt;/a&gt;] -         line space for non-Japanese text is too short
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-207'&gt;NTLN-207&lt;/a&gt;] -         support count and since parameter for friends_timeline.xml 
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-208'&gt;NTLN-208&lt;/a&gt;] -         auto refresh timer should be reset by manual refresh
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-210'&gt;NTLN-210&lt;/a&gt;] -         check created_at is valid (not future value)
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-214'&gt;NTLN-214&lt;/a&gt;] -         better support direct message for Growl
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-217'&gt;NTLN-217&lt;/a&gt;] -         message count on the status bar should honor view and filter
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-218'&gt;NTLN-218&lt;/a&gt;] -         improved message length label (starts from 140, TooTips)
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-206'&gt;NTLN-206&lt;/a&gt;] -         direct message support
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-215'&gt;NTLN-215&lt;/a&gt;] -         show remaining API count
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-216'&gt;NTLN-216&lt;/a&gt;] -         automatically added &quot;D &lt;username&gt; &quot; when repling to DM
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-219'&gt;NTLN-219&lt;/a&gt;] -         show conversation (filter by screen names)
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Wed, 24 Oct 2008 01:25:00 +9000</pubDate>
+      <enclosure url="http://www.natsulion.org/download/NatsuLion_1.8.zip"
+        length="1673573"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.7</title>
       <description>
         Release Notes - NatsuLion - Version 1.7

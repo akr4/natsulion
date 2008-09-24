@@ -86,7 +86,12 @@
                                                  name:NTLN_NOTIFICATION_RATE_LIMIT_DISPLAY_SETTING_CHANGED
                                                object:nil];
     
-    // happens after NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(messageViewChanged:)
+                                                 name:NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
+                                               object:nil];
+
+    // happens also after NTLN_NOTIFICATION_MESSAGE_VIEW_CHANGED
     [[NSNotificationCenter defaultCenter] addObserver:self 
                                              selector:@selector(messageViewChanged:)
                                                  name:NTLN_NOTIFICATION_KEYWORD_FILTER_APPLIED
@@ -263,8 +268,9 @@
     [[self window] setOpaque:FALSE];
     
     [statisticsTextField setToolTip:NSLocalizedString(@"number of messages", @"status bar tool tip")];
+    [statisticsTextField setHidden:![[NTLNConfiguration instance] showRateLimitStatusOnStatusBar]];
     [apiCountIndicator setToolTip:NSLocalizedString(@"API limit", @"status bar tool tip")];
-    [apiCountIndicator setHidden:true];
+    [apiCountIndicator setHidden:![[NTLNConfiguration instance] showRateLimitStatusOnStatusBar]];
     
     //    NSColor *semiTransparentBlue =
 //    [NSColor colorWithDeviceRed:0.0 green:0.0 blue:1.0 alpha:0.5];

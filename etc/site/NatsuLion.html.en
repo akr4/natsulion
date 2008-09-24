@@ -121,6 +121,41 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 
 <h2>Release Notes</h2>
 
+<h3 id="1.8">Version 1.8 (2008/09/24)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.8.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.8.zip');">download</a>
+<p>
+<p>added three main new features - DM, API limit check and conversation filter (inspired by <a href="http://iphone.natsulion.org">NatsuLiphone</a>)</p>
+
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-204'>NTLN-204</a>] -         line space for non-Japanese text is too short
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-207'>NTLN-207</a>] -         support count and since parameter for friends_timeline.xml 
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-208'>NTLN-208</a>] -         auto refresh timer should be reset by manual refresh
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-210'>NTLN-210</a>] -         check created_at is valid (not future value)
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-214'>NTLN-214</a>] -         better support direct message for Growl
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-217'>NTLN-217</a>] -         message count on the status bar should honor view and filter
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-218'>NTLN-218</a>] -         improved message length label (starts from 140, TooTips)
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-206'>NTLN-206</a>] -         direct message support
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-215'>NTLN-215</a>] -         show remaining API count
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-216'>NTLN-216</a>] -         automatically added &quot;D &lt;username&gt; &quot; when repling to DM
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-219'>NTLN-219</a>] -         show conversation (filter by screen names)
+</li>
+</ul>
+</p>
+
 <h3 id="1.7">Version 1.7 (2008/09/16)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.7.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.7.zip');">download</a>
 <p>
 <p>there's a slow behavior when retrieving timeline in version 1.5 and 1.6. this is a fix for it.</p>
