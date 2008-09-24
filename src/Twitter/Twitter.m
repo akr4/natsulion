@@ -197,7 +197,7 @@
 {
     // subclass must imeplement  
     // might call:
-    // [_parent pushIconWaiter:backStatus forUrl:iconUrl] with [_callback twitterStartTask]
+    // [_parent pushIconWaiter:backStatus forUrl:iconUrl]
     // [_parent setFriendsTimelineTimestamp:lastTimestamp] (for friends_timeline only)
     // call any other parent methods
 }
@@ -249,7 +249,6 @@
         NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"user/profile_image_url/text()"]];
         
         [backStatus finishedToSetProperties];
-        [_callback twitterStartTask];
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
         
         // keep last status id for "since" parameter
@@ -306,7 +305,6 @@
         
         //        NSLog(@"DM { %@ }", backStatus);
         [backStatus finishedToSetProperties];
-        [_callback twitterStartTask];
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
     }
 }
@@ -527,7 +525,10 @@
         set = [[[NSMutableSet alloc] initWithCapacity:3] autorelease];
         [_waitingIconTwitterStatuses setObject:set forKey:url];
     }
-    [set addObject:waiter];
+    if (![set containsObject:waiter]) {
+        [_callback twitterStartTask];
+        [set addObject:waiter];
+    }
     [_iconRepository registerUrl:url];
 }
 
