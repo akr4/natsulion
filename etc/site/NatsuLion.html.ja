@@ -74,6 +74,11 @@ pageTracker._trackPageview();
 最新版を<a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">ダウンロード</a>!
 
 </p>
+
+<h4>ベータバージョン</h4>
+<p>ベータバージョンは<a href="http://www.natsulion.org/download/NatsuLion_1.9b1.zip">こちら</a>ダウンロードできます。Progress Indicator (通称ぐるぐる) が止まらない問題を一部修正しました。</p>
+
+<h3>スクリーンショット</h3>
 <p>
 <img src="images/ss1.png" alt="screen shot 1">
 <img src="images/ss_dark1.png" alt="screen shot 2 (dark color scheme)">
@@ -91,6 +96,14 @@ pageTracker._trackPageview();
   <li>未読管理</li>
 </ul>  
 </p>
+
+<h3>協力してくださる方募集</h3>
+<ul>
+  <li>英語のメッセージをまともにしたいです</li>
+  <li>バグを修正するパッチ</li>
+  <li>ベータテスター</li>
+</ul>
+<p>ご協力に感謝します</p>
 
 <h3>ライセンス</h3>
 <p>

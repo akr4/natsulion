@@ -75,6 +75,11 @@ Its goals are the follows:
 </ul>
 You can <a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">download</a> the latest version from.
 </p>
+
+<h4>Beta Version</h4>
+<p>There is a beta version also. If you are interested in it, try <a href="http://www.natsulion.org/download/NatsuLion_1.9b1.zip">beta</a>.</p>
+
+<h3>Screen Shots</h3>
 <p>
 <img src="images/ss_en_light.png" alt="screen shot 1 (light color scheme)">
 <img src="images/ss_en_dark.png" alt="screen shot 2 (dark color scheme)">
@@ -92,6 +97,14 @@ You can <a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javas
   <li>Manage unread tweets</li>
 </ul>  
 </p>
+
+<h3>Help Wanted</h3>
+<ul>
+  <li>English messages to make it easier to understand</li>
+  <li>patches to fix bugs</li>
+  <li>Beta testers</li>
+</ul>
+<p>Helps would be appreciated.</p>
 
 <h3>License</h3>
 <p>
