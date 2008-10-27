@@ -255,6 +255,30 @@
                                 action:@selector(markAllAsRead:)
                                   view:markAllAsReadButton];
     
+    // find button
+    NSButton *findButton = [[[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 25, 25)] autorelease];
+    [findButton setImage:[NSImage imageNamed:@"find"]];
+    [findButton setBezelStyle:NSTexturedSquareBezelStyle];
+    [findButton setTarget:self];
+    [findButton setAction:@selector(openKeywordFilterView:)];
+    [self addToolbarItemWithIdentifier:@"find"
+                                 label:NSLocalizedString(@"Find", @"Toolbar label")
+                                target:self
+                                action:@selector(openKeywordFilterView:)
+                                  view:findButton];
+    
+    // show conversation button
+    NSButton *conversationButton = [[[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 25, 25)] autorelease];
+    [conversationButton setImage:[NSImage imageNamed:@"conversation"]];
+    [conversationButton setBezelStyle:NSTexturedSquareBezelStyle];
+    [conversationButton setTarget:self];
+    [conversationButton setAction:@selector(openScreenNameFilterView:)];
+    [self addToolbarItemWithIdentifier:@"conversation"
+                                 label:NSLocalizedString(@"Conversation", @"Toolbar label")
+                                target:self
+                                action:@selector(openScreenNameFilterView:)
+                                  view:conversationButton];
+    
     [[self window] setToolbar:toolbar];
 }
 
@@ -591,11 +615,11 @@
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", @"find", @"conversation", nil];
 }
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", @"find", @"conversation", nil];
 }
 
 #pragma mark Actions
