@@ -144,6 +144,26 @@ pageTracker._trackPageview();
 
 <h2>リリースノート</h2>
 
+<h3 id="1.9">Version 1.9 (2008/10/28)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.9.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.9.zip');">download</a>
+<p>
+<p>いくつかの改善と修正を含むマイナーリリースです</p>
+<p><strong>ニュース:</strong> 夏ライオン for iPhone (NatsuLiphone) がリリースされています。詳しくはこちら http://iphone.natsulion.org/</p>
+
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-221'>NTLN-221</a>] -         command + Y on DM prints reply template in the input field
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-224'>NTLN-224</a>] -         clicking timestamp of DM causes 404 Not Found page
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-225'>NTLN-225</a>] -         need toolbar icons for conversation and search
+</li>
+</ul>
+</p>
+
 <h3 id="1.8">Version 1.8 (2008/09/24)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.8.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.8.zip');">download</a>
 <p>
 <p>主に 3 つの新機能 - DM、API 制限のチェック、会話の表示 (<a href="http://iphone.natsulion.org">NatsuLiphone</a> にある機能) を追加しました</p>

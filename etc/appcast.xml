@@ -7,6 +7,35 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.9</title>
+      <description>
+        Release Notes - NatsuLion - Version 1.9
+
+<h2>News</h2>
+<p>NatsuLion for iPhone (former name is NatsuLiphone) has been released on AppStore! Please visit <a href="http://iphone.natsulion.org/">http://iphone.natsulion.org/</a> for more details.</p>
+    
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-221'&gt;NTLN-221&lt;/a&gt;] -         command + Y on DM prints reply template in the input field
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-224'&gt;NTLN-224&lt;/a&gt;] -         clicking timestamp of DM causes 404 Not Found page
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-225'&gt;NTLN-225&lt;/a&gt;] -         need toolbar icons for conversation and search
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Tue, 28 Oct 2008 00:30:00 +9000</pubDate>
+      <enclosure url="http://www.natsulion.org/download/NatsuLion_1.9.zip"
+        length="1683922"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.8</title>
       <description>
         Release Notes - NatsuLion - Version 1.8
@@ -44,7 +73,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
       </description>
-      <pubDate>Wed, 24 Oct 2008 01:25:00 +9000</pubDate>
+      <pubDate>Wed, 24 Sep 2008 01:25:00 +9000</pubDate>
       <enclosure url="http://www.natsulion.org/download/NatsuLion_1.8.zip"
         length="1673573"
         type="application/octet-stream"/>

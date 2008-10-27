@@ -65,7 +65,7 @@ NatsuLion is a simple Twitter client for Mac OSX.<br/>
 Note: Leopard (10.5) is required.
 </p>
 
-<p><em>News</em>: <a href="http://iphone.natsulion.org">NatsuLiphone (iPhone app)</a> is rolled out!</p>
+<p><em>News</em>: <a href="http://iphone.natsulion.org">NatsuLion for iPhone</a> is rolled out!</p>
 
 Its goals are the follows:
 <ul>
@@ -133,6 +133,26 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 </p>
 
 <h2>Release Notes</h2>
+
+<h3 id="1.9">Version 1.9 (2008/10/28)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.9.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.9.zip');">download</a>
+<p>
+<p>This version has a few minor improvements and fixes.</p>
+<p><strong>News:</strong> NatsuLion for iPhone (former name is NatsuLiphone) has been released on AppStore! Please visit http://iphone.natsulion.org/ for more details.</p>
+
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-221'>NTLN-221</a>] -         command + Y on DM prints reply template in the input field
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-224'>NTLN-224</a>] -         clicking timestamp of DM causes 404 Not Found page
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-225'>NTLN-225</a>] -         need toolbar icons for conversation and search
+</li>
+</ul>
+</p>
 
 <h3 id="1.8">Version 1.8 (2008/09/24)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.8.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.8.zip');">download</a>
 <p>
