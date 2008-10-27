@@ -20,8 +20,13 @@
         [super mouseDown:theEvent];
         return;
     }
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[[TwitterUtils utils] statusPageURLString:[_status screenName] statusId:[_status statusId]]]];
-//    [[self superview] mouseDown:theEvent];
+    
+    if ([_status replyType] == NTLN_MESSAGE_REPLY_TYPE_DIRECT) {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://twitter.com/direct_messages"]];
+    } else {
+        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[[TwitterUtils utils] statusPageURLString:[_status screenName] statusId:[_status statusId]]]];
+    }
+
     [super mouseDown:theEvent];
 }
 
