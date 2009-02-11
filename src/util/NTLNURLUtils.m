@@ -50,9 +50,22 @@
     
     NSCharacterSet *acceptedCharacterSet = [NSCharacterSet characterSetWithCharactersInString:
                                             @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789;/?:@&=+$,-_.!~*'%"];
-    return [self tokenize:aString 
-            acceptedChars:acceptedCharacterSet
-                   prefix:NTLN_URLEXTRACTOR_PREFIX_HTTP];
+    
+    NSMutableArray *back = [NSMutableArray arrayWithCapacity:10];
+    NSArray *tokens = [self tokenize:aString 
+                            acceptedChars:acceptedCharacterSet
+                                   prefix:NTLN_URLEXTRACTOR_PREFIX_HTTP];
+    for (NSString *s in tokens) {
+        if ([s rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 &&
+            [s characterAtIndex:([s length] - 1)] == '.') {
+            [back addObject:[s substringToIndex:([s length] - 1)]];
+            [back addObject:@"."];
+        } else {
+            [back addObject:s];
+        }
+    }
+    
+    return back;
 }
 
 - (NSArray*) tokenizeByID:(NSString*)aString {
