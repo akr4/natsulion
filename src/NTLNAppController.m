@@ -536,6 +536,7 @@
 - (void) finishedToPost {
     [mainWindowController resetAndFocusMessageTextField];
     [self setIconImageToNormal];
+    [self updateStatus];
 }
 
 - (void) failedToPost:(NSString*)message {
