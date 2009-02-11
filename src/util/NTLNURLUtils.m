@@ -16,7 +16,6 @@
     for (NSString *p in prefixes) {
         NSRange r = [aString rangeOfString:p];
         if (r.location != NSNotFound && (startRange.location == NSNotFound || r.location < startRange.location)) {
-            NSLog(@"%@ - [%@] - startRange: %d, r: %d", aString, p, startRange.location, r.location);
             startRange = r;
             prefix = p;
         }
