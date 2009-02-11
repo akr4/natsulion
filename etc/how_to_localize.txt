@@ -26,9 +26,15 @@ rm etc/strings.ja.txt.new.key etc/strings.ja.txt.new etc/strings.ja.txt.key etc/
 etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/MainMenu.nib.strings > Japanese.lproj/MainMenu.nib.strings
 etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/Welcome.nib.strings > Japanese.lproj/Welcome.nib.strings
 
+etc/updateStringsByMessageTable.rb etc/strings.de.txt English.lproj/MainMenu.nib.strings > German.lproj/MainMenu.nib.strings
+etc/updateStringsByMessageTable.rb etc/strings.de.txt English.lproj/Welcome.nib.strings > German.lproj/Welcome.nib.strings
+
 4. generate Japanese version of nib files
 
 * this step will be done by Xcode build automatically
 
 /Developer/usr/bin/ibtool --write Japanese.lproj/MainMenu.nib -d Japanese.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib 
 /Developer/usr/bin/ibtool --write Japanese.lproj/Welcome.nib -d Japanese.lproj/Welcome.nib.strings English.lproj/Welcome.nib
+
+/Developer/usr/bin/ibtool --write German.lproj/MainMenu.nib -d German.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib 
+/Developer/usr/bin/ibtool --write German.lproj/Welcome.nib -d German.lproj/Welcome.nib.strings English.lproj/Welcome.nib

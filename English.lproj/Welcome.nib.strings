@@ -2,20 +2,254 @@
 /* Class = "NSWindow"; title = "NatsuLion"; ObjectID = "5"; */
 "5.title" = "NatsuLion";
 
+/* Class = "NSView"; designAccessibilityDescription = ""; ObjectID = "6"; */
+"6.designAccessibilityDescription" = "";
+
+/* Class = "NSView"; designAccessibilityHelp = ""; ObjectID = "6"; */
+"6.designAccessibilityHelp" = "";
+
+/* Class = "NSView"; gToolTip = ""; ObjectID = "6"; */
+"6.gToolTip" = "";
+
+/* Class = "NSTextField"; designAccessibilityDescription = ""; ObjectID = "8"; */
+"8.designAccessibilityDescription" = "";
+
+/* Class = "NSTextField"; designAccessibilityHelp = ""; ObjectID = "8"; */
+"8.designAccessibilityHelp" = "";
+
+/* Class = "NSTextField"; gToolTip = ""; ObjectID = "8"; */
+"8.gToolTip" = "";
+
+/* Class = "NSTextField"; designAccessibilityDescription = ""; ObjectID = "10"; */
+"10.designAccessibilityDescription" = "";
+
+/* Class = "NSTextField"; designAccessibilityHelp = ""; ObjectID = "10"; */
+"10.designAccessibilityHelp" = "";
+
+/* Class = "NSTextField"; gToolTip = ""; ObjectID = "10"; */
+"10.gToolTip" = "";
+
+/* Class = "NSTextField"; designAccessibilityDescription = ""; ObjectID = "12"; */
+"12.designAccessibilityDescription" = "";
+
+/* Class = "NSTextField"; designAccessibilityHelp = ""; ObjectID = "12"; */
+"12.designAccessibilityHelp" = "";
+
+/* Class = "NSTextField"; gToolTip = ""; ObjectID = "12"; */
+"12.gToolTip" = "";
+
+/* Class = "NSTextField"; designAccessibilityDescription = ""; ObjectID = "14"; */
+"14.designAccessibilityDescription" = "";
+
+/* Class = "NSTextField"; designAccessibilityHelp = ""; ObjectID = "14"; */
+"14.designAccessibilityHelp" = "";
+
+/* Class = "NSTextField"; gToolTip = ""; ObjectID = "14"; */
+"14.gToolTip" = "";
+
+/* Class = "NSTextField"; designAccessibilityDescription = ""; ObjectID = "16"; */
+"16.designAccessibilityDescription" = "";
+
+/* Class = "NSTextField"; designAccessibilityHelp = ""; ObjectID = "16"; */
+"16.designAccessibilityHelp" = "";
+
+/* Class = "NSTextField"; gToolTip = ""; ObjectID = "16"; */
+"16.gToolTip" = "";
+
+/* Class = "NSSecureTextField"; designAccessibilityDescription = ""; ObjectID = "18"; */
+"18.designAccessibilityDescription" = "";
+
+/* Class = "NSSecureTextField"; designAccessibilityHelp = ""; ObjectID = "18"; */
+"18.designAccessibilityHelp" = "";
+
+/* Class = "NSSecureTextField"; gToolTip = ""; ObjectID = "18"; */
+"18.gToolTip" = "";
+
+/* Class = "NSButton"; designAccessibilityDescription = ""; ObjectID = "20"; */
+"20.designAccessibilityDescription" = "";
+
+/* Class = "NSButton"; designAccessibilityHelp = ""; ObjectID = "20"; */
+"20.designAccessibilityHelp" = "";
+
+/* Class = "NSButton"; gToolTip = ""; ObjectID = "20"; */
+"20.gToolTip" = "";
+
+/* Class = "NSButton"; designAccessibilityDescription = ""; ObjectID = "22"; */
+"22.designAccessibilityDescription" = "";
+
+/* Class = "NSButton"; designAccessibilityHelp = ""; ObjectID = "22"; */
+"22.designAccessibilityHelp" = "";
+
+/* Class = "NSButton"; gToolTip = ""; ObjectID = "22"; */
+"22.gToolTip" = "";
+
+/* Class = "NSProgressIndicator"; designAccessibilityDescription = ""; ObjectID = "24"; */
+"24.designAccessibilityDescription" = "";
+
+/* Class = "NSProgressIndicator"; designAccessibilityHelp = ""; ObjectID = "24"; */
+"24.designAccessibilityHelp" = "";
+
+/* Class = "NSProgressIndicator"; gToolTip = ""; ObjectID = "24"; */
+"24.gToolTip" = "";
+
+/* Class = "NSTextField"; designAccessibilityDescription = ""; ObjectID = "29"; */
+"29.designAccessibilityDescription" = "";
+
+/* Class = "NSTextField"; designAccessibilityHelp = ""; ObjectID = "29"; */
+"29.designAccessibilityHelp" = "";
+
+/* Class = "NSTextField"; gToolTip = ""; ObjectID = "29"; */
+"29.gToolTip" = "";
+
+/* Class = "NSImageView"; designAccessibilityDescription = ""; ObjectID = "60"; */
+"60.designAccessibilityDescription" = "";
+
+/* Class = "NSImageView"; designAccessibilityHelp = ""; ObjectID = "60"; */
+"60.designAccessibilityHelp" = "";
+
+/* Class = "NSImageView"; gToolTip = ""; ObjectID = "60"; */
+"60.gToolTip" = "";
+
+/* Class = "NSTextFieldCell"; designAccessibilityDescription = ""; ObjectID = "63"; */
+"63.designAccessibilityDescription" = "";
+
+/* Class = "NSTextFieldCell"; designAccessibilityHelp = ""; ObjectID = "63"; */
+"63.designAccessibilityHelp" = "";
+
+/* Class = "NSTextFieldCell"; gToolTip = ""; ObjectID = "63"; */
+"63.gToolTip" = "";
+
+/* Class = "NSTextFieldCell"; placeholderString = ""; ObjectID = "63"; */
+"63.placeholderString" = "";
+
 /* Class = "NSTextFieldCell"; title = "Thank you for choosing NatsuLion!"; ObjectID = "63"; */
 "63.title" = "Thank you for choosing NatsuLion!";
+
+/* Class = "NSTextFieldCell"; designAccessibilityDescription = ""; ObjectID = "64"; */
+"64.designAccessibilityDescription" = "";
+
+/* Class = "NSTextFieldCell"; designAccessibilityHelp = ""; ObjectID = "64"; */
+"64.designAccessibilityHelp" = "";
+
+/* Class = "NSTextFieldCell"; gToolTip = ""; ObjectID = "64"; */
+"64.gToolTip" = "";
+
+/* Class = "NSTextFieldCell"; placeholderString = ""; ObjectID = "64"; */
+"64.placeholderString" = "";
 
 /* Class = "NSTextFieldCell"; title = "Please Tell me your Twitter account information."; ObjectID = "64"; */
 "64.title" = "Please Tell me your Twitter account information.";
 
+/* Class = "NSTextFieldCell"; designAccessibilityDescription = ""; ObjectID = "65"; */
+"65.designAccessibilityDescription" = "";
+
+/* Class = "NSTextFieldCell"; designAccessibilityHelp = ""; ObjectID = "65"; */
+"65.designAccessibilityHelp" = "";
+
+/* Class = "NSTextFieldCell"; gToolTip = ""; ObjectID = "65"; */
+"65.gToolTip" = "";
+
+/* Class = "NSTextFieldCell"; placeholderString = ""; ObjectID = "65"; */
+"65.placeholderString" = "";
+
+/* Class = "NSTextFieldCell"; title = ""; ObjectID = "65"; */
+"65.title" = "";
+
+/* Class = "NSTextFieldCell"; designAccessibilityDescription = ""; ObjectID = "66"; */
+"66.designAccessibilityDescription" = "";
+
+/* Class = "NSTextFieldCell"; designAccessibilityHelp = ""; ObjectID = "66"; */
+"66.designAccessibilityHelp" = "";
+
+/* Class = "NSTextFieldCell"; gToolTip = ""; ObjectID = "66"; */
+"66.gToolTip" = "";
+
+/* Class = "NSTextFieldCell"; placeholderString = ""; ObjectID = "66"; */
+"66.placeholderString" = "";
+
 /* Class = "NSTextFieldCell"; title = "Username:"; ObjectID = "66"; */
 "66.title" = "Username:";
+
+/* Class = "NSTextFieldCell"; designAccessibilityDescription = ""; ObjectID = "67"; */
+"67.designAccessibilityDescription" = "";
+
+/* Class = "NSTextFieldCell"; designAccessibilityHelp = ""; ObjectID = "67"; */
+"67.designAccessibilityHelp" = "";
+
+/* Class = "NSTextFieldCell"; gToolTip = ""; ObjectID = "67"; */
+"67.gToolTip" = "";
+
+/* Class = "NSTextFieldCell"; placeholderString = ""; ObjectID = "67"; */
+"67.placeholderString" = "";
 
 /* Class = "NSTextFieldCell"; title = "Password:"; ObjectID = "67"; */
 "67.title" = "Password:";
 
+/* Class = "NSSecureTextFieldCell"; designAccessibilityDescription = ""; ObjectID = "68"; */
+"68.designAccessibilityDescription" = "";
+
+/* Class = "NSSecureTextFieldCell"; designAccessibilityHelp = ""; ObjectID = "68"; */
+"68.designAccessibilityHelp" = "";
+
+/* Class = "NSSecureTextFieldCell"; gToolTip = ""; ObjectID = "68"; */
+"68.gToolTip" = "";
+
+/* Class = "NSSecureTextFieldCell"; placeholderString = ""; ObjectID = "68"; */
+"68.placeholderString" = "";
+
+/* Class = "NSSecureTextFieldCell"; title = ""; ObjectID = "68"; */
+"68.title" = "";
+
+/* Class = "NSButtonCell"; alternateTitle = ""; ObjectID = "69"; */
+"69.alternateTitle" = "";
+
+/* Class = "NSButtonCell"; designAccessibilityDescription = ""; ObjectID = "69"; */
+"69.designAccessibilityDescription" = "";
+
+/* Class = "NSButtonCell"; designAccessibilityHelp = ""; ObjectID = "69"; */
+"69.designAccessibilityHelp" = "";
+
+/* Class = "NSButtonCell"; gToolTip = ""; ObjectID = "69"; */
+"69.gToolTip" = "";
+
 /* Class = "NSButtonCell"; title = "Start Twittering"; ObjectID = "69"; */
 "69.title" = "Start Twittering";
 
+/* Class = "NSButtonCell"; alternateTitle = ""; ObjectID = "70"; */
+"70.alternateTitle" = "";
+
+/* Class = "NSButtonCell"; designAccessibilityDescription = ""; ObjectID = "70"; */
+"70.designAccessibilityDescription" = "";
+
+/* Class = "NSButtonCell"; designAccessibilityHelp = ""; ObjectID = "70"; */
+"70.designAccessibilityHelp" = "";
+
+/* Class = "NSButtonCell"; gToolTip = ""; ObjectID = "70"; */
+"70.gToolTip" = "";
+
 /* Class = "NSButtonCell"; title = "Exit"; ObjectID = "70"; */
 "70.title" = "Exit";
+
+/* Class = "NSTextFieldCell"; designAccessibilityDescription = ""; ObjectID = "71"; */
+"71.designAccessibilityDescription" = "";
+
+/* Class = "NSTextFieldCell"; designAccessibilityHelp = ""; ObjectID = "71"; */
+"71.designAccessibilityHelp" = "";
+
+/* Class = "NSTextFieldCell"; gToolTip = ""; ObjectID = "71"; */
+"71.gToolTip" = "";
+
+/* Class = "NSTextFieldCell"; placeholderString = ""; ObjectID = "71"; */
+"71.placeholderString" = "";
+
+/* Class = "NSTextFieldCell"; title = ""; ObjectID = "71"; */
+"71.title" = "";
+
+/* Class = "NSImageCell"; designAccessibilityDescription = ""; ObjectID = "72"; */
+"72.designAccessibilityDescription" = "";
+
+/* Class = "NSImageCell"; designAccessibilityHelp = ""; ObjectID = "72"; */
+"72.designAccessibilityHelp" = "";
+
+/* Class = "NSImageCell"; gToolTip = ""; ObjectID = "72"; */
+"72.gToolTip" = "";

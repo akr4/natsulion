@@ -11,6 +11,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E900C14F0D5EAB160071837C /* NTLNMessageListViewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */; };
+		E9052E010F12895100E8E1F2 /* ErrorMessageView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9052E000F12895100E8E1F2 /* ErrorMessageView.nib */; };
 		E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F300DE1A4A4008CC765 /* friends.tiff */; };
 		E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F330DE1A4B9008CC765 /* sent.tiff */; };
 		E90B0F370DE1A4B9008CC765 /* unread.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F340DE1A4B9008CC765 /* unread.tiff */; };
@@ -47,7 +48,6 @@
 		E98B093C0D2172B90002A75E /* NTLNGrowlNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E98B093B0D2172B90002A75E /* NTLNGrowlNotifier.m */; };
 		E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */; };
 		E991C6650D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */; };
-		E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */; };
 		E991C6BA0D2AE7AE00F410B6 /* NTLNMessageViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */; };
 		E991C6BD0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */; };
 		E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */; };
@@ -127,6 +127,9 @@
 		8D1107320486CEB800E47090 /* NatsuLion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatsuLion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageListViewsController.h; sourceTree = "<group>"; };
 		E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageListViewsController.m; sourceTree = "<group>"; };
+		E9052DF10F1286D700E8E1F2 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E9052DFE0F12893700E8E1F2 /* German */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = German; path = German.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		E9052DFF0F12894900E8E1F2 /* German */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = German; path = German.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E90B0F300DE1A4A4008CC765 /* friends.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = friends.tiff; sourceTree = "<group>"; };
 		E90B0F330DE1A4B9008CC765 /* sent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sent.tiff; sourceTree = "<group>"; };
 		E90B0F340DE1A4B9008CC765 /* unread.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = unread.tiff; sourceTree = "<group>"; };
@@ -194,7 +197,7 @@
 		E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		E991C6630D2AC7FC00F410B6 /* NTLNErrorMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNErrorMessageViewController.h; sourceTree = "<group>"; };
 		E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNErrorMessageViewController.m; sourceTree = "<group>"; };
-		E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = ErrorMessageView.nib; sourceTree = "<group>"; };
+		E991C6660D2AC8DF00F410B6 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/ErrorMessageView.nib; sourceTree = "<group>"; };
 		E991C66A0D2AE41100F410B6 /* NTLNMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTLNMessageViewController.h; path = ../NTLNMessageViewController.h; sourceTree = "<group>"; };
 		E991C6B70D2AE79D00F410B6 /* TwitterStatusViewNameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewNameField.h; sourceTree = "<group>"; };
 		E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTextField.m; sourceTree = "<group>"; };
@@ -211,6 +214,7 @@
 		E99408740DEF4C7A0009A365 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* NTLNMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessage.h; sourceTree = "<group>"; };
 		E996326A0D1E5D2400860515 /* NTLNMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessage.m; sourceTree = "<group>"; };
+		E99ADB100F42922900900DA5 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9A411270D29904F003BFA9F /* NTLNAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAppController.h; sourceTree = "<group>"; };
 		E9A411280D29904F003BFA9F /* NTLNAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNAppController.m; sourceTree = "<group>"; };
 		E9A8A7380D79328D008567CC /* CTBadge_1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = CTBadge_1.pdf; sourceTree = "<group>"; };
@@ -404,7 +408,7 @@
 				E90EFF5C0E40C664008FCF8E /* MainMenu.nib */,
 				E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */,
 				E993333A0D901CA600CDE7C4 /* Welcome.nib */,
-				E991C6660D2AC8DF00F410B6 /* ErrorMessageView.nib */,
+				E9052E000F12895100E8E1F2 /* ErrorMessageView.nib */,
 				E9B832F50D58E830000F6E1C /* MessageTableView.nib */,
 			);
 			name = Resources;
@@ -598,7 +602,7 @@
 				E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */,
 				E993333B0D901CA600CDE7C4 /* Welcome.nib in Resources */,
 				E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */,
-				E991C6670D2AC8DF00F410B6 /* ErrorMessageView.nib in Resources */,
+				E9052E010F12895100E8E1F2 /* ErrorMessageView.nib in Resources */,
 				E9B832F60D58E830000F6E1C /* MessageTableView.nib in Resources */,
 				E9A8A7400D79328E008567CC /* CTBadge_1.pdf in Resources */,
 				E9A8A7410D79328E008567CC /* CTBadge_3.pdf in Resources */,
@@ -722,8 +726,17 @@
 			children = (
 				089C165DFE840E0CC02AAC07 /* English */,
 				E96801F30D2748DB0048A163 /* Japanese */,
+				E99ADB100F42922900900DA5 /* German */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E9052E000F12895100E8E1F2 /* ErrorMessageView.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E991C6660D2AC8DF00F410B6 /* English */,
+			);
+			name = ErrorMessageView.nib;
 			sourceTree = "<group>";
 		};
 		E90EFF5C0E40C664008FCF8E /* MainMenu.nib */ = {
@@ -731,6 +744,7 @@
 			children = (
 				E90EFF5D0E40C664008FCF8E /* English */,
 				E95516500E82A64000924598 /* Japanese */,
+				E9052DFE0F12893700E8E1F2 /* German */,
 			);
 			name = MainMenu.nib;
 			sourceTree = "<group>";
@@ -748,6 +762,7 @@
 			children = (
 				E96C36A80D2A897800CED33F /* English */,
 				E99408740DEF4C7A0009A365 /* Japanese */,
+				E9052DFF0F12894900E8E1F2 /* German */,
 			);
 			name = Welcome.nib;
 			sourceTree = "<group>";
@@ -757,6 +772,7 @@
 			children = (
 				E9D23B700D8EF5BD006191EE /* English */,
 				E9D23B720D8EF5D6006191EE /* Japanese */,
+				E9052DF10F1286D700E8E1F2 /* German */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
