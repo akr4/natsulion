@@ -6,18 +6,29 @@
     return [[[[self class] alloc] init] autorelease];
 }
 
-- (NSArray*) tokenize:(NSString*)aString acceptedChars:(NSCharacterSet*)acceptedChars prefix:(NSString*)prefix {
+- (NSArray*) tokenize:(NSString*)aString acceptedChars:(NSCharacterSet*)acceptedChars prefix:(NSArray*)prefixes {
     
     NSMutableArray *back = [NSMutableArray arrayWithCapacity:10];
+
+    NSString *prefix;
     
-    NSRange startRange = [aString rangeOfString:prefix];
+    NSRange startRange = NSMakeRange(NSNotFound, 0);
+    for (NSString *p in prefixes) {
+        NSRange r = [aString rangeOfString:p];
+        if (r.location != NSNotFound && (startRange.location == NSNotFound || r.location < startRange.location)) {
+            NSLog(@"%@ - [%@] - startRange: %d, r: %d", aString, p, startRange.location, r.location);
+            startRange = r;
+            prefix = p;
+        }
+    }
+    
     if (startRange.location == NSNotFound) {
         if ([aString length] > 0) {
             [back addObject:aString];
         }
         return back;
     }
-    
+
     if (startRange.location > 0) {
         [back addObject:[aString substringWithRange:NSMakeRange(0, startRange.location)]];
     }
@@ -39,7 +50,7 @@
     NSArray *subBack = [self tokenize:[aString substringWithRange:
                                        NSMakeRange(targetRange.location + targetRange.length, [aString length] - (targetRange.location + targetRange.length))]
                                      acceptedChars:acceptedChars
-                                     prefix:prefix];
+                                     prefix:prefixes];
     
     [back addObjectsFromArray:subBack];
     
@@ -53,10 +64,12 @@
     
     NSMutableArray *back = [NSMutableArray arrayWithCapacity:10];
     NSArray *tokens = [self tokenize:aString 
-                            acceptedChars:acceptedCharacterSet
-                                   prefix:NTLN_URLEXTRACTOR_PREFIX_HTTP];
+                       acceptedChars:acceptedCharacterSet
+                              prefix:[NSArray arrayWithObjects:NTLN_URLEXTRACTOR_PREFIX_HTTP, NTLN_URLEXTRACTOR_PREFIX_HTTPS, nil]];
+    
+    // last dot in URL should not a part of URL, so devide it to an other token.
     for (NSString *s in tokens) {
-        if ([s rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 &&
+        if (([s rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 || [s rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTPS].location == 0) &&
             [s characterAtIndex:([s length] - 1)] == '.') {
             [back addObject:[s substringToIndex:([s length] - 1)]];
             [back addObject:@"."];
@@ -75,7 +88,7 @@
 
     return [self tokenize:aString 
             acceptedChars:acceptedCharacterSet
-                   prefix:NTLN_URLEXTRACTOR_PREFIX_ID];
+                   prefix:[NSArray arrayWithObject:NTLN_URLEXTRACTOR_PREFIX_ID]];
     
 }
 
@@ -93,7 +106,8 @@
 }
 
 - (BOOL) isURLToken:(NSString*)token {
-    if ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 && [token length] > [NTLN_URLEXTRACTOR_PREFIX_HTTP length]) {
+    if (([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTP].location == 0 && [token length] > [NTLN_URLEXTRACTOR_PREFIX_HTTP length])
+        || ([token rangeOfString:NTLN_URLEXTRACTOR_PREFIX_HTTPS].location == 0 && [token length] > [NTLN_URLEXTRACTOR_PREFIX_HTTPS length])) {
         return TRUE;
     }
     return FALSE;

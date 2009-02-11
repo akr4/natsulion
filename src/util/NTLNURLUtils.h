@@ -1,6 +1,7 @@
 #import <Cocoa/Cocoa.h>
 
 #define NTLN_URLEXTRACTOR_PREFIX_HTTP @"http://"
+#define NTLN_URLEXTRACTOR_PREFIX_HTTPS @"https://"
 #define NTLN_URLEXTRACTOR_PREFIX_ID @"@"
 
 // TODO: this class should be renamed to reflect its work.
