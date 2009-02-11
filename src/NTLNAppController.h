@@ -60,6 +60,7 @@
 - (void) rateLimitStatus;
 - (void) createFavoriteFor:(NSString*)statusId;
 - (void) destroyFavoriteFor:(NSString*)statusId;
+- (void) sendReplyMessage:(NSString*)message toStatusId:(NSString*)statusId;
 - (void) sendMessage:(NSString*)message;
 
 - (BOOL) isCreatingFavoriteWorking;

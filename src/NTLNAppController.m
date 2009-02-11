@@ -406,6 +406,15 @@
     [self restartDirectMessagesRefreshTimer];
 }
 
+- (void) sendReplyMessage:(NSString*)message toStatusId:(NSString*)statusId
+{
+    NSString *password = [[NTLNAccount instance] password];
+    [_twitter sendMessage:message
+                 username:[[NTLNAccount instance] username]
+                 password:password
+          replyToStatusId:statusId];
+}
+
 - (void) sendMessage:(NSString*)message {
     NSString *password = [[NTLNAccount instance] password];
     if (!password) {

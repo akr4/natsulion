@@ -558,6 +558,14 @@
             break;
 
         default:
+            if ([[[messageTextField stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0) {
+                if (messageRepliedTo) {
+                    [message release];
+                }
+                [message retain];
+                messageRepliedTo = message;
+            }
+
             [messageTextField addReplyTo:message];
             [messageTextField focusAndLocateCursorEnd];
     }
@@ -631,7 +639,12 @@
     }
     
     [messageTextField setEnabled:FALSE];
-    [appController sendMessage:[messageTextField stringValue]];
+    
+    if ([[messageTextField stringValue] rangeOfString:[messageRepliedTo screenName]].location != NSNotFound) {
+        [appController sendReplyMessage:[messageTextField stringValue] toStatusId:[messageRepliedTo statusId]];
+    } else {
+        [appController sendMessage:[messageTextField stringValue]];
+    }
 }
     
 - (IBAction) updateTimelineCorrespondsToView:(id)sender {

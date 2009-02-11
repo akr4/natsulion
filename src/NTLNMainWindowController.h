@@ -45,6 +45,8 @@
     NSResponder *_previousFirstResponder;
     NTLNTextView *_fieldEditor;
     
+    NTLNMessage *messageRepliedTo;
+    
     // Menu & Toolbar
     IBOutlet NSMenu *viewMenu;
     IBOutlet NSMenuItem *refreshMenuItem;

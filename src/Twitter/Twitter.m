@@ -4,7 +4,7 @@
 
 #define API_BASE @"http://twitter.com"
 
-//#define DEBUG
+/* #define DEBUG */
 
 @implementation NTLNErrorInfo
 + (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message {
@@ -456,6 +456,10 @@
     
 }
 
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password replyToStatusId:(NSString*)statusId {
+    
+}
+
 - (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
     
 }
@@ -748,8 +752,9 @@
     [_callback twitterStartTask];
 }
 
-- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password {
-
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password replyToStatusId:(NSString*)statusId
+{
+    
     if (_connectionForPost && ![_connectionForPost isFinished]) {
         NSLog(@"connection for post is running.");
         return;
@@ -757,13 +762,16 @@
     
     NSString *requestStr =  [@"status=" stringByAppendingString:[[NTLNXMLHTTPEncoder encoder] encodeHTTP:message]];
     requestStr = [requestStr stringByAppendingString:@"&source=natsulion"];
+    if (statusId) {
+        requestStr = [requestStr stringByAppendingFormat:@"&in_reply_to_status_id=%@", statusId];
+    }
     
     NSString *url = [API_BASE stringByAppendingString:@"/statuses/update.xml"];
     
 #ifdef DEBUG
-    NSLog(@"requesting: %@", url);
+    NSLog(@"requesting: %@?%@", url, requestStr);
 #endif
-
+    
     TwitterPostCallbackHandler *handler = [[TwitterPostCallbackHandler alloc] initWithPostCallback:_callback];
     [_connectionForPost release];
     _connectionForPost = [[NTLNAsyncUrlConnection alloc] initPostConnectionWithUrl:url
@@ -780,6 +788,11 @@
     }
     
     [_callback twitterStartTask];
+}
+
+- (void) sendMessage:(NSString*)message username:(NSString*)username password:(NSString*)password
+{
+    [self sendMessage:message username:username password:password replyToStatusId:nil];
 }
 
 - (void) createFavorite:(NSString*)statusId username:(NSString*)username password:(NSString*)password {
