@@ -640,7 +640,7 @@
     
     [messageTextField setEnabled:FALSE];
     
-    if ([[messageTextField stringValue] rangeOfString:[messageRepliedTo screenName]].location != NSNotFound) {
+    if ([messageRepliedTo screenName] && [[messageTextField stringValue] rangeOfString:[messageRepliedTo screenName]].location != NSNotFound) {
         [appController sendReplyMessage:[messageTextField stringValue] toStatusId:[messageRepliedTo statusId]];
     } else {
         [appController sendMessage:[messageTextField stringValue]];
