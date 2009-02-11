@@ -86,3 +86,4 @@ Zoom=拡大/縮小
 no Username=未設定
 %{value1}@=%{value1}@
 Start Twittering=はじめる
+Set Adium status with posted message=Adium のステータスをセットする

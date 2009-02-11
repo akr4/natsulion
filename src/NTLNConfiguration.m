@@ -232,4 +232,14 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
                                                         object:[NSNumber numberWithBool:value]];
 }
 
+- (BOOL) useAdiumStatus 
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"useAdiumStatus"];
+}
+
+- (void) setUseAdiumStatus:(BOOL)value
+{
+    [[NSUserDefaults standardUserDefaults] setBool:value forKey:@"useAdiumStatus"];
+}
+
 @end

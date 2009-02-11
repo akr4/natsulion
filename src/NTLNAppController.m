@@ -417,14 +417,16 @@
 
 - (void) sendMessage:(NSString*)message {
     NSString *password = [[NTLNAccount instance] password];
-    if (!password) {
-        // TODO inform error to user
-        NSLog(@"password not set. skip updateStatus");
-        return;
-    }
     [_twitter sendMessage:message
                  username:[[NTLNAccount instance] username]
                  password:password];
+
+    if ([[NTLNConfiguration instance] useAdiumStatus]) {
+        NSString *scriptStr = [NSString stringWithFormat:@"set message to \"%@\"\ntell application \"System Events\"\nif exists process \"Adium\" then tell application \"Adium\" to set status message of every account to message\nend tell", message];
+        NSAppleScript *script = [[[NSAppleScript alloc] initWithSource:scriptStr] autorelease];
+        NSDictionary *errorInfo;
+        [script executeAndReturnError:&errorInfo];
+    }
 }
 
 - (void) createFavoriteFor:(NSString*)statusId {

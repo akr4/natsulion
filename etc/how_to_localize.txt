@@ -1,17 +1,17 @@
 1. generate English version of strings file
 
-/Developer/usr/bin/ibtool --generate-stringsfile English.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib
-nkf --unix --utf8 --overwrite English.lproj/MainMenu.nib.strings
+/Developer/usr/bin/ibtool --generate-stringsfile English.lproj/MainMenu.xib.strings English.lproj/MainMenu.xib
+nkf --unix --utf8 --overwrite English.lproj/MainMenu.xib.strings
 
-/Developer/usr/bin/ibtool --generate-stringsfile English.lproj/Welcome.nib.strings English.lproj/Welcome.nib
-nkf --unix --utf8 --overwrite English.lproj/Welcome.nib.strings
+/Developer/usr/bin/ibtool --generate-stringsfile English.lproj/Welcome.xib.strings English.lproj/Welcome.xib
+nkf --unix --utf8 --overwrite English.lproj/Welcome.xib.strings
 
 Note: nkf can be installed by the command "fink install nkf".
 
 2. create message table
 
-etc/createMessageTable.rb English.lproj/MainMenu.nib.strings > etc/strings.ja.txt.new 
-etc/createMessageTable.rb English.lproj/Welcome.nib.strings >> etc/strings.ja.txt.new 
+etc/createMessageTable.rb English.lproj/MainMenu.xib.strings > etc/strings.ja.txt.new 
+etc/createMessageTable.rb English.lproj/Welcome.xib.strings >> etc/strings.ja.txt.new 
 cut -d = -f 1 etc/strings.ja.txt > etc/strings.ja.txt.key
 cut -d = -f 1 etc/strings.ja.txt.new > etc/strings.ja.txt.new.key 
 sort etc/strings.ja.txt.new.key > etc/strings.ja.txt.new.key.sort
@@ -19,22 +19,22 @@ diff etc/strings.ja.txt.key etc/strings.ja.txt.new.key.sort
 # add new entries manually to etc/strings.ja.txt
 rm etc/strings.ja.txt.new.key etc/strings.ja.txt.new etc/strings.ja.txt.key etc/strings.ja.txt.new.key.sort
 
-* this step is needed only when new nib file is added or updated
+* this step is needed only when new xib file is added or updated
 
 3. generate Japanese version of strings files
 
-etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/MainMenu.nib.strings > Japanese.lproj/MainMenu.nib.strings
-etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/Welcome.nib.strings > Japanese.lproj/Welcome.nib.strings
+etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/MainMenu.xib.strings > Japanese.lproj/MainMenu.xib.strings
+etc/updateStringsByMessageTable.rb etc/strings.ja.txt English.lproj/Welcome.xib.strings > Japanese.lproj/Welcome.xib.strings
 
-etc/updateStringsByMessageTable.rb etc/strings.de.txt English.lproj/MainMenu.nib.strings > German.lproj/MainMenu.nib.strings
-etc/updateStringsByMessageTable.rb etc/strings.de.txt English.lproj/Welcome.nib.strings > German.lproj/Welcome.nib.strings
+etc/updateStringsByMessageTable.rb etc/strings.de.txt English.lproj/MainMenu.xib.strings > German.lproj/MainMenu.xib.strings
+etc/updateStringsByMessageTable.rb etc/strings.de.txt English.lproj/Welcome.xib.strings > German.lproj/Welcome.xib.strings
 
-4. generate Japanese version of nib files
+4. generate Japanese version of xib files
 
 * this step will be done by Xcode build automatically
 
-/Developer/usr/bin/ibtool --write Japanese.lproj/MainMenu.nib -d Japanese.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib 
-/Developer/usr/bin/ibtool --write Japanese.lproj/Welcome.nib -d Japanese.lproj/Welcome.nib.strings English.lproj/Welcome.nib
+/Developer/usr/bin/ibtool --write Japanese.lproj/MainMenu.xib -d Japanese.lproj/MainMenu.xib.strings English.lproj/MainMenu.xib 
+/Developer/usr/bin/ibtool --write Japanese.lproj/Welcome.xib -d Japanese.lproj/Welcome.xib.strings English.lproj/Welcome.xib
 
-/Developer/usr/bin/ibtool --write German.lproj/MainMenu.nib -d German.lproj/MainMenu.nib.strings English.lproj/MainMenu.nib 
-/Developer/usr/bin/ibtool --write German.lproj/Welcome.nib -d German.lproj/Welcome.nib.strings English.lproj/Welcome.nib
+/Developer/usr/bin/ibtool --write German.lproj/MainMenu.xib -d German.lproj/MainMenu.xib.strings English.lproj/MainMenu.xib 
+/Developer/usr/bin/ibtool --write German.lproj/Welcome.xib -d German.lproj/Welcome.xib.strings English.lproj/Welcome.xib

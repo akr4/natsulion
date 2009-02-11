@@ -22,6 +22,7 @@
     int growlSummarizeThreshold;
     BOOL summarizeGrowl;
     BOOL autoscrollWhenNewMessageArrives;
+    BOOL useAdiumStatus;
 }
 
 @property BOOL useGrowl, usePost, editWindowAlphaManually, 
@@ -52,6 +53,8 @@
 - (BOOL) canDecreaseFontSize;
 - (BOOL) showRateLimitStatusOnStatusBar;
 - (void) setShowRateLimitStatusOnStatusBar:(BOOL)value;
+- (BOOL) useAdiumStatus;
+- (void) setUseAdiumStatus:(BOOL)value;
 
 // only for IB editable binding
 - (BOOL) useGrowlAndSummarizeGrowl;

@@ -1,0 +1,50 @@
+/* No comment provided by engineer. */
+"No message received" = "Keine neue Nachricht";
+
+/* No comment provided by engineer. */
+"Not Authorized" = "Nicht authorisiert";
+
+/* No comment provided by engineer. */
+"Sending a message failure. unable to get connection." = "Fehler beim Senden der Nachricht. Kann keine Verbindung herstellen.";
+
+/* No comment provided by engineer. */
+"Twitter Server Error" = "Twitter Server Fehler";
+
+/* No comment provided by engineer. */
+"Unknown Error" = "Unbekannter Fehler";
+
+"New Messages from:" = "New Messages from:";
+
+"Retrieving timeline failed" = "Retrieving timeline failed";
+
+"View Mode" = "Nur-Lesen-Modus";
+
+"Refresh" = "Neu laden";
+
+"Mark all as read" = "Alle als gelesen markieren";
+
+"number of messages" = "Anzahl Nachrichten";
+
+"Sending a message failed" = "Fehler beim Senden einer Nachricht";
+
+"Unable to store your password to your keychain." = "Kennwort konnte nicht in der Keychain gesichert werden.";
+
+"Please check your username and password or try later." = "Ein Fehler ist aufgetreten. Bitte Usernamen und Kennwort pruefen und spaeter erneut versuchen.";
+
+"Input your message and press \"Enter\" key" = "Nachricht eingeben und \"Enter\" druecken";
+"Input your message and press \"Ctrl + Enter\" key" = "Nachricht eingeben und \"Ctrl + Enter\" druecken";
+
+"Friends" = "Freunde";
+"Replies" = "Antworten";
+"Sent" = "Gesendet";
+"Unread" = "Ungelesen";
+
+"Reset at %@" = "Zurueckgesetzt um %@";
+"Exceeded API rate limit" = "Maximale Anzahl API-Aufrufe ueberschritten";
+"Exceeded API rate limit\nwill be reset at %@" = "Anzahl API-Aufrufe \nwerden um %@ zurueckgesetzt";
+"Attention: API limit warning"="Achtung: Warnung fuer maximale Anzahl API-Aufrufe";
+"Attention: API limit exceeded"="Achtung: maximale Anzahl API-Aufrufe ueberschritten";
+"%d characters remain"="%d verbleibend";
+"Your message can be truncated because it's too long."="Die Nachricht kann abgeschnitten werden, da sie zu lang ist.";
+"Your message will be truncated because it's too long."="Die Nachricht wird abgeschnitten, da sie zu lang war.";
+

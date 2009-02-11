@@ -11,11 +11,9 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E900C14F0D5EAB160071837C /* NTLNMessageListViewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */; };
-		E9052E010F12895100E8E1F2 /* ErrorMessageView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9052E000F12895100E8E1F2 /* ErrorMessageView.nib */; };
 		E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F300DE1A4A4008CC765 /* friends.tiff */; };
 		E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F330DE1A4B9008CC765 /* sent.tiff */; };
 		E90B0F370DE1A4B9008CC765 /* unread.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F340DE1A4B9008CC765 /* unread.tiff */; };
-		E90EFF5E0E40C664008FCF8E /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = E90EFF5C0E40C664008FCF8E /* MainMenu.nib */; };
 		E90F0B400D2E8E190067A9CA /* NTLNConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */; };
 		E915200F0D16D3B7008D6992 /* NTLNPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E915200E0D16D3B7008D6992 /* NTLNPreferencesWindowController.m */; };
 		E9160B770D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E9160B760D11B1B700C9EEFF /* NTLNAsyncUrlConnection.m */; };
@@ -50,8 +48,6 @@
 		E991C6650D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */; };
 		E991C6BA0D2AE7AE00F410B6 /* NTLNMessageViewTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */; };
 		E991C6BD0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m in Sources */ = {isa = PBXBuildFile; fileRef = E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */; };
-		E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */ = {isa = PBXBuildFile; fileRef = E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */; };
-		E993333B0D901CA600CDE7C4 /* Welcome.nib in Resources */ = {isa = PBXBuildFile; fileRef = E993333A0D901CA600CDE7C4 /* Welcome.nib */; };
 		E99408070DEF43FD0009A365 /* NTLNSegmentedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E99408060DEF43FD0009A365 /* NTLNSegmentedCell.m */; };
 		E99408300DEF456A0009A365 /* friends-highlighted.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E99408280DEF456A0009A365 /* friends-highlighted.tiff */; };
 		E99408330DEF456A0009A365 /* sent-highlighted.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E994082B0DEF456A0009A365 /* sent-highlighted.tiff */; };
@@ -72,7 +68,6 @@
 		E9B832D90D58D688000F6E1C /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B832D80D58D688000F6E1C /* Sparkle.framework */; };
 		E9B832DC0D58D6D1000F6E1C /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9B832D40D58D67F000F6E1C /* Growl.framework */; };
 		E9B832DD0D58D6D6000F6E1C /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9B832D80D58D688000F6E1C /* Sparkle.framework */; };
-		E9B832F60D58E830000F6E1C /* MessageTableView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9B832F50D58E830000F6E1C /* MessageTableView.nib */; };
 		E9BFD5E20D1852F50024C8B4 /* TwitterStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */; };
 		E9BFD6130D1854270024C8B4 /* TwitterStatusViewNameField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */; };
 		E9BFD61E0D1857320024C8B4 /* TwitterStatusViewImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9BFD61D0D1857320024C8B4 /* TwitterStatusViewImageView.m */; };
@@ -80,6 +75,11 @@
 		E9CE391F0D145DB700D14D9F /* NTLNMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CE391E0D145DB700D14D9F /* NTLNMessageTableViewController.m */; };
 		E9D23B710D8EF5BD006191EE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9D23B6F0D8EF5BD006191EE /* Localizable.strings */; };
 		E9D5B1EB0D5633CB0000456F /* NTLNMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */; };
+		E9D811A40F4340C9008FCD80 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811A20F4340C9008FCD80 /* MainMenu.xib */; };
+		E9D811D20F434AE3008FCD80 /* Welcome.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811D00F434AE3008FCD80 /* Welcome.xib */; };
+		E9D811D90F434C77008FCD80 /* ErrorMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811D70F434C77008FCD80 /* ErrorMessageView.xib */; };
+		E9D811E20F434CA7008FCD80 /* MessageTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811E00F434CA7008FCD80 /* MessageTableView.xib */; };
+		E9D811E50F434D08008FCD80 /* TwitterStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811E30F434D08008FCD80 /* TwitterStatusView.xib */; };
 		E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */; };
 		E9DE941F0E88C1C600D591A7 /* NTLNScreenNameFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE941E0E88C1C600D591A7 /* NTLNScreenNameFilterView.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
@@ -87,7 +87,6 @@
 		E9E5BFA20D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BFA10D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m */; };
 		E9E5BFA30D2898F300F34B9B /* NTLNXMLHTTPEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5BF9E0D28988800F34B9B /* NTLNXMLHTTPEncoder.m */; };
 		E9E5C0930D28BCBB00F34B9B /* TwitterUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */; };
-		E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */ = {isa = PBXBuildFile; fileRef = E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */; };
 		E9F960930D25D03A007829C4 /* NTLNMessageInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */; };
 		E9FE91670D81527C0012136E /* NTLNBufferedMessageNotifier.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FE91660D81527C0012136E /* NTLNBufferedMessageNotifier.m */; };
 /* End PBXBuildFile section */
@@ -128,12 +127,9 @@
 		E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageListViewsController.h; sourceTree = "<group>"; };
 		E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageListViewsController.m; sourceTree = "<group>"; };
 		E9052DF10F1286D700E8E1F2 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E9052DFE0F12893700E8E1F2 /* German */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = German; path = German.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		E9052DFF0F12894900E8E1F2 /* German */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = German; path = German.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E90B0F300DE1A4A4008CC765 /* friends.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = friends.tiff; sourceTree = "<group>"; };
 		E90B0F330DE1A4B9008CC765 /* sent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sent.tiff; sourceTree = "<group>"; };
 		E90B0F340DE1A4B9008CC765 /* unread.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = unread.tiff; sourceTree = "<group>"; };
-		E90EFF5D0E40C664008FCF8E /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E90F0B3E0D2E8E190067A9CA /* NTLNConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNConfiguration.h; sourceTree = "<group>"; };
 		E90F0B3F0D2E8E190067A9CA /* NTLNConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNConfiguration.m; sourceTree = "<group>"; };
 		E915200D0D16D3B7008D6992 /* NTLNPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -167,7 +163,6 @@
 		E94B13CE0D6AA6C700F80617 /* CTGradient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTGradient.m; sourceTree = "<group>"; };
 		E94CC0CF0DD8C8B100D8711D /* NTLNKeywordFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNKeywordFilterView.h; sourceTree = "<group>"; };
 		E94CC0D00DD8C8B100D8711D /* NTLNKeywordFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNKeywordFilterView.m; sourceTree = "<group>"; };
-		E95516500E82A64000924598 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		E95D34F90D2F3F6700EA6958 /* NTLNColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNColors.h; sourceTree = "<group>"; };
 		E95D34FA0D2F3F6700EA6958 /* NTLNColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNColors.m; sourceTree = "<group>"; };
 		E9614CDB0D27BADC009743CE /* NTLNURLUtilsTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNURLUtilsTest.h; sourceTree = "<group>"; };
@@ -183,7 +178,6 @@
 		E96C362B0D2A71BA00CED33F /* NTLNKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNKeyChain.m; sourceTree = "<group>"; };
 		E96C36910D2A83E300CED33F /* NTLNAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNAccount.h; sourceTree = "<group>"; };
 		E96C36920D2A83E300CED33F /* NTLNAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNAccount.m; sourceTree = "<group>"; };
-		E96C36A80D2A897800CED33F /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E96C36AB0D2A8C3700CED33F /* NTLNWelcomeWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNWelcomeWindowController.h; sourceTree = "<group>"; };
 		E96C36AC0D2A8C3700CED33F /* NTLNWelcomeWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNWelcomeWindowController.m; sourceTree = "<group>"; };
 		E97615290D9FDE10007893CC /* Crypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crypto.h; sourceTree = "<group>"; };
@@ -197,13 +191,11 @@
 		E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaults.plist; sourceTree = "<group>"; };
 		E991C6630D2AC7FC00F410B6 /* NTLNErrorMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNErrorMessageViewController.h; sourceTree = "<group>"; };
 		E991C6640D2AC7FC00F410B6 /* NTLNErrorMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNErrorMessageViewController.m; sourceTree = "<group>"; };
-		E991C6660D2AC8DF00F410B6 /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/ErrorMessageView.nib; sourceTree = "<group>"; };
 		E991C66A0D2AE41100F410B6 /* NTLNMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NTLNMessageViewController.h; path = ../NTLNMessageViewController.h; sourceTree = "<group>"; };
 		E991C6B70D2AE79D00F410B6 /* TwitterStatusViewNameField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewNameField.h; sourceTree = "<group>"; };
 		E991C6B90D2AE7AE00F410B6 /* NTLNMessageViewTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTextField.m; sourceTree = "<group>"; };
 		E991C6BB0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTimestampField.h; sourceTree = "<group>"; };
 		E991C6BC0D2AE9A300F410B6 /* NTLNMessageViewTimestampField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageViewTimestampField.m; sourceTree = "<group>"; };
-		E99332F20D8FF1A900CDE7C4 /* Japanese */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/MainMenu.nib.strings; sourceTree = "<group>"; };
 		E99408050DEF43FD0009A365 /* NTLNSegmentedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNSegmentedCell.h; sourceTree = "<group>"; };
 		E99408060DEF43FD0009A365 /* NTLNSegmentedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNSegmentedCell.m; sourceTree = "<group>"; };
 		E99408280DEF456A0009A365 /* friends-highlighted.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "friends-highlighted.tiff"; sourceTree = "<group>"; };
@@ -211,7 +203,6 @@
 		E994082C0DEF456A0009A365 /* replies-highlighted.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "replies-highlighted.tiff"; sourceTree = "<group>"; };
 		E994082D0DEF456A0009A365 /* unread-highlighted.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "unread-highlighted.tiff"; sourceTree = "<group>"; };
 		E99408600DEF4BA50009A365 /* replies.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = replies.tiff; sourceTree = "<group>"; };
-		E99408740DEF4C7A0009A365 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Japanese; path = Japanese.lproj/Welcome.nib; sourceTree = "<group>"; };
 		E99632690D1E5D2400860515 /* NTLNMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessage.h; sourceTree = "<group>"; };
 		E996326A0D1E5D2400860515 /* NTLNMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessage.m; sourceTree = "<group>"; };
 		E99ADB100F42922900900DA5 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -227,7 +218,6 @@
 		E9A8A74E0D793478008567CC /* star-highlighted.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "star-highlighted.tiff"; sourceTree = "<group>"; };
 		E9B832D40D58D67F000F6E1C /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = frameworks/Growl.framework; sourceTree = "<group>"; };
 		E9B832D80D58D688000F6E1C /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = frameworks/Sparkle.framework; sourceTree = "<group>"; };
-		E9B832F50D58E830000F6E1C /* MessageTableView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = MessageTableView.nib; path = Resources/MessageTableView.nib; sourceTree = "<group>"; };
 		E9BFD5E00D1852F50024C8B4 /* TwitterStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusViewController.h; sourceTree = "<group>"; };
 		E9BFD5E10D1852F50024C8B4 /* TwitterStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewController.m; sourceTree = "<group>"; };
 		E9BFD6120D1854270024C8B4 /* TwitterStatusViewNameField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusViewNameField.m; sourceTree = "<group>"; };
@@ -240,6 +230,15 @@
 		E9D23B720D8EF5D6006191EE /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9D5B1DA0D56335F0000456F /* NTLNMessageViewTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageViewTextField.h; sourceTree = "<group>"; };
 		E9D5B1EA0D5633CB0000456F /* NTLNMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NTLNMessageViewController.m; path = src/NTLNMessageViewController.m; sourceTree = SOURCE_ROOT; };
+		E9D811A30F4340C9008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E9D811AA0F434123008FCD80 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E9D811AB0F434127008FCD80 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E9D811D10F434AE3008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/Welcome.xib; sourceTree = "<group>"; };
+		E9D811D30F434AFA008FCD80 /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/Welcome.xib; sourceTree = "<group>"; };
+		E9D811D40F434AFD008FCD80 /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/Welcome.xib; sourceTree = "<group>"; };
+		E9D811D80F434C77008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ErrorMessageView.xib; sourceTree = "<group>"; };
+		E9D811E10F434CA7008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MessageTableView.xib; sourceTree = "<group>"; };
+		E9D811E40F434D08008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TwitterStatusView.xib; sourceTree = "<group>"; };
 		E9DC0FD00D3D226A00CC6D41 /* TwitterTestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTestStub.h; sourceTree = "<group>"; };
 		E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTestStub.m; sourceTree = "<group>"; };
 		E9DE941D0E88C1C600D591A7 /* NTLNScreenNameFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNScreenNameFilterView.h; sourceTree = "<group>"; };
@@ -252,7 +251,6 @@
 		E9E5BFA10D2898D200F34B9B /* NTLNXMLHTTPEncoderTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNXMLHTTPEncoderTest.m; sourceTree = "<group>"; };
 		E9E5C0910D28BCBB00F34B9B /* TwitterUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUtils.h; sourceTree = "<group>"; };
 		E9E5C0920D28BCBB00F34B9B /* TwitterUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUtils.m; sourceTree = "<group>"; };
-		E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = TwitterStatusView.nib; sourceTree = "<group>"; };
 		E9F960910D25D03A007829C4 /* NTLNMessageInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageInputTextField.h; sourceTree = "<group>"; };
 		E9F960920D25D03A007829C4 /* NTLNMessageInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageInputTextField.m; sourceTree = "<group>"; };
 		E9FE91650D81527C0012136E /* NTLNBufferedMessageNotifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNBufferedMessageNotifier.h; sourceTree = "<group>"; };
@@ -401,15 +399,14 @@
 				E9CCFDB70E3466B500C1FDAA /* NatsuLion_error.icns */,
 				E9D23B6F0D8EF5BD006191EE /* Localizable.strings */,
 				E9A8A7360D79328D008567CC /* images */,
-				E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */,
 				E991C5C30D2AA88E00F410B6 /* UserDefaults.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				E90EFF5C0E40C664008FCF8E /* MainMenu.nib */,
-				E9F1DB470D13EE910072CE81 /* TwitterStatusView.nib */,
-				E993333A0D901CA600CDE7C4 /* Welcome.nib */,
-				E9052E000F12895100E8E1F2 /* ErrorMessageView.nib */,
-				E9B832F50D58E830000F6E1C /* MessageTableView.nib */,
+				E9D811E30F434D08008FCD80 /* TwitterStatusView.xib */,
+				E9D811D00F434AE3008FCD80 /* Welcome.xib */,
+				E9D811A20F4340C9008FCD80 /* MainMenu.xib */,
+				E9D811D70F434C77008FCD80 /* ErrorMessageView.xib */,
+				E9D811E00F434CA7008FCD80 /* MessageTableView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -599,11 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				E9F1DB480D13EE910072CE81 /* TwitterStatusView.nib in Resources */,
-				E993333B0D901CA600CDE7C4 /* Welcome.nib in Resources */,
 				E991C5C40D2AA88E00F410B6 /* UserDefaults.plist in Resources */,
-				E9052E010F12895100E8E1F2 /* ErrorMessageView.nib in Resources */,
-				E9B832F60D58E830000F6E1C /* MessageTableView.nib in Resources */,
 				E9A8A7400D79328E008567CC /* CTBadge_1.pdf in Resources */,
 				E9A8A7410D79328E008567CC /* CTBadge_3.pdf in Resources */,
 				E9A8A7420D79328E008567CC /* CTBadge_4.pdf in Resources */,
@@ -613,7 +606,6 @@
 				E9A8A74F0D793478008567CC /* star-normal.tiff in Resources */,
 				E9A8A7500D793478008567CC /* star-highlighted.tiff in Resources */,
 				E9D23B710D8EF5BD006191EE /* Localizable.strings in Resources */,
-				E99332F30D8FF1A900CDE7C4 /* MainMenu.nib.strings in Resources */,
 				E916EF7C0D96AE8600EA04C7 /* NatsuLion.icns in Resources */,
 				E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */,
 				E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */,
@@ -624,9 +616,13 @@
 				E99408350DEF456A0009A365 /* unread-highlighted.tiff in Resources */,
 				E99408610DEF4BA50009A365 /* replies.tiff in Resources */,
 				E9CCFDB80E3466B600C1FDAA /* NatsuLion_error.icns in Resources */,
-				E90EFF5E0E40C664008FCF8E /* MainMenu.nib in Resources */,
 				E962325A0EB60ABF008B7025 /* conversation.tiff in Resources */,
 				E962325B0EB60ABF008B7025 /* find.tiff in Resources */,
+				E9D811A40F4340C9008FCD80 /* MainMenu.xib in Resources */,
+				E9D811D20F434AE3008FCD80 /* Welcome.xib in Resources */,
+				E9D811D90F434C77008FCD80 /* ErrorMessageView.xib in Resources */,
+				E9D811E20F434CA7008FCD80 /* MessageTableView.xib in Resources */,
+				E9D811E50F434D08008FCD80 /* TwitterStatusView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,42 +727,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		E9052E000F12895100E8E1F2 /* ErrorMessageView.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E991C6660D2AC8DF00F410B6 /* English */,
-			);
-			name = ErrorMessageView.nib;
-			sourceTree = "<group>";
-		};
-		E90EFF5C0E40C664008FCF8E /* MainMenu.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E90EFF5D0E40C664008FCF8E /* English */,
-				E95516500E82A64000924598 /* Japanese */,
-				E9052DFE0F12893700E8E1F2 /* German */,
-			);
-			name = MainMenu.nib;
-			sourceTree = "<group>";
-		};
-		E99332F10D8FF1A900CDE7C4 /* MainMenu.nib.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E99332F20D8FF1A900CDE7C4 /* Japanese */,
-			);
-			name = MainMenu.nib.strings;
-			sourceTree = "<group>";
-		};
-		E993333A0D901CA600CDE7C4 /* Welcome.nib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E96C36A80D2A897800CED33F /* English */,
-				E99408740DEF4C7A0009A365 /* Japanese */,
-				E9052DFF0F12894900E8E1F2 /* German */,
-			);
-			name = Welcome.nib;
-			sourceTree = "<group>";
-		};
 		E9D23B6F0D8EF5BD006191EE /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -775,6 +735,50 @@
 				E9052DF10F1286D700E8E1F2 /* German */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		E9D811A20F4340C9008FCD80 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D811A30F4340C9008FCD80 /* English */,
+				E9D811AA0F434123008FCD80 /* Japanese */,
+				E9D811AB0F434127008FCD80 /* German */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E9D811D00F434AE3008FCD80 /* Welcome.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D811D10F434AE3008FCD80 /* English */,
+				E9D811D30F434AFA008FCD80 /* Japanese */,
+				E9D811D40F434AFD008FCD80 /* German */,
+			);
+			name = Welcome.xib;
+			sourceTree = "<group>";
+		};
+		E9D811D70F434C77008FCD80 /* ErrorMessageView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D811D80F434C77008FCD80 /* English */,
+			);
+			name = ErrorMessageView.xib;
+			sourceTree = "<group>";
+		};
+		E9D811E00F434CA7008FCD80 /* MessageTableView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D811E10F434CA7008FCD80 /* English */,
+			);
+			name = MessageTableView.xib;
+			sourceTree = "<group>";
+		};
+		E9D811E30F434D08008FCD80 /* TwitterStatusView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9D811E40F434D08008FCD80 /* English */,
+			);
+			name = TwitterStatusView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
