@@ -148,7 +148,7 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 }
 
 - (void) setLatestTimestampOfMessage:(NSTimeInterval)interval {
-    [[NSUserDefaults standardUserDefaults] setFloat:interval forKey:@"latestTimestampOfMessage"];
+    [[NSUserDefaults standardUserDefaults] setDouble:interval forKey:@"latestTimestampOfMessage"];
 }
 
 - (NSTimeInterval) latestTimestampOfDirectMessage {
@@ -156,7 +156,7 @@ static id<NTLNTimelineSortOrderChangeObserver> _timelineSortOrderChangeObserver;
 }
 
 - (void) setLatestTimestampOfDirectMessage:(NSTimeInterval)interval {
-    [[NSUserDefaults standardUserDefaults] setFloat:interval forKey:@"latestTimestampOfDirectMessage"];
+    [[NSUserDefaults standardUserDefaults] setDouble:interval forKey:@"latestTimestampOfDirectMessage"];
 }
 
 - (BOOL) useGrowlAndSummarizeGrowl {
