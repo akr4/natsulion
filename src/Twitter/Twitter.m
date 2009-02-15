@@ -656,7 +656,6 @@
 }
 
 - (void) repliesWithUsername:(NSString*)username password:(NSString*)password usePost:(BOOL)post {
-
     if (_connectionForReplies && ![_connectionForReplies isFinished]) {
         NSLog(@"connection for replies is running.");
         return;

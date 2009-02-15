@@ -1,5 +1,6 @@
 #import "NTLNMessage.h"
 #import "NTLNAccount.h"
+#import "NTLNURLUtils.h"
 
 @implementation NTLNMessage
 
@@ -36,15 +37,14 @@
 }
 
 - (BOOL) isProbablyReplyToMe {
-    NSString *query = [@"@" stringByAppendingString:[[NTLNAccount instance] username]];
-    NSRange range = [text rangeOfString:query options:NSCaseInsensitiveSearch];
-    
-    if (range.location != NSNotFound) {
-        //        NSLog(@"probable reply");
-        return TRUE;
+    NSString *query = [[@"@" stringByAppendingString:[[NTLNAccount instance] username]] lowercaseString];
+    for (NSString *s in [[NTLNURLUtils utils] tokenizeByID:text]) {
+        if ([[s lowercaseString] isEqualToString:query]) {
+            return YES;
+        }
     }
-    //    NSLog(@"not reply");
-    return FALSE;
+    
+    return NO;
 }
 
 - (BOOL) isMyUpdate {
