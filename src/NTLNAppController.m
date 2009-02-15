@@ -6,6 +6,12 @@
 #import "NTLNMultiTasksProgressIndicator.h"
 #import "TwitterStatusViewController.h"
 
+OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler, EventRef theEvent, void *userData)
+{
+    NSLog(@"hotkey pressed!");
+    return noErr;
+}
+
 @implementation NTLNAppController
 
 + (void) setupDefaults {
@@ -70,6 +76,18 @@
     _messageNotifier = [[NTLNBufferedMessageNotifier alloc] initWithTimeout:5.0 maxMessage:20 progressIndicator:progressIndicator];
 
     _badge = [[CTBadge alloc] init];
+    
+    // global hotkey
+    EventHotKeyRef gMyHotKeyRef;
+    EventHotKeyID gMyHotKeyID;
+    EventTypeSpec eventType;
+    eventType.eventClass=kEventClassKeyboard;
+    eventType.eventKind=kEventHotKeyPressed;
+    InstallApplicationEventHandler(&MyHotKeyHandler, 1, &eventType, self, NULL);
+    gMyHotKeyID.signature = 'post';
+    gMyHotKeyID.id = 1;
+    RegisterEventHotKey(49, cmdKey+optionKey, gMyHotKeyID, 
+                        GetApplicationEventTarget(), 0, &gMyHotKeyRef);
 }
 
 #pragma mark Timer

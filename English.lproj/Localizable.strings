@@ -38,6 +38,8 @@
 "Replies" = "Antworten";
 "Sent" = "Gesendet";
 "Unread" = "Ungelesen";
+"Find" = "Find";
+"Conversation" = "Conversation";
 
 "Reset at %@" = "Zurueckgesetzt um %@";
 "Exceeded API rate limit" = "Maximale Anzahl API-Aufrufe ueberschritten";

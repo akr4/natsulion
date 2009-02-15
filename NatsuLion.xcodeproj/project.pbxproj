@@ -80,6 +80,7 @@
 		E9D811D90F434C77008FCD80 /* ErrorMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811D70F434C77008FCD80 /* ErrorMessageView.xib */; };
 		E9D811E20F434CA7008FCD80 /* MessageTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811E00F434CA7008FCD80 /* MessageTableView.xib */; };
 		E9D811E50F434D08008FCD80 /* TwitterStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811E30F434D08008FCD80 /* TwitterStatusView.xib */; };
+		E9D812230F44802B008FCD80 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D812220F44802B008FCD80 /* Carbon.framework */; };
 		E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */; };
 		E9DE941F0E88C1C600D591A7 /* NTLNScreenNameFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE941E0E88C1C600D591A7 /* NTLNScreenNameFilterView.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
@@ -239,6 +240,7 @@
 		E9D811D80F434C77008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/ErrorMessageView.xib; sourceTree = "<group>"; };
 		E9D811E10F434CA7008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MessageTableView.xib; sourceTree = "<group>"; };
 		E9D811E40F434D08008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TwitterStatusView.xib; sourceTree = "<group>"; };
+		E9D812220F44802B008FCD80 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		E9DC0FD00D3D226A00CC6D41 /* TwitterTestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTestStub.h; sourceTree = "<group>"; };
 		E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTestStub.m; sourceTree = "<group>"; };
 		E9DE941D0E88C1C600D591A7 /* NTLNScreenNameFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNScreenNameFilterView.h; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				E96C36210D2A6EA300CED33F /* Security.framework in Frameworks */,
 				E9B832D50D58D67F000F6E1C /* Growl.framework in Frameworks */,
 				E9B832D90D58D688000F6E1C /* Sparkle.framework in Frameworks */,
+				E9D812230F44802B008FCD80 /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +345,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9D812220F44802B008FCD80 /* Carbon.framework */,
 				E9B832D80D58D688000F6E1C /* Sparkle.framework */,
 				E9B832D40D58D67F000F6E1C /* Growl.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,

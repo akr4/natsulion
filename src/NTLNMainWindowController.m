@@ -179,49 +179,49 @@
     _messageViewToolbarMenuItem = [[NSMenuItem alloc] init];
     [_messageViewToolbarMenuItem setTitle:NSLocalizedString(@"View Mode", @"Toolbar text")];
     NSMenu *viewTextMenu  = [[[NSMenu alloc] initWithTitle:@"dummy menu"] autorelease];
-    [self addMenuItemWithTitle:@"Friends"
+    [self addMenuItemWithTitle:NSLocalizedString(@"Friends", nil)
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"1" 
                            tag:0 
                         toMenu:viewMenu];
-    [self addMenuItemWithTitle:@"Replies"
+    [self addMenuItemWithTitle:NSLocalizedString(@"Replies", nil)
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"2" 
                            tag:1 
                         toMenu:viewMenu];
-    [self addMenuItemWithTitle:@"Sent"
+    [self addMenuItemWithTitle:NSLocalizedString(@"Sent", nil)
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"3" 
                            tag:2 
                         toMenu:viewMenu];
-    [self addMenuItemWithTitle:@"Unread"
+    [self addMenuItemWithTitle:NSLocalizedString(@"Unread", nil)
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"4" 
                            tag:3
                         toMenu:viewMenu];
-    [self addMenuItemWithTitle:@"Friends"
+    [self addMenuItemWithTitle:NSLocalizedString(@"Friends", nil)
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"1" 
                            tag:0 
                         toMenu:viewTextMenu];
-    [self addMenuItemWithTitle:@"Replies"
+    [self addMenuItemWithTitle:NSLocalizedString(@"Replies", nil)
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"2" 
                            tag:1 
                         toMenu:viewTextMenu];
-    [self addMenuItemWithTitle:@"Sent"
+    [self addMenuItemWithTitle:NSLocalizedString(@"Sent", nil)
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"3" 
                            tag:2 
                         toMenu:viewTextMenu];
-    [self addMenuItemWithTitle:@"Unread"
+    [self addMenuItemWithTitle:NSLocalizedString(@"Unread", nil)
                         target:self
                         action:@selector(changeViewByMenu:)
                  keyEquivalent:@"4" 

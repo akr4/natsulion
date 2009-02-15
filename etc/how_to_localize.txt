@@ -13,11 +13,12 @@ Note: nkf can be installed by the command "fink install nkf".
 etc/createMessageTable.rb English.lproj/MainMenu.xib.strings > etc/strings.ja.txt.new 
 etc/createMessageTable.rb English.lproj/Welcome.xib.strings >> etc/strings.ja.txt.new 
 cut -d = -f 1 etc/strings.ja.txt > etc/strings.ja.txt.key
+sort etc/strings.ja.txt.key | uniq etc/strings.ja.txt.key.sort
 cut -d = -f 1 etc/strings.ja.txt.new > etc/strings.ja.txt.new.key 
-sort etc/strings.ja.txt.new.key > etc/strings.ja.txt.new.key.sort
-diff etc/strings.ja.txt.key etc/strings.ja.txt.new.key.sort
+sort etc/strings.ja.txt.new.key | uniq etc/strings.ja.txt.new.key.sort
+diff etc/strings.ja.txt.key.sort etc/strings.ja.txt.new.key.sort
 # add new entries manually to etc/strings.ja.txt
-rm etc/strings.ja.txt.new.key etc/strings.ja.txt.new etc/strings.ja.txt.key etc/strings.ja.txt.new.key.sort
+rm etc/strings.ja.txt.new.key etc/strings.ja.txt.key.sort etc/strings.ja.txt.new etc/strings.ja.txt.key etc/strings.ja.txt.new.key.sort
 
 * this step is needed only when new xib file is added or updated
 
