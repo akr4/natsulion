@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E9D813520F48668E008FCD80</string>
+						<string>E9D813610F486D59008FCD80</string>
 						<key>history</key>
 						<array>
-							<string>E9D813410F48610E008FCD80</string>
+							<string>E9D813560F486BCB008FCD80</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -256,7 +256,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>E9D813530F48668E008FCD80</string>
+						<string>E9D813620F486D59008FCD80</string>
 						<key>history</key>
 						<array>
 							<string>E9D8132D0F48602D008FCD80</string>
@@ -362,13 +362,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>54</integer>
-									<integer>6</integer>
+									<integer>89</integer>
+									<integer>81</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 830}, {395, 605}}</string>
+							<string>{{0, 1236}, {395, 605}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -415,7 +415,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>E9D813510F48668E008FCD80</string>
+										<string>E9D813600F486D59008FCD80</string>
 										<key>history</key>
 										<array>
 											<string>E922F4360E88B5F800DF4EB6</string>
@@ -808,10 +808,10 @@
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>E9160C000D11F6C700C9EEFF</string>
 		<string>E9B439B40F431FB400572132</string>
-		<string>/Users/akira/Documents/program/xcode/NatsuLion1/NatsuLion.xcodeproj</string>
 		<string>E9D8133C0F48610E008FCD80</string>
-		<string>E9D8133F0F48610E008FCD80</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>E9D8133F0F48610E008FCD80</string>
+		<string>/Users/akira/Documents/program/xcode/NatsuLion1/NatsuLion.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>8 114 417 664 0 0 1280 778 </string>
