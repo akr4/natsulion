@@ -28,7 +28,7 @@ pageTracker._trackPageview();
 <div id="HEADER">
 <h1>NatsuLion</h1>
 <ul id="PAN">
-  <li><a href="/ss">Site Top</a></li>
+  <!-- <li><a href="/ss">Site Top</a></li> -->
   <li>NatsuLion</li>
 </ul>
 </div>
@@ -60,24 +60,24 @@ pageTracker._trackPageview();
 <div class="text">
 <h3>About NatsuLion</h3>
 <p>
-NatsuLion is a simple Twitter client for Mac OSX.<br/>
+NatsuLion is a simple Twitter client for Mac OS X.<br/>
 
 Note: Leopard (10.5) is required.
 </p>
 
 <p><em>News</em>: <a href="http://iphone.natsulion.org">NatsuLion for iPhone</a> is rolled out!</p>
 
-Its goals are the follows:
+The goals for NatsuLion are:
 <ul>
   <li>Be simple</li>
   <li>Feature icons</li>
-  <li>Easy to use for Twitter light users</li>
+  <li>Easy to use for light Twitter users</li>
 </ul>
-You can <a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">download</a> the latest version from.
+<a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">Download</a> the latest version.
 </p>
 
 <h4>Beta Version</h4>
-<p>There is a beta version also. If you are interested in it, try <a href="http://www.natsulion.org/download/NatsuLion_1.9b1.zip">beta</a>.</p>
+<p>There is also beta version. If you are interested, <a href="http://www.natsulion.org/download/NatsuLion_1.9b1.zip">try the beta</a>.</p>
 
 <h3>Screen Shots</h3>
 <p>
@@ -91,9 +91,9 @@ You can <a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javas
   <li>Display your friend timeline</li>
   <li>Post a message</li>
   <li>Create a favorite</li>
-  <li>Replies including messages contain @<my ID> are emphasized</li>
+  <li>Replies including messages containing @&lt;my ID&gt; are emphasized</li>
   <li>Input support for "@&lt;ID&gt;". By clicking icon, @&lt;ID&gt; apears in the message input field</li>
-  <li>Growl Notifications (replies are notified with a higher priority and stickied by default)</li>
+  <li>Growl Notifications (replies are presented with a higher priority and stickied by default)</li>
   <li>Manage unread tweets</li>
 </ul>  
 </p>
@@ -101,10 +101,10 @@ You can <a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javas
 <h3>Help Wanted</h3>
 <ul>
   <li>English messages to make it easier to understand</li>
-  <li>patches to fix bugs</li>
+  <li>Patches to fix bugs</li>
   <li>Beta testers</li>
 </ul>
-<p>Helps would be appreciated.</p>
+<p>Help would be appreciated.</p>
 
 <h3>License</h3>
 <p>
@@ -124,12 +124,12 @@ Please find these licenses <a href="http://www.physalis.net/repos/natsulion/trun
 
 <h3>Bug Tracking System</h3>
 <p>
-If you find a bug or have new feature ideas, please file issues to <a href="http://jira.physalis.net/browse/NTLN">JIRA</a>. Or tell me on Twitter.(<a href="http://twitter.com/NatsuLionEn">@NatsuLionEn</a>)
+If you find a bug or have any new feature ideas, please file issues to <a href="http://jira.physalis.net/browse/NTLN">JIRA</a>. Or tell me on Twitter. (<a href="http://twitter.com/NatsuLionEn">@NatsuLionEn</a>)
 </p>
 
 <h3>Special Thanks</h3>
 <p>
-@yusukey has been partifipating from early development phase, filed a lot of bugs and brought nice ideas (e.g. To use Sparkle is his idea.). Thank you very much!
+@yusukey has been participating since the early development phase, filed a lot of bugs and brought nice ideas (e.g. To use Sparkle is his idea.). Thank you very much!
 </p>
 
 <h2>Release Notes</h2>
@@ -137,7 +137,7 @@ If you find a bug or have new feature ideas, please file issues to <a href="http
 <h3 id="1.9">Version 1.9 (2008/10/28)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.9.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.9.zip');">download</a>
 <p>
 <p>This version has a few minor improvements and fixes.</p>
-<p><strong>News:</strong> NatsuLion for iPhone (former name is NatsuLiphone) has been released on AppStore! Please visit http://iphone.natsulion.org/ for more details.</p>
+<p><strong>News:</strong> NatsuLion for iPhone (former name is NatsuLiphone) has been released on AppStore! Please visit <a href="http://iphone.natsulion.org/">http://iphone.natsulion.org/</a> for more details.</p>
 
 Bug
 <ul>
