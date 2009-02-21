@@ -11,6 +11,7 @@
 #import "NTLNAppController.h"
 #import "NTLNURLUtils.h"
 #import "NTLNFilterView.h"
+#import "iTunes.h"
 
 #define NTLN_RATE_LIMIT_WARNING_THREASHOLD 0.8f
 #define NTLN_RATE_LIMIT_CRITICAL_THREASHOLD 0.9f
@@ -279,6 +280,18 @@
                                 action:@selector(openScreenNameFilterView:)
                                   view:conversationButton];
     
+    // paste itunes track name button
+    NSButton *iTunesButton = [[[NSButton alloc] initWithFrame:NSMakeRect(0, 0, 25, 25)] autorelease];
+    [iTunesButton setImage:[NSImage imageNamed:@"music"]];
+    [iTunesButton setBezelStyle:NSTexturedSquareBezelStyle];
+    [iTunesButton setTarget:self];
+    [iTunesButton setAction:@selector(setPlayingTrackName:)];
+    [self addToolbarItemWithIdentifier:@"itunes"
+                                 label:NSLocalizedString(@"iTunes Track", @"Toolbar label")
+                                target:self
+                                action:@selector(openScreenNameFilterView:)
+                                  view:iTunesButton];
+
     [[self window] setToolbar:toolbar];
 }
 
@@ -623,11 +636,11 @@
 }
 
 - (NSArray *)toolbarDefaultItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", @"find", @"conversation", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", @"find", @"conversation", @"itunes", nil];
 }
 
 - (NSArray *)toolbarAllowedItemIdentifiers:(NSToolbar*)toolbar {
-    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", @"find", @"conversation", nil];
+    return [NSArray arrayWithObjects:@"messageView", @"refresh", @"markallasread", @"find", @"conversation", @"itunes", nil];
 }
 
 #pragma mark Actions
@@ -681,6 +694,16 @@
 - (IBAction) replyToSelectedMessage:(id)sender
 {
     [self replyDesiredFor:[messageTableViewController selectedMessage]];
+}
+
+- (IBAction) setPlayingTrackName:(id)sender
+{
+    iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+    if ([iTunes isRunning]) {
+        iTunesTrack *current = [iTunes currentTrack];
+        [messageTextField setStringValue:[[messageTextField stringValue] stringByAppendingFormat:@"Now Playing: %@ (%@)", [current name], [current artist]]];
+        [messageTextField focusAndLocateCursorEnd];
+    }
 }
 
 #pragma mark Notifications

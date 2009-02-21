@@ -11,6 +11,8 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		E900C14F0D5EAB160071837C /* NTLNMessageListViewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */; };
+		E902F91B0F4FAE0F000DB70D /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E902F91A0F4FAE0F000DB70D /* ScriptingBridge.framework */; };
+		E902F9BF0F4FCD47000DB70D /* music.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E902F9BE0F4FCD47000DB70D /* music.tiff */; };
 		E90B0F310DE1A4A4008CC765 /* friends.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F300DE1A4A4008CC765 /* friends.tiff */; };
 		E90B0F360DE1A4B9008CC765 /* sent.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F330DE1A4B9008CC765 /* sent.tiff */; };
 		E90B0F370DE1A4B9008CC765 /* unread.tiff in Resources */ = {isa = PBXBuildFile; fileRef = E90B0F340DE1A4B9008CC765 /* unread.tiff */; };
@@ -81,6 +83,7 @@
 		E9D811E20F434CA7008FCD80 /* MessageTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811E00F434CA7008FCD80 /* MessageTableView.xib */; };
 		E9D811E50F434D08008FCD80 /* TwitterStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811E30F434D08008FCD80 /* TwitterStatusView.xib */; };
 		E9D812230F44802B008FCD80 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D812220F44802B008FCD80 /* Carbon.framework */; };
+		E9D8137E0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8137D0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m */; };
 		E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */; };
 		E9DE941F0E88C1C600D591A7 /* NTLNScreenNameFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE941E0E88C1C600D591A7 /* NTLNScreenNameFilterView.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
@@ -127,6 +130,16 @@
 		8D1107320486CEB800E47090 /* NatsuLion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NatsuLion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E900C14D0D5EAB160071837C /* NTLNMessageListViewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNMessageListViewsController.h; sourceTree = "<group>"; };
 		E900C14E0D5EAB160071837C /* NTLNMessageListViewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNMessageListViewsController.m; sourceTree = "<group>"; };
+		E902F8BB0F4FA6F1000DB70D /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		E902F91A0F4FAE0F000DB70D /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = /System/Library/Frameworks/ScriptingBridge.framework; sourceTree = "<absolute>"; };
+		E902F9640F4FC3B5000DB70D /* Adium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Adium.h; sourceTree = "<group>"; };
+		E902F9BE0F4FCD47000DB70D /* music.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = music.tiff; sourceTree = "<group>"; };
+		E902FA240F4FE162000DB70D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/TwitterStatusView.xib; sourceTree = "<group>"; };
+		E902FA250F4FE166000DB70D /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/TwitterStatusView.xib; sourceTree = "<group>"; };
+		E902FA260F4FE17B000DB70D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/ErrorMessageView.xib; sourceTree = "<group>"; };
+		E902FA270F4FE181000DB70D /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/ErrorMessageView.xib; sourceTree = "<group>"; };
+		E902FA280F4FE191000DB70D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/MessageTableView.xib; sourceTree = "<group>"; };
+		E902FA290F4FE194000DB70D /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MessageTableView.xib; sourceTree = "<group>"; };
 		E9052DF10F1286D700E8E1F2 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E90B0F300DE1A4A4008CC765 /* friends.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = friends.tiff; sourceTree = "<group>"; };
 		E90B0F330DE1A4B9008CC765 /* sent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sent.tiff; sourceTree = "<group>"; };
@@ -241,6 +254,8 @@
 		E9D811E10F434CA7008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MessageTableView.xib; sourceTree = "<group>"; };
 		E9D811E40F434D08008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TwitterStatusView.xib; sourceTree = "<group>"; };
 		E9D812220F44802B008FCD80 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		E9D8137C0F48C8A6008FCD80 /* NTLNQuickPostWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNQuickPostWindowController.h; sourceTree = "<group>"; };
+		E9D8137D0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNQuickPostWindowController.m; sourceTree = "<group>"; };
 		E9DC0FD00D3D226A00CC6D41 /* TwitterTestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTestStub.h; sourceTree = "<group>"; };
 		E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTestStub.m; sourceTree = "<group>"; };
 		E9DE941D0E88C1C600D591A7 /* NTLNScreenNameFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNScreenNameFilterView.h; sourceTree = "<group>"; };
@@ -269,6 +284,7 @@
 				E9B832D50D58D67F000F6E1C /* Growl.framework in Frameworks */,
 				E9B832D90D58D688000F6E1C /* Sparkle.framework in Frameworks */,
 				E9D812230F44802B008FCD80 /* Carbon.framework in Frameworks */,
+				E902F91B0F4FAE0F000DB70D /* ScriptingBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +301,7 @@
 		080E96DDFE201D6D7F000001 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				E902F8BA0F4FA6F1000DB70D /* sb */,
 				E920C36B0D6A1ACC00A813EB /* CT */,
 				E9614CDE0D27BC65009743CE /* util */,
 				E991C66D0D2AE62300F410B6 /* view */,
@@ -338,6 +355,8 @@
 				E9FE91660D81527C0012136E /* NTLNBufferedMessageNotifier.m */,
 				E97615290D9FDE10007893CC /* Crypto.h */,
 				E976152A0D9FDE10007893CC /* Crypto.m */,
+				E9D8137C0F48C8A6008FCD80 /* NTLNQuickPostWindowController.h */,
+				E9D8137D0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -356,6 +375,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E902F91A0F4FAE0F000DB70D /* ScriptingBridge.framework */,
 				E96C36200D2A6EA300CED33F /* Security.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
@@ -422,6 +442,15 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E902F8BA0F4FA6F1000DB70D /* sb */ = {
+			isa = PBXGroup;
+			children = (
+				E902F8BB0F4FA6F1000DB70D /* iTunes.h */,
+				E902F9640F4FC3B5000DB70D /* Adium.h */,
+			);
+			path = sb;
 			sourceTree = "<group>";
 		};
 		E91B3DBA0D13F893007C9762 /* Twitter */ = {
@@ -504,6 +533,7 @@
 		E9A8A7360D79328D008567CC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E902F9BE0F4FCD47000DB70D /* music.tiff */,
 				E96232580EB60ABF008B7025 /* conversation.tiff */,
 				E96232590EB60ABF008B7025 /* find.tiff */,
 				E99408280DEF456A0009A365 /* friends-highlighted.tiff */,
@@ -627,6 +657,7 @@
 				E9D811D90F434C77008FCD80 /* ErrorMessageView.xib in Resources */,
 				E9D811E20F434CA7008FCD80 /* MessageTableView.xib in Resources */,
 				E9D811E50F434D08008FCD80 /* TwitterStatusView.xib in Resources */,
+				E902F9BF0F4FCD47000DB70D /* music.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +735,7 @@
 				E99408070DEF43FD0009A365 /* NTLNSegmentedCell.m in Sources */,
 				E922F4620E88B7AF00DF4EB6 /* NTLNFilterView.m in Sources */,
 				E9DE941F0E88C1C600D591A7 /* NTLNScreenNameFilterView.m in Sources */,
+				E9D8137E0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +797,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9D811D80F434C77008FCD80 /* English */,
+				E902FA260F4FE17B000DB70D /* Japanese */,
+				E902FA270F4FE181000DB70D /* German */,
 			);
 			name = ErrorMessageView.xib;
 			sourceTree = "<group>";
@@ -773,6 +807,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9D811E10F434CA7008FCD80 /* English */,
+				E902FA280F4FE191000DB70D /* Japanese */,
+				E902FA290F4FE194000DB70D /* German */,
 			);
 			name = MessageTableView.xib;
 			sourceTree = "<group>";
@@ -781,6 +817,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				E9D811E40F434D08008FCD80 /* English */,
+				E902FA240F4FE162000DB70D /* Japanese */,
+				E902FA250F4FE166000DB70D /* German */,
 			);
 			name = TwitterStatusView.xib;
 			sourceTree = "<group>";

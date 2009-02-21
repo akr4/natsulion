@@ -88,4 +88,4 @@ Start Twittering=Lostwittern
 Username:=Username:
 NatsuLion=NatsuLion
 Set Adium status with posted message=Adium Status mit gesendeter Nachricht setzen
-
+Paste iTunes Track Name=Aktuellen iTunes Titel einfügen

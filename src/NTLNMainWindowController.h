@@ -62,6 +62,7 @@
 - (IBAction) openScreenNameFilterView:(id)sender;
 - (IBAction) closeFilterView:(id)sender;
 - (IBAction) replyToSelectedMessage:(id)sender;
+- (IBAction) setPlayingTrackName:(id)sender;
 
 - (void) showWindowToFront;
 - (void) setFrameAutosaveName:(NSString*)name;

@@ -4,21 +4,23 @@
 #import "NTLNConfiguration.h"
 #import "NTLNNotification.h"
 #import "NTLNMultiTasksProgressIndicator.h"
+#import "NTLNQuickPostWindowController.h"
 #import "TwitterStatusViewController.h"
+#import "Adium.h"
 
-OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler, EventRef theEvent, void *userData)
-{
-    NSLog(@"hotkey pressed!");
-    return noErr;
-}
-
+//#pragma mark -
+//OSStatus handleHotKey(EventHandlerCallRef nextHandler, EventRef theEvent, void *userData)
+//{
+//    NSLog(@"hotkey pressed!");
+//    //    [userData showWindow];
+//    return noErr;
+//}
+//
 @implementation NTLNAppController
 
 + (void) setupDefaults {
     NSString *userDefaultsValuesPath = [[NSBundle mainBundle] pathForResource:@"UserDefaults" 
                                                                        ofType:@"plist"]; 
-//    NSLog(@"UserDefaults path: %@", userDefaultsValuesPath);
-
     NSDictionary *userDefaultsValuesDict = [NSDictionary dictionaryWithContentsOfFile:userDefaultsValuesPath]; 
     [[NSUserDefaults standardUserDefaults] registerDefaults:userDefaultsValuesDict]; 
 }
@@ -78,16 +80,17 @@ OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler, EventRef theEvent, voi
     _badge = [[CTBadge alloc] init];
     
     // global hotkey
-    EventHotKeyRef gMyHotKeyRef;
-    EventHotKeyID gMyHotKeyID;
-    EventTypeSpec eventType;
-    eventType.eventClass=kEventClassKeyboard;
-    eventType.eventKind=kEventHotKeyPressed;
-    InstallApplicationEventHandler(&MyHotKeyHandler, 1, &eventType, self, NULL);
-    gMyHotKeyID.signature = 'post';
-    gMyHotKeyID.id = 1;
-    RegisterEventHotKey(49, cmdKey+optionKey, gMyHotKeyID, 
-                        GetApplicationEventTarget(), 0, &gMyHotKeyRef);
+//    EventHotKeyRef gMyHotKeyRef;
+//    EventHotKeyID gMyHotKeyID;
+//    EventTypeSpec eventType;
+//    eventType.eventClass=kEventClassKeyboard;
+//    eventType.eventKind=kEventHotKeyPressed;
+//    InstallApplicationEventHandler(&handleHotKey, 1, &eventType, self, NULL);
+//    gMyHotKeyID.signature = 'post';
+//    gMyHotKeyID.id = 1;
+//    
+//    RegisterEventHotKey(49, cmdKey+optionKey, gMyHotKeyID, 
+//                        GetApplicationEventTarget(), 0, &gMyHotKeyRef);
 }
 
 #pragma mark Timer
@@ -98,8 +101,22 @@ OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler, EventRef theEvent, voi
         [_friendsTimelineRefreshTimer invalidate];
         [_friendsTimelineRefreshTimer release];
     }
-
+    
     _friendsTimelineRefreshTimer = [[NSTimer scheduledTimerWithTimeInterval:_refreshInterval
+                                                                     target:self
+                                                                   selector:@selector(expireFriendsTimelineRefreshInterval)
+                                                                   userInfo:nil
+                                                                    repeats:YES] retain];
+}
+
+- (void) restartFriendsTimelineRefreshTimerAfter:(int)next
+{
+    if (_friendsTimelineRefreshTimer) {
+        [_friendsTimelineRefreshTimer invalidate];
+        [_friendsTimelineRefreshTimer release];
+    }
+    
+    _friendsTimelineRefreshTimer = [[NSTimer scheduledTimerWithTimeInterval:next
                                                                      target:self
                                                                    selector:@selector(expireFriendsTimelineRefreshInterval)
                                                                    userInfo:nil
@@ -440,10 +457,17 @@ OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler, EventRef theEvent, voi
                  password:password];
 
     if ([[NTLNConfiguration instance] useAdiumStatus]) {
-        NSString *scriptStr = [NSString stringWithFormat:@"set message to \"%@\"\ntell application \"System Events\"\nif exists process \"Adium\" then tell application \"Adium\" to set status message of every account to message\nend tell", message];
-        NSAppleScript *script = [[[NSAppleScript alloc] initWithSource:scriptStr] autorelease];
-        NSDictionary *errorInfo;
-        [script executeAndReturnError:&errorInfo];
+        AdiumApplication *adium = [SBApplication applicationWithBundleIdentifier:@"com.adiumX.adiumX"];
+        if ([adium isRunning]) {
+            NSEnumerator *e = [[adium accounts] objectEnumerator];
+            AdiumAccount *a;
+            while ((a = [e nextObject]) != nil) {
+                NSLog(@"account: %@", a);
+                [[a statusMessage] setTo:message];
+            }
+        } else {
+            NSLog(@"Adium is not running.");
+        }
     }
 }
 
@@ -556,7 +580,7 @@ OSStatus MyHotKeyHandler(EventHandlerCallRef nextHandler, EventRef theEvent, voi
 - (void) finishedToPost {
     [mainWindowController resetAndFocusMessageTextField];
     [self setIconImageToNormal];
-    [self updateStatus];
+    [self restartFriendsTimelineRefreshTimerAfter:1];
 }
 
 - (void) failedToPost:(NSString*)message {

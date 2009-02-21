@@ -64,5 +64,4 @@
 - (void) sendMessage:(NSString*)message;
 
 - (BOOL) isCreatingFavoriteWorking;
-
 @end
