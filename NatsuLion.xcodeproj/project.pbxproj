@@ -83,7 +83,6 @@
 		E9D811E20F434CA7008FCD80 /* MessageTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811E00F434CA7008FCD80 /* MessageTableView.xib */; };
 		E9D811E50F434D08008FCD80 /* TwitterStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9D811E30F434D08008FCD80 /* TwitterStatusView.xib */; };
 		E9D812230F44802B008FCD80 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D812220F44802B008FCD80 /* Carbon.framework */; };
-		E9D8137E0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9D8137D0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m */; };
 		E9DC0FD20D3D226A00CC6D41 /* TwitterTestStub.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */; };
 		E9DE941F0E88C1C600D591A7 /* NTLNScreenNameFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DE941E0E88C1C600D591A7 /* NTLNScreenNameFilterView.m */; };
 		E9E2ACE00D22EB21008561C2 /* TwitterStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E2ACDF0D22EB21008561C2 /* TwitterStatusView.m */; };
@@ -254,8 +253,6 @@
 		E9D811E10F434CA7008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MessageTableView.xib; sourceTree = "<group>"; };
 		E9D811E40F434D08008FCD80 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/TwitterStatusView.xib; sourceTree = "<group>"; };
 		E9D812220F44802B008FCD80 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
-		E9D8137C0F48C8A6008FCD80 /* NTLNQuickPostWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNQuickPostWindowController.h; sourceTree = "<group>"; };
-		E9D8137D0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTLNQuickPostWindowController.m; sourceTree = "<group>"; };
 		E9DC0FD00D3D226A00CC6D41 /* TwitterTestStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTestStub.h; sourceTree = "<group>"; };
 		E9DC0FD10D3D226A00CC6D41 /* TwitterTestStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTestStub.m; sourceTree = "<group>"; };
 		E9DE941D0E88C1C600D591A7 /* NTLNScreenNameFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTLNScreenNameFilterView.h; sourceTree = "<group>"; };
@@ -355,8 +352,6 @@
 				E9FE91660D81527C0012136E /* NTLNBufferedMessageNotifier.m */,
 				E97615290D9FDE10007893CC /* Crypto.h */,
 				E976152A0D9FDE10007893CC /* Crypto.m */,
-				E9D8137C0F48C8A6008FCD80 /* NTLNQuickPostWindowController.h */,
-				E9D8137D0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -735,7 +730,6 @@
 				E99408070DEF43FD0009A365 /* NTLNSegmentedCell.m in Sources */,
 				E922F4620E88B7AF00DF4EB6 /* NTLNFilterView.m in Sources */,
 				E9DE941F0E88C1C600D591A7 /* NTLNScreenNameFilterView.m in Sources */,
-				E9D8137E0F48C8A6008FCD80 /* NTLNQuickPostWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -75,8 +75,10 @@ pageTracker._trackPageview();
 
 </p>
 
+<!--
 <h4>ベータバージョン</h4>
 <p>ベータバージョンは<a href="http://www.natsulion.org/download/NatsuLion_1.9b1.zip">こちら</a>ダウンロードできます。Progress Indicator (通称ぐるぐる) が止まらない問題を一部修正しました。</p>
+-->
 
 <h3>スクリーンショット</h3>
 <p>
@@ -140,9 +142,50 @@ pageTracker._trackPageview();
 <h3>謝辞</h3>
 <p>
 開発初期の段階からテストに参加してたくさんの指摘やアイデアをくれた @yusukey どうもありがとう。
+<dl>
+  <dt>Doc アイコンデザイン</dt><dd>Yuki</dd>
+  <dt>ツールバーメインアイコンデザイン</dt><dd>@epytwen</dd>
+</dl>
 </p>
 
 <h2>リリースノート</h2>
+
+<h3 id="1.10">Version 1.10 (2009/02/21)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.10.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.10.zip');">download</a>
+<p>
+<p>in_reply_to サポートと Adium、iTunes 連携が追加されました。ドイツ語の翻訳は @gatogatogato によるものです。Matt は web サイトのおかしな英語を直してくれました。みんなありがとう。</p>
+    
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-230'>NTLN-230</a>] -         . at end of URL is being regarded as part of the URL
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-237'>NTLN-237</a>] -         reply to screen name that includes mine is regarded as to me
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-227'>NTLN-227</a>] -         Eliminating duplicate direct message notification
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-232'>NTLN-232</a>] -         https link should be clickable
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-233'>NTLN-233</a>] -         in_reply_to_status_id support
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-234'>NTLN-234</a>] -         reload after post
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-236'>NTLN-236</a>] -         improve English of the web site
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-228'>NTLN-228</a>] -         Adium support: change status when post tweet
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-231'>NTLN-231</a>] -         German support 
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-238'>NTLN-238</a>] -         iTunes &quot;now playing&quot; feature
+</li>
+</ul>
+</p>
+       
 
 <h3 id="1.9">Version 1.9 (2008/10/28)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.9.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.9.zip');">download</a>
 <p>

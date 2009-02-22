@@ -76,8 +76,10 @@ The goals for NatsuLion are:
 <a href="http://www.natsulion.org/download/NatsuLion.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion.zip');">Download</a> the latest version.
 </p>
 
+<!--
 <h4>Beta Version</h4>
 <p>There is also beta version. If you are interested, <a href="http://www.natsulion.org/download/NatsuLion_1.9b1.zip">try the beta</a>.</p>
+-->
 
 <h3>Screen Shots</h3>
 <p>
@@ -130,9 +132,49 @@ If you find a bug or have any new feature ideas, please file issues to <a href="
 <h3>Special Thanks</h3>
 <p>
 @yusukey has been participating since the early development phase, filed a lot of bugs and brought nice ideas (e.g. To use Sparkle is his idea.). Thank you very much!
+<dl>
+  <dt>Doc icon design</dt><dd>Yuki</dd>
+  <dt>Toolbar icon design</dt><dd>@epytwen</dd>
+</dl>
 </p>
 
 <h2>Release Notes</h2>
+<h3 id="1.10">Version 1.10 (2009/02/21)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.10.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.10.zip');">download</a>
+<p>
+<p>In this version, NatsuLion supports in_reply_to and Adium, iTunes integration, and also there's German language support which is contributed by @gatogatogato. Matt have refined my poor English in the web site. Thanks a lot!</p>
+    
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-230'>NTLN-230</a>] -         . at end of URL is being regarded as part of the URL
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-237'>NTLN-237</a>] -         reply to screen name that includes mine is regarded as to me
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-227'>NTLN-227</a>] -         Eliminating duplicate direct message notification
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-232'>NTLN-232</a>] -         https link should be clickable
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-233'>NTLN-233</a>] -         in_reply_to_status_id support
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-234'>NTLN-234</a>] -         reload after post
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-236'>NTLN-236</a>] -         improve English of the web site
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-228'>NTLN-228</a>] -         Adium support: change status when post tweet
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-231'>NTLN-231</a>] -         German support 
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-238'>NTLN-238</a>] -         iTunes &quot;now playing&quot; feature
+</li>
+</ul>
+</p>
+        
 
 <h3 id="1.9">Version 1.9 (2008/10/28)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.9.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.9.zip');">download</a>
 <p>

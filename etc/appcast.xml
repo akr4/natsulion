@@ -7,6 +7,47 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.10</title>
+      <description>
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-230'&gt;NTLN-230&lt;/a&gt;] -         . at end of URL is being regarded as part of the URL
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-237'&gt;NTLN-237&lt;/a&gt;] -         reply to screen name that includes mine is regarded as to me
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-227'&gt;NTLN-227&lt;/a&gt;] -         Eliminating duplicate direct message notification
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-232'&gt;NTLN-232&lt;/a&gt;] -         https link should be clickable
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-233'&gt;NTLN-233&lt;/a&gt;] -         in_reply_to_status_id support
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-234'&gt;NTLN-234&lt;/a&gt;] -         reload after post
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-228'&gt;NTLN-228&lt;/a&gt;] -         Adium support: change status when post tweet
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-231'&gt;NTLN-231&lt;/a&gt;] -         German support 
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-238'&gt;NTLN-238&lt;/a&gt;] -         iTunes &quot;now playing&quot; feature
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Sat, 21 Feb 2009 20:15:00 +9000</pubDate>
+      <enclosure url="http://www.natsulion.org/download/NatsuLion_1.10.zip"
+        length="1755964"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.9</title>
       <description>
         Release Notes - NatsuLion - Version 1.9
