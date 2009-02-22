@@ -37,5 +37,7 @@ enum NTLNMessageStatus {
 
 - (BOOL) isEqual:(id)anObject;
 - (void) finishedToSetProperties;
+- (BOOL) isGoodNightMessage;
++ (BOOL) isGoodNightMessageText:(NSString*)message;
 
 @end

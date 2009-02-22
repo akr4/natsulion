@@ -8,8 +8,7 @@
 
 @class NTLNMultiTasksProgressIndicator;
 
-@interface NTLNAppController : NSObject<NTLNWelcomeWindowCallback, NTLNGrowlClickCallbackTarget, 
-        TwitterTimelineCallback, TwitterPostCallback, TwitterFavoriteCallback, TwitterRateLimitStatusCallback> {
+@interface NTLNAppController : NSObject<NTLNWelcomeWindowCallback, NTLNGrowlClickCallbackTarget, TwitterTimelineCallback, TwitterPostCallback, TwitterFavoriteCallback, TwitterRateLimitStatusCallback> {
     IBOutlet NTLNMainWindowController *mainWindowController;
     IBOutlet NTLNPreferencesWindowController *preferencesWindowController;
     IBOutlet NTLNWelcomeWindowController *welcomeWindowController;
@@ -41,6 +40,11 @@
 #pragma mark Statistics
     NSMutableArray *_messageCountHistory;
     long _numberOfPostedMessages;
+
+#pragma mark Good Night
+    // ++ after send, -- after receive, -1 means received other NatsuLion's post
+    int _sendReceiveGoodNightCount;
+    BOOL _goodNightEnabled;
 }
 
 - (IBAction) showPreferencesSheet:(id)sender;

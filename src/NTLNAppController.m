@@ -40,6 +40,14 @@
                                    selector:@selector(enableGrowl)
                                    userInfo:nil
                                     repeats:FALSE];
+    
+    _goodNightEnabled = FALSE;
+    [NSTimer scheduledTimerWithTimeInterval:180
+                                     target:self
+                                   selector:@selector(enableGoodNight)
+                                   userInfo:nil
+                                    repeats:FALSE];
+
     _messageCountHistory = [[NSMutableArray alloc] initWithCapacity:30];
     _numberOfPostedMessages = 0;
     
@@ -364,6 +372,38 @@
     }
 }
 
+#pragma mark Good Night
+- (void) enableGoodNight {
+    _goodNightEnabled = TRUE;
+}
+
+- (void) checkShouldSleepByGoodNight
+{
+    if (_sendReceiveGoodNightCount < 0) {
+        NSLog(@"shutting down by goodnight NatsuLion command");
+        [[NSApplication sharedApplication] terminate:nil];
+    }
+}
+
+- (void) processSendMessageIfGoodNight:(NSString*)message
+{
+    if (_goodNightEnabled && [NTLNMessage isGoodNightMessageText:message]) {
+        _sendReceiveGoodNightCount++;
+        NSLog(@"sending Goodnight message. count=%d", _sendReceiveGoodNightCount);
+    }
+}
+
+- (void) processReceivedMessageIfGoodNight:(NTLNMessage*)message
+{
+    if (_goodNightEnabled && [message isGoodNightMessage]) {
+        _sendReceiveGoodNightCount--;
+        NSLog(@"received good night message. count=%d", _sendReceiveGoodNightCount);
+        if (_sendReceiveGoodNightCount < 0) {
+            [self sendReplyMessage:@"zzz..." toStatusId:[message statusId]];
+        }
+    }
+}
+
 #pragma mark -
 
 #pragma mark TwitterRateLimitStatusCallback
@@ -442,6 +482,8 @@
 
 - (void) sendReplyMessage:(NSString*)message toStatusId:(NSString*)statusId
 {
+    [self processSendMessageIfGoodNight:message];
+    
     NSString *password = [[NTLNAccount instance] password];
     [_twitter sendMessage:message
                  username:[[NTLNAccount instance] username]
@@ -450,6 +492,8 @@
 }
 
 - (void) sendMessage:(NSString*)message {
+    [self processSendMessageIfGoodNight:message];
+
     NSString *password = [[NTLNAccount instance] password];
     [_twitter sendMessage:message
                  username:[[NTLNAccount instance] username]
@@ -577,12 +621,14 @@
 
 #pragma mark TwitterPostCallback
 - (void) finishedToPost {
+    [self checkShouldSleepByGoodNight];
     [mainWindowController resetAndFocusMessageTextField];
     [self setIconImageToNormal];
     [self restartFriendsTimelineRefreshTimerAfter:1];
 }
 
 - (void) failedToPost:(NSString*)message {
+    [self checkShouldSleepByGoodNight];
     [self addNewErrorMessageWirthController:
      [NTLNErrorMessageViewController controllerWithTitle:NSLocalizedString(@"Sending a message failed", @"Title of error message")
                                                  message:message
@@ -599,6 +645,7 @@
                                                     initWithTwitterStatus:(NTLNMessage*)s
                                                     messageViewListener:mainWindowController] autorelease];
         if ([self isNewMessage:controller]) {
+            [self processReceivedMessageIfGoodNight:s];
             [_messageNotifier addMessageViewController:controller];
         }
     }

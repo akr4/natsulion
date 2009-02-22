@@ -69,6 +69,25 @@
     }
 }
 
++ (BOOL) isGoodNightMessageText:(NSString*)message
+{
+    if ([message isEqual:[NSString stringWithFormat:@"@%@ %@",
+                          [[NTLNAccount instance] username],
+                          NSLocalizedString(@"Good night NatsuLion", @"goodnight NatsuLion command")]]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL) isGoodNightMessage
+{
+    if ([[self class] isGoodNightMessageText:[self text]]
+        && [[self screenName] isEqual:[[NTLNAccount instance] username]]) {
+        return YES;
+    }
+    return NO;
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"statusId:%@, name:%@, screenName:%@, text:%@, icon:%@, timestamp:%@",
