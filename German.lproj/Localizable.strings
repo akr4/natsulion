@@ -41,6 +41,7 @@
 "Find" = "Suchen";
 "Conversation" = "Unterhaltung";
 "iTunes Track" = "iTunes Titel";
+"Repost" = "Repost";
 
 "Reset at %@" = "Zurueckgesetzt um %@";
 "Exceeded API rate limit" = "Maximale Anzahl API-Aufrufe ueberschritten";

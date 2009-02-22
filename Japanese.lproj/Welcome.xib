@@ -62,7 +62,7 @@
 								<reference key="NSControlView" ref="893192756"/>
 								<object class="NSColor" key="NSBackgroundColor" id="493147655">
 									<int key="NSColorSpace">6</int>
-									<string key="NSCatalogName" id="778676264">System</string>
+									<string key="NSCatalogName" id="552232997">System</string>
 									<string key="NSColorName">controlColor</string>
 									<object class="NSColor" key="NSColor">
 										<int key="NSColorSpace">3</int>
@@ -71,7 +71,7 @@
 								</object>
 								<object class="NSColor" key="NSTextColor" id="652145705">
 									<int key="NSColorSpace">6</int>
-									<reference key="NSCatalogName" ref="778676264"/>
+									<reference key="NSCatalogName" ref="552232997"/>
 									<string key="NSColorName">controlTextColor</string>
 									<object class="NSColor" key="NSColor" id="520831285">
 										<int key="NSColorSpace">3</int>
@@ -121,7 +121,7 @@
 								<bool key="NSDrawsBackground">YES</bool>
 								<object class="NSColor" key="NSBackgroundColor" id="833991388">
 									<int key="NSColorSpace">6</int>
-									<reference key="NSCatalogName" ref="778676264"/>
+									<reference key="NSCatalogName" ref="552232997"/>
 									<string key="NSColorName">textBackgroundColor</string>
 									<object class="NSColor" key="NSColor">
 										<int key="NSColorSpace">3</int>
@@ -130,7 +130,7 @@
 								</object>
 								<object class="NSColor" key="NSTextColor" id="863673100">
 									<int key="NSColorSpace">6</int>
-									<reference key="NSCatalogName" ref="778676264"/>
+									<reference key="NSCatalogName" ref="552232997"/>
 									<string key="NSColorName">textColor</string>
 									<reference key="NSColor" ref="520831285"/>
 								</object>
@@ -675,9 +675,9 @@
 					<reference ref="421552709"/>
 					<reference ref="9"/>
 					<reference ref="421552709"/>
-					<string id="17330637">{{363, 230}, {480, 360}}</string>
+					<string id="837508223">{{363, 230}, {480, 360}}</string>
 					<reference ref="9"/>
-					<reference ref="17330637"/>
+					<reference ref="837508223"/>
 					<reference ref="9"/>
 					<reference ref="9"/>
 					<string>{3.40282e+38, 3.40282e+38}</string>

@@ -42,6 +42,7 @@
 "Find" = "検索";
 "Conversation" = "会話を表示";
 "iTunes Track" = "iTunes 曲名";
+"Repost" = "Repost";
 
 "Reset at %@" = "%@ に回復します";
 "Exceeded API rate limit" = "API 制限です";
