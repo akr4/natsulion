@@ -3,6 +3,7 @@
 #import "NTLNMainWindowController.h"
 #import "NTLNConfiguration.h"
 #import "NTLNNotification.h"
+#import "TwitterUtils.h"
 
 static NSImage *favoliteIcon;
 static NSImage *highlightedFavoliteIcon;
@@ -214,6 +215,8 @@ static TwitterStatusViewController *starred = nil;
     }
 }
 
+#pragma mark -
+#pragma mark Action
 - (IBAction) toggleFavorite:(id)sender {
     [self showStar:TRUE];
     [favoliteButton setEnabled:FALSE];
@@ -226,6 +229,14 @@ static TwitterStatusViewController *starred = nil;
     }
 }
 
+- (IBAction) openReplyToMessage:(id)sender
+{
+    [[NSWorkspace sharedWorkspace] openURL:
+     [NSURL URLWithString:[[TwitterUtils utils] statusPageURLString:[_status inReplyToScreenName] statusId:[_status inReplyToStatusId]]]];
+}
+
+#pragma mark -
+#pragma mark Favorites
 - (void) favoriteCreated {
     if (_starHighlighted) {
         [favoliteButton setImage:favoliteIcon];

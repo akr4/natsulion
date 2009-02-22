@@ -30,6 +30,7 @@
 }
 
 - (IBAction) toggleFavorite:(id)sender;
+- (IBAction) openReplyToMessage:(id)sender;
 
 - (id) initWithTwitterStatus:(NTLNMessage*)status messageViewListener:(NSObject<NTLNMessageViewListener>*)listener;
 - (BOOL) isEqual:(id)anObject;

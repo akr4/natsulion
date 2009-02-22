@@ -32,5 +32,6 @@ enum NTLNMessageInputTextFieldLengthState {
 
 - (void) addReplyTo:(NTLNMessage*)message;
 - (void) addDmReplyTo:(NTLNMessage*)message;
+- (void) setRepostMessage:(NTLNMessage*)message;
 
 @end

@@ -203,7 +203,6 @@
     [newText appendString:@" "];
     [self setStringValue:newText];
     [self textChanged];
-    return;
 }
 
 - (void) addDmReplyTo:(NTLNMessage*)message {
@@ -212,6 +211,16 @@
     } else {
         [self addReplyTo:message];
     }
+}
+
+- (void) setRepostMessage:(NTLNMessage*)message
+{
+    NSMutableString *newText = [[[NSMutableString alloc] initWithCapacity:200] autorelease];
+    [newText appendString:[self stringValue]];
+    [newText appendString:[message text]];
+    [newText appendFormat:@" (via @%@)", [message screenName]];
+    [self setStringValue:newText];
+    [self textChanged];
 }
 
 - (void) focusAndLocateCursorEnd {

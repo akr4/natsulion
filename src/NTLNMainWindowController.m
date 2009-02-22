@@ -572,9 +572,7 @@
 
         default:
             if ([[[messageTextField stringValue] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0) {
-                if (messageRepliedTo) {
-                    [message release];
-                }
+                [messageRepliedTo release];
                 [message retain];
                 messageRepliedTo = message;
             }
@@ -655,11 +653,15 @@
     
     if ([messageRepliedTo screenName] && [[messageTextField stringValue] rangeOfString:[messageRepliedTo screenName]].location != NSNotFound) {
         [appController sendReplyMessage:[messageTextField stringValue] toStatusId:[messageRepliedTo statusId]];
+    } else if ([messageRepliedTo screenName]
+               && [[messageTextField stringValue] rangeOfString:
+                   [NSString stringWithFormat:@"(via %@)", [messageRepliedTo screenName]]].location != NSNotFound) {
+        [appController sendReplyMessage:[messageTextField stringValue] toStatusId:[messageRepliedTo statusId]];
     } else {
         [appController sendMessage:[messageTextField stringValue]];
     }
 }
-    
+
 - (IBAction) updateTimelineCorrespondsToView:(id)sender {
     switch ([_messageViewSelector selectedSegment]) {
         case 0:
@@ -694,6 +696,21 @@
 - (IBAction) replyToSelectedMessage:(id)sender
 {
     [self replyDesiredFor:[messageTableViewController selectedMessage]];
+}
+
+- (IBAction) repostSelectedMessage:(id)sender
+{
+    NTLNMessage *message = [messageTableViewController selectedMessage];
+    if ([message replyType] == NTLN_MESSAGE_REPLY_TYPE_DIRECT) {
+        return;
+    }
+
+    [messageRepliedTo release];
+    [message retain];
+    messageRepliedTo = message;
+            
+    [messageTextField setRepostMessage:message];
+    [messageTextField focusAndLocateCursorEnd];
 }
 
 - (IBAction) setPlayingTrackName:(id)sender

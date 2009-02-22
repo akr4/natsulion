@@ -245,6 +245,8 @@
         
         NSString *timestampStr = [[NTLNXMLHTTPEncoder encoder] decodeXML:[self stringValueFromNSXMLNode:status byXPath:@"created_at/text()"]];
         [backStatus setTimestamp:[NSDate dateWithNaturalLanguageString:timestampStr]];
+        [backStatus setInReplyToStatusId:[self stringValueFromNSXMLNode:status byXPath:@"in_reply_to_status_id/text()"]];
+        [backStatus setInReplyToScreenName:[self stringValueFromNSXMLNode:status byXPath:@"in_reply_to_screen_name/text()"]];
         
         NSString *iconUrl = [self convertToLargeIconUrl:[self stringValueFromNSXMLNode:status byXPath:@"user/profile_image_url/text()"]];
         

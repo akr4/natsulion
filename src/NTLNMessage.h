@@ -24,9 +24,11 @@ enum NTLNMessageStatus {
     enum NTLNReplyType replyType;
     enum NTLNMessageStatus status;
     NTLNUser *user;
+    NSString *inReplyToStatusId;
+    NSString *inReplyToScreenName;
 }
 
-@property(readwrite, retain) NSString *statusId, *name, *screenName, *text;
+@property(readwrite, retain) NSString *statusId, *name, *screenName, *text, *inReplyToStatusId, *inReplyToScreenName;
 @property(readwrite, retain) NSImage *icon;
 @property(readwrite, retain) NSDate *timestamp;
 @property(readwrite) enum NTLNReplyType replyType;

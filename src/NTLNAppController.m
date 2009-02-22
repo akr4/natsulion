@@ -4,7 +4,6 @@
 #import "NTLNConfiguration.h"
 #import "NTLNNotification.h"
 #import "NTLNMultiTasksProgressIndicator.h"
-#import "NTLNQuickPostWindowController.h"
 #import "TwitterStatusViewController.h"
 #import "Adium.h"
 

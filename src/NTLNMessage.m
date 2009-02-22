@@ -4,7 +4,7 @@
 
 @implementation NTLNMessage
 
-@synthesize statusId, name, screenName, text, icon, timestamp, replyType, status, user;
+@synthesize statusId, name, screenName, text, icon, timestamp, replyType, status, user, inReplyToStatusId, inReplyToScreenName;
 
 - (void) dealloc {
     [statusId release];
@@ -13,6 +13,9 @@
     [text release];
     [icon release];
     [timestamp release];
+    [user release];
+    [inReplyToStatusId release];
+    [inReplyToScreenName release];
     [super dealloc];
 }
 
