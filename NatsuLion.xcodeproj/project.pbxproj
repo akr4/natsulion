@@ -140,6 +140,13 @@
 		E902FA280F4FE191000DB70D /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/MessageTableView.xib; sourceTree = "<group>"; };
 		E902FA290F4FE194000DB70D /* German */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = German; path = German.lproj/MessageTableView.xib; sourceTree = "<group>"; };
 		E9052DF10F1286D700E8E1F2 /* German */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = German; path = German.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E90532880F73B0F50085605F /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Spanish; path = Spanish.lproj/MessageTableView.xib; sourceTree = "<group>"; };
+		E905328A0F73B1060085605F /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Spanish; path = Spanish.lproj/ErrorMessageView.xib; sourceTree = "<group>"; };
+		E905328B0F73B10F0085605F /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Spanish; path = Spanish.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E905328D0F73B1370085605F /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Spanish; path = Spanish.lproj/Welcome.xib; sourceTree = "<group>"; };
+		E905328F0F73B1480085605F /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Spanish; path = Spanish.lproj/TwitterStatusView.xib; sourceTree = "<group>"; };
+		E90532900F73B1520085605F /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E90532940F73B16B0085605F /* Spanish */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Spanish; path = Spanish.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E90B0F300DE1A4A4008CC765 /* friends.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = friends.tiff; sourceTree = "<group>"; };
 		E90B0F330DE1A4B9008CC765 /* sent.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = sent.tiff; sourceTree = "<group>"; };
 		E90B0F340DE1A4B9008CC765 /* unread.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = unread.tiff; sourceTree = "<group>"; };
@@ -609,6 +616,13 @@
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "NatsuLion" */;
 			compatibilityVersion = "Xcode 3.0";
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Spanish,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* NatsuLion */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -753,6 +767,7 @@
 				089C165DFE840E0CC02AAC07 /* English */,
 				E96801F30D2748DB0048A163 /* Japanese */,
 				E99ADB100F42922900900DA5 /* German */,
+				E90532900F73B1520085605F /* Spanish */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -763,6 +778,7 @@
 				E9D23B700D8EF5BD006191EE /* English */,
 				E9D23B720D8EF5D6006191EE /* Japanese */,
 				E9052DF10F1286D700E8E1F2 /* German */,
+				E90532940F73B16B0085605F /* Spanish */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -773,6 +789,7 @@
 				E9D811A30F4340C9008FCD80 /* English */,
 				E9D811AA0F434123008FCD80 /* Japanese */,
 				E9D811AB0F434127008FCD80 /* German */,
+				E905328B0F73B10F0085605F /* Spanish */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -783,6 +800,7 @@
 				E9D811D10F434AE3008FCD80 /* English */,
 				E9D811D30F434AFA008FCD80 /* Japanese */,
 				E9D811D40F434AFD008FCD80 /* German */,
+				E905328D0F73B1370085605F /* Spanish */,
 			);
 			name = Welcome.xib;
 			sourceTree = "<group>";
@@ -793,6 +811,7 @@
 				E9D811D80F434C77008FCD80 /* English */,
 				E902FA260F4FE17B000DB70D /* Japanese */,
 				E902FA270F4FE181000DB70D /* German */,
+				E905328A0F73B1060085605F /* Spanish */,
 			);
 			name = ErrorMessageView.xib;
 			sourceTree = "<group>";
@@ -803,6 +822,7 @@
 				E9D811E10F434CA7008FCD80 /* English */,
 				E902FA280F4FE191000DB70D /* Japanese */,
 				E902FA290F4FE194000DB70D /* German */,
+				E90532880F73B0F50085605F /* Spanish */,
 			);
 			name = MessageTableView.xib;
 			sourceTree = "<group>";
@@ -813,6 +833,7 @@
 				E9D811E40F434D08008FCD80 /* English */,
 				E902FA240F4FE162000DB70D /* Japanese */,
 				E902FA250F4FE166000DB70D /* German */,
+				E905328F0F73B1480085605F /* Spanish */,
 			);
 			name = TwitterStatusView.xib;
 			sourceTree = "<group>";

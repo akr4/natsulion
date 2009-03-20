@@ -389,17 +389,21 @@
 {
     if (_goodNightEnabled && [NTLNMessage isGoodNightMessageText:message]) {
         _sendReceiveGoodNightCount++;
-        NSLog(@"sending Goodnight message. count=%d", _sendReceiveGoodNightCount);
+        NSLog(@"sending good night message. count=%d", _sendReceiveGoodNightCount);
     }
 }
 
 - (void) processReceivedMessageIfGoodNight:(NTLNMessage*)message
 {
     if (_goodNightEnabled && [message isGoodNightMessage]) {
-        _sendReceiveGoodNightCount--;
-        NSLog(@"received good night message. count=%d", _sendReceiveGoodNightCount);
-        if (_sendReceiveGoodNightCount < 0) {
-            [self sendReplyMessage:@"zzz..." toStatusId:[message statusId]];
+        if ([[message timestamp] timeIntervalSinceNow] > -[[NTLNConfiguration instance] refreshIntervalSeconds]) {
+            _sendReceiveGoodNightCount--;
+            NSLog(@"received good night message (%@). count=%d", [message statusId], _sendReceiveGoodNightCount);
+            if (_sendReceiveGoodNightCount < 0) {
+                [self sendReplyMessage:@"zzz..." toStatusId:[message statusId]];
+            }
+        } else {
+            NSLog(@"ignored good night message (%@) because of too old", [message statusId]);
         }
     }
 }

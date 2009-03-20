@@ -197,6 +197,13 @@ static TwitterStatusViewController *starred = nil;
     return [view requiredHeight];
 }
 
+- (void) iconViewCmdClicked {
+    enum NTLNReplyType statusReplyTypeSave = _status.replyType;
+    _status.replyType = NTLN_MESSAGE_REPLY_TYPE_DIRECT;
+    [_listener replyDesiredFor:_status];
+    _status.replyType = statusReplyTypeSave;
+}
+
 - (void) iconViewClicked {
     [_listener replyDesiredFor:_status];
 }

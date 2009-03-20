@@ -18,7 +18,11 @@
 
 - (void) mouseDown:(NSEvent *)theEvent {
 //    [[self superview] mouseDown:theEvent];
-    [_controller iconViewClicked];
+    if ([theEvent modifierFlags] & NSCommandKeyMask) {
+        [_controller iconViewCmdClicked];
+    } else {
+        [_controller iconViewClicked];
+    }
 }
 
 -(void)cursorUpdate:(NSEvent *)theEvent {

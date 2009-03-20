@@ -37,6 +37,7 @@
 - (void) showStar:(BOOL)show;
 - (NTLNMessage*) message;
 - (void) markAsRead;
+- (void) iconViewCmdClicked;
 
 @end
 

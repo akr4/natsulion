@@ -71,9 +71,11 @@
 
 + (BOOL) isGoodNightMessageText:(NSString*)message
 {
-    if ([message isEqual:[NSString stringWithFormat:@"@%@ %@",
-                          [[NTLNAccount instance] username],
-                          NSLocalizedString(@"Good night NatsuLion", @"goodnight NatsuLion command")]]) {
+    if ([[[message lowercaseString] stringByReplacingOccurrencesOfString:@" " withString:@""]
+         isEqual:[NSString stringWithFormat:@"@%@%@",
+                   [[NTLNAccount instance] username],
+                   [[NSLocalizedString(@"Good night NatsuLion", @"goodnight NatsuLion command") lowercaseString] 
+                    stringByReplacingOccurrencesOfString:@" " withString:@""]]]) {
         return YES;
     }
     return NO;
