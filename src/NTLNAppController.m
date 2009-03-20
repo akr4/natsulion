@@ -503,6 +503,11 @@
                  username:[[NTLNAccount instance] username]
                  password:password];
 
+    NSRange dmPrefixRange = [message rangeOfString:@"D "];
+    if (dmPrefixRange.location != NSNotFound && dmPrefixRange.location == 0) {
+        NSLog(@"ignored DM for Adium status");
+        return;
+    }
     if ([[NTLNConfiguration instance] useAdiumStatus]) {
         AdiumApplication *adium = [SBApplication applicationWithBundleIdentifier:@"com.adiumX.adiumX"];
         if ([adium isRunning]) {

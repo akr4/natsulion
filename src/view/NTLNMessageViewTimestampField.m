@@ -19,12 +19,11 @@
 - (void) setTimestamp:(NSDate*)timestamp {
     _timestamp = timestamp;
     [_timestamp retain];
-    
-    [self setStringValue:[_timestamp descriptionWithCalendarFormat:@"%02H:%02M:%02S"
-                                                         timeZone:[NSTimeZone localTimeZone]
-                                                           locale:[[NSUserDefaults standardUserDefaults]
-                                                                   dictionaryRepresentation]]];
-    
+
+    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+    [formatter setDateStyle:NSDateFormatterNoStyle];
+    [formatter setTimeStyle:NSDateFormatterMediumStyle];
+    [self setStringValue:[formatter stringFromDate:_timestamp]];
 }
 
 @end
