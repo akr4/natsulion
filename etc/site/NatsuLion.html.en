@@ -137,6 +137,36 @@ If you find a bug or have any new feature ideas, please file issues to <a href="
 </p>
 
 <h2>Release Notes</h2>
+<h3 id="1.11">Version 1.11 (2009/03/21)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.11.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.11.zip');">download</a>
+<p>
+<p>In this version, NatsuLion now have "Repost" feature. You can find it in the Message menu. In addition to that, There're Spanish support (by <a href="http://twitter.com/soycamo">@soycamo</a>) and German language update (by <a href="http://twitter.com/jezdez">@jezdez</a>). Thank you guys! And there's one more thing... added Goodnight NatsuLion feature.</p>
+</p>
+
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-246'>NTLN-246</a>] -         avoid updating Adium status by DM
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-245'>NTLN-245</a>] -         localized timestamp format 
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-247'>NTLN-247</a>] -         German language update
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-239'>NTLN-239</a>] -         'via' support
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-240'>NTLN-240</a>] -         goodnight NatsuLion feature
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-244'>NTLN-244</a>] -         Spanish support
+</li>
+</ul>
+</p>        
+
 <h3 id="1.10">Version 1.10 (2009/02/21)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.10.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.10.zip');">download</a>
 <p>
 <p>In this version, NatsuLion supports in_reply_to and Adium, iTunes integration, and also there's German language support which is contributed by @gatogatogato. Matt have refined my poor English in the web site. Thanks a lot!</p>

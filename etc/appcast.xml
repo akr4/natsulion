@@ -7,6 +7,41 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.11</title>
+      <description>
+&lt;h2&gt;        Bug
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-246'&gt;NTLN-246&lt;/a&gt;] -         avoid updating Adium status by DM
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-245'&gt;NTLN-245&lt;/a&gt;] -         localized timestamp format 
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-247'&gt;NTLN-247&lt;/a&gt;] -         German language update
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+&lt;h2&gt;        New Feature
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-239'&gt;NTLN-239&lt;/a&gt;] -         'via' support
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-240'&gt;NTLN-240&lt;/a&gt;] -         goodnight NatsuLion feature
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-244'&gt;NTLN-244&lt;/a&gt;] -         Spanish support
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Sat, 21 Mar 2009 19:20:00 +9000</pubDate>
+      <enclosure url="http://www.natsulion.org/download/NatsuLion_1.11.zip"
+        length="1821602"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.10</title>
       <description>
 &lt;h2&gt;        Bug

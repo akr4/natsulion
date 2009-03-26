@@ -1302,7 +1302,7 @@
 											<object class="NSButton" id="868880385">
 												<reference key="NSNextResponder" ref="930900267"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{17, 124}, {337, 18}}</string>
+												<string key="NSFrame">{{17, 124}, {359, 18}}</string>
 												<reference key="NSSuperview" ref="930900267"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="223499764">
@@ -1329,12 +1329,12 @@
 											<object class="NSTextField" id="798732622">
 												<reference key="NSNextResponder" ref="930900267"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{16, 60}, {144, 17}}</string>
+												<string key="NSFrame">{{16, 60}, {190, 17}}</string>
 												<reference key="NSSuperview" ref="930900267"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="186772570">
 													<int key="NSCellFlags">67239488</int>
-													<int key="NSCellFlags2">272630784</int>
+													<int key="NSCellFlags2">4195328</int>
 													<string key="NSContents">Erneut laden (Sek.):</string>
 													<reference key="NSSupport" ref="516294854"/>
 													<reference key="NSControlView" ref="798732622"/>
@@ -1345,7 +1345,7 @@
 											<object class="NSTextField" id="232983401">
 												<reference key="NSNextResponder" ref="930900267"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{168, 56}, {28, 22}}</string>
+												<string key="NSFrame">{{197, 55}, {28, 22}}</string>
 												<reference key="NSSuperview" ref="930900267"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSTextFieldCell" key="NSCell" id="734922790">
@@ -1379,7 +1379,7 @@
 											<object class="NSStepper" id="289726343">
 												<reference key="NSNextResponder" ref="930900267"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{201, 52}, {19, 27}}</string>
+												<string key="NSFrame">{{227, 51}, {19, 27}}</string>
 												<reference key="NSSuperview" ref="930900267"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSStepperCell" key="NSCell" id="177006831">
@@ -4277,8 +4277,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="373451298"/>
 							<reference ref="502594106"/>
-							<reference ref="289726343"/>
-							<reference ref="232983401"/>
 							<reference ref="787368081"/>
 							<reference ref="298947288"/>
 							<reference ref="798732622"/>
@@ -4287,6 +4285,8 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<reference ref="868880385"/>
 							<reference ref="130546803"/>
 							<reference ref="763860911"/>
+							<reference ref="232983401"/>
+							<reference ref="289726343"/>
 						</object>
 						<reference key="parent" ref="747741020"/>
 					</object>

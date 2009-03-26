@@ -289,7 +289,7 @@
     [self addToolbarItemWithIdentifier:@"itunes"
                                  label:NSLocalizedString(@"iTunes Track", @"Toolbar label")
                                 target:self
-                                action:@selector(openScreenNameFilterView:)
+                                action:@selector(setPlayingTrackName:)
                                   view:iTunesButton];
 
     [[self window] setToolbar:toolbar];

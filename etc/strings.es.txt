@@ -1,7 +1,5 @@
-Applicar=Applicar
-Salir de NatsuLion=Salir de NatsuLion
-nada=nada
-Completo=Completo
+Apply=Applicar
+Quit NatsuLion=Salir de NatsuLion
 Message=Mensaje
 AMainMenu=AMainMenu
 Summarize when more than:=Número de mensaje:

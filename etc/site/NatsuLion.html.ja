@@ -148,6 +148,36 @@ pageTracker._trackPageview();
 
 <h2>リリースノート</h2>
 
+<h3 id="1.11">Version 1.11 (2009/03/21)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.11.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.11.zip');">download</a>
+<p>
+<p>リポスト機能が追加されました。メニューバーのメッセージにあります。スペイン語のサポート (by <a href="http://twitter.com/soycamo">@soycamo</a>) とドイツ語対応が少し改善されました (by <a href="http://twitter.com/jezdez">@jezdez</a>)。ありがとう! それから One more thing..., おやすみ夏ライオンというのもあります。
+</p>
+
+Bug
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-246'>NTLN-246</a>] -         avoid updating Adium status by DM
+</li>
+</ul>
+    
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-245'>NTLN-245</a>] -         localized timestamp format 
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-247'>NTLN-247</a>] -         German language update
+</li>
+</ul>
+    
+New Feature
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-239'>NTLN-239</a>] -         'via' support
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-240'>NTLN-240</a>] -         goodnight NatsuLion feature
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-244'>NTLN-244</a>] -         Spanish support
+</li>
+</ul>
+</p>        
+
 <h3 id="1.10">Version 1.10 (2009/02/21)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.10.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.10.zip');">download</a>
 <p>
 <p>in_reply_to サポートと Adium、iTunes 連携が追加されました。ドイツ語の翻訳は @gatogatogato によるものです。Matt は web サイトのおかしな英語を直してくれました。みんなありがとう。</p>
