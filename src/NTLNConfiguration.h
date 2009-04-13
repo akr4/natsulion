@@ -13,7 +13,6 @@
     BOOL raiseWindowWhenNewMessageArrives;
     BOOL increaseTransparencyWhileDeactivated;
     int newMessageNotificationWindowBehavior;
-    BOOL usePost;
     BOOL editWindowAlphaManually;
     BOOL decodeHeart;
     BOOL sendMessageWithEnterAndModifier;
@@ -25,7 +24,7 @@
     BOOL useAdiumStatus;
 }
 
-@property BOOL useGrowl, usePost, editWindowAlphaManually, 
+@property BOOL useGrowl, editWindowAlphaManually, 
     summarizeGrowl, raiseWindowWhenNewMessageArrives, 
     increaseTransparencyWhileDeactivated, autoscrollWhenNewMessageArrives;
 @property int refreshIntervalSeconds, growlSummarizeThreshold;

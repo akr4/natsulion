@@ -79,7 +79,7 @@ enum NTLNErrorType {
     NTLNAsyncUrlConnection *_connectionForFavorite;
     NTLNAsyncUrlConnection *_connectionForRateLimitStatus;
     
-    NSDate *_friendsTimelineTimestamp;
+    NSString *_lastStatusIdForFriendTimeline;
     
     BOOL _invalidTimestampReturned;
     BOOL _apiLimitExceeded;
@@ -96,9 +96,7 @@ enum NTLNErrorType {
 // internal methods for TwitterTimelineCallbackHandler
 - (void) pushIconWaiter:(NTLNMessage*)waiter forUrl:(NSString*)url;
 - (NSSet*) popIconWaiterSet:(NSString*)url;
-- (void) setFriendsTimelineTimestamp:(NSDate*)timestamp;
-- (void) gotInvalidTimestamp;
-- (void) gotValidTimestampAfterInvalidOne;
+- (void) setFriendsTimelineLastStatusId:(NSString*)statusId;
 - (void) rateLimitStatusWithRemainingHits:(int)remainingHits hourlyLimit:(int)hourlyLimit resetTime:(NSDate*)resetTime;
 - (void) apiRateLimitExceeded;
 - (void) apiRateLimitReset;

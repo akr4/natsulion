@@ -137,6 +137,18 @@ If you find a bug or have any new feature ideas, please file issues to <a href="
 </p>
 
 <h2>Release Notes</h2>
+<h3 id="1.12">Version 1.12 (2009/04/14)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.12.zip">download</a>
+<p>
+<p>small fixes to follow Twitter API changes.</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-250'>NTLN-250</a>] -         Twitter no longer accept POST for friends timeline
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-251'>NTLN-251</a>] -         since parameter no longer supported
+</li>
+</ul>
+</p>            
+
 <h3 id="1.11">Version 1.11 (2009/03/21)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.11.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.11.zip');">download</a>
 <p>
 <p>In this version, NatsuLion now have "Repost" feature. You can find it in the Message menu. In addition to that, There're Spanish support (by <a href="http://twitter.com/soycamo">@soycamo</a>) and German language update (by <a href="http://twitter.com/jezdez">@jezdez</a>). Thank you guys! And there's one more thing... added Goodnight NatsuLion feature.</p>

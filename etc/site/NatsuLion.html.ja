@@ -148,6 +148,18 @@ pageTracker._trackPageview();
 
 <h2>リリースノート</h2>
 
+<h3 id="1.12">Version 1.12 (2009/04/14)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.12.zip">download</a>
+<p>
+<p>Twitter API の変更にともなう小さな変更です。</p>
+Improvement
+<ul>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-250'>NTLN-250</a>] -         Twitter no longer accept POST for friends timeline
+</li>
+<li>[<a href='http://jira.physalis.net/browse/NTLN-251'>NTLN-251</a>] -         since parameter no longer supported
+</li>
+</ul>
+</p>            
+
 <h3 id="1.11">Version 1.11 (2009/03/21)</h3><a href="http://www.natsulion.org/download/NatsuLion_1.11.zip" onclick="javascript:urchinTracker('/NatsuLion/NatsuLion_1.11.zip');">download</a>
 <p>
 <p>リポスト機能が追加されました。メニューバーのメッセージにあります。スペイン語のサポート (by <a href="http://twitter.com/soycamo">@soycamo</a>) とドイツ語対応が少し改善されました (by <a href="http://twitter.com/jezdez">@jezdez</a>)。ありがとう! それから One more thing..., おやすみ夏ライオンというのもあります。

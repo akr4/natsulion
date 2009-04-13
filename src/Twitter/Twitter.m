@@ -4,7 +4,7 @@
 
 #define API_BASE @"http://twitter.com"
 
-/* #define DEBUG */
+#define DEBUG
 
 @implementation NTLNErrorInfo
 + (id) infoWithType:(enum NTLNErrorType)type originalMessage:(NSString*)message {
@@ -233,7 +233,6 @@
     NSLog(@"status count = %d", [statuses count]);
 #endif
     
-    NSDate *lastTimestamp = nil;
     for (NSXMLNode *status in statuses) {
         NTLNMessage *backStatus = [[[NTLNMessage alloc] init] autorelease];
         
@@ -253,18 +252,8 @@
         [backStatus finishedToSetProperties];
         [_parent pushIconWaiter:backStatus forUrl:iconUrl];
         
-        // keep last status id for "since" parameter
-        if ([[backStatus timestamp] compare:[NSDate date]] == NSOrderedDescending) {
-            [_parent gotInvalidTimestamp];
-        } else {
-            [_parent gotValidTimestampAfterInvalidOne];
-            if (!lastTimestamp) {
-                lastTimestamp = [backStatus timestamp];
-            } else {
-                lastTimestamp = [lastTimestamp laterDate:[backStatus timestamp]];
-            }
-            [_parent setFriendsTimelineTimestamp:lastTimestamp];
-        }
+        // keep last status id for "since_id" parameter
+        [_parent setFriendsTimelineLastStatusId:[backStatus statusId]];
     }
 }
 
@@ -546,27 +535,13 @@
     return back;
 }
 
-- (void) setFriendsTimelineTimestamp:(NSDate*)timestamp {
-//    NSLog(@"%s: %@", __PRETTY_FUNCTION__, [timestamp description]);
-    if (!_friendsTimelineTimestamp || [timestamp compare:_friendsTimelineTimestamp] == NSOrderedDescending) {
-        [_friendsTimelineTimestamp release];
-        _friendsTimelineTimestamp = timestamp;
-        [_friendsTimelineTimestamp retain];
+- (void) setFriendsTimelineLastStatusId:(NSString*)statusId {
+    if (!_lastStatusIdForFriendTimeline || [statusId compare:_lastStatusIdForFriendTimeline] == NSOrderedDescending) {
+        NSLog(@"%s: %@", __PRETTY_FUNCTION__, statusId);
+        [_lastStatusIdForFriendTimeline release];
+        _lastStatusIdForFriendTimeline = statusId;
+        [_lastStatusIdForFriendTimeline retain];
     }
-}
-
-- (void) gotInvalidTimestamp
-{
-    NSLog(@"future timestamp returned from Twitter");
-    _invalidTimestampReturned = true;
-}
-
-- (void) gotValidTimestampAfterInvalidOne
-{
-    if (_invalidTimestampReturned) {
-        NSLog(@"valid timestamp returned.");
-    }
-    _invalidTimestampReturned = false;
 }
 
 - (void) apiRateLimitExceeded
@@ -614,25 +589,10 @@
     
     TwitterTimelineCallbackHandler *handler = [[TwitterTimelineCallbackHandler alloc] initWithCallback:_callback parent:self];
 
-    // in the case of invalid (future) timestamp is returned from API, use older timestamp and less count value
-    int count;
-    if (_invalidTimestampReturned) {
-        count = 20;
-    } else {
-        count = 100;
-    }
+    NSString *url = [API_BASE stringByAppendingString:[NSString stringWithFormat:@"/statuses/friends_timeline.xml?count=%d", 100]];
 
-    NSString *url = [API_BASE stringByAppendingString:[NSString stringWithFormat:@"/statuses/friends_timeline.xml?count=%d", count]];
-
-    if (_friendsTimelineTimestamp) {
-//        [[url stringByAppendingString:@"?since_id="] stringByAppendingString:_lastStatusIdForFriendTimeline];
-        
-        // accept 5 seconds clock lag in Twitter servers
-        NSDate *since = [[[NSDate alloc] initWithTimeInterval:-5 sinceDate:_friendsTimelineTimestamp] autorelease];
-        
-        // @"%a,%d %b %Y %H:%M:%S GMT"
-        NSCalendarDate *c = [since dateWithCalendarFormat:@"%a,+%d+%b+%Y+%H:%M:%S+GMT" timeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
-        url = [[url stringByAppendingString:@"&since="] stringByAppendingString:[c description]];
+    if (_lastStatusIdForFriendTimeline) {
+        url = [[url stringByAppendingString:@"?since_id="] stringByAppendingString:_lastStatusIdForFriendTimeline];
     }
     
 #ifdef DEBUG

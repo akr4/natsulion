@@ -1745,32 +1745,10 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 										<int key="NSvFlags">256</int>
 										<object class="NSMutableArray" key="NSSubviews">
 											<bool key="EncodedWithXMLCoder">YES</bool>
-											<object class="NSButton" id="102127028">
-												<reference key="NSNextResponder" ref="740601189"/>
-												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{15, 242}, {341, 18}}</string>
-												<reference key="NSSuperview" ref="740601189"/>
-												<bool key="NSEnabled">YES</bool>
-												<object class="NSButtonCell" key="NSCell" id="843205610">
-													<int key="NSCellFlags">-2080244224</int>
-													<int key="NSCellFlags2">0</int>
-													<string key="NSContents">POST verwenden um Time Line zu laden</string>
-													<reference key="NSSupport" ref="516294854"/>
-													<reference key="NSControlView" ref="102127028"/>
-													<int key="NSButtonFlags">1211912703</int>
-													<int key="NSButtonFlags2">2</int>
-													<reference key="NSNormalImage" ref="71958438"/>
-													<reference key="NSAlternateImage" ref="513080662"/>
-													<string key="NSAlternateContents"/>
-													<string key="NSKeyEquivalent"/>
-													<int key="NSPeriodicDelay">200</int>
-													<int key="NSPeriodicInterval">25</int>
-												</object>
-											</object>
 											<object class="NSButton" id="527209788">
 												<reference key="NSNextResponder" ref="740601189"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{15, 222}, {341, 18}}</string>
+												<string key="NSFrame">{{15, 242}, {341, 18}}</string>
 												<reference key="NSSuperview" ref="740601189"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="908119726">
@@ -1792,7 +1770,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 											<object class="NSButton" id="40308665">
 												<reference key="NSNextResponder" ref="740601189"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{15, 202}, {322, 18}}</string>
+												<string key="NSFrame">{{15, 222}, {322, 18}}</string>
 												<reference key="NSSuperview" ref="740601189"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="161990218">
@@ -1814,7 +1792,7 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 											<object class="NSButton" id="897080960">
 												<reference key="NSNextResponder" ref="740601189"/>
 												<int key="NSvFlags">268</int>
-												<string key="NSFrame">{{15, 182}, {322, 18}}</string>
+												<string key="NSFrame">{{15, 202}, {322, 18}}</string>
 												<reference key="NSSuperview" ref="740601189"/>
 												<bool key="NSEnabled">YES</bool>
 												<object class="NSButtonCell" key="NSCell" id="724143634">
@@ -2660,22 +2638,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="destination" ref="994105571"/>
 					</object>
 					<int key="connectionID">2072</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: values.usePost</string>
-						<reference key="source" ref="102127028"/>
-						<reference key="destination" ref="858570002"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="102127028"/>
-							<reference key="NSDestination" ref="858570002"/>
-							<string key="NSLabel">value: values.usePost</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">values.usePost</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">2085</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -4475,21 +4437,11 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="object" ref="740601189"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="102127028"/>
 							<reference ref="527209788"/>
 							<reference ref="40308665"/>
 							<reference ref="897080960"/>
 						</object>
 						<reference key="parent" ref="678132428"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">2075</int>
-						<reference key="object" ref="102127028"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="843205610"/>
-						</object>
-						<reference key="parent" ref="740601189"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">2375</int>
@@ -4794,11 +4746,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="parent" ref="886099528"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">4008</int>
-						<reference key="object" ref="843205610"/>
-						<reference key="parent" ref="102127028"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">4009</int>
 						<reference key="object" ref="908119726"/>
 						<reference key="parent" ref="527209788"/>
@@ -5040,8 +4987,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>2073.ImportedFromIB2</string>
 					<string>2074.IBPluginDependency</string>
 					<string>2074.ImportedFromIB2</string>
-					<string>2075.IBPluginDependency</string>
-					<string>2075.ImportedFromIB2</string>
 					<string>211.IBPluginDependency</string>
 					<string>211.ImportedFromIB2</string>
 					<string>212.IBPluginDependency</string>
@@ -5193,7 +5138,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<string>4005.IBPluginDependency</string>
 					<string>4006.IBPluginDependency</string>
 					<string>4007.IBPluginDependency</string>
-					<string>4008.IBPluginDependency</string>
 					<string>4009.IBPluginDependency</string>
 					<string>4010.IBPluginDependency</string>
 					<string>4011.IBPluginDependency</string>
@@ -5433,8 +5377,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<reference ref="9"/>
 					<string>{{399, 759}, {291, 103}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
@@ -5538,7 +5480,6 @@ ARcABAAAAAEAAAACARwAAwAAAAEAAQAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<reference ref="9"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<reference ref="9"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>

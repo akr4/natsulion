@@ -7,6 +7,23 @@
     <description>NatsuLion Releases</description>
     <language>en</language>
     <item>
+      <title>NatsuLion Version 1.12</title>
+      <description>
+&lt;h2&gt;        Improvement
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-250'&gt;NTLN-250&lt;/a&gt;] -         Twitter no longer accept POST for friends timeline
+&lt;/li&gt;
+&lt;li&gt;[&lt;a href='http://jira.physalis.net/browse/NTLN-251'&gt;NTLN-251&lt;/a&gt;] -         since parameter no longer supported
+&lt;/li&gt;
+&lt;/ul&gt;
+      </description>
+      <pubDate>Tue, 14 Apr 2009 03:00:00 +9000</pubDate>
+      <enclosure url="http://www.natsulion.org/download/NatsuLion_1.12.zip"
+        length="1819651"
+        type="application/octet-stream"/>
+    </item>
+    <item>
       <title>NatsuLion Version 1.11</title>
       <description>
 &lt;h2&gt;        Bug

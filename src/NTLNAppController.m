@@ -435,7 +435,7 @@
     }
     [_twitter friendTimelineWithUsername:[[NTLNAccount instance] username]
                                 password:password
-                                 usePost:[[NTLNConfiguration instance] usePost]];
+                                 usePost:NO];
     [self restartFriendsTimelineRefreshTimer];
     [self updateRateLimitStatusIndicator];
 }
@@ -450,7 +450,7 @@
     }
     [_twitter repliesWithUsername:[[NTLNAccount instance] username]
                          password:password
-                          usePost:[[NTLNConfiguration instance] usePost]];
+                          usePost:NO];
     [self restartRepliesRefreshTimer];
     [self updateRateLimitStatusIndicator];
 }
@@ -465,7 +465,7 @@
     }
     [_twitter sentMessagesWithUsername:[[NTLNAccount instance] username]
                               password:password
-                               usePost:[[NTLNConfiguration instance] usePost]];
+                               usePost:NO];
     [self updateRateLimitStatusIndicator];
 }
 
@@ -479,7 +479,7 @@
     }
     [_twitter directMessagesWithUsername:[[NTLNAccount instance] username]
                                 password:password
-                                 usePost:[[NTLNConfiguration instance] usePost]];
+                                 usePost:NO];
     [self updateRateLimitStatusIndicator];
     [self restartDirectMessagesRefreshTimer];
 }
