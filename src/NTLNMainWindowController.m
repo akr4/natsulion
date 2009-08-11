@@ -341,24 +341,6 @@
 - (void) addMessageViewControllers:(NSArray*)controllers {
 //    NSLog(@"%s: count:%d", __PRETTY_FUNCTION__, [controllers count]);
     [messageViewControllerArrayController addObjects:controllers];
-    
-    int overflowed = [[messageViewControllerArrayController arrangedObjects] count] - 50;
-    if (overflowed > 0) {
-        NSMutableArray* controllers = [NSMutableArray arrayWithArray:[messageViewControllerArrayController arrangedObjects]];
-        while (overflowed > 0 && [controllers count] > 0) {
-            TwitterStatusViewController* c = [controllers objectAtIndex:0];
-            [controllers removeObject:c];
-            if ([[c message] replyType] == NTLN_MESSAGE_REPLY_TYPE_NORMAL) {
-                [messageViewControllerArrayController removeObject:c];
-                overflowed--;
-            }
-            
-        }
-        
-        [messageViewControllerArrayController removeObjectsAtArrangedObjectIndexes:
-         [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, overflowed)]];
-    }
-    
     [messageListViewsController applyCurrentPredicate];
     [messageTableViewController newMessageArrived:controllers];
     [self updateMessageCounterText];
