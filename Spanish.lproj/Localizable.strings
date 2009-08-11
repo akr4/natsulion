@@ -1,0 +1,56 @@
+﻿/* No comment provided by engineer. */
+"No message received" = "Mensaje no ha recibé";
+
+/* No comment provided by engineer. */
+"Not Authorized" = "No autorizado";
+
+/* No comment provided by engineer. */
+"Sending a message failure. unable to get connection." = "Falló enviar un mensaje. No se pudo contectar.";
+
+/* No comment provided by engineer. */
+"Twitter Server Error" = "Error de servidor Twitter";
+
+/* No comment provided by engineer. */
+"Unknown Error" = "Error desconocido";
+
+"New Messages from:" = "Mensajes nuevos de:";
+
+"Retrieving timeline failed" = "Falló acceder cronología";
+
+"View Mode" = "Visualisación";
+
+"Refresh" = "Refrescar";
+
+"Mark all as read" = "Marcar todo como no leído";
+
+"number of messages" = "número de mensajes";
+
+"Sending a message failed" = "Falló enviar un mensaje";
+
+"Unable to store your password to your keychain." = "No se pudo almacenar su contraseña a su llavero.";
+
+"Please check your username and password or try later." = "Un error se ocurrió. Confirme su nombre de usario y contraseña, por favor.";
+
+"Input your message and press \"Enter\" key" = "Entre su mensaje y pulse la tecla \"Enter\"";
+"Input your message and press \"Ctrl + Enter\" key" = "Entre su mensaje y pulse la tecla \"Ctrl + Enter\"";
+
+"Friends" = "Amigos";
+"Replies" = "Replies";
+"Sent" = "Sent";
+"Unread" = "Unread";
+"Next" = "Siguiente";
+"Find" = "Buscar";
+"Conversation" = "Conversación";
+"iTunes Track" = "Pista iTunes";
+"Repost" = "Reponer";
+
+"Reset at %@" = "Reincinar a %@";
+"Exceeded API rate limit" = "Se excedió tasa de límite API";
+"Exceeded API rate limit\nwill be reset at %@" = "Se excedió tasa de límite API\nReincinará a %@";
+"Attention: API limit warning"="Atención: advertencia de límite API";
+"Attention: API limit exceeded"="Atención: Se excedió límite API";
+"%d characters remain"="Quedan %d caracteres";
+"Your message can be truncated because it's too long."="Su mensaje se puede truncar porque más largo";
+"Your message will be truncated because it's too long."="Su mensaje truncará porque más largo";
+
+"Good night NatsuLion" = "Buenas noches NatsuLion";
