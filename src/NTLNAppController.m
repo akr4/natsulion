@@ -48,9 +48,6 @@
                                    userInfo:nil
                                     repeats:FALSE];
 
-    _messageCountHistory = [[NSMutableArray alloc] initWithCapacity:30];
-    _numberOfPostedMessages = 0;
-    
     _twitter = [[TwitterImpl alloc] initWithCallback:self];
 
     return self;
@@ -62,7 +59,6 @@
     [_directMessagesRefreshTimer release];
     [_badge release];
     [_growl release];
-    [_messageCountHistory release];
     [_messageNotifier release];
     [_twitter release];
     [super dealloc];
